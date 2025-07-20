@@ -48,3 +48,4 @@
 **WhatsApp:** [01066047545](https://wa.me/201066047545)  
 **المطور:** FaragDev98  
 **جميع الحقوق محفوظة © 2025**
+<script src="footer.js"></script>
