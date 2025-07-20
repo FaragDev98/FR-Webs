@@ -4,23 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>المقالات - FaragDev98</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
       padding: 0;
       background: #f9f9f9;
-      color: #333;
+    }
+
+    header {
+      background-color: #7b1fa2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-top: 30px;
+      color: #4a148c;
       text-align: center;
     }
-    header, footer {
-      background: #7b1fa2;
-      color: white;
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .article {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+    }
+
+    .article img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .article-content {
       padding: 15px;
     }
-    h1 {
-      margin-top: 40px;
-      color: #4a148c;
+
+    .article-content h3 {
+      margin-top: 0;
+      color: #7b1fa2;
+    }
+
+    .article-content p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #7b1fa2;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .read-more:hover {
+      background-color: #4a148c;
+    }
+
+    footer {
+      background-color: #7b1fa2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 5px;
     }
   </style>
 </head>
@@ -30,15 +103,60 @@
     <h2>FaragDev98</h2>
   </header>
 
-  <main>
-    <h1>صفحة المقالات</h1>
-    <p>هنا ستُعرض جميع مقالاتنا قريبًا!</p>
-  </main>
+  <h1>مقالاتنا</h1>
+
+  <section class="articles">
+    <div class="article">
+      <img src="https://via.placeholder.com/400x200?text=مقال+1" alt="مقال 1">
+      <div class="article-content">
+        <h3>مقال رقم 1</h3>
+        <p>نظرة عامة حول أهمية تعلم البرمجة في العصر الرقمي وكيف تبدأ.</p>
+        <a href="#" class="read-more">اقرأ المزيد</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/400x200?text=مقال+2" alt="مقال 2">
+      <div class="article-content">
+        <h3>مقال رقم 2</h3>
+        <p>أفضل الأدوات المجانية للمبرمجين تساعدك على تسريع العمل وتوفير الوقت.</p>
+        <a href="#" class="read-more">اقرأ المزيد</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/400x200?text=مقال+3" alt="مقال 3">
+      <div class="article-content">
+        <h3>مقال رقم 3</h3>
+        <p>كيف تختار تخصصك في عالم البرمجة وما الفرق بين الفرونت إند والبك إند؟</p>
+        <a href="#" class="read-more">اقرأ المزيد</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/400x200?text=مقال+4" alt="مقال 4">
+      <div class="article-content">
+        <h3>مقال رقم 4</h3>
+        <p>مواقع تعليمية قوية لتعلم البرمجة مجانًا وبشهادات معتمدة.</p>
+        <a href="#" class="read-more">اقرأ المزيد</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/400x200?text=مقال+5" alt="مقال 5">
+      <div class="article-content">
+        <h3>مقال رقم 5</h3>
+        <p>كيف تبني أول موقع إلكتروني لك باستخدام HTML وCSS بخطوات بسيطة.</p>
+        <a href="#" class="read-more">اقرأ المزيد</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    جميع الحقوق محفوظة © 2025 FaragDev98 | <a href="terms.html" style="color: #fff;">الشروط والأحكام</a> | 
-    <a href="privacy.html" style="color: #fff;">سياسة الخصوصية</a> | 
-    <a href="security.html" style="color: #fff;">صفحة الحماية</a>
+    جميع الحقوق محفوظة © 2025 FaragDev98 |
+    <a href="terms.html">الشروط والأحكام</a> |
+    <a href="privacy-policy.html">سياسة الخصوصية</a> |
+    <a href="protection.html">صفحة الحماية</a>
   </footer>
 
 </body>
