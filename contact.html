@@ -19,6 +19,7 @@
       background-color: #6a1b9a;
       color: white;
       padding: 15px 30px;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -32,6 +33,15 @@
     .logo img {
       width: 32px;
       height: 32px;
+    }
+
+    .logo-text {
+      order: 1;
+    }
+
+    .logo-icon {
+      order: 2;
+      margin-left: auto;
     }
 
     /* شريط التنقل */
@@ -126,15 +136,37 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
+
+    /* ترتيب مخصص للأيقونة */
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .header-content .right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-content .left {
+      margin-right: auto;
+    }
   </style>
 </head>
 <body>
 
   <!-- رأس الموقع -->
   <header>
-    <div class="logo">
-      <img src="icons/ai-icon.png" alt="Icon">
-      <span>FaragDev98</span>
+    <div class="header-content">
+      <div class="right">
+        <span class="logo-text">FaragDev98</span>
+      </div>
+      <div class="left">
+        <img src="icons/ai-icon.png" alt="Icon" class="logo-icon">
+      </div>
     </div>
   </header>
 
