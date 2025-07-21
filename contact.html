@@ -14,7 +14,7 @@
     /* رأس الموقع */
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       background-color: #6a1b9a;
       color: white;
@@ -38,8 +38,8 @@
     .nav-bar {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
+      flex-wrap: nowrap;
+      gap: 20px;
       padding: 15px;
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -115,21 +115,6 @@
       font-size: 14px;
       margin-top: 40px;
     }
-
-    .footer-links {
-      margin-top: 10px;
-    }
-
-    .footer-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
@@ -163,12 +148,7 @@
 
   <!-- التذييل -->
   <footer>
-    جميع الحقوق محفوظة © 2025 FaragDev98
-    <div class="footer-links">
-      <a href="#">الشروط والأحكام</a>
-      <a href="#">سياسة الخصوصية</a>
-      <a href="#">سياسة الحماية</a>
-    </div>
+    <strong>footer.js</strong>
   </footer>
 
 </body>
