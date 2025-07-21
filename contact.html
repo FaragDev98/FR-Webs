@@ -8,12 +8,13 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      background: linear-gradient(135deg, #e0f2f1, #e3f2fd);
       color: #333;
     }
 
+    /* رأس الصفحة */
     header {
-      background: linear-gradient(to left, #6a1b9a, #283593);
+      background: linear-gradient(to left, #26a69a, #42a5f5);
       color: white;
       padding: 20px;
       display: flex;
@@ -22,6 +23,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
@@ -32,13 +34,14 @@
     }
 
     .logo::before {
-      content: "📘";
+      content: "🌐";
       margin-left: 10px;
+      font-size: 22px;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
@@ -46,21 +49,22 @@
     }
 
     nav a:hover {
-      color: #ffd54f;
+      color: #ffe082;
     }
 
+    /* قسم التواصل */
     .contact-section {
       max-width: 800px;
       margin: 40px auto;
-      background: #ffffffea;
+      background: #ffffffd8;
       padding: 40px 25px;
       border-radius: 16px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .contact-section h2 {
       text-align: center;
-      color: #6a1b9a;
+      color: #26a69a;
       margin-bottom: 30px;
       font-size: 28px;
     }
@@ -75,7 +79,7 @@
     .contact-methods a {
       display: block;
       color: #333;
-      background: linear-gradient(to right, #f3e5f5, #e1bee7);
+      background: linear-gradient(to right, #b2dfdb, #bbdefb);
       padding: 15px 20px;
       border-radius: 10px;
       text-decoration: none;
@@ -84,7 +88,7 @@
     }
 
     .contact-methods a:hover {
-      background: linear-gradient(to right, #ab47bc, #7e57c2);
+      background: linear-gradient(to right, #26c6da, #42a5f5);
       color: white;
       transform: scale(1.02);
     }
@@ -93,6 +97,7 @@
       margin-left: 10px;
     }
 
+    /* التذييل */
     footer {
       text-align: center;
       padding: 20px;
@@ -105,7 +110,7 @@
 </head>
 <body>
 
-  <!-- رأس الموقع -->
+  <!-- رأس الصفحة -->
   <header>
     <div class="logo">FaragDev98</div>
     <nav>
