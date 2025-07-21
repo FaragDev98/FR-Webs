@@ -2,70 +2,58 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>صفحة الحماية - FaragDev98</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #e3f2fd, #ede7f6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      color: #333;
       text-align: center;
-    }
-
-    h1 {
-      color: #3f51b5;
-      margin-bottom: 20px;
+      padding: 50px 20px;
     }
 
     img {
-      max-width: 250px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 200px;
+      border-radius: 20px;
       margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
-    .cv-button {
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    a.button {
       display: inline-block;
-      margin-top: 15px;
       padding: 12px 24px;
-      font-size: 16px;
-      background-color: #673ab7;
-      color: #fff;
+      background-color: #7e57c2;
+      color: white;
+      border-radius: 10px;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: 0.3s ease;
     }
 
-    .cv-button:hover {
+    a.button:hover {
       background-color: #5e35b1;
-    }
-
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #888;
     }
   </style>
 </head>
 <body>
+  <img src="https://avatars.githubusercontent.com/u/170858605?v=4" alt="Faraj Abdallah">
+  <h1>مرحبًا بك في صفحة الحماية</h1>
+  <p>أنا Faraj Abdallah، مطوّر مواقع وتطبيقات، وهذه صفحتي الخاصة لحماية الموقع.  
+     يمكنك تحميل سيرتي الذاتية بصيغة PDF من الرابط أدناه.</p>
+  <a class="button" href="cv.pdf" download>تحميل السيرة الذاتية</a>
 
-  <h1>🔒 صفحة الحماية</h1>
-
-  <!-- ✅ صورة جميلة -->
-  <img src="https://via.placeholder.com/250x250.png?text=Protected" alt="صورة حماية" />
-
-  <!-- ✅ زر تحميل السيرة الذاتية -->
-  <a class="cv-button" href="cv.pdf" download>📄 تحميل السيرة الذاتية (CV)</a>
-
-  <footer>
-    جميع الحقوق محفوظة © FaragDev98 - 2025
-  </footer>
-
+  <script src="protection.js"></script>
 </body>
 </html>
