@@ -11,59 +11,71 @@
       background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
     }
 
-    /* رأس الصفحة */
+    /* رأس الموقع */
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: #6a1b9a;
       color: white;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 15px 30px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
+      gap: 12px;
     }
 
     .logo img {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
     }
 
     /* شريط التنقل */
     .nav-bar {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      padding: 16px;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 15px;
       background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .nav-bar a {
       text-decoration: none;
       font-weight: bold;
       color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 12px 24px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
-    .nav-bar a:nth-child(1) { background-color: #2196f3; }
-    .nav-bar a:nth-child(2) { background-color: #fbc02d; color: #000; }
-    .nav-bar a:nth-child(3) { background-color: #4caf50; }
-    .nav-bar a:nth-child(4) { background-color: #ab47bc; }
+    .nav-bar a:nth-child(1) {
+      background-color: #2196f3;
+    }
+
+    .nav-bar a:nth-child(2) {
+      background-color: #fbc02d;
+      color: black;
+    }
+
+    .nav-bar a:nth-child(3) {
+      background-color: #4caf50;
+    }
+
+    .nav-bar a:nth-child(4) {
+      background-color: #ab47bc;
+    }
 
     .nav-bar a:hover {
       opacity: 0.85;
     }
 
-    /* المحتوى */
+    /* محتوى الصفحة */
     .contact-content {
       max-width: 800px;
       margin: 40px auto;
@@ -104,6 +116,10 @@
       margin-top: 40px;
     }
 
+    .footer-links {
+      margin-top: 10px;
+    }
+
     .footer-links a {
       margin: 0 10px;
       text-decoration: none;
@@ -114,19 +130,11 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
-
-    /* استجابة */
-    @media (max-width: 600px) {
-      .nav-bar {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- رأس الصفحة -->
+  <!-- رأس الموقع -->
   <header>
     <div class="logo">
       <img src="icons/ai-icon.png" alt="Icon">
