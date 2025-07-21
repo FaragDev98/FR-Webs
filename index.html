@@ -2,173 +2,73 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FaragDev98 - كتاب HTML</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f3e5f5, #e1f5fe);
-      color: #333;
-      text-align: center;
-    }
-
-    header {
-      background-color: #512da8;
-      color: white;
-      padding: 15px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    nav {
-      margin: 15px 0;
-    }
-
-    nav a {
-      color: #512da8;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 30px 20px;
-    }
-
-    .price {
-      font-size: 18px;
-      margin: 10px 0;
-      color: #2e7d32;
-      font-weight: bold;
-    }
-
-    .btns {
-      margin: 20px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 10px 5px;
-      border-radius: 6px;
-      font-size: 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    .btn-purple { background-color: #7e57c2; }
-    .btn-blue { background-color: #2196f3; }
-    .btn-green { background-color: #43a047; }
-    .btn-black { background-color: #333; }
-
-    .instruction {
-      margin-top: 30px;
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      line-height: 1.8;
-    }
-
-    .payment-options {
-      margin-top: 20px;
-    }
-
-    .pay-btn {
-      margin: 5px;
-      padding: 10px 15px;
-      background-color: #eeeeee;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .certificate {
-      margin-top: 30px;
-      max-width: 90%;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
-    }
-
-    .footer {
-      margin-top: 40px;
-      padding: 20px;
-      font-size: 14px;
-      background-color: #ede7f6;
-      color: #555;
-    }
-
-    .footer a {
-      color: #512da8;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FaragDev98 | كتاب HTML</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h1>FaragDev98</h1>
     <nav>
-      <a href="#">الرئيسية</a>
-      <a href="services.html">خدمات</a>
-      <a href="articles.html">مقال</a>
-      <a href="contact.html">تواصل</a>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="#services">خدمات</a></li>
+        <li><a href="articles.html">مقال</a></li>
+        <li><a href="contact.html">تواصل</a></li>
+        <li><a href="#book-cover">غلاف الكتاب</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section>
-    <h2>📘 كتاب HTML للمبتدئين</h2>
-    <p>هل تريد أن تبدأ رحلتك في برمجة المواقع؟ هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!</p>
-    <p>تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.</p>
+  <main>
+    <section class="intro">
+      <h2>📘 كتاب HTML للمبتدئين</h2>
+      <p>هل تريد أن تبدأ رحلتك في برمجة المواقع؟ هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!</p>
+      <p>تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.</p>
+    </section>
 
-    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+    <section class="price-section">
+      <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+      <div class="btns">
+        <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+        <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+        <a id="whatsappBtn" href="https://wa.me/201066047545" class="btn btn-green">شراء عبر واتساب</a>
+        <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
+      </div>
 
-    <div class="btns">
-      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
-      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
-      <a id="whatsappBtn" href="https://wa.me/201066047545" class="btn btn-green">شراء عبر واتساب</a>
-      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
-    </div>
+      <div class="instruction">
+        <strong>🔒 طريقة شراء الكتاب عبر واتساب:</strong><br>
+        - انسخ رقم الدفع المطلوب من الأزرار التالية.<br>
+        - أرسل رسالة إلى: <a href="https://wa.me/201066047545" target="_blank">01066047545</a> تتضمن صورة الإيصال وطريقة الدفع.<br>
+        - سيتم إرسال رابط تحميل الكتاب مباشرة بعد التأكد.
+      </div>
 
-    <div class="instruction">
-      <strong>🔒 طريقة شراء الكتاب عبر واتساب:</strong><br>
-      - انسخ رقم الدفع المطلوب من الأزرار التالية.<br>
-      - أرسل رسالة إلى: <a href="https://wa.me/201066047545" target="_blank">01066047545</a> تتضمن صورة الإيصال وطريقة الدفع.<br>
-      - سيتم إرسال رابط تحميل الكتاب مباشرة بعد التأكد.
-    </div>
+      <div class="payment-options">
+        <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
+        <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
+        <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
+        <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
+      </div>
 
-    <div class="payment-options">
-      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
-      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
-      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
-      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
-    </div>
+      <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+    </section>
+  </main>
 
-    <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
-  </section>
-
-  <div class="footer">
+  <footer class="footer">
     جميع الحقوق محفوظة © 2025 FaragDev98<br>
     <a href="terms.html">الشروط والأحكام</a> |
-    <a href="privacy.html">سياسة الخصوصية</a> |
-    <a href="protection.html">صفحة الحماية</a>
-  </div>
+    <a href="privacy-policy.html">سياسة الخصوصية</a> |
+    <a href="legal/protection.html">صفحة الحماية</a>
+  </footer>
 
   <script>
     function copyText(text) {
-      navigator.clipboard.writeText(text).then(function () {
-        alert("تم نسخ: " + text);
+      navigator.clipboard.writeText(text).then(() => {
+        alert("تم نسخ البيانات: " + text);
       });
     }
   </script>
 
-  <script src="protection.js"></script>
 </body>
 </html>
