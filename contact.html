@@ -12,89 +12,78 @@
       color: #333;
     }
 
-    /* رأس الصفحة */
     header {
-      background: #6a1b9a;
+      background: linear-gradient(to left, #6a1b9a, #283593);
       color: white;
-      padding: 15px 25px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
       font-weight: bold;
-      font-size: 26px;
+      font-size: 24px;
       display: flex;
       align-items: center;
     }
 
     .logo::before {
-      content: "💡";
-      margin-left: 10px;
-      font-size: 22px;
-    }
-
-    nav {
-      display: flex;
-      gap: 15px;
+      content: "📘";
+      margin-left: 8px;
     }
 
     nav a {
       color: white;
+      margin: 0 10px;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      transition: color 0.3s;
+      font-weight: 500;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ffd54f;
+      text-decoration: underline;
+      color: #ffeb3b;
     }
 
-    /* قسم التواصل */
     .contact-section {
-      max-width: 800px;
+      max-width: 750px;
       margin: 40px auto;
-      background: #ffffffdd;
-      padding: 40px 25px;
-      border-radius: 16px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
     .contact-section h2 {
       text-align: center;
       color: #6a1b9a;
       margin-bottom: 30px;
-      font-size: 28px;
     }
 
     .contact-methods {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 15px;
       font-size: 18px;
     }
 
     .contact-methods a {
       display: block;
       color: #333;
-      background: linear-gradient(to right, #ce93d8, #b3e5fc);
-      padding: 15px 20px;
+      background-color: #ede7f6;
+      padding: 15px;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: bold;
       transition: 0.3s;
     }
 
     .contact-methods a:hover {
-      background: linear-gradient(to right, #8e24aa, #039be5);
+      background-color: #ce93d8;
       color: white;
-      transform: scale(1.02);
     }
 
     .contact-methods i {
@@ -103,17 +92,41 @@
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #eee;
-      margin-top: 40px;
+      padding: 20px 10px;
+      background: #e1bee7;
+      color: #333;
       font-size: 14px;
-      color: #555;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: #283593;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        font-size: 14px;
+      }
+
+      .contact-section {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- رأس الصفحة مثل index.html -->
+  <!-- رأس الصفحة -->
   <header>
     <div class="logo">FaragDev98</div>
     <nav>
@@ -124,22 +137,27 @@
     </nav>
   </header>
 
-  <!-- محتوى صفحة التواصل -->
+  <!-- قسم التواصل -->
   <div class="contact-section">
     <h2>📞 تواصل معنا</h2>
     <div class="contact-methods">
       <a href="https://wa.me/201066047545" target="_blank"><i>💬</i> واتساب: 01066047545</a>
       <a href="tel:01091838789"><i>📱</i> الهاتف: 01091838789</a>
       <a href="mailto:Farajbdallh891@gmail.com"><i>✉️</i> البريد الإلكتروني: Farajbdallh891@gmail.com</a>
-      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank"><i>📘</i> فيسبوك</a>
-      <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank"><i>💼</i> لينكدإن</a>
-      <a href="https://www.youtube.com/@Fabrica-courses" target="_blank"><i>📺</i> يوتيوب</a>
+      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank"><i>📘</i> صفحتنا على فيسبوك</a>
+      <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank"><i>💼</i> صفحتنا على لينكدإن</a>
+      <a href="https://www.youtube.com/@Fabrica-courses" target="_blank"><i>📺</i> قناتنا على يوتيوب</a>
     </div>
   </div>
 
   <!-- التذييل -->
   <footer>
     جميع الحقوق محفوظة © 2025 FaragDev98
+    <div class="footer-links">
+      <a href="#">الشروط والأحكام</a>
+      <a href="#">سياسة الخصوصية</a>
+      <a href="#">سياسة الحماية</a>
+    </div>
   </footer>
 
 </body>
