@@ -3,63 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>صفحة الحماية - FarajDev98</title>
+  <title>شراء كتاب HTML - FaragDev98</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to right, #ece9f3, #d1c4e9);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      color: #333;
+      padding: 20px;
       text-align: center;
     }
-
-    .card {
+    h1 {
+      color: #6a1b9a;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
       background: white;
-      border-radius: 16px;
-      padding: 30px 20px;
-      max-width: 500px;
+      border-radius: 20px;
+      padding: 30px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
-
-    img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #7e57c2;
+    .price {
+      font-size: 28px;
+      margin: 20px 0;
+      color: #d81b60;
     }
-
-    h1 {
-      font-size: 26px;
-      color: #5e35b1;
-      margin-bottom: 10px;
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 15px;
+      background-color: #8e24aa;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
     }
-
-    p {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 10px;
+    .btn:hover {
+      background-color: #6a1b9a;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+    .footer a {
+      color: #6a1b9a;
+      margin: 0 5px;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://avatars.githubusercontent.com/u/170858605?v=4" alt="Faraj Abdallah">
-    <h1>مرحبًا بك في صفحة الحماية</h1>
-    <p>
-      أنا <strong>Faraj Abdallah</strong>، مطوّر مواقع وتطبيقات ومؤسس منصة <strong>Fabrica Course</strong>.  
-      هذه الصفحة مخصصة لحماية حقوق المحتوى من النسخ أو السرقة أو التلاعب،  
-      ويتم تفعيل بعض الأكواد الأمنية تلقائيًا لحماية الموقع بالكامل.
-    </p>
+
+  <div class="container">
+    <h1>شراء كتاب تعلم HTML</h1>
+    <p>سعر الكتاب: <span class="price">50 جنيه مصري (أو 2 دولار)</span></p>
+
+    <p>طرق الدفع:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>فودافون كاش: <b>01066047545</b></li>
+      <li>أورنج كاش: <b>01285895096</b></li>
+      <li>وي كاش: <b>01558516081</b></li>
+      <li>باي بال: <b>Farajbdallh891@gmail.com</b></li>
+    </ul>
+
+    <a id="whatsappBtn" class="btn" href="#">اشترِ الآن عبر واتساب</a>
+
+    <div class="footer">
+      جميع الحقوق محفوظة © 2025 FaragDev98 <br>
+      <a href="terms.html">الشروط والأحكام</a> |
+      <a href="privacy-policy.html">سياسة الخصوصية</a>
+    </div>
   </div>
 
+  <!-- ملف الحماية -->
   <script src="protection.js"></script>
+
+  <!-- سكربت واتساب -->
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ تم نسخ البيانات: " + text);
+      }).catch(() => {
+        alert("⚠️ لم يتم النسخ تلقائيًا، الرجاء نسخه يدويًا: " + text);
+      });
+    }
+
+    document.getElementById("whatsappBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      const whatsappURL = "https://wa.me/201066047545?text=لقد%20تم%20الدفع%20وأريد%20الحصول%20على%20الكتاب";
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
 </body>
 </html>
