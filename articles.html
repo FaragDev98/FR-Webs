@@ -10,6 +10,7 @@
       background: #f9f9f9;
       margin: 0;
       padding: 0;
+      color: #333;
       line-height: 1.8;
     }
 
@@ -21,19 +22,24 @@
     }
 
     .articles-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px;
+      max-width: 900px;
+      margin: 30px auto;
       display: flex;
       flex-direction: column;
       gap: 40px;
+      padding: 0 20px;
     }
 
     .article {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .article:hover {
+      transform: scale(1.02);
     }
 
     .article img {
@@ -43,7 +49,7 @@
     }
 
     .article-content {
-      padding: 25px;
+      padding: 20px;
     }
 
     .article-title {
@@ -54,7 +60,7 @@
     }
 
     .article-text {
-      font-size: 16px;
+      font-size: 1.05rem;
       color: #444;
       text-align: justify;
     }
@@ -65,7 +71,7 @@
       padding: 15px;
       text-align: center;
       font-size: 14px;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     footer a {
@@ -78,27 +84,27 @@
 <body>
 
   <header>
-    <h1>📝 مقالات برمجية مفيدة</h1>
+    <h1>📰 مقالات تقنية وتعليمية</h1>
   </header>
 
   <section class="articles-container">
 
     <div class="article">
-      <img src="images/article1.jpg" alt="مقال HTML" />
+      <img src="images/article1.jpg" alt="أساسيات HTML" />
       <div class="article-content">
-        <div class="article-title">ما هي لغة HTML ولماذا يجب أن تتعلمها؟</div>
+        <div class="article-title">أساسيات لغة HTML للمبتدئين</div>
         <div class="article-text">
-          HTML هي اللغة الأساسية لبناء صفحات الويب. تُستخدم لتحديد الهيكل والمحتوى مثل العناوين والفقرات والروابط والصور. من دون HTML، لن تستطيع المتصفحات عرض أي صفحة. تعلم HTML يُعتبر الخطوة الأولى لأي شخص يرغب في دخول عالم تطوير الويب، وهي سهلة الفهم وتعتبر الأساس لباقي اللغات مثل CSS وJavaScript. في هذا المقال نشرح كيف تبدأ بها، وأهم الوسوم التي يجب أن تتعلمها، وأفضل الممارسات لكتابة كود نظيف ومرتب.
+          HTML هي اللغة الأساسية لبناء صفحات الويب. من خلالها يمكن إنشاء العناوين والفقرات والروابط والصور والعناصر التفاعلية. تستخدم جميع المواقع على الإنترنت HTML كأساس. هذا المقال يقدم لك نظرة شاملة حول الوسوم الأساسية مثل: &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, &lt;img&gt;، بالإضافة إلى كيفية تنظيم العناصر باستخدام عناصر الهيكل مثل &lt;header&gt;, &lt;main&gt;, &lt;footer&gt;. إذا كنت تنوي تعلم تطوير الويب، فابدأ بتعلم HTML جيدًا.
         </div>
       </div>
     </div>
 
     <div class="article">
-      <img src="images/article2.jpg" alt="CSS" />
+      <img src="images/article2.jpg" alt="CSS وتنسيق المواقع" />
       <div class="article-content">
-        <div class="article-title">كيف تجعل موقعك جميلًا باستخدام CSS؟</div>
+        <div class="article-title">مدخل إلى CSS: كيف تنسق موقعك باحتراف</div>
         <div class="article-text">
-          CSS تُستخدم لتنسيق صفحات الويب، مثل التحكم بالألوان والخطوط والمسافات والرسوم المتحركة. تخيل أن HTML هو الهيكل، وCSS هو الملابس والألوان. بفضل CSS، يمكنك تحويل موقع بسيط إلى واجهة رائعة تلفت الأنظار. المقال يشرح أهم الخصائص مثل flexbox، grid، والـ media queries التي تجعلك تتحكم في كل تفصيل بالموقع وتجعله متجاوبًا مع كل الشاشات.
+          CSS هي اللغة التي تضيف الجمال والتنسيق إلى صفحات HTML. يمكنك من خلالها التحكم في الألوان والخطوط والمحاذاة والمسافات وغيرها. في هذا المقال، ستتعلم الفرق بين التنسيقات الداخلية والخارجية، وكيفية استخدام الـ selectors لتطبيق التنسيقات على عناصر معينة، وكذلك التعامل مع الـ classes و IDs. ستتعلم أيضًا كيف تجعل موقعك متجاوبًا مع الهواتف باستخدام Media Queries.
         </div>
       </div>
     </div>
@@ -106,19 +112,19 @@
     <div class="article">
       <img src="images/article3.jpg" alt="JavaScript" />
       <div class="article-content">
-        <div class="article-title">ما دور JavaScript في مواقع الإنترنت؟</div>
+        <div class="article-title">تعرف على JavaScript: لغة التفاعل في الويب</div>
         <div class="article-text">
-          JavaScript تضيف الحياة إلى صفحات الويب! فهي المسؤولة عن التفاعلات مثل القوائم المنسدلة، النماذج، الأزرار، وغيرها. عند الضغط على زر أو كتابة في حقل، فإن JavaScript هي التي تنفذ الأوامر. يمكنك بها إنشاء ألعاب، تطبيقات ويب، وحتى ربط الموقع بقاعدة بيانات. المقال يشرح كيف تبدأ بلغة JavaScript، ويعرض أمثلة حقيقية مثل إنشاء آلة حاسبة، أو تغيير محتوى الصفحة بناءً على حدث.
+          JavaScript هي لغة البرمجة المسؤولة عن جعل صفحات الويب تفاعلية. تُمكنك من إضافة وظائف مثل القوائم المنسدلة، التحكم في النماذج، إنشاء الألعاب البسيطة، وتحسين تجربة المستخدم بشكل عام. من خلال هذا المقال ستكتشف مفاهيم مثل المتغيرات، الحلقات، الدوال، الأحداث، وكيفية التعامل مع DOM (شجرة العناصر في الصفحة). تعلم JavaScript يمنحك قوة هائلة في تطوير واجهات المستخدم.
         </div>
       </div>
     </div>
 
     <div class="article">
-      <img src="images/article4.jpg" alt="مشروع موقع" />
+      <img src="images/article4.jpg" alt="دليل للمبتدئين في البرمجة" />
       <div class="article-content">
-        <div class="article-title">خطوات بناء أول موقع شخصي لك</div>
+        <div class="article-title">كيف تبدأ رحلتك في تعلم البرمجة من الصفر</div>
         <div class="article-text">
-          بناء موقع شخصي يُعد تجربة تعليمية رائعة، ويساعدك في عرض مهاراتك. ابدأ بتصميم الصفحة الرئيسية باستخدام HTML وCSS، ثم أضف بعض التفاعل باستخدام JavaScript. اهتم بواجهة المستخدم واجعلها بسيطة وسهلة التصفح. لا تنسَ ربط الموقع بحسابات التواصل الاجتماعي، وإضافة قسم نبذة عنك وأعمالك. في نهاية المقال ستتعلم كيف ترفع موقعك مجانًا على GitHub Pages ليكون متاحًا للعالم.
+          إذا كنت تتساءل من أين تبدأ في عالم البرمجة، فهذا المقال لك. سنتحدث عن كيفية اختيار اللغة المناسبة، وأهمية تعلم الأساسيات، والعمل على مشاريع صغيرة لتقوية الفهم العملي. سنتناول أيضًا الفرق بين الواجهة الأمامية (Frontend) والخلفية (Backend)، وأهم النصائح للمبتدئين مثل الالتزام بالتدريب اليومي، البحث المستمر، والانضمام إلى مجتمعات البرمجة. الأهم أن تبدأ وتستمر، فكل محترف كان مبتدئًا.
         </div>
       </div>
     </div>
