@@ -10,6 +10,7 @@
       background: #f9f9f9;
       margin: 0;
       padding: 0;
+      line-height: 1.8;
     }
 
     header {
@@ -20,36 +21,42 @@
     }
 
     .articles-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
 
     .article {
       background: white;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .article:hover {
-      transform: scale(1.03);
     }
 
     .article img {
       width: 100%;
-      height: 180px;
+      height: 250px;
       object-fit: cover;
     }
 
+    .article-content {
+      padding: 25px;
+    }
+
     .article-title {
-      padding: 15px;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: bold;
-      text-align: center;
-      color: #333;
+      margin-bottom: 15px;
+      color: #4a148c;
+    }
+
+    .article-text {
+      font-size: 16px;
+      color: #444;
+      text-align: justify;
     }
 
     footer {
@@ -58,6 +65,7 @@
       padding: 15px;
       text-align: center;
       font-size: 14px;
+      margin-top: 60px;
     }
 
     footer a {
@@ -70,38 +78,55 @@
 <body>
 
   <header>
-    <h1>المقالات</h1>
+    <h1>📝 مقالات برمجية مفيدة</h1>
   </header>
 
   <section class="articles-container">
+
     <div class="article">
-      <img src="images/article1.jpg" alt="مقال 1" />
-      <div class="article-title">عنوان المقال الأول</div>
+      <img src="images/article1.jpg" alt="مقال HTML" />
+      <div class="article-content">
+        <div class="article-title">ما هي لغة HTML ولماذا يجب أن تتعلمها؟</div>
+        <div class="article-text">
+          HTML هي اللغة الأساسية لبناء صفحات الويب. تُستخدم لتحديد الهيكل والمحتوى مثل العناوين والفقرات والروابط والصور. من دون HTML، لن تستطيع المتصفحات عرض أي صفحة. تعلم HTML يُعتبر الخطوة الأولى لأي شخص يرغب في دخول عالم تطوير الويب، وهي سهلة الفهم وتعتبر الأساس لباقي اللغات مثل CSS وJavaScript. في هذا المقال نشرح كيف تبدأ بها، وأهم الوسوم التي يجب أن تتعلمها، وأفضل الممارسات لكتابة كود نظيف ومرتب.
+        </div>
+      </div>
     </div>
 
     <div class="article">
-      <img src="images/article2.jpg" alt="مقال 2" />
-      <div class="article-title">عنوان المقال الثاني</div>
+      <img src="images/article2.jpg" alt="CSS" />
+      <div class="article-content">
+        <div class="article-title">كيف تجعل موقعك جميلًا باستخدام CSS؟</div>
+        <div class="article-text">
+          CSS تُستخدم لتنسيق صفحات الويب، مثل التحكم بالألوان والخطوط والمسافات والرسوم المتحركة. تخيل أن HTML هو الهيكل، وCSS هو الملابس والألوان. بفضل CSS، يمكنك تحويل موقع بسيط إلى واجهة رائعة تلفت الأنظار. المقال يشرح أهم الخصائص مثل flexbox، grid، والـ media queries التي تجعلك تتحكم في كل تفصيل بالموقع وتجعله متجاوبًا مع كل الشاشات.
+        </div>
+      </div>
     </div>
 
     <div class="article">
-      <img src="images/article3.jpg" alt="مقال 3" />
-      <div class="article-title">عنوان المقال الثالث</div>
+      <img src="images/article3.jpg" alt="JavaScript" />
+      <div class="article-content">
+        <div class="article-title">ما دور JavaScript في مواقع الإنترنت؟</div>
+        <div class="article-text">
+          JavaScript تضيف الحياة إلى صفحات الويب! فهي المسؤولة عن التفاعلات مثل القوائم المنسدلة، النماذج، الأزرار، وغيرها. عند الضغط على زر أو كتابة في حقل، فإن JavaScript هي التي تنفذ الأوامر. يمكنك بها إنشاء ألعاب، تطبيقات ويب، وحتى ربط الموقع بقاعدة بيانات. المقال يشرح كيف تبدأ بلغة JavaScript، ويعرض أمثلة حقيقية مثل إنشاء آلة حاسبة، أو تغيير محتوى الصفحة بناءً على حدث.
+        </div>
+      </div>
     </div>
 
     <div class="article">
-      <img src="images/article4.jpg" alt="مقال 4" />
-      <div class="article-title">عنوان المقال الرابع</div>
+      <img src="images/article4.jpg" alt="مشروع موقع" />
+      <div class="article-content">
+        <div class="article-title">خطوات بناء أول موقع شخصي لك</div>
+        <div class="article-text">
+          بناء موقع شخصي يُعد تجربة تعليمية رائعة، ويساعدك في عرض مهاراتك. ابدأ بتصميم الصفحة الرئيسية باستخدام HTML وCSS، ثم أضف بعض التفاعل باستخدام JavaScript. اهتم بواجهة المستخدم واجعلها بسيطة وسهلة التصفح. لا تنسَ ربط الموقع بحسابات التواصل الاجتماعي، وإضافة قسم نبذة عنك وأعمالك. في نهاية المقال ستتعلم كيف ترفع موقعك مجانًا على GitHub Pages ليكون متاحًا للعالم.
+        </div>
+      </div>
     </div>
 
-    <div class="article">
-      <img src="images/article5.jpg" alt="مقال 5" />
-      <div class="article-title">عنوان المقال الخامس</div>
-    </div>
   </section>
 
   <footer>
-    جميع الحقوق محفوظة © 2025 FaragDev98 | 
+    جميع الحقوق محفوظة © 2025 FaragDev98 |
     <a href="terms.html">الشروط والأحكام</a> |
     <a href="privacy.html">سياسة الخصوصية</a> |
     <a href="security.html">صفحة الحماية</a>
