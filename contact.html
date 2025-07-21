@@ -11,81 +11,59 @@
       background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
     }
 
-    /* رأس الموقع */
+    /* رأس الصفحة */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       background-color: #6a1b9a;
       color: white;
-      padding: 15px 30px;
-      flex-wrap: wrap;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      font-size: 24px;
+      gap: 10px;
+      font-size: 22px;
       font-weight: bold;
-      gap: 12px;
     }
 
     .logo img {
-      width: 32px;
-      height: 32px;
-    }
-
-    .logo-text {
-      order: 1;
-    }
-
-    .logo-icon {
-      order: 2;
-      margin-left: auto;
+      width: 30px;
+      height: 30px;
     }
 
     /* شريط التنقل */
     .nav-bar {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 16px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .nav-bar a {
       text-decoration: none;
       font-weight: bold;
       color: white;
-      padding: 12px 24px;
-      border-radius: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
-    .nav-bar a:nth-child(1) {
-      background-color: #2196f3;
-    }
-
-    .nav-bar a:nth-child(2) {
-      background-color: #fbc02d;
-      color: black;
-    }
-
-    .nav-bar a:nth-child(3) {
-      background-color: #4caf50;
-    }
-
-    .nav-bar a:nth-child(4) {
-      background-color: #ab47bc;
-    }
+    .nav-bar a:nth-child(1) { background-color: #2196f3; }
+    .nav-bar a:nth-child(2) { background-color: #fbc02d; color: #000; }
+    .nav-bar a:nth-child(3) { background-color: #4caf50; }
+    .nav-bar a:nth-child(4) { background-color: #ab47bc; }
 
     .nav-bar a:hover {
       opacity: 0.85;
     }
 
-    /* محتوى الصفحة */
+    /* المحتوى */
     .contact-content {
       max-width: 800px;
       margin: 40px auto;
@@ -137,36 +115,22 @@
       text-decoration: underline;
     }
 
-    /* ترتيب مخصص للأيقونة */
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    .header-content .right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .header-content .left {
-      margin-right: auto;
+    /* استجابة */
+    @media (max-width: 600px) {
+      .nav-bar {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- رأس الموقع -->
+  <!-- رأس الصفحة -->
   <header>
-    <div class="header-content">
-      <div class="right">
-        <span class="logo-text">FaragDev98</span>
-      </div>
-      <div class="left">
-        <img src="icons/ai-icon.png" alt="Icon" class="logo-icon">
-      </div>
+    <div class="logo">
+      <img src="icons/ai-icon.png" alt="Icon">
+      <span>FaragDev98</span>
     </div>
   </header>
 
