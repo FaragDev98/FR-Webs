@@ -8,22 +8,22 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #e0f2f1, #e3f2fd);
+      background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
       color: #333;
     }
 
     /* رأس الصفحة */
     header {
-      background: linear-gradient(to left, #26a69a, #42a5f5);
+      background: #6a1b9a;
       color: white;
-      padding: 20px;
+      padding: 15px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
@@ -34,29 +34,33 @@
     }
 
     .logo::before {
-      content: "🌐";
+      content: "💡";
       margin-left: 10px;
       font-size: 22px;
     }
 
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
     nav a {
       color: white;
-      margin: 0 12px;
       text-decoration: none;
-      font-weight: bold;
       font-size: 16px;
-      transition: 0.3s;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #ffe082;
+      color: #ffd54f;
     }
 
     /* قسم التواصل */
     .contact-section {
       max-width: 800px;
       margin: 40px auto;
-      background: #ffffffd8;
+      background: #ffffffdd;
       padding: 40px 25px;
       border-radius: 16px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -64,7 +68,7 @@
 
     .contact-section h2 {
       text-align: center;
-      color: #26a69a;
+      color: #6a1b9a;
       margin-bottom: 30px;
       font-size: 28px;
     }
@@ -79,7 +83,7 @@
     .contact-methods a {
       display: block;
       color: #333;
-      background: linear-gradient(to right, #b2dfdb, #bbdefb);
+      background: linear-gradient(to right, #ce93d8, #b3e5fc);
       padding: 15px 20px;
       border-radius: 10px;
       text-decoration: none;
@@ -88,7 +92,7 @@
     }
 
     .contact-methods a:hover {
-      background: linear-gradient(to right, #26c6da, #42a5f5);
+      background: linear-gradient(to right, #8e24aa, #039be5);
       color: white;
       transform: scale(1.02);
     }
@@ -97,7 +101,6 @@
       margin-left: 10px;
     }
 
-    /* التذييل */
     footer {
       text-align: center;
       padding: 20px;
@@ -110,7 +113,7 @@
 </head>
 <body>
 
-  <!-- رأس الصفحة -->
+  <!-- رأس الصفحة مثل index.html -->
   <header>
     <div class="logo">FaragDev98</div>
     <nav>
@@ -121,16 +124,16 @@
     </nav>
   </header>
 
-  <!-- قسم التواصل -->
+  <!-- محتوى صفحة التواصل -->
   <div class="contact-section">
     <h2>📞 تواصل معنا</h2>
     <div class="contact-methods">
       <a href="https://wa.me/201066047545" target="_blank"><i>💬</i> واتساب: 01066047545</a>
       <a href="tel:01091838789"><i>📱</i> الهاتف: 01091838789</a>
       <a href="mailto:Farajbdallh891@gmail.com"><i>✉️</i> البريد الإلكتروني: Farajbdallh891@gmail.com</a>
-      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank"><i>📘</i> صفحتنا على فيسبوك</a>
-      <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank"><i>💼</i> صفحتنا على لينكدإن</a>
-      <a href="https://www.youtube.com/@Fabrica-courses" target="_blank"><i>📺</i> قناتنا على يوتيوب</a>
+      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank"><i>📘</i> فيسبوك</a>
+      <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank"><i>💼</i> لينكدإن</a>
+      <a href="https://www.youtube.com/@Fabrica-courses" target="_blank"><i>📺</i> يوتيوب</a>
     </div>
   </div>
 
