@@ -14,7 +14,7 @@
     /* رأس الموقع */
     header {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       align-items: center;
       background-color: #6a1b9a;
       color: white;
@@ -108,6 +108,33 @@
       color: white;
     }
 
+    textarea {
+      width: 100%;
+      height: 120px;
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #4a148c;
+    }
+
     footer {
       text-align: center;
       background: #e1bee7;
@@ -122,8 +149,8 @@
   <!-- رأس الموقع -->
   <header>
     <div class="logo">
-      <img src="icons/ai-icon.png" alt="Icon">
       <span>FaragDev98</span>
+      <img src="icons/ai-icon.png" alt="Icon">
     </div>
   </header>
 
@@ -144,11 +171,17 @@
     <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 صفحتنا على فيسبوك</a>
     <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank">💼 صفحتنا على لينكدإن</a>
     <a href="https://www.youtube.com/@Fabrica-courses" target="_blank">📺 قناتنا على يوتيوب</a>
+
+    <textarea placeholder="اكتب رسالتك هنا..."></textarea>
+    <button>إرسال</button>
   </div>
 
   <!-- التذييل -->
   <footer>
-    <strong>footer.js</strong>
+    <a href="#">الشروط والأحكام</a> | 
+    <a href="#">سياسة الخصوصية</a> | 
+    <a href="#">سياسة الحماية</a><br>
+    &copy; 2025 FaragDev98. جميع الحقوق محفوظة.
   </footer>
 
 </body>
