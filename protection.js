@@ -1,36 +1,35 @@
 // منع كليك يمين
-document.addEventListener("contextmenu", (e) => {
+window.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
-// منع اختصارات النسخ والطباعة وحفظ الصفحة
-document.addEventListener("keydown", function (e) {
+// منع اختصارات النسخ والتفاصيل البرمجية
+window.addEventListener("keydown", function (e) {
   if (
-    (e.ctrlKey && e.key === "u") ||  // Ctrl + U
-    (e.ctrlKey && e.key === "s") ||  // Ctrl + S
-    (e.ctrlKey && e.key === "p") ||  // Ctrl + P
-    (e.ctrlKey && e.key === "c") ||  // Ctrl + C
-    (e.ctrlKey && e.key === "a")     // Ctrl + A
+    (e.ctrlKey && ["c", "u", "s", "p", "a"].includes(e.key.toLowerCase())) ||
+    (e.key === "F12") || // منع أدوات المطور
+    (e.ctrlKey && e.shiftKey && ["i", "j"].includes(e.key.toLowerCase()))
   ) {
     e.preventDefault();
+    alert("🚫 هذا الإجراء غير مسموح.");
   }
 });
 
-// منع سحب النصوص وتحديدها
+// منع تحديد النصوص مع السماح بالأرقام والروابط فقط
 document.addEventListener("selectstart", function (e) {
-  const selectedText = window.getSelection().toString();
-  const onlyNumbersAndLinks = /^[0-9\s:\/.-]*$/;
+  const selection = window.getSelection().toString();
+  const isAllowed = /^[0-9:/.\s\-]+$/.test(selection); // فقط أرقام وروابط
 
-  if (!onlyNumbersAndLinks.test(selectedText)) {
+  if (!isAllowed) {
     e.preventDefault();
     window.getSelection().removeAllRanges();
   }
 });
 
-// منع سكرين شوت باستخدام بعض الأدوات (ليس مضمونًا 100%)
+// منع أخذ سكرين شوت بزر PrintScreen
 window.addEventListener("keyup", function (e) {
   if (e.key === "PrintScreen") {
-    navigator.clipboard.writeText("📛 ممنوع أخذ لقطة شاشة في هذا الموقع.");
-    alert("🚫 لقطة الشاشة ممنوعة!");
+    navigator.clipboard.writeText("🚫 لا يمكنك تصوير هذه الصفحة");
+    alert("📸 تم حظر لقطة الشاشة!");
   }
 });
