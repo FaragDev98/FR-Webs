@@ -2,56 +2,69 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>صفحة الحماية - FaragDev98</title>
   <style>
     body {
-      margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e3f2fd, #ede7f6);
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
-    }
-    header, footer {
-      background-color: #1565c0;
-      color: white;
-      padding: 20px;
       text-align: center;
     }
-    main {
-      flex: 1;
-      padding: 20px;
-      text-align: center;
+
+    h1 {
+      color: #3f51b5;
+      margin-bottom: 20px;
     }
-    a {
-      color: white;
+
+    img {
+      max-width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .cv-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #673ab7;
+      color: #fff;
       text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .cv-button:hover {
+      background-color: #5e35b1;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>صفحة الحماية</h1>
-  </header>
+  <h1>🔒 صفحة الحماية</h1>
 
-  <main>
-    <p>نحن نحرص على حماية بيانات المستخدمين ومحتوى الموقع.</p>
-    <ul style="text-align: right; max-width: 600px; margin: auto;">
-      <li>الموقع لا يجمع أي بيانات حساسة.</li>
-      <li>جميع الحقوق محفوظة لمطور الموقع FaragDev98.</li>
-      <li>المحتوى الرقمي محمي من النسخ غير المصرح به.</li>
-      <li>لا يحتوي الموقع على أي برمجيات خبيثة.</li>
-    </ul>
-  </main>
+  <!-- ✅ صورة جميلة -->
+  <img src="https://via.placeholder.com/250x250.png?text=Protected" alt="صورة حماية" />
+
+  <!-- ✅ زر تحميل السيرة الذاتية -->
+  <a class="cv-button" href="cv.pdf" download>📄 تحميل السيرة الذاتية (CV)</a>
 
   <footer>
-    <a href="index.html">العودة إلى الصفحة الرئيسية</a>
+    جميع الحقوق محفوظة © FaragDev98 - 2025
   </footer>
 
 </body>
