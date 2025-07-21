@@ -3,117 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fabrica Course - فراج عبدالله</title>
+  <title>FarajDev98 - الموقع الرسمي</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      background: linear-gradient(135deg, #ede7f6, #e1f5fe);
       color: #333;
+      text-align: center;
     }
 
     header {
-      background: #7b1fa2;
+      background-color: #512da8;
       color: white;
-      padding: 1rem;
-      text-align: center;
+      padding: 20px 10px;
     }
 
-    .content {
-      padding: 2rem;
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    section {
+      padding: 40px 20px;
     }
 
     .button {
-      background: #8e24aa;
+      background-color: #7e57c2;
       color: white;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      cursor: pointer;
+      padding: 14px 28px;
+      margin-top: 20px;
+      font-size: 16px;
       border-radius: 8px;
-      margin-top: 1.5rem;
-    }
-
-    .footer {
-      background: #4a148c;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .footer a {
-      color: #ffccff;
-      margin: 0 10px;
+      cursor: pointer;
       text-decoration: none;
+      display: inline-block;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    footer {
+      background-color: #ede7f6;
+      padding: 20px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ccc;
+    }
+
+    footer a {
+      color: #512da8;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .links {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Fabrica Course</h1>
-    <p>تعلم البرمجة من البداية حتى الاحتراف مع فراج عبدالله</p>
+    <h1>FarajDev98 - Fabrica Course</h1>
   </header>
 
-  <div class="content">
-    <h2>كتاب HTML الشامل للمبتدئين</h2>
-    <p>احصل على نسخة PDF من الكتاب فقط بـ 2 دولار (أو ما يعادله بالجنيه المصري)</p>
+  <section>
+    <h2>مرحبًا بك في موقعي الرسمي</h2>
+    <p>أنا فراج عبد الله، مطور مواقع وتطبيقات، أقدم دورات احترافية في البرمجة وتصميم المواقع.</p>
+    <a class="button" href="https://wa.me/201091838789">اشترك في الكورس</a>
+  </section>
 
-    <button class="button" onclick="window.open('https://wa.me/201091838789', '_blank')">اشترِ الآن عبر واتساب</button>
-
-    <h3 style="margin-top:2rem;">وسائل الدفع:</h3>
-    <p>
-      وي كاش: <span onclick="copyText('01558516081')" style="cursor:pointer; color:#6a1b9a;">01558516081</span><br>
-      أورنج كاش: <span onclick="copyText('01285895096')" style="cursor:pointer; color:#6a1b9a;">01285895096</span><br>
-      فودافون كاش: <span onclick="copyText('01066047545')" style="cursor:pointer; color:#6a1b9a;">01066047545</span><br>
-      باي بال: <span onclick="copyText('Farajbdallh891@gmail.com')" style="cursor:pointer; color:#6a1b9a;">Farajbdallh891@gmail.com</span>
-    </p>
-
-    <h3>وسائل التواصل:</h3>
-    <p>
-      <a href="https://wa.me/201091838789" target="_blank">واتساب</a> |
-      <a href="https://facebook.com" target="_blank">فيسبوك</a> |
-      <a href="tel:01091838789">الهاتف: 01091838789</a> |
-      <a href="mailto:Farajbdallh891@gmail.com">البريد الإلكتروني</a>
-    </p>
-
-    <div style="margin-top: 3rem;">
-      <h4>شهادة إتمام من Coursera:</h4>
-      <p>
-        Google - Coursera<br>
-        <strong>CERTIFICATE OF COMPLETION</strong><br>
-        Awarded to Faraj Abdallah for successfully completing<br>
-        <em>Introduction to Software Development and Web Design</em><br>
-        June 2025
-      </p>
-      <p><em>- Jeff Maggioncalda (CEO)</em></p>
+  <footer>
+    <div class="links">
+      <a href="terms.html">الشروط والأحكام</a> |
+      <a href="privacy.html">سياسة الخصوصية</a> |
+      <a href="protection.html">صفحة الحماية</a>
     </div>
-  </div>
+    <p>جميع الحقوق محفوظة © 2025 FarajDev98</p>
+  </footer>
 
-  <div class="footer">
-    جميع الحقوق محفوظة © 2025 FaragDev98<br>
-    <a href="terms.html">الشروط والأحكام</a> |
-    <a href="privacy-policy.html">سياسة الخصوصية</a> |
-    <a href="protection.html">الحماية</a>
-  </div>
-
-  <!-- ربط ملف الحماية -->
-  <script src="security.js"></script>
-
-  <!-- نسخ النصوص عند الضغط -->
-  <script>
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("✅ تم نسخ البيانات: " + text);
-      }).catch(() => {
-        alert("⚠️ لم يتم النسخ تلقائيًا، انسخها يدويًا.");
-      });
-    }
-  </script>
+  <script src="protection.js"></script>
 </body>
 </html>
