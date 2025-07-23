@@ -28,13 +28,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       flex-direction: row-reverse;
-    }
-
-    .logo-area img {
-      width: 36px;
-      height: 36px;
     }
 
     .logo-area h1 {
@@ -45,12 +40,18 @@
       gap: 8px;
     }
 
+    .logo-area img {
+      width: 30px;
+      height: 30px;
+    }
+
     nav {
       margin-top: 10px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 10px;
+      flex-direction: row;
     }
 
     nav a {
@@ -115,8 +116,10 @@
 
   <header>
     <div class="logo-area">
-      <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
-      <h1>Farag Dev 98</h1>
+      <h1>
+        <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
+        Farag Dev 98
+      </h1>
     </div>
     <nav>
       <a href="index.html">الرئيسية</a>
