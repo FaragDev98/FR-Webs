@@ -19,7 +19,7 @@
     header {
       background: linear-gradient(135deg, #7b1fa2, #512da8);
       color: #fff;
-      padding: 15px 30px 5px;
+      padding: 15px 30px;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
@@ -29,7 +29,6 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 10px;
     }
 
     .logo-area img {
@@ -43,23 +42,24 @@
     }
 
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      background-color: #ede7f6;
-      padding: 10px 0;
+      margin-top: 10px;
     }
 
     nav a {
+      display: inline-block;
+      margin: 10px;
+      padding: 8px 18px;
+      background-color: #ede7f6;
       color: #6a1b9a;
       font-weight: bold;
+      border-radius: 8px;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ab47bc;
+      background-color: #d1c4e9;
+      color: #4a148c;
     }
 
     main {
@@ -93,13 +93,6 @@
       text-decoration: underline;
     }
 
-    .back-link {
-      display: block;
-      margin-top: 40px;
-      text-align: center;
-      font-size: 1rem;
-    }
-
     footer {
       text-align: center;
       color: #777;
@@ -116,11 +109,7 @@
       <h1>Farag Dev 98</h1>
     </div>
     <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="article1.html">HTML</a>
-      <a href="article2.html">CSS</a>
-      <a href="article3.html">JavaScript</a>
-      <a href="articles.html">جميع المقالات</a>
+      <a href="index.html">العودة للرئيسية</a>
     </nav>
   </header>
 
@@ -162,10 +151,6 @@
 
     <h2>الخطوة التالية</h2>
     <p>بعد تعلم HTML، يوصى بتعلم CSS لتصميم الصفحات، ثم JavaScript لجعل الموقع تفاعلياً. يمكنك بعد ذلك تعلم مكتبات وأطر عمل حديثة مثل Bootstrap أو React.</p>
-
-    <div class="back-link">
-      <a href="articles.html">← عودة إلى قائمة المقالات</a>
-    </div>
   </main>
 
   <footer id="footer"></footer>
