@@ -9,62 +9,66 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ef5350, #7e57c2, #42a5f5);
+      background: linear-gradient(to bottom right, #d32f2f, #7b1fa2, #1976d2);
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #fff;
       line-height: 1.9;
     }
 
     header {
-      background: #fff;
-      color: #512da8;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
       padding: 15px 20px;
-      text-align: left;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 8px;
+      flex-direction: row; /* ← بدل row-reverse */
+    }
+
+    .logo-area img {
+      width: 36px;
+      height: 36px;
+      order: 1; /* ← الأيقونة جهة اليسار */
     }
 
     .logo-area h1 {
       margin: 0;
-      font-size: 22px;
+      font-size: 24px;
       display: flex;
       align-items: center;
       gap: 8px;
-    }
-
-    .logo-area h1 img {
-      width: 36px;
-      height: 36px;
+      order: 2;
     }
 
     nav {
+      margin-top: 10px;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+      flex-direction: row;
     }
 
     nav a {
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 8px 18px;
+      border-radius: 8px;
       color: white;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s ease;
     }
 
-    nav a:nth-child(1) { background-color: #ef5350; }  /* أحمر */
-    nav a:nth-child(2) { background-color: #42a5f5; }  /* أزرق */
-    nav a:nth-child(3) { background-color: #7e57c2; }  /* بنفسجي */
-    nav a:nth-child(4) { background-color: #26a69a; }  /* أخضر */
+    nav a:nth-child(1) { background-color: #d32f2f; }   /* أحمر */
+    nav a:nth-child(2) { background-color: #f57c00; }   /* برتقالي */
+    nav a:nth-child(3) { background-color: #388e3c; }   /* أخضر */
+    nav a:nth-child(4) { background-color: #1976d2; }   /* أزرق */
 
     nav a:hover {
       opacity: 0.85;
@@ -72,15 +76,27 @@
 
     main {
       max-width: 950px;
-      margin: 30px auto;
-      background: #fff;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-img {
+      width: 100%;
+      height: 250px;
+      background-color: #ccc;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      background-image: url("images/html-cover.jpg"); /* ضع صورة هنا لاحقاً */
+      background-size: cover;
+      background-position: center;
     }
 
     h2 {
-      color: #512da8;
+      color: #fff;
       margin-top: 30px;
     }
 
@@ -93,7 +109,7 @@
     }
 
     a {
-      color: #6a1b9a;
+      color: #ffeb3b;
       text-decoration: none;
     }
 
@@ -103,7 +119,7 @@
 
     footer {
       text-align: center;
-      color: #777;
+      color: #ddd;
       font-size: 0.9rem;
       margin: 60px 0 20px;
     }
@@ -113,55 +129,65 @@
 
   <header>
     <div class="logo-area">
-      <h1>
-        <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
-        Farag Dev 98
-      </h1>
+      <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
+      <h1>Farag Dev 98</h1>
     </div>
     <nav>
       <a href="index.html">الرئيسية</a>
-      <a href="services.html">خدمات</a>
-      <a href="articles.html">مقالات</a>
-      <a href="contact.html">تواصل</a>
+      <a href="services.html">الخدمات</a>
+      <a href="article.html">المقالات</a> <!-- تم تعديل الرابط -->
+      <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
+<img
+  src="images/html-banner.jpg"
+  alt="HTML Banner"
+  style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;"
+/>
 
-  <main>
-    <!-- هنا الصورة المرتبطة مباشرة -->
-    <img
-      src="images/html-banner.jpg"
-      alt="HTML Banner"
-      style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;"
-    />
-
-    <h2>مقدمة إلى HTML: حجر الأساس في بناء الويب</h2>
+    <h2>مقدمة ملهمة 👨‍💻</h2>
     <p>
-      في عالم الويب، هناك دائمًا بداية، وتلك البداية تُدعى HTML. إنها اللغة الأساسية التي بدونها لا يمكن لأي صفحة أن تظهر أو تُبنى. HTML ليست لغة برمجة، بل لغة ترميز تصف هيكل صفحات الإنترنت. 
+      هل تساءلت يومًا كيف يتم بناء صفحات الإنترنت؟ كيف تظهر النصوص، الصور، والأزرار أمامك بهذا التناسق؟ الجواب يبدأ من هنا، من لغة HTML.
+      هذه المقالة تمهّد لك الطريق لتصبح مطور ويب ناجح، بدايةً من الأساس الذي لا يمكن الاستغناء عنه.
     </p>
 
-    <h2>من هو مخترع HTML؟</h2>
+    <h2>ما هي HTML؟</h2>
     <p>
-      تم اختراع HTML في عام 1991 على يد العالم البريطاني <strong>تيم بيرنرز-لي (Tim Berners-Lee)</strong>، مؤسس شبكة الويب العالمية (WWW). كانت رؤيته هي تمكين الباحثين من تبادل الوثائق والمعلومات بسهولة من خلال متصفح إنترنت بسيط.
+      HTML هي اختصار لـ <strong>HyperText Markup Language</strong>، وتعني "لغة ترميز النص التشعبي"، وهي اللغة الأساسية التي تُستخدم لبناء وتصميم هيكل صفحات الويب.
+      تُعد HTML نقطة البداية لكل موقع، فهي التي تُخبر المتصفح كيف يرتب المحتوى، من العناوين إلى الفقرات، ومن الصور إلى الروابط.
     </p>
 
-    <h2>لماذا HTML مهمة جدًا؟</h2>
-    <ul>
-      <li>بدونها لا يمكن عرض أي محتوى على المتصفح.</li>
-      <li>تُستخدم مع CSS لتصميم الموقع، ومع JavaScript لتطوير التفاعل.</li>
-      <li>هي الخطوة الأولى لأي مبرمج أو مصمم واجهات.</li>
-    </ul>
-
-    <h2>مكونات HTML الأساسية</h2>
-    <ul>
-      <li><code>&lt;html&gt;</code>: العنصر الجذري للصفحة.</li>
-      <li><code>&lt;head&gt;</code>: يحتوي على بيانات تعريفية.</li>
-      <li><code>&lt;body&gt;</code>: يحتوي على كل ما يظهر للمستخدم.</li>
-      <li><code>&lt;h1&gt;..&lt;/h1&gt;</code> - <code>&lt;p&gt;..&lt;/p&gt;</code> - <code>&lt;a&gt;..&lt;/a&gt;</code>: لبناء النصوص والروابط.</li>
-    </ul>
-
-    <h2>خاتمة</h2>
+    <h2>من هو تيم برنرز لي؟</h2>
     <p>
-      تعلم HTML هو بوابة دخولك إلى عالم تطوير الويب. هو بمثابة تعلم الأبجدية قبل كتابة الروايات. نصيحتي لك: لا تتوقف عند الوسوم، بل احترف استخدامها، وابدأ رحلتك في بناء الإنترنت بطريقتك.
+      تيم برنرز لي هو العقل المُبدع خلف الإنترنت. في عام 1989، اخترع نظام الويب، وطوّر أول متصفح وأول محرر HTML. كانت رؤيته واضحة: إنشاء شبكة مفتوحة يمكن للجميع استخدامها، ومشاركة المعرفة بحرية.
+    </p>
+
+    <h2>مميزات لغة HTML</h2>
+    <ul>
+      <li>سريعة التعلم، حتى للمبتدئين.</li>
+      <li>مدعومة على جميع المتصفحات دون الحاجة لأي إضافات.</li>
+      <li>تمكّنك من بناء أي موقع من الصفر.</li>
+      <li>تتكامل بسلاسة مع CSS وJavaScript لتقديم تجربة استخدام احترافية.</li>
+    </ul>
+
+    <h2>وسوم أساسية في HTML</h2>
+    <ul>
+      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> — تستخدم للعناوين الرئيسية.</li>
+      <li><code>&lt;p&gt;...&lt;/p&gt;</code> — تُمثل فقرة نصية.</li>
+      <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code> — لإنشاء روابط.</li>
+      <li><code>&lt;img src="..."&gt;</code> — لإدراج الصور.</li>
+      <li><code>&lt;ul&gt;&lt;li&gt;</code> — لإنشاء قائمة غير مرتبة.</li>
+    </ul>
+
+    <h2>لماذا تبدأ بـ HTML؟</h2>
+    <p>
+      لأنها البنية التحتية لأي صفحة ويب. قبل أن تتعلم كيفية تزيين الصفحة (CSS) أو جعلها ديناميكية (JavaScript)، يجب أن تُتقن بناء الهيكل الأساسي باستخدام HTML.
+      تعلمك HTML سيمكنك من فهم منطق تصميم الصفحات، وهو ما تحتاجه لاحتراف تطوير الويب.
+    </p>
+
+    <h2>ماذا بعد؟</h2>
+    <p>
+      بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية.
     </p>
   </main>
 
