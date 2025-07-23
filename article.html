@@ -17,27 +17,17 @@
     header {
       background: linear-gradient(135deg, #7b1fa2, #512da8);
       color: white;
-      padding: 15px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 15px 30px 5px;
+      text-align: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      direction: rtl;
     }
 
     .logo-area {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      order: 2; /* ينقله للزاوية التانية */
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      order: 1;
+      margin-bottom: 10px;
     }
 
     .logo-area img {
@@ -47,7 +37,15 @@
 
     .logo-area h1 {
       margin: 0;
-      font-size: 22px;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
     }
 
     .nav-links a {
@@ -59,8 +57,22 @@
       transition: background 0.3s;
     }
 
+    .nav-links a:nth-child(1) {
+      background: #2196f3; /* أزرق */
+    }
+    .nav-links a:nth-child(2) {
+      background: #37474f; /* أسمر */
+    }
+    .nav-links a:nth-child(3) {
+      background: #e53935; /* أحمر */
+    }
+    .nav-links a:nth-child(4) {
+      background: #fbc02d; /* أصفر */
+      color: black;
+    }
+
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      opacity: 0.85;
     }
 
     .articles-container {
@@ -171,20 +183,19 @@
 <body>
 
   <header>
+    <div class="logo-area">
+      <img src="icons/ai-icon.png" alt="شعار Farag Dev 98">
+      <h1>Farag Dev 98</h1>
+    </div>
     <nav class="nav-links">
       <a href="index.html">الرئيسية</a>
       <a href="services.html">الخدمات</a>
       <a href="articles.html">مقال</a>
       <a href="contact.html">تواصل</a>
     </nav>
-    <div class="logo-area">
-      <img src="icons/ai-icon.png" alt="شعار الموقع">
-      <h1>FaragDev98</h1>
-    </div>
   </header>
 
   <section class="articles-container">
-
     <div class="article" id="html">
       <img src="images/article1.jpg" alt="أساسيات HTML" />
       <div class="article-content">
@@ -228,7 +239,6 @@
         <a href="article4.html" class="read-btn read-start">ابدأ تعلم البرمجة</a>
       </div>
     </div>
-
   </section>
 
   <footer>
