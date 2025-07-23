@@ -9,19 +9,19 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9ff;
+      background: linear-gradient(to bottom right, #d32f2f, #7b1fa2, #1976d2);
       margin: 0;
       padding: 0;
-      color: #333;
+      color: #fff;
       line-height: 1.9;
     }
 
     header {
-      background: linear-gradient(135deg, #7b1fa2, #512da8);
+      background: rgba(0, 0, 0, 0.85);
       color: #fff;
       padding: 15px 20px;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .logo-area {
@@ -61,10 +61,10 @@
       transition: 0.3s ease;
     }
 
-    nav a:nth-child(1) { background-color: #e53935; }   /* أحمر */
-    nav a:nth-child(2) { background-color: #fbc02d; }   /* أصفر */
-    nav a:nth-child(3) { background-color: #1e88e5; }   /* أزرق */
-    nav a:nth-child(4) { background-color: #8e24aa; }   /* بنفسجي */
+    nav a:nth-child(1) { background-color: #d32f2f; }   /* أحمر */
+    nav a:nth-child(2) { background-color: #f57c00; }   /* برتقالي */
+    nav a:nth-child(3) { background-color: #388e3c; }   /* أخضر */
+    nav a:nth-child(4) { background-color: #1976d2; }   /* أزرق */
 
     nav a:hover {
       opacity: 0.85;
@@ -73,14 +73,15 @@
     main {
       max-width: 950px;
       margin: 40px auto;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.1);
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     }
 
     h2 {
-      color: #6a1b9a;
+      color: #fff;
       margin-top: 30px;
     }
 
@@ -93,7 +94,7 @@
     }
 
     a {
-      color: #6a1b9a;
+      color: #ffeb3b;
       text-decoration: none;
     }
 
@@ -103,7 +104,7 @@
 
     footer {
       text-align: center;
-      color: #777;
+      color: #ddd;
       font-size: 0.9rem;
       margin: 60px 0 20px;
     }
@@ -120,36 +121,52 @@
     </div>
     <nav>
       <a href="index.html">الرئيسية</a>
-      <a href="services.html">خدمات</a>
-      <a href="articles.html">مقال</a>
-      <a href="contact.html">تواصل</a>
+      <a href="services.html">الخدمات</a>
+      <a href="articles.html">المقالات</a>
+      <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
 
   <main>
     <h2>ما هي HTML؟</h2>
     <p>
-      HTML هي لغة بناء صفحات الويب، وتُستخدم لتحديد الهيكل والمحتوى داخل متصفح الإنترنت. اسمها الكامل هو <strong>HyperText Markup Language</strong>، أي "لغة ترميز النص التشعبي". تمثل HTML العمود الفقري لأي موقع إلكتروني، إذ تُمكّن المطورين من تنظيم النصوص، العناوين، الصور، الروابط، الجداول، القوائم، والفيديوهات داخل الصفحة.
+      HTML هي اختصار لـ <strong>HyperText Markup Language</strong>، وهي اللغة الأساسية التي تُستخدم لإنشاء صفحات الويب. 
+      تم تطوير HTML لأول مرة في أوائل التسعينيات من قِبل العالم البريطاني <strong>تيم برنرز لي</strong>، بهدف تسهيل مشاركة المعلومات بين الباحثين عبر الإنترنت. 
+      مع مرور السنوات، أصبحت HTML حجر الأساس الذي تُبنى عليه مواقع الإنترنت، ولا يمكن لأي مطوّر تجاهلها.
     </p>
 
-    <h2>أهمية HTML</h2>
-    <ul>
-      <li>الأساس الذي يُبنى عليه أي موقع.</li>
-      <li>مفهومة وسهلة التعلم للمبتدئين.</li>
-      <li>تعمل مع CSS وJavaScript لبناء مواقع ديناميكية.</li>
-    </ul>
-
-    <h2>أشهر الوسوم في HTML</h2>
-    <ul>
-      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code>: لكتابة عنوان رئيسي.</li>
-      <li><code>&lt;p&gt;...&lt;/p&gt;</code>: لكتابة فقرة.</li>
-      <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code>: لإنشاء رابط.</li>
-      <li><code>&lt;img src="..."&gt;</code>: لعرض صورة.</li>
-    </ul>
-
-    <h2>الخطوة التالية</h2>
+    <h2>من هو تيم برنرز لي؟</h2>
     <p>
-      بعد إتقان HTML، يُنصح بالانتقال إلى CSS لتنسيق الموقع وتحديد ألوانه وتصميمه، ثم إلى JavaScript لإضافة التفاعلات والوظائف البرمجية.
+      هو عالم حاسوب بريطاني يُعتبر الأب الروحي لشبكة الإنترنت. اخترع نظام "الويب" في عام 1989، ثم طوّر أول متصفح ومحرر HTML. رؤيته كانت تتمثل في شبكة مفتوحة يستطيع أي شخص الوصول إليها ومشاركة المعرفة عبرها بحرية.
+    </p>
+
+    <h2>مميزات لغة HTML</h2>
+    <ul>
+      <li>سهلة التعلم والتطبيق للمبتدئين.</li>
+      <li>تُستخدم في كل موقع إلكتروني تقريبًا.</li>
+      <li>مدعومة من جميع المتصفحات بدون أي إضافات.</li>
+      <li>تعمل جنبًا إلى جنب مع CSS وJavaScript لتقديم تجربة مستخدم متكاملة.</li>
+    </ul>
+
+    <h2>بعض الوسوم الأساسية في HTML</h2>
+    <ul>
+      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> — عنوان رئيسي.</li>
+      <li><code>&lt;p&gt;...&lt;/p&gt;</code> — فقرة نصية.</li>
+      <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code> — رابط خارجي أو داخلي.</li>
+      <li><code>&lt;img src="..."&gt;</code> — إدراج صورة.</li>
+      <li><code>&lt;ul&gt;&lt;li&gt;</code> — قائمة غير مرتبة.</li>
+    </ul>
+
+    <h2>لماذا يجب تعلم HTML أولاً؟</h2>
+    <p>
+      لأنها الأساس. قبل التفكير في تنسيق الصفحة (CSS) أو جعلها تفاعلية (JavaScript)، يجب فهم الهيكل البنائي للصفحة الذي يُبنى باستخدام HTML.
+      كما أنها تمنحك فهمًا عميقًا لكيفية تعامل المتصفحات مع الصفحات، مما يسهل عليك التعمق في باقي تقنيات تطوير الويب لاحقًا.
+    </p>
+
+    <h2>الانتقال إلى المستوى التالي</h2>
+    <p>
+      بعد إتقان HTML، يمكنك الانتقال إلى تعلم CSS لتصميم الصفحات وتنسيقها، ثم JavaScript لإضافة التفاعلات.
+      مع هذه اللغات الثلاث، يمكنك بناء مواقع قوية وتفاعلية وجذابة.
     </p>
   </main>
 
