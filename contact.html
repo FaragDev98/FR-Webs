@@ -33,33 +33,6 @@
       height: 32px;
     }
 
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 15px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .nav-bar a {
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .nav-bar a:nth-child(1) { background-color: #2196f3; }
-    .nav-bar a:nth-child(2) { background-color: #fbc02d; color: black; }
-    .nav-bar a:nth-child(3) { background-color: #4caf50; }
-    .nav-bar a:nth-child(4) { background-color: #ab47bc; }
-
-    .nav-bar a:hover {
-      opacity: 0.85;
-    }
-
     .contact-content {
       max-width: 800px;
       margin: 40px auto;
@@ -76,25 +49,32 @@
       margin-bottom: 25px;
     }
 
-    .contact-links {
+    .contact-buttons {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 30px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
     }
 
-    .contact-links a {
+    .contact-buttons a {
+      flex: 1 1 45%;
+      text-align: center;
       text-decoration: none;
-      background-color: #f3e5f5;
+      font-weight: bold;
       padding: 12px;
-      border-radius: 8px;
-      color: #333;
+      border-radius: 10px;
+      color: white;
       transition: 0.3s;
     }
 
-    .contact-links a:hover {
-      background-color: #ce93d8;
-      color: white;
+    .whatsapp { background-color: #4caf50; }
+    .phone { background-color: #2196f3; }
+    .email { background-color: #f57c00; }
+    .facebook { background-color: #3b5998; }
+
+    .contact-buttons a:hover {
+      opacity: 0.9;
     }
 
     form {
@@ -141,7 +121,7 @@
 </head>
 <body>
 
-  <!-- رأس الموقع -->
+  <!-- رأس الصفحة -->
   <header>
     <div class="logo">
       <img src="icons/ai-icon.png" alt="Icon">
@@ -149,25 +129,19 @@
     </div>
   </header>
 
-  <!-- شريط التنقل -->
-  <div class="nav-bar">
-    <a href="index.html">الرئيسية</a>
-    <a href="services.html">الخدمات</a>
-    <a href="article.html">مقال</a>
-    <a href="contact.html">تواصل</a>
-  </div>
-
   <!-- محتوى التواصل -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
 
-    <div class="contact-links">
-      <a href="https://wa.me/201066047545" target="_blank">💬 واتساب: 01066047545</a>
-      <a href="tel:01091838789">📱 الهاتف: 01091838789</a>
-      <a href="mailto:Farajbdallh891@gmail.com">✉️ البريد الإلكتروني: Farajbdallh891@gmail.com</a>
-      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 فيسبوك</a>
+    <!-- أزرار وسائل التواصل -->
+    <div class="contact-buttons">
+      <a class="whatsapp" href="https://wa.me/201066047545" target="_blank">💬 واتساب</a>
+      <a class="phone" href="tel:01091838789">📱 الهاتف</a>
+      <a class="email" href="mailto:Farajbdallh891@gmail.com">✉️ البريد الإلكتروني</a>
+      <a class="facebook" href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 فيسبوك</a>
     </div>
 
+    <!-- نموذج الرسالة -->
     <form action="mailto:Farajbdallh891@gmail.com" method="POST" enctype="text/plain">
       <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
       <button class="send-button" type="submit">📤 إرسال الرسالة</button>
