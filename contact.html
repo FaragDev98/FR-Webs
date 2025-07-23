@@ -12,21 +12,18 @@
     }
 
     header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      text-align: left;
+      padding: 15px 30px;
       background-color: #6a1b9a;
       color: white;
-      padding: 15px 30px;
     }
 
     .logo {
       display: flex;
       align-items: center;
+      gap: 10px;
       font-size: 24px;
       font-weight: bold;
-      gap: 12px;
-      margin-left: auto;
     }
 
     .logo img {
@@ -37,9 +34,8 @@
     .nav-bar {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 20px;
-      padding: 15px;
+      padding: 10px;
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
@@ -78,32 +74,32 @@
       margin-bottom: 25px;
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .contact-buttons a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      background-color: #f3e5f5;
+      padding: 12px;
+      border-radius: 8px;
+      color: #333;
+      transition: 0.3s;
+      text-align: center;
     }
 
-    .form-group input,
+    .contact-buttons a:hover {
+      background-color: #ce93d8;
+      color: white;
+    }
+
     textarea {
+      width: 100%;
+      height: 150px;
       padding: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-size: 16px;
-    }
-
-    textarea {
       resize: vertical;
-      height: 120px;
-    }
-
-    .explanation {
-      margin-top: 15px;
-      color: #555;
-      font-size: 15px;
-      background-color: #f3e5f5;
-      padding: 10px;
-      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
     }
 
     .send-button {
@@ -123,33 +119,6 @@
       background-color: #4a148c;
     }
 
-    .buttons-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .buttons-group a {
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .buttons-group a:nth-child(1) { background-color: #25d366; } /* WhatsApp */
-    .buttons-group a:nth-child(2) { background-color: #d44638; } /* Email */
-    .buttons-group a:nth-child(3) { background-color: #1877f2; } /* Facebook */
-    .buttons-group a:nth-child(4) { background-color: #0077b5; } /* LinkedIn */
-    .buttons-group a:nth-child(5) { background-color: #ff0000; } /* YouTube */
-
-    .buttons-group a:hover {
-      opacity: 0.85;
-    }
-
     footer {
       text-align: center;
       background: #e1bee7;
@@ -164,7 +133,7 @@
   <!-- رأس الموقع -->
   <header>
     <div class="logo">
-      <img src="icons/ai-icon.png" alt="Icon">
+      <img src="icons/ai-icon.png" alt="Icon" />
       <span>FaragDev98</span>
     </div>
   </header>
@@ -181,21 +150,18 @@
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
 
-    <form onsubmit="sendMail(); return false;" class="form-group">
-      <input type="text" id="name" placeholder="🧑‍💻 الاسم">
+    <div class="contact-buttons">
+      <a href="https://wa.me/201066047545" target="_blank">💬 واتساب: 01066047545</a>
+      <a href="tel:01091838789">📱 الهاتف: 01091838789</a>
+      <a href="mailto:Farajbdallh891@gmail.com">✉️ البريد الإلكتروني: Farajbdallh891@gmail.com</a>
+      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 صفحتنا على فيسبوك</a>
+    </div>
+
+    <!-- حقل الرسالة -->
+    <form onsubmit="sendMail(event)">
       <textarea id="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
-      <div class="explanation">📧 سيتم إرسال الرسالة إلى بريدنا الإلكتروني عند الضغط على زر الإرسال.</div>
       <button type="submit" class="send-button">إرسال</button>
     </form>
-
-    <!-- روابط التواصل -->
-    <div class="buttons-group">
-      <a href="https://wa.me/201066047545" target="_blank">واتساب</a>
-      <a href="mailto:Farajbdallh891@gmail.com">البريد الإلكتروني</a>
-      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">فيسبوك</a>
-      <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank">لينكدإن</a>
-      <a href="https://www.youtube.com/@Fabrica-courses" target="_blank">يوتيوب</a>
-    </div>
   </div>
 
   <!-- التذييل -->
@@ -203,17 +169,17 @@
     <script src="footer.js"></script>
   </footer>
 
-  <!-- سكربت الإرسال -->
+  <!-- سكربت إرسال البريد -->
   <script>
-    function sendMail() {
-      const name = document.getElementById("name").value.trim();
+    function sendMail(e) {
+      e.preventDefault();
       const message = document.getElementById("message").value.trim();
-      if (!message) {
+      if (message === "") {
         alert("يرجى كتابة رسالة قبل الإرسال.");
         return;
       }
-      const subject = name ? `رسالة من ${name}` : "رسالة من زائر";
-      const mailtoLink = `mailto:Farajbdallh891@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+      const mailtoLink = `mailto:Farajbdallh891@gmail.com?subject=رسالة من الزائر&body=${encodeURIComponent(message)}`;
       window.location.href = mailtoLink;
     }
   </script>
