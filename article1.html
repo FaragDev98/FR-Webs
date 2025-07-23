@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>مقال: مقدمة إلى HTML - FaragDev98</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="icons/ai-icon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
@@ -48,12 +48,12 @@
       margin-top: 10px;
       display: flex;
       justify-content: center;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
     }
 
     nav a {
-      padding: 8px 16px;
+      padding: 8px 20px;
       border-radius: 8px;
       color: white;
       text-decoration: none;
@@ -61,24 +61,13 @@
       transition: 0.3s ease;
     }
 
-    nav a:nth-child(1) {
-      background-color: #6a1b9a;
-    }
-
-    nav a:nth-child(2) {
-      background-color: #8e24aa;
-    }
-
-    nav a:nth-child(3) {
-      background-color: #ab47bc;
-    }
-
-    nav a:nth-child(4) {
-      background-color: #ba68c8;
-    }
+    nav a:nth-child(1) { background-color: #e53935; }   /* أحمر */
+    nav a:nth-child(2) { background-color: #fbc02d; }   /* أصفر */
+    nav a:nth-child(3) { background-color: #1e88e5; }   /* أزرق */
+    nav a:nth-child(4) { background-color: #8e24aa; }   /* بنفسجي */
 
     nav a:hover {
-      opacity: 0.9;
+      opacity: 0.85;
     }
 
     main {
@@ -139,12 +128,29 @@
 
   <main>
     <h2>ما هي HTML؟</h2>
-    <p>HTML اختصار لـ <strong>HyperText Markup Language</strong>، وتعني "لغة ترميز النص التشعبي"... (تابع المحتوى كما هو)</p>
+    <p>
+      HTML هي لغة بناء صفحات الويب، وتُستخدم لتحديد الهيكل والمحتوى داخل متصفح الإنترنت. اسمها الكامل هو <strong>HyperText Markup Language</strong>، أي "لغة ترميز النص التشعبي". تمثل HTML العمود الفقري لأي موقع إلكتروني، إذ تُمكّن المطورين من تنظيم النصوص، العناوين، الصور، الروابط، الجداول، القوائم، والفيديوهات داخل الصفحة.
+    </p>
 
-    <!-- باقي المقال كما هو في النسخة السابقة -->
-    
+    <h2>أهمية HTML</h2>
+    <ul>
+      <li>الأساس الذي يُبنى عليه أي موقع.</li>
+      <li>مفهومة وسهلة التعلم للمبتدئين.</li>
+      <li>تعمل مع CSS وJavaScript لبناء مواقع ديناميكية.</li>
+    </ul>
+
+    <h2>أشهر الوسوم في HTML</h2>
+    <ul>
+      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code>: لكتابة عنوان رئيسي.</li>
+      <li><code>&lt;p&gt;...&lt;/p&gt;</code>: لكتابة فقرة.</li>
+      <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code>: لإنشاء رابط.</li>
+      <li><code>&lt;img src="..."&gt;</code>: لعرض صورة.</li>
+    </ul>
+
     <h2>الخطوة التالية</h2>
-    <p>بعد تعلم HTML، يوصى بتعلم CSS لتصميم الصفحات، ثم JavaScript لجعل الموقع تفاعلياً...</p>
+    <p>
+      بعد إتقان HTML، يُنصح بالانتقال إلى CSS لتنسيق الموقع وتحديد ألوانه وتصميمه، ثم إلى JavaScript لإضافة التفاعلات والوظائف البرمجية.
+    </p>
   </main>
 
   <footer id="footer"></footer>
