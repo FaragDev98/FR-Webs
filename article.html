@@ -238,11 +238,12 @@
     </div>
   </section>
 
-  <section id="security-section">
-      نحن نلتزم بحماية خصوصيتك وأمان معلوماتك. تتم معالجة جميع البيانات بشكل آمن، ولا تتم مشاركتها مع أي طرف ثالث.
-      لمزيد من التفاصيل، راجع سياسة الأمان الخاصة بنا.
-    </p>
-  </section>
+  document.addEventListener("DOMContentLoaded", function () {
+  const footer = document.getElementById("security-section");
+  footer.innerHTML = `
+    <p>بالدخول إلى هذا الموقع، فإنك توافق على <a href="terms.html" style="color:#4a148c; font-weight:bold;">الشروط والأحكام</a>.</p>
+  `;
+});
 
 </body>
 </html>
