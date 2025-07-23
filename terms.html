@@ -7,36 +7,60 @@
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      margin: 0; padding: 20px;
+      background: #f4f4fa;
+      margin: 0;
+      padding: 0;
       color: #333;
       line-height: 1.7;
     }
     header {
-      background: #6a1b9a;
+      background: linear-gradient(45deg, #6a1b9a, #512da8);
       color: white;
-      padding: 20px 0;
+      padding: 25px 10px;
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: bold;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 10px rgba(106, 27, 154, 0.4);
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    header i {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      font-size: 24px;
+    }
+    .whatsapp-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
     }
     main {
       max-width: 900px;
-      margin: auto;
+      margin: 40px auto;
       background: white;
       padding: 30px 25px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      box-shadow: 0 0 25px rgba(0,0,0,0.06);
     }
     h2 {
       color: #6a1b9a;
-      margin-bottom: 15px;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
     }
     ul {
       list-style-type: disc;
-      margin-right: 20px;
+      padding-right: 20px;
     }
     a {
       color: #6a1b9a;
@@ -47,53 +71,74 @@
     }
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin: 40px auto;
       font-size: 0.9rem;
       color: #666;
     }
+    .back-home {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #6a1b9a;
+      color: white;
+      border-radius: 30px;
+      width: fit-content;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .back-home:hover {
+      background-color: #512da8;
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <header>الشروط والأحكام</header>
+  <header>
+    <i class="fas fa-mobile-screen-button"></i>
+    الشروط والأحكام - FaragDev98
+    <a class="whatsapp-btn" href="https://wa.me/201066047545" target="_blank">راسلنا واتساب</a>
+  </header>
 
   <main>
     <h2>مقدمة</h2>
-    <p>مرحبًا بك في موقع FaragDev98. باستخدامك لهذا الموقع وشراء المنتجات المعروضة، فإنك توافق على الالتزام بهذه الشروط والأحكام التالية. يرجى قراءتها بعناية.</p>
+    <p>مرحبًا بك في موقع FaragDev98. باستخدامك لهذا الموقع وشراء المنتجات الرقمية، فإنك توافق على الشروط التالية. يُرجى قراءتها بعناية.</p>
 
     <h2>1. حقوق الاستخدام</h2>
     <ul>
-      <li>جميع المواد والمنتجات المتوفرة على الموقع مخصصة للاستخدام الشخصي فقط.</li>
-      <li>لا يجوز إعادة بيع أو نشر المحتوى بدون إذن صريح من صاحب الموقع.</li>
-      <li>لا يُسمح باستخدام المحتوى لأغراض تجارية أو غير قانونية.</li>
+      <li>جميع المحتويات والمنتجات مخصصة للاستخدام الشخصي فقط.</li>
+      <li>لا يُسمح بإعادة بيع أو مشاركة الملفات أو المواد بدون إذن مكتوب.</li>
+      <li>يُمنع استخدام المواد لأغراض تجارية دون تصريح رسمي.</li>
     </ul>
 
     <h2>2. سياسة الدفع</h2>
     <ul>
-      <li>يتم الدفع عبر الطرق المحددة مثل فودافون كاش، أورنج كاش، وي كاش، وباي بال.</li>
-      <li>بعد إتمام الدفع، يجب إرسال إيصال التحويل عبر واتساب للرقم المحدد.</li>
-      <li>يحق لصاحب الموقع التحقق من صحة الدفع قبل تسليم المنتج.</li>
+      <li>الدفع متاح من خلال: فودافون كاش، أورنج كاش، وي كاش، وباي بال.</li>
+      <li>بعد الدفع، يجب إرسال إيصال التحويل عبر واتساب على الرقم التالي: <a href="https://wa.me/201066047545" target="_blank">01066047545</a></li>
+      <li>يحق لنا التحقق من صحة الدفع قبل إرسال المنتج.</li>
     </ul>
 
     <h2>3. سياسة الاسترجاع</h2>
     <ul>
-      <li>نظرًا لطبيعة المنتجات الرقمية، لا يتم قبول طلبات استرجاع أو إلغاء بعد إتمام الشراء.</li>
-      <li>في حال وجود مشاكل تقنية في المنتج، يرجى التواصل مع الدعم لحلها.</li>
+      <li>نظرًا لأن المنتجات رقمية، لا يمكن استرجاعها أو استبدالها بعد التحميل.</li>
+      <li>في حال وجود مشكلة تقنية، يُرجى التواصل معنا وسيتم المساعدة فورًا.</li>
     </ul>
 
     <h2>4. التعديلات على الشروط</h2>
-    <p>يحتفظ الموقع بالحق في تعديل هذه الشروط في أي وقت دون إشعار مسبق. يُنصح بمراجعة الصفحة بانتظام.</p>
+    <p>نحتفظ بحق تعديل هذه الشروط في أي وقت. يُرجى زيارة الصفحة دوريًا للاطلاع على آخر التحديثات.</p>
 
     <h2>5. المسؤولية</h2>
-    <p>الموقع لا يتحمل أي مسؤولية عن الأضرار الناتجة عن استخدام المحتوى أو المعلومات المقدمة.</p>
+    <p>نحن غير مسؤولين عن أي أضرار أو خسائر ناجمة عن استخدام المواد أو المنتجات خارج نطاق الاستخدام المشروع.</p>
 
-    <h2>6. التواصل والدعم</h2>
-    <p>لأي استفسارات أو دعم، يمكنكم التواصل عبر واتساب أو البريد الإلكتروني الموضح في صفحة الاتصال.</p>
+    <h2>6. الدعم والتواصل</h2>
+    <p>للدعم الفني أو الاستفسارات، تفضل بالتواصل معنا عبر واتساب أو من خلال صفحة <a href="contact.html">اتصل بنا</a>.</p>
 
-    <p>شكرًا لاختياركم FaragDev98. نتمنى لكم تجربة مفيدة وناجحة.</p>
+    <p>شكرًا لاختيارك FaragDev98. نأمل أن تحصل على تجربة مميزة ومفيدة.</p>
+
+    <a class="back-home" href="index.html">العودة إلى الصفحة الرئيسية</a>
   </main>
 
   <footer>جميع الحقوق محفوظة © 2025 FaragDev98</footer>
-<script src="footer.js"></script>
 </body>
 </html>
