@@ -26,15 +26,12 @@
     header h1 {
       font-size: 20px;
       margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
-    header h1 img {
-      width: 30px;
-      height: 30px;
-      border-radius: 6px;
+    header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
     }
 
     .nav {
@@ -70,36 +67,39 @@
       background: white;
       border-radius: 16px;
       padding: 30px 20px;
-      max-width: 700px;
+      max-width: 600px;
+      width: 100%;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     .card h2 {
-      font-size: 28px;
+      font-size: 26px;
       color: #5e35b1;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .card .intro {
+      font-size: 18px;
+      color: #5e35b1;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
     .card p {
-      font-size: 18px;
+      font-size: 17px;
       color: #444;
-      line-height: 1.9;
-      margin-bottom: 30px;
+      line-height: 1.8;
+      margin-bottom: 25px;
       text-align: justify;
     }
 
-    .placeholder-image {
-      width: 100%;
-      height: 200px;
-      background: #e0e0e0;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 18px;
-      font-style: italic;
+    .placeholder-img {
+      width: 160px;
+      height: 160px;
+      border: 3px dashed #aaa;
+      border-radius: 50%;
+      margin: 20px auto 0;
     }
 
     footer {
@@ -113,10 +113,8 @@
 </head>
 <body>
   <header>
-    <h1>
-      <img src="icons/ai-icon.png" alt="Icon" />
-      FarajDev98
-    </h1>
+    <h1>FarajDev98</h1>
+    <img src="icons/ai-icon.png" alt="شعار الموقع">
   </header>
 
   <nav class="nav">
@@ -128,21 +126,20 @@
 
   <main>
     <div class="card">
-      <h2>صفحة الحماية والحقوق</h2>
+      <div class="intro">مرحبًا بك في صفحة الحماية الخاصة بموقعي الشخصي.</div>
+      <h2>أهمية الحماية الرقمية وحقوق النشر</h2>
       <p>
-        هذه الصفحة مخصصة لتوضيح سياسة حماية المحتوى والحقوق الفكرية المتعلقة بجميع أجزاء هذا الموقع.
-        جميع المواد المعروضة، من مقالات، تصميمات، أكواد برمجية، صور، وشروحات، هي حقوق حصرية لصاحب الموقع 
-        <strong>FarajDev98</strong> ولا يجوز نسخها أو إعادة نشرها أو استخدامها لأي غرض تجاري أو غير تجاري 
-        دون إذن صريح ومكتوب.
-        <br><br>
-        نحن نحترم حقوق الملكية الفكرية للآخرين، ونتوقع من الزوّار والمستخدمين احترام الحقوق الخاصة بنا. 
-        في حال تم رصد أي انتهاك أو سرقة محتوى، سيتم اتخاذ الإجراءات القانونية المناسبة لحماية العمل والمجهود المبذول.
-        <br><br>
-        نأمل أن يلتزم الجميع بهذه السياسة من أجل بيئة تعليمية نظيفة وآمنة تدعم الإبداع وتحترم جهود الأفراد.
+        تهدف هذه الصفحة إلى توضيح سياسة الحماية الخاصة بالموقع، والتأكيد على أهمية حفظ الحقوق الفكرية. جميع الحقوق المتعلقة بالمحتوى، التصاميم، الأكواد، والأفكار محفوظة بالكامل لصاحب الموقع Faraj Abdallah، ويُمنع استخدامها أو نسخها أو إعادة توزيعها بدون إذن كتابي صريح.
+      </p>
+      <p>
+        نلتزم بعدم مشاركة أي بيانات شخصية أو بيعها لأي جهة خارجية. كما نحافظ على سلامة ملفات الزوار وحمايتهم من أي محاولات اختراق أو استغلال. نحن نحترم زوارنا ونسعى لبناء بيئة تعليمية وأخلاقية تقوم على الثقة والشفافية.
+      </p>
+      <p>
+        في حال وجود أي انتهاك أو محاولة نسخ لمحتوى الموقع، سيتم اتخاذ الإجراءات القانونية اللازمة فورًا. نأمل من الزوار الالتزام بالشروط لضمان استمرارية تقديم محتوى مفيد وآمن للجميع.
       </p>
 
-      <div class="placeholder-image">
-        هنا تضاف صورة لاحقًا
+      <div class="placeholder-img">
+        <!-- مكان مخصص لصورتك الشخصية، سيتم إضافتها لاحقًا -->
       </div>
     </div>
   </main>
