@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>مقال: مقدمة إلى HTML - FaragDev98</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
@@ -17,19 +17,36 @@
     }
 
     header {
-      background: linear-gradient(to left, #6a1b9a, #512da8);
+      background: linear-gradient(135deg, #7b1fa2, #512da8);
       color: #fff;
-      padding: 20px 0;
+      padding: 15px 30px 5px;
       text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .logo-area img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-area h1 {
+      margin: 0;
+      font-size: 24px;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
+      flex-wrap: wrap;
       background-color: #ede7f6;
       padding: 10px 0;
     }
@@ -76,6 +93,13 @@
       text-decoration: underline;
     }
 
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
     footer {
       text-align: center;
       color: #777;
@@ -86,61 +110,58 @@
 </head>
 <body>
 
-  <header>مقال: مقدمة إلى HTML</header>
-
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="article1.html">HTML</a>
-    <a href="article2.html">CSS</a>
-    <a href="article3.html">JavaScript</a>
-    <a href="articles.html">جميع المقالات</a>
-  </nav>
+  <header>
+    <div class="logo-area">
+      <img src="icons/ai-icon.png" alt="شعار FaragDev98">
+      <h1>Farag Dev 98</h1>
+    </div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="article1.html">HTML</a>
+      <a href="article2.html">CSS</a>
+      <a href="article3.html">JavaScript</a>
+      <a href="articles.html">جميع المقالات</a>
+    </nav>
+  </header>
 
   <main>
     <h2>ما هي HTML؟</h2>
-    <p>HTML هي اختصار لـ <strong>HyperText Markup Language</strong>، وتعني "لغة ترميز النص التشعبي"، وهي الأساس الذي تُبنى عليه صفحات الويب. تُمكن المطور من تحديد هيكل الصفحة ومحتواها عبر وسوم بسيطة ومنظمة.</p>
+    <p>HTML اختصار لـ <strong>HyperText Markup Language</strong>، وتعني "لغة ترميز النص التشعبي". وهي اللبنة الأساسية لإنشاء صفحات الويب. باستخدام HTML يمكنك تحديد العناوين، الفقرات، الروابط، الصور، القوائم، الجداول، والعديد من العناصر الأخرى التي تُكوّن محتوى الموقع.</p>
 
     <h2>لماذا تعتبر HTML مهمة؟</h2>
-    <p>تُعد HTML العمود الفقري لأي صفحة ويب. فبدونها، لن يتمكن المتصفح من فهم كيفية عرض النصوص أو الصور أو الروابط. وهي أول لغة يجب تعلمها لأي مبتدئ في مجال تطوير المواقع.</p>
+    <p>HTML تُعدّ الأساس الذي تُبنى عليه مواقع الإنترنت. بدونها، لا يمكن للمتصفح عرض أي محتوى منظم. تُستخدم HTML في كل صفحة ويب — حتى التطبيقات الحديثة المعتمدة على JavaScript أو React تبدأ بـ HTML.</p>
 
-    <h2>مكونات صفحة HTML</h2>
+    <h2>بنية صفحة HTML الأساسية</h2>
     <ul>
-      <li><code>&lt;!DOCTYPE html&gt;</code>: إعلان نوع الوثيقة (HTML5).</li>
-      <li><code>&lt;html&gt;</code>: العنصر الجذري الذي يحتوي على كل العناصر الأخرى.</li>
-      <li><code>&lt;head&gt;</code>: يحتوي على بيانات تعريفية مثل العنوان والروابط الخارجية.</li>
-      <li><code>&lt;body&gt;</code>: يحتوي على المحتوى الفعلي الذي يظهر للمستخدم.</li>
+      <li><code>&lt;!DOCTYPE html&gt;</code>: يُخبر المتصفح أن هذه الصفحة تستخدم HTML5.</li>
+      <li><code>&lt;html&gt;</code>: الجذر الذي يحتوي على كل العناصر الأخرى.</li>
+      <li><code>&lt;head&gt;</code>: يحتوي على البيانات التعريفية مثل العنوان والروابط الخارجية.</li>
+      <li><code>&lt;body&gt;</code>: يحتوي على كل ما يظهر للمستخدم مثل النصوص، الصور، والأزرار.</li>
     </ul>
 
-    <h2>أشهر الوسوم في HTML</h2>
+    <h2>أهم الوسوم في HTML</h2>
     <ul>
-      <li><code>&lt;h1&gt;</code> إلى <code>&lt;h6&gt;</code>: للعناوين.</li>
-      <li><code>&lt;p&gt;</code>: للفقرات.</li>
-      <li><code>&lt;a href=""&gt;</code>: لإنشاء الروابط.</li>
-      <li><code>&lt;img src=""&gt;</code>: لإضافة الصور.</li>
-      <li><code>&lt;ul&gt;</code> و <code>&lt;li&gt;</code>: للقوائم.</li>
-      <li><code>&lt;div&gt;</code>: لتقسيم الصفحة.</li>
+      <li><code>&lt;h1&gt; - &lt;h6&gt;</code>: لكتابة العناوين بمستويات مختلفة.</li>
+      <li><code>&lt;p&gt;</code>: لكتابة الفقرات.</li>
+      <li><code>&lt;a href="..."&gt;</code>: لإنشاء الروابط.</li>
+      <li><code>&lt;img src="..."&gt;</code>: لإضافة الصور.</li>
+      <li><code>&lt;ul&gt;</code> و <code>&lt;ol&gt;</code>: لإنشاء القوائم.</li>
+      <li><code>&lt;div&gt;</code> و <code>&lt;span&gt;</code>: لتقسيم المحتوى.</li>
     </ul>
 
     <h2>هل HTML لغة برمجة؟</h2>
-    <p>لا، HTML ليست لغة برمجة. فهي لا تحتوي على منطق برمجي (مثل الشروط أو الحلقات)، وإنما تُستخدم فقط لتحديد الهيكل العام للصفحة.</p>
+    <p>HTML ليست لغة برمجة لأنها لا تحتوي على منطق برمجي مثل الشروط أو الحلقات. بل تُستخدم لتوصيف هيكل المحتوى فقط، وتُكملها CSS لتنسيق الشكل، وJavaScript لإضافة التفاعلية.</p>
 
-    <h2>أهمية تعلم HTML</h2>
-    <p>تعلم HTML لا غنى عنه لأي مطور ويب. فهي لغة بسيطة وسهلة، لكنها قوية لأنها تُستخدم مع CSS وJavaScript لصناعة مواقع احترافية. بامتلاكك لفهم جيد لـ HTML، ستتمكن من:</p>
+    <h2>فوائد تعلم HTML</h2>
     <ul>
-      <li>قراءة أي صفحة ويب وفهم بنيتها.</li>
-      <li>تطوير مشاريع شخصية أو مواقع للعملاء.</li>
-      <li>إنشاء تطبيقات ويب تفاعلية عند دمجها مع JavaScript.</li>
+      <li>البداية المثالية لتعلم تطوير الويب.</li>
+      <li>تساعدك على فهم بنية أي موقع إلكتروني.</li>
+      <li>تمكنك من إنشاء مشاريعك الشخصية بسرعة.</li>
+      <li>أساسية عند تعلم أي إطار عمل مثل React أو Vue.</li>
     </ul>
 
-    <h2>ما بعد HTML؟</h2>
-    <p>بعد إتقان HTML، ينصح بتعلم:</p>
-    <ul>
-      <li><strong>CSS</strong>: لتنسيق وتصميم الصفحات.</li>
-      <li><strong>JavaScript</strong>: لإضافة التفاعلية للموقع.</li>
-      <li><strong>GitHub</strong>: لمشاركة مشاريعك.</li>
-    </ul>
-
-    <p>ابدأ الآن رحلتك مع HTML، وانطلق إلى عالم تطوير الويب بثقة وإبداع!</p>
+    <h2>الخطوة التالية</h2>
+    <p>بعد تعلم HTML، يوصى بتعلم CSS لتصميم الصفحات، ثم JavaScript لجعل الموقع تفاعلياً. يمكنك بعد ذلك تعلم مكتبات وأطر عمل حديثة مثل Bootstrap أو React.</p>
 
     <div class="back-link">
       <a href="articles.html">← عودة إلى قائمة المقالات</a>
