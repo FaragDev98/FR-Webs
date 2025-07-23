@@ -13,11 +13,12 @@
 
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       background-color: #6a1b9a;
       color: white;
       padding: 15px 30px;
+      gap: 12px;
     }
 
     .logo {
@@ -43,37 +44,31 @@
       font-size: 18px;
     }
 
-    .contact-content h2 {
-      text-align: center;
-      color: #6a1b9a;
-      margin-bottom: 25px;
-    }
-
-    .contact-buttons {
+    .social-buttons {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 25px;
+      gap: 12px;
+      margin: 20px 0 30px;
     }
 
-    .contact-buttons a {
-      flex: 1 1 45%;
+    .social-buttons a {
+      flex: 1 1 22%;
       text-align: center;
-      text-decoration: none;
-      font-weight: bold;
       padding: 12px;
       border-radius: 10px;
       color: white;
+      font-weight: bold;
+      text-decoration: none;
       transition: 0.3s;
     }
 
-    .whatsapp { background-color: #4caf50; }
-    .phone { background-color: #2196f3; }
-    .email { background-color: #f57c00; }
+    .website { background-color: #673ab7; }
+    .youtube { background-color: #d32f2f; }
     .facebook { background-color: #3b5998; }
+    .instagram { background-color: #e1306c; }
 
-    .contact-buttons a:hover {
+    .social-buttons a:hover {
       opacity: 0.9;
     }
 
@@ -131,17 +126,162 @@
 
   <!-- محتوى التواصل -->
   <div class="contact-content">
-    <h2>📞 تواصل معنا</h2>
-
-    <!-- أزرار وسائل التواصل -->
-    <div class="contact-buttons">
-      <a class="whatsapp" href="https://wa.me/201066047545" target="_blank">💬 واتساب</a>
-      <a class="phone" href="tel:01091838789">📱 الهاتف</a>
-      <a class="email" href="mailto:Farajbdallh891@gmail.com">✉️ البريد الإلكتروني</a>
+    <!-- روابط شخصية -->
+    <div class="social-buttons">
+      <a class="website" href="https://fabrica-courses.netlify.app/" target="_blank">🌐 موقعي</a>
+      <a class="youtube" href="https://youtube.com/@FaragDev98" target="_blank">🎥 يوتيوب</a>
       <a class="facebook" href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 فيسبوك</a>
+      <a class="instagram" href="https://www.instagram.com" target="_blank">📸 إنستغرام</a>
     </div>
 
-    <!-- نموذج الرسالة -->
+    <form action="mailto:Farajbdallh891@gmail.com" method="POST" enctype="text/plain">
+      <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
+      <button class="send-button" type="submit">📤 إرسال الرسالة</button>
+    </form>
+  </div>
+
+  <!-- التذييل -->
+  <footer>
+    <script src="footer.js"></script>
+  </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا - FaragDev98</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #6a1b9a;
+      color: white;
+      padding: 15px 30px;
+      gap: 12px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 30px;
+    }
+
+    .social-buttons a {
+      flex: 1 1 22%;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .website { background-color: #673ab7; }
+    .youtube { background-color: #d32f2f; }
+    .facebook { background-color: #3b5998; }
+    .instagram { background-color: #e1306c; }
+
+    .social-buttons a:hover {
+      opacity: 0.9;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 140px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 16px;
+    }
+
+    .send-button {
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: fit-content;
+      align-self: center;
+    }
+
+    .send-button:hover {
+      background-color: #4a148c;
+    }
+
+    footer {
+      text-align: center;
+      background: #e1bee7;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- رأس الصفحة -->
+  <header>
+    <div class="logo">
+      <img src="icons/ai-icon.png" alt="Icon">
+      <span>FaragDev98</span>
+    </div>
+  </header>
+
+  <!-- محتوى التواصل -->
+  <div class="contact-content">
+    <!-- روابط شخصية -->
+    <div class="social-buttons">
+      <a class="website" href="https://fabrica-courses.netlify.app/" target="_blank">🌐 موقعي</a>
+      <a class="youtube" href="https://youtube.com/@FaragDev98" target="_blank">🎥 يوتيوب</a>
+      <a class="facebook" href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 فيسبوك</a>
+      <a class="instagram" href="https://www.instagram.com" target="_blank">📸 إنستغرام</a>
+    </div>
+
     <form action="mailto:Farajbdallh891@gmail.com" method="POST" enctype="text/plain">
       <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
       <button class="send-button" type="submit">📤 إرسال الرسالة</button>
