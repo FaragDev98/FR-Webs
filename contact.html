@@ -53,22 +53,10 @@
       transition: 0.3s;
     }
 
-    .nav-bar a:nth-child(1) {
-      background-color: #2196f3;
-    }
-
-    .nav-bar a:nth-child(2) {
-      background-color: #fbc02d;
-      color: black;
-    }
-
-    .nav-bar a:nth-child(3) {
-      background-color: #4caf50;
-    }
-
-    .nav-bar a:nth-child(4) {
-      background-color: #ab47bc;
-    }
+    .nav-bar a:nth-child(1) { background-color: #2196f3; }
+    .nav-bar a:nth-child(2) { background-color: #fbc02d; color: black; }
+    .nav-bar a:nth-child(3) { background-color: #4caf50; }
+    .nav-bar a:nth-child(4) { background-color: #ab47bc; }
 
     .nav-bar a:hover {
       opacity: 0.85;
@@ -90,31 +78,31 @@
       margin-bottom: 25px;
     }
 
-    .contact-content a {
-      display: block;
-      margin: 10px 0;
-      text-decoration: none;
-      background-color: #f3e5f5;
-      padding: 15px;
-      border-radius: 8px;
-      color: #333;
-      transition: 0.3s;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .contact-content a:hover {
-      background-color: #ce93d8;
-      color: white;
-    }
-
-    textarea {
-      width: 100%;
-      height: 120px;
+    .form-group input, textarea {
       padding: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      resize: vertical;
-      margin-top: 20px;
       font-size: 16px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    .explanation {
+      margin-top: 15px;
+      color: #555;
+      font-size: 15px;
+      background-color: #f3e5f5;
+      padding: 10px;
+      border-radius: 8px;
     }
 
     .send-button {
@@ -132,6 +120,34 @@
 
     .send-button:hover {
       background-color: #4a148c;
+    }
+
+    .buttons-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .buttons-group a {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buttons-group a:nth-child(1) { background-color: #25d366; } /* WhatsApp */
+    .buttons-group a:nth-child(2) { background-color: #2196f3; } /* Phone */
+    .buttons-group a:nth-child(3) { background-color: #d44638; } /* Email */
+    .buttons-group a:nth-child(4) { background-color: #1877f2; } /* Facebook */
+    .buttons-group a:nth-child(5) { background-color: #0077b5; } /* LinkedIn */
+    .buttons-group a:nth-child(6) { background-color: #ff0000; } /* YouTube */
+
+    .buttons-group a:hover {
+      opacity: 0.85;
     }
 
     footer {
@@ -164,22 +180,41 @@
   <!-- محتوى التواصل -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
-    <a href="https://wa.me/201066047545" target="_blank">💬 واتساب: 01066047545</a>
-    <a href="tel:01091838789">📱 الهاتف: 01091838789</a>
-    <a href="mailto:Farajbdallh891@gmail.com">✉️ البريد الإلكتروني: Farajbdallh891@gmail.com</a>
-    <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 صفحتنا على فيسبوك</a>
-    <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank">💼 صفحتنا على لينكدإن</a>
-    <a href="https://www.youtube.com/@Fabrica-courses" target="_blank">📺 قناتنا على يوتيوب</a>
 
-    <!-- حقل الرسالة -->
-    <textarea placeholder="📝 اكتب رسالتك هنا..."></textarea>
-    <button class="send-button">إرسال</button>
+    <form onsubmit="sendMail(); return false;" class="form-group">
+      <input type="text" id="name" placeholder="🧑‍💻 الاسم">
+      <input type="tel" id="phone" placeholder="📱 رقم الهاتف">
+      <textarea id="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
+      <div class="explanation">📧 سيتم إرسال الرسالة إلى بريدنا الإلكتروني عند الضغط على زر الإرسال.</div>
+      <button type="submit" class="send-button">إرسال</button>
+    </form>
+
+    <!-- روابط التواصل -->
+    <div class="buttons-group">
+      <a href="https://wa.me/201066047545" target="_blank">واتساب</a>
+      <a href="tel:01091838789">الهاتف</a>
+      <a href="mailto:Farajbdallh891@gmail.com">البريد الإلكتروني</a>
+      <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">فيسبوك</a>
+      <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank">لينكدإن</a>
+      <a href="https://www.youtube.com/@Fabrica-courses" target="_blank">يوتيوب</a>
+    </div>
   </div>
 
   <!-- التذييل -->
   <footer>
-    <strong>footer.js</strong>
+    <script src="footer.js"></script>
   </footer>
+
+  <!-- سكربت الإرسال -->
+  <script>
+    function sendMail() {
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const message = document.getElementById("message").value;
+      const mailtoLink = `mailto:Farajbdallh891@gmail.com?subject=رسالة من ${name}&body=الاسم: ${name}%0Aرقم الهاتف: ${phone}%0A%0A${message}`;
+      window.location.href = mailtoLink;
+    }
+  </script>
 
 </body>
 </html>
