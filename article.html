@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      background: #f2f2f2;
       margin: 0;
       padding: 0;
       color: #333;
@@ -15,15 +15,51 @@
     }
 
     header {
-      background: #7b1fa2;
+      background: linear-gradient(135deg, #7b1fa2, #512da8);
       color: white;
       padding: 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    header img {
+      width: 50px;
+      height: 50px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .buttons a {
+      padding: 10px 20px;
+      background: #7e57c2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #5e35b1;
     }
 
     .articles-container {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 1100px;
+      margin: 0 auto 50px;
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -34,12 +70,12 @@
       background: white;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
     .article:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
     .article img {
@@ -71,7 +107,6 @@
       padding: 15px;
       text-align: center;
       font-size: 14px;
-      margin-top: 50px;
     }
 
     footer a {
@@ -84,47 +119,55 @@
 <body>
 
   <header>
-    <h1>📰 مقالات تقنية وتعليمية</h1>
+    <img src="images/main-hero.png" alt="شعار الموقع">
+    <h1>مقالات تقنية وتعليمية</h1>
   </header>
+
+  <div class="buttons">
+    <a href="#html">HTML</a>
+    <a href="#css" style="background: #0097a7;">CSS</a>
+    <a href="#js" style="background: #fbc02d; color: #000;">JavaScript</a>
+    <a href="#start" style="background: #43a047;">ابدأ البرمجة</a>
+  </div>
 
   <section class="articles-container">
 
-    <div class="article">
+    <div class="article" id="html">
       <img src="images/article1.jpg" alt="أساسيات HTML" />
       <div class="article-content">
         <div class="article-title">أساسيات لغة HTML للمبتدئين</div>
         <div class="article-text">
-          HTML هي اللغة الأساسية لبناء صفحات الويب. من خلالها يمكن إنشاء العناوين والفقرات والروابط والصور والعناصر التفاعلية. تستخدم جميع المواقع على الإنترنت HTML كأساس. هذا المقال يقدم لك نظرة شاملة حول الوسوم الأساسية مثل: &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, &lt;img&gt;، بالإضافة إلى كيفية تنظيم العناصر باستخدام عناصر الهيكل مثل &lt;header&gt;, &lt;main&gt;, &lt;footer&gt;. إذا كنت تنوي تعلم تطوير الويب، فابدأ بتعلم HTML جيدًا.
+          HTML هي اللغة الأساسية لبناء صفحات الويب. من خلالها يمكن إنشاء العناوين والفقرات والروابط والصور والعناصر التفاعلية. هذا المقال يقدم لك نظرة شاملة حول الوسوم الأساسية.
         </div>
       </div>
     </div>
 
-    <div class="article">
+    <div class="article" id="css">
       <img src="images/article2.jpg" alt="CSS وتنسيق المواقع" />
       <div class="article-content">
         <div class="article-title">مدخل إلى CSS: كيف تنسق موقعك باحتراف</div>
         <div class="article-text">
-          CSS هي اللغة التي تضيف الجمال والتنسيق إلى صفحات HTML. يمكنك من خلالها التحكم في الألوان والخطوط والمحاذاة والمسافات وغيرها. في هذا المقال، ستتعلم الفرق بين التنسيقات الداخلية والخارجية، وكيفية استخدام الـ selectors لتطبيق التنسيقات على عناصر معينة، وكذلك التعامل مع الـ classes و IDs. ستتعلم أيضًا كيف تجعل موقعك متجاوبًا مع الهواتف باستخدام Media Queries.
+          CSS تضيف الجمال والتنسيق لصفحات HTML. من خلالها تتحكم بالألوان والخطوط والمظهر العام للموقع، وتجعله متجاوبًا مع الهواتف.
         </div>
       </div>
     </div>
 
-    <div class="article">
+    <div class="article" id="js">
       <img src="images/article3.jpg" alt="JavaScript" />
       <div class="article-content">
         <div class="article-title">تعرف على JavaScript: لغة التفاعل في الويب</div>
         <div class="article-text">
-          JavaScript هي لغة البرمجة المسؤولة عن جعل صفحات الويب تفاعلية. تُمكنك من إضافة وظائف مثل القوائم المنسدلة، التحكم في النماذج، إنشاء الألعاب البسيطة، وتحسين تجربة المستخدم بشكل عام. من خلال هذا المقال ستكتشف مفاهيم مثل المتغيرات، الحلقات، الدوال، الأحداث، وكيفية التعامل مع DOM (شجرة العناصر في الصفحة). تعلم JavaScript يمنحك قوة هائلة في تطوير واجهات المستخدم.
+          JavaScript تجعل صفحات الويب تفاعلية، وتتيح إنشاء القوائم، الألعاب، التعامل مع النماذج، والمزيد. هذه اللغة ضرورية لأي مطور واجهات.
         </div>
       </div>
     </div>
 
-    <div class="article">
+    <div class="article" id="start">
       <img src="images/article4.jpg" alt="دليل للمبتدئين في البرمجة" />
       <div class="article-content">
         <div class="article-title">كيف تبدأ رحلتك في تعلم البرمجة من الصفر</div>
         <div class="article-text">
-          إذا كنت تتساءل من أين تبدأ في عالم البرمجة، فهذا المقال لك. سنتحدث عن كيفية اختيار اللغة المناسبة، وأهمية تعلم الأساسيات، والعمل على مشاريع صغيرة لتقوية الفهم العملي. سنتناول أيضًا الفرق بين الواجهة الأمامية (Frontend) والخلفية (Backend)، وأهم النصائح للمبتدئين مثل الالتزام بالتدريب اليومي، البحث المستمر، والانضمام إلى مجتمعات البرمجة. الأهم أن تبدأ وتستمر، فكل محترف كان مبتدئًا.
+          ابدأ البرمجة من خلال اختيار لغة مناسبة، وتعلم الأساسيات، والتدريب العملي على مشاريع صغيرة. النصيحة الذهبية: ابدأ واستمر!
         </div>
       </div>
     </div>
