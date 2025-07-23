@@ -17,21 +17,22 @@
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       background: #7e57c2;
       padding: 12px 20px;
       color: white;
+      gap: 12px;
+    }
+
+    header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
     }
 
     header h1 {
       font-size: 20px;
       margin: 0;
-    }
-
-    header img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
     }
 
     .nav {
@@ -57,49 +58,59 @@
 
     main {
       flex: 1;
+      padding: 40px 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 40px 10px;
+      gap: 40px;
     }
 
     .card {
       background: white;
       border-radius: 16px;
       padding: 30px 20px;
-      max-width: 600px;
-      width: 100%;
+      max-width: 700px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     .card h2 {
-      font-size: 26px;
+      font-size: 28px;
       color: #5e35b1;
-      margin-bottom: 20px;
-    }
-
-    .card .intro {
-      font-size: 18px;
-      color: #5e35b1;
-      font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .card p {
-      font-size: 17px;
+      font-size: 18px;
       color: #444;
-      line-height: 1.8;
-      margin-bottom: 25px;
+      line-height: 1.9;
       text-align: justify;
     }
 
-    .placeholder-img {
-      width: 160px;
-      height: 160px;
-      border: 3px dashed #aaa;
-      border-radius: 50%;
-      margin: 20px auto 0;
+    .about {
+      background: #f5f5f5;
+      padding: 25px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+      max-width: 700px;
+    }
+
+    .about img {
+      width: 140px;
+      height: 140px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      object-fit: cover;
+    }
+
+    .about p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+      text-align: center;
     }
 
     footer {
@@ -113,8 +124,8 @@
 </head>
 <body>
   <header>
+    <img src="icons/ai-icon.png" alt="Icon" />
     <h1>FarajDev98</h1>
-    <img src="icons/ai-icon.png" alt="شعار الموقع">
   </header>
 
   <nav class="nav">
@@ -126,21 +137,26 @@
 
   <main>
     <div class="card">
-      <div class="intro">مرحبًا بك في صفحة الحماية الخاصة بموقعي الشخصي.</div>
-      <h2>أهمية الحماية الرقمية وحقوق النشر</h2>
+      <h2>صفحة الحماية والحقوق</h2>
       <p>
-        تهدف هذه الصفحة إلى توضيح سياسة الحماية الخاصة بالموقع، والتأكيد على أهمية حفظ الحقوق الفكرية. جميع الحقوق المتعلقة بالمحتوى، التصاميم، الأكواد، والأفكار محفوظة بالكامل لصاحب الموقع Faraj Abdallah، ويُمنع استخدامها أو نسخها أو إعادة توزيعها بدون إذن كتابي صريح.
+        هذه الصفحة مخصصة لتوضيح سياسة حماية المحتوى والحقوق الفكرية المتعلقة بجميع أجزاء هذا الموقع.
+        جميع المواد المعروضة، من مقالات، تصميمات، أكواد برمجية، صور، وشروحات، هي حقوق حصرية لصاحب الموقع 
+        <strong>FarajDev98</strong> ولا يجوز نسخها أو إعادة نشرها أو استخدامها لأي غرض تجاري أو غير تجاري 
+        دون إذن صريح ومكتوب.
+        <br><br>
+        نحن نحترم حقوق الملكية الفكرية للآخرين، ونتوقع من الزوّار والمستخدمين احترام الحقوق الخاصة بنا. 
+        في حال تم رصد أي انتهاك أو سرقة محتوى، سيتم اتخاذ الإجراءات القانونية المناسبة لحماية العمل والمجهود المبذول.
+        <br><br>
+        نأمل أن يلتزم الجميع بهذه السياسة من أجل بيئة تعليمية نظيفة وآمنة تدعم الإبداع وتحترم جهود الأفراد.
       </p>
-      <p>
-        نلتزم بعدم مشاركة أي بيانات شخصية أو بيعها لأي جهة خارجية. كما نحافظ على سلامة ملفات الزوار وحمايتهم من أي محاولات اختراق أو استغلال. نحن نحترم زوارنا ونسعى لبناء بيئة تعليمية وأخلاقية تقوم على الثقة والشفافية.
-      </p>
-      <p>
-        في حال وجود أي انتهاك أو محاولة نسخ لمحتوى الموقع، سيتم اتخاذ الإجراءات القانونية اللازمة فورًا. نأمل من الزوار الالتزام بالشروط لضمان استمرارية تقديم محتوى مفيد وآمن للجميع.
-      </p>
+    </div>
 
-      <div class="placeholder-img">
-        <!-- مكان مخصص لصورتك الشخصية، سيتم إضافتها لاحقًا -->
-      </div>
+    <div class="about">
+      <img src="images/my-photo.jpg" alt="Faraj Photo" />
+      <p>
+        اسمي فراج عبدالله، مطور ومصمم مواقع، أسعى لنشر المعرفة البرمجية باللغة العربية،
+        وأقدم شروحات وكورسات للمبتدئين لتمكينهم من دخول سوق العمل الحر بثقة.
+      </p>
     </div>
   </main>
 
