@@ -17,49 +17,52 @@
     header {
       background: linear-gradient(135deg, #7b1fa2, #512da8);
       color: white;
-      padding: 20px;
+      padding: 15px 30px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
+      justify-content: space-between;
+      flex-wrap: wrap;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
-    header img {
-      width: 50px;
-      height: 50px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-    }
-
-    .buttons {
+    .logo-area {
       display: flex;
-      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-area img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-area h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
       gap: 15px;
-      margin: 25px 0;
       flex-wrap: wrap;
     }
 
-    .buttons a {
-      padding: 10px 20px;
-      background: #7e57c2;
+    .nav-links a {
       color: white;
-      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 6px;
       transition: background 0.3s;
     }
 
-    .buttons a:hover {
-      background: #5e35b1;
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .articles-container {
       max-width: 1100px;
-      margin: 0 auto 50px;
+      margin: 30px auto 50px;
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -99,6 +102,22 @@
       font-size: 1.05rem;
       color: #444;
       text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .read-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #7e57c2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .read-btn:hover {
+      background: #5e35b1;
     }
 
     footer {
@@ -119,16 +138,17 @@
 <body>
 
   <header>
-    <img src="images/main-hero.png" alt="شعار الموقع">
-    <h1>مقالات تقنية وتعليمية</h1>
+    <div class="logo-area">
+      <img src="icons/ai-icon.png" alt="شعار الموقع">
+      <h1>FaragDev98</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">الخدمات</a>
+      <a href="articles.html">مقال</a>
+      <a href="contact.html">تواصل</a>
+    </nav>
   </header>
-
-  <div class="buttons">
-    <a href="#html">HTML</a>
-    <a href="#css" style="background: #0097a7;">CSS</a>
-    <a href="#js" style="background: #fbc02d; color: #000;">JavaScript</a>
-    <a href="#start" style="background: #43a047;">ابدأ البرمجة</a>
-  </div>
 
   <section class="articles-container">
 
@@ -137,8 +157,9 @@
       <div class="article-content">
         <div class="article-title">أساسيات لغة HTML للمبتدئين</div>
         <div class="article-text">
-          HTML هي اللغة الأساسية لبناء صفحات الويب. من خلالها يمكن إنشاء العناوين والفقرات والروابط والصور والعناصر التفاعلية. هذا المقال يقدم لك نظرة شاملة حول الوسوم الأساسية.
+          HTML هي اللغة الأساسية لبناء صفحات الويب. من خلالها يمكن إنشاء العناوين والفقرات والروابط والصور والعناصر التفاعلية.
         </div>
+        <a href="article1.html" class="read-btn">اقرأ عن HTML</a>
       </div>
     </div>
 
@@ -147,8 +168,9 @@
       <div class="article-content">
         <div class="article-title">مدخل إلى CSS: كيف تنسق موقعك باحتراف</div>
         <div class="article-text">
-          CSS تضيف الجمال والتنسيق لصفحات HTML. من خلالها تتحكم بالألوان والخطوط والمظهر العام للموقع، وتجعله متجاوبًا مع الهواتف.
+          CSS تضيف الجمال والتنسيق لصفحات HTML. من خلالها تتحكم بالألوان والخطوط والمظهر العام للموقع.
         </div>
+        <a href="article2.html" class="read-btn" style="background:#0097a7;">اقرأ عن CSS</a>
       </div>
     </div>
 
@@ -157,8 +179,9 @@
       <div class="article-content">
         <div class="article-title">تعرف على JavaScript: لغة التفاعل في الويب</div>
         <div class="article-text">
-          JavaScript تجعل صفحات الويب تفاعلية، وتتيح إنشاء القوائم، الألعاب، التعامل مع النماذج، والمزيد. هذه اللغة ضرورية لأي مطور واجهات.
+          JavaScript تجعل صفحات الويب تفاعلية، وتتيح إنشاء القوائم، الألعاب، التعامل مع النماذج، والمزيد.
         </div>
+        <a href="article3.html" class="read-btn" style="background:#fbc02d; color:#000;">اقرأ عن JavaScript</a>
       </div>
     </div>
 
@@ -167,8 +190,9 @@
       <div class="article-content">
         <div class="article-title">كيف تبدأ رحلتك في تعلم البرمجة من الصفر</div>
         <div class="article-text">
-          ابدأ البرمجة من خلال اختيار لغة مناسبة، وتعلم الأساسيات، والتدريب العملي على مشاريع صغيرة. النصيحة الذهبية: ابدأ واستمر!
+          ابدأ البرمجة من خلال اختيار لغة مناسبة، وتعلم الأساسيات، والتدريب العملي على مشاريع صغيرة.
         </div>
+        <a href="article4.html" class="read-btn" style="background:#43a047;">ابدأ تعلم البرمجة</a>
       </div>
     </div>
 
