@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>الشروط والأحكام - FaragDev98</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -16,23 +17,51 @@
     header {
       background: linear-gradient(45deg, #6a1b9a, #512da8);
       color: white;
-      padding: 25px 10px;
+      padding: 20px 15px 10px;
       text-align: center;
       font-size: 1.9rem;
       font-weight: bold;
       position: relative;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
-    header i {
-      position: absolute;
-      top: 25px;
-      left: 25px;
-      font-size: 24px;
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .header-content img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #eee;
+      padding: 10px 0;
+      border-bottom: 2px solid #dcdcdc;
+    }
+    nav a {
+      text-decoration: none;
+      color: #6a1b9a;
+      background-color: #e1d5f1;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #d1bce9;
+      color: #fff;
     }
     .whatsapp-btn {
       position: absolute;
-      top: 25px;
-      right: 25px;
+      top: 20px;
+      right: 20px;
       background-color: #25D366;
       color: white;
       padding: 8px 14px;
@@ -69,16 +98,10 @@
     a:hover {
       text-decoration: underline;
     }
-    footer {
-      text-align: center;
-      margin: 40px auto;
-      font-size: 0.9rem;
-      color: #666;
-    }
     .back-home {
       display: block;
       text-align: center;
-      margin: 20px auto;
+      margin: 30px auto;
       padding: 10px 20px;
       background-color: #6a1b9a;
       color: white;
@@ -90,16 +113,31 @@
     .back-home:hover {
       background-color: #512da8;
     }
+    footer {
+      text-align: center;
+      margin: 40px auto 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <header>
-    <i class="fas fa-mobile-screen-button"></i>
-    الشروط والأحكام - FaragDev98
+    <div class="header-content">
+      <i class="fas fa-shield-alt"></i>
+      <span>الشروط والأحكام - FaragDev98</span>
+      <img src="icons/ai-icon.png" alt="logo">
+    </div>
     <a class="whatsapp-btn" href="https://wa.me/201066047545" target="_blank">راسلنا واتساب</a>
   </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">الخدمات</a>
+    <a href="articles.html">المقالات</a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
 
   <main>
     <h2>مقدمة</h2>
