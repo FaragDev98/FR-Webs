@@ -27,11 +27,13 @@
       font-size: 24px;
       font-weight: bold;
       gap: 12px;
+      direction: ltr; /* علشان الأيقونة تبقى على الشمال */
     }
 
     .logo img {
       width: 32px;
       height: 32px;
+      order: -1; /* الأيقونة تروح أول عنصر */
     }
 
     .nav-bar {
@@ -73,7 +75,14 @@
     .contact-content h2 {
       text-align: center;
       color: #6a1b9a;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
+    }
+
+    .contact-content p {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 17px;
     }
 
     .buttons-container {
@@ -151,8 +160,8 @@
   <!-- رأس الصفحة -->
   <header>
     <div class="logo">
-      <span>FaragDev98</span>
       <img src="icons/ai-icon.png" alt="Icon">
+      <span>FaragDev98</span>
     </div>
   </header>
 
@@ -167,6 +176,7 @@
   <!-- محتوى الصفحة -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
+    <p>يمكنك التواصل معنا مباشرة عبر وسائل التواصل التالية أو إرسال رسالة من النموذج أدناه.</p>
 
     <!-- الأزرار -->
     <div class="buttons-container">
