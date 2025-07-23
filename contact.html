@@ -17,89 +17,79 @@
       align-items: center;
       background-color: #6a1b9a;
       color: white;
-      padding: 15px 30px;
+      padding: 10px 20px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       gap: 10px;
     }
 
     .logo img {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
     }
 
     .nav-buttons {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .nav-buttons a {
       text-decoration: none;
       color: white;
-      padding: 8px 15px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
       font-weight: bold;
-      transition: background-color 0.3s;
+      font-size: 14px;
     }
 
-    .nav-home    { background-color: #4caf50; }
+    .nav-home { background-color: #4caf50; }
     .nav-service { background-color: #2196f3; }
     .nav-article { background-color: #ff9800; }
     .nav-contact { background-color: #e91e63; }
 
-    .nav-buttons a:hover {
-      opacity: 0.9;
-    }
-
     .contact-content {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 500px;
+      margin: 30px auto;
       background: white;
-      padding: 30px;
+      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-      font-size: 18px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     .contact-content h2 {
       text-align: center;
       color: #6a1b9a;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .buttons-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
     .buttons-container a {
-      flex: 1 1 22%;
+      display: block;
       text-align: center;
-      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
       font-weight: bold;
-      padding: 12px;
-      border-radius: 10px;
+      text-decoration: none;
       color: white;
-      transition: 0.3s;
+      font-size: 14px;
     }
 
-    .whatsapp    { background-color: #4caf50; }
-    .website     { background-color: #673ab7; }
-    .youtube     { background-color: #d32f2f; }
-    .facebook    { background-color: #3b5998; }
-    .instagram   { background-color: #e1306c; }
-
-    .buttons-container a:hover {
-      opacity: 0.9;
-    }
+    .whatsapp  { background-color: #4caf50; }
+    .website   { background-color: #673ab7; }
+    .youtube   { background-color: #d32f2f; }
+    .facebook  { background-color: #3b5998; }
+    .instagram { background-color: #e1306c; }
 
     form {
       display: flex;
@@ -109,25 +99,23 @@
 
     textarea {
       width: 100%;
-      height: 140px;
-      padding: 15px;
+      height: 120px;
+      padding: 12px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 10px;
+      font-size: 15px;
       resize: vertical;
-      font-size: 16px;
     }
 
     .send-button {
+      align-self: center;
       background-color: #6a1b9a;
       color: white;
       border: none;
-      padding: 12px 30px;
-      border-radius: 10px;
-      font-size: 16px;
+      padding: 10px 25px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
-      width: fit-content;
-      align-self: center;
+      font-size: 15px;
     }
 
     .send-button:hover {
@@ -136,36 +124,34 @@
 
     footer {
       text-align: center;
-      background: #e1bee7;
-      padding: 20px;
-      font-size: 14px;
+      background-color: #e1bee7;
+      padding: 15px;
+      font-size: 13px;
       margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- رأس الصفحة -->
+  <!-- الهيدر -->
   <header>
     <div class="logo">
-      <img src="icons/ai-icon.png" alt="Icon">
+      <img src="icons/ai-icon.png" alt="icon" />
       <span>FaragDev98</span>
     </div>
-
-    <!-- أزرار التنقل -->
     <div class="nav-buttons">
-      <a class="nav-home" href="index.html">الرئيسية</a>
-      <a class="nav-service" href="services.html">خدمة</a>
-      <a class="nav-article" href="articles.html">مقال</a>
-      <a class="nav-contact" href="contact.html">تواصل</a>
+      <a class="nav-home" href="#">الرئيسية</a>
+      <a class="nav-service" href="#">خدمة</a>
+      <a class="nav-article" href="#">مقال</a>
+      <a class="nav-contact" href="#">تواصل</a>
     </div>
   </header>
 
-  <!-- محتوى الصفحة -->
+  <!-- المحتوى -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
 
-    <!-- الأزرار -->
+    <!-- أزرار الروابط -->
     <div class="buttons-container">
       <a class="whatsapp" href="https://wa.me/201066047545" target="_blank">💬 واتساب</a>
       <a class="website" href="https://fabrica-courses.netlify.app/" target="_blank">🌐 موقعي</a>
@@ -181,9 +167,11 @@
     </form>
   </div>
 
-  <!-- التذييل -->
+  <!-- الفوتر -->
   <footer>
-    <script src="footer.js"></script>
+    FaragDev98 © 2025 جميع الحقوق محفوظة |
+    <a href="privacy.html">سياسة الخصوصية</a> |
+    <a href="terms.html">الشروط والأحكام</a>
   </footer>
 
 </body>
