@@ -21,18 +21,23 @@
       background: #7e57c2;
       padding: 12px 20px;
       color: white;
-      gap: 12px;
     }
 
-    header h1 {
-      font-size: 20px;
-      margin: 0;
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     header img {
       width: 36px;
       height: 36px;
       border-radius: 6px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
     }
 
     .nav {
@@ -60,9 +65,8 @@
       flex: 1;
       padding: 40px 20px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 40px;
     }
 
     .card {
@@ -87,38 +91,6 @@
       text-align: justify;
     }
 
-    .about {
-      background: #f5f5f5;
-      padding: 25px;
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      max-width: 700px;
-    }
-
-    .about h3 {
-      font-size: 20px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .about img {
-      width: 140px;
-      height: 140px;
-      border-radius: 16px;
-      margin-bottom: 16px;
-      object-fit: cover;
-    }
-
-    .about p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.8;
-      text-align: center;
-    }
-
     footer {
       background: #f3e5f5;
       padding: 15px;
@@ -129,9 +101,12 @@
   </style>
 </head>
 <body>
+
   <header>
-    <h1>FarajDev98</h1>
-    <img src="icons/ai-icon.png" alt="Icon" />
+    <div class="logo">
+      <img src="icons/ai-icon.png" alt="Icon" />
+      <h1>FarajDev98</h1>
+    </div>
   </header>
 
   <nav class="nav">
@@ -145,24 +120,13 @@
     <div class="card">
       <h2>صفحة الحماية والحقوق</h2>
       <p>
-        هذه الصفحة مخصصة لتوضيح سياسة حماية المحتوى والحقوق الفكرية المتعلقة بجميع أجزاء هذا الموقع.
-        جميع المواد المعروضة، من مقالات، تصميمات، أكواد برمجية، صور، وشروحات، هي حقوق حصرية لصاحب الموقع 
-        <strong>FarajDev98</strong> ولا يجوز نسخها أو إعادة نشرها أو استخدامها لأي غرض تجاري أو غير تجاري 
-        دون إذن صريح ومكتوب.
+        جميع المواد المعروضة في هذا الموقع من مقالات، تصميمات، أكواد برمجية، صور، وشروحات، هي ملك حصري لـ <strong>FarajDev98</strong>.
         <br><br>
-        نحن نحترم حقوق الملكية الفكرية للآخرين، ونتوقع من الزوّار والمستخدمين احترام الحقوق الخاصة بنا. 
-        في حال تم رصد أي انتهاك أو سرقة محتوى، سيتم اتخاذ الإجراءات القانونية المناسبة لحماية العمل والمجهود المبذول.
+        لا يُسمح بنسخ أو إعادة نشر أو استخدام أي جزء من هذا الموقع لأي غرض كان، تجاريًا أو غير تجاري، دون إذن كتابي وصريح من صاحب الموقع.
         <br><br>
-        نأمل أن يلتزم الجميع بهذه السياسة من أجل بيئة تعليمية نظيفة وآمنة تدعم الإبداع وتحترم جهود الأفراد.
-      </p>
-    </div>
-
-    <div class="about">
-      <h3>تعرف عليّ</h3>
-      <img src="images/my-photo.jpg" alt="Faraj Photo" />
-      <p>
-        اسمي فراج عبدالله، مطور ومصمم مواقع، أسعى لنشر المعرفة البرمجية باللغة العربية،
-        وأقدم شروحات وكورسات للمبتدئين لتمكينهم من دخول سوق العمل الحر بثقة.
+        نلتزم بحماية المحتوى من السرقة أو التعدي، وسنتخذ الإجراءات القانونية المناسبة عند الضرورة لضمان حقوقنا.
+        <br><br>
+        نأمل من الجميع احترام هذا المجهود المبذول لنشر المعرفة البرمجية باللغة العربية.
       </p>
     </div>
   </main>
