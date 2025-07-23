@@ -12,26 +12,49 @@
     }
 
     header {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       background-color: #6a1b9a;
       color: white;
       padding: 15px 30px;
-      gap: 12px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
     }
 
     .logo {
       display: flex;
       align-items: center;
+      gap: 12px;
       font-size: 24px;
       font-weight: bold;
-      gap: 12px;
     }
 
     .logo img {
       width: 32px;
       height: 32px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      color: white;
+      background-color: #8e24aa;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #7b1fa2;
     }
 
     .contact-content {
@@ -48,6 +71,13 @@
       text-align: center;
       color: #6a1b9a;
       margin-bottom: 25px;
+    }
+
+    .contact-description {
+      text-align: center;
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 16px;
     }
 
     .buttons-container {
@@ -125,15 +155,26 @@
 
   <!-- رأس الصفحة -->
   <header>
-    <div class="logo">
-      <img src="icons/ai-icon.png" alt="Icon">
-      <span>FaragDev98</span>
+    <div class="header-content">
+      <div class="logo">
+        <img src="icons/ai-icon.png" alt="Icon">
+        <span>FaragDev98</span>
+      </div>
+      <div class="nav-buttons">
+        <a href="index.html">🏠 الرئيسية</a>
+        <a href="services.html">🛠️ خدمة</a>
+        <a href="articles.html">📄 مقال</a>
+        <a href="contact.html">📞 تواصل</a>
+      </div>
     </div>
   </header>
 
   <!-- محتوى الصفحة -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
+    <p class="contact-description">
+      يمكنك التواصل معي مباشرة عبر الروابط التالية، أو ترك رسالة وسيتم الرد عليك في أقرب وقت ممكن.
+    </p>
 
     <!-- الأزرار -->
     <div class="buttons-container">
