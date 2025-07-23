@@ -12,24 +12,20 @@
     }
 
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: #6a1b9a;
       color: white;
       padding: 15px 30px;
     }
 
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-    }
-
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
       font-size: 24px;
       font-weight: bold;
+      gap: 10px;
     }
 
     .logo img {
@@ -39,22 +35,25 @@
 
     .nav-buttons {
       display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .nav-buttons a {
       text-decoration: none;
       color: white;
-      background-color: #8e24aa;
-      padding: 10px 20px;
+      padding: 8px 15px;
       border-radius: 8px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: background-color 0.3s;
     }
 
+    .nav-home    { background-color: #4caf50; }
+    .nav-service { background-color: #2196f3; }
+    .nav-article { background-color: #ff9800; }
+    .nav-contact { background-color: #e91e63; }
+
     .nav-buttons a:hover {
-      background-color: #7b1fa2;
+      opacity: 0.9;
     }
 
     .contact-content {
@@ -71,13 +70,6 @@
       text-align: center;
       color: #6a1b9a;
       margin-bottom: 25px;
-    }
-
-    .contact-description {
-      text-align: center;
-      color: #555;
-      margin-bottom: 25px;
-      font-size: 16px;
     }
 
     .buttons-container {
@@ -155,26 +147,23 @@
 
   <!-- رأس الصفحة -->
   <header>
-    <div class="header-content">
-      <div class="logo">
-        <img src="icons/ai-icon.png" alt="Icon">
-        <span>FaragDev98</span>
-      </div>
-      <div class="nav-buttons">
-        <a href="index.html">🏠 الرئيسية</a>
-        <a href="services.html">🛠️ خدمة</a>
-        <a href="articles.html">📄 مقال</a>
-        <a href="contact.html">📞 تواصل</a>
-      </div>
+    <div class="logo">
+      <img src="icons/ai-icon.png" alt="Icon">
+      <span>FaragDev98</span>
+    </div>
+
+    <!-- أزرار التنقل -->
+    <div class="nav-buttons">
+      <a class="nav-home" href="index.html">الرئيسية</a>
+      <a class="nav-service" href="services.html">خدمة</a>
+      <a class="nav-article" href="articles.html">مقال</a>
+      <a class="nav-contact" href="contact.html">تواصل</a>
     </div>
   </header>
 
   <!-- محتوى الصفحة -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
-    <p class="contact-description">
-      يمكنك التواصل معي مباشرة عبر الروابط التالية، أو ترك رسالة وسيتم الرد عليك في أقرب وقت ممكن.
-    </p>
 
     <!-- الأزرار -->
     <div class="buttons-container">
