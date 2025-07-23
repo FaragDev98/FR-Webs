@@ -13,25 +13,30 @@
 
     header {
       display: flex;
-      justify-content: flex-start; /* الشعار على الشمال */
+      justify-content: flex-end; /* إلى اليمين */
       align-items: center;
       background-color: #6a1b9a;
       color: white;
-      padding: 15px 30px;
+      padding: 20px 40px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      font-size: 24px;
-      font-weight: bold;
-      gap: 12px;
-      direction: ltr;
+      gap: 20px;
     }
 
     .logo img {
-      width: 32px;
-      height: 32px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid white;
+    }
+
+    .logo span {
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .nav-bar {
@@ -133,24 +138,31 @@
     .about-me {
       max-width: 800px;
       margin: 40px auto;
-      background: #fff3e0;
-      padding: 20px;
+      background: #fff8e1;
+      padding: 30px;
       border-radius: 12px;
       text-align: right;
-      font-size: 16px;
+      font-size: 17px;
       color: #4e342e;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
 
     .about-me h3 {
       margin-bottom: 10px;
       color: #d84315;
+      font-size: 22px;
+    }
+
+    .about-me p {
+      line-height: 1.8;
     }
 
     .about-me img {
       display: block;
-      margin: 20px auto 0;
-      max-width: 200px;
+      margin: 25px auto 0;
+      max-width: 220px;
       border-radius: 12px;
+      border: 2px solid #ccc;
     }
 
     footer {
@@ -166,7 +178,7 @@
   <!-- رأس الصفحة -->
   <header>
     <div class="logo">
-      <img src="icons/ai-icon.png" alt="Icon">
+      <img src="images/ai-icon.png" alt="FaragDev Logo">
       <span>FaragDev98</span>
     </div>
   </header>
@@ -179,7 +191,7 @@
     <a href="contact.html">📞 تواصل</a>
   </nav>
 
-  <!-- محتوى الصفحة -->
+  <!-- محتوى التواصل -->
   <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
     <p>يمكنك التواصل معنا مباشرة عبر وسائل التواصل التالية أو إرسال رسالة من النموذج أدناه.</p>
@@ -204,13 +216,14 @@
   <div class="about-me">
     <h3>👤 من هو فراج عبدالله؟</h3>
     <p>
-      عند تواصلك معنا، ستكون على تواصل مباشر مع فراج عبدالله شخصيًا.<br>
-      المطور الذي أنشأ هذا الموقع ويستقبل جميع الرسائل بنفسه.<br>
-      يتميز بالرد السريع، والمتابعة المستمرة لأي استفسارات أو مشروعات عمل حقيقية.
+      عند تواصلك معنا، ستكون على تواصل مباشر مع <strong>فراج عبدالله</strong> شخصيًا،<br>
+      مطور ومصمم هذا الموقع والذي يتابع الرسائل ويهتم بكل تفاصيلها بنفسه.<br>
+      يتميز بالردود السريعة، والاحترافية، والمتابعة الدقيقة لأي مشروع أو طلب.<br>
+      لا يوجد وسيط أو روبوت — كل شيء يتم بإشراف مباشر.
     </p>
-    <!-- مكان الصورة -->
-    <img src="your-photo.jpg" alt="صورة شخصية">
-    <!-- غيّر src حسب اسم صورتك -->
+    <!-- صورة شخصية -->
+    <img src="images/your-photo.jpg" alt="صورة فراج عبدالله">
+    <!-- غيّر اسم الصورة حسب ما رفعته فعليًا -->
   </div>
 
   <!-- التذييل -->
