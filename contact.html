@@ -8,10 +8,7 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
-      color: #333;
-      text-align: right;
-      direction: rtl;
+      background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
     }
 
     header {
@@ -19,134 +16,221 @@
       justify-content: flex-end;
       align-items: center;
       background-color: #6a1b9a;
-      color: #fff;
-      padding: 15px 30px;
+      color: white;
+      padding: 20px 40px;
     }
 
-    header img {
-      width: 60px;
-      height: 60px;
-      margin-left: 15px;
-      border-radius: 50%;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
       object-fit: cover;
-    }
-
-    header h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: 30px auto;
-      background: #fff;
       border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      border: 2px solid white;
     }
 
-    h2, h3 {
-      color: #6a1b9a;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .payment-methods, .contact-info {
-      margin-top: 25px;
-    }
-
-    .payment-methods ul, .contact-info ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .payment-methods li, .contact-info li {
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-
-    .contact-info a {
-      color: #6a1b9a;
-      text-decoration: none;
+    .logo span {
+      font-size: 28px;
       font-weight: bold;
     }
 
-    .about-me {
-      margin-top: 40px;
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #f8bbd0;
+      padding: 12px;
+    }
+
+    .nav-bar a {
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .nav-bar a:nth-child(1) { background-color: #4caf50; }
+    .nav-bar a:nth-child(2) { background-color: #2196f3; }
+    .nav-bar a:nth-child(3) { background-color: #ff5722; }
+    .nav-bar a:nth-child(4) { background-color: #9c27b0; }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+    }
+
+    .contact-content h2 {
       text-align: center;
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    .contact-content p {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 17px;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .buttons-container a {
+      flex: 1 1 22%;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .whatsapp    { background-color: #4caf50; }
+    .website     { background-color: #673ab7; }
+    .youtube     { background-color: #d32f2f; }
+    .facebook    { background-color: #3b5998; }
+    .instagram   { background-color: #e1306c; }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 140px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 16px;
+    }
+
+    .send-button {
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      width: fit-content;
+      align-self: center;
+    }
+
+    .about-me {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff8e1;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: right;
+      font-size: 17px;
+      color: #4e342e;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .about-me h3 {
+      margin-bottom: 10px;
+      color: #d84315;
+      font-size: 22px;
+    }
+
+    .about-me p {
+      line-height: 1.8;
     }
 
     .about-me img {
       display: block;
-      margin: 30px auto 0;
-      width: 260px;
-      height: 260px;
+      margin: 25px auto 0;
+      width: 320px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 16px;
-      border: 3px solid #6a1b9a;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      border: 2px solid #ccc;
     }
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-
-      header img {
-        margin-left: 0;
-        margin-bottom: 10px;
-      }
+    footer {
+      text-align: center;
+      background: #f3e5f5;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
+  <!-- رأس الصفحة -->
   <header>
-    <h1>FaragDev98</h1>
-    <img src="images/main-hero.png" alt="شعار الموقع" />
+    <div class="logo">
+      <img src="icons/ai-icon.png" alt="FaragDev Logo">
+      <span>FaragDev98</span>
+    </div>
   </header>
 
-  <div class="container">
+  <!-- شريط التنقل -->
+  <nav class="nav-bar">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="services.html">🛠️ خدمة</a>
+    <a href="article.html">📄 مقال</a>
+    <a href="contact.html">📞 تواصل</a>
+  </nav>
+
+  <!-- محتوى التواصل -->
+  <div class="contact-content">
     <h2>📞 تواصل معنا</h2>
-    <p>
-      يمكنك التواصل معنا بسهولة عبر الوسائل التالية لطلب الكورسات أو شراء كتاب البرمجة:
-    </p>
+    <p>يمكنك التواصل معنا مباشرة عبر وسائل التواصل التالية أو إرسال رسالة من النموذج أدناه.</p>
 
-    <div class="payment-methods">
-      <h3>💳 طرق الدفع:</h3>
-      <ul>
-        <li>فودافون كاش: <strong>01066047545</strong></li>
-        <li>أورنج كاش: <strong>01285895096</strong></li>
-        <li>وي كاش: <strong>01558516081</strong></li>
-        <li>باي بال: <strong>Farajbdallh891@gmail.com</strong></li>
-      </ul>
+    <!-- الأزرار -->
+    <div class="buttons-container">
+      <a class="whatsapp" href="https://wa.me/201066047545" target="_blank">💬 واتساب</a>
+      <a class="website" href="https://fabrica-courses.netlify.app/" target="_blank">🌐 موقعي</a>
+      <a class="youtube" href="https://youtube.com/@FaragDev98" target="_blank">🎥 يوتيوب</a>
+      <a class="facebook" href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">📘 فيسبوك</a>
+      <a class="instagram" href="https://www.instagram.com" target="_blank">📸 إنستغرام</a>
     </div>
 
-    <div class="contact-info">
-      <h3>📱 وسائل التواصل:</h3>
-      <ul>
-        <li>واتساب: <a href="https://wa.me/201091838789" target="_blank">اضغط هنا للمحادثة</a></li>
-        <li>فيسبوك: <a href="https://facebook.com" target="_blank">صفحتنا على فيسبوك</a></li>
-        <li>هاتف مباشر: <strong>01091838789</strong></li>
-        <li>بريد إلكتروني: <strong>قريبًا</strong></li>
-      </ul>
-    </div>
-
-    <div class="about-me">
-      <h3>👤 من هو فراج عبدالله؟</h3>
-      <p>
-        عند تواصلك معنا، ستكون على تواصل مباشر مع <strong>فراج عبدالله</strong> شخصيًا،<br>
-        مطور ومصمم هذا الموقع والذي يتابع الرسائل ويهتم بكل تفاصيلها بنفسه.<br>
-        يتميز بالردود السريعة، والاحترافية، والمتابعة الدقيقة لأي مشروع أو طلب.<br>
-        لا يوجد وسيط أو روبوت — كل شيء يتم بإشراف مباشر.
-      </p>
-      <img src="images/main-hero.png" alt="صورة فراج عبدالله">
-    </div>
+    <!-- نموذج الرسالة -->
+    <form action="mailto:Farajbdallh891@gmail.com" method="POST" enctype="text/plain">
+      <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
+      <button class="send-button" type="submit">📤 إرسال الرسالة</button>
+    </form>
   </div>
+
+  <!-- نبذة عني -->
+  <div class="about-me">
+    <h3>👤 من هو فراج عبدالله؟</h3>
+    <p>
+      عند تواصلك معنا، ستكون على تواصل مباشر مع <strong>فراج عبدالله</strong> شخصيًا،<br>
+      مطور ومصمم هذا الموقع والذي يتابع الرسائل ويهتم بكل تفاصيلها بنفسه.<br>
+      يتميز بالردود السريعة، والاحترافية، والمتابعة الدقيقة لأي مشروع أو طلب.<br>
+      لا يوجد وسيط أو روبوت — كل شيء يتم بإشراف مباشر.
+    </p>
+    <!-- صورة شخصية -->
+    <img src="images/main-hero.png" alt="صورة فراج عبدالله">
+  </div>
+
+  <!-- التذييل -->
+  <footer>
+    <script src="footer.js"></script>
+  </footer>
 
 </body>
 </html>
