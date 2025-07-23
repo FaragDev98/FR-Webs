@@ -48,7 +48,7 @@
       text-decoration: none;
       font-weight: bold;
       color: white;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 10px;
       transition: 0.3s;
     }
@@ -84,7 +84,8 @@
       gap: 15px;
     }
 
-    .form-group input, textarea {
+    .form-group input,
+    textarea {
       padding: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -126,8 +127,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-top: 25px;
+      gap: 15px;
+      margin-top: 30px;
     }
 
     .buttons-group a {
@@ -140,11 +141,10 @@
     }
 
     .buttons-group a:nth-child(1) { background-color: #25d366; } /* WhatsApp */
-    .buttons-group a:nth-child(2) { background-color: #2196f3; } /* Phone */
-    .buttons-group a:nth-child(3) { background-color: #d44638; } /* Email */
-    .buttons-group a:nth-child(4) { background-color: #1877f2; } /* Facebook */
-    .buttons-group a:nth-child(5) { background-color: #0077b5; } /* LinkedIn */
-    .buttons-group a:nth-child(6) { background-color: #ff0000; } /* YouTube */
+    .buttons-group a:nth-child(2) { background-color: #d44638; } /* Email */
+    .buttons-group a:nth-child(3) { background-color: #1877f2; } /* Facebook */
+    .buttons-group a:nth-child(4) { background-color: #0077b5; } /* LinkedIn */
+    .buttons-group a:nth-child(5) { background-color: #ff0000; } /* YouTube */
 
     .buttons-group a:hover {
       opacity: 0.85;
@@ -183,7 +183,6 @@
 
     <form onsubmit="sendMail(); return false;" class="form-group">
       <input type="text" id="name" placeholder="🧑‍💻 الاسم">
-      <input type="tel" id="phone" placeholder="📱 رقم الهاتف">
       <textarea id="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
       <div class="explanation">📧 سيتم إرسال الرسالة إلى بريدنا الإلكتروني عند الضغط على زر الإرسال.</div>
       <button type="submit" class="send-button">إرسال</button>
@@ -192,7 +191,6 @@
     <!-- روابط التواصل -->
     <div class="buttons-group">
       <a href="https://wa.me/201066047545" target="_blank">واتساب</a>
-      <a href="tel:01091838789">الهاتف</a>
       <a href="mailto:Farajbdallh891@gmail.com">البريد الإلكتروني</a>
       <a href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">فيسبوك</a>
       <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank">لينكدإن</a>
@@ -208,10 +206,14 @@
   <!-- سكربت الإرسال -->
   <script>
     function sendMail() {
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const message = document.getElementById("message").value;
-      const mailtoLink = `mailto:Farajbdallh891@gmail.com?subject=رسالة من ${name}&body=الاسم: ${name}%0Aرقم الهاتف: ${phone}%0A%0A${message}`;
+      const name = document.getElementById("name").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if (!message) {
+        alert("يرجى كتابة رسالة قبل الإرسال.");
+        return;
+      }
+      const subject = name ? `رسالة من ${name}` : "رسالة من زائر";
+      const mailtoLink = `mailto:Farajbdallh891@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
       window.location.href = mailtoLink;
     }
   </script>
