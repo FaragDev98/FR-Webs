@@ -13,7 +13,7 @@
 
     header {
       display: flex;
-      justify-content: flex-start; /* الشعار على اليسار */
+      justify-content: flex-start; /* الشعار على الشمال */
       align-items: center;
       background-color: #6a1b9a;
       color: white;
@@ -48,17 +48,12 @@
       padding: 10px 20px;
       border-radius: 8px;
       color: white;
-      transition: 0.3s;
     }
 
     .nav-bar a:nth-child(1) { background-color: #4caf50; }
     .nav-bar a:nth-child(2) { background-color: #2196f3; }
     .nav-bar a:nth-child(3) { background-color: #ff5722; }
     .nav-bar a:nth-child(4) { background-color: #9c27b0; }
-
-    .nav-bar a:hover {
-      opacity: 0.9;
-    }
 
     .contact-content {
       max-width: 800px;
@@ -99,7 +94,6 @@
       padding: 12px;
       border-radius: 10px;
       color: white;
-      transition: 0.3s;
     }
 
     .whatsapp    { background-color: #4caf50; }
@@ -107,10 +101,6 @@
     .youtube     { background-color: #d32f2f; }
     .facebook    { background-color: #3b5998; }
     .instagram   { background-color: #e1306c; }
-
-    .buttons-container a:hover {
-      opacity: 0.9;
-    }
 
     form {
       display: flex;
@@ -136,13 +126,31 @@
       border-radius: 10px;
       font-size: 16px;
       cursor: pointer;
-      transition: 0.3s;
       width: fit-content;
       align-self: center;
     }
 
-    .send-button:hover {
-      background-color: #4a148c;
+    .about-me {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: right;
+      font-size: 16px;
+      color: #4e342e;
+    }
+
+    .about-me h3 {
+      margin-bottom: 10px;
+      color: #d84315;
+    }
+
+    .about-me img {
+      display: block;
+      margin: 20px auto 0;
+      max-width: 200px;
+      border-radius: 12px;
     }
 
     footer {
@@ -190,6 +198,19 @@
       <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
       <button class="send-button" type="submit">📤 إرسال الرسالة</button>
     </form>
+  </div>
+
+  <!-- نبذة عني -->
+  <div class="about-me">
+    <h3>👤 من هو فراج عبدالله؟</h3>
+    <p>
+      عند تواصلك معنا، ستكون على تواصل مباشر مع فراج عبدالله شخصيًا.<br>
+      المطور الذي أنشأ هذا الموقع ويستقبل جميع الرسائل بنفسه.<br>
+      يتميز بالرد السريع، والمتابعة المستمرة لأي استفسارات أو مشروعات عمل حقيقية.
+    </p>
+    <!-- مكان الصورة -->
+    <img src="your-photo.jpg" alt="صورة شخصية">
+    <!-- غيّر src حسب اسم صورتك -->
   </div>
 
   <!-- التذييل -->
