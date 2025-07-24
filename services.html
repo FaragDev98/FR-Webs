@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الخدمات - FaragDev98</title>
   <link rel="icon" href="icons/ai-icon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -66,7 +65,7 @@
     }
 
     nav a:nth-child(1) { background-color: #3e2723; }
-    nav a:nth-child(2) { background-color: #e65100; } /* لون مميز للخدمات */
+    nav a:nth-child(2) { background-color: #e65100; }
     nav a:nth-child(3) { background-color: #ff9800; }
     nav a:nth-child(4) { background-color: #3e2723; }
     
@@ -84,46 +83,36 @@
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
     }
 
-    .services-img {
-      width: 100%;
-      height: 250px;
-      background-color: #333;
-      border-radius: 10px;
-      margin-bottom: 25px;
-      background-image: url("images/services-cover.jpg");
-      background-size: cover;
-      background-position: center;
-    }
-
     h2 {
       color: #fff;
       margin-top: 30px;
     }
 
     ul {
-      padding-right: 20px;
       list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
     ul li {
-      margin-bottom: 18px;
-      font-size: 1.15rem;
       background: rgba(255 255 255 / 0.1);
-      padding: 15px 20px;
-      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+      font-size: 1.15rem;
     }
 
-    ul li button, ul li a {
+    /* زرار الزيارة */
+    .visit-btn {
       background-color: #e65100;
       color: white;
       border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
+      padding: 12px 28px;
+      border-radius: 12px;
       font-weight: bold;
       cursor: pointer;
       text-decoration: none;
@@ -131,17 +120,8 @@
       flex-shrink: 0;
     }
 
-    ul li button:hover, ul li a:hover {
+    .visit-btn:hover {
       background-color: #ff9800;
-    }
-
-    a {
-      color: #ffd54f;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     footer {
@@ -167,8 +147,6 @@
     </nav>
   </header>
 
-  <div class="services-img"></div>
-
   <main>
     <h2>خدماتنا المتنوعة 🎯</h2>
     <p>
@@ -179,23 +157,23 @@
     <ul>
       <li>
         تصميم وتطوير مواقع الويب الحديثة والمتجاوبة.
-        <a href="service-web-design.html" aria-label="صفحة خدمة تصميم وتطوير مواقع الويب">تفاصيل الخدمة</a>
+        <a href="service-web-design.html" class="visit-btn" aria-label="زيارة صفحة خدمة تصميم وتطوير المواقع">زيارة</a>
       </li>
       <li>
         إنشاء واجهات مستخدم جذابة وسهلة الاستخدام.
-        <a href="service-ui-design.html" aria-label="صفحة خدمة إنشاء واجهات مستخدم">تفاصيل الخدمة</a>
+        <a href="service-ui-design.html" class="visit-btn" aria-label="زيارة صفحة خدمة إنشاء واجهات المستخدم">زيارة</a>
       </li>
       <li>
         تحسين تجربة المستخدم UX/UI لموقعك.
-        <a href="service-ux-ui.html" aria-label="صفحة خدمة تحسين تجربة المستخدم">تفاصيل الخدمة</a>
+        <a href="service-ux-ui.html" class="visit-btn" aria-label="زيارة صفحة خدمة تحسين تجربة المستخدم">زيارة</a>
       </li>
       <li>
         تطوير تطبيقات الويب باستخدام أحدث تقنيات JavaScript.
-        <a href="service-js-dev.html" aria-label="صفحة خدمة تطوير تطبيقات الويب">تفاصيل الخدمة</a>
+        <a href="service-js-dev.html" class="visit-btn" aria-label="زيارة صفحة خدمة تطوير تطبيقات الويب">زيارة</a>
       </li>
       <li>
         دعم وصيانة المواقع بشكل دوري لضمان الأداء المستمر.
-        <a href="service-maintenance.html" aria-label="صفحة خدمة دعم وصيانة المواقع">تفاصيل الخدمة</a>
+        <a href="service-maintenance.html" class="visit-btn" aria-label="زيارة صفحة خدمة الدعم والصيانة">زيارة</a>
       </li>
     </ul>
 
