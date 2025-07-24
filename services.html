@@ -81,7 +81,7 @@
 
     .service-card {
       background: rgba(255, 255, 255, 0.08);
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -93,8 +93,9 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
-    .service-icon {
-      font-size: 38px;
+    .service-card img {
+      width: 100%;
+      border-radius: 10px;
       margin-bottom: 15px;
     }
 
@@ -108,6 +109,22 @@
     .service-desc {
       font-size: 16px;
       line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .service-btn {
+      padding: 10px 20px;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .service-btn:hover {
+      background-color: #fb8c00;
     }
 
     footer {
@@ -134,28 +151,35 @@
   </header>
 
   <main>
-    <h2>💼 خدماتنا المتاحة</h2>
+    <h2>خدماتنا المتاحة</h2>
     <div class="services-grid">
+      
+      <!-- تطوير الويب -->
       <div class="service-card">
-        <div class="service-icon">💻</div>
+        <img src="images/web-dev.png" alt="تطوير الويب" />
         <div class="service-title">تطوير الويب</div>
-        <div class="service-desc">تصميم وتطوير مواقع احترافية تشمل الواجهة الأمامية والبرمجة الخلفية.</div>
+        <div class="service-desc">إنشاء مواقع متجاوبة وسريعة باستخدام HTML، CSS، JavaScript وReact لتجربة مستخدم مثالية.</div>
+        <button class="service-btn">اطلب الآن</button>
       </div>
 
+      <!-- تصميم المواقع -->
       <div class="service-card">
-        <div class="service-icon">🎨</div>
+        <img src="images/ui-design.png" alt="تصميم المواقع" />
         <div class="service-title">تصميم المواقع</div>
-        <div class="service-desc">تصميم جذاب وسريع الاستجابة يناسب الهوية البصرية لعلامتك التجارية.</div>
+        <div class="service-desc">تصميم عصري واحترافي لواجهات المواقع يعكس هوية مشروعك بشكل جذاب ومتجاوب مع جميع الأجهزة.</div>
+        <button class="service-btn">اطلب الآن</button>
       </div>
 
+      <!-- كورسات -->
       <div class="service-card">
-        <div class="service-icon">📚</div>
+        <img src="images/courses.png" alt="كورسات تعليمية" />
         <div class="service-title">كورسات تعليمية</div>
-        <div class="service-desc">دورات بأسعار رمزية لتعلم البرمجة، HTML، العمل الحر، وغير ذلك.</div>
+        <div class="service-desc">دورات تعليمية بأسلوب مبسط وأسعار رمزية لتعلم البرمجة، HTML، CSS، العمل الحر والمزيد.</div>
+        <button class="service-btn">اشترك الآن</button>
       </div>
+
     </div>
   </main>
-
 
   <footer id="footer"></footer>
   <script src="footer.js"></script>
