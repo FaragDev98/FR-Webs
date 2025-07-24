@@ -3,113 +3,303 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>شراء كتاب البرمجة - FaragDev</title>
-  <link rel="icon" href="icons/ai-icon.png" type="image/png">
-  <meta name="description" content="كتاب شامل لتعلم البرمجة من الصفر حتى الاحتراف. متاح الآن للشراء بسعر رمزي.">
+  <title>شراء كتاب HTML - FaragDev98</title>
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #fff8e1, #f3e5f5);
-      color: #222;
+      background: linear-gradient(135deg, #f3e5f5, #e8f5e9);
+      color: #333;
       text-align: center;
       animation: fadeIn 1.5s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
-      background: #6a1b9a;
+      background: #4a148c;
       color: white;
-      padding: 15px;
-      font-size: 1.8rem;
+      padding: 15px 30px;
+      font-size: 1.7rem;
       font-weight: bold;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
+      direction: rtl;
     }
 
-    img {
-      width: 90%;
-      max-width: 400px;
+    header .logo-space {
+      width: 50px;
+      height: 50px;
+      background: url('icons/ai-icon.png') no-repeat center center;
+      background-size: contain;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    nav.navbar {
+      background: #fff;
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 1.1rem;
+      direction: rtl;
+      font-weight: 600;
+      user-select: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin: 15px auto;
+      max-width: 600px;
+    }
+
+    nav.navbar a {
+      padding: 10px 22px;
+      color: white;
+      text-decoration: none;
+      /* بدل الحواف الدائرية: */
+      border-radius: 0;
+      font-weight: 700;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+
+    nav.navbar a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    nav.navbar a.home { background-color: #7b1fa2; }
+    nav.navbar a.services { background-color: #2196f3; }
+    nav.navbar a.blog { background-color: #25d366; }
+    nav.navbar a.contact { background-color: #f44336; }
+
+    .container {
+      max-width: 750px;
+      margin: 40px auto;
+      background: #fff;
       border-radius: 16px;
-      margin: 20px auto;
-      display: block;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px 25px;
+      direction: rtl;
+    }
+
+    .cover {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 2rem;
       color: #4a148c;
-      margin-top: 10px;
+      font-size: 2.3rem;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin: 10px 30px;
+    p.summary, p.description {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 25px;
     }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    a.btn {
+      padding: 14px 25px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      /* مربعة */
+      border-radius: 0;
+      transition: all 0.3s ease;
+      width: 80%;
+      max-width: 300px;
+      display: inline-block;
+      text-align: center;
+    }
+
+    a.btn:hover { transform: scale(1.05); }
+
+    .btn-purple { background: #7b1fa2; box-shadow: 0 4px 10px rgba(123, 31, 162, 0.3); }
+    .btn-purple:hover { background: #4a0072; }
+
+    .btn-blue { background: #2196f3; }
+    .btn-blue:hover { background: #1565c0; }
+
+    .btn-green { background: #25d366; }
+    .btn-green:hover { background: #1ebe5d; }
+
+    .btn-black { background: #333; }
+    .btn-black:hover { background: #000; }
 
     .price {
       font-size: 1.5rem;
-      color: #d32f2f;
+      color: #2e7d32;
       font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .buy-btn {
-      background: #7b1fa2;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
-      display: inline-block;
       margin: 20px 0;
     }
 
-    .buy-btn:hover {
-      background: #9c27b0;
+    .instruction {
+      background: #ede7f6;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      line-height: 1.8;
+      color: #4a148c;
+      font-size: 1rem;
+      text-align: right;
+      direction: rtl;
     }
 
-    footer {
-      margin-top: 40px;
-      padding: 10px;
+    .instruction a {
+      color: #4a148c;
+      text-decoration: underline;
+    }
+
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 30px auto;
+      direction: rtl;
+    }
+
+    .pay-btn {
+      background: #2196f3;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+      transition: background 0.3s ease;
+    }
+
+    .pay-btn:hover {
+      background: #1565c0;
+    }
+
+    .certificate {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .footer {
       font-size: 0.9rem;
-      color: #555;
+      color: #777;
+      margin: 35px 0 10px;
+      direction: rtl;
+      text-align: center;
     }
 
-    footer a {
+    .footer a {
       color: #6a1b9a;
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 10px;
     }
 
-    footer a:hover {
+    .footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <header>📘 كتاب البرمجة - FaragDev</header>
+  <header>
+    <div>FaragDev98</div>
+    <div class="logo-space" title="شعار AI"></div>
+  </header>
 
-  <img src="images/book-cover.jpg" alt="غلاف الكتاب" />
+  <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+    <a href="index.html" class="home">الرئيسية</a>
+    <a href="services.html" class="services">خدمات</a>
+    <a href="article.html" class="blog">مقال</a>
+    <a href="contact.html" class="contact">تواصل</a>
+  </nav>
 
-  <h1>تعلم البرمجة من الصفر حتى الاحتراف</h1>
-  <p>احصل على نسخة PDF من الكتاب الآن وتعلم أساسيات HTML، CSS، JavaScript، والمشروع العملي خطوة بخطوة.</p>
+  <div class="container">
+    <img src="images/html-book-cover.png" alt="غلاف الكتاب" class="cover" />
+    <h1>📘 كتاب HTML للمبتدئين</h1>
+    <p class="summary">
+      هل تريد أن تبدأ رحلتك في برمجة المواقع؟  
+      هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!
+    </p>
+    <p class="description">
+      تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.
+    </p>
 
-  <div class="price">السعر: 2 دولار (ما يعادل 100 جنيه مصري)</div>
+    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
 
-  <a class="buy-btn" href="https://wa.me/201091838789" target="_blank">اشترِ الآن عبر واتساب</a>
+    <div class="btns">
+      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+      <a id="whatsappBtn" href="#" class="btn btn-green">شراء عبر واتساب</a>
+      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
+    </div>
 
-  <footer>
-    طرق الدفع: فودافون كاش (01066047545) - وي كاش (01558516081) - أورنج كاش (01285895096) - باي بال:  
-    <a href="mailto:Farajbdallh891@gmail.com">Farajbdallh891@gmail.com</a><br>
-    تواصل معنا عبر <a href="https://wa.me/201091838789">واتساب</a> أو <a href="https://facebook.com">فيسبوك</a>
-  </footer>
+    <div class="instruction" style="background: #f5f5f5; padding: 15px; border-radius: 12px; margin-top: 20px; font-family: 'Segoe UI', sans-serif;">
+  <strong style="font-size: 18px; color: #4a148c;">🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
+  1️⃣ اختر وسيلة الدفع المناسبة لك من الأزرار في الأعلى، وانسخ رقم المحفظة.<br>
+  2️⃣ قم بإرسال صورة الإيصال وطريقة الدفع عبر واتساب.<br>
+  3️⃣ سيتم إرسال رابط تحميل الكتاب فور تأكيد الدفع.<br><br>
+  
+  <a href="https://wa.me/201066047545" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    💬 تواصل الآن على واتساب
+  </a>
+</div>
 
+    <div class="payment-options">
+      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
+      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
+      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
+      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
+    </div>
+
+    <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+
+    <div class="footer">
+      جميع الحقوق محفوظة © 2025 FaragDev98<br>
+      <a href="terms.html">الشروط والأحكام</a> |
+      <a href="privacy-policy.html">سياسة الخصوصية</a> |
+      <a href="protection.html">صفحة الحماية</a>
+    </div>
+  </div>
+
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ تم نسخ البيانات: " + text);
+      }).catch(() => {
+        alert("⚠️ لم يتم النسخ تلقائيًا، الرجاء نسخه يدويًا: " + text);
+      });
+    }
+
+    document.getElementById("whatsappBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      const whatsappURL = "https://wa.me/201066047545?text=لقد%20تم%20الدفع%20وأريد%20الحصول%20على%20الكتاب";
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+
+  <script src="security.js"></script>
 </body>
 </html>
