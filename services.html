@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الخدمات - Farag Dev 98</title>
   <link rel="icon" href="icons/ai-icon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -62,7 +61,7 @@
     }
 
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 20px;
     }
@@ -75,8 +74,8 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .service-card {
@@ -90,11 +89,13 @@
 
     .service-card:hover {
       transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .service-card img {
       width: 100%;
+      height: 160px;
+      object-fit: cover;
       border-radius: 10px;
       margin-bottom: 15px;
     }
@@ -109,12 +110,13 @@
     .service-desc {
       font-size: 16px;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      min-height: 80px;
     }
 
+    /* ألوان الأزرار المختلفة */
     .service-btn {
       padding: 10px 20px;
-      background-color: #ff9800;
       border: none;
       border-radius: 8px;
       font-weight: bold;
@@ -123,7 +125,52 @@
       transition: background 0.3s ease;
     }
 
-    .service-btn:hover {
+    .btn-webdev {
+      background-color: #4caf50;
+    }
+    .btn-webdev:hover {
+      background-color: #388e3c;
+    }
+
+    .btn-design {
+      background-color: #2196f3;
+    }
+    .btn-design:hover {
+      background-color: #1976d2;
+    }
+
+    .btn-courses {
+      background-color: #ff5722;
+    }
+    .btn-courses:hover {
+      background-color: #e64a19;
+    }
+
+    .btn-seo {
+      background-color: #9c27b0;
+    }
+    .btn-seo:hover {
+      background-color: #6a1b9a;
+    }
+
+    .btn-video {
+      background-color: #f44336;
+    }
+    .btn-video:hover {
+      background-color: #c62828;
+    }
+
+    .btn-social {
+      background-color: #00bcd4;
+    }
+    .btn-social:hover {
+      background-color: #0097a7;
+    }
+
+    .btn-apps {
+      background-color: #ff9800;
+    }
+    .btn-apps:hover {
       background-color: #fb8c00;
     }
 
@@ -153,29 +200,54 @@
   <main>
     <h2>خدماتنا المتاحة</h2>
     <div class="services-grid">
-      
-      <!-- تطوير الويب -->
+
       <div class="service-card">
-        <img src="images/web-dev.png" alt="تطوير الويب" />
-        <div class="service-title">تطوير الويب</div>
-        <div class="service-desc">إنشاء مواقع متجاوبة وسريعة باستخدام HTML، CSS، JavaScript وReact لتجربة مستخدم مثالية.</div>
-        <button class="service-btn">اطلب الآن</button>
+        <img src="https://i.imgur.com/O2b5N9l.jpg" alt="برمجة مواقع إلكترونية" />
+        <div class="service-title">برمجة مواقع إلكترونية</div>
+        <div class="service-desc">تصميم وبرمجة مواقع متجاوبة وسريعة تناسب جميع الأجهزة.</div>
+        <button class="service-btn btn-webdev">اطلب الآن</button>
       </div>
 
-      <!-- تصميم المواقع -->
       <div class="service-card">
-        <img src="images/ui-design.png" alt="تصميم المواقع" />
-        <div class="service-title">تصميم المواقع</div>
-        <div class="service-desc">تصميم عصري واحترافي لواجهات المواقع يعكس هوية مشروعك بشكل جذاب ومتجاوب مع جميع الأجهزة.</div>
-        <button class="service-btn">اطلب الآن</button>
+        <img src="https://i.imgur.com/Yz8dIkB.jpg" alt="تصميم واجهات UI/UX" />
+        <div class="service-title">تصميم واجهات UI/UX</div>
+        <div class="service-desc">تصميم عصري وجذاب مع تجربة مستخدم سلسة وواجهة سهلة الاستخدام.</div>
+        <button class="service-btn btn-design">اطلب الآن</button>
       </div>
 
-      <!-- كورسات -->
       <div class="service-card">
-        <img src="images/courses.png" alt="كورسات تعليمية" />
-        <div class="service-title">كورسات تعليمية</div>
-        <div class="service-desc">دورات تعليمية بأسلوب مبسط وأسعار رمزية لتعلم البرمجة، HTML، CSS، العمل الحر والمزيد.</div>
-        <button class="service-btn">اشترك الآن</button>
+        <img src="https://i.imgur.com/D13Izs7.jpg" alt="كورسات برمجة" />
+        <div class="service-title">كورسات برمجة</div>
+        <div class="service-desc">دورات تعليمية بأسعار رمزية لتعلم HTML، CSS، JavaScript، والعمل الحر.</div>
+        <button class="service-btn btn-courses">اشترك الآن</button>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.imgur.com/7F7YJPz.jpg" alt="تحسين سيو المواقع" />
+        <div class="service-title">تحسين سيو المواقع</div>
+        <div class="service-desc">نجعل موقعك يظهر في نتائج البحث الأولى في Google لزيادة الزيارات.</div>
+        <button class="service-btn btn-seo">اطلب الخدمة</button>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.imgur.com/9elKRgk.jpg" alt="مونتاج فيديو" />
+        <div class="service-title">مونتاج فيديو احترافي</div>
+        <div class="service-desc">فيديوهات دعائية وتعليمية عالية الجودة مع مؤثرات بصرية جذابة.</div>
+        <button class="service-btn btn-video">ابدأ الآن</button>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.imgur.com/I0XeSgV.jpg" alt="إدارة صفحات التواصل" />
+        <div class="service-title">إدارة صفحات التواصل</div>
+        <div class="service-desc">زيادة التفاعل والمبيعات من خلال منشورات منظمة وجذابة على السوشيال ميديا.</div>
+        <button class="service-btn btn-social">تواصل معنا</button>
+      </div>
+
+      <div class="service-card">
+        <img src="https://i.imgur.com/xhDxBlt.jpg" alt="تطبيقات الهواتف" />
+        <div class="service-title">تطوير تطبيقات الهواتف</div>
+        <div class="service-desc">تطوير تطبيقات أندرويد وiOS بجودة عالية وواجهات سهلة الاستخدام.</div>
+        <button class="service-btn btn-apps">اطلب الآن</button>
       </div>
 
     </div>
