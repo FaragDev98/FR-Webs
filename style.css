@@ -1,0 +1,18 @@
+/* style.css */
+body {
+  background: #f0f0f0;
+  color: #222;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  background-color: #4a148c;
+}
+
+nav a {
+  color: white;
+  background-color: #512da8;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
