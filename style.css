@@ -1,18 +1,52 @@
-/* style.css */
+/* نمط عام للصفحة */
 body {
-  background: #f0f0f0;
-  color: #222;
-  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f3f3f3;
 }
 
-header {
-  background-color: #4a148c;
+/* العناوين */
+h1, h2, h3 {
+  color: #ffcb05;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-nav a {
-  color: white;
-  background-color: #512da8;
-  padding: 10px;
-  border-radius: 5px;
+/* الروابط */
+a {
+  color: #00ffd5;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ff00cc;
+}
+
+/* الأزرار */
+button {
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff66cc, #6666ff);
+}
+
+/* الفوتر */
+footer {
+  background: #111;
+  color: #bbb;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
 }
