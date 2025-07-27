@@ -1,3 +1,4 @@
+/* الخط الأساسي والخلفية العامة */
 body {
   margin: 0;
   padding: 0;
@@ -8,45 +9,176 @@ body {
   scroll-behavior: smooth;
 }
 
+/* العناوين */
 h1, h2, h3 {
   color: #ffcb05;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   margin-bottom: 12px;
 }
 
+/* روابط */
 a {
   color: #00ffd5;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 a:hover {
   color: #ff00cc;
 }
 
-button {
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 12px;
+/* ترويسة الموقع */
+header {
+  background: #000000aa;
+  color: #fff;
+  padding: 16px 24px;
+  font-size: 1.4rem;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(45deg, #ff66cc, #6666ff);
+/* الشعار */
+.logo-space {
+  width: 40px;
+  height: 40px;
+  background-color: #ffcb05;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ffcb05;
 }
 
-footer {
+/* القائمة العلوية */
+.navbar {
   background: #111;
-  color: #bbbbbb;
-  padding: 24px;
+  padding: 12px 24px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #444;
+}
+.navbar a {
+  color: #f3f3f3;
+  font-weight: bold;
+}
+.navbar a:hover {
+  color: #00ffd5;
+}
+
+/* الحاوية الرئيسية */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 32px 20px;
+}
+
+/* صورة الشهادة */
+.certificate {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* وصف الكتاب والسعر */
+.summary, .description, .price {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 12px 0;
+}
+
+/* السعر */
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ffd5;
+}
+
+/* الأزرار */
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  flex: 1 1 220px;
+}
+.btn-purple {
+  background: linear-gradient(45deg, #7b2ff7, #f107a3);
+}
+.btn-blue {
+  background: linear-gradient(45deg, #1e90ff, #00bfff);
+}
+.btn-green {
+  background: linear-gradient(45deg, #00c853, #00e676);
+}
+.btn-black {
+  background: linear-gradient(45deg, #333, #555);
+}
+
+/* قسم التعليمات */
+.instruction {
+  margin-top: 32px;
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.8;
+}
+
+/* أزرار طرق الدفع */
+.payment-options {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pay-btn {
+  flex: 1 1 250px;
+  background: #222;
+  color: #ffcb05;
+  border: 2px solid #ffcb05;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.pay-btn:hover {
+  background: #ffcb05;
+  color: #222;
+}
+
+/* التذييل */
+.footer {
+  margin-top: 40px;
   text-align: center;
   font-size: 0.9rem;
+  padding: 20px;
+  background: #111;
   border-top: 1px solid #444;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+.footer a {
+  color: #00ffd5;
+  margin: 0 6px;
+}
+.footer a:hover {
+  color: #ff00cc;
+}
+
+/* تحسين عرض الصور */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
