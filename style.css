@@ -2,46 +2,80 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Cairo", "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f3f3f3;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #f1f1f1;
 }
 
 h1, h2, h3 {
-  color: #ffcb05;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  color: #ffb703;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 a {
-  color: #00ffd5;
+  color: #00f7ff;
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ff00cc;
+  color: #ff0080;
 }
 
 button {
-  background: linear-gradient(45deg, #ff00cc, #3333ff);
-  color: white;
+  background: linear-gradient(45deg, #7b2ff7, #f107a3);
+  color: #fdfdfd;
   padding: 12px 20px;
   border: none;
   border-radius: 12px;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 button:hover {
   transform: scale(1.05);
-  background: linear-gradient(45deg, #ff66cc, #6666ff);
+  background: linear-gradient(45deg, #a020f0, #ff1493);
 }
 
 footer {
-  background: #111;
-  color: #bbb;
+  background: #0d0d0d;
+  color: #aaaaaa;
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* إضافات اختيارية لأزرار الدفع والروابط داخل الموقع */
+.btn {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-purple {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+.btn-blue {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+.btn-green {
+  background: linear-gradient(45deg, #00b09b, #96c93d);
+  color: #fff;
+}
+
+.btn-black {
+  background: #222;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
