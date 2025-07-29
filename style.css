@@ -1,10 +1,9 @@
-/* الخط الأساسي */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Cairo', 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #121212, #1c2b3a, #233c50);
-  color: #e0e0e0;
+  background: linear-gradient(to bottom right, #2c2c2c, #512da8, #ff6f00); /* أسود، بنفسجي، برتقالي */
+  color: #fff; /* وضوح عالي */
   line-height: 1.8;
   scroll-behavior: smooth;
 }
