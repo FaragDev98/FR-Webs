@@ -3,15 +3,26 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Cairo', 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #1a1a1a, #2e1e3a);
+  background: linear-gradient(to bottom, #0f0f1a, #1b1f3b); /* أسمر في أزرق */
   color: #f5f5f5;
   line-height: 1.8;
   scroll-behavior: smooth;
 }
 
+/* الشريط العلوي */
+header {
+  background: #ff9800; /* برتقالي */
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
 /* العناوين */
 h1, h2, h3 {
-  color: #ff9800; /* برتقالي واضح */
+  color: #ff9800;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
   margin-bottom: 16px;
   letter-spacing: 0.6px;
@@ -19,13 +30,33 @@ h1, h2, h3 {
 
 /* الروابط */
 a {
-  color: #ffccff; /* بنفسجي فاتح */
+  color: #ffccff;
   text-decoration: none;
   transition: 0.3s ease;
 }
 a:hover {
   color: #ffa726;
   text-shadow: 0 0 8px #ffa726;
+}
+
+/* أزرار التنقل */
+.navbar a {
+  padding: 12px 20px;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.navbar a:nth-child(1) { background-color: #673ab7; } /* الرئيسية */
+.navbar a:nth-child(2) { background-color: #009688; } /* الخدمات */
+.navbar a:nth-child(3) { background-color: #3f51b5; } /* المقالات */
+.navbar a:nth-child(4) { background-color: #e91e63; } /* تواصل معنا */
+.navbar a:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
 /* الأزرار */
