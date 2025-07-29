@@ -3,126 +3,124 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Cairo', 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #1a1a1a, #2e1e3a); /* أسود غامق بنفسجي */
-  color: #f5f5f5;
+  background: linear-gradient(to bottom right, #2c2c2c, #512da8, #ff6f00); /* أسود، بنفسجي، برتقالي */
+  color: #fff; /* وضوح عالي */
   line-height: 1.8;
   scroll-behavior: smooth;
 }
 
-/* الرأس */
-header {
-  background: #1a1a1a; /* خلفية غامقة للرأس */
-  color: #ff9800; /* اسم الموقع بالبرتقالي */
-  padding: 20px 0;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-header img {
-  width: 40px;
-  height: 40px;
-}
-
-/* شريط التنقل */
-.navbar {
-  background: #1a1a1a;
-  text-align: center;
-  padding: 10px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-.navbar a {
-  display: inline-block;
-  margin: 5px 10px;
-  padding: 10px 20px;
-  background: #673ab7; /* بنفسجي */
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.navbar a:hover {
-  background: #ff9800;
-  color: #000;
-  transform: scale(1.05);
-}
-
 /* العناوين */
 h1, h2, h3 {
-  color: #ff9800; /* برتقالي */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  color: #ffcc80; /* برتقالي فاتح */
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
   margin-bottom: 16px;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.7px;
 }
 
-/* الفقرات */
-p {
-  font-size: 1.05rem;
-  margin-bottom: 14px;
-  color: #eeeeee;
+/* الروابط */
+a {
+  color: #ffd740; /* أصفر لامع */
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: #ff8a65;
+  text-shadow: 0 0 8px #ff8a65;
 }
 
 /* الأزرار */
 button, .cta-button {
-  background: linear-gradient(45deg, #9c27b0, #ff9800); /* بنفسجي - برتقالي */
+  background: linear-gradient(45deg, #ff6f00, #ab47bc); /* برتقالي + بنفسجي */
   color: #fff;
-  padding: 12px 28px;
-  margin: 12px 0;
+  padding: 14px 30px;
+  margin: 14px 0;
   display: inline-block;
   border: none;
-  border-radius: 16px;
-  font-size: 1rem;
+  border-radius: 18px;
+  font-size: 1.1rem;
   font-weight: bold;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 button:hover, .cta-button:hover {
-  transform: scale(1.07);
-  background: linear-gradient(45deg, #ab47bc, #ffb74d);
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff8a65, #ba68c8);
+}
+
+/* الفقرات */
+p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #f5f5f5;
+}
+
+/* الفوتير */
+footer {
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 1px solid #555;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* حاوية عامة */
 .container {
-  max-width: 960px;
+  max-width: 1100px;
   margin: auto;
-  padding: 20px;
+  padding: 24px;
 }
 
 /* أرقام الدفع */
 .payment-info {
-  background: rgba(255, 152, 0, 0.1);
-  border-left: 5px solid #ff9800;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 8px;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #ffd740;
+  padding: 18px;
+  margin-top: 24px;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 /* تظبيط الصورة */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
 }
 
-/* الفوتير */
-footer {
-  background: #111;
-  color: #dddddd;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #444;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+/* تجاوب الشاشات */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  button, .cta-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2, h3 {
+    font-size: 1.2rem;
+  }
+  button, .cta-button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 1rem;
+  }
 }
