@@ -133,7 +133,71 @@
     <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
     <h1>Farag Dev 98</h1>
   </div>
+  <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
+      
+  <img src="images/main-hero.png" alt="HTML" class="certificate" />
 
+    <h1>📘 كتاب HTML للمبتدئين</h1>
+    <p class="summary">
+      هل تريد أن تبدأ رحلتك في برمجة المواقع؟  
+      هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!
+    </p>
+    <p class="description">
+      تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.
+    </p>
+
+    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+
+    <div class="btns">
+      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+      <a id="whatsappBtn" href="#" class="btn btn-green">شراء عبر واتساب</a>
+      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
+    </div>
+
+    <div class="instruction" style="background: #f5f5f5; padding: 15px; border-radius: 12px; margin-top: 20px; font-family: 'Segoe UI', sans-serif;">
+  <strong style="font-size: 18px; color: #4a148c;">🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
+  1️⃣ اختر وسيلة الدفع المناسبة لك من الأزرار في الأعلى، وانسخ رقم المحفظة.<br>
+  2️⃣ قم بإرسال صورة الإيصال وطريقة الدفع عبر واتساب.<br>
+  3️⃣ سيتم إرسال رابط تحميل الكتاب فور تأكيد الدفع.<br><br>
+  
+  <a href="https://wa.me/201066047545" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    💬 تواصل الآن على واتساب
+  </a>
+</div>
+
+    <div class="payment-options">
+      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
+      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
+      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
+      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
+    </div>
+
+    <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+
+    <div class="footer">
+      جميع الحقوق محفوظة © 2025 FaragDev98<br>
+      <a href="terms.html">الشروط والأحكام</a> |
+      <a href="privacy-policy.html">سياسة الخصوصية</a> |
+      <a href="protection.html">صفحة الحماية</a>
+    </div>
+  </div>
+
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ تم نسخ البيانات: " + text);
+      }).catch(() => {
+        alert("⚠️ لم يتم النسخ تلقائيًا، الرجاء نسخه يدويًا: " + text);
+      });
+    }
+
+    document.getElementById("whatsappBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      const whatsappURL = "https://wa.me/201066047545?text=لقد%20تم%20الدفع%20وأريد%20الحصول%20على%20الكتاب";
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
   <nav>
     <a href="index.html">الرئيسية</a>
     <a href="services.html" style="background:#e65100;">الخدمات</a>
@@ -143,6 +207,7 @@
 </header>
 
 <main>
+  
   <h2>جميع خدماتنا في مكان واحد</h2>
   <div class="services-grid">
 
@@ -164,11 +229,6 @@
       <a href="courses.html"><button>افتح الخدمة</button></a>
     </div>
 
-    <div class="service-box">
-      <img src="icons/support.png" alt="دعم فني">
-      <h3>دعم فني ومتابعة</h3>
-      <a href="support.html"><button>افتح الخدمة</button></a>
-    </div>
 
   </div>
 </main>
