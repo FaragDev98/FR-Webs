@@ -7,16 +7,17 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background: linear-gradient(to bottom right, #4a148c, #6a1b9a);
+      background: linear-gradient(to bottom right, #ff9800, #ff5722);
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Cairo', 'Segoe UI', sans-serif;
       color: white;
       text-align: center;
+      scroll-behavior: smooth;
     }
 
     header {
       background: rgba(0, 0, 0, 0.85);
-      padding: 15px 20px;
+      padding: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
@@ -34,7 +35,7 @@
 
     .logo-area h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 26px;
       color: white;
     }
 
@@ -42,13 +43,14 @@
       margin-top: 10px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
     }
 
     nav a {
-      padding: 8px 18px;
+      padding: 8px 20px;
       border-radius: 8px;
-      background-color: #4527a0;
+      background-color: #f57c00;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -56,61 +58,71 @@
     }
 
     nav a:hover {
-      background-color: #311b92;
+      background-color: #e65100;
     }
 
     main {
       padding: 40px 20px;
     }
 
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      padding: 20px;
+      gap: 25px;
     }
 
     .service-box {
       background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .service-box:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
     }
 
     .service-box img {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
       margin-bottom: 15px;
     }
 
-    .service-box button {
-      background-color: #ff5722;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
-      transition: background-color 0.3s ease;
+    .service-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    .service-box button:hover {
-      background-color: #e64a19;
+    .service-box a button {
+      background-color: #fff;
+      color: #ff5722;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .service-box a button:hover {
+      background-color: #ffe0b2;
     }
 
     footer {
-      margin-top: 60px;
-      text-align: center;
-      color: #ccc;
+      margin-top: 50px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.1);
       font-size: 0.9rem;
+      color: #f0f0f0;
     }
   </style>
 </head>
@@ -124,26 +136,20 @@
 
   <nav>
     <a href="index.html">الرئيسية</a>
-    <a href="services.html">الخدمات</a>
+    <a href="services.html" style="background:#e65100;">الخدمات</a>
     <a href="article.html">المقالات</a>
     <a href="contact.html">تواصل معنا</a>
   </nav>
 </header>
 
 <main>
-  <h2>خدماتنا</h2>
+  <h2>جميع خدماتنا في مكان واحد</h2>
   <div class="services-grid">
 
     <div class="service-box">
       <img src="icons/book.png" alt="شراء الكتاب">
       <h3>شراء كتاب البرمجة</h3>
       <a href="book.html"><button>افتح الخدمة</button></a>
-    </div>
-
-    <div class="service-box">
-      <img src="icons/app.png" alt="تحميل التطبيق">
-      <h3>تحميل تطبيق القرآن</h3>
-      <a href="app.html"><button>افتح الخدمة</button></a>
     </div>
 
     <div class="service-box">
@@ -167,8 +173,7 @@
   </div>
 </main>
 
-<footer id="footer"></footer>
-<script src="footer.js"></script>
+<footer id="footer">جميع الحقوق محفوظة © FaragDev98 - 2025</footer>
 
 </body>
 </html>
