@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background: linear-gradient(to bottom right, #fff3e0, #ffe0b2);
-      margin: 0;
-      font-family: 'Cairo', 'Segoe UI', sans-serif;
-      color: #222;
+      background: linear-gradient(to bottom right, #1a1a1a, #0d0d0d);
+      color: #f1f1f1;
+      font-family: 'Cairo', sans-serif;
       text-align: center;
       scroll-behavior: smooth;
     }
@@ -54,7 +53,6 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s ease;
     }
 
     nav a:hover {
@@ -66,44 +64,43 @@
     }
 
     h2 {
-      font-size: 32px;
+      font-size: 30px;
       margin-bottom: 30px;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       margin-bottom: 40px;
     }
 
     .service-box {
-      background-color: white;
+      background-color: #222;
       border-radius: 14px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: 0.3s ease;
     }
 
     .service-box:hover {
       transform: translateY(-6px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     }
 
     .service-box img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
       margin-bottom: 15px;
     }
 
     .service-box h3 {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 10px;
     }
 
     .service-box button {
-      background-color: #ff9800;
+      background-color: #673ab7;
       color: white;
       border: none;
       padding: 10px 20px;
@@ -111,72 +108,63 @@
       font-size: 15px;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s ease;
+      margin-top: 10px;
     }
 
     .service-box button:hover {
-      background-color: #e65100;
+      background-color: #512da8;
     }
 
     .instruction {
-      background: #fffde7;
-      color: #111;
-      padding: 20px;
+      background: #2c2c2c;
+      color: #eee;
+      padding: 25px;
       margin-top: 40px;
       border-radius: 12px;
-      font-family: 'Segoe UI', sans-serif;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
       font-size: 18px;
     }
 
     .instruction strong {
-      color: #d84315;
-      font-size: 20px;
-    }
-
-    .payment-options {
-      margin-top: 20px;
+      color: #ffd54f;
     }
 
     .pay-btn {
       display: block;
-      margin: 10px auto;
-      padding: 14px 25px;
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      font-size: 17px;
-      border-radius: 10px;
-      cursor: pointer;
+      margin: 12px auto;
+      padding: 14px;
       width: 90%;
-      max-width: 320px;
-      transition: background-color 0.3s ease;
+      max-width: 300px;
+      border-radius: 10px;
+      font-size: 17px;
+      border: none;
+      color: white;
+      cursor: pointer;
     }
 
-    .pay-btn:hover {
-      background-color: #2e7d32;
-    }
+    .gumroad { background: #7b1fa2; }
+    .payhip { background: #2196f3; }
+    .whatsapp { background: #4caf50; }
+    .app { background: #333; }
 
     .certificate {
       margin-top: 30px;
       width: 90%;
       max-width: 400px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .footer {
-      margin-top: 40px;
-      background-color: #eee;
-      padding: 15px;
+      margin-top: 50px;
+      background-color: #111;
+      padding: 20px;
+      color: #bbb;
       font-size: 14px;
-      color: #555;
     }
 
     .footer a {
       color: #ff5722;
-      text-decoration: none;
       margin: 0 5px;
+      text-decoration: none;
     }
 
     .footer a:hover {
@@ -188,7 +176,7 @@
 
 <header>
   <div class="logo-area">
-    <img src="icons/ai-icon.png" alt="FaragDev">
+    <img src="icons/ai-icon.png" alt="logo">
     <h1>Farag Dev 98</h1>
   </div>
   <nav>
@@ -200,57 +188,54 @@
 </header>
 
 <main>
-  <h2>جميع خدماتنا في مكان واحد</h2>
+  <h2>💼 جميع خدماتنا</h2>
   <div class="services-grid">
     <div class="service-box">
-      <img src="icons/coding-cover.jpg" alt="تصميم مواقع">
-      <h3>تصميم مواقع احترافية</
-    <div class="service-box">
-      <img src="icons/learn-coding-cover.jpg" alt="كورسات">
-      <h3>كورسات تطوير البرمجة</h3>
-      <a href="courses.html"><button>افتح الخدمة</button></a>
+      <img src="icons/html-book-cover.png" alt="غلاف الكتاب">
+      <h3>شراء كتاب HTML للمبتدئين 📘</h3>
+      <p>هل تريد تعلم HTML من البداية حتى الاحتراف؟ هذا الكتاب دليلك الكامل.</p>
+      <button onclick="document.getElementById('book-section').scrollIntoView({behavior: 'smooth'})">شراء الكتاب</button>
     </div>
     <div class="service-box">
-      <img src="icons/html-book-cover.png" alt="شراء الكتاب">
-      <h3>شراء كتاب البرمجة PDF</h3>
-      <a href="#book"><button>شراء الكتاب</button></a>
+      <img src="icons/coding-cover.jpg" alt="خدمة مواقع">
+      <h3>تصميم مواقع احترافية</h3>
+      <a href="#"><button>افتح الخدمة</button></a>
+    </div>
+    <div class="service-box">
+      <img src="icons/learn-coding-cover.jpg" alt="كورس برمجة">
+      <h3>كورسات تطوير برمجي</h3>
+      <a href="#"><button>افتح الكورسات</button></a>
     </div>
   </div>
 
-  <div class="instruction" id="book">
-    <strong>🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
-    1️⃣ اختر وسيلة الدفع من الأزرار بالأسفل وانسخ الرقم<br>
-    2️⃣ أرسل صورة الإيصال عبر واتساب<br>
-    3️⃣ سيتم إرسال رابط تحميل الكتاب فور التأكد<br><br>
-    <a href="https://wa.me/201066047545" target="_blank" style="background: #25D366; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold;">
-      💬 تواصل على واتساب
-    </a>
+  <div class="instruction" id="book-section">
+    <strong>💡 خطوات شراء الكتاب:</strong><br><br>
+    اختر وسيلة الدفع ⬇ ثم أرسل الإيصال على واتساب:<br><br>
+    <a href="https://wa.me/201066047545" target="_blank" style="color:white; background: #25D366; padding:10px 25px; border-radius: 10px; text-decoration:none;">📩 تواصل معنا على واتساب</a>
   </div>
 
   <div class="payment-options">
-    <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
-    <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
-    <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
-    <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 باي بال: Farajbdallh891@gmail.com</button>
+    <button class="pay-btn gumroad" onclick="window.open('https://gumroad.com/', '_blank')">شراء من Gumroad</button>
+    <button class="pay-btn payhip" onclick="window.open('https://payhip.com/', '_blank')">شراء من Payhip</button>
+    <button class="pay-btn whatsapp" onclick="window.open('https://wa.me/201066047545', '_blank')">شراء عبر واتساب</button>
+    <button class="pay-btn app" onclick="window.open('https://example.com/app', '_blank')">⬇ تحميل تطبيق تعلم الإنجليزية</button>
   </div>
 
-  <img src="images/certificate-coursera.jpg" alt="شهادة الكورس" class="certificate" />
+  <img src="images/certificate-coursera.jpg" alt="شهادة" class="certificate">
 </main>
 
 <footer class="footer">
-  جميع الحقوق محفوظة © 2025 FaragDev98<br>
-  <a href="terms.html">الشروط والأحكام</a> |
-  <a href="privacy-policy.html">سياسة الخصوصية</a> |
-  <a href="protection.html">حماية الصفحة</a>
+  © 2025 جميع الحقوق محفوظة - FaragDev98 |
+  <a href="terms.html">الشروط</a> |
+  <a href="privacy-policy.html">الخصوصية</a> |
+  <a href="protection.html">الحماية</a>
 </footer>
 
 <script>
   function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-      alert("✅ تم نسخ البيانات: " + text);
-    }).catch(() => {
-      alert("⚠️ لم يتم النسخ، الرجاء النسخ يدويًا: " + text);
-    });
+    navigator.clipboard.writeText(text)
+      .then(() => alert("✅ تم نسخ: " + text))
+      .catch(() => alert("❌ لم يتم النسخ"));
   }
 </script>
 
