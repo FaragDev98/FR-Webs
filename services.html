@@ -1,167 +1,132 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>خدمات Farag Dev 98</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="images/icon.png" type="image/png">
+  <meta charset="UTF-8">
+  <title>خدمات Farag Dev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Cairo', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f7f3ff;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f5f3ff;
+      color: #333;
     }
     header {
-      background: linear-gradient(to left, #4b0082, #000);
-      color: white;
-      padding: 1rem;
+      background: linear-gradient(to left, #4b0082, #1e1e2f);
+      padding: 2rem;
       text-align: center;
+      color: white;
       position: relative;
     }
-    header img.logo {
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header .icon {
       position: absolute;
-      right: 1rem;
+      left: 1rem;
       top: 1rem;
-      width: 40px;
-      height: 40px;
+      font-size: 2rem;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .services-container {
+    .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 2rem;
     }
-
-    .service-card {
-      background: linear-gradient(to bottom right, #e5d4ff, #f0eaff);
+    .card {
+      background: linear-gradient(to bottom right, #e3dcff, #fff9ff);
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-    .service-card:hover {
+    .card:hover {
       transform: translateY(-5px);
     }
-    .service-card img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1rem;
-    }
-    .service-card h2 {
+    .card h2 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
+      color: #4b0082;
+    }
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
     }
     .btn {
       display: inline-block;
-      margin: 5px;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 8px;
-      color: white;
       text-decoration: none;
       font-weight: bold;
+      color: white;
+      background-color: #6a0dad;
+      transition: background 0.2s ease;
     }
-    .btn-purple { background-color: #6a0dad; }
-    .btn-blue   { background-color: #007bff; }
-    .btn-green  { background-color: #28a745; }
-    .btn-orange { background-color: #ff6600; }
-    .btn-black  { background-color: #333; }
-
+    .btn:hover {
+      background-color: #531188;
+    }
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #222;
-      color: #ccc;
       font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #ccc;
-      text-decoration: underline;
+      color: #777;
+      background-color: #f0f0f0;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="images/icon.png" alt="الشعار" class="logo" />
-  <h1>📌 خدمات Farag Dev 98</h1>
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="services.html">الخدمات</a>
-    <a href="article.html">مقال</a>
-    <a href="contact.html">تواصل</a>
-  </nav>
+  <div class="icon">🎯</div>
+  <h1>خدمات Farag Dev</h1>
 </header>
 
-<main class="services-container">
+<section class="services">
 
-  <!-- كورس البرمجة -->
-  <div class="service-card">
-    <img src="images/programming.png" alt="تعلم البرمجة">
-    <h2>كورس تعلم البرمجة الكامل</h2>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-purple">عرض التفاصيل</a>
+  <div class="card">
+    <h2>تصميم مواقع</h2>
+    <p>مواقع جذابة وسريعة ومتجاوبة تناسب جميع الأجهزة.</p>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">شاهد الآن</a>
   </div>
 
-  <!-- دروس HTML/CSS/JS -->
-  <div class="service-card">
-    <img src="images/video.png" alt="دروس HTML CSS JS">
-    <h2>دروس HTML / CSS / JavaScript</h2>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-blue">مشاهدة الدروس</a>
+  <div class="card">
+    <h2>تطوير تطبيقات</h2>
+    <p>بناء تطبيقات ويب أو موبايل بأحدث التقنيات.</p>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">اعرف المزيد</a>
   </div>
 
-  <!-- تصميم مواقع -->
-  <div class="service-card">
-    <img src="images/web-dev.png" alt="تصميم مواقع">
-    <h2>تصميم مواقع احترافية</h2>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-green">طلب تصميم الآن</a>
+  <div class="card">
+    <h2>كورس برمجة شامل</h2>
+    <p>تعلم البرمجة من الصفر حتى الاحتراف بأسلوب مبسط.</p>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">ابدأ التعلم</a>
   </div>
 
-  <!-- تطوير تطبيقات -->
-  <div class="service-card">
-    <img src="images/app-dev.png" alt="تطوير التطبيقات">
-    <h2>تطوير تطبيقات وبرمجيات</h2>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-orange">طلب تطبيق</a>
+  <div class="card">
+    <h2>تصميم واجهات UI/UX</h2>
+    <p>واجهات احترافية وجذابة لمنتجاتك ومواقعك.</p>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">شاهد التصميم</a>
   </div>
 
-  <!-- شراء كتاب -->
-  <div class="service-card">
-    <img src="images/book.png" alt="شراء كتاب">
-    <h2>📘 شراء كتاب تعلم HTML</h2>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-purple">من Gumroad</a>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-blue">من Payhip</a>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-black">عبر واتساب</a>
+  <div class="card">
+    <h2>بيع كتاب HTML</h2>
+    <p>احصل على كتاب تعليمي شامل لأساسيات HTML.</p>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">شراء الآن</a>
   </div>
 
-</main>
+  <div class="card">
+    <h2>استشارات تقنية</h2>
+    <p>مساعدة في تطوير أفكارك أو مشروعك التقني.</p>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">اطلب استشارة</a>
+  </div>
 
-</main>
-
-  <footer>جميع الحقوق محفوظة © 2025 FaragDev98</footer>
-
-<script src="footer.js"></script>
+</section>
   
-
+  <footer>جميع الحقوق محفوظة © 2025 FaragDev98</footer>
+  
 </body>
 </html>
+
