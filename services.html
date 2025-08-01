@@ -2,242 +2,146 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>الخدمات - Farag Dev 98</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الخدمات - Fabrica Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom right, #1a1a1a, #0d0d0d);
-      color: #f1f1f1;
       font-family: 'Cairo', sans-serif;
-      text-align: center;
-      scroll-behavior: smooth;
+      background-color: #ffffff;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      background: #ff9800;
+      background-color: #6a0dad;
       color: white;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      padding: 1rem;
+      text-align: center;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+    h1, h2 {
+      text-align: center;
+      color: #6a0dad;
     }
 
-    .logo-area img {
-      width: 36px;
-      height: 36px;
-    }
-
-    .logo-area h1 {
-      margin: 0;
-      font-size: 26px;
-    }
-
-    nav {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    nav a {
-      padding: 8px 20px;
-      border-radius: 8px;
-      background-color: #fb8c00;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background-color: #ef6c00;
-    }
-
-    main {
-      padding: 40px 20px;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .service-box {
-      background-color: #222;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      transition: 0.3s ease;
-    }
-
-    .service-box:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-box img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .service-box h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .service-box button {
-      background-color: #673ab7;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .service-box button:hover {
-      background-color: #512da8;
-    }
-
-    .instruction {
-      background: #2c2c2c;
-      color: #eee;
-      padding: 25px;
-      margin-top: 40px;
+    .services {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f9f9f9;
       border-radius: 12px;
-      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .instruction strong {
-      color: #ffd54f;
+    .service {
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
     }
 
-    .pay-btn {
-      display: block;
-      margin: 12px auto;
-      padding: 14px;
-      width: 90%;
-      max-width: 300px;
+    .service:last-child {
+      border-bottom: none;
+    }
+
+    .service h3 {
+      margin-bottom: 0.5rem;
+      color: #6a0dad;
+    }
+
+    .service p {
+      margin: 0.2rem 0;
+    }
+
+    .payment {
+      background-color: #eee;
+      padding: 1rem;
       border-radius: 10px;
-      font-size: 17px;
-      border: none;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      background-color: #6a0dad;
       color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
-    }
-
-    .gumroad { background: #7b1fa2; }
-    .payhip { background: #2196f3; }
-    .whatsapp { background: #4caf50; }
-    .app { background: #333; }
-
-    .certificate {
-      margin-top: 30px;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 10px;
-    }
-
-    .footer {
-      margin-top: 50px;
-      background-color: #111;
-      padding: 20px;
-      color: #bbb;
-      font-size: 14px;
-    }
-
-    .footer a {
-      color: #ff5722;
-      margin: 0 5px;
+      display: block;
+      margin: 1rem auto;
+      text-align: center;
+      width: fit-content;
       text-decoration: none;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #6a0dad;
+      color: white;
+      margin-top: 3rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      .services {
+        padding: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-area">
-    <img src="icons/ai-icon.png" alt="logo">
-    <h1>Farag Dev 98</h1>
-  </div>
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="services.html">الخدمات</a>
-    <a href="article.html">المقالات</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
-</header>
+  <header>
+    <h1>جميع خدمات Fabrica Course</h1>
+  </header>
 
-<main>
-  <h2>💼 جميع خدماتنا</h2>
-  <div class="services-grid">
-    <div class="service-box">
-      <img src="icons/html-book-cover.png" alt="غلاف الكتاب">
-      <h3>شراء كتاب HTML للمبتدئين 📘</h3>
-      <p>هل تريد تعلم HTML من البداية حتى الاحتراف؟ هذا الكتاب دليلك الكامل.</p>
-      <button onclick="document.getElementById('book-section').scrollIntoView({behavior: 'smooth'})">شراء الكتاب</button>
+  <section class="services">
+
+    <div class="service">
+      <h3>بيع كتاب البرمجة للمبتدئين</h3>
+      <p>كتاب تعليمي بصيغة PDF يشرح أساسيات البرمجة للمبتدئين بأسلوب مبسط.</p>
+      <p><strong>السعر:</strong> 2 دولار أو ما يعادلها بالجنيه المصري</p>
+      <a href="https://wa.me/201091838789" class="btn">شراء الكتاب</a>
     </div>
-    <div class="service-box">
-      <img src="icons/coding-cover.jpg" alt="خدمة مواقع">
+
+    <div class="service">
+      <h3>كورس برمجة كامل</h3>
+      <p>يشمل HTML, CSS, JavaScript, Python بطريقة مبسطة.</p>
+      <a href="https://wa.me/201091838789" class="btn">اشترك في الكورس</a>
+    </div>
+
+    <div class="service">
       <h3>تصميم مواقع احترافية</h3>
-      <a href="#"><button>افتح الخدمة</button></a>
+      <p>تصميم صفحة هبوط أو موقع تعريفي بجودة عالية متجاوب مع جميع الشاشات.</p>
+      <a href="https://wa.me/201091838789" class="btn">اطلب تصميمك</a>
     </div>
-    <div class="service-box">
-      <img src="icons/learn-coding-cover.jpg" alt="كورس برمجة">
-      <h3>كورسات تطوير برمجي</h3>
-      <a href="#"><button>افتح الكورسات</button></a>
+
+    <div class="service">
+      <h3>تطوير تطبيقات ويب (PWA)</h3>
+      <p>تحويل موقعك إلى تطبيق يعمل بدون إنترنت بواجهة جذابة.</p>
+      <a href="https://wa.me/201091838789" class="btn">ابدأ الآن</a>
     </div>
-  </div>
 
-  <div class="instruction" id="book-section">
-    <strong>💡 خطوات شراء الكتاب:</strong><br><br>
-    اختر وسيلة الدفع ⬇ ثم أرسل الإيصال على واتساب:<br><br>
-    <a href="https://wa.me/201066047545" target="_blank" style="color:white; background: #25D366; padding:10px 25px; border-radius: 10px; text-decoration:none;">📩 تواصل معنا على واتساب</a>
-  </div>
+    <div class="service">
+      <h3>إعلانات لموقعك وتطبيقك</h3>
+      <p>إضافة أكواد إعلانية لزيادة أرباحك من الزوار.</p>
+      <a href="https://wa.me/201091838789" class="btn">أضف الإعلانات الآن</a>
+    </div>
 
-  <div class="payment-options">
-    <button class="pay-btn gumroad" onclick="window.open('https://gumroad.com/', '_blank')">شراء من Gumroad</button>
-    <button class="pay-btn payhip" onclick="window.open('https://payhip.com/', '_blank')">شراء من Payhip</button>
-    <button class="pay-btn whatsapp" onclick="window.open('https://wa.me/201066047545', '_blank')">شراء عبر واتساب</button>
-    <button class="pay-btn app" onclick="window.open('https://example.com/app', '_blank')">⬇ تحميل تطبيق تعلم الإنجليزية</button>
-  </div>
+    <div class="payment">
+      <h2>طرق الدفع</h2>
+      <p><strong>فودافون كاش:</strong> 01066047545</p>
+      <p><strong>أورنج كاش:</strong> 01285895096</p>
+      <p><strong>وي كاش:</strong> 01558516081</p>
+      <p><strong>PayPal:</strong> Farajbdallh891@gmail.com</p>
+    </div>
 
-  <img src="images/certificate-coursera.jpg" alt="شهادة" class="certificate">
-</main>
+  </section>
 
-<footer class="footer">
-  © 2025 جميع الحقوق محفوظة - FaragDev98 |
-  <a href="terms.html">الشروط</a> |
-  <a href="privacy-policy.html">الخصوصية</a> |
-  <a href="protection.html">الحماية</a>
-</footer>
-
-<script>
-  function copyText(text) {
-    navigator.clipboard.writeText(text)
-      .then(() => alert("✅ تم نسخ: " + text))
-      .catch(() => alert("❌ لم يتم النسخ"));
-  }
-</script>
+  <footer>
+    جميع الحقوق محفوظة © Fabrica Course
+  </footer>
 
 </body>
 </html>
