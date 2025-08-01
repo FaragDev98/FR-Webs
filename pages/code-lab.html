@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مختبر الأكواد</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(120deg, #8e2de2, #4a00e0);
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .editor-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-family: monospace;
+      border-radius: 8px;
+      border: none;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background: #ffffff;
+      color: #4a00e0;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔬 مختبر الأكواد - HTML / CSS / JS</h1>
+
+  <div class="editor-container">
+    <textarea id="html" placeholder="HTML هنا..."></textarea>
+    <textarea id="css" placeholder="CSS هنا..."></textarea>
+    <textarea id="js" placeholder="JavaScript هنا..."></textarea>
+    <button onclick="runCode()">تشغيل الكود</button>
+    <iframe id="result"></iframe>
+  </div>
+
+  <script>
+    function runCode() {
+      const html = document.getElementById('html').value;
+      const css = `<style>${document.getElementById('css').value}</style>`;
+      const js = `<script>${document.getElementById('js').value}<\/script>`;
+      const output = html + css + js;
+
+      const iframe = document.getElementById('result');
+      iframe.srcdoc = output;
+    }
+  </script>
+</body>
+</html>
