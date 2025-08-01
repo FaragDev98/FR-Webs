@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات Farag Dev 98</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/icon.png" type="image/png">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
@@ -17,6 +18,14 @@
       color: white;
       padding: 1rem;
       text-align: center;
+      position: relative;
+    }
+    header img.logo {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 40px;
+      height: 40px;
     }
     nav {
       display: flex;
@@ -79,23 +88,6 @@
     .btn-orange { background-color: #ff6600; }
     .btn-black  { background-color: #333; }
 
-    /* مربع الفيديو */
-    .video-box {
-      background: linear-gradient(to bottom right, #dac3ff, #f3e9ff);
-      border-radius: 15px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin: 2rem;
-      text-align: center;
-    }
-
-    .video-box iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-    }
-
     footer {
       text-align: center;
       padding: 1rem;
@@ -108,17 +100,12 @@
       color: #ccc;
       text-decoration: underline;
     }
-
-    @media (max-width: 600px) {
-      .video-box iframe {
-        height: 200px;
-      }
-    }
   </style>
 </head>
 <body>
 
 <header>
+  <img src="images/icon.png" alt="الشعار" class="logo" />
   <h1>📌 خدمات Farag Dev 98</h1>
   <nav>
     <a href="index.html">الرئيسية</a>
@@ -128,49 +115,43 @@
   </nav>
 </header>
 
-<!-- مربع الفيديو -->
-<section class="video-box">
-  <h2>🎥 فيديو تقديمي عن خدماتنا</h2>
-  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-</section>
-
 <main class="services-container">
 
   <!-- كورس البرمجة -->
   <div class="service-card">
     <img src="images/programming.png" alt="تعلم البرمجة">
     <h2>كورس تعلم البرمجة الكامل</h2>
-    <a href="#" class="btn btn-purple">عرض التفاصيل</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-purple">عرض التفاصيل</a>
   </div>
 
   <!-- دروس HTML/CSS/JS -->
   <div class="service-card">
     <img src="images/video.png" alt="دروس HTML CSS JS">
     <h2>دروس HTML / CSS / JavaScript</h2>
-    <a href="#" class="btn btn-blue">مشاهدة الدروس</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-blue">مشاهدة الدروس</a>
   </div>
 
   <!-- تصميم مواقع -->
   <div class="service-card">
     <img src="images/web-dev.png" alt="تصميم مواقع">
     <h2>تصميم مواقع احترافية</h2>
-    <a href="#" class="btn btn-green">طلب تصميم الآن</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-green">طلب تصميم الآن</a>
   </div>
 
   <!-- تطوير تطبيقات -->
   <div class="service-card">
     <img src="images/app-dev.png" alt="تطوير التطبيقات">
     <h2>تطوير تطبيقات وبرمجيات</h2>
-    <a href="#" class="btn btn-orange">طلب تطبيق</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-orange">طلب تطبيق</a>
   </div>
 
   <!-- شراء كتاب -->
   <div class="service-card">
     <img src="images/book.png" alt="شراء كتاب">
     <h2>📘 شراء كتاب تعلم HTML</h2>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">من Gumroad</a>
-    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">من Payhip</a>
-    <a href="https://wa.me/201066047545" class="btn btn-black">عبر واتساب</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-purple">من Gumroad</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-blue">من Payhip</a>
+    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn btn-black">عبر واتساب</a>
   </div>
 
 </main>
