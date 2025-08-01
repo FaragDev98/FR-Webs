@@ -9,9 +9,11 @@
     body {
       margin: 0;
       font-family: 'Cairo', sans-serif;
-      background-color: #f5f3ff;
+      background-color: #f3e5f5;
       color: #333;
     }
+
+    /* رأس الصفحة */
     header {
       background: #4a148c;
       color: white;
@@ -19,17 +21,18 @@
       font-size: 1.7rem;
       font-weight: bold;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
-      gap: 15px;
     }
     .logo-space {
       width: 50px;
       height: 50px;
-      background: url('icons/ai-icon.png') no-repeat center center;
+      background: url('images/logo.png') no-repeat center center;
       background-size: contain;
       border-radius: 8px;
     }
+
+    /* شريط التنقل */
     nav.navbar {
       background: #fff;
       padding: 12px 0;
@@ -41,82 +44,94 @@
       user-select: none;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border-radius: 10px;
-      margin: 10px auto;
-      max-width: 600px;
+      margin: 10px auto 20px;
+      max-width: 700px;
     }
+
     nav.navbar a {
       padding: 10px 22px;
       color: white;
       text-decoration: none;
-      border-radius: 0;
-      font-weight: 700;
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    nav.navbar a:hover {
-      transform: scale(1.1);
-    }
+
     .home { background-color: #7b1fa2; }
     .services { background-color: #2196f3; }
     .blog { background-color: #25d366; }
     .contact { background-color: #f44336; }
 
+    /* قسم الخدمات */
     .services-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
       padding: 2rem;
     }
+
     .card {
-      background: linear-gradient(to bottom right, #e3dcff, #fff9ff);
-      border-radius: 20px;
+      background: #fff;
+      border-radius: 18px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
       transition: transform 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
     }
+
     .card img {
-      width: 80px;
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
       margin-bottom: 1rem;
     }
+
     .card h2 {
       font-size: 1.3rem;
-      color: #4b0082;
+      color: #4a148c;
       margin-bottom: 0.5rem;
     }
+
     .card p {
       font-size: 0.95rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
+      color: #555;
     }
+
     .btn {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+      padding: 10px 20px;
+      background-color: #6a0dad;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      color: white;
-      background-color: #6a0dad;
-      transition: background 0.2s ease;
+      border-radius: 8px;
+      transition: 0.3s ease;
     }
+
     .btn:hover {
       background-color: #531188;
     }
 
+    /* أقسام مخصصة */
     .book-box, .lab-box {
-      max-width: 500px;
+      max-width: 600px;
       margin: 40px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .book-box h3, .lab-box h3 {
+      font-size: 1.4rem;
       color: #4a148c;
-      font-size: 1.3rem;
       margin-bottom: 20px;
     }
 
@@ -124,21 +139,21 @@
     .lab-box a {
       display: block;
       margin: 10px auto;
-      width: 90%;
       max-width: 300px;
       padding: 12px;
       color: white;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: transform 0.2s ease;
     }
-    .btn-purple { background: #7b1fa2; }
-    .btn-blue { background: #2196f3; }
-    .btn-green { background: #25d366; }
-    .btn-black { background: #333; }
-    .book-box a:hover, .lab-box a:hover {
-      transform: scale(1.05);
+
+    .btn-purple { background-color: #7b1fa2; }
+    .btn-blue { background-color: #2196f3; }
+    .btn-green { background-color: #25d366; }
+    .btn-black { background-color: #333; }
+
+    .btns a:hover, .lab-box a:hover {
+      opacity: 0.9;
     }
 
     footer {
@@ -147,61 +162,74 @@
       font-size: 0.9rem;
       color: #777;
       background-color: #f0f0f0;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- رأس الصفحة -->
   <header>
     <div>FaragDev98</div>
-    <div class="logo-space" title="شعار AI"></div>
+    <div class="logo-space" title="شعار الموقع"></div>
   </header>
 
+  <!-- شريط التنقل -->
   <nav class="navbar">
     <a href="index.html" class="home">الرئيسية</a>
-    <a href="services.html" class="services">خدمات</a>
+    <a href="services.html" class="services">الخدمات</a>
     <a href="article.html" class="blog">مقال</a>
     <a href="contact.html" class="contact">تواصل</a>
   </nav>
 
+  <!-- قسم الخدمات -->
   <section class="services-section">
+
     <div class="card">
-      <img src="images/web-design.png" alt="تصميم مواقع" />
+      <img src="images/web-design.jpg" alt="تصميم مواقع">
       <h2>تصميم مواقع</h2>
-      <p>مواقع سريعة، جذابة، ومتجاوبة مع كل الشاشات.</p>
+      <p>مواقع حديثة، سريعة، ومتجاوبة مع الهواتف.</p>
       <a href="#" class="btn">شاهد الآن</a>
     </div>
 
     <div class="card">
-      <img src="images/app-dev.png" alt="تطوير تطبيقات" />
+      <img src="images/app-dev.jpg" alt="تطبيقات">
       <h2>تطوير تطبيقات</h2>
       <p>تطبيقات ويب وموبايل باستخدام أحدث التقنيات.</p>
-      <a href="#" class="btn">اعرف المزيد</a>
+      <a href="#" class="btn">تصفح الخدمة</a>
     </div>
 
     <div class="card">
-      <img src="images/html-book.png" alt="كتاب HTML" />
+      <img src="images/full-course.jpg" alt="كورس شامل">
+      <h2>كورس برمجة شامل</h2>
+      <p>من HTML إلى JavaScript مع مشروع كامل.</p>
+      <a href="#" class="btn">ابدأ التعلم</a>
+    </div>
+
+    <div class="card">
+      <img src="images/ui-ux.jpg" alt="تصميم واجهات">
+      <h2>تصميم واجهات UI/UX</h2>
+      <p>واجهات احترافية وتجربة مستخدم رائعة.</p>
+      <a href="#" class="btn">استعرض النماذج</a>
+    </div>
+
+    <div class="card">
+      <img src="images/html-book.jpg" alt="كتاب HTML">
       <h2>بيع كتاب HTML</h2>
-      <p>كتاب شامل للمبتدئين لتعلم HTML من الصفر.</p>
+      <p>تعلم HTML من البداية حتى الاحتراف باللغة العربية.</p>
       <a href="#" class="btn">شراء الآن</a>
     </div>
 
     <div class="card">
-      <img src="images/uiux.png" alt="UI/UX" />
-      <h2>تصميم واجهات UI/UX</h2>
-      <p>واجهات احترافية لتجربة مستخدم رائعة.</p>
-      <a href="#" class="btn">شاهد التصميم</a>
-    </div>
-
-    <div class="card">
-      <img src="images/consult.png" alt="استشارات تقنية" />
+      <img src="images/consult.jpg" alt="استشارات تقنية">
       <h2>استشارات تقنية</h2>
-      <p>نساعدك بتحقيق أفكارك التقنية وتطوير مشاريعك.</p>
+      <p>مساعدتك في تنفيذ أفكارك ومشاريعك التقنية.</p>
       <a href="#" class="btn">اطلب استشارة</a>
     </div>
+
   </section>
 
+  <!-- شراء كتاب -->
   <div class="book-box">
     <h3>📘 شراء كتاب HTML الآن</h3>
     <div class="btns">
@@ -211,12 +239,15 @@
     </div>
   </div>
 
+  <!-- المختبر -->
   <div class="lab-box">
-    <h3>🔬 جرب المختبر البرمجي</h3>
-    <a href="pages/code-lab.html" class="btn-black">الدخول إلى المختبر</a>
+    <h3>🔬 المختبر البرمجي</h3>
+    <a href="pages/code-lab.html" class="btn-black">جرب المختبر الآن</a>
   </div>
 
-  <footer>جميع الحقوق محفوظة © 2025 FaragDev98</footer>
+  <footer>
+    جميع الحقوق محفوظة © 2025 FaragDev98
+  </footer>
 
 </body>
 </html>
