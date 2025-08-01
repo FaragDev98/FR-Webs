@@ -4,89 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات Farag Dev 98</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
-      color: #fff;
       margin: 0;
       padding: 0;
+      background-color: #f7f7f7;
     }
-
     header {
-      background-color: #3a0ca3;
+      background: linear-gradient(to left, #4b0082, #000);
+      color: white;
+      padding: 1rem;
       text-align: center;
-      padding: 2rem 1rem;
+      position: relative;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #fff;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
     }
-
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
     .services-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      gap: 20px;
       padding: 2rem;
     }
-
     .service-card {
-      background-color: #292929;
+      background-color: white;
       border-radius: 15px;
-      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
-
     .service-card:hover {
       transform: translateY(-5px);
     }
-
     .service-card img {
       width: 80px;
+      height: 80px;
       margin-bottom: 1rem;
     }
-
     .service-card h2 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
-      color: #ffd60a;
     }
-
     .btn {
       display: inline-block;
       margin: 5px;
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       border-radius: 8px;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.95rem;
-      color: #fff;
     }
-
-    .btn-purple { background-color: #7209b7; }
-    .btn-blue { background-color: #4361ee; }
-    .btn-green { background-color: #4cc9f0; }
-    .btn-orange { background-color: #f77f00; }
-    .btn-black { background-color: #121212; }
-
+    .btn-purple { background-color: #6a0dad; }
+    .btn-blue   { background-color: #007bff; }
+    .btn-green  { background-color: #28a745; }
+    .btn-orange { background-color: #ff6600; }
+    .btn-black  { background-color: #333; }
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #1a1a1a;
-      color: #999;
+      background-color: #222;
+      color: #ccc;
       font-size: 0.9rem;
     }
-
-    @media (max-width: 500px) {
-      .service-card h2 {
-        font-size: 1rem;
-      }
+    footer a {
+      color: #ccc;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -94,51 +94,57 @@
 
 <header>
   <h1>📌 خدمات Farag Dev 98</h1>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">الخدمات</a>
+    <a href="articles.html">مقال</a>
+    <a href="contact.html">تواصل</a>
+  </nav>
 </header>
 
 <main class="services-container">
 
-  <!-- كورس البرمجة الكامل -->
-  <div class="service-card">
-    <img src="images/programming.png" alt="كورس البرمجة">
+  <!-- كورس تعلم البرمجة -->
+  <div class="service-card" style="border-top: 5px solid #6a0dad;">
+    <img src="images/programming.png" alt="تعلم البرمجة">
     <h2>كورس تعلم البرمجة الكامل</h2>
-    <a href="#" class="btn btn-purple">عرض الكورس</a>
+    <a href="#" class="btn btn-purple">عرض التفاصيل</a>
   </div>
 
-  <!-- دروس HTML / CSS / JavaScript -->
-  <div class="service-card">
-    <img src="images/video.png" alt="دروس ويب">
+  <!-- دروس HTML/CSS/JS -->
+  <div class="service-card" style="border-top: 5px solid #007bff;">
+    <img src="images/video.png" alt="HTML CSS JS">
     <h2>دروس HTML / CSS / JavaScript</h2>
     <a href="#" class="btn btn-blue">مشاهدة الدروس</a>
   </div>
 
-  <!-- تصميم المواقع -->
-  <div class="service-card">
+  <!-- تصميم مواقع -->
+  <div class="service-card" style="border-top: 5px solid #28a745;">
     <img src="images/web-dev.png" alt="تصميم مواقع">
     <h2>تصميم مواقع احترافية</h2>
-    <a href="#" class="btn btn-green">طلب تصميم</a>
+    <a href="#" class="btn btn-green">طلب تصميم الآن</a>
   </div>
 
-  <!-- تطوير التطبيقات -->
-  <div class="service-card">
-    <img src="images/app-dev.png" alt="تطبيقات">
+  <!-- تطوير تطبيقات -->
+  <div class="service-card" style="border-top: 5px solid #ff6600;">
+    <img src="images/app-dev.png" alt="تطوير التطبيقات">
     <h2>تطوير تطبيقات وبرمجيات</h2>
     <a href="#" class="btn btn-orange">طلب تطبيق</a>
   </div>
 
-  <!-- شراء الكتاب -->
-  <div class="service-card">
-    <img src="images/book.png" alt="كتاب HTML">
+  <!-- شراء كتاب -->
+  <div class="service-card" style="border-top: 5px solid #333;">
+    <img src="images/book.png" alt="شراء كتاب">
     <h2>📘 شراء كتاب تعلم HTML</h2>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">Gumroad</a>
-    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">Payhip</a>
-    <a href="https://wa.me/201066047545" class="btn btn-black">واتساب</a>
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">من Gumroad</a>
+    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">من Payhip</a>
+    <a href="https://wa.me/201066047545" class="btn btn-black">عبر واتساب</a>
   </div>
 
 </main>
 
 <footer>
-  <p>جميع الحقوق محفوظة © Farag Dev 98 - 2025</p>
+  <p>جميع الحقوق محفوظة © Farag Dev 98 - 2025 | <a href="privacy.html">سياسة الخصوصية</a></p>
 </footer>
 
 </body>
