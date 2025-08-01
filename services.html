@@ -1,269 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>الخدمات - Farag Dev 98</title>
-  <link rel="icon" href="icons/ai-icon.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+  <title>جميع خدماتي - Fabrica</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #ff9800, #f57c00, #ef6c00); /* برتقالي */
-      margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #3f51b5, #9c27b0);
       color: #fff;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      padding: 15px 20px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      position: relative;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .logo-area img {
-      width: 36px;
-      height: 36px;
-    }
-
-    .logo-area h1 {
       margin: 0;
-      font-size: 24px;
-    }
-
-    nav {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    nav a {
-      padding: 8px 18px;
-      border-radius: 8px;
-      background-color: #4527a0;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #311b92;
-    }
-
-    .bell-btn {
-      position: absolute;
-      left: 15px;
-      top: 15px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-    }
-
-    .bell-btn img {
-      width: 28px;
-      height: 28px;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 40px auto;
       padding: 20px;
     }
 
-    h2 {
+    h1, h2 {
       text-align: center;
-      font-size: 28px;
+      color: #fff;
+    }
+
+    .service {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
       margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .service-section {
-      margin-bottom: 50px;
+    .service img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 10px;
+      vertical-align: middle;
     }
 
-    .service-group {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .service-btn {
+    .service-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 15px 20px;
-      border: none;
-      border-radius: 12px;
+    }
+
+    .summary, .description {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .price {
       font-size: 18px;
       font-weight: bold;
-      color: white;
-      cursor: pointer;
+      margin: 10px 0;
+      color: #ffeb3b;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
       transition: background 0.3s ease;
     }
 
-    .service-btn img {
-      width: 28px;
-      height: 28px;
-    }
+    .btn-purple { background: #6a1b9a; }
+    .btn-blue { background: #2196f3; }
+    .btn-green { background: #4caf50; }
+    .btn-black { background: #212121; }
 
-    .service-btn:hover {
+    .btn:hover {
       opacity: 0.9;
     }
 
-    .service-video {
-      margin-top: 15px;
-      display: none;
-    }
-
-    video {
-      max-width: 100%;
+    .instruction {
+      background: #ffffff22;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      font-size: 15px;
+      margin-top: 30px;
     }
 
-    footer {
-      text-align: center;
-      color: #ccc;
-      font-size: 0.9rem;
-      margin: 60px 0 20px;
+    .instruction a {
+      display: inline-block;
+      background: #25D366;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
-    /* ألوان الأزرار */
-    .btn-dev1 { background-color: #4caf50; }
-    .btn-dev2 { background-color: #2196f3; }
-    .btn-dev3 { background-color: #9c27b0; }
-    .btn-dev4 { background-color: #ff9800; }
+    .pay-btn {
+      display: block;
+      margin: 10px 0;
+      background: #fff;
+      color: #000;
+      padding: 12px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
 
-    .btn-learn1 { background-color: #f44336; }
-    .btn-learn2 { background-color: #3f51b5; }
-    .btn-learn3 { background-color: #00bcd4; }
-    .btn-learn4 { background-color: #795548; }
-    .btn-learn5 { background-color: #8bc34a; }
+    .certificate {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-area">
-      <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
-      <h1>Farag Dev 98</h1>
+  <h1>📚 جميع خدمات Fabrica</h1>
+
+  <!-- قسم بيع الكتاب -->
+  <div class="service">
+    <div class="service-title">
+      <img src="images/html-icon.png" alt="HTML Icon" />
+      كتاب HTML للمبتدئين 📘
     </div>
-    
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="services.html">الخدمات</a>
-      <a href="article.html">المقالات</a>
-      <a href="contact.html">تواصل معنا</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>خدماتنا</h2>
+    <p class="summary">
+      انطلق في عالم برمجة الويب من الباب الصحيح! كتاب HTML للمبتدئين هو دليلك الشامل لتعلّم أساسيات بناء صفحات الويب، باللغة العربية، بأسلوب مبسط وعملي.
+    </p>
 
-    <!-- قسم التطوير -->
-    <div class="service-section">
-      <h3>خدمات التطوير</h3>
-      <div class="service-group">
-        <div>
-          <button class="service-btn btn-dev1" onclick="toggleVideo(this, 'videos/software.mp4')">
-            <img src="icons/software.png" alt="تطوير البرمجيات"> طلب تطوير البرمجيات
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-dev2" onclick="toggleVideo(this, 'videos/web-dev.mp4')">
-            <img src="icons/web.png" alt="تطوير الويب"> طلب تطوير الويب
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-dev3" onclick="toggleVideo(this, 'videos/programs.mp4')">
-            <img src="icons/coe.png" alt="تصميم برامج"> طلب تصميم برامج
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-dev4" onclick="toggleVideo(this, 'videos/sites.mp4')">
-            <img src="icons/web-
-" alt="تصميم مواقع"> طلب تصميم مواقع
-          </button>
-          <div class="service-video"></div>
-        </div>
-      </div>
+    <p class="description">
+      سواء كنت مبتدئًا أو تبحث عن مراجعة منظمة، فهذا الكتاب يحتوي على شرح مفصل مدعّم بصور وأمثلة حقيقية، لمساعدتك على بناء أول موقع لك بثقة واحترافية.
+    </p>
+
+    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+
+    <div class="btns">
+      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+      <a id="whatsappBtn" href="https://wa.me/201066047545" class="btn btn-green">شراء عبر واتساب</a>
+      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
     </div>
-    <!-- قسم التعلم -->
-    <div class="service-section">
-      <h3>قسم التعلم</h3>
-      <div class="service-group">
-        <div>
-          <button class="service-btn btn-learn1" onclick="toggleVideo(this, 'videos/html.mp4')">
-            <img src="icons/html.png" alt="HTML"> أريد تعلم HTML
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-learn2" onclick="toggleVideo(this, 'videos/code.mp4')">
-            <img src="icons/code.png" alt="برمجة"> أريد تعلم البرمجة
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-learn3" onclick="toggleVideo(this, 'videos/design.mp4')">
-            <img src="icons/design.png" alt="تصميم"> أريد تعلم التصميم
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-learn4" onclick="toggleVideo(this, 'videos/marketing.mp4')">
-            <img src="icons/marketing.png" alt="تسويق"> أريد تعلم التسويق الرقمي
-          </button>
-          <div class="service-video"></div>
-        </div>
-        <div>
-          <button class="service-btn btn-learn5" onclick="toggleVideo(this, 'videos/product.mp4')">
-            <img src="icons/product.png" alt="منتج"> أريد تعلم إنشاء منتج رقمي
-          </button>
-          <div class="service-video"></div>
-        </div>
-      </div>
+
+    <div class="instruction">
+      <strong>🔒 خطوات الشراء عبر واتساب:</strong><br><br>
+      1️⃣ اختر وسيلة الدفع المناسبة من الأزرار بالأعلى واحتفظ برقمها.<br>
+      2️⃣ أرسل صورة الإيصال وطريقة الدفع عبر واتساب.<br>
+      3️⃣ سيتم إرسال رابط التحميل فور التأكيد.<br>
+      <a href="https://wa.me/201066047545" target="_blank">💬 تواصل على واتساب</a>
     </div>
-  </main>
 
-  <footer id="footer"></footer>
-  <script src="footer.js"></script>
+    <div class="payment-options">
+      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
+      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
+      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
+      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
+    </div>
 
-  <audio id="notification-sound" src="audio/notif.mp3"></audio>
+    <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+  </div>
 
   <script>
-    function playSound() {
-      const sound = document.getElementById('notification-sound');
-      sound.play();
-    }
-
-    function toggleVideo(button, videoSrc) {
-      const container = button.nextElementSibling;
-      if (container.innerHTML === '') {
-        container.innerHTML = `<video controls autoplay>
-          <source src="${videoSrc}" type="video/mp4">
-          متصفحك لا يدعم تشغيل الفيديو.
-        </video>`;
-        container.style.display = 'block';
-      } else {
-        container.innerHTML = '';
-        container.style.display = 'none';
-      }
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("تم نسخ البيانات: " + text);
+      });
     }
   </script>
 </body>
