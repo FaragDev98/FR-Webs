@@ -3,146 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>جميع خدماتي - Fabrica</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>خدماتي - فراج عبدالله</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #3f51b5, #9c27b0);
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #4a148c, #1976d2);
+      color: white;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      line-height: 1.6;
     }
-
-    h1, h2 {
+    header {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
       text-align: center;
-      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
     }
-
-    .service {
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #311b92;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffd54f;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
-
-    .service img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-left: 10px;
-      vertical-align: middle;
+    h1 {
+      color: #ffd54f;
     }
-
-    .service-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
+    .certificate {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      display: block;
+      margin: 20px auto;
     }
-
-    .summary, .description {
-      font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    .price {
+    .summary, .description, .price {
       font-size: 18px;
-      font-weight: bold;
       margin: 10px 0;
-      color: #ffeb3b;
     }
-
     .btns {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 10px;
+      justify-content: center;
+      margin-top: 15px;
     }
-
     .btn {
-      padding: 12px 20px;
+      padding: 10px 20px;
       border: none;
       border-radius: 8px;
       text-decoration: none;
-      color: #fff;
       font-weight: bold;
-      transition: background 0.3s ease;
+      font-size: 16px;
+      display: inline-block;
+      transition: 0.3s;
     }
-
-    .btn-purple { background: #6a1b9a; }
-    .btn-blue { background: #2196f3; }
-    .btn-green { background: #4caf50; }
-    .btn-black { background: #212121; }
-
-    .btn:hover {
-      opacity: 0.9;
-    }
+    .btn-purple { background: #7e57c2; color: white; }
+    .btn-blue { background: #2196f3; color: white; }
+    .btn-green { background: #43a047; color: white; }
+    .btn-black { background: #212121; color: white; }
 
     .instruction {
       background: #ffffff22;
-      padding: 20px;
+      padding: 15px;
       border-radius: 10px;
-      font-size: 15px;
       margin-top: 30px;
     }
 
     .instruction a {
-      display: inline-block;
       background: #25D366;
       padding: 10px 20px;
-      color: #fff;
+      color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      display: inline-block;
       margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .payment-options {
+      margin-top: 20px;
+      text-align: center;
     }
 
     .pay-btn {
-      display: block;
-      margin: 10px 0;
-      background: #fff;
+      background: #ffca28;
       color: #000;
-      padding: 12px;
       font-weight: bold;
-      border-radius: 10px;
       border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin: 5px;
       cursor: pointer;
+      transition: 0.3s;
     }
 
-    .certificate {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    .pay-btn:hover {
+      background: #ffc107;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a237e;
+      margin-top: 40px;
+      color: #fff;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <h1>📚 جميع خدمات Fabrica</h1>
+  <header>خدماتي - فراج عبدالله</header>
 
-  <!-- قسم بيع الكتاب -->
-  <div class="service">
-    <div class="service-title">
-      <img src="images/html-icon.png" alt="HTML Icon" />
-      كتاب HTML للمبتدئين 📘
-    </div>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="services.html">الخدمات</a>
+    <a href="https://wa.me/201066047545" target="_blank">تواصل</a>
+  </nav>
+
+  <div class="container">
+    <h1>📘 كتاب HTML للمبتدئين</h1>
+    <img src="images/main-hero.png" alt="HTML" class="certificate" />
 
     <p class="summary">
-      انطلق في عالم برمجة الويب من الباب الصحيح! كتاب HTML للمبتدئين هو دليلك الشامل لتعلّم أساسيات بناء صفحات الويب، باللغة العربية، بأسلوب مبسط وعملي.
+      انطلق في عالم برمجة المواقع بلغة HTML بأسلوب سهل ومبسط! هذا الكتاب هو دليلك العملي لبناء صفحات ويب حقيقية من الصفر وبدون تعقيد.
     </p>
 
     <p class="description">
-      سواء كنت مبتدئًا أو تبحث عن مراجعة منظمة، فهذا الكتاب يحتوي على شرح مفصل مدعّم بصور وأمثلة حقيقية، لمساعدتك على بناء أول موقع لك بثقة واحترافية.
+      ستتعلم خطوة بخطوة كيف تنشئ موقعك الأول، وتتقن الهيكل العام لأي صفحة ويب، مع صور توضيحية وشرح باللغة العربية السلسة.
     </p>
 
-    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+    <div class="price">💰 السعر: 2 دولار (ما يعادل 100 جنيه مصري)</div>
 
     <div class="btns">
       <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
@@ -152,11 +159,11 @@
     </div>
 
     <div class="instruction">
-      <strong>🔒 خطوات الشراء عبر واتساب:</strong><br><br>
-      1️⃣ اختر وسيلة الدفع المناسبة من الأزرار بالأعلى واحتفظ برقمها.<br>
-      2️⃣ أرسل صورة الإيصال وطريقة الدفع عبر واتساب.<br>
-      3️⃣ سيتم إرسال رابط التحميل فور التأكيد.<br>
-      <a href="https://wa.me/201066047545" target="_blank">💬 تواصل على واتساب</a>
+      <strong>🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
+      1️⃣ اختر وسيلة الدفع المناسبة لك من الأزرار في الأعلى، وانسخ رقم المحفظة.<br>
+      2️⃣ أرسل صورة الدفع إلى رقم واتساب.<br>
+      3️⃣ سيتم إرسال رابط التحميل بعد التأكيد.<br><br>
+      <a href="https://wa.me/201066047545" target="_blank">💬 تواصل على واتساب الآن</a>
     </div>
 
     <div class="payment-options">
@@ -169,9 +176,13 @@
     <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
   </div>
 
+  <footer>
+    جميع الحقوق محفوظة © فراج عبدالله 2025
+  </footer>
+
   <script>
     function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
+      navigator.clipboard.writeText(text).then(function () {
         alert("تم نسخ البيانات: " + text);
       });
     }
