@@ -4,27 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات Farag Dev 98</title>
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f7f7f7;
+      background-color: #f7f3ff;
     }
     header {
       background: linear-gradient(to left, #4b0082, #000);
       color: white;
       padding: 1rem;
       text-align: center;
-      position: relative;
     }
     nav {
       display: flex;
       justify-content: center;
       gap: 1rem;
       margin-top: 0.5rem;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
@@ -37,14 +36,16 @@
     nav a:hover {
       background-color: rgba(255, 255, 255, 0.3);
     }
+
     .services-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       padding: 2rem;
     }
+
     .service-card {
-      background-color: white;
+      background: linear-gradient(to bottom right, #e5d4ff, #f0eaff);
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 1rem;
@@ -77,6 +78,24 @@
     .btn-green  { background-color: #28a745; }
     .btn-orange { background-color: #ff6600; }
     .btn-black  { background-color: #333; }
+
+    /* مربع الفيديو */
+    .video-box {
+      background: linear-gradient(to bottom right, #dac3ff, #f3e9ff);
+      border-radius: 15px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 2rem;
+      text-align: center;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -84,9 +103,16 @@
       color: #ccc;
       font-size: 0.9rem;
     }
+
     footer a {
       color: #ccc;
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .video-box iframe {
+        height: 200px;
+      }
     }
   </style>
 </head>
@@ -97,43 +123,49 @@
   <nav>
     <a href="index.html">الرئيسية</a>
     <a href="services.html">الخدمات</a>
-    <a href="articles.html">مقال</a>
+    <a href="article.html">مقال</a>
     <a href="contact.html">تواصل</a>
   </nav>
 </header>
 
+<!-- مربع الفيديو -->
+<section class="video-box">
+  <h2>🎥 فيديو تقديمي عن خدماتنا</h2>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+</section>
+
 <main class="services-container">
 
-  <!-- كورس تعلم البرمجة -->
-  <div class="service-card" style="border-top: 5px solid #6a0dad;">
+  <!-- كورس البرمجة -->
+  <div class="service-card">
     <img src="images/programming.png" alt="تعلم البرمجة">
     <h2>كورس تعلم البرمجة الكامل</h2>
     <a href="#" class="btn btn-purple">عرض التفاصيل</a>
   </div>
 
   <!-- دروس HTML/CSS/JS -->
-  <div class="service-card" style="border-top: 5px solid #007bff;">
-    <img src="images/video.png" alt="HTML CSS JS">
+  <div class="service-card">
+    <img src="images/video.png" alt="دروس HTML CSS JS">
     <h2>دروس HTML / CSS / JavaScript</h2>
     <a href="#" class="btn btn-blue">مشاهدة الدروس</a>
   </div>
 
   <!-- تصميم مواقع -->
-  <div class="service-card" style="border-top: 5px solid #28a745;">
+  <div class="service-card">
     <img src="images/web-dev.png" alt="تصميم مواقع">
     <h2>تصميم مواقع احترافية</h2>
     <a href="#" class="btn btn-green">طلب تصميم الآن</a>
   </div>
 
   <!-- تطوير تطبيقات -->
-  <div class="service-card" style="border-top: 5px solid #ff6600;">
+  <div class="service-card">
     <img src="images/app-dev.png" alt="تطوير التطبيقات">
     <h2>تطوير تطبيقات وبرمجيات</h2>
     <a href="#" class="btn btn-orange">طلب تطبيق</a>
   </div>
 
   <!-- شراء كتاب -->
-  <div class="service-card" style="border-top: 5px solid #333;">
+  <div class="service-card">
     <img src="images/book.png" alt="شراء كتاب">
     <h2>📘 شراء كتاب تعلم HTML</h2>
     <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">من Gumroad</a>
@@ -144,7 +176,7 @@
 </main>
 
 <footer>
-  <p>جميع الحقوق محفوظة © Farag Dev 98 - 2025 | <a href="privacy.html">سياسة الخصوصية</a></p>
+  <p>© Farag Dev 98 - 2025 | <a href="privacy.html">سياسة الخصوصية</a></p>
 </footer>
 
 </body>
