@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>خدمات Farag Dev</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,32 +13,63 @@
       color: #333;
     }
     header {
-      background: linear-gradient(to left, #4b0082, #1e1e2f);
-      padding: 2rem;
-      text-align: center;
+      background: #4a148c;
       color: white;
-      position: relative;
+      padding: 15px 30px;
+      font-size: 1.7rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    .logo-space {
+      width: 50px;
+      height: 50px;
+      background: url('icons/ai-icon.png') no-repeat center center;
+      background-size: contain;
+      border-radius: 8px;
     }
-    header .icon {
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
-      font-size: 2rem;
+    nav.navbar {
+      background: #fff;
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      user-select: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin: 10px auto;
+      max-width: 600px;
     }
-    .services {
+    nav.navbar a {
+      padding: 10px 22px;
+      color: white;
+      text-decoration: none;
+      border-radius: 0;
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+    nav.navbar a:hover {
+      transform: scale(1.1);
+    }
+    .home { background-color: #7b1fa2; }
+    .services { background-color: #2196f3; }
+    .blog { background-color: #25d366; }
+    .contact { background-color: #f44336; }
+
+    .services-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       padding: 2rem;
     }
     .card {
       background: linear-gradient(to bottom right, #e3dcff, #fff9ff);
-      border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       padding: 1.5rem;
       text-align: center;
       transition: transform 0.3s ease;
@@ -46,14 +77,18 @@
     .card:hover {
       transform: translateY(-5px);
     }
-    .card h2 {
-      font-size: 1.2rem;
+    .card img {
+      width: 80px;
       margin-bottom: 1rem;
+    }
+    .card h2 {
+      font-size: 1.3rem;
       color: #4b0082;
+      margin-bottom: 0.5rem;
     }
     .card p {
       font-size: 0.95rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
     .btn {
       display: inline-block;
@@ -68,6 +103,44 @@
     .btn:hover {
       background-color: #531188;
     }
+
+    .book-box, .lab-box {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .book-box h3, .lab-box h3 {
+      color: #4a148c;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .book-box .btns a,
+    .lab-box a {
+      display: block;
+      margin: 10px auto;
+      width: 90%;
+      max-width: 300px;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+    .btn-purple { background: #7b1fa2; }
+    .btn-blue { background: #2196f3; }
+    .btn-green { background: #25d366; }
+    .btn-black { background: #333; }
+    .book-box a:hover, .lab-box a:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -80,53 +153,70 @@
 </head>
 <body>
 
-<header>
-  <div class="icon">🎯</div>
-  <h1>خدمات Farag Dev</h1>
-</header>
+  <header>
+    <div>FaragDev98</div>
+    <div class="logo-space" title="شعار AI"></div>
+  </header>
 
-<section class="services">
+  <nav class="navbar">
+    <a href="index.html" class="home">الرئيسية</a>
+    <a href="services.html" class="services">خدمات</a>
+    <a href="article.html" class="blog">مقال</a>
+    <a href="contact.html" class="contact">تواصل</a>
+  </nav>
 
-  <div class="card">
-    <h2>تصميم مواقع</h2>
-    <p>مواقع جذابة وسريعة ومتجاوبة تناسب جميع الأجهزة.</p>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">شاهد الآن</a>
+  <section class="services-section">
+    <div class="card">
+      <img src="images/web-design.png" alt="تصميم مواقع" />
+      <h2>تصميم مواقع</h2>
+      <p>مواقع سريعة، جذابة، ومتجاوبة مع كل الشاشات.</p>
+      <a href="#" class="btn">شاهد الآن</a>
+    </div>
+
+    <div class="card">
+      <img src="images/app-dev.png" alt="تطوير تطبيقات" />
+      <h2>تطوير تطبيقات</h2>
+      <p>تطبيقات ويب وموبايل باستخدام أحدث التقنيات.</p>
+      <a href="#" class="btn">اعرف المزيد</a>
+    </div>
+
+    <div class="card">
+      <img src="images/html-book.png" alt="كتاب HTML" />
+      <h2>بيع كتاب HTML</h2>
+      <p>كتاب شامل للمبتدئين لتعلم HTML من الصفر.</p>
+      <a href="#" class="btn">شراء الآن</a>
+    </div>
+
+    <div class="card">
+      <img src="images/uiux.png" alt="UI/UX" />
+      <h2>تصميم واجهات UI/UX</h2>
+      <p>واجهات احترافية لتجربة مستخدم رائعة.</p>
+      <a href="#" class="btn">شاهد التصميم</a>
+    </div>
+
+    <div class="card">
+      <img src="images/consult.png" alt="استشارات تقنية" />
+      <h2>استشارات تقنية</h2>
+      <p>نساعدك بتحقيق أفكارك التقنية وتطوير مشاريعك.</p>
+      <a href="#" class="btn">اطلب استشارة</a>
+    </div>
+  </section>
+
+  <div class="book-box">
+    <h3>📘 شراء كتاب HTML الآن</h3>
+    <div class="btns">
+      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-purple">شراء من Gumroad</a>
+      <a href="https://payhip.com/b/2cJWp" class="btn-blue">شراء من Payhip</a>
+      <a href="https://wa.me/201066047545?text=لقد%20تم%20الدفع%20وأريد%20الحصول%20على%20الكتاب" class="btn-green">شراء عبر واتساب</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>تطوير تطبيقات</h2>
-    <p>بناء تطبيقات ويب أو موبايل بأحدث التقنيات.</p>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">اعرف المزيد</a>
+  <div class="lab-box">
+    <h3>🔬 جرب المختبر البرمجي</h3>
+    <a href="pages/code-lab.html" class="btn-black">الدخول إلى المختبر</a>
   </div>
 
-  <div class="card">
-    <h2>كورس برمجة شامل</h2>
-    <p>تعلم البرمجة من الصفر حتى الاحتراف بأسلوب مبسط.</p>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">ابدأ التعلم</a>
-  </div>
-
-  <div class="card">
-    <h2>تصميم واجهات UI/UX</h2>
-    <p>واجهات احترافية وجذابة لمنتجاتك ومواقعك.</p>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">شاهد التصميم</a>
-  </div>
-<a href="pages/code-lab.html" class="...">🔬 جرب المختبر</a>
-  <div class="card">
-    <h2>بيع كتاب HTML</h2>
-    <p>احصل على كتاب تعليمي شامل لأساسيات HTML.</p>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">شراء الآن</a>
-  </div>
-
-  <div class="card">
-    <h2>استشارات تقنية</h2>
-    <p>مساعدة في تطوير أفكارك أو مشروعك التقني.</p>
-    <a href="https://youtu.be/t-jZusNIssw?si=JBFW6NiOsPMv1sps" class="btn">اطلب استشارة</a>
-  </div>
-
-</section>
-  
   <footer>جميع الحقوق محفوظة © 2025 FaragDev98</footer>
-  
+
 </body>
 </html>
-
