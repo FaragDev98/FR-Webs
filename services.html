@@ -1,136 +1,63 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>خدمات فراج عبدالله</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #1e1e3f, #3f2b96);
-      color: white;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
-
-    header h1 {
-      font-size: 36px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .btn {
-      background-color: #4a148c;
-      border: none;
-      border-radius: 12px;
-      padding: 15px 20px;
-      color: white;
-      font-size: 18px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s ease;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      opacity: 0.9;
-    }
-
-    .btn-blue { background-color: #2196F3; }
-    .btn-green { background-color: #4CAF50; }
-    .btn-purple { background-color: #9C27B0; }
-    .btn-orange { background-color: #FF5722; }
-    .btn-black { background-color: #212121; }
-
-    .section {
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .section img {
-      max-width: 250px;
-      border-radius: 16px;
-      margin: 20px 0;
-    }
-
-    .section .price {
-      font-size: 20px;
-      margin: 15px 0;
-    }
-
-    footer {
-      background: #121222;
-      padding: 20px;
-      text-align: center;
-      font-size: 16px;
-      color: #ccc;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>خدمات Farag Dev 98</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>📚 خدمات فراج عبدالله</h1>
-    <p>كل ما تحتاجه لتبدأ وتنجح في عالم البرمجة!</p>
-  </header>
+<header>
+  <h1>📌 خدمات Farag Dev 98</h1>
+</header>
 
-  <section class="buttons">
-    <a href="#" class="btn btn-purple">🎓 كورس كامل للبرمجة</a>
-    <a href="#" class="btn btn-blue">💡 تعلم HTML / CSS / JS</a>
-    <a href="#" class="btn btn-green">🌐 تصميم وتطوير مواقع</a>
-    <a href="#" class="btn btn-orange">🧠 تطوير البرمجيات</a>
-    <a href="#" class="btn btn-black">📺 فيديو: أساسيات HTML</a>
-    <a href="#" class="btn btn-purple">📺 فيديو: تصميم واجهات</a>
-    <a href="#" class="btn btn-blue">📺 فيديو: مشاريع تفاعلية</a>
-    <a href="#" class="btn btn-green">📺 فيديو: JavaScript عملي</a>
-  </section>
+<main class="services-container">
 
-  <section class="section">
-    <h2>📘 كتاب HTML للمبتدئين</h2>
-    <img src="images/main-hero.png" alt="HTML Book" />
-    <p>دليلك الشامل لتعلم HTML بأسلوب بسيط وممتع، مرفق بصور وشرح باللغة العربية.</p>
-    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
-    <div class="buttons">
-      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
-      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
-      <a href="https://wa.me/201066047545" class="btn btn-green">شراء عبر واتساب</a>
-    </div>
-  </section>
+  <!-- خدمة تعلم البرمجة -->
+  <div class="service-card">
+    <img src="images/programming.png" alt="تعلم البرمجة">
+    <h2>كورس تعلم البرمجة الكامل</h2>
+    <a href="#" class="btn btn-purple">عرض التفاصيل</a>
+  </div>
 
-  <section class="section">
-    <h2>📱 وسائل الدفع</h2>
-    <div class="buttons">
-      <div class="btn btn-black">فودافون كاش: 01066047545</div>
-      <div class="btn btn-black">أورنج كاش: 01285895096</div>
-      <div class="btn btn-black">وي كاش: 01558516081</div>
-      <div class="btn btn-black">باي بال: Farajbdallh891@gmail.com</div>
-    </div>
-  </section>
+  <!-- خدمة HTML/CSS/JS -->
+  <div class="service-card">
+    <img src="images/video.png" alt="HTML/CSS/JS">
+    <h2>دروس HTML / CSS / JavaScript</h2>
+    <a href="#" class="btn btn-blue">مشاهدة الدروس</a>
+  </div>
 
-  <footer>
-    جميع الحقوق محفوظة © فراج عبدالله 2025
-  </footer>
+  <!-- خدمة تصميم المواقع -->
+  <div class="service-card">
+    <img src="images/web-dev.png" alt="تصميم مواقع">
+    <h2>تصميم مواقع احترافية</h2>
+    <a href="#" class="btn btn-green">طلب خدمة الآن</a>
+  </div>
+
+  <!-- خدمة تطوير التطبيقات -->
+  <div class="service-card">
+    <img src="images/app-dev.png" alt="تطوير التطبيقات">
+    <h2>تطوير تطبيقات وبرمجيات</h2>
+    <a href="#" class="btn btn-orange">طلب تطبيق</a>
+  </div>
+
+  <!-- شراء كتاب -->
+  <div class="service-card">
+    <img src="images/book.png" alt="كتاب HTML">
+    <h2>📘 شراء كتاب تعلم HTML</h2>
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+    <a href="https://wa.me/201066047545" class="btn btn-black">شراء عبر واتساب</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>جميع الحقوق محفوظة © Farag Dev 98 - 2025</p>
+</footer>
 
 </body>
 </html>
