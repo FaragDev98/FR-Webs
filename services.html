@@ -1,32 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>الخدمات - Farag Dev 98</title>
+  <link rel="icon" href="icons/ai-icon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to bottom right, #1a1a1a, #0d0d0d);
-      color: #f1f1f1;
-      font-family: 'Cairo', sans-serif;
-      text-align: center;
-      scroll-behavior: smooth;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #ff9800, #f57c00, #ef6c00); /* برتقالي */
+      margin: 0;
+      padding: 0;
+      color: #fff;
     }
 
     header {
-      background: #ff9800;
-      color: white;
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: relative;
     }
 
     .logo-area {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .logo-area img {
@@ -36,203 +39,232 @@
 
     .logo-area h1 {
       margin: 0;
-      font-size: 26px;
+      font-size: 24px;
     }
 
     nav {
       margin-top: 10px;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 10px;
     }
 
     nav a {
-      padding: 8px 20px;
+      padding: 8px 18px;
       border-radius: 8px;
-      background-color: #fb8c00;
+      background-color: #4527a0;
       color: white;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    nav a:hover {
-      background-color: #ef6c00;
-    }
-
-    main {
-      padding: 40px 20px;
-    }
-
-    h2 {
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-bottom: 40px;
-    }
-
-    .service-box {
-      background-color: #222;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       transition: 0.3s ease;
     }
 
-    .service-box:hover {
-      transform: translateY(-6px);
+    nav a:hover {
+      background-color: #311b92;
     }
 
-    .service-box img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    .service-box h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .service-box button {
-      background-color: #673ab7;
-      color: white;
+    .bell-btn {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background: transparent;
       border: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      font-size: 15px;
-      border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
     }
 
-    .service-box button:hover {
-      background-color: #512da8;
+    .bell-btn img {
+      width: 28px;
+      height: 28px;
     }
 
-    .instruction {
-      background: #2c2c2c;
-      color: #eee;
-      padding: 25px;
-      margin-top: 40px;
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .service-section {
+      margin-bottom: 50px;
+    }
+
+    .service-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .service-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 20px;
+      border: none;
       border-radius: 12px;
       font-size: 18px;
-    }
-
-    .instruction strong {
-      color: #ffd54f;
-    }
-
-    .pay-btn {
-      display: block;
-      margin: 12px auto;
-      padding: 14px;
-      width: 90%;
-      max-width: 300px;
-      border-radius: 10px;
-      font-size: 17px;
-      border: none;
+      font-weight: bold;
       color: white;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    .whatsapp { background: #4caf50; }
-    .footer {
-      margin-top: 50px;
-      background-color: #111;
-      padding: 20px;
-      color: #bbb;
-      font-size: 14px;
+    .service-btn img {
+      width: 28px;
+      height: 28px;
     }
 
-    .footer a {
-      color: #ff5722;
-      margin: 0 5px;
-      text-decoration: none;
+    .service-btn:hover {
+      opacity: 0.9;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    .service-video {
+      margin-top: 15px;
+      display: none;
     }
+
+    video {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin: 60px 0 20px;
+    }
+
+    /* ألوان الأزرار */
+    .btn-dev1 { background-color: #4caf50; }
+    .btn-dev2 { background-color: #2196f3; }
+    .btn-dev3 { background-color: #9c27b0; }
+    .btn-dev4 { background-color: #ff9800; }
+
+    .btn-learn1 { background-color: #f44336; }
+    .btn-learn2 { background-color: #3f51b5; }
+    .btn-learn3 { background-color: #00bcd4; }
+    .btn-learn4 { background-color: #795548; }
+    .btn-learn5 { background-color: #8bc34a; }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-area">
-    <img src="icons/ai-icon.png" alt="logo">
-    <h1>Farag Dev 98</h1>
-  </div>
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="services.html">الخدمات</a>
-    <a href="article.html">المقالات</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
-</header>
-
-<main>
-  <h2>💼 جميع خدماتنا</h2>
-  <div class="services-grid">
-    <div class="service-box">
-      <img src="icons/html-book-cover.png" alt="غلاف الكتاب">
-      <h3>📘 كتاب البرمجة للمبتدئين</h3>
-      <p>PDF يشرح أساسيات البرمجة بأسلوب مبسط.</p>
-      <p><strong>السعر:</strong> 2 دولار أو ما يعادلها بالجنيه</p>
-      <a href="https://wa.me/201091838789" target="_blank"><button>شراء الكتاب</button></a>
+  <header>
+    <div class="logo-area">
+      <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
+      <h1>Farag Dev 98</h1>
     </div>
+    
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">الخدمات</a>
+      <a href="article.html">المقالات</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
 
-    <div class="service-box">
-      <img src="icons/learn-coding-cover.jpg" alt="كورس برمجة">
-      <h3>📚 كورس برمجة شامل</h3>
-      <p>يشمل HTML, CSS, JavaScript, Python بطريقة مبسطة.</p>
-      <a href="https://wa.me/201091838789" target="_blank"><button>اشترك الآن</button></a>
+  <main>
+    <h2>خدماتنا</h2>
+
+    <!-- قسم التطوير -->
+    <div class="service-section">
+      <h3>خدمات التطوير</h3>
+      <div class="service-group">
+        <div>
+          <button class="service-btn btn-dev1" onclick="toggleVideo(this, 'videos/software.mp4')">
+            <img src="icons/software.png" alt="تطوير البرمجيات"> طلب تطوير البرمجيات
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-dev2" onclick="toggleVideo(this, 'videos/web-dev.mp4')">
+            <img src="icons/web.png" alt="تطوير الويب"> طلب تطوير الويب
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-dev3" onclick="toggleVideo(this, 'videos/programs.mp4')">
+            <img src="icons/coe.png" alt="تصميم برامج"> طلب تصميم برامج
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-dev4" onclick="toggleVideo(this, 'videos/sites.mp4')">
+            <img src="icons/web-
+" alt="تصميم مواقع"> طلب تصميم مواقع
+          </button>
+          <div class="service-video"></div>
+        </div>
+      </div>
     </div>
-
-    <div class="service-box">
-      <img src="icons/website-design.jpg" alt="تصميم موقع">
-      <h3>🌐 تصميم مواقع احترافية</h3>
-      <p>مواقع متجاوبة بجودة عالية.</p>
-      <a href="https://wa.me/201091838789" target="_blank"><button>اطلب الآن</button></a>
+    <!-- قسم التعلم -->
+    <div class="service-section">
+      <h3>قسم التعلم</h3>
+      <div class="service-group">
+        <div>
+          <button class="service-btn btn-learn1" onclick="toggleVideo(this, 'videos/html.mp4')">
+            <img src="icons/html.png" alt="HTML"> أريد تعلم HTML
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn2" onclick="toggleVideo(this, 'videos/code.mp4')">
+            <img src="icons/code.png" alt="برمجة"> أريد تعلم البرمجة
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn3" onclick="toggleVideo(this, 'videos/design.mp4')">
+            <img src="icons/design.png" alt="تصميم"> أريد تعلم التصميم
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn4" onclick="toggleVideo(this, 'videos/marketing.mp4')">
+            <img src="icons/marketing.png" alt="تسويق"> أريد تعلم التسويق الرقمي
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn5" onclick="toggleVideo(this, 'videos/product.mp4')">
+            <img src="icons/product.png" alt="منتج"> أريد تعلم إنشاء منتج رقمي
+          </button>
+          <div class="service-video"></div>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <div class="service-box">
-      <img src="icons/pwa.png" alt="PWA">
-      <h3>📱 تطوير تطبيق ويب (PWA)</h3>
-      <p>اجعل موقعك يعمل بدون إنترنت.</p>
-      <a href="https://wa.me/201091838789" target="_blank"><button>ابدأ التطوير</button></a>
-    </div>
+  <footer id="footer"></footer>
+  <script src="footer.js"></script>
 
-    <div class="service-box">
-      <img src="icons/ads.jpg" alt="إعلانات">
-      <h3>📈 إعلانات لموقعك</h3>
-      <p>أضف إعلانات لزيادة أرباحك.</p>
-      <a href="https://wa.me/201091838789" target="_blank"><button>أضف الآن</button></a>
-    </div>
-  </div>
+  <audio id="notification-sound" src="audio/notif.mp3"></audio>
 
-  <div class="instruction">
-    <strong>💰 طرق الدفع:</strong><br><br>
-    <p><strong>فودافون كاش:</strong> 01066047545</p>
-    <p><strong>أورنج كاش:</strong> 01285895096</p>
-    <p><strong>وي كاش:</strong> 01558516081</p>
-    <p><strong>PayPal:</strong> Farajbdallh891@gmail.com</p>
-    <a href="https://wa.me/201091838789" target="_blank" class="pay-btn whatsapp">تواصل معنا عبر واتساب</a>
-  </div>
-</main>
+  <script>
+    function playSound() {
+      const sound = document.getElementById('notification-sound');
+      sound.play();
+    }
 
-<footer class="footer">
-  © 2025 جميع الحقوق محفوظة - FaragDev98 |
-  <a href="terms.html">الشروط</a> |
-  <a href="privacy-policy.html">الخصوصية</a> |
-  <a href="protection.html">الحماية</a>
-</footer>
-
+    function toggleVideo(button, videoSrc) {
+      const container = button.nextElementSibling;
+      if (container.innerHTML === '') {
+        container.innerHTML = `<video controls autoplay>
+          <source src="${videoSrc}" type="video/mp4">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>`;
+        container.style.display = 'block';
+      } else {
+        container.innerHTML = '';
+        container.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
