@@ -25,7 +25,116 @@
       margin: 0;
 
       padding: 0;
+      <h1>Farag Dev 98</h1>
+    </div>
+    
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">الخدمات</a>
+      <a href="article.html">المقالات</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
 
+  <main>
+    <h2>خدماتنا</h2>
+
+    <!-- قسم التطوير -->
+    <div class="service-section">
+      <h3>خدمات التطوير</h3>
+      <div class="service-group">
+        <div>
+          <button class="service-btn btn-dev1" onclick="toggleVideo(this, 'videos/software.mp4')">
+            <img src="icons/software.png" alt="تطوير البرمجيات"> طلب تطوير البرمجيات
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-dev2" onclick="toggleVideo(this, 'videos/web-dev.mp4')">
+            <img src="icons/web.png" alt="تطوير الويب"> طلب تطوير الويب
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-dev3" onclick="toggleVideo(this, 'videos/programs.mp4')">
+            <img src="icons/coe.png" alt="تصميم برامج"> طلب تصميم برامج
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-dev4" onclick="toggleVideo(this, 'videos/sites.mp4')">
+            <img src="icons/web-
+" alt="تصميم مواقع"> طلب تصميم مواقع
+          </button>
+          <div class="service-video"></div>
+        </div>
+      </div>
+    </div>
+    <!-- قسم التعلم -->
+    <div class="service-section">
+      <h3>قسم التعلم</h3>
+      <div class="service-group">
+        <div>
+          <button class="service-btn btn-learn1" onclick="toggleVideo(this, 'videos/html.mp4')">
+            <img src="icons/html.png" alt="HTML"> أريد تعلم HTML
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn2" onclick="toggleVideo(this, 'videos/code.mp4')">
+            <img src="icons/code.png" alt="برمجة"> أريد تعلم البرمجة
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn3" onclick="toggleVideo(this, 'videos/design.mp4')">
+            <img src="icons/design.png" alt="تصميم"> أريد تعلم التصميم
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn4" onclick="toggleVideo(this, 'videos/marketing.mp4')">
+            <img src="icons/marketing.png" alt="تسويق"> أريد تعلم التسويق الرقمي
+          </button>
+          <div class="service-video"></div>
+        </div>
+        <div>
+          <button class="service-btn btn-learn5" onclick="toggleVideo(this, 'videos/product.mp4')">
+            <img src="icons/product.png" alt="منتج"> أريد تعلم إنشاء منتج رقمي
+          </button>
+          <div class="service-video"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+  <script src="footer.js"></script>
+
+  <audio id="notification-sound" src="audio/notif.mp3"></audio>
+
+  <script>
+    function playSound() {
+      const sound = document.getElementById('notification-sound');
+      sound.play();
+    }
+
+    function toggleVideo(button, videoSrc) {
+      const container = button.nextElementSibling;
+      if (container.innerHTML === '') {
+        container.innerHTML = `<video controls autoplay>
+          <source src="${videoSrc}" type="video/mp4">
+          متصفحك لا يدعم تشغيل الفيديو.
+        </video>`;
+        container.style.display = 'block';
+      } else {
+        container.innerHTML = '';
+        container.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
       line-height: 1.6;
     }
     header {
