@@ -4,9 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>خدمات Farag Dev 98</title>
-  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #3a0ca3;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .service-card {
+      background-color: #292929;
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #ffd60a;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 5px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .btn-purple { background-color: #7209b7; }
+    .btn-blue { background-color: #4361ee; }
+    .btn-green { background-color: #4cc9f0; }
+    .btn-orange { background-color: #f77f00; }
+    .btn-black { background-color: #121212; }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 500px) {
+      .service-card h2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,41 +98,41 @@
 
 <main class="services-container">
 
-  <!-- خدمة تعلم البرمجة -->
+  <!-- كورس البرمجة الكامل -->
   <div class="service-card">
-    <img src="images/programming.png" alt="تعلم البرمجة">
+    <img src="images/programming.png" alt="كورس البرمجة">
     <h2>كورس تعلم البرمجة الكامل</h2>
-    <a href="#" class="btn btn-purple">عرض التفاصيل</a>
+    <a href="#" class="btn btn-purple">عرض الكورس</a>
   </div>
 
-  <!-- خدمة HTML/CSS/JS -->
+  <!-- دروس HTML / CSS / JavaScript -->
   <div class="service-card">
-    <img src="images/video.png" alt="HTML/CSS/JS">
+    <img src="images/video.png" alt="دروس ويب">
     <h2>دروس HTML / CSS / JavaScript</h2>
     <a href="#" class="btn btn-blue">مشاهدة الدروس</a>
   </div>
 
-  <!-- خدمة تصميم المواقع -->
+  <!-- تصميم المواقع -->
   <div class="service-card">
     <img src="images/web-dev.png" alt="تصميم مواقع">
     <h2>تصميم مواقع احترافية</h2>
-    <a href="#" class="btn btn-green">طلب خدمة الآن</a>
+    <a href="#" class="btn btn-green">طلب تصميم</a>
   </div>
 
-  <!-- خدمة تطوير التطبيقات -->
+  <!-- تطوير التطبيقات -->
   <div class="service-card">
-    <img src="images/app-dev.png" alt="تطوير التطبيقات">
+    <img src="images/app-dev.png" alt="تطبيقات">
     <h2>تطوير تطبيقات وبرمجيات</h2>
     <a href="#" class="btn btn-orange">طلب تطبيق</a>
   </div>
 
-  <!-- شراء كتاب -->
+  <!-- شراء الكتاب -->
   <div class="service-card">
     <img src="images/book.png" alt="كتاب HTML">
     <h2>📘 شراء كتاب تعلم HTML</h2>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
-    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
-    <a href="https://wa.me/201066047545" class="btn btn-black">شراء عبر واتساب</a>
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">Gumroad</a>
+    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">Payhip</a>
+    <a href="https://wa.me/201066047545" class="btn btn-black">واتساب</a>
   </div>
 
 </main>
