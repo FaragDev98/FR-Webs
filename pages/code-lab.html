@@ -2,30 +2,50 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>مختبر الأكواد</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #2c003e, #4a0072);
+      background: linear-gradient(135deg, #ffffff, #e0e0ff, #ffe0e0, #e0ccff);
       margin: 0;
       padding: 0;
-      color: white;
+      color: #000;
     }
 
     header {
-      background-color: #1a1a1a;
-      padding: 20px;
+      background: linear-gradient(to right, #4a00e0, #8e2de2);
+      padding: 15px 20px;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      font-size: 26px;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 26px;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    nav a {
+      padding: 12px 18px;
+      color: #4a00e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background: #4a00e0;
+      border-radius: 8px;
     }
 
     .container {
@@ -41,26 +61,25 @@
 
     textarea {
       width: 100%;
-      height: 250px;
+      height: 220px;
       padding: 15px;
       font-family: monospace;
       font-size: 14px;
       border-radius: 12px;
-      border: none;
-      background: #1e1e1e;
-      color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      border: 2px solid #4a00e0;
+      background: #f4f4f4;
+      color: #000;
       resize: none;
     }
 
     button {
       display: block;
       margin: 0 auto 30px auto;
-      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      background: linear-gradient(to right, #e53935, #8e24aa);
       color: white;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
@@ -68,7 +87,7 @@
     }
 
     button:hover {
-      background: linear-gradient(to right, #7a1fdc, #3d00c1);
+      background: linear-gradient(to right, #d32f2f, #6a1b9a);
     }
 
     iframe {
@@ -77,7 +96,14 @@
       background: white;
       border: 4px solid #4a00e0;
       border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .note {
+      color: red;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
     }
 
     @media (max-width: 900px) {
@@ -86,7 +112,13 @@
       }
 
       textarea {
-        height: 200px;
+        height: 180px;
+      }
+
+      nav a {
+        flex: 1 0 45%;
+        text-align: center;
+        margin: 4px;
       }
     }
   </style>
@@ -97,6 +129,14 @@
     🔬 مختبر الأكواد - HTML / CSS / JS
   </header>
 
+  <nav>
+    <a href="#">🏠 الرئيسية</a>
+    <a href="#">🧰 الخدمات</a>
+    <a href="#">📚 المقالات</a>
+    <a href="#">📞 تواصل</a>
+    <a href="#">📄 الشروط والأحكام</a>
+  </nav>
+
   <div class="container">
     <div class="editor-container">
       <textarea id="html" placeholder="HTML هنا..."></textarea>
@@ -105,6 +145,7 @@
     </div>
 
     <button onclick="runCode()">▶ تشغيل الكود</button>
+    <div class="note">💡 ملاحظة: سيتم إظهار الأخطاء البرمجية في الـ Console (اضغط F12 لرؤية الأخطاء).</div>
 
     <iframe id="result"></iframe>
   </div>
@@ -113,12 +154,19 @@
     function runCode() {
       const html = document.getElementById('html').value;
       const css = `<style>${document.getElementById('css').value}</style>`;
-      const js = `<script>${document.getElementById('js').value}<\/script>`;
+      const js = `<script>
+        try {
+          ${document.getElementById('js').value}
+        } catch(e) {
+          document.body.innerHTML += '<pre style="color:red;">خطأ: ' + e.message + '</pre>';
+        }
+      <\/script>`;
       const output = html + css + js;
 
       const iframe = document.getElementById('result');
       iframe.srcdoc = output;
     }
   </script>
+
 </body>
 </html>
