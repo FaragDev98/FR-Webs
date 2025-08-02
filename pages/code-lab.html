@@ -1,83 +1,113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>مختبر الأكواد</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مختبر الأكواد - FaragDev98</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #ffffff, #e0e0ff, #ffe0e0, #e0ccff);
+      background: linear-gradient(135deg, #ffffff, #e3f2fd, #ffebee, #ede7f6);
       margin: 0;
       padding: 0;
-      color: #000;
+      color: #333;
     }
 
     header {
-      background: linear-gradient(to right, #4a00e0, #8e2de2);
-      padding: 15px 20px;
-      text-align: center;
-      font-size: 26px;
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
       color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 15px 20px 5px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .logo-area img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-area h1 {
+      margin: 0;
+      font-size: 24px;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      background: #ffffff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      gap: 10px;
+      background: #fff;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     nav a {
-      padding: 12px 18px;
-      color: #4a00e0;
       text-decoration: none;
+      color: white;
       font-weight: bold;
-      transition: 0.3s;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: 0.3s ease;
     }
 
+    nav a:nth-child(1) { background: #2196f3; }
+    nav a:nth-child(2) { background: #e91e63; }
+    nav a:nth-child(3) { background: #4caf50; }
+    nav a:nth-child(4) { background: #ff9800; }
+    nav a:nth-child(5) { background: #673ab7; }
+
     nav a:hover {
-      color: #fff;
-      background: #4a00e0;
-      border-radius: 8px;
+      opacity: 0.85;
     }
 
     .container {
       padding: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .editor-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 15px;
       margin-bottom: 20px;
     }
 
     textarea {
       width: 100%;
-      height: 220px;
+      height: 200px;
       padding: 15px;
       font-family: monospace;
       font-size: 14px;
       border-radius: 12px;
       border: 2px solid #4a00e0;
-      background: #f4f4f4;
+      background: #f5f5f5;
       color: #000;
       resize: none;
     }
 
+    .action-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
     button {
-      display: block;
-      margin: 0 auto 30px auto;
-      background: linear-gradient(to right, #e53935, #8e24aa);
+      background: linear-gradient(to right, #f44336, #8e24aa);
       color: white;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border: none;
       border-radius: 12px;
       font-size: 18px;
@@ -87,7 +117,13 @@
     }
 
     button:hover {
-      background: linear-gradient(to right, #d32f2f, #6a1b9a);
+      background: linear-gradient(to right, #c62828, #6a1b9a);
+    }
+
+    .note {
+      color: red;
+      font-weight: bold;
+      text-align: center;
     }
 
     iframe {
@@ -99,20 +135,22 @@
       box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
 
-    .note {
-      color: red;
+    footer {
+      background: #4a00e0;
+      color: white;
+      padding: 10px;
       text-align: center;
-      font-weight: bold;
-      margin-top: 15px;
+      font-size: 14px;
+      margin-top: 30px;
     }
 
-    @media (max-width: 900px) {
-      .editor-container {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 768px) {
       textarea {
         height: 180px;
+      }
+
+      .action-area {
+        flex-direction: column;
       }
 
       nav a {
@@ -126,15 +164,18 @@
 <body>
 
   <header>
-    🔬 مختبر الأكواد - HTML / CSS / JS
+    <div class="logo-area">
+      <img src="icons/ai-icon.png" alt="شعار Farag Dev">
+      <h1>🔬 مختبر الأكواد - FaragDev98</h1>
+    </div>
   </header>
 
   <nav>
-    <a href="#">🏠 الرئيسية</a>
-    <a href="#">🧰 الخدمات</a>
-    <a href="#">📚 المقالات</a>
-    <a href="#">📞 تواصل</a>
-    <a href="#">📄 الشروط والأحكام</a>
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="services.html">🛠️ الخدمات</a>
+    <a href="article.html">📚 المقالات</a>
+    <a href="contact.html">📞 تواصل</a>
+    <a href="terms.html">📄 الشروط والأحكام</a>
   </nav>
 
   <div class="container">
@@ -144,11 +185,17 @@
       <textarea id="js" placeholder="JavaScript هنا..."></textarea>
     </div>
 
-    <button onclick="runCode()">▶ تشغيل الكود</button>
-    <div class="note">💡 ملاحظة: سيتم إظهار الأخطاء البرمجية في الـ Console (اضغط F12 لرؤية الأخطاء).</div>
+    <div class="action-area">
+      <button onclick="runCode()">▶ تشغيل الكود</button>
+      <div class="note">💡 ملاحظة: سيتم عرض الأخطاء في Console (اضغط F12 أو Ctrl+Shift+I).</div>
+    </div>
 
     <iframe id="result"></iframe>
   </div>
+
+  <footer>
+    جميع الحقوق محفوظة &copy; FaragDev98 - 2025
+  </footer>
 
   <script>
     function runCode() {
@@ -161,10 +208,7 @@
           document.body.innerHTML += '<pre style="color:red;">خطأ: ' + e.message + '</pre>';
         }
       <\/script>`;
-      const output = html + css + js;
-
-      const iframe = document.getElementById('result');
-      iframe.srcdoc = output;
+      document.getElementById('result').srcdoc = html + css + js;
     }
   </script>
 
