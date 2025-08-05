@@ -1,206 +1,134 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>مختبر الأكواد - FaragDev98</title>
-  <link rel="icon" type="image/png" href="icons/ai-icon.png">
-
+  <meta charset="UTF-8">
+  <title>مختبر الأكواد</title>
+  <link rel="icon" type="image/png" href="../icons/ai-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: #121212;
+      background-color: #121212;
       color: white;
       margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1f1f1f;
       padding: 20px;
-    }
-
-    h1 {
       text-align: center;
-      color: red;
-      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: #e74c3c;
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .btn-group {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h1 img {
-      width: 32px;
-      height: 32px;
-    }
-
-    .toolbar {
-      display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 10px;
-      margin-bottom: 20px;
+      margin: 20px;
     }
 
-    select,
-    button {
-      background: transparent;
-      border: 2px solid white;
+    .btn-group button,
+    .btn-group a {
+      background-color: transparent;
+      border: 1px solid white;
       color: white;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 16px;
+      padding: 10px 16px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s ease;
+      text-decoration: none;
     }
 
-    select:hover,
-    button:hover {
-      background: red;
+    .btn-group button:hover,
+    .btn-group a:hover {
+      background-color: white;
+      color: #121212;
     }
 
-    #runBtn {
-      background: #007bff;
-      border-color: #007bff;
+    .code-area {
+      background-color: #1f1f1f;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 1000px;
     }
 
-    #runBtn:hover {
-      background: #0056b3;
-      border-color: #0056b3;
-    }
-
-    .back-button {
-      background: #28a745;
+    .code-area textarea {
+      width: 100%;
+      height: 300px;
+      background-color: #2c2c2c;
+      color: #fff;
       border: none;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .back-button:hover {
-      background: #1e7e34;
-    }
-
-    .editors {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    .editor-section {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    textarea {
-      height: 200px;
-      background: #1e1e1e;
-      color: white;
-      border: 1px solid #555;
-      border-radius: 10px;
-      padding: 10px;
+      padding: 15px;
       font-family: monospace;
-      font-size: 14px;
+      border-radius: 5px;
       resize: vertical;
     }
 
-    h2 {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 1px solid #444;
-      border-radius: 10px;
-      background: white;
-      margin-top: 10px;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaa;
-      margin-top: 40px;
-      font-size: 14px;
+    .output-area {
+      background-color: #fff;
+      color: #000;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      min-height: 150px;
+      font-family: sans-serif;
     }
   </style>
 </head>
 <body>
 
-  <h1>
-    <img src="icons/ai-icon.png" alt="رمز الموقع" />
-    مختبر الأكواد - FaragDev98
-  </h1>
+  <header>
+    <h1>FaragDev | مختبر الأكواد</h1>
+  </header>
 
-  <div class="toolbar">
-    <select id="languageSelect">
-      <option value="html">HTML</option>
-      <option value="css">CSS</option>
-      <option value="javascript">JavaScript</option>
-      <option value="python">Python</option>
-      <option value="php">PHP</option>
-      <option value="java">Java</option>
-      <option value="c">C</option>
-      <option value="cpp">C++</option>
-      <option value="ruby">Ruby</option>
-      <option value="go">Go</option>
-    </select>
-    <button id="runBtn" onclick="runCode()">تشغيل الكود</button>
-    <button class="back-button" onclick="goBack()">🔙 رجوع للخدمات</button>
+  <div class="btn-group">
+    <button onclick="changeLanguage('html')">HTML</button>
+    <button onclick="changeLanguage('css')">CSS</button>
+    <button onclick="changeLanguage('js')">JavaScript</button>
+    <button onclick="changeLanguage('python')">Python</button>
+    <button onclick="changeLanguage('php')">PHP</button>
+    <button onclick="changeLanguage('c')">C</button>
+    <button onclick="changeLanguage('cpp')">C++</button>
+    <button onclick="changeLanguage('java')">Java</button>
+    <button onclick="changeLanguage('sql')">SQL</button>
+    <button onclick="changeLanguage('bash')">Bash</button>
+    <a href="../services.html">🔙 رجوع إلى الخدمات</a>
   </div>
 
-  <div class="editors">
-    <div class="editor-section">
-      <label for="htmlCode">كود HTML</label>
-      <textarea id="htmlCode" placeholder="أدخل كود HTML هنا..."></textarea>
-    </div>
-
-    <div class="editor-section">
-      <label for="cssCode">كود CSS</label>
-      <textarea id="cssCode" placeholder="أدخل كود CSS هنا..."></textarea>
-    </div>
-
-    <div class="editor-section">
-      <label for="jsCode">كود JavaScript</label>
-      <textarea id="jsCode" placeholder="أدخل كود JavaScript هنا..."></textarea>
+  <div class="code-area">
+    <textarea id="codeInput" placeholder="اكتب كودك هنا..."></textarea>
+    <div class="output-area" id="outputArea">
+      نتيجة الكود ستظهر هنا...
     </div>
   </div>
-
-  <h2>النتيجة:</h2>
-  <iframe id="result"></iframe>
-
-  <footer>
-    <p>جميع الحقوق محفوظة &copy; FaragDev98 - 2025</p>
-  </footer>
 
   <script>
-    function runCode() {
-      const html = document.getElementById("htmlCode").value;
-      const css = document.getElementById("cssCode").value;
-      const js = document.getElementById("jsCode").value;
-
-      const resultFrame = document.getElementById("result");
-      resultFrame.srcdoc = `
-        <html>
-          <head>
-            <style>${css}</style>
-          </head>
-          <body>
-            ${html}
-            <script>${js}<\/script>
-          </body>
-        </html>
-      `;
-    }
-
-    function goBack() {
-      window.location.href = "services.html";
+    function changeLanguage(lang) {
+      const exampleCodes = {
+        html: "<!DOCTYPE html>\n<html>\n<head>\n  <title>صفحة</title>\n</head>\n<body>\n  <h1>مرحباً</h1>\n</body>\n</html>",
+        css: "body {\n  background-color: #f0f0f0;\n  color: #333;\n}",
+        js: "document.getElementById('outputArea').innerText = 'مرحباً من JavaScript!';",
+        python: "print('مرحباً من بايثون')",
+        php: "<?php echo 'مرحباً من PHP'; ?>",
+        c: "#include <stdio.h>\nint main() {\n  printf(\"مرحباً من C\\n\");\n  return 0;\n}",
+        cpp: "#include <iostream>\nusing namespace std;\nint main() {\n  cout << \"مرحباً من C++\";\n  return 0;\n}",
+        java: "public class Main {\n  public static void main(String[] args) {\n    System.out.println(\"مرحباً من Java\");\n  }\n}",
+        sql: "SELECT * FROM users WHERE active = 1;",
+        bash: "echo 'مرحباً من Bash'"
+      };
+      document.getElementById('codeInput').value = exampleCodes[lang] || '';
+      document.getElementById('outputArea').innerText = 'تم إدخال مثال للغة: ' + lang;
     }
   </script>
-
-  <script src="footer.js"></script>
 
 </body>
 </html>
