@@ -1,214 +1,169 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مختبر الأكواد - FaragDev98</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مختبر الأكواد</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #ffffff, #e3f2fd, #ffebee, #ede7f6);
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      background: #121212;
       color: white;
-      padding: 15px 20px 5px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .logo-area img {
-      width: 40px;
-      height: 40px;
-    }
-
-    .logo-area h1 {
       margin: 0;
-      font-size: 24px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      background: #fff;
-      padding: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: 0.3s ease;
-    }
-
-    nav a:nth-child(1) { background: #2196f3; }
-    nav a:nth-child(2) { background: #e91e63; }
-    nav a:nth-child(3) { background: #4caf50; }
-    nav a:nth-child(4) { background: #ff9800; }
-    nav a:nth-child(5) { background: #673ab7; }
-
-    nav a:hover {
-      opacity: 0.85;
-    }
-
-    .container {
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
     }
 
-    .editor-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
-      margin-bottom: 20px;
+    h1 {
+      text-align: center;
+      color: red;
+      margin-bottom: 30px;
     }
 
-    textarea {
-      width: 100%;
-      height: 200px;
-      padding: 15px;
-      font-family: monospace;
-      font-size: 14px;
-      border-radius: 12px;
-      border: 2px solid #4a00e0;
-      background: #f5f5f5;
-      color: #000;
-      resize: none;
-    }
-
-    .action-area {
+    .title-with-icon {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
+      justify-content: center;
+      gap: 10px;
     }
 
-    button {
-      background: linear-gradient(to right, #f44336, #8e24aa);
+    .title-with-icon img {
+      width: 32px;
+      height: 32px;
+    }
+
+    select, button {
+      background: transparent;
+      border: 2px solid white;
       color: white;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      margin: 10px 5px;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    button:hover {
-      background: linear-gradient(to right, #c62828, #6a1b9a);
+    select:hover, button:hover {
+      background: red;
+      color: white;
     }
 
-    .note {
-      color: red;
-      font-weight: bold;
-      text-align: center;
+    #runBtn {
+      background: #007bff;
+      border-color: #007bff;
+    }
+
+    #runBtn:hover {
+      background: #0056b3;
+      border-color: #0056b3;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      background: #1e1e1e;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 10px;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    .editor-section {
+      margin-bottom: 20px;
     }
 
     iframe {
       width: 100%;
-      height: 500px;
+      height: 300px;
+      border: 1px solid #444;
+      border-radius: 10px;
       background: white;
-      border: 4px solid #4a00e0;
-      border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
 
-    footer {
-      background: #4a00e0;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      font-size: 14px;
-      margin-top: 30px;
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
-    @media (max-width: 768px) {
-      textarea {
-        height: 180px;
-      }
-
-      .action-area {
-        flex-direction: column;
-      }
-
-      nav a {
-        flex: 1 0 45%;
-        text-align: center;
-        margin: 4px;
-      }
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: red;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-area">
-      <img src="icons/ai-icon.png" alt="شعار Farag Dev">
-      <h1>🔬 مختبر الأكواد - FaragDev98</h1>
-    </div>
-  </header>
+  <h1 class="title-with-icon">
+    <img src="favicon.png" alt="رمز الموقع">
+    🔧 مختبر الأكواد - FaragDev98
+  </h1>
 
-  <nav>
-    <a href="index.html">🏠 الرئيسية</a>
-    <a href="services.html">🛠️ الخدمات</a>
-    <a href="article.html">📚 المقالات</a>
-    <a href="contact.html">📞 تواصل</a>
-    <a href="terms.html">📄 الشروط والأحكام</a>
-  </nav>
-
-  <div class="container">
-    <div class="editor-container">
-      <textarea id="html" placeholder="HTML هنا..."></textarea>
-      <textarea id="css" placeholder="CSS هنا..."></textarea>
-      <textarea id="js" placeholder="JavaScript هنا..."></textarea>
-    </div>
-
-    <div class="action-area">
-      <button onclick="runCode()">▶ تشغيل الكود</button>
-      <div class="note">💡 ملاحظة: سيتم عرض الأخطاء في Console (اضغط F12 أو Ctrl+Shift+I).</div>
-    </div>
-
-    <iframe id="result"></iframe>
+  <div class="toolbar">
+    <select id="languageSelect">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+      <option value="php">PHP</option>
+      <option value="java">Java</option>
+      <option value="c">C</option>
+      <option value="cpp">C++</option>
+      <option value="ruby">Ruby</option>
+      <option value="go">Go</option>
+    </select>
+    <button id="runBtn" onclick="runCode()">تشغيل الكود</button>
+    <button class="back-button" onclick="goBack()">🔙 رجوع للخدمات</button>
   </div>
 
-  <footer>
-    جميع الحقوق محفوظة &copy; FaragDev98 - 2025
-  </footer>
+  <div class="editor-section">
+    <label>كود HTML</label>
+    <textarea id="htmlCode" placeholder="أدخل كود HTML هنا..."></textarea>
+  </div>
+
+  <div class="editor-section">
+    <label>كود CSS</label>
+    <textarea id="cssCode" placeholder="أدخل كود CSS هنا..."></textarea>
+  </div>
+
+  <div class="editor-section">
+    <label>كود JavaScript</label>
+    <textarea id="jsCode" placeholder="أدخل كود JavaScript هنا..."></textarea>
+  </div>
+
+  <h2>النتيجة:</h2>
+  <iframe id="result"></iframe>
 
   <script>
     function runCode() {
-      const html = document.getElementById('html').value;
-      const css = `<style>${document.getElementById('css').value}</style>`;
-      const js = `<script>
-        try {
-          ${document.getElementById('js').value}
-        } catch(e) {
-          document.body.innerHTML += '<pre style="color:red;">خطأ: ' + e.message + '</pre>';
-        }
-      <\/script>`;
-      document.getElementById('result').srcdoc = html + css + js;
+      const html = document.getElementById("htmlCode").value;
+      const css = document.getElementById("cssCode").value;
+      const js = document.getElementById("jsCode").value;
+
+      const resultFrame = document.getElementById("result");
+      resultFrame.srcdoc = `
+        <html>
+          <head>
+            <style>${css}</style>
+          </head>
+          <body>
+            ${html}
+            <script>${js}<\/script>
+          </body>
+        </html>
+      `;
+    }
+
+    function goBack() {
+      window.location.href = "services.html"; // صفحة الخدمات
     }
   </script>
 
