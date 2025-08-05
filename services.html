@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>الخدمات - FaragDev98</title>
+  <title>الخدمات - Farag Abdullah</title>
   <link rel="icon" href="icons/ai-icon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -127,8 +127,25 @@
 
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 30px;
+    }
+
+    .lab-box {
+      background: #311b92;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-black {
+      background: black;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     @media (max-width: 768px) {
@@ -152,10 +169,10 @@
       <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
-
+  
   <main>
     <div class="service-section">
-      <h2>فيديو تعريفي بالخدمات ✨</h2>
+      <h2>فيديو تعريفي بالخدمات</h2>
       <video src="videos/services-intro.mp4" controls></video>
       <p>تعرف على خدماتنا المتكاملة في التصميم والبرمجة وتطوير الويب بخبرة واحترافية.</p>
     </div>
@@ -178,16 +195,7 @@
       <p>تعرف على كيفية تطوير مشاريع متقدمة وواجهات احترافية باستخدام HTML, CSS, JS.</p>
     </div>
 
-    <div class="service-section">
-      <h2>شراء كتابنا التعليمي 📘</h2>
-      <p>كتاب شامل لتعلم البرمجة للمبتدئين بلغة سهلة ومشروحة بالعربية، يشمل مشروع عملي ونصائح مهمة.</p>
-      <div class="purchase-buttons">
-        <a href="https://wa.me/201091838789" target="_blank">فودافون كاش</a>
-        <a href="https://wa.me/201091838789" target="_blank">أورنج كاش</a>
-        <a href="https://wa.me/201091838789" target="_blank">وي كاش</a>
-        <a href="mailto:Farajbdallh891@gmail.com">PayPal</a>
-      </div>
-    </div>
+   
 
     <div class="service-section">
       <h2>فيديو تعليمي: إنشاء موقع إلكتروني 🧑‍🏫</h2>
@@ -219,18 +227,16 @@
           <h3>شراء كتاب البرمجة</h3>
           <a href="https://wa.me/201091838789" class="btn">احصل على نسختك</a>
         </div>
-      
-  < المختبر الأكواد-->
-  <div class="lab-box">
-    <h3>🔬 المختبر البرمجي</h3>
-    <a href="pages/code-lab.html" class="btn-black">جرب المختبر الآن</a>
-  </div>
+      </div>
+    </div>
 
+    <div class="lab-box">
+      <h3>🔬 المختبر البرمجي</h3>
+      <a href="pages/code-lab.html" class="btn-black">جرب المختبر الآن</a>
+    </div>
   </main>
 
   <footer id="footer"></footer>
   <script src="footer.js"></script>
 </body>
 </html>
-
-  
