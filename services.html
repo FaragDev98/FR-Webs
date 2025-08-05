@@ -251,22 +251,6 @@ Latest commit
     <a href="https://wa.me/201091838789?text=مرحبًا، أريد شراء كتاب HTML" class="btn" style="background: #25D366; color: white; padding: 10px 16px; border-radius: 8px;">شراء عبر واتساب</a>
   </div>
 
-  <div class="instruction" style="background: #222; padding: 20px; border-radius: 12px; margin-top: 20px;">
-    <h3 style="color:#f44336;">🔒 خطوات شراء الكتاب عبر واتساب:</h3>
-    <ol style="line-height: 1.8;">
-      <li>اختر وسيلة الدفع المناسبة:</li>
-      <ul style="list-style: none; padding: 0;">
-        <li>📱 فودافون كاش: <strong>01066047545</strong></li>
-        <li>📱 أورنج كاش: <strong>01285895096</strong></li>
-        <li>📱 وي كاش: <strong>01558516081</strong></li>
-        <li>💳 باي بال: <strong>Farajbdallh891@gmail.com</strong></li>
-      </ul>
-      <li>ادفع وأرسل صورة الإيصال على واتساب</li>
-      <li>سوف تستلم رابط التحميل فورًا</li>
-    </ol>
-    <a href="https://wa.me/201091838789?text=مرحبًا، أريد شراء كتاب HTML" class="btn" style="background: #25D366; margin-top: 10px; padding: 10px 16px; border-radius: 8px;">💬 تواصل على واتساب</a>
-  </div>
-
   <div class="video-section" style="margin-top: 30px;">
     <h3 style="color: #f44336;">🎥 فيديو تعريفي عن الكتاب</h3>
     <video controls style="width: 100%; max-width: 600px; border-radius: 12px; margin-top: 10px;">
@@ -274,7 +258,50 @@ Latest commit
       المتصفح لا يدعم تشغيل الفيديو.
     </video>
   </div>
+<div class="instruction" style="background: #222; padding: 20px; border-radius: 12px; margin-top: 20px;">
+  <h3 style="color:#f44336;">🔒 خطوات شراء الكتاب عبر واتساب:</h3>
+  <ol style="line-height: 1.8; color: #fff; padding-right: 0;">
+    <li>اختر وسيلة الدفع المناسبة:</li>
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('01066047545')" style="display: flex; align-items: center; background-color: #e60000; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/vodafone.png" alt="Vodafone Cash" style="width:24px; height:24px; margin-left: 10px;">
+          01066047545 - فودافون كاش
+        </button>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('01285895096')" style="display: flex; align-items: center; background-color: #ff6600; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/orange.png" alt="Orange Cash" style="width:24px; height:24px; margin-left: 10px;">
+          01285895096 - أورنج كاش
+        </button>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('01558516081')" style="display: flex; align-items: center; background-color: #5e0094; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/we.png" alt="WE Cash" style="width:24px; height:24px; margin-left: 10px;">
+          01558516081 - وي كاش
+        </button>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('Farajbdallh891@gmail.com')" style="display: flex; align-items: center; background-color: #0070ba; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/paypal.png" alt="PayPal" style="width:24px; height:24px; margin-left: 10px;">
+          Farajbdallh891@gmail.com - باي بال
+        </button>
+      </li>
+    </ul>
+    <li>قم بالدفع وأرسل صورة الإيصال على واتساب</li>
+    <li>سوف تستلم رابط التحميل فورًا ✅</li>
+  </ol>
+</div>
 
+<script>
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert(`✔ تم نسخ "${text}"`);
+  }).catch(() => {
+    alert("❌ حدث خطأ أثناء النسخ!");
+  });
+}
+    </script>
   <div class="app-buttons" style="margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap;">
     <a href="download/تعلم إنجليزي.apk" class="btn" style="background: #000; color: white; padding: 10px 16px; border-radius: 8px;" download>📲 حمل التطبيق</a>
     <a href="download/html-book.pdf" class="btn" style="background: #f44336; color: white; padding: 10px 16px; border-radius: 8px;" download>📖 عرض الكتاب</a>
