@@ -171,12 +171,87 @@
     </nav>
   </header>
 
-  <main>
-    <div class="service-section">
-      <h2>فيديو تعريفي بالخدمات </h2>
-      <video src="videos/services-intro.mp4" controls></video>
-      <p>تعرف على خدماتنا المتكاملة في التصميم والبرمجة وتطوير الويب بخبرة واحترافية.</p>
-    </div>
+  <main><div style="background: linear-gradient(135deg, #8b5cf6, #ef4444, #3b82f6, #1d4ed8); padding: 30px; border-radius: 20px; color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center;">
+
+  <style>
+    @keyframes float1 {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes float2 {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(8px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes float3 {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(3deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .btn-group {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-group a {
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn-group a:hover {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+
+    /* حركات مخصصة لكل زر */
+    .btn-group a:nth-child(1) { background: #ef4444; animation: float1 1.5s ease-in-out infinite; }
+    .btn-group a:nth-child(2) { background: #1d4ed8; animation: float1 1s ease-in-out infinite; } /* حركة أسرع */
+    .btn-group a:nth-child(3) { background: #8b5cf6; animation: float2 1.5s ease-in-out infinite; }
+    .btn-group a:nth-child(4) { background: #10b981; animation: float3 1.5s ease-in-out infinite; }
+    .btn-group a:nth-child(5) { background: #f97316; animation: float1 1.5s ease-in-out infinite; }
+  </style>
+
+  <!-- مجموعة الأزرار -->
+  <div class="btn-group">
+    <a href="#service-request">طلب خدمة</a>
+    <a href="#course-section">اشترك في الكورس</a>
+    <a href="#youtube-section">اشترك في القناة</a>
+    <a href="#app-section">نزّل التطبيق</a>
+    <a href="#lab-section">جرب المختبر</a>
+  </div>
+
+  <!-- العنوان الرئيسي -->
+  <h2 style="font-size: 26px; margin-bottom: 20px; font-weight: bold;">تعرف على خدماتنا</h2>
+
+  <!-- الفيديو -->
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 25px; border-radius: 12px; overflow: hidden;">
+    <video src="videos/services-intro.mp4" controls
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;">
+      المتصفح لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+
+  <!-- الوصف -->
+  <p style="font-size: 17px; line-height: 1.9; margin-top: 20px;">
+    في هذا الفيديو، نقدم لك لمحة شاملة عن خدماتنا في مجالات البرمجة، التصميم، وتطوير الويب.<br>
+    نعمل على تنفيذ مشاريع احترافية تلبي طموحاتك، سواء كنت تبحث عن موقع بسيط أو تطبيق متكامل.<br>
+    خدماتنا تشمل: تصميم واجهات جذابة، تطوير مواقع متجاوبة، تحسين تجربة المستخدم، وتحويل الأفكار إلى واقع تقني ناجح.<br>
+    شاهد الفيديو واكتشف كيف يمكننا مساعدتك في تحقيق مشروعك 
+  </p>
+  </div>
 
    <div style="background: linear-gradient(135deg, #facc15, #fb923c); padding: 30px; border-radius: 20px; color: #1f2937; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-align: center;">
 
