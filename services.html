@@ -173,23 +173,36 @@
 
   <main><div style="background: linear-gradient(135deg, #8b5cf6, #ef4444, #3b82f6, #1d4ed8); padding: 30px; border-radius: 20px; color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center;">
 
+ 
+  <div style="background: linear-gradient(135deg, #8b5cf6, #ef4444, #3b82f6, #1d4ed8); padding: 30px; border-radius: 20px; color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center;">
+
   <style>
-    @keyframes float1 {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
+    /* حركات متنوعة حديثة */
+    @keyframes bounce1 {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
-    @keyframes float2 {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(8px); }
-      100% { transform: translateX(0); }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(2deg); }
+      75% { transform: rotate(-2deg); }
     }
 
-    @keyframes float3 {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(3deg); }
-      100% { transform: rotate(0deg); }
+    @keyframes zoom {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     .btn-group {
@@ -201,9 +214,9 @@
     }
 
     .btn-group a {
-      padding: 10px 20px;
+      padding: 8px 16px;
       border-radius: 30px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
       text-decoration: none;
       color: white;
@@ -216,32 +229,66 @@
       filter: brightness(1.1);
     }
 
-    /* حركات مخصصة لكل زر */
-    .btn-group a:nth-child(1) { background: #ef4444; animation: float1 1.5s ease-in-out infinite; }
-    .btn-group a:nth-child(2) { background: #1d4ed8; animation: float1 1s ease-in-out infinite; } /* حركة أسرع */
-    .btn-group a:nth-child(3) { background: #8b5cf6; animation: float2 1.5s ease-in-out infinite; }
-    .btn-group a:nth-child(4) { background: #10b981; animation: float3 1.5s ease-in-out infinite; }
-    .btn-group a:nth-child(5) { background: #f97316; animation: float1 1.5s ease-in-out infinite; }
+    /* الألوان والحركات المختلفة */
+    .btn-group a:nth-child(1) {
+      background: #ef4444;
+      animation: bounce1 1.3s infinite;
+    }
+
+    .btn-group a:nth-child(2) {
+      background: #6d28d9;
+      animation: wiggle 1.5s infinite;
+    }
+
+    .btn-group a:nth-child(3) {
+      background: #8b5cf6;
+      animation: float 1.6s infinite;
+    }
+
+    .btn-group a:nth-child(4) {
+      background: #10b981;
+      animation: zoom 1.4s infinite;
+    }
+
+    .btn-group a:nth-child(5) {
+      background: #f97316;
+      animation: pulse 1.2s infinite;
+    }
+
+    .btn-group a:nth-child(6) {
+      background: #1e40af;
+      animation: bounce1 1s infinite;
+    }
   </style>
 
-  <!-- مجموعة الأزرار -->
+  <!-- الأزرار -->
   <div class="btn-group">
     <a href="#service-request">طلب خدمة</a>
     <a href="#course-section">اشترك في الكورس</a>
     <a href="#youtube-section">اشترك في القناة</a>
     <a href="#app-section">نزّل التطبيق</a>
     <a href="#lab-section">جرب المختبر</a>
+    <a href="#book-section">شراء الكتاب</a>
   </div>
 
-  <!-- العنوان الرئيسي -->
+  <!-- عنوان -->
   <h2 style="font-size: 26px; margin-bottom: 20px; font-weight: bold;">تعرف على خدماتنا</h2>
 
-  <!-- الفيديو -->
+  <!-- فيديو -->
   <div style="position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 25px; border-radius: 12px; overflow: hidden;">
     <video src="videos/services-intro.mp4" controls
       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;">
       المتصفح لا يدعم تشغيل الفيديو.
     </video>
+  </div>
+
+  <!-- وصف نصي -->
+  <p style="font-size: 17px; line-height: 1.9; margin-top: 20px;">
+    في هذا الفيديو، نقدم لك لمحة شاملة عن خدماتنا في مجالات البرمجة، التصميم، وتطوير الويب.<br>
+    نعمل على تنفيذ مشاريع احترافية تلبي طموحاتك، سواء كنت تبحث عن موقع بسيط أو تطبيق متكامل.<br>
+    خدماتنا تشمل: تصميم واجهات جذابة، تطوير مواقع متجاوبة، تحسين تجربة المستخدم، وتحويل الأفكار إلى واقع تقني ناجح.<br>
+    شاهد الفيديو واكتشف كيف يمكننا مساعدتك في تحقيق مشروعك بنجاح واحترافية.
+  </p>
   </div>
 
   <!-- الوصف -->
