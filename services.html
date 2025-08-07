@@ -170,7 +170,40 @@
       <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
-    
+    <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 12px; overflow-x: auto; padding: 10px;">
+  <a href="#youtube-section" class="btn-skill" style="background:#e74c3c;">اشترك في القناة</a>
+  <a href="#service-request" class="btn-skill" style="background:#2980b9;">طلب خدمة</a>
+  <a href="#course-section" class="btn-skill" style="background:#8e44ad;">اشترك في الكورس</a>
+  <a href="#app-section" class="btn-skill" style="background:#27ae60;">نزّل التطبيق</a>
+  <a href="#lab-section" class="btn-skill" style="background:#f39c12;">جرب المختبر</a>
+  <a href="#payhip-section" class="btn-skill" style="background:#f1c40f;">شراء من Payhip</a>
+  <a href="#gumroad-section" class="btn-skill" style="background:#c0392b;">شراء من Gumroad</a>
+  <a href="#whatsapp-section" class="btn-skill" style="background:#2ecc71;">شراء عبر واتساب</a>
+</div>
+
+<style>
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    animation: blink 2s infinite;
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* عشان مايصغروش الأزرار في حال الضيق */
+  }
+
+  .btn-skill:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.5; transform: translateY(-4px); }
+  }
+</style>
 <div style="background: linear-gradient(135deg, #8b5cf6, #ef4444, #3b82f6, #1d4ed8); padding: 30px; border-radius: 20px; color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-align: center;">
 
   <!-- العنوان الرئيسي -->
