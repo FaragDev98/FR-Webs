@@ -243,53 +243,55 @@
   </nav>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 <div class="marquee-container">
-  <!-- القطار المتحرك -->
-  <a href="index.html" class="floating-train">
-    <img src="icons/ai-icon.png" alt="" class="train-head"/>
-  </a>
   <div class="marquee-content">
-    <!-- الأزرار بأيقونات Font Awesome -->
-    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red">
-      <img src="icons/ai-icon.png" alt="" class="train-head"/> اشترك في القناة
+    <!-- القطار المتحرك داخل الشريط -->
+
+    <!-- باقي الأزرار -->
+    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
     </a>
-    <a href="https://wa.me/201066047545" class="btn-skill pink">
-       <img src="icons/ai-icon.png" alt="" class="train-head"/> اطلب الخدمة الآن
+    <a href="https://wa.me/201066047545" class="btn-skill pink dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اطلب الخدمة الآن
     </a>
-    <a href="https://wa.me/201066047545" class="btn-skill purple">
-      <img src="icons/ai-icon.png" alt="" class="train-head"/> اشترك في الكورس
+    <a href="https://wa.me/201066047545" class="btn-skill purple dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في الكورس
     </a>
-    <a href="code-lab.html" class="btn-skill dark-red">
-       <img src="icons/ai-icon.png" alt="" class="train-head"/> جرب المختبر الآن
+    <a href="code-lab.html" class="btn-skill dark-red dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> جرب المختبر الآن
     </a>
-    <!-- صور حقيقية (كتاب HTML) -->
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon">
-       <img src="icons/ai-icon.png" alt="" class="train-head"/> شراء من Gumroad
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء من Gumroad
     </a>
-    <a href="https://payhip.com/b/2cJWp" class="btn-skill blue">
+    <a href="https://payhip.com/b/2cJWp" class="btn-skill blue dancing">
       <img src="html-book-cover.png" class="icon-img" alt=""> شراء من Payhip
     </a>
-    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green">
-       <img src="icons/ai-icon.png" alt="" class="train-head"/> شراء عبر واتساب
+    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء عبر واتساب
     </a>
-    <a href="download/تعلم إنجليزي.apk" class="btn-skill violet">
-       <img src="icons/ai-icon.png" alt="" class="train-head"/> نزّل التطبيق
+    <a href="download/تعلم إنجليزي.apk" class="btn-skill violet dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> نزّل التطبيق
     </a>
-    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black">
+    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black dancing">
       <i class="fab fa-paypal icon-img"></i> PayPal
     </button>
-    <!-- صور شبكات الدفع -->
-    <button onclick="copyText('01066047545')" class="btn-skill red">
-       <img src="icons/vodafone.png" alt="" class="train-head"/> Vodafone Cash
+    <button onclick="copyText('01066047545')" class="btn-skill red dancing">
+      <img src="icons/vodafone.png" alt="" class="icon-img"/> Vodafone Cash
     </button>
-    <button onclick="copyText('01285895096')" class="btn-skill orange">
-       <img src="icons/orange.png" alt="" class="train-head"/> Orange Cash
+    <button onclick="copyText('01285895096')" class="btn-skill orange dancing">
+      <img src="icons/orange.png" alt="" class="icon-img"/> Orange Cash
     </button>
-    <button onclick="copyText('01558516081')" class="btn-skill dark-purple">
-       <img src="icons/we.png" alt="" class="train-head"/> WE Cash
+    <button onclick="copyText('01558516081')" class="btn-skill dark-purple dancing">
+      <img src="icons/we.png" alt="" class="icon-img"/> WE Cash
     </button>
-  </div>
+ <a href="index.html" class="btn-skill black dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚀
+    </a>
+
+ </div>
 </div>
+
 <style>
   .marquee-container {
     width: 100%;
@@ -314,14 +316,14 @@
   .btn-skill {
     white-space: nowrap;
     color: white;
-    padding: 10px 18px;
-    margin: 0 8px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: bold;
+    padding: 6px 12px;
+    margin: 0 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
     text-decoration: none;
     flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
     transition: transform 0.3s ease;
     border: none;
     cursor: pointer;
@@ -330,36 +332,27 @@
   }
 
   .btn-skill .icon-img {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
-    margin-left: 8px;
+    margin-left: 6px;
   }
 
   .btn-skill:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 
-  .floating-train {
-    position: absolute;
-    top: 8px;
-    right: -60px;
-    z-index: 0;
-    animation: trainMove 12s linear infinite;
+  /* حركة رقص */
+  .dancing {
+    animation: bounce 1s infinite ease-in-out;
   }
 
-  .floating-train img.train-head {
-    width: 45px;
-    height: 45px;
-    opacity: 0.9;
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
   }
 
-  @keyframes trainMove {
-    0% { right: -60px; }
-    100% { right: 100%; }
-  }
-
-  /* ألوان */
+  /* الألوان */
   .red         { background-color: #dc2626; }
   .pink        { background-color: #f43f5e; }
   .purple      { background-color: #8e44ad; }
@@ -380,7 +373,7 @@
     });
   }
 </script>
-    
+
 
   <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
       
