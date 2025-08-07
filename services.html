@@ -170,16 +170,55 @@
       <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
-    <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 12px; overflow-x: auto; padding: 10px;">
-  <a href="#youtube-section" class="btn-skill" style="background:#e74c3c;">اشترك في القناة</a>
-  <a href="#service-request" class="btn-skill" style="background:#2980b9;">طلب خدمة</a>
-  <a href="#course-section" class="btn-skill" style="background:#8e44ad;">اشترك في الكورس</a>
-  <a href="#app-section" class="btn-skill" style="background:#27ae60;">نزّل التطبيق</a>
-  <a href="#lab-section" class="btn-skill" style="background:#f39c12;">جرب المختبر</a>
-  <a href="#payhip-section" class="btn-skill" style="background:#f1c40f;">شراء من Payhip</a>
-  <a href="#gumroad-section" class="btn-skill" style="background:#c0392b;">شراء من Gumroad</a>
-  <a href="#whatsapp-section" class="btn-skill" style="background:#2ecc71;">شراء عبر واتساب</a>
+   <div class="marquee-container">
+  <div class="marquee-content">
+    <a href="#youtube-section" class="btn-skill" style="background:#e74c3c;">اشترك في القناة</a>
+    <a href="#service-request" class="btn-skill" style="background:#2980b9;">طلب خدمة</a>
+    <a href="#course-section" class="btn-skill" style="background:#8e44ad;">اشترك في الكورس</a>
+    <a href="#app-section" class="btn-skill" style="background:#27ae60;">نزّل التطبيق</a>
+    <a href="#lab-section" class="btn-skill" style="background:#f39c12;">جرب المختبر</a>
+    <a href="#payhip-section" class="btn-skill" style="background:#f1c40f;">شراء من Payhip</a>
+    <a href="#gumroad-section" class="btn-skill" style="background:#c0392b;">شراء من Gumroad</a>
+    <a href="#whatsapp-section" class="btn-skill" style="background:#2ecc71;">شراء عبر واتساب</a>
+  </div>
 </div>
+
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px 0;
+    direction: rtl; /* عشان اللغة العربية */
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    animation: marquee 10s linear infinite; /* اسرع حركة */
+  }
+
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 10px 16px;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-skill:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
 
 <style>
   .btn-skill {
