@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -243,7 +241,117 @@
     <a href="article.html" class="blog">مقال</a>
     <a href="contact.html" class="contact">تواصل</a> 
   </nav>
+<div class="marquee-container">
+  <div class="marquee-content">
+    <!-- زر الاشتراك -->
+    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill" style="background-color: #dc2626;">
+      🔔 اشترك في القناه 
+    </a>
 
+    <!-- زر الطلب -->
+    <a href="https://wa.me/201066047545" class="btn-skill" style="background-color: #f43f5e;">
+      📩 اطلب الخدمة الآن
+    </a>
+
+    <!-- زر الاشتراك في الكورس -->
+    <a href="https://wa.me/201066047545" class="btn-skill" style="background-color: #8e44ad;">
+      📚 اشترك في الكورس
+    </a>
+
+    <!-- زر المختبر -->
+    <a href="code-lab.html" class="btn-skill" style="background-color: #e60000;">
+      🧪 جرب المختبر الآن
+    </a>
+
+    <!-- شراء من Gumroad -->
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill" style="background-color: #f44336;">
+      🛒 شراء من Gumroad
+    </a>
+
+    <!-- شراء من Payhip -->
+    <a href="https://payhip.com/b/2cJWp" class="btn-skill" style="background-color: orange;">
+      🛍️ شراء من Payhip
+    </a>
+
+    <!-- شراء عبر واتساب -->
+    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill" style="background-color: #25D366;">
+      💬 شراء عبر واتساب
+    </a>
+
+    <!-- تحميل التطبيق -->
+    <a href="download/تعلم إنجليزي.apk" class="btn-skill" style="background-color: #9333ea;">
+      📥 نزّل التطبيق
+    </a>
+
+    <!-- PayPal -->
+    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill" style="background-color: #0070ba;">
+      💳 Farajbdallh891@gmail.com - PayPal
+    </button>
+
+    <!-- Vodafone Cash -->
+    <button onclick="copyText('01066047545')" class="btn-skill" style="background-color: #e60000;">
+      📱 01066047545 - فودافون كاش
+    </button>
+
+    <!-- Orange Cash -->
+    <button onclick="copyText('01285895096')" class="btn-skill" style="background-color: #ff6600;">
+      📱 01285895096 - أورنج كاش
+    </button>
+
+    <!-- WE Cash -->
+    <button onclick="copyText('01558516081')" class="btn-skill" style="background-color: #5e0094;">
+      📱 01558516081 - وي كاش
+    </button>
+  </div>
+</div>
+
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 15px 0;
+    direction: rtl;
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    animation: marquee 30s linear infinite; /* سرعة أبطأ */
+  }
+
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 12px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    flex-shrink: 0;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-skill:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
+
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert("تم نسخ: " + text);
+    });
+  }
+</script>
   <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
       
   <img src="images/main-hero.png" alt="HTML" class="certificate" />
