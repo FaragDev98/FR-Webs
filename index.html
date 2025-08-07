@@ -241,62 +241,64 @@
     <a href="article.html" class="blog">مقال</a>
     <a href="contact.html" class="contact">تواصل</a> 
   </nav>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <div class="marquee-container">
-  <!-- القطار المتحرك (الخلفي) -->
+  <!-- القطار المتحرك -->
   <a href="index.html" class="floating-train">
-    <img src="icons/ai-icon.png" alt="Train Head" class="train-head" />
+    <img src="icons/ai-icon.png" alt="" class="train-head" />
   </a>
 
   <div class="marquee-content">
-    <!-- أزرار الخدمات -->
+    <!-- الأزرار بأيقونات Font Awesome -->
     <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red">
-      <img src="icons/ai-icon.png" alt="icon" class="icon-img"> اشترك في القناة
+      <i class="fab fa-youtube icon-img"></i> اشترك في القناة
     </a>
 
     <a href="https://wa.me/201066047545" class="btn-skill pink">
-      <img src="icons/ai-icon.png" alt="icon" class="icon-img"> اطلب الخدمة الآن
+      <i class="fab fa-whatsapp icon-img"></i> اطلب الخدمة الآن
     </a>
 
     <a href="https://wa.me/201066047545" class="btn-skill purple">
-      <img src="icons/ai-icon.png" alt="icon" class="icon-img"> اشترك في الكورس
+      <i class="fas fa-graduation-cap icon-img"></i> اشترك في الكورس
     </a>
 
     <a href="code-lab.html" class="btn-skill dark-red">
-      <img src="icons/ai-icon.png" alt="icon" class="icon-img"> جرب المختبر الآن
+      <i class="fas fa-flask icon-img"></i> جرب المختبر الآن
     </a>
 
+    <!-- صور حقيقية (كتاب HTML) -->
     <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon">
-      <img src="html-book-cover.png" alt="book" class="icon-img"> شراء من Gumroad
+      <img src="html-book-cover.png" class="icon-img" alt=""> شراء من Gumroad
     </a>
 
     <a href="https://payhip.com/b/2cJWp" class="btn-skill blue">
-      <img src="html-book-cover.png" alt="book" class="icon-img"> شراء من Payhip
+      <img src="html-book-cover.png" class="icon-img" alt=""> شراء من Payhip
     </a>
 
     <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green">
-      <img src="icons/ai-icon.png" alt="icon" class="icon-img"> شراء عبر واتساب
+      <i class="fab fa-whatsapp icon-img"></i> شراء عبر واتساب
     </a>
 
     <a href="download/تعلم إنجليزي.apk" class="btn-skill violet">
-      <img src="icons/ai-icon.png" alt="icon" class="icon-img"> نزّل التطبيق
+      <i class="fas fa-mobile-alt icon-img"></i> نزّل التطبيق
     </a>
 
     <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black">
-      <img src="paypal.png" alt="PayPal" class="icon-img"> PayPal
+      <i class="fab fa-paypal icon-img"></i> PayPal
     </button>
 
+    <!-- صور شبكات الدفع -->
     <button onclick="copyText('01066047545')" class="btn-skill red">
-      <img src="vodafone.png" alt="Vodafone" class="icon-img"> Vodafone Cash
+      <img src="vodafone.png" class="icon-img" alt=""> Vodafone Cash
     </button>
 
     <button onclick="copyText('01285895096')" class="btn-skill orange">
-      <img src="orange.png" alt="Orange" class="icon-img"> Orange Cash
+      <img src="orange.png" class="icon-img" alt=""> Orange Cash
     </button>
 
     <button onclick="copyText('01558516081')" class="btn-skill dark-purple">
-      <img src="we.png" alt="WE" class="icon-img"> WE Cash
+      <img src="we.png" class="icon-img" alt=""> WE Cash
     </button>
   </div>
 </div>
@@ -340,7 +342,7 @@
     align-items: center;
   }
 
-  .btn-skill img.icon-img {
+  .btn-skill .icon-img {
     width: 22px;
     height: 22px;
     object-fit: contain;
@@ -370,7 +372,7 @@
     100% { right: 100%; }
   }
 
-  /* ألوان مخصصة */
+  /* ألوان */
   .red         { background-color: #dc2626; }
   .pink        { background-color: #f43f5e; }
   .purple      { background-color: #8e44ad; }
