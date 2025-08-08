@@ -234,13 +234,59 @@
     <div>FaragDev98</div>
     <div class="logo-space" title="شعار AI"></div>
   </header>
+<nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+  <a href="index.html" class="home">الرئيسية</a>
+  <a href="services.html" class="services">خدمات</a>
+  <a href="article.html" class="blog">مقال</a>
+  <a href="contact.html" class="contact">تواصل</a> 
+</nav>
 
-  <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
-    <a href="index.html" class="home">الرئيسية</a>
-    <a href="services.html" class="services">خدمات</a>
-    <a href="article.html" class="blog">مقال</a>
-    <a href="contact.html" class="contact">تواصل</a> 
-  </nav>
+<style>
+  .navbar {
+    display: flex;
+    justify-content: flex-start; /* الرئيسية على اليمين */
+    gap: 10px;
+    background: #111;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .navbar a {
+    padding: 8px 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    animation: dance 0.6s infinite alternate, signalLight 1s infinite alternate;
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+
+  /* ألوان مختلفة لكل زر */
+  .home { background: #ff3b3b; box-shadow: 0 0 10px #ff3b3b; animation-delay: 0s; }
+  .services { background: #3b82ff; box-shadow: 0 0 10px #3b82ff; animation-delay: 0.2s; }
+  .blog { background: #3bff7a; box-shadow: 0 0 10px #3bff7a; animation-delay: 0.4s; }
+  .contact { background: #ff3bff; box-shadow: 0 0 10px #ff3bff; animation-delay: 0.6s; }
+
+  /* إضاءة تشبه إشارة القطر */
+  @keyframes signalLight {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(0.5); }
+  }
+
+  /* حركة رقص */
+  @keyframes dance {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .navbar a:hover {
+    transform: scale(1.1);
+  }
+</style>
 
 <!-- </body> -->
 <audio id="train-bell" src="sounds/fast-train-passing.mp3"></audio>
