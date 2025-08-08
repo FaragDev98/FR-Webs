@@ -243,13 +243,13 @@
   </nav>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<!-- الأصوات -->
 
+<!-- الأصوات -->
+<audio id="train-bell" src="sounds/passing.mp3"></audio>
 <audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
 
-<audio id="train-bell" src="sounds/train-passing.mp3"></audio>
-
-
+<div class="marquee-container">
+  <div class="marquee-content">
     <!-- باقي الأزرار -->
     <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
       <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
@@ -295,11 +295,13 @@
 
 <!-- الجرس المتحرك تحت الشريط -->
 <div style="text-align: center; margin-top: 20px;">
+  <img src="icons/ai-icon.png" alt="" class="icon-img"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Notification-bell.gif/64px-Notification-bell.gif" 
        alt="جرس" style="width:60px; height:60px;">
   <br>
   <button onclick="ringBell()" 
           style="background: gold; color: black; border: none; padding: 10px 15px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 8px;">
+   <img src="icons/ai-icon.png" alt="" class="icon-img"/>
     اضغط على الجرس
   </button>
 </div>
