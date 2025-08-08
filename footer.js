@@ -13,3 +13,33 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.body.appendChild(footer);
 });
+function playSoundsLoop() {
+    const bell = document.getElementById('train-bell');
+    const train = document.getElementById('train-passing');
+
+    if (!bell || !train) {
+        console.error("❌ لم يتم العثور على عناصر الصوت.");
+        return;
+    }
+
+    bell.currentTime = 0;
+    bell.play().then(() => {
+        bell.onended = () => {
+            train.currentTime = 0;
+            train.play();
+        };
+        train.onended = () => {
+            // بعد انتهاء القطر، إعادة التشغيل
+            setTimeout(playSoundsLoop, 1000);
+        };
+    }).catch(err => {
+        console.warn("⚠️ يجب الضغط على الصفحة للسماح بتشغيل الصوت.");
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    playSoundsLoop(); // محاولة التشغيل التلقائي
+    // إذا كان التشغيل التلقائي ممنوع، شغله بعد أول تفاعل
+    document.addEventListener('click', playSoundsLoop, { once: true });
+    document.addEventListener('touchstart', playSoundsLoop, { once: true });
+});
