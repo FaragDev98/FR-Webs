@@ -230,10 +230,78 @@
 </head>
 <body>
 
-  <header>
-    <div>FaragDev98</div>
-    <div class="logo-space" title="شعار AI"></div>
-  </header>
+<header>
+  <button id="username" title="زر الاسم">FaragDev98</button>
+  <div class="logo-space" title="شعار AI"></div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: #1a1a1a;
+    padding: 15px 30px;
+    position: relative;
+    height: 120px;
+    overflow: visible;
+    font-family: 'Cairo', sans-serif;
+    flex-direction: row-reverse; /* تعكس ترتيب العناصر */
+  }
+
+  /* الزر الاحمر المتحرك */
+  #username {
+    position: relative;
+    background-color: #e63946; /* أحمر */
+    border: none;
+    padding: 12px 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 8px #e63946;
+    animation: moveSide 3s ease-in-out infinite, glowRed 3s ease-in-out infinite alternate;
+  }
+
+  /* حركة تذبذب يمين ويسار */
+  @keyframes moveSide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+  }
+
+  /* توهج أحمر */
+  @keyframes glowRed {
+    0% {
+      box-shadow: 0 0 5px #e63946, 0 0 15px #f77f7f;
+      color: #ffeded;
+    }
+    100% {
+      box-shadow: 0 0 20px #e63946, 0 0 40px #f77f7f;
+      color: #ffe5e5;
+    }
+  }
+
+  /* الأيقونة ترقص دائماً بحجم أكبر */
+  .logo-space {
+    width: 120px; /* أكبر حجم */
+    height: 120px;
+    background: url('icons/ai-icon.png') no-repeat center center;
+    background-size: contain;
+    position: relative;
+    animation: dance 2s infinite ease-in-out;
+  }
+
+  /* حركة ترنح الأيقونة */
+  @keyframes dance {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(10deg) translateY(-5px); }
+    50% { transform: rotate(0deg) translateY(0); }
+    75% { transform: rotate(-10deg) translateY(-5px); }
+    100% { transform: rotate(0deg) translateY(0); }
+  }
+</style>
 <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
   <a href="index.html" class="home">الرئيسية</a>
   <a href="services.html" class="services">خدمات</a>
