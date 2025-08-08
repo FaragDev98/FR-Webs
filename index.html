@@ -345,15 +345,71 @@
 </div>
 
 <!-- الجرس المتحرك تحت الشريط -->
-<div style="text-align: center; margin-top: 20px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Notification-bell.gif/64px-Notification-bell.gif" 
-       alt="جرس" style="width:60px; height:60px;">
-  <br>
-  <button onclick="ringBell()" 
-          style="background: gold; color: black; border: none; padding: 10px 15px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 8px;">
-    اضغط على الجرس
-  </button>
+<div style="text-align: center; margin-top: 30px;">
+  <div class="bell-container">
+    <img src="icons/ai-icon.png" alt="جرس" class="bell-icon">
+    <button onclick="ringBell()" class="bell-btn">
+      اضغط على الجرس
+    </button>
+  </div>
 </div>
+
+<style>
+  .bell-container {
+    display: inline-block;
+    animation: moveSide 3s infinite ease-in-out;
+    text-align: center;
+  }
+
+  .bell-icon {
+    width: 80px;
+    height: 80px;
+    animation: glowBell 1.5s infinite alternate;
+  }
+
+  .bell-btn {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite, glowBtn 1.5s infinite alternate;
+  }
+
+  /* حركة الزر يمين ويسار */
+  @keyframes moveSide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+  }
+
+  /* نبضات تكبير وتصغير الزر */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  /* تأثير إضاءة على الزر */
+  @keyframes glowBtn {
+    0% { box-shadow: 0 0 5px gold, 0 0 10px orange; }
+    100% { box-shadow: 0 0 20px gold, 0 0 40px orange; }
+  }
+
+  /* إضاءة الجرس */
+  @keyframes glowBell {
+    0% { filter: drop-shadow(0 0 3px yellow); }
+    100% { filter: drop-shadow(0 0 12px gold); }
+  }
+</style>
+
+<script>
+  function ringBell() {
+    alert("🔔 الضغط على الجرس");
+  }
+</script>
 
 <style>
   .marquee-container {
