@@ -242,17 +242,15 @@
     <a href="contact.html" class="contact">تواصل</a> 
   </nav>
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <!-- الأصوات -->
 <audio id="train-bell" src="sounds/passing.mp3"></audio>
 <audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
-<a href="index.html" class="btn-skill black dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚀
-</a>
+
 <div class="marquee-container">
   <div class="marquee-content">
-  
     <!-- باقي الأزرار -->
     <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
       <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
@@ -298,15 +296,11 @@
 
 <!-- الجرس المتحرك تحت الشريط -->
 <div style="text-align: center; margin-top: 20px;">
- <a href="index.html" class="btn-skill black dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚀
- </a>  
- 
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Notification-bell.gif/64px-Notification-bell.gif" 
+       alt="جرس" style="width:60px; height:60px;">
   <br>
-
   <button onclick="ringBell()" 
           style="background: gold; color: black; border: none; padding: 10px 15px; font-size: 16px; border-radius: 8px; cursor: pointer; margin-top: 8px;">
-
     اضغط على الجرس
   </button>
 </div>
@@ -392,20 +386,34 @@
     });
   }
 
-  function ringBell() {
+  function playSoundsLoop() {
     const bell = document.getElementById('train-bell');
     const train = document.getElementById('train-passing');
 
+    bell.currentTime = 0;
     bell.play().then(() => {
-      bell.addEventListener('ended', () => {
+      bell.onended = () => {
+        train.currentTime = 0;
         train.play();
-      });
+      };
+      train.onended = () => {
+        setTimeout(playSoundsLoop, 1000); // ثانية قبل الإعادة
+      };
     }).catch(err => {
-      alert("⚠️ يجب السماح بتشغيل الصوت أولاً بالضغط على الصفحة");
+      console.log("⚠️ يجب السماح بتشغيل الصوت أولاً بالضغط على الصفحة");
     });
   }
-</script>
 
+  document.addEventListener("DOMContentLoaded", () => {
+    playSoundsLoop();
+    document.addEventListener('click', playSoundsLoop, { once: true });
+    document.addEventListener('touchstart', playSoundsLoop, { once: true });
+  });
+
+  function ringBell() {
+    playSoundsLoop();
+  }
+</script>
 
   <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
       
