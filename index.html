@@ -2,15 +2,13 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شراء كتاب HTML - FaragDev98</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #dbeafe, #fce7f3);
-      color: #222;
+      background: linear-gradient(135deg, #1e1e2f, #3a0ca3, #5f0f40);
+      color: #fff;
       text-align: center;
       animation: fadeIn 1.5s ease;
     }
@@ -21,206 +19,330 @@
     }
 
     header {
-      background: linear-gradient(90deg, #1e3a8a, #9333ea);
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.7rem;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 20px 35px;
+      font-size: 2rem;
       font-weight: bold;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 15px;
+      gap: 20px;
       direction: rtl;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     }
 
     header .logo-space {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       background: url('icons/ai-icon.png') no-repeat center center;
       background-size: contain;
-      border-radius: 8px;
+      border-radius: 12px;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
     nav.navbar {
-      background: #ffffff;
-      padding: 12px 0;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 14px 0;
       display: flex;
       justify-content: center;
-      gap: 15px;
-      font-size: 1.1rem;
+      gap: 18px;
+      font-size: 1.3rem;
       direction: rtl;
-      font-weight: 600;
-      user-select: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      margin: 15px auto;
-      max-width: 600px;
+      font-weight: 700;
+      border-radius: 14px;
+      margin: 20px auto;
+      max-width: 650px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     }
 
     nav.navbar a {
-      padding: 10px 22px;
+      padding: 12px 26px;
       color: white;
       text-decoration: none;
-      border-radius: 0;
-      font-weight: 700;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #3a0ca3, #7209b7);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: inline-block;
     }
 
     nav.navbar a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transform: scale(1.15);
+      background: linear-gradient(45deg, #560bad, #b5179e);
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
     }
 
-    nav.navbar a.home { background-color: #2563eb; }
-    nav.navbar a.services { background-color: #0ea5e9; }
-    nav.navbar a.blog { background-color: #22c55e; }
-    nav.navbar a.contact { background-color: #ef4444; }
-
     .container {
-      max-width: 750px;
-      margin: 40px auto;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px 25px;
+      max-width: 760px;
+      margin: 50px auto;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+      padding: 40px 30px;
       direction: rtl;
+      text-align: right;
+      line-height: 1.7;
+      backdrop-filter: blur(6px);
     }
 
     .cover {
       width: 100%;
-      max-height: 400px;
+      max-height: 420px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+      margin-bottom: 25px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s ease;
+    }
+    .cover:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 35px rgba(0,0,0,0.6);
     }
 
     h1 {
-      color: #1e3a8a;
-      font-size: 2.3rem;
-      margin-bottom: 10px;
+      color: #ffd700;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 8px #ffd700aa;
     }
 
     p.summary, p.description {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #444;
-      margin-bottom: 25px;
+      font-size: 1.25rem;
+      color: #e0d4ff;
+      margin-bottom: 30px;
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.8;
+    }
+
+    .price {
+      font-size: 1.7rem;
+      color: #ffd54f;
+      font-weight: 900;
+      margin: 30px 0;
+      text-align: center;
+      text-shadow: 0 0 6px #ffd54f88;
     }
 
     .btns {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 30px;
+      gap: 18px;
+      margin-bottom: 40px;
     }
 
     a.btn {
-      padding: 14px 25px;
+      padding: 16px 30px;
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
-      border-radius: 0;
-      transition: all 0.3s ease;
-      width: 80%;
-      max-width: 300px;
+      font-size: 1.2rem;
+      border-radius: 14px;
+      width: 85%;
+      max-width: 320px;
       display: inline-block;
       text-align: center;
+      font-weight: 700;
+      transition: all 0.3s ease;
     }
 
-    a.btn:hover { transform: scale(1.05); }
+    a.btn:hover { 
+      transform: scale(1.07);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+    }
 
-    .btn-purple { background: #9333ea; }
-    .btn-purple:hover { background: #7e22ce; }
+    .btn-purple { background: linear-gradient(45deg, #3a0ca3, #7209b7); }
+    .btn-purple:hover { background: linear-gradient(45deg, #560bad, #b5179e); }
 
-    .btn-blue { background: #2563eb; }
-    .btn-blue:hover { background: #1d4ed8; }
+    .btn-blue { background: linear-gradient(45deg, #4361ee, #3a0ca3); }
+    .btn-blue:hover { background: linear-gradient(45deg, #3a0ca3, #560bad); }
 
-    .btn-green { background: #22c55e; }
-    .btn-green:hover { background: #16a34a; }
+    .btn-green { background: linear-gradient(45deg, #06d6a0, #118ab2); }
+    .btn-green:hover { background: linear-gradient(45deg, #0fa37f, #0e6d87); }
 
-    .btn-black { background: #111827; }
+    .btn-black { background: #111; }
     .btn-black:hover { background: #000; }
 
-    .price {
-      font-size: 1.5rem;
-      color: #16a34a;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
     .instruction {
-      background: #f3e8ff;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-      line-height: 1.8;
-      color: #4c1d95;
-      font-size: 1rem;
-      text-align: right;
-      direction: rtl;
+      background: rgba(58, 12, 163, 0.2);
+      padding: 25px;
+      border-radius: 16px;
+      margin-top: 35px;
+      line-height: 2;
+      color: #e0d4ff;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px rgba(90,0,150,0.5);
+      user-select: text;
     }
 
     .instruction a {
-      color: #4c1d95;
+      color: #ffd700;
       text-decoration: underline;
     }
 
     .payment-options {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin: 30px auto;
-      direction: rtl;
+      gap: 14px;
+      margin: 40px auto;
+      align-items: center;
+      max-width: 350px;
     }
 
     .pay-btn {
-      background: #2563eb;
+      background: linear-gradient(45deg, #3a0ca3, #7209b7);
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 1.15rem;
       cursor: pointer;
-      width: 80%;
-      max-width: 300px;
-      transition: background 0.3s ease;
+      width: 100%;
+      font-weight: 700;
+      transition: all 0.3s ease;
     }
 
     .pay-btn:hover {
-      background: #1d4ed8;
+      background: linear-gradient(45deg, #560bad, #b5179e);
+      box-shadow: 0 6px 25px rgba(230, 81, 0, 0.8);
     }
 
     .certificate {
       width: 100%;
-      max-height: 400px;
-      border-radius: 10px;
-      margin-top: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-height: 420px;
+      border-radius: 16px;
+      margin-top: 40px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s ease;
+    }
+    .certificate:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 35px rgba(0,0,0,0.6);
     }
 
     .footer {
-      font-size: 0.9rem;
-      color: #777;
-      margin: 35px 0 10px;
-      direction: rtl;
+      font-size: 1rem;
+      color: #ffd54f;
+      margin: 45px 0 15px;
       text-align: center;
+      text-shadow: 0 0 6px #ffd54f88;
     }
 
     .footer a {
-      color: #1e3a8a;
+      color: #ffd700;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
     }
 
     .footer a:hover {
       text-decoration: underline;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+        gap: 10px;
+      }
+      nav.navbar {
+        font-size: 1.1rem;
+        gap: 10px;
+        max-width: 95%;
+        padding: 12px 0;
+      }
+      .container {
+        padding: 30px 20px;
+        margin: 30px 15px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      p.summary, p.description {
+        font-size: 1rem;
+      }
+      .btns a.btn {
+        width: 90%;
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+      .payment-options {
+        max-width: 100%;
+      }
+      .pay-btn {
+        font-size: 1rem;
+        padding: 12px;
+      }
     }
   </style>
 </head>
+<body>
+
+<header>
+  <div class="logo-space" aria-label="شعار الموقع"></div>
+  شراء كتاب HTML - FaragDev98
+</header>
+
+<nav class="navbar">
+  <a href="#" class="home">الرئيسية</a>
+  <a href="#" class="services">الخدمات</a>
+  <a href="#" class="blog">المدونة</a>
+  <a href="#" class="contact">اتصل بنا</a>
+</nav>
+
+<div class="container">
+  <img src="book-cover.jpg" alt="غلاف كتاب HTML" class="cover" />
+
+  <h1>تعلم HTML خطوة بخطوة</h1>
+
+  <p class="summary">
+    هذا الكتاب هو دليل شامل للمبتدئين لتعلم لغة HTML من الأساسيات حتى الاحتراف. ستتمكن من بناء صفحات ويب متكاملة بأسلوب سهل ومبسط.
+  </p>
+
+  <p class="description">
+    يحتوي الكتاب على أمثلة عملية، تمارين تطبيقية، ونصائح مهمة تجعل من تعلم HTML تجربة ممتعة وفعالة. مناسب لكل من يرغب في الدخول لعالم تطوير الويب.
+  </p>
+
+  <div class="price">السعر: 2 دولار فقط</div>
+
+  <div class="btns">
+    <a href="#" class="btn btn-purple">اشترِ الآن عبر PayPal</a>
+    <a href="#" class="btn btn-green">اشترِ الآن عبر وي كاش</a>
+    <a href="#" class="btn btn-blue">اشترِ الآن عبر أورنج كاش</a>
+    <a href="#" class="btn btn-black">اشترِ الآن عبر فودافون كاش</a>
+  </div>
+
+  <div class="instruction">
+    للشراء، يرجى اختيار طريقة الدفع المناسبة ثم اتباع التعليمات المرسلة إليك. لأي استفسار، <a href="mailto:support@faragdev98.com">تواصل معنا عبر البريد الإلكتروني</a>.
+  </div>
+
+  <div class="payment-options">
+    <button class="pay-btn">فودافون كاش: 01066047545</button>
+    <button class="pay-btn">أورنج كاش: 01285895096</button>
+    <button class="pay-btn">وي كاش: 01558516081</button>
+    <button class="pay-btn">PayPal: Faragbdallh891@gmail.com</button>
+  </div>
+
+  <img src="certificate.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+</div>
+
+<footer class="footer">
+  جميع الحقوق محفوظة &copy; 2025 
+  <a href="#">FaragDev98</a> - 
+  <a href="mailto:support@faragdev98.com">البريد الإلكتروني</a>
+</footer>
+
+</body>
+</html>
 <body>
   <header>
     <div class="logo-space"></div>
