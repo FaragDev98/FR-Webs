@@ -2,14 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شراء كتاب HTML - FaragDev98</title>
   <style>
-    /* إعدادات عامة للجسم */
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #121212, #1e1e1e);
-      color: #ddd;
+      background: linear-gradient(135deg, #fff3e0, #efebe9); /* برتقالي فاتح + بيج */
+      color: #3e2723; /* بني غامق */
       text-align: center;
       animation: fadeIn 1.5s ease;
     }
@@ -19,10 +19,9 @@
       to { opacity: 1; }
     }
 
-    /* ترويسة الصفحة */
     header {
-      background: #2c1362;
-      color: #eee;
+      background: #e65100; /* برتقالي غامق */
+      color: white;
       padding: 15px 30px;
       font-size: 1.7rem;
       font-weight: bold;
@@ -42,9 +41,8 @@
       flex-shrink: 0;
     }
 
-    /* شريط التنقل */
     nav.navbar {
-      background: #222;
+      background: #fff;
       padding: 12px 0;
       display: flex;
       justify-content: center;
@@ -53,7 +51,7 @@
       direction: rtl;
       font-weight: 600;
       user-select: none;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border-radius: 10px;
       margin: 15px auto;
       max-width: 600px;
@@ -69,60 +67,48 @@
       display: inline-block;
     }
 
-    nav.navbar a.home { background-color: #9c27b0; }
-    nav.navbar a.services { background-color: #1565c0; }
-    nav.navbar a.blog { background-color: #1b5e20; }
-    nav.navbar a.contact { background-color: #b71c1c; }
-
     nav.navbar a:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    /* الحاوية الرئيسية */
+    nav.navbar a.home { background-color: #ff9800; }   /* برتقالي */
+    nav.navbar a.services { background-color: #ff7043; } /* برتقالي محمر */
+    nav.navbar a.blog { background-color: #6d4c41; }   /* بني */
+    nav.navbar a.contact { background-color: #bf360c; } /* برتقالي غامق */
+
     .container {
       max-width: 750px;
       margin: 40px auto;
-      background: #222;
+      background: #fff;
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       padding: 30px 25px;
       direction: rtl;
-      color: #ddd;
-      text-align: right;
-      line-height: 1.6;
     }
 
-    /* صورة الغلاف */
     .cover {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    /* العناوين */
     h1 {
-      color: #9c27b0;
+      color: #e65100;
       font-size: 2.3rem;
-      margin-bottom: 15px;
-      text-align: center;
+      margin-bottom: 10px;
     }
 
     p.summary, p.description {
       font-size: 1.15rem;
-      color: #ccc;
+      line-height: 1.9;
+      color: #5d4037; /* بني فاتح */
       margin-bottom: 25px;
-      text-align: justify;
-      text-justify: inter-word;
     }
 
-    /* أزرار الشراء */
     .btns {
       display: flex;
       flex-direction: column;
@@ -146,57 +132,52 @@
 
     a.btn:hover { transform: scale(1.05); }
 
-    .btn-purple { background: #9c27b0; box-shadow: 0 4px 10px rgba(156, 39, 176, 0.5); }
-    .btn-purple:hover { background: #6a0080; }
+    .btn-purple { background: #ff9800; box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3); }
+    .btn-purple:hover { background: #e65100; }
 
-    .btn-blue { background: #1565c0; }
-    .btn-blue:hover { background: #0d3c72; }
+    .btn-blue { background: #6d4c41; }
+    .btn-blue:hover { background: #4e342e; }
 
-    .btn-green { background: #1b5e20; }
-    .btn-green:hover { background: #113813; }
+    .btn-green { background: #ff7043; }
+    .btn-green:hover { background: #e64a19; }
 
-    .btn-black { background: #111; }
-    .btn-black:hover { background: #000; }
+    .btn-black { background: #3e2723; }
+    .btn-black:hover { background: #1b0000; }
 
-    /* السعر */
     .price {
       font-size: 1.5rem;
-      color: #66bb6a;
+      color: #bf360c;
       font-weight: bold;
       margin: 20px 0;
-      text-align: center;
     }
 
-    /* تعليمات الشراء */
     .instruction {
-      background: #2e1a47;
+      background: #ffe0b2;
       padding: 20px;
       border-radius: 10px;
       margin-top: 30px;
       line-height: 1.8;
-      color: #bb86fc;
+      color: #e65100;
       font-size: 1rem;
       text-align: right;
       direction: rtl;
     }
 
     .instruction a {
-      color: #bb86fc;
+      color: #bf360c;
       text-decoration: underline;
     }
 
-    /* خيارات الدفع */
     .payment-options {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin: 30px auto;
       direction: rtl;
-      align-items: center;
     }
 
     .pay-btn {
-      background: #1565c0;
+      background: #ff9800;
       color: white;
       border: none;
       padding: 12px;
@@ -209,32 +190,27 @@
     }
 
     .pay-btn:hover {
-      background: #0d3c72;
+      background: #e65100;
     }
 
-    /* صورة الشهادة */
     .certificate {
       width: 100%;
       max-height: 400px;
       border-radius: 10px;
       margin-top: 30px;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.1);
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    /* الفوتر */
     .footer {
       font-size: 0.9rem;
-      color: #999;
+      color: #5d4037;
       margin: 35px 0 10px;
       direction: rtl;
       text-align: center;
     }
 
     .footer a {
-      color: #bb86fc;
+      color: #ff9800;
       text-decoration: none;
       margin: 0 10px;
     }
