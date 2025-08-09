@@ -11,13 +11,22 @@
   <title>شراء كتاب HTML - FaragDev98</title>
   <style>
     body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f3e5f5, #e8f5e9);
-      color: #333;
-      text-align: center;
-      animation: fadeIn 1.5s ease;
-    }
+      body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #8b0000);
+  background-size: 400% 400%;
+  animation: bgChange 6s ease infinite;
+  color: #ddd;
+  text-align: center;
+}
+
+/* حركة تغيير الألوان */
+@keyframes bgChange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
     @keyframes fadeIn {
       from { opacity: 0; }
