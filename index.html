@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شراء كتاب HTML - FaragDev98</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f3e5f5, #e8f5e9);
-      color: #333;
+      background: linear-gradient(135deg, #ede7f6, #f3e5f5); /* بنفسجي فاتح */
+      color: #3e2723; /* بني غامق */
       text-align: center;
       animation: fadeIn 1.5s ease;
+      font-size: 14px; /* تصغير عام للخط */
     }
 
     @keyframes fadeIn {
@@ -21,21 +21,21 @@
     }
 
     header {
-      background: #4a148c;
+      background: linear-gradient(90deg, #e65100, #bf360c); /* برتقالي غامق */
       color: white;
-      padding: 15px 30px;
-      font-size: 1.7rem;
+      padding: 12px 25px;
+      font-size: 1.4rem;
       font-weight: bold;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       direction: rtl;
     }
 
     header .logo-space {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       background: url('icons/ai-icon.png') no-repeat center center;
       background-size: contain;
       border-radius: 8px;
@@ -43,12 +43,12 @@
     }
 
     nav.navbar {
-      background: #fff;
-      padding: 12px 0;
+      background: #ffffff;
+      padding: 8px 0;
       display: flex;
       justify-content: center;
-      gap: 15px;
-      font-size: 1.1rem;
+      gap: 12px;
+      font-size: 1rem;
       direction: rtl;
       font-weight: 600;
       user-select: none;
@@ -59,13 +59,14 @@
     }
 
     nav.navbar a {
-      padding: 10px 22px;
+      padding: 8px 18px;
       color: white;
       text-decoration: none;
       border-radius: 0;
       font-weight: 700;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: inline-block;
+      font-size: 0.9rem;
     }
 
     nav.navbar a:hover {
@@ -73,24 +74,25 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    nav.navbar a.home { background-color: #7b1fa2; }
-    nav.navbar a.services { background-color: #2196f3; }
-    nav.navbar a.blog { background-color: #25d366; }
-    nav.navbar a.contact { background-color: #f44336; }
+    nav.navbar a.home { background-color: #ff9800; }      /* برتقالي */
+    nav.navbar a.services { background-color: #ef6c00; }  /* برتقالي غامق */
+    nav.navbar a.blog { background-color: #3e2723; }      /* أسمر */
+    nav.navbar a.contact { background-color: #bf360c; }   /* برتقالي غامق */
 
     .container {
-      max-width: 750px;
-      margin: 40px auto;
+      max-width: 700px;
+      margin: 30px auto;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px 25px;
+      padding: 25px 20px;
       direction: rtl;
+      font-size: 0.95rem;
     }
 
     .cover {
       width: 100%;
-      max-height: 400px;
+      max-height: 350px;
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -98,16 +100,16 @@
     }
 
     h1 {
-      color: #4a148c;
-      font-size: 2.3rem;
-      margin-bottom: 10px;
+      color: #e65100; /* برتقالي */
+      font-size: 2rem;
+      margin-bottom: 8px;
     }
 
     p.summary, p.description {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #444;
-      margin-bottom: 25px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #5d4037; /* بني */
+      margin-bottom: 20px;
     }
 
     .btns {
@@ -119,53 +121,53 @@
     }
 
     a.btn {
-      padding: 14px 25px;
+      padding: 12px 25px;
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
       border-radius: 0;
       transition: all 0.3s ease;
-      width: 80%;
-      max-width: 300px;
+      width: 75%;
+      max-width: 280px;
       display: inline-block;
       text-align: center;
     }
 
     a.btn:hover { transform: scale(1.05); }
 
-    .btn-purple { background: #7b1fa2; box-shadow: 0 4px 10px rgba(123, 31, 162, 0.3); }
-    .btn-purple:hover { background: #4a0072; }
+    .btn-purple { background: #ef6c00; box-shadow: 0 4px 10px rgba(239, 108, 0, 0.3); }
+    .btn-purple:hover { background: #bf360c; }
 
-    .btn-blue { background: #2196f3; }
-    .btn-blue:hover { background: #1565c0; }
+    .btn-blue { background: #3e2723; }
+    .btn-blue:hover { background: #1b0000; }
 
-    .btn-green { background: #25d366; }
-    .btn-green:hover { background: #1ebe5d; }
+    .btn-green { background: #ff9800; }
+    .btn-green:hover { background: #e65100; }
 
-    .btn-black { background: #333; }
-    .btn-black:hover { background: #000; }
+    .btn-black { background: #3e2723; }
+    .btn-black:hover { background: #1b0000; }
 
     .price {
-      font-size: 1.5rem;
-      color: #2e7d32;
+      font-size: 1.3rem;
+      color: #bf360c;
       font-weight: bold;
       margin: 20px 0;
     }
 
     .instruction {
-      background: #ede7f6;
+      background: #fbe9e7;
       padding: 20px;
       border-radius: 10px;
       margin-top: 30px;
       line-height: 1.8;
-      color: #4a148c;
+      color: #bf360c;
       font-size: 1rem;
       text-align: right;
       direction: rtl;
     }
 
     .instruction a {
-      color: #4a148c;
+      color: #e65100;
       text-decoration: underline;
     }
 
@@ -178,7 +180,7 @@
     }
 
     .pay-btn {
-      background: #2196f3;
+      background: #ff9800;
       color: white;
       border: none;
       padding: 12px;
@@ -186,32 +188,32 @@
       font-size: 1rem;
       cursor: pointer;
       width: 80%;
-      max-width: 300px;
+      max-width: 280px;
       transition: background 0.3s ease;
     }
 
     .pay-btn:hover {
-      background: #1565c0;
+      background: #bf360c;
     }
 
     .certificate {
       width: 100%;
-      max-height: 400px;
+      max-height: 350px;
       border-radius: 10px;
       margin-top: 30px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     .footer {
-      font-size: 0.9rem;
-      color: #777;
+      font-size: 0.85rem;
+      color: #5d4037;
       margin: 35px 0 10px;
       direction: rtl;
       text-align: center;
     }
 
     .footer a {
-      color: #6a1b9a;
+      color: #ff9800;
       text-decoration: none;
       margin: 0 10px;
     }
@@ -221,6 +223,56 @@
     }
   </style>
 </head>
+<body>
+  <header>
+    <div class="logo-space"></div>
+    <div>FaragDev98</div>
+  </header>
+
+  <nav class="navbar">
+    <a href="#" class="home">الرئيسية</a>
+    <a href="#" class="services">خدماتنا</a>
+    <a href="#" class="blog">المدونة</a>
+    <a href="#" class="contact">اتصل بنا</a>
+  </nav>
+
+  <main class="container">
+    <img src="images/book-cover.jpg" alt="غلاف الكتاب" class="cover" />
+    <h1>كتاب تعلم HTML من الصفر</h1>
+    <p class="summary">كتاب تعليمي شامل يبدأ من الأساسيات حتى الاحتراف.</p>
+    <p class="description">
+      هذا الكتاب مصمم للمبتدئين الذين يريدون تعلم بناء صفحات الويب باستخدام HTML بطريقة سهلة ومنظمة.
+    </p>
+
+    <div class="price">السعر: 120 جنيه مصري</div>
+
+    <div class="btns">
+      <a href="#" class="btn btn-purple">اشترِ الآن عبر فودافون كاش</a>
+      <a href="#" class="btn btn-green">اشترِ الآن عبر وي كاش</a>
+      <a href="#" class="btn btn-blue">اشترِ الآن عبر باي بال</a>
+      <a href="#" class="btn btn-black">اشترِ الآن عبر أورنج كاش</a>
+    </div>
+
+    <div class="instruction">
+      <p>للطلب، يرجى إرسال رسالة عبر واتساب أو الاتصال على الرقم: <strong>01091838789</strong></p>
+      <p>بعد الدفع، سيتم إرسال رابط التحميل فوراً.</p>
+      <p>لمزيد من المعلومات، زر <a href="#">صفحة الدعم</a>.</p>
+    </div>
+
+    <img src="images/certificate-sample.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+  </main>
+
+  <footer class="footer">
+    <p>جميع الحقوق محفوظة © 2025 FaragDev98</p>
+    <p>
+      تواصل معنا:
+      <a href="https://wa.me/01091838789" target="_blank" rel="noopener noreferrer">واتساب</a> |
+      <a href="#" target="_blank" rel="noopener noreferrer">فيسبوك</a> |
+      <a href="tel:01091838789">هاتف</a>
+    </p>
+  </footer>
+</body>
+</html>
 <body>
 <body>
 <!-- باقي الصفحة كما هي -->
