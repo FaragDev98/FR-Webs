@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شراء كتاب HTML - FaragDev98</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #ede7f6, #f3e5f5); /* بنفسجي فاتح */
-      color: #3e2723; /* بني غامق */
+      background: linear-gradient(135deg, #dbeafe, #fce7f3);
+      color: #222;
       text-align: center;
       animation: fadeIn 1.5s ease;
-      font-size: 14px; /* تصغير عام للخط */
     }
 
     @keyframes fadeIn {
@@ -21,21 +21,21 @@
     }
 
     header {
-      background: linear-gradient(90deg, #e65100, #bf360c); /* برتقالي غامق */
+      background: linear-gradient(90deg, #1e3a8a, #9333ea);
       color: white;
-      padding: 12px 25px;
-      font-size: 1.4rem;
+      padding: 15px 30px;
+      font-size: 1.7rem;
       font-weight: bold;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
       direction: rtl;
     }
 
     header .logo-space {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       background: url('icons/ai-icon.png') no-repeat center center;
       background-size: contain;
       border-radius: 8px;
@@ -44,11 +44,11 @@
 
     nav.navbar {
       background: #ffffff;
-      padding: 8px 0;
+      padding: 12px 0;
       display: flex;
       justify-content: center;
-      gap: 12px;
-      font-size: 1rem;
+      gap: 15px;
+      font-size: 1.1rem;
       direction: rtl;
       font-weight: 600;
       user-select: none;
@@ -59,14 +59,13 @@
     }
 
     nav.navbar a {
-      padding: 8px 18px;
+      padding: 10px 22px;
       color: white;
       text-decoration: none;
       border-radius: 0;
       font-weight: 700;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: inline-block;
-      font-size: 0.9rem;
     }
 
     nav.navbar a:hover {
@@ -74,25 +73,24 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    nav.navbar a.home { background-color: #ff9800; }      /* برتقالي */
-    nav.navbar a.services { background-color: #ef6c00; }  /* برتقالي غامق */
-    nav.navbar a.blog { background-color: #3e2723; }      /* أسمر */
-    nav.navbar a.contact { background-color: #bf360c; }   /* برتقالي غامق */
+    nav.navbar a.home { background-color: #2563eb; }
+    nav.navbar a.services { background-color: #0ea5e9; }
+    nav.navbar a.blog { background-color: #22c55e; }
+    nav.navbar a.contact { background-color: #ef4444; }
 
     .container {
-      max-width: 700px;
-      margin: 30px auto;
-      background: #fff;
+      max-width: 750px;
+      margin: 40px auto;
+      background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 25px 20px;
+      padding: 30px 25px;
       direction: rtl;
-      font-size: 0.95rem;
     }
 
     .cover {
       width: 100%;
-      max-height: 350px;
+      max-height: 400px;
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -100,16 +98,16 @@
     }
 
     h1 {
-      color: #e65100; /* برتقالي */
-      font-size: 2rem;
-      margin-bottom: 8px;
+      color: #1e3a8a;
+      font-size: 2.3rem;
+      margin-bottom: 10px;
     }
 
     p.summary, p.description {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #5d4037; /* بني */
-      margin-bottom: 20px;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 25px;
     }
 
     .btns {
@@ -121,53 +119,53 @@
     }
 
     a.btn {
-      padding: 12px 25px;
+      padding: 14px 25px;
       color: white;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
       border-radius: 0;
       transition: all 0.3s ease;
-      width: 75%;
-      max-width: 280px;
+      width: 80%;
+      max-width: 300px;
       display: inline-block;
       text-align: center;
     }
 
     a.btn:hover { transform: scale(1.05); }
 
-    .btn-purple { background: #ef6c00; box-shadow: 0 4px 10px rgba(239, 108, 0, 0.3); }
-    .btn-purple:hover { background: #bf360c; }
+    .btn-purple { background: #9333ea; }
+    .btn-purple:hover { background: #7e22ce; }
 
-    .btn-blue { background: #3e2723; }
-    .btn-blue:hover { background: #1b0000; }
+    .btn-blue { background: #2563eb; }
+    .btn-blue:hover { background: #1d4ed8; }
 
-    .btn-green { background: #ff9800; }
-    .btn-green:hover { background: #e65100; }
+    .btn-green { background: #22c55e; }
+    .btn-green:hover { background: #16a34a; }
 
-    .btn-black { background: #3e2723; }
-    .btn-black:hover { background: #1b0000; }
+    .btn-black { background: #111827; }
+    .btn-black:hover { background: #000; }
 
     .price {
-      font-size: 1.3rem;
-      color: #bf360c;
+      font-size: 1.5rem;
+      color: #16a34a;
       font-weight: bold;
       margin: 20px 0;
     }
 
     .instruction {
-      background: #fbe9e7;
+      background: #f3e8ff;
       padding: 20px;
       border-radius: 10px;
       margin-top: 30px;
       line-height: 1.8;
-      color: #bf360c;
+      color: #4c1d95;
       font-size: 1rem;
       text-align: right;
       direction: rtl;
     }
 
     .instruction a {
-      color: #e65100;
+      color: #4c1d95;
       text-decoration: underline;
     }
 
@@ -180,7 +178,7 @@
     }
 
     .pay-btn {
-      background: #ff9800;
+      background: #2563eb;
       color: white;
       border: none;
       padding: 12px;
@@ -188,32 +186,32 @@
       font-size: 1rem;
       cursor: pointer;
       width: 80%;
-      max-width: 280px;
+      max-width: 300px;
       transition: background 0.3s ease;
     }
 
     .pay-btn:hover {
-      background: #bf360c;
+      background: #1d4ed8;
     }
 
     .certificate {
       width: 100%;
-      max-height: 350px;
+      max-height: 400px;
       border-radius: 10px;
       margin-top: 30px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     .footer {
-      font-size: 0.85rem;
-      color: #5d4037;
+      font-size: 0.9rem;
+      color: #777;
       margin: 35px 0 10px;
       direction: rtl;
       text-align: center;
     }
 
     .footer a {
-      color: #ff9800;
+      color: #1e3a8a;
       text-decoration: none;
       margin: 0 10px;
     }
