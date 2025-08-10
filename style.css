@@ -9,11 +9,10 @@ body {
   background: linear-gradient(270deg, #0a0a0a, #6a0dad, #b22222, #0a0a0a);
   background-size: 800% 800%;
   animation: bgMove 15s ease infinite;
-  color: #f5f5f5; /* لون نص فاتح وواضح */
+  color: #ddd;
   text-align: center;
   line-height: 1.8;
   scroll-behavior: smooth;
-  text-shadow: 0 0 2px rgba(0,0,0,0.5); /* ظل خفيف لتحسين الرؤية */
 }
 
 /* حركة تغيير الخلفية المتدرجة */
@@ -28,13 +27,12 @@ body {
 ============================ */
 
 h1, h2, h3 {
-  color: #fff;
-  background: #9a55e8; /* بنفسجي فاتح أكثر */
-  padding: 14px 24px;
-  border-radius: 14px;
-  margin-bottom: 28px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.45);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  color: #ffffff;
+  background: #6a0dad; /* بنفسجي جذاب */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* ===========================
@@ -42,16 +40,15 @@ h1, h2, h3 {
 ============================ */
 
 a {
-  color: #ff99dd; /* وردي فاتح وواضح */
+  color: #ff4081;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 0 2px rgba(255,153,221,0.7);
 }
 
 a:hover {
-  color: #ffff99; /* أصفر فاتح */
-  text-shadow: 0 0 8px #ffff99;
+  color: #ffcc00;
+  text-shadow: 0 0 8px #ffcc00;
 }
 
 /* ===========================
@@ -59,25 +56,22 @@ a:hover {
 ============================ */
 
 button, .cta-button {
-  background: linear-gradient(45deg, #cc4444, #9444cc);
+  background: linear-gradient(45deg, #b22222, #6a0dad);
   color: #fff;
-  padding: 16px 36px;
-  margin: 20px 0;
+  padding: 12px 28px;
+  margin: 16px 0;
   border: none;
-  border-radius: 40px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.55);
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
   cursor: pointer;
   transition: all 0.3s ease;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
 button:hover, .cta-button:hover {
-  transform: scale(1.1);
-  background: linear-gradient(45deg, #ff99ff, #ffff99);
-  color: #222;
-  text-shadow: none;
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ff4081, #ffcc00);
 }
 
 /* ===========================
@@ -85,10 +79,9 @@ button:hover, .cta-button:hover {
 ============================ */
 
 p {
-  font-size: 1.2rem;
-  margin-bottom: 18px;
-  color: #f0f0f0;
-  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #eee;
 }
 
 /* ===========================
@@ -96,13 +89,12 @@ p {
 ============================ */
 
 footer {
-  background: #121212;
+  background: #222;
   color: #eee;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
-  font-size: 1.05rem;
-  border-top: 4px solid #ff66cc;
-  text-shadow: 0 0 3px rgba(0,0,0,0.6);
+  font-size: 0.95rem;
+  border-top: 2px solid #ff4081;
 }
 
 /* ===========================
@@ -112,7 +104,7 @@ footer {
 .container {
   max-width: 960px;
   margin: auto;
-  padding: 30px 24px;
+  padding: 20px;
 }
 
 /* ===========================
@@ -120,14 +112,13 @@ footer {
 ============================ */
 
 .payment-info {
-  background: rgba(255, 255, 255, 0.25);
-  border-left: 7px solid #ff77cc;
-  padding: 22px;
-  margin-top: 30px;
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 5px solid #ff4081;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
   color: #fff;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.55);
-  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 /* ===========================
@@ -137,11 +128,6 @@ footer {
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 18px;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.7);
-  transition: transform 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.07);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
