@@ -1,573 +1,1241 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Farag Dev</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <meta charset="UTF-8" />
+
+  <title>Farag Dev</title>
+
+  <link rel="stylesheet" href="style.css" />
+
 </head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>شراء كتاب HTML - FaragDev98</title>
-  <style>
-    body {
-      
-<link rel="stylesheet" href="style.css">
-/* حركة تغيير الألوان */
-@keyframes bgChange {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+  <meta charset="UTF-8" />
 
-    header {
-      background: #4a148c;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.7rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 15px;
-      direction: rtl;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    header .logo-space {
-      width: 50px;
-      height: 50px;
-      background: url('icons/ai-icon.png') no-repeat center center;
-      background-size: contain;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
+  <title>شراء كتاب HTML - FaragDev98</title>
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      font-family: "Segoe UI", sans-serif;
+
+      background: linear-gradient(135deg, #f3e5f5, #e8f5e9);
+
+      color: #333;
+
+      text-align: center;
+
+      animation: fadeIn 1.5s ease;
+
+    }
+
+
+    @keyframes fadeIn {
+
+      from { opacity: 0; }
+
+      to { opacity: 1; }
+
+    }
+
+
+    header {
+
+      background: #4a148c;
+
+      color: white;
+
+      padding: 15px 30px;
+
+      font-size: 1.7rem;
+
+      font-weight: bold;
+
+      display: flex;
+
+      justify-content: flex-end;
+
+      align-items: center;
+
+      gap: 15px;
+
+      direction: rtl;
+
+    }
+
+
+    header .logo-space {
+
+      width: 50px;
+
+      height: 50px;
+
+      background: url('icons/ai-icon.png') no-repeat center center;
+
+      background-size: contain;
+
+      border-radius: 8px;
+
+      flex-shrink: 0;
+
+    }
+
 <link rel="stylesheet" href="style.css" />
-    nav.navbar {
-      background: #fff;
-      padding: 12px 0;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      font-size: 1.1rem;
-      direction: rtl;
-      font-weight: 600;
-      user-select: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      margin: 15px auto;
-      max-width: 600px;
-    }
 
-    nav.navbar a {
-      padding: 10px 22px;
-      color: white;
-      text-decoration: none;
-      /* بدل الحواف الدائرية: */
-      border-radius: 0;
-      font-weight: 700;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: inline-block;
-    }
+    nav.navbar {
 
-    nav.navbar a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+      background: #fff;
 
-    nav.navbar a.home { background-color: #7b1fa2; }
-    nav.navbar a.services { background-color: #2196f3; }
-    nav.navbar a.blog { background-color: #25d366; }
-    nav.navbar a.contact { background-color: #f44336; }
+      padding: 12px 0;
 
-    .container {
-      max-width: 750px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px 25px;
-      direction: rtl;
-    }
+      display: flex;
 
-    .cover {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
+      justify-content: center;
 
-    h1 {
-      color: #4a148c;
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-    }
+      gap: 15px;
 
-    p.summary, p.description {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #444;
-      margin-bottom: 25px;
-    }
+      font-size: 1.1rem;
 
-    .btns {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
+      direction: rtl;
 
-    a.btn {
-      padding: 14px 25px;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      /* مربعة */
-      border-radius: 0;
-      transition: all 0.3s ease;
-      width: 80%;
-      max-width: 300px;
-      display: inline-block;
-      text-align: center;
-    }
+      font-weight: 600;
 
-    a.btn:hover { transform: scale(1.05); }
+      user-select: none;
 
-    .btn-purple { background: #7b1fa2; box-shadow: 0 4px 10px rgba(123, 31, 162, 0.3); }
-    .btn-purple:hover { background: #4a0072; }
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
-    .btn-blue { background: #2196f3; }
-    .btn-blue:hover { background: #1565c0; }
+      border-radius: 10px;
 
-    .btn-green { background: #25d366; }
-    .btn-green:hover { background: #1ebe5d; }
+      margin: 15px auto;
 
-    .btn-black { background: #333; }
-    .btn-black:hover { background: #000; }
+      max-width: 600px;
 
-    .price {
-      font-size: 1.5rem;
-      color: #2e7d32;
-      font-weight: bold;
-      margin: 20px 0;
-    }
+    }
 
-    .instruction {
-      background: #ede7f6;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-      line-height: 1.8;
-      color: #4a148c;
-      font-size: 1rem;
-      text-align: right;
-      direction: rtl;
-    }
 
-    .instruction a {
-      color: #4a148c;
-      text-decoration: underline;
-    }
+    nav.navbar a {
 
-    .payment-options {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 30px auto;
-      direction: rtl;
-    }
+      padding: 10px 22px;
 
-    .pay-btn {
-      background: #2196f3;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      width: 80%;
-      max-width: 300px;
-      transition: background 0.3s ease;
-    }
+      color: white;
 
-    .pay-btn:hover {
-      background: #1565c0;
-    }
+      text-decoration: none;
 
-    .certificate {
-      width: 100%;
-      max-height: 400px;
-      border-radius: 10px;
-      margin-top: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
+      /* بدل الحواف الدائرية: */
 
-    .footer {
-      font-size: 0.9rem;
-      color: #777;
-      margin: 35px 0 10px;
-      direction: rtl;
-      text-align: center;
-    }
+      border-radius: 0;
 
-    .footer a {
-      color: #6a1b9a;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+      font-weight: 700;
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      display: inline-block;
+
+    }
+
+
+    nav.navbar a:hover {
+
+      transform: scale(1.1);
+
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    }
+
+
+    nav.navbar a.home { background-color: #7b1fa2; }
+
+    nav.navbar a.services { background-color: #2196f3; }
+
+    nav.navbar a.blog { background-color: #25d366; }
+
+    nav.navbar a.contact { background-color: #f44336; }
+
+
+    .container {
+
+      max-width: 750px;
+
+      margin: 40px auto;
+
+      background: #fff;
+
+      border-radius: 16px;
+
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+      padding: 30px 25px;
+
+      direction: rtl;
+
+    }
+
+
+    .cover {
+
+      width: 100%;
+
+      max-height: 400px;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+      margin-bottom: 20px;
+
+    }
+
+
+    h1 {
+
+      color: #4a148c;
+
+      font-size: 2.3rem;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    p.summary, p.description {
+
+      font-size: 1.15rem;
+
+      line-height: 1.9;
+
+      color: #444;
+
+      margin-bottom: 25px;
+
+    }
+
+
+    .btns {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 15px;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    a.btn {
+
+      padding: 14px 25px;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 1.1rem;
+
+      /* مربعة */
+
+      border-radius: 0;
+
+      transition: all 0.3s ease;
+
+      width: 80%;
+
+      max-width: 300px;
+
+      display: inline-block;
+
+      text-align: center;
+
+    }
+
+
+    a.btn:hover { transform: scale(1.05); }
+
+
+    .btn-purple { background: #7b1fa2; box-shadow: 0 4px 10px rgba(123, 31, 162, 0.3); }
+
+    .btn-purple:hover { background: #4a0072; }
+
+
+    .btn-blue { background: #2196f3; }
+
+    .btn-blue:hover { background: #1565c0; }
+
+
+    .btn-green { background: #25d366; }
+
+    .btn-green:hover { background: #1ebe5d; }
+
+
+    .btn-black { background: #333; }
+
+    .btn-black:hover { background: #000; }
+
+
+    .price {
+
+      font-size: 1.5rem;
+
+      color: #2e7d32;
+
+      font-weight: bold;
+
+      margin: 20px 0;
+
+    }
+
+
+    .instruction {
+
+      background: #ede7f6;
+
+      padding: 20px;
+
+      border-radius: 10px;
+
+      margin-top: 30px;
+
+      line-height: 1.8;
+
+      color: #4a148c;
+
+      font-size: 1rem;
+
+      text-align: right;
+
+      direction: rtl;
+
+    }
+
+
+    .instruction a {
+
+      color: #4a148c;
+
+      text-decoration: underline;
+
+    }
+
+
+    .payment-options {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+
+      margin: 30px auto;
+
+      direction: rtl;
+
+    }
+
+
+    .pay-btn {
+
+      background: #2196f3;
+
+      color: white;
+
+      border: none;
+
+      padding: 12px;
+
+      border-radius: 8px;
+
+      font-size: 1rem;
+
+      cursor: pointer;
+
+      width: 80%;
+
+      max-width: 300px;
+
+      transition: background 0.3s ease;
+
+    }
+
+
+    .pay-btn:hover {
+
+      background: #1565c0;
+
+    }
+
+
+    .certificate {
+
+      width: 100%;
+
+      max-height: 400px;
+
+      border-radius: 10px;
+
+      margin-top: 30px;
+
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+    }
+
+
+    .footer {
+
+      font-size: 0.9rem;
+
+      color: #777;
+
+      margin: 35px 0 10px;
+
+      direction: rtl;
+
+      text-align: center;
+
+    }
+
+
+    .footer a {
+
+      color: #6a1b9a;
+
+      text-decoration: none;
+
+      margin: 0 10px;
+
+    }
+
+
+    .footer a:hover {
+
+      text-decoration: underline;
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
+
 <header>
-  <button id="username" title="زر الاسم">FaragDev98</button>
-  <div class="logo-space" title="شعار AI"></div>
+
+  <button id="username" title="زر الاسم">FaragDev98</button>
+
+  <div class="logo-space" title="شعار AI"></div>
+
 </header>
 
+
 <style>
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background: #1a1a1a;
-    padding: 15px 30px;
-    position: relative;
-    height: 120px;
-    overflow: visible;
-    font-family: 'Cairo', sans-serif;
-    flex-direction: row-reverse; /* تعكس ترتيب العناصر */
-  }
 
-  /* الزر الاحمر المتحرك */
-  #username {
-    position: relative;
-    background-color: #e63946; /* أحمر */
-    border: none;
-    padding: 12px 30px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 8px #e63946;
-    animation: moveSide 3s ease-in-out infinite, glowRed 3s ease-in-out infinite alternate;
-  }
+  header {
 
-  /* حركة تذبذب يمين ويسار */
-  @keyframes moveSide {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
-  }
+    display: flex;
 
-  /* توهج أحمر */
-  @keyframes glowRed {
-    0% {
-      box-shadow: 0 0 5px #e63946, 0 0 15px #f77f7f;
-      color: #ffeded;
-    }
-    100% {
-      box-shadow: 0 0 20px #e63946, 0 0 40px #f77f7f;
-      color: #ffe5e5;
-    }
-  }
+    justify-content: center;
 
-  /* الأيقونة ترقص دائماً بحجم أكبر */
-  .logo-space {
-    width: 120px; /* أكبر حجم */
-    height: 120px;
-    background: url('icons/ai-icon.png') no-repeat center center;
-    background-size: contain;
-    position: relative;
-    animation: dance 2s infinite ease-in-out;
-  }
+    align-items: center;
 
-  /* حركة ترنح الأيقونة */
-  @keyframes dance {
-    0% { transform: rotate(0deg) translateY(0); }
-    25% { transform: rotate(10deg) translateY(-5px); }
-    50% { transform: rotate(0deg) translateY(0); }
-    75% { transform: rotate(-10deg) translateY(-5px); }
-    100% { transform: rotate(0deg) translateY(0); }
-  }
+    gap: 20px;
+
+    background: #1a1a1a;
+
+    padding: 15px 30px;
+
+    position: relative;
+
+    height: 120px;
+
+    overflow: visible;
+
+    font-family: 'Cairo', sans-serif;
+
+    flex-direction: row-reverse; /* تعكس ترتيب العناصر */
+
+  }
+
+
+  /* الزر الاحمر المتحرك */
+
+  #username {
+
+    position: relative;
+
+    background-color: #e63946; /* أحمر */
+
+    border: none;
+
+    padding: 12px 30px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #fff;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 8px #e63946;
+
+    animation: moveSide 3s ease-in-out infinite, glowRed 3s ease-in-out infinite alternate;
+
+  }
+
+
+  /* حركة تذبذب يمين ويسار */
+
+  @keyframes moveSide {
+
+    0%, 100% { transform: translateX(0); }
+
+    50% { transform: translateX(20px); }
+
+  }
+
+
+  /* توهج أحمر */
+
+  @keyframes glowRed {
+
+    0% {
+
+      box-shadow: 0 0 5px #e63946, 0 0 15px #f77f7f;
+
+      color: #ffeded;
+
+    }
+
+    100% {
+
+      box-shadow: 0 0 20px #e63946, 0 0 40px #f77f7f;
+
+      color: #ffe5e5;
+
+    }
+
+  }
+
+
+  /* الأيقونة ترقص دائماً بحجم أكبر */
+
+  .logo-space {
+
+    width: 120px; /* أكبر حجم */
+
+    height: 120px;
+
+    background: url('icons/ai-icon.png') no-repeat center center;
+
+    background-size: contain;
+
+    position: relative;
+
+    animation: dance 2s infinite ease-in-out;
+
+  }
+
+
+  /* حركة ترنح الأيقونة */
+
+  @keyframes dance {
+
+    0% { transform: rotate(0deg) translateY(0); }
+
+    25% { transform: rotate(10deg) translateY(-5px); }
+
+    50% { transform: rotate(0deg) translateY(0); }
+
+    75% { transform: rotate(-10deg) translateY(-5px); }
+
+    100% { transform: rotate(0deg) translateY(0); }
+
+  }
+
 </style>
+
 <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
-  <a href="index.html" class="home">الرئيسية</a>
-  <a href="services.html" class="services">خدمات</a>
-  <a href="article.html" class="blog">مقال</a>
-  <a href="contact.html" class="contact">تواصل</a> 
+
+  <a href="index.html" class="home">الرئيسية</a>
+
+  <a href="services.html" class="services">خدمات</a>
+
+  <a href="article.html" class="blog">مقال</a>
+
+  <a href="contact.html" class="contact">تواصل</a> 
+
 </nav>
 
+
 <style>
-  .navbar {
-    display: flex;
-    justify-content: flex-start; /* الرئيسية على اليمين */
-    gap: 10px;
-    background: #111;
-    padding: 10px;
-    border-radius: 12px;
-  }
 
-  .navbar a {
-    padding: 8px 15px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    animation: dance 0.6s infinite alternate, signalLight 1s infinite alternate;
-    transition: transform 0.3s;
-    display: inline-block;
-  }
+  .navbar {
 
-  /* ألوان مختلفة لكل زر */
-  .home { background: #ff3b3b; box-shadow: 0 0 10px #ff3b3b; animation-delay: 0s; }
-  .services { background: #3b82ff; box-shadow: 0 0 10px #3b82ff; animation-delay: 0.2s; }
-  .blog { background: #3bff7a; box-shadow: 0 0 10px #3bff7a; animation-delay: 0.4s; }
-  .contact { background: #ff3bff; box-shadow: 0 0 10px #ff3bff; animation-delay: 0.6s; }
+    display: flex;
 
-  /* إضاءة تشبه إشارة القطر */
-  @keyframes signalLight {
-    0% { filter: brightness(1); }
-    100% { filter: brightness(0.5); }
-  }
+    justify-content: flex-start; /* الرئيسية على اليمين */
 
-  /* حركة رقص */
-  @keyframes dance {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(3deg); }
-    50% { transform: rotate(-3deg); }
-    75% { transform: rotate(2deg); }
-    100% { transform: rotate(0deg); }
-  }
+    gap: 10px;
 
-  .navbar a:hover {
-    transform: scale(1.1);
-  }
+    background: #111;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+  }
+
+
+  .navbar a {
+
+    padding: 8px 15px;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    animation: dance 0.6s infinite alternate, signalLight 1s infinite alternate;
+
+    transition: transform 0.3s;
+
+    display: inline-block;
+
+  }
+
+
+  /* ألوان مختلفة لكل زر */
+
+  .home { background: #ff3b3b; box-shadow: 0 0 10px #ff3b3b; animation-delay: 0s; }
+
+  .services { background: #3b82ff; box-shadow: 0 0 10px #3b82ff; animation-delay: 0.2s; }
+
+  .blog { background: #3bff7a; box-shadow: 0 0 10px #3bff7a; animation-delay: 0.4s; }
+
+  .contact { background: #ff3bff; box-shadow: 0 0 10px #ff3bff; animation-delay: 0.6s; }
+
+
+  /* إضاءة تشبه إشارة القطر */
+
+  @keyframes signalLight {
+
+    0% { filter: brightness(1); }
+
+    100% { filter: brightness(0.5); }
+
+  }
+
+
+  /* حركة رقص */
+
+  @keyframes dance {
+
+    0% { transform: rotate(0deg); }
+
+    25% { transform: rotate(3deg); }
+
+    50% { transform: rotate(-3deg); }
+
+    75% { transform: rotate(2deg); }
+
+    100% { transform: rotate(0deg); }
+
+  }
+
+
+  .navbar a:hover {
+
+    transform: scale(1.1);
+
+  }
+
 </style>
+
 
 <!-- </body> -->
-<audio id="train-bell" src="sounds/train-passing.mp3"></audio>
-<audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
+
+<audio id="train-bell" src="sounds/fast-train-passing.mp3"></audio>
+
+<audio id="train-passing" src="sounds/train-passing.mp3"></audio>
+
 <script src="footer.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<audio id="train-bell" src="sounds/">train-passing.mp3</audio>
+
+<audio id="train-bell" src="sounds/passing.mp3"></audio>
+
 <audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
+
 <!-- الأصوات -->
-<audio id="train-bell" src="sounds/">train-passing.mp3</audio>
+
+<audio id="train-bell" src="sounds/passing.mp3"></audio>
+
 <audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
+
 
 <div class="marquee-container">
-  <div class="marquee-content">
-    <!-- باقي الأزرار -->
-    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
-    </a>
-    <a href="https://wa.me/201066047545" class="btn-skill pink dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اطلب الخدمة الآن
-    </a>
-    <a href="https://wa.me/201066047545" class="btn-skill purple dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في الكورس
-    </a>
-    <a href="code-lab.html" class="btn-skill dark-red dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> جرب المختبر الآن
-    </a>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء من Gumroad
-    </a>
-    <a href="https://payhip.com/b/2cJWp" class="btn-skill blue dancing">
-      <img src="icons/code.png" class="icon-img" alt=""> شراء من Payhip
-    </a>
-    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء عبر واتساب
-    </a>
-    <a href="download/تعلم إنجليزي.apk" class="btn-skill violet dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> نزّل التطبيق
-    </a>
-    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black dancing">
-      <i class="fab fa-paypal icon-img"></i> PayPal
-    </button>
-    <button onclick="copyText('01066047545')" class="btn-skill red dancing">
-      <img src="icons/vodafone.png" alt="" class="icon-img"/> Vodafone Cash
-    </button>
-    <button onclick="copyText('01285895096')" class="btn-skill orange dancing">
-      <img src="icons/orange.png" alt="" class="icon-img"/> Orange Cash
-    </button>
-    <button onclick="copyText('01558516081')" class="btn-skill dark-purple dancing">
-      <img src="icons/we.png" alt="" class="icon-img"/> WE Cash
-    </button>
-    <a href="index.html" class="btn-skill black dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚀
-    </a>
-  </div>
+
+  <div class="marquee-content">
+
+    <!-- باقي الأزرار -->
+
+    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
+
+    </a>
+
+    <a href="https://wa.me/201066047545" class="btn-skill pink dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اطلب الخدمة الآن
+
+    </a>
+
+    <a href="https://wa.me/201066047545" class="btn-skill purple dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في الكورس
+
+    </a>
+
+    <a href="code-lab.html" class="btn-skill dark-red dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> جرب المختبر الآن
+
+    </a>
+
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء من Gumroad
+
+    </a>
+
+    <a href="https://payhip.com/b/2cJWp" class="btn-skill blue dancing">
+
+      <img src="icons/code.png" class="icon-img" alt=""> شراء من Payhip
+
+    </a>
+
+    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء عبر واتساب
+
+    </a>
+
+    <a href="download/تعلم إنجليزي.apk" class="btn-skill violet dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> نزّل التطبيق
+
+    </a>
+
+    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black dancing">
+
+      <i class="fab fa-paypal icon-img"></i> PayPal
+
+    </button>
+
+    <button onclick="copyText('01066047545')" class="btn-skill red dancing">
+
+      <img src="icons/vodafone.png" alt="" class="icon-img"/> Vodafone Cash
+
+    </button>
+
+    <button onclick="copyText('01285895096')" class="btn-skill orange dancing">
+
+      <img src="icons/orange.png" alt="" class="icon-img"/> Orange Cash
+
+    </button>
+
+    <button onclick="copyText('01558516081')" class="btn-skill dark-purple dancing">
+
+      <img src="icons/we.png" alt="" class="icon-img"/> WE Cash
+
+    </button>
+
+    <a href="index.html" class="btn-skill black dancing">
+
+      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚀
+
+    </a>
+
+  </div>
+
 </div>
+
 
 <!-- الجرس المتحرك تحت الشريط -->
+
 <div style="text-align: center; margin-top: 30px;">
-  <div class="bell-container">
-    <img src="icons/ai-icon.png" alt="جرس" class="bell-icon">
-    <button onclick="ringBell()" class="bell-btn">
-      اضغط على الجرس
-    </button>
-  </div>
+
+  <div class="bell-container">
+
+    <img src="icons/ai-icon.png" alt="جرس" class="bell-icon">
+
+    <button onclick="ringBell()" class="bell-btn">
+
+      اضغط على الجرس
+
+    </button>
+
+  </div>
+
 </div>
+
 
 <style>
-  .bell-container {
-    display: inline-block;
-    animation: moveSide 3s infinite ease-in-out;
-    text-align: center;
-  }
 
-  .bell-icon {
-    width: 80px;
-    height: 80px;
-    animation: glowBell 1.5s infinite alternate;
-  }
+  .bell-container {
 
-  .bell-btn {
-    background: gold;
-    color: black;
-    border: none;
-    padding: 12px 18px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 8px;
-    font-weight: bold;
-    animation: pulse 1.5s infinite, glowBtn 1.5s infinite alternate;
-  }
+    display: inline-block;
 
-  /* حركة الزر يمين ويسار */
-  @keyframes moveSide {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(30px); }
-  }
+    animation: moveSide 3s infinite ease-in-out;
 
-  /* نبضات تكبير وتصغير الزر */
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-  }
+    text-align: center;
 
-  /* تأثير إضاءة على الزر */
-  @keyframes glowBtn {
-    0% { box-shadow: 0 0 5px gold, 0 0 10px orange; }
-    100% { box-shadow: 0 0 20px gold, 0 0 40px orange; }
-  }
+  }
 
-  /* إضاءة الجرس */
-  @keyframes glowBell {
-    0% { filter: drop-shadow(0 0 3px yellow); }
-    100% { filter: drop-shadow(0 0 12px gold); }
-  }
+
+  .bell-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    animation: glowBell 1.5s infinite alternate;
+
+  }
+
+
+  .bell-btn {
+
+    background: gold;
+
+    color: black;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    font-size: 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+
+    font-weight: bold;
+
+    animation: pulse 1.5s infinite, glowBtn 1.5s infinite alternate;
+
+  }
+
+
+  /* حركة الزر يمين ويسار */
+
+  @keyframes moveSide {
+
+    0%, 100% { transform: translateX(0); }
+
+    50% { transform: translateX(30px); }
+
+  }
+
+
+  /* نبضات تكبير وتصغير الزر */
+
+  @keyframes pulse {
+
+    0%, 100% { transform: scale(1); }
+
+    50% { transform: scale(1.1); }
+
+  }
+
+
+  /* تأثير إضاءة على الزر */
+
+  @keyframes glowBtn {
+
+    0% { box-shadow: 0 0 5px gold, 0 0 10px orange; }
+
+    100% { box-shadow: 0 0 20px gold, 0 0 40px orange; }
+
+  }
+
+
+  /* إضاءة الجرس */
+
+  @keyframes glowBell {
+
+    0% { filter: drop-shadow(0 0 3px yellow); }
+
+    100% { filter: drop-shadow(0 0 12px gold); }
+
+  }
+
 </style>
+
 
 <script>
-  function ringBell() {
-    alert("  🛑الضغط على الزر");
-  }
+
+  function ringBell() {
+
+    alert("🔔 الضغط على الجرس");
+
+  }
+
 </script>
 
-<
-  /* حركة رقص */
-  .dancing {
-    animation: bounce 1s infinite ease-in-out;
-  }
 
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
+<style>
 
-  /* الألوان */
-  .red         { background-color: #dc2626; }
-  .pink        { background-color: #f43f5e; }
-  .purple      { background-color: #8e44ad; }
-  .dark-red    { background-color: #e60000; }
-  .green       { background-color: #25D366; }
-  .violet      { background-color: #9333ea; }
-  .blue        { background-color: #0070ba; }
-  .orange      { background-color: #ff6600; }
-  .black       { background-color: #111111; }
-  .lemon       { background-color: #d4d700; }
-  .dark-purple { background-color: #5e0094; }
+  .marquee-container {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    padding: 20px 0;
+
+    direction: rtl;
+
+    position: relative;
+
+  }
+
+
+  .marquee-content {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    animation: marquee 35s linear infinite;
+
+  }
+
+
+  @keyframes marquee {
+
+    0% { transform: translateX(100%); }
+
+    100% { transform: translateX(-100%); }
+
+  }
+
+
+  .btn-skill {
+
+    white-space: nowrap;
+
+    color: white;
+
+    padding: 6px 12px;
+
+    margin: 0 6px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+
+    transition: transform 0.3s ease;
+
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+  }
+
+
+  .btn-skill .icon-img {
+
+    width: 18px;
+
+    height: 18px;
+
+    object-fit: contain;
+
+    margin-left: 6px;
+
+  }
+
+
+  .btn-skill:hover {
+
+    transform: scale(1.1);
+
+  }
+
+
+  /* حركة رقص */
+
+  .dancing {
+
+    animation: bounce 1s infinite ease-in-out;
+
+  }
+
+
+  @keyframes bounce {
+
+    0%, 100% { transform: translateY(0); }
+
+    50% { transform: translateY(-5px); }
+
+  }
+
+
+  /* الألوان */
+
+  .red         { background-color: #dc2626; }
+
+  .pink        { background-color: #f43f5e; }
+
+  .purple      { background-color: #8e44ad; }
+
+  .dark-red    { background-color: #e60000; }
+
+  .green       { background-color: #25D366; }
+
+  .violet      { background-color: #9333ea; }
+
+  .blue        { background-color: #0070ba; }
+
+  .orange      { background-color: #ff6600; }
+
+  .black       { background-color: #111111; }
+
+  .lemon       { background-color: #d4d700; }
+
+  .dark-purple { background-color: #5e0094; }
+
 </style>
 
-<div class="service-section" style="background-color: #111; color: #fff; padding: 30px; border-radius: 16px; margin: 40px 0;">
-  <h2 style="color: #f44336;"> كتاب HTML للمبتدئين</h2>
-  <img src="images/html-book-cover.png" alt="غلاف الكتاب" style="width: 200px; border-radius: 12px; margin: 20px 0; display: block;">
 
-  <p class="summary" style="font-size: 18px;">
-    هل تبحث عن بداية قوية في عالم البرمجة؟ هذا الكتاب هو دليلك الشامل لتعلم HTML بأسلوب بسيط وعملي، مع تطبيقات حقيقية وشرح باللغة العربية.
-  </p>
-<div class="video-section" style="margin-top: 30px;">
-    <h3 style="color: #f44336;">🎥 فيديو تعريفي عن الكتاب</h3>
-    <video controls style="width: 100%; max-width: 600px; border-radius: 12px; margin-top: 10px;">
-      <source src="videos/book-preview.mp4" type="video/mp4">
-      المتصفح لا يدعم تشغيل الفيديو.
-    </video>
+<script>
+
+  function copyText(text) {
+
+    navigator.clipboard.writeText(text).then(function () {
+
+      alert("تم نسخ: " + text);
+
+    });
+
+  }
+
+
+  function playSoundsLoop() {
+
+    const bell = document.getElementById('train-bell');
+
+    const train = document.getElementById('train-passing');
+
+
+    bell.currentTime = 0;
+
+    bell.play().then(() => {
+
+      bell.onended = () => {
+
+        train.currentTime = 0;
+
+        train.play();
+
+      };
+
+      train.onended = () => {
+
+        setTimeout(playSoundsLoop, 1000); // ثانية قبل الإعادة
+
+      };
+
+    }).catch(err => {
+
+      console.log("⚠️ يجب السماح بتشغيل الصوت أولاً بالضغط على الصفحة");
+
+    });
+
+  }
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    playSoundsLoop();
+
+    document.addEventListener('click', playSoundsLoop, { once: true });
+
+    document.addEventListener('touchstart', playSoundsLoop, { once: true });
+
+  });
+
+
+  function ringBell() {
+
+    playSoundsLoop();
+
+  }
+
+</script>
+
+
+  <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
+
+      
+
+  <img src="images/main-hero.png" alt="HTML" class="certificate" />
+
+
+    <h1>📘 كتاب HTML للمبتدئين</h1>
+
+    <p class="summary">
+
+      هل تريد أن تبدأ رحلتك في برمجة المواقع؟  
+
+      هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!
+
+    </p>
+
+    <p class="description">
+
+      تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.
+
+    </p>
+
+
+    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+
+
+    <div class="btns">
+
+      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+
+      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+
+      <a id="whatsappBtn" href="#" class="btn btn-green">شراء عبر واتساب</a>
+
+      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
+
+    </div>
+
+
+    <div class="instruction" style="background: #f5f5f5; padding: 15px; border-radius: 12px; margin-top: 20px; font-family: 'Segoe UI', sans-serif;">
+
+  <strong style="font-size: 18px; color: #4a148c;">🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
+
+  1️⃣ اختر وسيلة الدفع المناسبة لك من الأزرار في الأعلى، وانسخ رقم المحفظة.<br>
+
+  2️⃣ قم بإرسال صورة الإيصال وطريقة الدفع عبر واتساب.<br>
+
+  3️⃣ سيتم إرسال رابط تحميل الكتاب فور تأكيد الدفع.<br><br>
+
+  
+
+  <a href="https://wa.me/201066047545" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
+
+    💬 تواصل الآن على واتساب
+
+  </a>
+
 </div>
-  <p class="description" style="color: #ccc;">
-    يشمل محتوى منسق، صور توضيحية، وتمارين عملية. مناسب للمبتدئين تمامًا.
-  </p>
 
-  <div class="price" style="font-weight: bold; margin: 15px 0;">💰 السعر: 2 دولار (100 جنيه مصري)</div>
 
-  <div class="purchase-buttons" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn" style="background: #f44336; color: white; padding: 10px 16px; border-radius: 8px;">شراء من Gumroad</a>
-    <a href="https://payhip.com/b/2cJWp" class="btn" style="background: orange; color: white; padding: 10px 16px; border-radius: 8px;">شراء من Payhip</a>
-    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn" style="background: #25D366; color: white; padding: 10px 16px; border-radius: 8px;">شراء عبر واتساب</a>
-  </div>
+    <div class="payment-options">
 
-  </div>
-<div class="instruction" style="background: #222; padding: 20px; border-radius: 12px; margin-top: 20px;">
-  <h3 style="color:#f44336;"> خطوات شراء الكتاب عبر واتساب:</h3>
-  <ol style="line-height: 1.8; color: #fff; padding-right: 0;">
-    <li>اختر وسيلة الدفع المناسبة:</li>
-     <li>قم بالدفع وأرسل صورة الإيصال على واتساب</li>
-      <li>سوف تستلم رابط التحميل فورًا 📕</li>
-  </ol>
-    <ul style="list-style: none; padding: 0;">
-     
-      <li style="margin-bottom: 10px;">
-        <button onclick="copyText('Farajbdallh891@gmail.com')" style="display: flex; align-items: center; background-color: #0070ba; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
-          <img src="../icons/paypal.png" alt="PayPal" style="width:24px; height:24px; margin-left: 10px;">
-          Farajbdallh891@gmail.com - باي بال
-        </button>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <button onclick="copyText('01066047545')" style="display: flex; align-items: center; background-color: #e60000; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
-          <img src="../icons/vodafone.png" alt="Vodafone Cash" style="width:24px; height:24px; margin-left: 10px;">
-          01066047545 - فودافون كاش
-        </button>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <button onclick="copyText('01285895096')" style="display: flex; align-items: center; background-color: #ff6600; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
-          <img src="../icons/orange.png" alt="Orange Cash" style="width:24px; height:24px; margin-left: 10px;">
-          01285895096 - أورنج كاش
-        </button>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <button onclick="copyText('01558516081')" style="display: flex; align-items: center; background-color: #5e0094; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
-          <img src="../icons/we.png" alt="WE Cash" style="width:24px; height:24px; margin-left: 10px;">
-          01558516081 - وي كاش
-        </button>
-  
+      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
+
+      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
+
+      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
+
+      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
+
+    </div>
+
+
+    <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
+
+
+    <div class="footer">
+
+      جميع الحقوق محفوظة © 2025 FaragDev98<br>
+
+      <a href="terms.html">الشروط والأحكام</a> |
+
+      <a href="privacy-policy.html">سياسة الخصوصية</a> |
+
+      <a href="protection.html">صفحة الحماية</a>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function copyText(text) {
+
+      navigator.clipboard.writeText(text).then(() => {
+
+        alert("✅ تم نسخ البيانات: " + text);
+
+      }).catch(() => {
+
+        alert("⚠️ لم يتم النسخ تلقائيًا، الرجاء نسخه يدويًا: " + text);
+
+      });
+
+    }
+
+
+    document.getElementById("whatsappBtn").addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      const whatsappURL = "https://wa.me/201066047545?text=لقد%20تم%20الدفع%20وأريد%20الحصول%20على%20الكتاب";
+
+      window.open(whatsappURL, "_blank");
+
+    });
+
+  </script>
+
 
   <script src="security.js"></script>
 
-
 </body>
-                            
-</html>
+
+  </html>
