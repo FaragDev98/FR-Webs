@@ -896,89 +896,122 @@ onmouseout="this.style.transform='perspective(1000px) rotateX(0deg)'; this.style
 </script>
 
   
-  
-  <!-- المربع الأول - كتاب HTML -->
-<div style="perspective: 1000px; display: flex; justify-content: center; margin: 40px;">
-  <div class="card-3d" style="background: linear-gradient(135deg, #ffb347, #ffcc33); color: #000; padding: 30px; border-radius: 18px; width: 90%; max-width: 600px; text-align: center; box-shadow: 0 15px 25px rgba(0,0,0,0.3); transform: rotateY(8deg) rotateX(4deg); transition: transform 0.4s ease;">
-    <h2 style="color: #b71c1c; font-size: 26px;">📘 كتاب HTML للمبتدئين</h2>
-    <img src="images/html-book-cover.png" alt="غلاف الكتاب" style="width: 200px; border-radius: 12px; margin: 20px 0; box-shadow: 0 6px 15px rgba(0,0,0,0.3);">
-    <p style="font-size: 18px; line-height: 1.8; color: #222;">
-      هل تبحث عن بداية قوية في عالم البرمجة؟ هذا الكتاب هو دليلك الشامل لتعلم HTML بأسلوب بسيط وعملي، مع تطبيقات حقيقية وشرح باللغة العربية.
-    </p>
+  <div style="
+  background: linear-gradient(135deg, #8e2de2, #ff416c, #ff8c00);
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.6), 0 0 15px rgba(142, 45, 226, 0.7);
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: transform 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+" id="threeDCard">
 
-    <!-- زر شراء واتساب -->
+  <h2 style="color: #fff4e5; text-align: center; margin-bottom: 20px; font-size: 2rem;">كتاب HTML للمبتدئين</h2>
+
+  <img src="images/html-book-cover.png" alt="غلاف الكتاب" 
+    style="display: block; width: 220px; margin: 0 auto 25px; border-radius: 15px; box-shadow: 0 6px 18px rgba(0,0,0,0.4);">
+
+  <p style="font-size: 18px; line-height: 1.7; text-align: center; margin-bottom: 30px;">
+    هل تبحث عن بداية قوية في عالم البرمجة؟ هذا الكتاب هو دليلك الشامل لتعلم HTML بأسلوب بسيط وعملي، مع تطبيقات حقيقية وشرح باللغة العربية.
+  </p>
+
+  <div style="margin-bottom: 30px;">
+    <h3 style="color: #fff4e5; text-align: center; margin-bottom: 12px;">🎥 فيديو تعريفي عن الكتاب</h3>
+    <video controls style="width: 100%; max-width: 600px; border-radius: 15px; display: block; margin: 0 auto;">
+      <source src="videos/book-preview.mp4" type="video/mp4">
+      المتصفح لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+
+  <p style="color: #ffe9d6; font-size: 17px; line-height: 1.6; text-align: center; margin-bottom: 20px;">
+    يشمل محتوى منسق، صور توضيحية، وتمارين عملية. مناسب للمبتدئين تمامًا.
+  </p>
+
+  <div style="font-weight: bold; text-align: center; margin-bottom: 30px; font-size: 20px;">
+    💰 السعر: 2 دولار (100 جنيه مصري)
+  </div>
+
+  <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" 
+      style="background: #ff8c00; color: white; padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.6);">
+      شراء من Gumroad
+    </a>
+    <a href="https://payhip.com/b/2cJWp" 
+      style="background: #8e2de2; color: white; padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(142, 45, 226, 0.6);">
+      شراء من Payhip
+    </a>
     <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" 
-       style="display: inline-block; background: #25D366; color: white; padding: 14px 20px; margin-top: 20px; border-radius: 12px; font-size: 18px; text-decoration: none;">
-      💬 شراء عبر واتساب
+      style="background: #25D366; color: white; padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.6);">
+      شراء عبر واتساب
     </a>
-
-    <!-- خطوات الشراء -->
-    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; margin-top: 20px; text-align: left;">
-      <h4 style="color: #b71c1c;">📌 خطوات شراء الكتاب عبر واتساب:</h4>
-      <ol style="line-height: 1.8; color: #000; padding-left: 20px;">
-        <li>اختر وسيلة الدفع المناسبة.</li>
-        <li>قم بالدفع وأرسل صورة الإيصال على واتساب.</li>
-        <li>سوف تستلم رابط التحميل فورًا 📕.</li>
-      </ol>
-      <ul style="list-style: none; padding: 0;">
-        <li><strong>PayPal:</strong> Farajbdallh891@gmail.com</li>
-        <li><strong>فودافون كاش:</strong> 01066047545</li>
-        <li><strong>أورنج كاش:</strong> 01285895096</li>
-        <li><strong>وي كاش:</strong> 01558516081</li>
-      </ul>
-    </div>
   </div>
+
+  <h3 style="color: #fff4e5; margin-bottom: 15px; text-align: center;">خطوات شراء الكتاب عبر واتساب:</h3>
+  <ol style="line-height: 1.8; color: #ffe9d6; padding-inline-start: 20px; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <li>اختر وسيلة الدفع المناسبة.</li>
+    <li>قم بالدفع وأرسل صورة الإيصال على واتساب.</li>
+    <li>سوف تستلم رابط التحميل فورًا 📕.</li>
+  </ol>
+
+  <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto;">
+    <li style="margin-bottom: 12px;">
+      <button onclick="copyText('Farajbdallh891@gmail.com')" 
+        style="display: flex; align-items: center; background-color: #0070ba; border: none; border-radius: 10px; padding: 12px 20px; color: white; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 12px rgba(0,112,186,0.6); transition: background-color 0.3s;">
+        <img src="../icons/paypal.png" alt="PayPal" style="width:24px; height:24px; margin-left: 15px;">
+        Farajbdallh891@gmail.com - باي بال
+      </button>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <button onclick="copyText('01066047545')" 
+        style="display: flex; align-items: center; background-color: #e60000; border: none; border-radius: 10px; padding: 12px 20px; color: white; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 12px rgba(230,0,0,0.6); transition: background-color 0.3s;">
+        <img src="../icons/vodafone.png" alt="Vodafone Cash" style="width:24px; height:24px; margin-left: 15px;">
+        01066047545 - فودافون كاش
+      </button>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <button onclick="copyText('01285895096')" 
+        style="display: flex; align-items: center; background-color: #8e2de2; border: none; border-radius: 10px; padding: 12px 20px; color: white; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 12px rgba(142,45,226,0.6); transition: background-color 0.3s;">
+        <img src="../icons/orange.png" alt="Orange Cash" style="width:24px; height:24px; margin-left: 15px;">
+        01285895096 - أورنج كاش
+      </button>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <button onclick="copyText('01558516081')" 
+        style="display: flex; align-items: center; background-color: #4b0082; border: none; border-radius: 10px; padding: 12px 20px; color: white; font-weight: bold; cursor: pointer; width: 100%; box-shadow: 0 4px 12px rgba(75,0,130,0.6); transition: background-color 0.3s;">
+        <img src="../icons/we.png" alt="WE Cash" style="width:24px; height:24px; margin-left: 15px;">
+        01558516081 - وي كاش
+      </button>
+    </li>
+  </ul>
+
 </div>
 
-<!-- المربع الثاني - تطبيق الإنجليزية -->
-<div style="perspective: 1000px; display: flex; justify-content: center; margin: 40px;">
-  <div class="card-3d" style="background: linear-gradient(135deg, #ff9966, #ff5e62); color: #000; padding: 30px; border-radius: 18px; width: 90%; max-width: 600px; text-align: center; box-shadow: 0 15px 25px rgba(0,0,0,0.3); transform: rotateY(8deg) rotateX(4deg); transition: transform 0.4s ease;">
-    <img src="images/cms.png" alt="صورة تطبيق تعلم الإنجليزية" style="width: 180px; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.3);" />
-    <h2 style="color: #222; margin-bottom: 20px; font-size: 26px;">
-        تطبيق تعلم اللغة الإنجليزية
-    </h2>
-    <p style="color: #333; font-size: 18px; line-height: 1.9;">
-      تطبيق شامل يساعدك على إتقان اللغة الإنجليزية من البداية حتى الاحتراف،
-      يضم محتوى صوتي تفاعلي، تمارين ممتعة، شرح مبسط لقواعد اللغة، والمفردات اليومية.
-    </p>
-
-    <!-- زر شراء واتساب -->
-    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء تطبيق تعلم الإنجليزية" 
-       style="display: inline-block; background: #25D366; color: white; padding: 14px 20px; margin-top: 20px; border-radius: 12px; font-size: 18px; text-decoration: none;">
-      💬 شراء عبر واتساب
-    </a>
-
-    <!-- خطوات الشراء -->
-    <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; margin-top: 20px; text-align: left;">
-      <h4 style="color: #b71c1c;">📌 خطوات شراء التطبيق عبر واتساب:</h4>
-      <ol style="line-height: 1.8; color: #000; padding-left: 20px;">
-        <li>اختر وسيلة الدفع المناسبة.</li>
-        <li>قم بالدفع وأرسل صورة الإيصال على واتساب.</li>
-        <li>سوف تستلم رابط التحميل فورًا 📱.</li>
-      </ol>
-      <ul style="list-style: none; padding: 0;">
-        <li><strong>PayPal:</strong> Farajbdallh891@gmail.com</li>
-        <li><strong>فودافون كاش:</strong> 01066047545</li>
-        <li><strong>أورنج كاش:</strong> 01285895096</li>
-        <li><strong>وي كاش:</strong> 01558516081</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript لتحريك المربعات -->
 <script>
-  document.querySelectorAll(".card-3d").forEach(card => {
-    card.parentElement.addEventListener("mousemove", (e) => {
-      let x = (e.clientX / window.innerWidth - 0.5) * 20;
-      let y = (e.clientY / window.innerHeight - 0.5) * 20;
-      card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-    });
-    card.parentElement.addEventListener("mouseleave", () => {
-      card.style.transform = `rotateY(8deg) rotateX(4deg)`;
-    });
+  const card = document.getElementById('threeDCard');
+  card.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    card.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${-y}deg)`;
   });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+  });
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('تم نسخ: ' + text);
+    }).catch(() => {
+      alert('فشل النسخ، يرجى نسخه يدويًا.');
+    });
+  }
 </script>
+ 
+
+
       
 
  
