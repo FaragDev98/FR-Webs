@@ -588,45 +588,9 @@
   }
 </script>
 
-  <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
-      
+  
   <img src="images/main-hero.png" alt="HTML" class="certificate" />
 
-    <h1>📘 كتاب HTML للمبتدئين</h1>
-    <p class="summary">
-      هل تريد أن تبدأ رحلتك في برمجة المواقع؟  
-      هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!
-    </p>
-    <p class="description">
-      تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.
-    </p>
-
-    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
-
-    <div class="btns">
-      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
-      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
-      <a id="whatsappBtn" href="#" class="btn btn-green">شراء عبر واتساب</a>
-      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
-    </div>
-
-    <div class="instruction" style="background: #f5f5f5; padding: 15px; border-radius: 12px; margin-top: 20px; font-family: 'Segoe UI', sans-serif;">
-  <strong style="font-size: 18px; color: #4a148c;">🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
-  1️⃣ اختر وسيلة الدفع المناسبة لك من الأزرار في الأعلى، وانسخ رقم المحفظة.<br>
-  2️⃣ قم بإرسال صورة الإيصال وطريقة الدفع عبر واتساب.<br>
-  3️⃣ سيتم إرسال رابط تحميل الكتاب فور تأكيد الدفع.<br><br>
-  
-  <a href="https://wa.me/201066047545" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
-    💬 تواصل الآن على واتساب
-  </a>
-</div>
-
-    <div class="payment-options">
-      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
-      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
-      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
-      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
-    </div>
 
     <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
 
@@ -672,7 +636,61 @@
   }
 
 </script>
+<!-- زر كتم الصوت -->
+<div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+  <button id="muteBtn" 
+          style="background:#7b1fa2; border:none; padding:12px; border-radius:50%; cursor:pointer; box-shadow: 0 0 15px #7b1fa2;"
+          aria-label="كتم وتشغيل الصوت"
+          title="كتم وتشغيل الصوت">
+    <i id="muteIcon" class="fa-solid fa-volume-high" style="color:white; font-size:22px;"></i>
+  </button>
+</div>
 
+<!-- مربع نص + فيديو -->
+<div class="programming-info" style="max-width: 800px; margin: 50px auto; background: linear-gradient(135deg, #7b1fa2, #4a148c); border-radius: 20px; box-shadow: 0 6px 25px rgba(123,31,162,0.6); padding: 40px 35px; text-align: center; direction: rtl; color: #eee;">
+  <h2 style="font-size: 2.8rem; margin-bottom: 30px; font-weight: 900;">لماذا نتعلم البرمجة؟</h2>
+  <p style="font-size: 1.5rem; line-height: 2; margin-bottom: 40px;">
+    البرمجة هي مهارة المستقبل التي تفتح لك أبواب لا حصر لها في عالم التكنولوجيا. تعلمها يمكنك من بناء تطبيقات ومواقع، وتحليل البيانات، وحتى ابتكار حلول جديدة للمشاكل اليومية.
+  </p>
+  <video controls style="width: 100%; max-width: 780px; border-radius: 20px; box-shadow: 0 6px 25px rgba(74,20,140,0.7);">
+    <source src="videos/learn-programming.mp4" type="video/mp4" />
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
+</div>
+
+<!-- مربع صورة + نص مقال -->
+<div class="programming-article" style="max-width: 800px; margin: 50px auto; display: flex; gap: 30px; align-items: center; background: linear-gradient(135deg, #4a148c, #7b1fa2); border-radius: 20px; box-shadow: 0 6px 20px rgba(123,31,162,0.5); padding: 35px; direction: rtl; color: #ddd;">
+  <img src="images/benefits-of-programming.jpg" alt="ما الفائدة من تعلم البرمجة" style="width: 50%; border-radius: 20px; object-fit: cover; box-shadow: 0 6px 15px rgba(123,31,162,0.6);" />
+  <div style="width: 50%; text-align: right;">
+    <h3 style="font-size: 2.4rem; font-weight: 900; margin-bottom: 25px;">ما الفائدة من تعلم البرمجة؟</h3>
+    <p style="font-size: 1.25rem; line-height: 2;">
+      تعلم البرمجة يتيح لك فرص عمل كثيرة ويطور مهارات التفكير المنطقي والإبداعي. كما يمكنك من تطوير أفكارك وتحويلها إلى واقع رقمي. إنها لغة العصر التي يجب أن تتقنها لتحقيق النجاح.
+    </p>
+  </div>
+</div>
+
+<!-- جافاسكريبت زر كتم الصوت -->
+<script>
+  const muteBtn = document.getElementById('muteBtn');
+  const muteIcon = document.getElementById('muteIcon');
+
+  muteBtn.addEventListener('click', () => {
+    const audios = document.querySelectorAll('audio');
+    let isMuted = muteIcon.classList.contains('fa-volume-xmark');
+
+    if (isMuted) {
+      // تشغيل الصوت
+      audios.forEach(audio => audio.muted = false);
+      muteIcon.classList.remove('fa-volume-xmark');
+      muteIcon.classList.add('fa-volume-high');
+    } else {
+      // كتم الصوت
+      audios.forEach(audio => audio.muted = true);
+      muteIcon.classList.remove('fa-volume-high');
+      muteIcon.classList.add('fa-volume-xmark');
+    }
+  });
+</script>
 
 <style>
 
@@ -879,128 +897,108 @@
 
 </script>
 
+<div class="service-section" style="background-color: #111; color: #fff; padding: 30px; border-radius: 16px; margin: 40px 0;">
+  <h2 style="color: #f44336;"> كتاب HTML للمبتدئين</h2>
+  <img src="images/html-book-cover.png" alt="غلاف الكتاب" style="width: 200px; border-radius: 12px; margin: 20px 0; display: block;">
 
-  <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
+  <p class="summary" style="font-size: 18px;">
+    هل تبحث عن بداية قوية في عالم البرمجة؟ هذا الكتاب هو دليلك الشامل لتعلم HTML بأسلوب بسيط وعملي، مع تطبيقات حقيقية وشرح باللغة العربية.
+  </p>
+<div class="video-section" style="margin-top: 30px;">
+    <h3 style="color: #f44336;">🎥 فيديو تعريفي عن الكتاب</h3>
+    <video controls style="width: 100%; max-width: 600px; border-radius: 12px; margin-top: 10px;">
+      <source src="videos/book-preview.mp4" type="video/mp4">
+      المتصفح لا يدعم تشغيل الفيديو.
+    </video>
+</div>
+  <p class="description" style="color: #ccc;">
+    يشمل محتوى منسق، صور توضيحية، وتمارين عملية. مناسب للمبتدئين تمامًا.
+  </p>
 
+  <div class="price" style="font-weight: bold; margin: 15px 0;">💰 السعر: 2 دولار (100 جنيه مصري)</div>
+
+  <div class="purchase-buttons" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn" style="background: #f44336; color: white; padding: 10px 16px; border-radius: 8px;">شراء من Gumroad</a>
+    <a href="https://payhip.com/b/2cJWp" class="btn" style="background: orange; color: white; padding: 10px 16px; border-radius: 8px;">شراء من Payhip</a>
+    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn" style="background: #25D366; color: white; padding: 10px 16px; border-radius: 8px;">شراء عبر واتساب</a>
+  </div>
+
+  </div>
+<div class="instruction" style="background: #222; padding: 20px; border-radius: 12px; margin-top: 20px;">
+  <h3 style="color:#f44336;"> خطوات شراء الكتاب عبر واتساب:</h3>
+  <ol style="line-height: 1.8; color: #fff; padding-right: 0;">
+    <li>اختر وسيلة الدفع المناسبة:</li>
+     <li>قم بالدفع وأرسل صورة الإيصال على واتساب</li>
+      <li>سوف تستلم رابط التحميل فورًا 📕</li>
+  </ol>
+    <ul style="list-style: none; padding: 0;">
+     <link rel="stylesheet" href="style.css">
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('Farajbdallh891@gmail.com')" style="display: flex; align-items: center; background-color: #0070ba; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/paypal.png" alt="PayPal" style="width:24px; height:24px; margin-left: 10px;">
+          Farajbdallh891@gmail.com - باي بال
+        </button>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('01066047545')" style="display: flex; align-items: center; background-color: #e60000; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/vodafone.png" alt="Vodafone Cash" style="width:24px; height:24px; margin-left: 10px;">
+          01066047545 - فودافون كاش
+        </button>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('01285895096')" style="display: flex; align-items: center; background-color: #ff6600; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/orange.png" alt="Orange Cash" style="width:24px; height:24px; margin-left: 10px;">
+          01285895096 - أورنج كاش
+        </button>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <button onclick="copyText('01558516081')" style="display: flex; align-items: center; background-color: #5e0094; border: none; border-radius: 8px; padding: 10px 15px; color: white; font-weight: bold; cursor: pointer; width: 100%;">
+          <img src="../icons/we.png" alt="WE Cash" style="width:24px; height:24px; margin-left: 10px;">
+          01558516081 - وي كاش
+        </button>
+      </li>
+    
+</div>
+<div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: none; padding: 30px; border-radius: 18px; max-width: 600px; margin: 40px auto; text-align: center; font-family: 'Cairo', sans-serif; box-shadow: 0 6px 20px rgba(0,0,0,0.3);">
+  
+  <!-- صورة التطبيق -->
+  <img src="images/cms.png" alt="صورة تطبيق تعلم الإنجليزية" style="width: 180px; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;" />
+
+  <h2 style="color: #fff; margin-bottom: 20px; font-size: 26px;">
+      تطبيق تعلم اللغة الإنجليزية
+  </h2>
+  
+  <p style="color: #e5e7eb; font-size: 18px; line-height: 1.9;">
+    تطبيق شامل يساعدك على إتقان اللغة الإنجليزية من البداية حتى الاحتراف،<br>
+    يضم محتوى صوتي تفاعلي، تمارين ممتعة، شرح مبسط لقواعد اللغة، والمفردات اليومية.<br>
+    لتسهيل الفهم لجميع المستخدمين هوا يسهل عليك فهم قرأت الغه الإنجليزية لتسهيل طريقك البرمجي 🌍
+  </p>
+
+  <a href="download/تعلم إنجليزي.apk" download style="display: inline-block; background: #9333ea; color: white; padding: 14px 30px; margin-top: 30px; border-radius: 14px; font-size: 18px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: 0.3s;">
+    📥 نزّل التطبيق مجاني 
+  </a>
+
+</div>
       
 
   <img src="images/main-hero.png" alt="HTML" class="certificate" />
 
 
-    <h1>📘 كتاب HTML للمبتدئين</h1>
-
-    <p class="summary">
-
-      هل تريد أن تبدأ رحلتك في برمجة المواقع؟  
-
-      هذا الكتاب هو دليلك المثالي لتعلم HTML من الأساس حتى إنشاء صفحات ويب احترافية!
-
-    </p>
-
-    <p class="description">
-
-      تعلم HTML من البداية حتى الاحتراف باللغة العربية، بأسلوب مبسط وشامل مع صور توضيحية.
-
-    </p>
 
 
-    <div class="price">💰 السعر: 2 دولار (100 جنيه مصري)</div>
 
+    
 
-    <div class="btns">
-
-      <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
-
-      <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
-
-      <a id="whatsappBtn" href="#" class="btn btn-green">شراء عبر واتساب</a>
-
-      <a href="download/تعلم إنجليزي.apk" class="btn btn-black" download>📲 تحميل تطبيق تعلم الإنجليزية</a>
-
-    </div>
-
-
-    <div class="instruction" style="background: #f5f5f5; padding: 15px; border-radius: 12px; margin-top: 20px; font-family: 'Segoe UI', sans-serif;">
-
-  <strong style="font-size: 18px; color: #4a148c;">🔒 خطوات شراء الكتاب عبر واتساب:</strong><br><br>
-
-  1️⃣ اختر وسيلة الدفع المناسبة لك من الأزرار في الأعلى، وانسخ رقم المحفظة.<br>
-
-  2️⃣ قم بإرسال صورة الإيصال وطريقة الدفع عبر واتساب.<br>
-
-  3️⃣ سيتم إرسال رابط تحميل الكتاب فور تأكيد الدفع.<br><br>
-
-  
-
-  <a href="https://wa.me/201066047545" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">
-
-    💬 تواصل الآن على واتساب
-
-  </a>
-
-</div>
-
-
-    <div class="payment-options">
-
-      <button class="pay-btn" onclick="copyText('01066047545')">📱 فودافون كاش: 01066047545</button>
-
-      <button class="pay-btn" onclick="copyText('01285895096')">📱 أورنج كاش: 01285895096</button>
-
-      <button class="pay-btn" onclick="copyText('01558516081')">📱 وي كاش: 01558516081</button>
-
-      <button class="pay-btn" onclick="copyText('Farajbdallh891@gmail.com')">📧 بايبال: Farajbdallh891@gmail.com</button>
-
-    </div>
 
 
     <img src="images/certificate-coursera.jpg" alt="شهادة إتمام الكورس" class="certificate" />
 
 
-    <div class="footer">
 
-      جميع الحقوق محفوظة © 2025 FaragDev98<br>
-
-      <a href="terms.html">الشروط والأحكام</a> |
-
-      <a href="privacy-policy.html">سياسة الخصوصية</a> |
-
-      <a href="protection.html">صفحة الحماية</a>
-
-    </div>
-
-  </div>
+   
 
 
-  <script>
-
-    function copyText(text) {
-
-      navigator.clipboard.writeText(text).then(() => {
-
-        alert("✅ تم نسخ البيانات: " + text);
-
-      }).catch(() => {
-
-        alert("⚠️ لم يتم النسخ تلقائيًا، الرجاء نسخه يدويًا: " + text);
-
-      });
-
-    }
-
-
-    document.getElementById("whatsappBtn").addEventListener("click", function(e) {
-
-      e.preventDefault();
-
-      const whatsappURL = "https://wa.me/201066047545?text=لقد%20تم%20الدفع%20وأريد%20الحصول%20على%20الكتاب";
-
-      window.open(whatsappURL, "_blank");
-
-    });
-
-  </script>
-
+    
 
   <script src="security.js"></script>
 
