@@ -2,7 +2,31 @@
 <html lang="ar" dir="rtl">
 <head>
 <head>
+
+  <body>
+
+<header>
+  <!-- المحتوى الموجود -->
+</header>
+
+<!-- هنا أضف زر كتم الصوت -->
+<div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+  <button id="muteBtn" 
+          style="background:#7b1fa2; border:none; padding:10px; border-radius:50%; cursor:pointer; box-shadow: 0 0 10px #7b1fa2;"
+          aria-label="كتم وتشغيل الصوت"
+          title="كتم وتشغيل الصوت">
+    <i id="muteIcon" class="fa-solid fa-volume-high" style="color:white; font-size:20px;"></i>
+  </button>
+</div>
+
+<!-- باقي محتوى الصفحة -->
+
+<nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+  <!-- روابط التنقل -->
+</nav>
+  
   <meta charset="UTF-8" />
+
   <title>Farag Dev</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -552,6 +576,37 @@
   .dark-purple { background-color: #5e0094; }
 </style>
 
+
+  <div class="programming-article" style="max-width: 750px; margin: 40px auto; display: flex; gap: 20px; align-items: center; background: #f3e5f5; border-radius: 16px; box-shadow: 0 4px 15px rgba(123,31,162,0.2); padding: 25px; direction: rtl;">
+  <img src="images/benefits-of-programming.jpg" alt="ما الفائدة من تعلم البرمجة" style="width: 45%; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 10px rgba(123,31,162,0.3);" />
+  <div style="width: 55%; text-align: right;">
+    <h3 style="color: #7b1fa2; font-size: 2rem; font-weight: bold; margin-bottom: 15px;">ما الفائدة من تعلم البرمجة؟</h3>
+    <p style="font-size: 1.15rem; line-height: 1.8; color: #444;">
+      تعلم البرمجة يتيح لك فرص عمل كثيرة ويطور مهارات التفكير المنطقي والإبداعي. كما يمكنك من تطوير أفكارك وتحويلها إلى واقع رقمي. إنها لغة العصر التي يجب أن تتقنها لتحقيق النجاح.
+    </p>
+  </div>
+  </div>
+<script>
+  const muteBtn = document.getElementById('muteBtn');
+  const muteIcon = document.getElementById('muteIcon');
+
+  muteBtn.addEventListener('click', () => {
+    const audios = document.querySelectorAll('audio');
+    let isMuted = muteIcon.classList.contains('fa-volume-xmark');
+
+    if (isMuted) {
+      // تشغيل الصوت
+      audios.forEach(audio => audio.muted = false);
+      muteIcon.classList.remove('fa-volume-xmark');
+      muteIcon.classList.add('fa-volume-high');
+    } else {
+      // كتم الصوت
+      audios.forEach(audio => audio.muted = true);
+      muteIcon.classList.remove('fa-volume-high');
+      muteIcon.classList.add('fa-volume-xmark');
+    }
+  });
+</script>
 <script>
   function copyText(text) {
     navigator.clipboard.writeText(text).then(function () {
@@ -587,7 +642,17 @@
     playSoundsLoop();
   }
 </script>
-
+<!-- بعد <nav> أو أي مكان مناسب في <body> -->
+<div class="programming-info" style="max-width: 750px; margin: 40px auto; background: #ede7f6; border-radius: 16px; box-shadow: 0 4px 20px rgba(74,20,140,0.3); padding: 30px; text-align: center; direction: rtl;">
+  <h2 style="color: #4a148c; font-size: 2.5rem; margin-bottom: 20px; font-weight: bold;">لماذا نتعلم البرمجة؟</h2>
+  <p style="font-size: 1.3rem; color: #333; line-height: 1.8; margin-bottom: 30px;">
+    البرمجة هي مهارة المستقبل التي تفتح لك أبواب لا حصر لها في عالم التكنولوجيا. تعلمها يمكنك من بناء تطبيقات ومواقع، وتحليل البيانات، وحتى ابتكار حلول جديدة للمشاكل اليومية.
+  </p>
+  <video controls style="width: 100%; max-width: 700px; border-radius: 12px; box-shadow: 0 4px 15px rgba(74,20,140,0.3);">
+    <source src="videos/learn-programming.mp4" type="video/mp4" />
+    متصفحك لا يدعم تشغيل الفيديو.
+  </video>
+</div>
   <p> "بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية</p>
       
   <img src="images/main-hero.png" alt="HTML" class="certificate" />
