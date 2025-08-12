@@ -1160,10 +1160,14 @@ onmouseout="this.style.transform='perspective(1000px) rotateX(0deg)'; this.style
     }
   }
 
-  
-<div class="marquee-container">
+ <div class="marquee-container">
   <div class="marquee-content">
-  <!-- باقي الأزرار -->
+    <!-- القطار المتحرك داخل الشريط -->
+
+    <!-- باقي الأزرار -->
+    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
+      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
+    </a>
     <a href="https://wa.me/201066047545" class="btn-skill pink dancing">
       <img src="icons/ai-icon.png" alt="" class="icon-img"/> اطلب الخدمة الآن
     </a>
@@ -1204,6 +1208,163 @@ onmouseout="this.style.transform='perspective(1000px) rotateX(0deg)'; this.style
  </div>
 </div>
 
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 20px 0;
+    direction: rtl;
+    position: relative;
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    align-items: center;
+    animation: marquee 35s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 6px 12px;
+    margin: 0 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    flex-shrink: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-skill .icon-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-left: 6px;
+  }
+
+  .btn-skill:hover {
+    transform: scale(1.1);
+  }
+
+  /* حركة رقص */
+  .dancing {
+    animation: bounce 1s infinite ease-in-out;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  /* الألوان */
+  .red         { background-color: #dc2626; }
+  .pink        { background-color: #f43f5e; }
+  .purple      { background-color: #8e44ad; }
+  .dark-red    { background-color: #e60000; }
+  .green       { background-color: #25D366; }
+  .violet      { background-color: #9333ea; }
+  .blue        { background-color: #0070ba; }
+  .orange      { background-color: #ff6600; }
+  .black       { background-color: #111111; }
+  .lemon       { background-color: #d4d700; }
+  .dark-purple { background-color: #5e0094; }
+</style>
+
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function () {
+      alert("تم نسخ: " + text);
+    });
+  }
+</script>
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px 0;
+    direction: rtl;
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    animation: marquee 25s linear infinite; /* بطأنا السرعة هنا */
+  }
+
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 10px 16px;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-skill:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
+
+     
+
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px 0;
+    direction: rtl;
+  }
+
+  .marquee-content {
+    display: inline-flex;
+    animation: marquee 25s linear infinite; /* بطأنا السرعة هنا */
+  }
+
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 10px 16px;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-skill:hover {
+    transform: scale(1.1);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+</style>
+</div>
 </style> 
 
   <script src="security.js"></script>
