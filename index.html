@@ -331,58 +331,153 @@
     100% { transform: rotate(0deg) translateY(0); }
   }
 </style>
-<nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
-  <a href="index.html" class="home">الرئيسية</a>
-  <a href="services.html" class="services">خدمات</a>
-  <a href="article.html" class="blog">مقال</a>
-  <a href="contact.html" class="contact">تواصل</a> 
-</nav>
+
+ <div class="navbar-3d">
+  <div class="navbar-content">
+    <div class="light-container">
+      <a href="index.html" class="light-link">
+        <div class="light home"></div>
+        <span class="button home-btn">الرئيسية</span>
+      </a>
+    </div>
+    <div class="light-container">
+      <a href="learn.html" class="light-link">
+        <div class="light learn"></div>
+        <span class="button learn-btn">تعلم</span>
+      </a>
+    </div>
+    <div class="light-container">
+      <a href="services.html" class="light-link">
+        <div class="light services"></div>
+        <span class="button services-btn">خدمات</span>
+      </a>
+    </div>
+    <div class="light-container">
+      <a href="article.html" class="light-link">
+        <div class="light blog"></div>
+        <span class="button blog-btn">مقالات</span>
+      </a>
+    </div>
+    <div class="light-container">
+      <a href="contact.html" class="light-link">
+        <div class="light contact"></div>
+        <span class="button contact-btn">تواصل</span>
+      </a>
+    </div>
+  </div>
+</div>
 
 <style>
-  .navbar {
-    display: flex;
-    justify-content: flex-start; /* الرئيسية على اليمين */
-    gap: 10px;
-    background: #111;
-    padding: 10px;
-    border-radius: 12px;
-  }
+.navbar-3d {
+  perspective: 1000px;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  animation: colorShift 6s infinite alternate;
+}
 
-  .navbar a {
-    padding: 8px 15px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    animation: dance 0.6s infinite alternate, signalLight 1s infinite alternate;
-    transition: transform 0.3s;
-    display: inline-block;
-  }
+.navbar-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #000000, #8B0000, #6a0dad);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform-style: preserve-3d;
+  animation: colorShift 6s infinite alternate;
+}
 
-  /* ألوان مختلفة لكل زر */
-  .home { background: #ff3b3b; box-shadow: 0 0 10px #ff3b3b; animation-delay: 0s; }
-  .services { background: #3b82ff; box-shadow: 0 0 10px #3b82ff; animation-delay: 0.2s; }
-  .blog { background: #3bff7a; box-shadow: 0 0 10px #3bff7a; animation-delay: 0.4s; }
-  .contact { background: #ff3bff; box-shadow: 0 0 10px #ff3bff; animation-delay: 0.6s; }
+.light-container {
+  text-align: center;
+  animation: dropIn 1s ease-out forwards;
+}
 
-  /* إضاءة تشبه إشارة القطر */
-  @keyframes signalLight {
-    0% { filter: brightness(1); }
-    100% { filter: brightness(0.5); }
-  }
+.light-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+}
 
-  /* حركة رقص */
-  @keyframes dance {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(3deg); }
-    50% { transform: rotate(-3deg); }
-    75% { transform: rotate(2deg); }
-    100% { transform: rotate(0deg); }
-  }
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  animation: dance 0.8s infinite alternate, signalLight 1s infinite alternate;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-shadow: 0 0 12px #fff;
+  background: none;
+  border: 2px solid #fff;
+  overflow: hidden;
+}
 
-  .navbar a:hover {
-    transform: scale(1.1);
-  }
+/* الأزرار تحت الأيقونات */
+.button {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* ألوان مختلفة لكل زر */
+.home-btn { background-color: #ff3b3b; animation-delay: 0s; }
+.learn-btn { background-color: #3b82ff; animation-delay: 0.2s; }
+.services-btn { background-color: #3bff7a; animation-delay: 0.4s; }
+.blog-btn { background-color: #ffeb3b; color: #000; animation-delay: 0.6s; }
+.contact-btn { background-color: #ff3bff; animation-delay: 0.8s; }
+
+/* حركة الأزرار للتوهج */
+@keyframes glow {
+  0% { opacity: 0.6; box-shadow: 0 0 5px currentColor; }
+  50% { opacity: 1; box-shadow: 0 0 15px currentColor; }
+  100% { opacity: 0.6; box-shadow: 0 0 5px currentColor; }
+}
+
+@keyframes signalLight {
+  0% { filter: brightness(1); box-shadow: 0 0 15px currentColor; }
+  50% { filter: brightness(0.5); box-shadow: 0 0 5px currentColor; }
+  100% { filter: brightness(1); box-shadow: 0 0 15px currentColor; }
+}
+
+@keyframes dance {
+  0%   { transform: translateY(0) rotate(0deg); }
+  15%  { transform: translateY(-4px) rotate(4deg); }
+  30%  { transform: translateY(4px) rotate(-4deg); }
+  45%  { transform: translateY(-4px) rotate(4deg); }
+  60%  { transform: translateY(4px) rotate(-4deg); }
+  75%  { transform: translateY(-2px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes dropIn {
+  0% { transform: translateY(-100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes colorShift {
+  0% { background: linear-gradient(45deg, #000000, #6a0dad); }
+  33% { background: linear-gradient(45deg, #8B0000, #6a0dad); }
+  66% { background: linear-gradient(45deg, #000000, #8B0000); }
+  100% { background: linear-gradient(45deg, #6a0dad, #000000); }
+}
+
+.light:hover {
+  transform: scale(1.3) rotateY(15deg);
+  box-shadow: 0 0 25px currentColor;
+}
 </style>
 
 <!-- </body> -->
