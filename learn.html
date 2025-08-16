@@ -1,211 +1,461 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>كورسات البرمجة</title>
+
+  <!-- Bootstrap + Font Awesome + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    /* ===== خلفية متحركة بالأزرق والأبيض ===== */
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      text-align: center;
-      background: linear-gradient(-45deg, #ffffff, #cce5ff, #007bff, #e6f0ff);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
+    :root{
+      --brand-dark:#000032;
+      --brand-primary:#007bff;
+      --brand-grad-1:#6a0dad;
+      --brand-grad-2:#8B0000;
+      --glass: rgba(255,255,255,0.08);
     }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Cairo',sans-serif;
+      background:linear-gradient(-45deg,#ffffff,#cce5ff,#007bff,#e6f0ff);
+      background-size:400% 400%;
+      animation:gradientBG 12s ease infinite;
+    }
+    @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    /* Header */
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      background:rgba(0,0,50,.8);padding:12px 24px;color:#fff
+    }
+    #username{
+      background:#e63946;border:none;padding:10px 22px;font-size:18px;font-weight:700;
+      color:#fff;border-radius:10px;cursor:pointer;animation:glowRed 3s ease-in-out infinite alternate
+    }
+    @keyframes glowRed{0%{box-shadow:0 0 8px #e63946}100%{box-shadow:0 0 20px #f77f7f}}
+    .logo-space{display:flex;align-items:center;gap:10px}
+    .logo-space img{width:44px;height:44px;object-fit:contain;animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+    /* Navbar 3D */
+    .navbar-3d{perspective:1000px;width:95%;margin:20px auto;border-radius:20px;overflow:hidden}
+    .navbar-content{
+      display:flex;justify-content:space-around;align-items:center;flex-direction:row-reverse;
+      padding:14px;border-radius:20px;background:linear-gradient(45deg,#000,var(--brand-grad-1),var(--brand-grad-2));
+      box-shadow:0 10px 30px rgba(0,0,0,.5);animation:gradientShift 8s ease-in-out infinite alternate
+    }
+    @keyframes gradientShift{
+      0%{background:linear-gradient(45deg,#000,var(--brand-grad-1))}
+      50%{background:linear-gradient(45deg,var(--brand-grad-2),#000)}
+      100%{background:linear-gradient(45deg,var(--brand-grad-1),var(--brand-grad-2))}
+    }
+    .light-container{text-align:center;animation:dropIn 1s ease forwards;opacity:0}
+    @keyframes dropIn{from{transform:translateY(-60px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .light-link{text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:16px}
+    .light{
+      width:55px;height:55px;border-radius:50%;display:flex;justify-content:center;align-items:center;
+      background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.4);
+      transition:transform .4s ease, box-shadow .4s ease;animation:pulse 2s infinite
+    }
+    .icon{width:32px;height:32px;object-fit:contain}
+    .button{display:inline-block;padding:5px 12px;font-size:13px;font-weight:700;border-radius:12px;color:#fff;animation:glow 2s infinite alternate}
+    .home-btn{background:#ff3b3b}.learn-btn{background:#3b82ff}.services-btn{background:#3bff7a}.blog-btn{background:#ffeb3b;color:#000}.contact-btn{background:#ff3bff}
+    @keyframes glow{0%{box-shadow:0 0 5px currentColor;opacity:.7}100%{box-shadow:0 0 15px currentColor;opacity:1}}
+    @keyframes pulse{0%{transform:scale(1);box-shadow:0 0 5px rgba(255,255,255,.4)}50%{transform:scale(1.1);box-shadow:0 0 15px rgba(255,255,255,.7)}100%{transform:scale(1);box-shadow:0 0 5px rgba(255,255,255,.4)}}
+    .light:hover{transform:scale(1.2) rotateY(15deg);box-shadow:0 0 25px currentColor}
+
+    /* Marquee Box (train inside a box) */
+    .marquee-box{
+      width:95%;max-width:1100px;margin:16px auto;background:#003366;border-radius:16px;padding:10px;
+      overflow:hidden;position:relative;box-shadow:0 8px 20px rgba(0,0,0,.25)
+    }
+    .track{
+      display:flex;gap:28px;align-items:center;white-space:nowrap;will-change:transform;
+      animation:trackMove 18s linear infinite
+    }
+    .car{
+      display:flex;align-items:center;gap:8px;color:#fff;background:rgba(255,255,255,.09);
+      padding:8px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.25);
+      box-shadow:inset 0 0 10px rgba(255,255,255,.06), 0 3px 10px rgba(0,0,0,.2)
+    }
+    .car i{opacity:.9}
+    @keyframes trackMove{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
     }
 
-    /* ===== الهيدر ===== */
-    header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      background: rgba(0, 0, 50, 0.7);
-      padding: 15px 30px;
-      height: 120px;
-      color: #fff;
-      flex-direction: row-reverse;
-    }
-    #username {
-      background-color: #e63946;
-      border: none;
-      padding: 12px 30px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #fff;
-      border-radius: 10px;
-      cursor: pointer;
-      animation: moveSide 3s ease-in-out infinite, glowRed 3s ease-in-out infinite alternate;
-    }
-    @keyframes moveSide {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(20px); }
-    }
-    @keyframes glowRed {
-      0% { box-shadow: 0 0 8px #e63946; }
-      100% { box-shadow: 0 0 20px #f77f7f; }
-    }
-    .logo-space {
-      width: 100px;
-      height: 100px;
-      background: url('icons/ai-icon.png') no-repeat center center;
-      background-size: contain;
-      animation: dance 2s infinite ease-in-out;
-    }
-    @keyframes dance {
-      0% { transform: rotate(0deg) translateY(0); }
-      25% { transform: rotate(10deg) translateY(-5px); }
-      75% { transform: rotate(-10deg) translateY(-5px); }
-      100% { transform: rotate(0deg) translateY(0); }
-    }
+    /* Title */
+    h1{color:#003366;margin:26px 0 16px;font-size:34px;text-align:center;text-shadow:0 2px 5px rgba(0,0,0,.2)}
 
-    /* ===== عنوان الكورسات ===== */
-    h1 {
-      color: #003366;
-      margin: 30px 0;
-      font-size: 36px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Intro video box */
+    .intro-wrap{
+      width:95%;max-width:1100px;margin:20px auto;background:rgba(255,255,255,.55);
+      backdrop-filter:blur(6px);border-radius:18px;padding:16px;box-shadow:0 8px 18px rgba(0,0,0,.18)
     }
+    .intro-video{
+      width:100%;height:360px;background:#0b1736 url('images/video-placeholder.png') center/120px no-repeat;
+      border:2px dashed rgba(255,255,255,.35);border-radius:14px
+    }
+    .intro-text{margin-top:12px;font-size:16px;color:#0b1736}
 
-    /* ===== شبكة الكورسات ===== */
-    .courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
+    /* Cards (3D + tilt) */
+    .courses{width:95%;max-width:1200px;margin:10px auto 40px}
+    .card{
+      border-radius:16px;overflow:hidden;border:none;background:rgba(255,255,255,.9);
+      transition:transform .25s ease, box-shadow .25s ease;box-shadow:0 8px 20px rgba(0,0,0,.18);
+      transform-style:preserve-3d
     }
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-    }
-    .card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-    .card h3 {
-      margin: 10px 0;
-      color: #007bff;
-    }
-    .card p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 15px;
-    }
-    .card button {
-      background: #007bff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .card button:hover {
-      background: #0056b3;
-    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 16px 28px rgba(0,0,0,.28)}
+    .card .cover{height:200px;background:linear-gradient(135deg,var(--brand-primary),#66b2ff,#e6f0ff);object-fit:cover;width:100%}
+    .card-title{color:#0b1736;font-weight:800}
+    .card-text{color:#223}
+    .btn-cta{font-weight:800}
 
-    /* ===== البانر السفلي ===== */
-    .special-offer {
-      background: linear-gradient(135deg, #007bff, #66b2ff, #e6f0ff);
-      color: #1e1e1e;
-      padding: 25px;
-      border-radius: 16px;
-      max-width: 1000px;
-      margin: 40px auto;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    /* Special Offer (kept) */
+    .special-offer{
+      background:linear-gradient(135deg,#007bff,#66b2ff,#e6f0ff);color:#1e1e1e;padding:25px;border-radius:16px;
+      max-width:1000px;margin:40px auto;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.3)
     }
-    .special-offer img {
-      width: 100%;
-      border-radius: 12px;
-      height: 220px;
-      object-fit: cover;
-      margin-bottom: 20px;
+    .special-offer img{width:100%;border-radius:12px;height:220px;object-fit:cover;margin-bottom:20px}
+    .special-offer a{display:inline-block;background:#e63946;color:#fff;padding:14px 28px;font-size:17px;text-decoration:none;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,.2);transition:.3s}
+    .special-offer a:hover{background:#b71c1c}
+
+    /* Modal payment chips */
+    .pay-chip{
+      display:flex;align-items:center;gap:10px;border:1px solid #ddd;border-radius:12px;padding:10px 12px;
+      background:#fff;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease
     }
-    .special-offer a {
-      display: inline-block;
-      background: #e63946;
-      color: white;
-      padding: 14px 28px;
-      font-size: 17px;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-    .special-offer a:hover {
-      background: #b71c1c;
-    }
-    .special-offer h3 {
-      font-size: 22px;
-      margin-top: 15px;
-      color: #003366;
-    }
+    .pay-chip:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+    .copy-badge{font-size:12px;color:#007bff;display:none}
+    .price-tag{font-size:22px;font-weight:800;color:#0b1736}
   </style>
 </head>
 <body>
-  <!-- ===== الهيدر ===== -->
+
+  <!-- Header -->
   <header>
-    <button id="username" title="زر الاسم">FaragDev98</button>
-    <div class="logo-space" title="شعار AI"></div>
+    <button id="username"><i class="fa-solid fa-user"></i> FaragDev98</button>
+    <div class="logo-space text-warning">
+      <!-- استبدال الروبوت بصورة ai-icon.png -->
+      <img src="images/ai-icon.png" alt="AI Icon">
+      <span class="fw-bold">Fabrica Courses</span>
+    </div>
   </header>
 
-  <!-- ===== الكورسات ===== -->
-  <h1>كورسات البرمجة</h1>
-  <div class="courses">
-    <div class="card">
-      <img src="https://via.placeholder.com/220x140" alt="HTML">
-      <h3>HTML للمبتدئين</h3>
-      <p>تعلم أساسيات بناء صفحات الويب باستخدام HTML.</p>
-      <button>ابدأ الآن</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/220x140" alt="CSS">
-      <h3>CSS خطوة بخطوة</h3>
-      <p>صمم مواقع جميلة باستخدام CSS بسهولة.</p>
-      <button>ابدأ الآن</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/220x140" alt="JavaScript">
-      <h3>JavaScript عملي</h3>
-      <p>أضف تفاعل وحياة لمواقعك باستخدام JavaScript.</p>
-      <button>ابدأ الآن</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/220x140" alt="Python">
-      <h3>Python أساسيات</h3>
-      <p>ابدأ البرمجة مع لغة Python بسهولة.</p>
-      <button>ابدأ الآن</button>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/220x140" alt="Project">
-      <h3>مشروع تطبيقي</h3>
-      <p>طبق ما تعلمته بعمل مشروع عملي متكامل.</p>
-      <button>ابدأ الآن</button>
+  <!-- Navbar 3D -->
+  <div class="navbar-3d">
+    <div class="navbar-content">
+      <div class="light-container">
+        <a href="index.html" class="light-link">
+          <div class="light home"><img src="icons/home.png" alt="الرئيسية" class="icon"></div>
+          <span class="button home-btn">الرئيسية</span>
+        </a>
+      </div>
+      <div class="light-container">
+        <a href="learn.html" class="light-link">
+          <div class="light learn"><img src="icons/learn.png" alt="تعلم" class="icon"></div>
+          <span class="button learn-btn">تعلم</span>
+        </a>
+      </div>
+      <div class="light-container">
+        <a href="services.html" class="light-link">
+          <div class="light services"><img src="icons/services.png" alt="خدمات" class="icon"></div>
+          <span class="button services-btn">خدمات</span>
+        </a>
+      </div>
+      <div class="light-container">
+        <a href="article.html" class="light-link">
+          <div class="light blog"><img src="icons/blog.png" alt="مقالات" class="icon"></div>
+          <span class="button blog-btn">مقالات</span>
+        </a>
+      </div>
+      <div class="light-container">
+        <a href="contact.html" class="light-link">
+          <div class="light contact"><img src="icons/contact.png" alt="تواصل" class="icon"></div>
+          <span class="button contact-btn">تواصل</span>
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- ===== إعلان خاص ===== -->
+  <!-- قطار داخل مربع -->
+  <div class="marquee-box" aria-label="شريط أخبار الكورسات">
+    <div class="track">
+      <div class="car"><i class="fa-solid fa-rocket"></i> تعلم البرمجة من الصفر حتى الاحتراف</div>
+      <div class="car"><i class="fa-solid fa-fire"></i> خصومات على الكورسات</div>
+      <div class="car"><i class="fa-regular fa-lightbulb"></i> مشاريع عملية وشروحات مبسطة</div>
+      <div class="car"><i class="fa-solid fa-phone"></i> تواصل عبر واتساب</div>
+      <!-- تكرار لتأثير اللوب السلس -->
+      <div class="car"><i class="fa-solid fa-rocket"></i> تعلم البرمجة من الصفر حتى الاحتراف</div>
+      <div class="car"><i class="fa-solid fa-fire"></i> خصومات على الكورسات</div>
+      <div class="car"><i class="fa-regular fa-lightbulb"></i> مشاريع عملية وشروحات مبسطة</div>
+      <div class="car"><i class="fa-solid fa-phone"></i> تواصل عبر واتساب</div>
+    </div>
+  </div>
+
+  <!-- عنوان -->
+  <h1>كورسات البرمجة</h1>
+
+  <!-- صندوق فيديو تعريفي عام -->
+  <section class="intro-wrap">
+    <div class="intro-video" title="ضع الفيديو التعريفي هنا (YouTube أو ملف محلي)"></div>
+    <p class="intro-text">
+      في هذه الصفحة ستجد كورسات عملية وجذّابة بخطط دفع مرنة ودعم مباشر عبر واتساب. كل كورس يحتوي على فيديو تعريفي ونص موجز يوضح الفكرة والنتيجة النهائية.
+    </p>
+  </section>
+
+  <!-- الكورسات -->
+  <section class="courses container">
+    <div class="row g-4">
+
+      <!-- 1 العمل الحر والدخل المادي -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="العمل الحر والدخل المادي" data-price="350" data-video="https://www.youtube.com/embed/" data-desc="خطوات بدء العمل الحر، بناء ملف شخصي قوي، تسعير خدماتك، واستراتيجيات الحصول على أول 10 عملاء.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Freelance+Income" alt="العمل الحر">
+          <div class="card-body">
+            <h5 class="card-title">كيف تبدأ في العمل الحر وتبني دخلًا مستمرًا</h5>
+            <p class="card-text">خطة تنفيذية للوصول لأول عميل، إدارة الوقت، والتحول لدخل مستدام.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 استخدام الهاتف لصنع منتج/خدمة -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="منتجك من هاتفك" data-price="320" data-video="https://www.youtube.com/embed/" data-desc="حوّل هاتفك لاستوديو إنتاج: صناعة منتج رقمي/خدمة، التسويق، والبيع بذكاء.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Build+With+Phone" alt="منتج من الهاتف">
+          <div class="card-body">
+            <h5 class="card-title">تعلم استخدام هاتفك لإنشاء منتج أو خدمة</h5>
+            <p class="card-text">من الفكرة للتنفيذ باستخدام تطبيقات مجانية وإدارة بسيطة.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 أساسيات البرمجة وبناء موقعك -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="أساسيات البرمجة وموقعك الأول" data-price="300" data-video="https://www.youtube.com/embed/" data-desc="منطق البرمجة، المتغيرات، التدفق، ثم تطبيق سريع لبناء موقع شخصي بسيط.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Programming+Basics+%26+Website" alt="أساسيات البرمجة">
+          <div class="card-body">
+            <h5 class="card-title">أساسيات البرمجة وكيف تبدأ موقعك</h5>
+            <p class="card-text">مدخل مبسّط للبرمجة ثم تنفيذ موقع شخصي خطوة بخطوة.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 HTML -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="HTML من الصفر" data-price="250" data-video="https://www.youtube.com/embed/" data-desc="مكوّنات الصفحة، العناصر والعناوين والقوائم والروابط وبنية سليمة لمحركات البحث.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Learn+HTML" alt="HTML">
+          <div class="card-body">
+            <h5 class="card-title">تعلم HTML وما هي وظيفتها</h5>
+            <p class="card-text">أساس كل صفحة ويب: بناء الهيكل السليم لموقعك.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 CSS -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="CSS خطوة بخطوة" data-price="260" data-video="https://www.youtube.com/embed/" data-desc="تنسيق الصفحات، الألوان، الجريد والفلِكس، وتحويل الهيكل لتصميم جذاب.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Master+CSS" alt="CSS">
+          <div class="card-body">
+            <h5 class="card-title">تعلم CSS وما هي وظيفتها</h5>
+            <p class="card-text">حوّل موقعك من هيكل بسيط لتصميم احترافي.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 JavaScript -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="JavaScript عملي" data-price="320" data-video="https://www.youtube.com/embed/" data-desc="التفاعلية، التعامل مع الـDOM، الأحداث، وجعل الموقع حيًّا وسلسًا.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=JavaScript+Essentials" alt="JavaScript">
+          <div class="card-body">
+            <h5 class="card-title">تعلم جافاسكربت</h5>
+            <p class="card-text">أضف حركة وتفاعل لموقعك بأسلوب سهل وواضح.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 إنشاء كتاب إلكتروني -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="كتابك الإلكتروني" data-price="280" data-video="https://www.youtube.com/embed/" data-desc="تحضير المحتوى، التصميم، التحويل إلى PDF، وتجهيز صفحة بيع احترافية.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Create+eBook" alt="كتاب إلكتروني">
+          <div class="card-body">
+            <h5 class="card-title">كيف تنشئ كتابًا إلكترونيًا</h5>
+            <p class="card-text">من الفكرة للنشر والبيع بخطوات عملية.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 إنشاء تطبيق -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="إنشاء تطبيق" data-price="380" data-video="https://www.youtube.com/embed/" data-desc="مبادئ بناء تطبيقات الويب/الموبايل، الأدوات وخطة إصدار أول نسخة MVP.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Build+an+App" alt="تطبيق">
+          <div class="card-body">
+            <h5 class="card-title">كيف تنشئ تطبيقًا</h5>
+            <p class="card-text">خطوات واضحة لإطلاق أول نسخة من تطبيقك.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 بناء موقع إلكتروني -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="بناء موقع إلكتروني" data-price="360" data-video="https://www.youtube.com/embed/" data-desc="اختيار الاستضافة/الدومين، بناء الصفحات، وتحسين السرعة والسيو.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=Build+Website" alt="بناء موقع">
+          <div class="card-body">
+            <h5 class="card-title">تعلم بناء موقع إلكتروني</h5>
+            <p class="card-text">من الصفر للنشر على الإنترنت بثقة.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 استخدام ChatGPT والذكاء الاصطناعي -->
+      <div class="col-md-4">
+        <div class="card h-100 tilt" data-title="استخدم الذكاء الاصطناعي بذكاء" data-price="300" data-video="https://www.youtube.com/embed/" data-desc="أساليب عملية لاستخدام ChatGPT وأدوات الذكاء الاصطناعي لزيادة الإنتاجية والأرباح.">
+          <img class="cover" src="https://via.placeholder.com/800x400?text=ChatGPT+%26+AI" alt="ChatGPT والذكاء الاصطناعي">
+          <div class="card-body">
+            <h5 class="card-title">كيف تستخدم ChatGPT والذكاء الاصطناعي</h5>
+            <p class="card-text">قوالب جاهزة وسيناريوهات عمل حقيقية.</p>
+            <button class="btn btn-primary w-100 btn-cta open-modal">تفاصيل الكورس والدفع</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- إعلان خاص (اختياري) -->
   <div class="special-offer">
     <img src="images/learn-coding-cover.jpg" alt="كورس شامل">
-    <a href="https://wa.me/201066047545">اشترك الآن</a>
+    <a href="https://wa.me/201066047545"><i class="fab fa-whatsapp"></i> اشترك الآن</a>
     <h3>كورس شامل للمبتدئين</h3>
   </div>
+
+  <!-- Modal: تفاصيل الكورس والدفع -->
+  <div class="modal fade" id="courseModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-7">
+              <div class="ratio ratio-16x9 mb-3">
+                <!-- ضع رابط الفيديو الفعلي مكان src عند التحديث -->
+                <iframe id="courseVideo" src="" allowfullscreen></iframe>
+              </div>
+              <p id="courseDesc" class="mb-0"></p>
+            </div>
+            <div class="col-md-5">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="price-tag"><span id="coursePrice">0</span> جنيه</span>
+                <a class="btn btn-success" target="_blank" href="https://wa.me/201066047545"><i class="fab fa-whatsapp"></i> تواصل واتساب</a>
+              </div>
+              <hr>
+              <p class="fw-bold mb-2">طرق الدفع السريعة:</p>
+              <div class="vstack gap-2">
+                <div class="pay-chip" data-copy="01066047545">
+                  <i class="fa-solid fa-sim-card"></i>
+                  <span>فودافون كاش: <strong>01066047545</strong></span>
+                  <span class="copy-badge ms-auto"><i class="fa-regular fa-copy"></i> تم النسخ</span>
+                </div>
+                <div class="pay-chip" data-copy="01285895096">
+                  <i class="fa-solid fa-sim-card"></i>
+                  <span>أورنج كاش: <strong>01285895096</strong></span>
+                  <span class="copy-badge ms-auto"><i class="fa-regular fa-copy"></i> تم النسخ</span>
+                </div>
+                <div class="pay-chip" data-copy="01558516081">
+                  <i class="fa-solid fa-sim-card"></i>
+                  <span>وي كاش: <strong>01558516081</strong></span>
+                  <span class="copy-badge ms-auto"><i class="fa-regular fa-copy"></i> تم النسخ</span>
+                </div>
+                <div class="pay-chip" data-copy="Farajbdallh891@gmail.com">
+                  <i class="fa-brands fa-paypal"></i>
+                  <span>PayPal: <strong>Farajbdallh891@gmail.com</strong></span>
+                  <span class="copy-badge ms-auto"><i class="fa-regular fa-copy"></i> تم النسخ</span>
+                </div>
+              </div>
+              <small class="text-muted d-block mt-2">
+                بعد التحويل ارسل إيصال الدفع على واتساب مع اسم الكورس ليتم تفعيل الوصول فورًا.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS مكتبات -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Tilt 3D بسيط
+    document.querySelectorAll('.tilt').forEach(card=>{
+      let rAF;
+      const damp = 20;
+      function tilt(e){
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left)/rect.width;
+        const y = (e.clientY - rect.top)/rect.height;
+        const rx = (y - 0.5) * -damp;
+        const ry = (x - 0.5) * damp;
+        card.style.transform = \`perspective(900px) rotateX(\${rx}deg) rotateY(\${ry}deg) translateY(-6px)\`;
+      }
+      function reset(){ card.style.transform = ''; }
+      card.addEventListener('mousemove', e=>{ cancelAnimationFrame(rAF); rAF=requestAnimationFrame(()=>tilt(e)); });
+      card.addEventListener('mouseleave', ()=>{ cancelAnimationFrame(rAF); reset(); });
+    });
+
+    // فتح المودال وملء البيانات
+    const modalEl = document.getElementById('courseModal');
+    const bsModal = new bootstrap.Modal(modalEl);
+    document.querySelectorAll('.open-modal').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const card = btn.closest('.card');
+        const title = card.dataset.title || 'تفاصيل الكورس';
+        const price = card.dataset.price || '0';
+        const video = card.dataset.video || '';
+        const desc  = card.dataset.desc  || '';
+        modalEl.querySelector('.modal-title').textContent = title;
+        modalEl.querySelector('#coursePrice').textContent = price;
+        modalEl.querySelector('#courseDesc').textContent  = desc;
+        const v = modalEl.querySelector('#courseVideo');
+        v.src = video; // ضع رابط YouTube المضمّن لاحقًا
+        bsModal.show();
+      });
+    });
+    modalEl.addEventListener('hidden.bs.modal', ()=>{
+      modalEl.querySelector('#courseVideo').src = ''; // إيقاف الفيديو عند الإغلاق
+    });
+
+    // نسخ أرقام الدفع مع وميض "تم النسخ"
+    document.querySelectorAll('.pay-chip').forEach(chip=>{
+      chip.addEventListener('click', async ()=>{
+        const text = chip.dataset.copy;
+        try{
+          await navigator.clipboard.writeText(text);
+          const badge = chip.querySelector('.copy-badge');
+          badge.style.display='inline';
+          setTimeout(()=>badge.style.display='none',1200);
+        }catch(e){ alert('لم يتم النسخ تلقائيًا، انسخ يدويًا: ' + text); }
+      });
+    });
+  </script>
 </body>
-</html>
+  </html>
