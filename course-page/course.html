@@ -1,0 +1,91 @@
+<!-- 🌐 ملف HTML - صفحة الكورس -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 كورسات البرمجة</title>
+  <link rel="stylesheet" href="course.css">
+</head>
+<body class="course-page">
+
+  <!-- 📚 قائمة الكورسات -->
+  <section class="courses">
+    <h1>📚 كورسات البرمجة</h1>
+    <p>اختر كورسك وابدأ رحلتك</p>
+
+    <div class="course-list">
+      <div class="course-card">
+        <h2>📙 كورس Python</h2>
+        <p>تعلم لغة المستقبل</p>
+        <button class="open-payment">🔓 فتح الكورس</button>
+      </div>
+
+      <div class="course-card">
+        <h2>📗 كورس JavaScript</h2>
+        <p>تعلم البرمجة التفاعلية</p>
+        <button class="open-payment">🔓 فتح الكورس</button>
+      </div>
+
+      <div class="course-card">
+        <h2>📘 كورس HTML & CSS</h2>
+        <p>ابدأ رحلتك في تصميم المواقع</p>
+        <button class="open-payment">🔓 فتح الكورس</button>
+      </div>
+
+      <div class="course-card">
+        <h2>📕 كورس PHP</h2>
+        <p>تعلم تطوير الويب بخطوات بسيطة</p>
+        <button class="open-payment">🔓 فتح الكورس</button>
+      </div>
+
+      <div class="course-card">
+        <h2>📒 كورس ++C</h2>
+        <p>تعلم البرمجة الشيئية وأساسيات الألعاب</p>
+        <button class="open-payment">🔓 فتح الكورس</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💳 نافذة الدفع -->
+  <div id="payment-modal" class="payment-modal">
+    <div class="payment-box">
+      <span class="close-modal">&times;</span>
+      <h2>💳 نموذج الدفع</h2>
+
+      <label>طريقة الدفع:</label>
+      <div class="payment-methods">
+        <div class="method">
+          <img src="icons/vodafone.png" alt="Vodafone">
+          <span>01066047545</span>
+        </div>
+        <div class="method">
+          <img src="icons/orange.png" alt="Orange">
+          <span>01285895096</span>
+        </div>
+        <div class="method">
+          <img src="icons/we.png" alt="WE">
+          <span>01558516081</span>
+        </div>
+        <div class="method">
+          <img src="icons/paypal.png" alt="PayPal">
+          <span>Farajbdallh891@gmail.com</span>
+        </div>
+      </div>
+
+      <label for="phone-number">📱 رقم الهاتف الذي دفعت منه:</label>
+      <input type="text" id="phone-number" placeholder="مثال: 01012345678">
+
+      <label for="transaction-id">🔢 رقم العملية:</label>
+      <input type="text" id="transaction-id" placeholder="@76rfDg77">
+
+      <label for="receipt">📎 إيصال الدفع (اختياري):</label>
+      <input type="file" id="receipt">
+
+      <button id="submit-payment">✔ إرسال البيانات</button>
+    </div>
+  </div>
+
+  <script src="course.js"></script>
+</body>
+</html>
