@@ -63,50 +63,7 @@
       transform: scale(1.05);
     }
 
-    /* ===== مودال الدفع ===== */
-    .modal { display: none; position: fixed; z-index: 10; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-    .modal-content {
-      background: #222; padding: 25px; border-radius: 12px;
-      max-width: 450px; margin: 100px auto; text-align: right;
-      color: #fff;
-    }
-    .close { float: left; font-size: 24px; cursor: pointer; color: #fff; }
 
-    label { display: block; margin-top: 10px; font-weight: bold; }
-    input {
-      width: 100%; padding: 10px; margin-top: 5px;
-      border-radius: 10px; border: none; outline: none;
-    }
-    button.submit-btn {
-      width: 100%; padding: 12px; margin-top: 15px;
-      background: #22c55e; color: #fff; border: none;
-      border-radius: 10px; font-size: 16px;
-      cursor: pointer; transition: 0.3s;
-    }
-    button.submit-btn:hover { background: #16a34a; }
-
-    .hidden { display: none; }
-
-    /* ===== أيقونات الدفع ===== */
-    .payment-methods {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 10px 0 20px;
-    }
-    .method-option {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.08);
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .method-option img {
-      width: 28px;
-      height: 28px;
-    }
 
     /* ===== تجاوب ===== */
     @media (min-width: 768px) { .courses-container { grid-template-columns: repeat(2, 1fr); } }
@@ -152,7 +109,7 @@
         <button class="pay-btn" data-course="python">🔓 فتح الكورس</button>
       </div>
       <div id="courseContent-python" class="hidden">
-        <h3>مقدمة الكورس</h3>
+        <h3>مقدمة اكورس</h3>
         <p>محتوى كورس Python يظهر هنا بعد التحقق ✅.</p>
         <video controls><source src="videos/python.mp4" type="video/mp4"></video>
       </div>
@@ -219,55 +176,7 @@
     </div>
   </main>
 
-  <!-- مودال الدفع -->
-  <div id="paymentModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>💳 نموذج الدفع</h2>
-      <form id="paymentForm">
         
-        <!-- اختيار طريقة الدفع -->
-        <label>طريقة الدفع:</label>
-        <div class="payment-methods">
-          <label class="method-option">
-            <input type="radio" name="method" value="vodafone" required>
-            <img src="icons/vodafone.png" alt="Vodafone">
-            <span>فودافون كاش - 01066047545</span>
-          </label>
-          <label class="method-option">
-            <input type="radio" name="method" value="orange">
-            <img src="icons/orange.png" alt="Orange">
-            <span>أورنج كاش - 01285895096</span>
-          </label>
-          <label class="method-option">
-            <input type="radio" name="method" value="we">
-            <img src="icons/we.png" alt="WE">
-            <span>وي كاش - 01558516081</span>
-          </label>
-          <label class="method-option">
-            <input type="radio" name="method" value="paypal">
-            <img src="icons/paypal.png" alt="PayPal">
-            <span>PayPal - Farajbdallh891@gmail.com</span>
-          </label>
-        </div>
-
-        <!-- رقم الهاتف -->
-        <label for="phone">رقم الهاتف الذي دفعت منه:</label>
-        <input type="tel" id="phone" placeholder="مثال: 01012345678" required>
-
-        <!-- رقم العملية -->
-        <label for="transId">رقم العملية:</label>
-        <input type="text" id="transId" placeholder="أدخل رقم العملية" required>
-
-        <!-- إيصال الدفع -->
-        <label for="receipt">إيصال الدفع (اختياري):</label>
-        <input type="file" id="receipt" accept="image/*">
-
-        <button type="submit" class="submit-btn">✔ إرسال البيانات</button>
-      </form>
-    </div>
-  </div>
-
   <script>
     const modal = document.getElementById("paymentModal");
     const closeBtn = document.querySelector(".close");
