@@ -1,0 +1,107 @@
+/* 🎨 ملف CSS - تنسيقات صفحة الكورس */
+body.course-page {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.courses {
+  padding: 30px;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.course-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.course-card:hover {
+  transform: scale(1.05);
+}
+
+button.open-payment {
+  background: #ffcc00;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 💳 نافذة الدفع */
+.payment-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-box {
+  background: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  text-align: left;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.payment-methods {
+  margin: 15px 0;
+}
+.payment-methods .method {
+  display: flex;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+.payment-methods img {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.payment-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#submit-payment {
+  width: 100%;
+  background: #6a11cb;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+#submit-payment:hover {
+  background: #2575fc;
+  }
