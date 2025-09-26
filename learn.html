@@ -73,7 +73,7 @@
     .close { float: left; font-size: 24px; cursor: pointer; color: #fff; }
 
     label { display: block; margin-top: 10px; font-weight: bold; }
-    input, select {
+    input {
       width: 100%; padding: 10px; margin-top: 5px;
       border-radius: 10px; border: none; outline: none;
     }
@@ -85,18 +85,28 @@
     }
     button.submit-btn:hover { background: #16a34a; }
 
+    .hidden { display: none; }
+
     /* ===== أيقونات الدفع ===== */
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 10px 0 20px;
+    }
     .method-option {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
     }
     .method-option img {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
     }
-
-    .hidden { display: none; }
 
     /* ===== تجاوب ===== */
     @media (min-width: 768px) { .courses-container { grid-template-columns: repeat(2, 1fr); } }
@@ -193,15 +203,31 @@
       <span class="close">&times;</span>
       <h2>💳 نموذج الدفع</h2>
       <form id="paymentForm">
+        
         <!-- اختيار طريقة الدفع -->
-        <label for="method">طريقة الدفع:</label>
-        <select id="method" required>
-          <option value="">اختر</option>
-          <option value="vodafone" data-icon="icons/vodafone.png">فودافون كاش - 01066047545</option>
-          <option value="orange" data-icon="icons/orange.png">أورنج كاش - 01285895096</option>
-          <option value="we" data-icon="icons/we.png">وي كاش - 01558516081</option>
-          <option value="paypal" data-icon="icons/paypal.png">PayPal - Farajbdallh891@gmail.com</option>
-        </select>
+        <label>طريقة الدفع:</label>
+        <div class="payment-methods">
+          <label class="method-option">
+            <input type="radio" name="method" value="vodafone" required>
+            <img src="icons/vodafone.png" alt="Vodafone">
+            <span>فودافون كاش - 01066047545</span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="method" value="orange">
+            <img src="icons/orange.png" alt="Orange">
+            <span>أورنج كاش - 01285895096</span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="method" value="we">
+            <img src="icons/we.png" alt="WE">
+            <span>وي كاش - 01558516081</span>
+          </label>
+          <label class="method-option">
+            <input type="radio" name="method" value="paypal">
+            <img src="icons/paypal.png" alt="PayPal">
+            <span>PayPal - Farajbdallh891@gmail.com</span>
+          </label>
+        </div>
 
         <!-- رقم الهاتف -->
         <label for="phone">رقم الهاتف الذي دفعت منه:</label>
@@ -240,7 +266,7 @@
     // عند إرسال نموذج الدفع
     paymentForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const method = document.getElementById("method").value;
+      const method = document.querySelector('input[name="method"]:checked').value;
       const phone = document.getElementById("phone").value;
       const transId = document.getElementById("transId").value;
 
