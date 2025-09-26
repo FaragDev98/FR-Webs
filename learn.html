@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
+      font-family: "Cairo", sans-serif;
       background: url("images/5416.jpeg") no-repeat center center fixed;
       background-size: cover;
       color: #fff;
@@ -47,18 +47,17 @@
     .course-content p { font-size: 18px; margin-bottom: 15px; }
 
     /* ===== أزرار ===== */
-    .read-more, .pay-btn, .confirm-btn {
+    .pay-btn {
       display: inline-block;
       padding: 10px 20px;
       border: 2px solid #fff;
       color: #fff;
       background: transparent;
-      text-decoration: none;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
     }
-    .read-more:hover, .pay-btn:hover, .confirm-btn:hover {
+    .pay-btn:hover {
       background: #fff;
       color: #000;
       transform: scale(1.05);
@@ -68,10 +67,35 @@
     .modal { display: none; position: fixed; z-index: 10; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
     .modal-content {
       background: #222; padding: 25px; border-radius: 12px;
-      max-width: 500px; margin: 100px auto; text-align: center;
+      max-width: 450px; margin: 100px auto; text-align: right;
+      color: #fff;
     }
-    .close { float: right; font-size: 24px; cursor: pointer; }
-    .payment-list { text-align: right; margin: 20px 0; line-height: 1.6; }
+    .close { float: left; font-size: 24px; cursor: pointer; color: #fff; }
+
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input, select {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border-radius: 10px; border: none; outline: none;
+    }
+    button.submit-btn {
+      width: 100%; padding: 12px; margin-top: 15px;
+      background: #22c55e; color: #fff; border: none;
+      border-radius: 10px; font-size: 16px;
+      cursor: pointer; transition: 0.3s;
+    }
+    button.submit-btn:hover { background: #16a34a; }
+
+    /* ===== أيقونات الدفع ===== */
+    .method-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .method-option img {
+      width: 22px;
+      height: 22px;
+    }
+
     .hidden { display: none; }
 
     /* ===== تجاوب ===== */
@@ -89,61 +113,76 @@
   <main class="courses-container">
     <!-- كورس Python -->
     <div class="course-box">
-      <div class="course-image">
-        <img src="images/python.jpg" alt="Python">
-      </div>
+      <div class="course-image"><img src="images/python.jpg" alt="Python"></div>
       <div class="course-content">
         <h2>📙 كورس Python</h2>
         <p>تعلم لغة المستقبل</p>
         <button class="pay-btn" data-course="python">🔓 فتح الكورس</button>
       </div>
-      <div id="courseContent-python" class="hidden course-inner">
+      <div id="courseContent-python" class="hidden">
         <h3>مقدمة الكورس</h3>
-        <p>محتوى كورس Python يظهر هنا بعد الدفع ✅.</p>
-        <video controls>
-          <source src="videos/python.mp4" type="video/mp4">
-          المتصفح لا يدعم تشغيل الفيديو.
-        </video>
+        <p>محتوى كورس Python يظهر هنا بعد التحقق ✅.</p>
+        <video controls><source src="videos/python.mp4" type="video/mp4"></video>
       </div>
     </div>
 
     <!-- كورس JavaScript -->
     <div class="course-box">
-      <div class="course-image">
-        <img src="images/javascript.jpg" alt="JavaScript">
-      </div>
+      <div class="course-image"><img src="images/javascript.jpg" alt="JavaScript"></div>
       <div class="course-content">
         <h2>📗 كورس JavaScript</h2>
         <p>تعلم البرمجة التفاعلية</p>
         <button class="pay-btn" data-course="javascript">🔓 فتح الكورس</button>
       </div>
-      <div id="courseContent-javascript" class="hidden course-inner">
+      <div id="courseContent-javascript" class="hidden">
         <h3>مقدمة الكورس</h3>
-        <p>محتوى كورس JavaScript يظهر هنا بعد الدفع ✅.</p>
-        <video controls>
-          <source src="videos/javascript.mp4" type="video/mp4">
-          المتصفح لا يدعم تشغيل الفيديو.
-        </video>
+        <p>محتوى كورس JavaScript يظهر هنا بعد التحقق ✅.</p>
+        <video controls><source src="videos/javascript.mp4" type="video/mp4"></video>
       </div>
     </div>
 
     <!-- كورس HTML & CSS -->
     <div class="course-box">
-      <div class="course-image">
-        <img src="images/html-css.jpg" alt="HTML & CSS">
-      </div>
+      <div class="course-image"><img src="images/html-css.jpg" alt="HTML & CSS"></div>
       <div class="course-content">
         <h2>📘 كورس HTML & CSS</h2>
         <p>ابدأ رحلتك في تصميم المواقع</p>
         <button class="pay-btn" data-course="html-css">🔓 فتح الكورس</button>
       </div>
-      <div id="courseContent-html-css" class="hidden course-inner">
+      <div id="courseContent-html-css" class="hidden">
         <h3>مقدمة الكورس</h3>
-        <p>محتوى كورس HTML & CSS يظهر هنا بعد الدفع ✅.</p>
-        <video controls>
-          <source src="videos/html-css.mp4" type="video/mp4">
-          المتصفح لا يدعم تشغيل الفيديو.
-        </video>
+        <p>محتوى كورس HTML & CSS يظهر هنا بعد التحقق ✅.</p>
+        <video controls><source src="videos/html-css.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <!-- كورس PHP -->
+    <div class="course-box">
+      <div class="course-image"><img src="images/php.jpg" alt="PHP"></div>
+      <div class="course-content">
+        <h2>📕 كورس PHP</h2>
+        <p>تعلم تطوير الويب بخطوات بسيطة</p>
+        <button class="pay-btn" data-course="php">🔓 فتح الكورس</button>
+      </div>
+      <div id="courseContent-php" class="hidden">
+        <h3>مقدمة الكورس</h3>
+        <p>محتوى كورس PHP يظهر هنا بعد التحقق ✅.</p>
+        <video controls><source src="videos/php.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <!-- كورس ++C -->
+    <div class="course-box">
+      <div class="course-image"><img src="images/cpp.jpg" alt="C++"></div>
+      <div class="course-content">
+        <h2>📒 كورس ++C</h2>
+        <p>تعلم البرمجة الشيئية وأساسيات الألعاب</p>
+        <button class="pay-btn" data-course="cpp">🔓 فتح الكورس</button>
+      </div>
+      <div id="courseContent-cpp" class="hidden">
+        <h3>مقدمة الكورس</h3>
+        <p>محتوى كورس ++C يظهر هنا بعد التحقق ✅.</p>
+        <video controls><source src="videos/cpp.mp4" type="video/mp4"></video>
       </div>
     </div>
   </main>
@@ -152,28 +191,42 @@
   <div id="paymentModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>💳 طرق الدفع</h2>
-      <p>يرجى الدفع على أحد الحسابات التالية، ثم اضغط "تم الدفع".</p>
-      <ul class="payment-list">
-        <li>📱 فودافون كاش: 01066047545</li>
-        <li>📱 أورنج كاش: 01285895096</li>
-        <li>📱 وي كاش: 01558516081</li>
-        <li>🌍 PayPal: Farajbdallh891@gmail.com</li>
-      </ul>
-      <button id="confirmPaymentBtn" class="confirm-btn">✔ تم الدفع</button>
-      <p id="countdown" class="hidden"></p>
+      <h2>💳 نموذج الدفع</h2>
+      <form id="paymentForm">
+        <!-- اختيار طريقة الدفع -->
+        <label for="method">طريقة الدفع:</label>
+        <select id="method" required>
+          <option value="">اختر</option>
+          <option value="vodafone" data-icon="icons/vodafone.png">فودافون كاش - 01066047545</option>
+          <option value="orange" data-icon="icons/orange.png">أورنج كاش - 01285895096</option>
+          <option value="we" data-icon="icons/we.png">وي كاش - 01558516081</option>
+          <option value="paypal" data-icon="icons/paypal.png">PayPal - Farajbdallh891@gmail.com</option>
+        </select>
+
+        <!-- رقم الهاتف -->
+        <label for="phone">رقم الهاتف الذي دفعت منه:</label>
+        <input type="tel" id="phone" placeholder="مثال: 01012345678" required>
+
+        <!-- رقم العملية -->
+        <label for="transId">رقم العملية:</label>
+        <input type="text" id="transId" placeholder="أدخل رقم العملية" required>
+
+        <!-- إيصال الدفع -->
+        <label for="receipt">إيصال الدفع (اختياري):</label>
+        <input type="file" id="receipt" accept="image/*">
+
+        <button type="submit" class="submit-btn">✔ إرسال البيانات</button>
+      </form>
     </div>
   </div>
 
   <script>
     const modal = document.getElementById("paymentModal");
     const closeBtn = document.querySelector(".close");
-    const confirmBtn = document.getElementById("confirmPaymentBtn");
-    const countdownEl = document.getElementById("countdown");
-
+    const paymentForm = document.getElementById("paymentForm");
     let currentCourse = null;
 
-    // فتح المودال
+    // فتح المودال عند الضغط على زر الدفع
     document.querySelectorAll(".pay-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         currentCourse = btn.dataset.course;
@@ -184,25 +237,20 @@
     // غلق المودال
     closeBtn.onclick = () => { modal.style.display = "none"; };
 
-    // عند الضغط على "تم الدفع"
-    confirmBtn.onclick = () => {
-      let timeLeft = 15;
-      countdownEl.classList.remove("hidden");
-      countdownEl.textContent = `جارٍ التحقق من الدفع... ${timeLeft} ثانية`;
+    // عند إرسال نموذج الدفع
+    paymentForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const method = document.getElementById("method").value;
+      const phone = document.getElementById("phone").value;
+      const transId = document.getElementById("transId").value;
 
-      let timer = setInterval(() => {
-        timeLeft--;
-        countdownEl.textContent = `جارٍ التحقق من الدفع... ${timeLeft} ثانية`;
-        if (timeLeft <= 0) {
-          clearInterval(timer);
-          modal.style.display = "none";
-          countdownEl.classList.add("hidden");
-          if (currentCourse) {
-            document.getElementById("courseContent-" + currentCourse).classList.remove("hidden");
-          }
-        }
-      }, 1000);
-    };
+      alert(`✅ تم إرسال بيانات الدفع:\nالطريقة: ${method}\nالهاتف: ${phone}\nرقم العملية: ${transId}`);
+
+      modal.style.display = "none";
+      if (currentCourse) {
+        document.getElementById("courseContent-" + currentCourse).classList.remove("hidden");
+      }
+    });
 
     // غلق المودال عند الضغط خارج المحتوى
     window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
