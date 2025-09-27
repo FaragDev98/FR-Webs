@@ -1,107 +1,120 @@
 /* 🎨 ملف CSS - تنسيقات صفحة الكورس */
 body.course-page {
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
   margin: 0;
+  font-family: "Cairo", sans-serif;
+  /* صورة الخلفية كما طلبت */
+  background: url("images/5416.jpeg") no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
+  line-height: 1.8;
+  text-align: right;
+}
+
+/* رأس الصفحة */
+.page-header {
+  background: rgba(0,0,0,0.5);
+  padding: 22px;
   text-align: center;
 }
+.page-header h1 { font-size: 34px; margin: 6px 0; }
+.page-header p { color: #ddd; margin: 0; }
 
-.courses {
-  padding: 30px;
-}
-
+/* قائمة الكورسات */
+.courses { padding: 20px; max-width: 1100px; margin: 18px auto; }
 .course-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
-
 .course-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  background: rgba(0,0,0,0.45);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
-.course-card:hover {
-  transform: scale(1.05);
-}
+.course-card h2 { font-size: 22px; margin: 0 0 6px; }
+.course-card p { margin: 6px 0; color: #eee; }
+.course-card .price { color: #fffb; margin-bottom: 8px; }
 
-button.open-payment {
-  background: #ffcc00;
+/* زر فتح الكورس */
+.open-payment {
+  background: linear-gradient(90deg,#ffb703,#ff743a);
   border: none;
-  padding: 10px 15px;
-  margin-top: 10px;
+  color: #111;
+  padding: 10px 14px;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+}
+.open-payment:hover { transform: translateY(-2px); }
+
+/* محتوى الكورس بعد الفتح */
+.course-content { margin-top: 12px; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; }
+.course-content video { width: 100%; border-radius: 6px; background: #000; }
+.course-img { width: 100%; max-height: 240px; object-fit: cover; border-radius: 6px; margin: 8px 0; }
+
+/* ===== المودال ===== */
+.payment-modal { 
+  display: none; 
+  position: fixed; inset: 0; 
+  background: rgba(0,0,0,0.7); 
+  justify-content: center; align-items: center;
+  z-index: 9999;
+}
+.payment-modal .payment-box {
+  width: 92%; max-width: 520px;
+  background: #fff; color: #111;
+  padding: 18px; border-radius: 12px; position: relative; text-align: right;
 }
 
-/* 💳 نافذة الدفع */
-.payment-modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-}
-
-.payment-box {
-  background: #fff;
-  color: #333;
-  padding: 25px;
-  border-radius: 15px;
-  width: 350px;
-  max-width: 90%;
-  text-align: left;
-  position: relative;
-}
-
+/* زر الإغلاق */
 .close-modal {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 22px;
-  cursor: pointer;
+  position: absolute; left: 14px; top: 10px; border: none; background: transparent;
+  cursor: pointer; font-size: 20px;
 }
 
-.payment-methods {
-  margin: 15px 0;
-}
+/* خطوات الدفع المبسطة */
+.payment-steps { background: #f6f9ff; padding: 10px; border-radius: 8px; margin-bottom: 10px; color: #111; }
+.payment-steps ol { margin: 6px 0 0 18px; padding: 0; }
+
+/* طرق الدفع - أيقونات + تمييز عند الاختيار */
+.payment-methods { margin: 10px 0; display: grid; gap: 8px; }
 .payment-methods .method {
-  display: flex;
-  align-items: center;
-  background: #f4f4f4;
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 8px;
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px; border-radius: 8px; background: #fafafa; cursor: pointer; border: 1px solid #eee;
 }
-.payment-methods img {
-  width: 35px;
-  margin-right: 10px;
+.payment-methods .method img { width: 36px; height: 36px; object-fit: contain; }
+
+/* highlight عند اختيار الطريقة (سيتم إضافة الكلاس .selected عبر JS) */
+.payment-methods .method.selected { background: #e6f7ef; border-color: #5bd08b; box-shadow: 0 6px 14px rgba(91,208,139,0.18); }
+
+/* الحقول */
+.payment-box input[type="tel"], .payment-box input[type="file"], .payment-box input[type="text"] {
+  width: 100%; padding: 10px; margin-top: 6px; border-radius: 8px; border: 1px solid #ddd;
 }
 
-.payment-box input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
+/* لافتات النجاح / الفشل */
+.banner { padding: 10px; border-radius: 8px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+.banner-success { background: #e6ffef; color: #0b6b3a; border: 1px solid #8fe0b0; }
+.banner-fail { background: #ffecec; color: #9b1c1c; border: 1px solid #f1a3a3; }
 
-#submit-payment {
-  width: 100%;
-  background: #6a11cb;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 12px;
-  cursor: pointer;
+/* زر الإرسال */
+.submit-btn {
+  width: 100%; padding: 12px; border-radius: 8px; border: none; background: #2b63ff; color: #fff; margin-top: 8px;
 }
-#submit-payment:hover {
-  background: #2575fc;
-  }
+.submit-btn:hover { background: #1b4eff; }
+
+/* رسالة المعالجة */
+.processing { margin-top: 8px; color: #555; }
+
+/* ===== حماية واجهة: منع التحديد والنسخ (غير مانعة بشكل كامل) ===== */
+body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.payment-box input, .payment-box button { user-select: text; }
+
+/* ===== تجاوب ===== */
+@media (min-width: 768px) {
+  .course-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .course-list { grid-template-columns: repeat(3, 1fr); }
+              }
