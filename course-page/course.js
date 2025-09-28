@@ -180,6 +180,55 @@ document.addEventListener('keydown', e => {
   }
 });
 
+
+// فتح المودال
+document.querySelectorAll(".open-payment").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("payment-modal").style.display = "flex";
+  });
+});
+
+// إغلاق المودال
+document.querySelector(".close-modal").addEventListener("click", () => {
+  document.getElementById("payment-modal").style.display = "none";
+});
+
+// اختيار وسيلة الدفع (تلوين الكارت)
+const methods = document.querySelectorAll(".payment-methods .method");
+methods.forEach(method => {
+  method.addEventListener("click", () => {
+    methods.forEach(m => m.classList.remove("selected"));
+    method.classList.add("selected");
+    method.querySelector("input").checked = true;
+  });
+});
+
+// إرسال الدفع
+document.getElementById("submit-payment").addEventListener("click", () => {
+  const phone = document.getElementById("phone-number").value;
+  if (phone.trim() === "") {
+    alert("من فضلك أدخل رقم الهاتف الذي دفعت منه");
+    return;
+  }
+
+  document.getElementById("processing-msg").classList.remove("hidden");
+
+  setTimeout(() => {
+    document.getElementById("processing-msg").classList.add("hidden");
+    document.getElementById("banner-success").classList.remove("hidden");
+  }, 2000);
+});
+
+// تأكيد النجاح
+document.getElementById("confirm-success").addEventListener("click", () => {
+  alert("✅ تم التحقق من الدفع - الكورس سيفتح الآن");
+  document.getElementById("payment-modal").style.display = "none";
+});
+
+// إعادة المحاولة
+document.getElementById("retry-payment").addEventListener("click", () => {
+  document.getElementById("banner-fail").classList.add("hidden");
+});
 /* ===== كشف تبديل التبويب: إذا غادر المستخدم الصفحة أثناء المعالجة، يتم إخفاء المحتوى لحماية بعض العناصر ===== */
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
