@@ -12,14 +12,12 @@
 <body class="course-page">
 
   <!-- ===== رأس الصفحة ===== -->
-  <!-- هذا هو عنوان الصفحة الرئيسي -->
   <header class="page-header">
     <h1>📚 كورسات البرمجة</h1>
     <p>اختر كورسك وابدأ رحلتك</p>
   </header>
 
   <!-- ===== قائمة الكورسات ===== -->
-  <!-- هنا نعرض الكورسات مع زر "فتح الكورس" لكل واحد -->
   <main class="courses">
     <div class="course-list">
       <!-- كورس Python -->
@@ -29,15 +27,11 @@
         <p>تعلم لغة المستقبل — من الأساس حتى المشروع العملي</p>
         <button class="open-payment">🔓 افتح الكورس</button>
 
-        <!-- محتوى الكورس (مخفي) يظهر فقط بعد التحقق من الدفع -->
         <div id="courseContent-python" class="course-content hidden">
           <h3>🎬 فيديو الدرس 1 - مقدمة Python</h3>
           <video controls src="videos/python-1.mp4"></video>
-          <p>نص شرح وملاحظات عن الدرس 1. يمكنك وضع فقرات تفصيلية هنا.</p>
+          <p>نص شرح وملاحظات عن الدرس 1.</p>
           <img src="images/python-sample.jpg" alt="صورة توضيحية" class="course-img">
-          <h3>🎬 فيديو الدرس 2 - متقدم</h3>
-          <video controls src="videos/python-2.mp4"></video>
-          <p>محتوى إضافي وتمارين وحلول وروابط.</p>
         </div>
       </article>
 
@@ -45,15 +39,13 @@
       <article class="course-card" data-course="javascript" data-price="249">
         <h2>📗 كورس JavaScript</h2>
         <p class="price">السعر: <strong>249 ج</strong></p>
-        <p>تعلم البرمجة التفاعلية وDOM وES6 ومشاريع حقيقية</p>
+        <p>تعلم البرمجة التفاعلية وDOM وES6</p>
         <button class="open-payment">🔓 افتح الكورس</button>
+
         <div id="courseContent-javascript" class="course-content hidden">
           <h3>🎬 فيديو الدرس 1 - مقدمة JavaScript</h3>
           <video controls src="videos/js-1.mp4"></video>
-          <p>نصوص وملاحظات وتمارين.</p>
-          <img src="images/js-sample.jpg" alt="صورة توضيحية" class="course-img">
-          <h3>🎬 فيديو الدرس 2 - مشاريع</h3>
-          <video controls src="videos/js-2.mp4"></video>
+          <p>ملاحظات وتمارين.</p>
         </div>
       </article>
 
@@ -61,116 +53,82 @@
       <article class="course-card" data-course="html-css" data-price="149">
         <h2>📘 كورس HTML & CSS</h2>
         <p class="price">السعر: <strong>149 ج</strong></p>
-        <p>ابدأ رحلتك في تصميم المواقع — HTML, CSS, Responsive</p>
+        <p>ابدأ رحلتك في تصميم المواقع</p>
         <button class="open-payment">🔓 افتح الكورس</button>
+
         <div id="courseContent-html-css" class="course-content hidden">
           <h3>🎬 فيديو - أساسيات HTML</h3>
           <video controls src="videos/htmlcss-1.mp4"></video>
-          <p>مقالات وصور وأمثلة عملية.</p>
-          <img src="images/html-sample.jpg" alt="صورة توضيحية" class="course-img">
         </div>
       </article>
-
-      <!-- كورس PHP -->
-      <article class="course-card" data-course="php" data-price="299">
-        <h2>📕 كورس PHP</h2>
-        <p class="price">السعر: <strong>299 ج</strong></p>
-        <p>تعلم تطوير الويب بخطوات بسيطة وربط قواعد بيانات</p>
-        <button class="open-payment">🔓 افتح الكورس</button>
-        <div id="courseContent-php" class="course-content hidden">
-          <h3>🎬 فيديو - مقدمة PHP</h3>
-          <video controls src="videos/php-1.mp4"></video>
-          <p>شرح نصي وروابط لمشروع بسيط.</p>
-        </div>
-      </article>
-
-      <!-- كورس C++ -->
-      <article class="course-card" data-course="cpp" data-price="566">
-        <h2>📒 كورس ++C</h2>
-        <p class="price">السعر: <strong>566 ج</strong></p>
-        <p>تعلم البرمجة الشيئية وأساسيات الألعاب</p>
-        <button class="open-payment">🔓 افتح الكورس</button>
-        <div id="courseContent-cpp" class="course-content hidden">
-          <h3>🎬 فيديو - مقدمة C++</h3>
-          <video controls src="videos/cpp-1.mp4"></video>
-          <p>ملفات ومراجع وتمارين.</p>
-        </div>
-      </article>
-
-    </div> <!-- .course-list -->
+    </div>
   </main>
 
   <!-- ===== مودال / نافذة الدفع ===== -->
-  <!-- ===== مودال / نافذة الدفع ===== -->
-<div id="payment-modal" class="payment-modal hidden">
-  <div class="payment-box">
-    <button class="close-modal" title="إغلاق">✖</button>
+  <div id="payment-modal" class="payment-modal hidden">
+    <div class="payment-box">
+      <button class="close-modal" title="إغلاق">✖</button>
 
-    <!-- خطوات الدفع -->
-    <div class="payment-steps">
-      <h3>خطوات الدفع</h3>
-      <ol>
-        <li>اختر وسيلة الدفع (فودافون/أورنج/وي/PayPal).</li>
-        <li>حوّل المبلغ إلى الحساب الظاهر.</li>
-        <li>ارفع إيصال الدفع أو اكتب رقم الهاتف المحول.</li>
-        <li>اضغط "إرسال البيانات" للمتابعة.</li>
-      </ol>
-      <p class="note">
-        إذا لم يفتح الكورس خلال <strong>10 دقائق</strong> تواصل عبر WhatsApp: 
-        <a id="whatsapp-link" href="https://wa.me/201066047545" target="_blank">اضغط هنا للدعم</a>
-      </p>
+      <!-- مربع خطوات الدفع المبسطة -->
+      <div class="payment-steps">
+        <h3>خطوات الدفع</h3>
+        <ol>
+          <li>اختَر وسيلة الدفع (فودافون/أورنج/وي/PayPal).</li>
+          <li>حوّل المبلغ إلى الحساب الظاهر.</li>
+          <li>ادخل رقم الهاتف وارفع إيصال الدفع.</li>
+          <li>اضغط "إرسال البيانات" للمتابعة.</li>
+        </ol>
+        <p class="note">إذا لم يفتح الكورس خلال <strong>10 دقائق</strong> تواصل عبر WhatsApp: 
+          <a href="https://wa.me/201066047545" target="_blank">اضغط هنا للدعم</a>
+        </p>
+      </div>
+
+      <!-- اختيار طريقة الدفع -->
+      <div class="payment-methods" id="methods">
+        <label class="method">
+          <input type="radio" name="method" value="vodafone">
+          <img src="icons/vodafone.png" alt="Vodafone">
+          <span>فودافون كاش - 01066047545</span>
+        </label>
+        <label class="method">
+          <input type="radio" name="method" value="orange">
+          <img src="icons/orange.png" alt="Orange">
+          <span>أورنج كاش - 01285895096</span>
+        </label>
+        <label class="method">
+          <input type="radio" name="method" value="we">
+          <img src="icons/we.png" alt="WE">
+          <span>وي كاش - 01558516081</span>
+        </label>
+        <label class="method">
+          <input type="radio" name="method" value="paypal">
+          <img src="icons/paypal.png" alt="PayPal">
+          <span>PayPal - Farajbdallh891@gmail.com</span>
+        </label>
+      </div>
+
+      <!-- الحقول -->
+      <label>📱 رقم الهاتف:</label>
+      <input id="phone-number" type="tel" placeholder="مثال: 01012345678">
+      <label>📎 إيصال الدفع (اختياري):</label>
+      <input id="receipt" type="file" accept="image/*">
+
+      <!-- لافتات -->
+      <div id="banner-success" class="banner banner-success hidden">
+        <p>✅ تم استلام بياناتك</p>
+        <button id="confirm-success">تأكيد</button>
+      </div>
+      <div id="banner-fail" class="banner banner-fail hidden">
+        <p>❌ حدث خطأ.</p>
+        <button id="retry-payment">إعادة المحاولة</button>
+      </div>
+
+      <!-- زر الإرسال -->
+      <button id="submit-payment" class="submit-btn">✔ إرسال البيانات</button>
+      <p id="processing-msg" class="processing hidden">جارٍ التحقق...</p>
     </div>
-
-    <!-- اختيار طريقة الدفع -->
-    <label>طريقة الدفع:</label>
-    <div class="payment-methods" id="methods">
-      <label class="method">
-        <input type="radio" name="method" value="vodafone">
-        <img src="icons/vodafone.png" alt="Vodafone">
-        <span>فودافون كاش - 01066047545</span>
-      </label>
-      <label class="method">
-        <input type="radio" name="method" value="orange">
-        <img src="icons/orange.png" alt="Orange">
-        <span>أورنج كاش - 01285895096</span>
-      </label>
-      <label class="method">
-        <input type="radio" name="method" value="we">
-        <img src="icons/we.png" alt="WE">
-        <span>وي كاش - 01558516081</span>
-      </label>
-      <label class="method">
-        <input type="radio" name="method" value="paypal">
-        <img src="icons/paypal.png" alt="PayPal">
-        <span>PayPal - Farajbdallh891@gmail.com</span>
-      </label>
-    </div>
-
-    <!-- المدخلات -->
-    <label>📱 رقم الهاتف الذي دفعت منه:</label>
-    <input id="phone-number" type="tel" placeholder="مثال: 01012345678">
-
-    <label>📎 إيصال الدفع (اختياري):</label>
-    <input id="receipt" type="file" accept="image/*">
-
-    <!-- لافتات النجاح / الفشل -->
-    <div id="banner-success" class="banner banner-success hidden">
-      <p>✅ تم استلام بياناتك، جاري التحقق... </p>
-      <button id="confirm-success">تأكيد</button>
-    </div>
-
-    <div id="banner-fail" class="banner banner-fail hidden">
-      <p>❌ حدث خطأ: بيانات الدفع غير صحيحة.</p>
-      <button id="retry-payment">إعادة المحاولة</button>
-    </div>
-
-    <!-- زر الإرسال -->
-    <button id="submit-payment" class="submit-btn">✔ إرسال البيانات</button>
-
-    <!-- رسالة حالة -->
-    <p id="processing-msg" class="processing hidden">جارٍ التحقق من الدفع...</p>
   </div>
-</div>
+
   <!-- ربط ملف JS -->
   <script src="course.js"></script>
 </body>
