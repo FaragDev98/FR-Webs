@@ -64,71 +64,73 @@
     </div>
   </main>
 
-  <!-- ===== مودال / نافذة الدفع ===== -->
-  <div id="payment-modal" class="payment-modal hidden">
-    <div class="payment-box">
-      <button class="close-modal" title="إغلاق">✖</button>
+<!-- ===== مودال / نافذة الدفع ===== -->
+<div id="payment-modal" class="payment-modal hidden">
+  <div class="payment-box">
+    <button class="close-modal" title="إغلاق">✖</button>
 
-      <!-- مربع خطوات الدفع المبسطة -->
-      <div class="payment-steps">
-        <h3>خطوات الدفع</h3>
-        <ol>
-          <li>اختَر وسيلة الدفع (فودافون/أورنج/وي/PayPal).</li>
-          <li>حوّل المبلغ إلى الحساب الظاهر.</li>
-          <li>ادخل رقم الهاتف وارفع إيصال الدفع.</li>
-          <li>اضغط "إرسال البيانات" للمتابعة.</li>
-        </ol>
-        <p class="note">إذا لم يفتح الكورس خلال <strong>10 دقائق</strong> تواصل عبر WhatsApp: 
-          <a href="https://wa.me/201066047545" target="_blank">اضغط هنا للدعم</a>
-        </p>
-      </div>
+    <!-- خطوات الدفع -->
+    <div class="payment-steps">
+      <h3>🚀 خطوات الدفع</h3>
+      <ol>
+        <li>اختَر وسيلة الدفع (فودافون / أورنج / وي / PayPal).</li>
+        <li>حوّل المبلغ إلى الرقم الظاهر بجانب الوسيلة.</li>
+        <li>ادخل رقم الهاتف وارفع إيصال الدفع (اختياري).</li>
+        <li>اضغط <strong>"إرسال البيانات"</strong> وسيتم التحقق فورًا.</li>
+      </ol>
+      <p class="note">⏳ في حال لم يتم فتح الكورس خلال <strong>10 دقائق</strong> 
+        تواصل معنا عبر WhatsApp: 
+        <a href="https://wa.me/201066047545" target="_blank">اضغط هنا للدعم</a>
+      </p>
+    </div>
 
-      <!-- اختيار طريقة الدفع -->
-      <div class="payment-methods" id="methods">
-        <label class="method">
-          <input type="radio" name="method" value="vodafone">
-          <img src="icons/1000015889.jpg" alt="Vodafone">
-          <span>فودافون كاش - 01066047545</span>
-        </label>
-        <label class="method">
-          <input type="radio" name="method" value="orange">
-          <img src="icons/orange.png" alt="Orange">
-          <span>أورنج كاش - 01285895096</span>
-        </label>
-        <label class="method">
-          <input type="radio" name="method" value="we">
-          <img src="icons/we.png" alt="WE">
-          <span>وي كاش - 01558516081</span>
-        </label>
-        <label class="method">
-          <input type="radio" name="method" value="paypal">
-          <img src="icons/paypal.png" alt="PayPal">
-          <span>PayPal - Farajbdallh891@gmail.com</span>
-        </label>
-      </div>
+    <!-- طرق الدفع -->
+    <div class="payment-methods" id="methods">
+      <label class="method">
+        <input type="radio" name="method" value="vodafone">
+        <img src="icons/1000015889.jpg" alt="Vodafone">
+        <span>فودافون كاش - 01066047545</span>
+      </label>
+      <label class="method">
+        <input type="radio" name="method" value="orange">
+        <img src="icons/orange.png" alt="Orange">
+        <span>أورنج كاش - 01285895096</span>
+      </label>
+      <label class="method">
+        <input type="radio" name="method" value="we">
+        <img src="icons/we.png" alt="WE">
+        <span>وي كاش - 01558516081</span>
+      </label>
+      <label class="method">
+        <input type="radio" name="method" value="paypal">
+        <img src="icons/paypal.png" alt="PayPal">
+        <span>PayPal - Farajbdallh891@gmail.com</span>
+      </label>
+    </div>
 
-      <!-- الحقول -->
+    <!-- الحقول -->
+    <div class="payment-fields">
       <label>📱 رقم الهاتف:</label>
       <input id="phone-number" type="tel" placeholder="مثال: 01012345678">
       <label>📎 إيصال الدفع (اختياري):</label>
       <input id="receipt" type="file" accept="image/*">
-
-      <!-- لافتات -->
-      <div id="banner-success" class="banner banner-success hidden">
-        <p>✅ تم استلام بياناتك</p>
-        <button id="confirm-success">تأكيد</button>
-      </div>
-      <div id="banner-fail" class="banner banner-fail hidden">
-        <p>❌ حدث خطأ.</p>
-        <button id="retry-payment">إعادة المحاولة</button>
-      </div>
-
-      <!-- زر الإرسال -->
-      <button id="submit-payment" class="submit-btn">✔ إرسال البيانات</button>
-      <p id="processing-msg" class="processing hidden">جارٍ التحقق...</p>
     </div>
-  </div>
 
+    <!-- لافتات -->
+    <div id="banner-success" class="banner banner-success hidden">
+      <p>✅ تم استلام بياناتك بنجاح!</p>
+      <button id="confirm-success">تم</button>
+    </div>
+    <div id="banner-fail" class="banner banner-fail hidden">
+      <p>❌ حدث خطأ، يرجى المحاولة مجددًا.</p>
+      <button id="retry-payment">إعادة المحاولة</button>
+    </div>
+
+    <!-- زر الإرسال -->
+    <button id="submit-payment" class="submit-btn">✔ إرسال البيانات</button>
+    <p id="processing-msg" class="processing hidden">⏳ جارٍ التحقق من الدفع...</p>
+  </div>
+</div>
   <!-- ربط ملف JS -->
   <script src="course.js"></script>
 </body>
