@@ -100,6 +100,31 @@ body.course-page {
 }
 .close-modal:hover { background: #e60000; }
 
+/* ===== المودال ===== */
+.payment-modal { 
+  display: none; 
+  position: fixed; inset: 0; 
+  background: rgba(0,0,0,0.7); 
+  justify-content: center; align-items: center;
+  z-index: 9999;
+}
+.payment-box {
+  width: 92%; max-width: 520px;
+  background: #fff; color: #111;
+  padding: 18px; border-radius: 12px; position: relative; text-align: right;
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn { from {transform: scale(0.9); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+
+/* زر الإغلاق */
+.close-modal {
+  position: absolute; top: 12px; right: 12px;
+  background: #ff4d4d; border: none; color: #fff;
+  font-size: 16px; cursor: pointer;
+  padding: 6px 10px; border-radius: 50%;
+}
+.close-modal:hover { background: #e60000; }
+
 /* خطوات الدفع */
 .payment-steps {
   background: #eef4ff; padding: 12px; border-radius: 10px; margin-bottom: 12px;
@@ -154,7 +179,6 @@ body.course-page {
 
 /* رسالة المعالجة */
 .processing { margin-top: 8px; color: #666; text-align: center; }
-
 /* تجاوب */
 @media (max-width: 480px) {
   .payment-box { padding: 15px; }
