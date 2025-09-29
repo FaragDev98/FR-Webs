@@ -72,38 +72,92 @@ body.course-page {
   cursor: pointer; font-size: 20px;
 }
 
+/* خلفية المودال */
+.payment-modal {
+  position: fixed; inset: 0;
+  display: flex; justify-content: center; align-items: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+/* صندوق الدفع */
+.payment-box {
+  background: linear-gradient(135deg,#ffffff,#f0f4ff);
+  padding: 20px; border-radius: 14px;
+  max-width: 420px; width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn { from {transform: scale(0.9); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+
+/* زر الإغلاق */
+.close-modal {
+  position: absolute; top: 12px; right: 12px;
+  background: #ff4d4d; border: none; color: #fff;
+  font-size: 16px; cursor: pointer;
+  padding: 6px 10px; border-radius: 50%;
+}
+.close-modal:hover { background: #e60000; }
+
 /* خطوات الدفع */
-.payment-steps { background: #f6f9ff; padding: 10px; border-radius: 8px; margin-bottom: 10px; color: #111; }
-.payment-steps ol { margin: 6px 0 0 18px; padding: 0; }
+.payment-steps {
+  background: #eef4ff; padding: 12px; border-radius: 10px; margin-bottom: 12px;
+  color: #111; font-size: 14px;
+}
+.payment-steps h3 { margin: 0 0 8px; font-size: 16px; color: #2b63ff; }
 
 /* طرق الدفع */
-.payment-methods { margin: 10px 0; display: grid; gap: 8px; }
-.method {
-  display: flex; align-items: center; gap: 12px;
-  padding: 8px; border-radius: 8px; background: #fafafa; cursor: pointer; border: 1px solid #eee;
+.payment-methods {
+  display: grid; gap: 8px; margin: 12px 0;
 }
+.method {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px; border-radius: 8px;
+  border: 1px solid #ddd; background: #fafafa;
+  cursor: pointer; transition: 0.2s;
+}
+.method:hover { background: #f0faff; }
 .method img { width: 36px; height: 36px; object-fit: contain; }
-.method.selected { background: #e6f7ef; border-color: #5bd08b; box-shadow: 0 6px 14px rgba(91,208,139,0.18); }
+.method.selected { background: #e6f7ef; border-color: #5bd08b; }
 
 /* الحقول */
+.payment-fields label { display: block; margin-top: 10px; font-size: 14px; color: #333; }
 .payment-box input[type="tel"], .payment-box input[type="file"] {
-  width: 100%; padding: 10px; margin-top: 6px; border-radius: 8px; border: 1px solid #ddd;
+  width: 100%; padding: 10px; margin-top: 4px;
+  border-radius: 8px; border: 1px solid #ccc;
+  font-size: 14px;
 }
 
 /* لافتات */
-.banner { padding: 10px; border-radius: 8px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+.banner {
+  margin-top: 12px; padding: 12px;
+  border-radius: 8px; display: flex;
+  justify-content: space-between; align-items: center;
+}
 .banner-success { background: #e6ffef; color: #0b6b3a; border: 1px solid #8fe0b0; }
 .banner-fail { background: #ffecec; color: #9b1c1c; border: 1px solid #f1a3a3; }
+.banner button {
+  background: #2b63ff; color: #fff; border: none;
+  padding: 6px 12px; border-radius: 6px; cursor: pointer;
+}
+.banner button:hover { background: #1b4eff; }
 
 /* زر الإرسال */
 .submit-btn {
-  width: 100%; padding: 12px; border-radius: 8px; border: none; background: #2b63ff; color: #fff; margin-top: 8px;
+  width: 100%; padding: 12px;
+  margin-top: 12px; border-radius: 8px; border: none;
+  background: #2b63ff; color: #fff; font-size: 15px;
+  cursor: pointer; transition: 0.2s;
 }
 .submit-btn:hover { background: #1b4eff; }
 
 /* رسالة المعالجة */
-.processing { margin-top: 8px; color: #555; }
+.processing { margin-top: 8px; color: #666; text-align: center; }
 
 /* تجاوب */
-@media (min-width: 768px) { .course-list { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .course-list { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) {
+  .payment-box { padding: 15px; }
+  .payment-steps { font-size: 13px; }
+  .submit-btn { font-size: 14px; }
+}
