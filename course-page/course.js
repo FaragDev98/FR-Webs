@@ -60,6 +60,24 @@ window.addEventListener("load", () => {
 
 // إغلاق المودال
 closeModalBtn.addEventListener("click", () => paymentModal.style.display = "none");
+// ⚡ جزء الدفع فقط
+
+const paymentModal = document.getElementById("payment-modal");
+const closeModalBtn = document.querySelector(".close-modal");
+const methodLabels = document.querySelectorAll(".method");
+const phoneInput = document.getElementById("phone-number");
+const receiptInput = document.getElementById("receipt");
+const submitBtn = document.getElementById("submit-payment");
+const bannerSuccess = document.getElementById("banner-success");
+const bannerFail = document.getElementById("banner-fail");
+const confirmSuccessBtn = document.getElementById("confirm-success");
+const retryBtn = document.getElementById("retry-payment");
+const processingMsg = document.getElementById("processing-msg");
+
+let selectedMethod = null;
+
+// إغلاق المودال
+closeModalBtn.addEventListener("click", () => paymentModal.style.display = "none");
 
 // اختيار وسيلة الدفع
 methodLabels.forEach(label => {
@@ -91,13 +109,6 @@ submitBtn.addEventListener("click", async e => {
   // تحقق بسيط من رقم الهاتف
   if (phoneInput.value.length >= 10) {
     showSuccess();
-
-    // 🔹 فتح الكورس بعد 10 دقائق (600000 مللي ثانية)
-    setTimeout(openCourse, 600000); 
-
-    // أو لو عايز يفتح فورًا بعد التحقق، شغل السطر تحت:
-    // openCourse();
-
   } else {
     showFail("❌ رقم الهاتف غير صحيح.");
   }
