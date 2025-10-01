@@ -16,6 +16,14 @@ const processingMsg = document.getElementById('processing-msg');
 let selectedMethod = null;
 let currentCourseId = null;
 
+// 🔒 طرق الدفع الصحيحة فقط
+const validMethods = {
+  "vodafone": "01066047545",
+  "orange": "01285895096",
+  "we": "01558516081",
+  "paypal": "Farajbdallh891@gmail.com"
+};
+
 /* فتح المودال */
 openButtons.forEach(btn => {
   btn.addEventListener('click', e => {
@@ -34,16 +42,38 @@ methodLabels.forEach(label => {
     methodLabels.forEach(l => l.classList.remove('selected'));
     label.classList.add('selected');
     selectedMethod = label.querySelector('input').value;
+    checkFormValidity();
   });
 });
+
+/* التحقق من المدخلات وتفعيل زر الإرسال */
+function checkFormValidity() {
+  if (
+    selectedMethod &&
+    /^\d{10,11}$/.test(phoneInput.value.trim()) &&
+    receiptInput.files.length > 0
+  ) {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+}
+
+/* متابعة التغييرات على الحقول */
+phoneInput.addEventListener("input", checkFormValidity);
+receiptInput.addEventListener("change", checkFormValidity);
 
 /* إرسال البيانات */
 submitBtn.addEventListener('click', async e => {
   e.preventDefault();
 
-  // تحقق من إدخال البيانات كاملة
-  if (!selectedMethod || !phoneInput.value.trim() || !receiptInput.files.length) {
-    showFail("⚠️ من فضلك اختر وسيلة الدفع، أدخل رقم الهاتف، وارفع إيصال الدفع.");
+  // إخفاء أي رسائل قديمة
+  bannerSuccess.classList.add("hidden");
+  bannerFail.classList.add("hidden");
+
+  // تحقق أن الطريقة المختارة من طرقك أنت فقط
+  if (!validMethods[selectedMethod]) {
+    showFail("❌ وسيلة الدفع غير صحيحة.");
     return;
   }
 
@@ -56,17 +86,10 @@ submitBtn.addEventListener('click', async e => {
   processingMsg.classList.add('hidden');
   submitBtn.disabled = false;
 
-  // تحقق من صحة الرقم
-  if (/^\d{10,11}$/.test(phoneInput.value.trim())) {
-    // إظهار لافتة نجاح بعد 10 ثواني
-    setTimeout(() => {
-      showSuccess();
-      // 🔒 فتح الكورس بعد الدفع (تخزين في localStorage)
-      localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
-    }, 10000);
-  } else {
-    showFail("❌ رقم الهاتف غير صحيح.");
-  }
+  // ✅ كل شيء صحيح
+  showSuccess();
+  // 🔒 فتح الكورس بعد الدفع (تخزين في localStorage)
+  localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
 });
 
 /* فتح الكورس */
@@ -103,6 +126,7 @@ function clearPaymentForm() {
   bannerSuccess.classList.add("hidden");
   bannerFail.classList.add("hidden");
   processingMsg.classList.add("hidden");
+  submitBtn.disabled = true; // زر الإرسال يبدأ معطل
 }
 
 /* تأكيد النجاح */
