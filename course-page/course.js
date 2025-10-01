@@ -1,4 +1,5 @@
 // ⚡ ملف JavaScript - تفاعل صفحة الكورس
+
 const openButtons = document.querySelectorAll('.open-payment');
 const paymentModal = document.getElementById('payment-modal');
 const closeModalBtn = document.querySelector('.close-modal');
@@ -40,8 +41,9 @@ methodLabels.forEach(label => {
 submitBtn.addEventListener('click', async e => {
   e.preventDefault();
 
-  if (!selectedMethod || !phoneInput.value.trim()) {
-    showFail("⚠️ من فضلك اختر وسيلة الدفع وأدخل رقم الهاتف.");
+  // تحقق من إدخال البيانات كاملة
+  if (!selectedMethod || !phoneInput.value.trim() || !receiptInput.files.length) {
+    showFail("⚠️ من فضلك اختر وسيلة الدفع، أدخل رقم الهاتف، وارفع إيصال الدفع.");
     return;
   }
 
@@ -54,31 +56,31 @@ submitBtn.addEventListener('click', async e => {
   processingMsg.classList.add('hidden');
   submitBtn.disabled = false;
 
-  // تحقق من رقم الهاتف
-  if (phoneInput.value.length >= 10) {
-    showSuccess();
-
-    // 🔹 فتح الكورس بعد 10 دقائق (600000 مللي ثانية)
-    setTimeout(openCourse, 600000);
-
+  // تحقق من صحة الرقم
+  if (/^\d{10,11}$/.test(phoneInput.value.trim())) {
+    // إظهار لافتة نجاح بعد 10 ثواني
+    setTimeout(() => {
+      showSuccess();
+      // 🔒 فتح الكورس بعد الدفع (تخزين في localStorage)
+      localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
+    }, 10000);
   } else {
     showFail("❌ رقم الهاتف غير صحيح.");
   }
 });
 
-// 🔹 دالة فتح الكورس
-function openCourse() {
-  localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
-  document.getElementById(`courseContent-${currentCourseId}`).classList.remove("hidden");
+/* فتح الكورس */
+function openCourse(courseId) {
+  document.getElementById(`courseContent-${courseId}`).classList.remove("hidden");
   paymentModal.style.display = "none";
 }
 
-// تحقق عند تحميل الصفحة
+/* تحقق عند تحميل الصفحة */
 window.addEventListener("load", () => {
   document.querySelectorAll('.course-card').forEach(card => {
     const courseId = card.dataset.course;
     if (localStorage.getItem(`courseUnlocked-${courseId}`) === "true") {
-      document.getElementById(`courseContent-${courseId}`).classList.remove("hidden");
+      openCourse(courseId);
     }
   });
 });
@@ -104,5 +106,7 @@ function clearPaymentForm() {
 }
 
 /* تأكيد النجاح */
-confirmSuccessBtn.addEventListener("click", () => paymentModal.style.display = "none");
+confirmSuccessBtn.addEventListener("click", () => {
+  openCourse(currentCourseId);
+});
 retryBtn.addEventListener("click", clearPaymentForm);
