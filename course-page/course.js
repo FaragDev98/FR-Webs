@@ -58,7 +58,7 @@ function checkFormValidity() {
 phoneInput.addEventListener("input", checkFormValidity);
 receiptInput.addEventListener("change", checkFormValidity);
 
-// إرسال البيانات
+// إرسال البيانات إلى السيرفر الحقيقي
 submitBtn.addEventListener('click', async e => {
   e.preventDefault();
   bannerSuccess.classList.add("hidden");
@@ -69,16 +69,30 @@ submitBtn.addEventListener('click', async e => {
     return;
   }
 
-  processingMsg.classList.remove('hidden');
-  submitBtn.disabled = true;
+  const name = document.querySelector("#name")?.value || "مستخدم مجهول";
+  const email = document.querySelector("#email")?.value || "غير محدد";
+  const course = currentCourseId || "غير محدد";
 
-  await new Promise(r => setTimeout(r, 2000));
+  try {
+    const res = await fetch("https://fabrica-backend-production.up.railway.app/course", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, course })
+    });
 
-  processingMsg.classList.add('hidden');
-  submitBtn.disabled = false;
+    const data = await res.json();
 
-  showSuccess();
-  localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
+    if (res.ok) {
+      showSuccess();
+      localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
+      console.log("✅ تم تسجيل الاشتراك بنجاح:", data);
+    } else {
+      showFail(data.message || "❌ فشل الاتصال بالسيرفر");
+    }
+  } catch (err) {
+    showFail("❌ حدث خطأ أثناء الاتصال بالسيرفر.");
+    console.error(err);
+  }
 });
 
 function openCourse(courseId) {
