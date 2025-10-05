@@ -1,4 +1,3 @@
-// ⚡ ملف JavaScript - تفاعل صفحة الكورس
 const openButtons = document.querySelectorAll('.open-payment');
 const paymentModal = document.getElementById('payment-modal');
 const closeModalBtn = document.querySelector('.close-modal');
@@ -15,14 +14,6 @@ const processingMsg = document.getElementById('processing-msg');
 let selectedMethod = null;
 let currentCourseId = null;
 
-const validMethods = {
-  "vodafone": "01066047545",
-  "orange": "01285895096",
-  "we": "01558516081",
-  "paypal": "Farajbdallh891@gmail.com"
-};
-
-// فتح المودال
 openButtons.forEach(btn => {
   btn.addEventListener('click', e => {
     currentCourseId = e.target.closest('.course-card').dataset.course;
@@ -31,10 +22,8 @@ openButtons.forEach(btn => {
   });
 });
 
-// إغلاق المودال
 closeModalBtn.addEventListener('click', () => paymentModal.style.display = 'none');
 
-// اختيار وسيلة الدفع
 methodLabels.forEach(label => {
   label.addEventListener('click', () => {
     methodLabels.forEach(l => l.classList.remove('selected'));
@@ -45,67 +34,58 @@ methodLabels.forEach(label => {
 });
 
 function checkFormValidity() {
-  if (
-    selectedMethod &&
-    /^\d{10,11}$/.test(phoneInput.value.trim())
-  ) {
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.disabled = true;
-  }
+  submitBtn.disabled = !(selectedMethod && /^\d{10,11}$/.test(phoneInput.value.trim()));
 }
 
 phoneInput.addEventListener("input", checkFormValidity);
 receiptInput.addEventListener("change", checkFormValidity);
 
-// إرسال البيانات إلى السيرفر الحقيقي
 submitBtn.addEventListener('click', async e => {
   e.preventDefault();
   bannerSuccess.classList.add("hidden");
   bannerFail.classList.add("hidden");
 
-  if (!validMethods[selectedMethod]) {
-    showFail("❌ وسيلة الدفع غير صحيحة.");
-    return;
-  }
+  const name = "عميل جديد";
+  const email = "client@example.com";
+  const course = currentCourseId;
+  const phone = phoneInput.value;
 
-  const name = document.querySelector("#name")?.value || "مستخدم مجهول";
-  const email = document.querySelector("#email")?.value || "غير محدد";
-  const course = currentCourseId || "غير محدد";
+  processingMsg.classList.remove('hidden');
+  submitBtn.disabled = true;
 
   try {
     const res = await fetch("https://fabrica-backend-production.up.railway.app/course", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, course })
+      body: JSON.stringify({ name, email, course, phone, method: selectedMethod })
     });
 
     const data = await res.json();
 
+    processingMsg.classList.add('hidden');
+    submitBtn.disabled = false;
+
     if (res.ok) {
       showSuccess();
       localStorage.setItem(`courseUnlocked-${currentCourseId}`, "true");
-      console.log("✅ تم تسجيل الاشتراك بنجاح:", data);
     } else {
-      showFail(data.message || "❌ فشل الاتصال بالسيرفر");
+      showFail(data.message || "فشل إرسال البيانات.");
     }
   } catch (err) {
-    showFail("❌ حدث خطأ أثناء الاتصال بالسيرفر.");
-    console.error(err);
+    showFail("حدث خطأ في الاتصال بالسيرفر.");
+    processingMsg.classList.add('hidden');
   }
 });
 
-function openCourse(courseId) {
-  document.getElementById(`courseContent-${courseId}`).classList.remove("hidden");
+function openCourse(id) {
+  document.getElementById(`courseContent-${id}`).classList.remove("hidden");
   paymentModal.style.display = "none";
 }
 
 window.addEventListener("load", () => {
   document.querySelectorAll('.course-card').forEach(card => {
-    const courseId = card.dataset.course;
-    if (localStorage.getItem(`courseUnlocked-${courseId}`) === "true") {
-      openCourse(courseId);
-    }
+    const id = card.dataset.course;
+    if (localStorage.getItem(`courseUnlocked-${id}`) === "true") openCourse(id);
   });
 });
 
@@ -116,7 +96,10 @@ function showSuccess() {
 function showFail(msg) {
   bannerSuccess.classList.add("hidden");
   bannerFail.classList.remove("hidden");
-  bannerFail.querySelector("p").textContent = msg;
+  bannerFail.querySelector("p")?.remove();
+  const p = document.createElement("p");
+  p.textContent = msg;
+  bannerFail.appendChild(p);
 }
 function clearPaymentForm() {
   methodLabels.forEach(l => l.classList.remove("selected"));
@@ -129,7 +112,5 @@ function clearPaymentForm() {
   submitBtn.disabled = true;
 }
 
-confirmSuccessBtn.addEventListener("click", () => {
-  openCourse(currentCourseId);
-});
+confirmSuccessBtn.addEventListener("click", () => openCourse(currentCourseId));
 retryBtn.addEventListener("click", clearPaymentForm);
