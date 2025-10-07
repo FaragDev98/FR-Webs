@@ -1,62 +1,63 @@
-/* حافظ الخلفية الأصلية كما طلبت */
-body.course-page{
-  margin:0;
-  font-family:"Cairo",sans-serif;
-  background: url("../images/5b416.jpeg") center/cover no-repeat fixed;
-  color:#fff;
-  text-align:right;
-  line-height:1.7;
+body.course-page {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  background: url("images/5b416.jpeg") center/cover no-repeat fixed;
+  color: #fff;
+  text-align: right;
 }
 
-/* header */
-.page-header{
-  background:rgba(0,0,0,0.45);
-  padding:22px;
-  text-align:center;
+.page-header {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 22px;
+  text-align: center;
 }
-.page-header h1{font-size:34px;margin:6px 0;}
-.page-header p{color:#ddd;margin:0;}
+.page-header h1 { font-size: 34px; }
+.page-header p { color: #ddd; }
 
-/* course list */
-.courses{padding:20px;max-width:1100px;margin:18px auto;}
-.course-list{display:grid;gap:18px;}
-.course-card{background:rgba(0,0,0,0.45);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.4);}
-.open-payment{background:linear-gradient(90deg,#7c3aed,#4f46e5);border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700;}
-
-/* course content */
-.course-content{margin-top:12px;background:rgba(255,255,255,0.04);padding:12px;border-radius:8px;}
-.course-content video{width:100%;border-radius:6px;background:#000;}
-.lesson{margin:12px 0;}
-
-/* modal */
-.payment-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:9999;padding:20px;}
-.payment-box{width:100%;max-width:520px;background:linear-gradient(180deg,rgba(255,255,255,0.95),#eef6ff);color:#111;padding:20px;border-radius:14px;position:relative;box-shadow:0 12px 40px rgba(10,10,40,0.6);transform:translateY(0);transition:all .25s ease;}
-.close-modal{position:absolute;top:12px;left:12px;background:#ff4d4d;border:none;color:#fff;padding:6px 10px;border-radius:50%;cursor:pointer;}
-.payment-hero h3{margin:0 0 6px;font-size:18px;color:#0b3bff;}
-.payment-methods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
-.method{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:#fff;border:1px solid #e6eefc;cursor:pointer;}
-.method img{width:44px;height:44px;object-fit:contain;}
-.method .mtext{font-size:13px;color:#0b3bff;}
-.method.selected{outline:3px solid rgba(79,70,229,0.12);box-shadow:0 6px 18px rgba(79,70,229,0.12);}
-
-/* fields */
-.payment-fields input[type="tel"], .payment-fields input[type="file"]{width:100%;padding:10px;border-radius:8px;border:1px solid #d6d6d6;margin-top:8px;font-size:14px;}
-
-/* processing & buttons */
-.processing{margin-top:8px;color:#333;text-align:center;}
-.submit-btn{width:100%;padding:12px;margin-top:12px;border-radius:10px;border:none;background:#10b981;color:#fff;font-size:16px;cursor:pointer;transition:all .18s ease;opacity:0.95;}
-.submit-btn[disabled]{opacity:0.5;cursor:not-allowed;}
-
-/* banners */
-.banner{margin-top:12px;padding:12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;}
-.banner-success{background:#e6ffef;color:#0b6b3a;border:1px solid #8fe0b0;}
-.banner-fail{background:#ffecec;color:#9b1c1c;border:1px solid #f1a3a3;}
-
-/* hidden util */
-.hidden{display:none !important;}
-
-/* responsiveness */
-@media (max-width:640px){
-  .payment-methods{grid-template-columns:1fr;}
-  .payment-box{padding:16px;}
+.course-list { display: grid; gap: 18px; padding: 20px; max-width: 1100px; margin: auto; }
+.course-card {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
+.open-payment {
+  background: linear-gradient(90deg, #7c3aed, #4f46e5);
+  border: none; color: #fff; padding: 10px 14px;
+  border-radius: 10px; cursor: pointer; font-weight: 700;
+}
+
+.payment-modal {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center; align-items: center;
+  z-index: 9999;
+}
+
+.payment-box {
+  width: 100%; max-width: 500px;
+  background: #fff; color: #000;
+  border-radius: 12px; padding: 20px;
+  position: relative;
+}
+.close-modal {
+  position: absolute; top: 10px; left: 10px;
+  background: red; color: #fff; border: none; border-radius: 50%;
+  width: 30px; height: 30px; cursor: pointer;
+}
+.payment-methods { display: grid; gap: 10px; margin: 15px 0; }
+.method { background: #f5f5f5; padding: 8px; border-radius: 8px; }
+input[type="tel"], input[type="file"] {
+  width: 100%; margin-top: 10px; padding: 8px;
+  border-radius: 8px; border: 1px solid #ccc;
+}
+.submit-btn {
+  margin-top: 10px; width: 100%;
+  background: #10b981; color: #fff; border: none;
+  padding: 10px; border-radius: 8px; cursor: pointer;
+}
+.hidden { display: none; }
+.banner { margin-top: 10px; padding: 10px; border-radius: 6px; }
+.banner-success { background: #e6ffef; color: #0b6b3a; }
+.banner-fail { background: #ffecec; color: #9b1c1c; }
