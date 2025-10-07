@@ -18,7 +18,11 @@ let selectedMethod = null;
 let currentCourseId = null;
 let currentPaymentId = null;
 let pollInterval = null;
-
+document.querySelectorAll('.open-course').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('#paymentModal').style.display = 'flex';
+  });
+});
 // فتح المودال
 openButtons.forEach(btn => {
   btn.addEventListener('click', e => {
