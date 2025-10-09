@@ -13,13 +13,7 @@ const bannerFail = document.getElementById('banner-fail');
 const confirmSuccessBtn = document.getElementById('confirm-success');
 const retryBtn = document.getElementById('retry-payment');
 const processingMsg = document.getElementById('processing-msg');
-// رابط السيرفر (Railway)
-const API_BASE = "https://html-backend-production.up.railway.app";
 
-let selectedMethod = null;
-let currentCourseId = null;
-let currentPaymentId = null;
-let pollInterval = null;
 
 // فتح نافذة الدفع عند الضغط على زر الاشتراك
 document.querySelectorAll('.open-course').forEach(btn => {
