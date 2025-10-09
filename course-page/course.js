@@ -1,4 +1,6 @@
 // course.js
+
+// تعريف العناصر
 const openButtons = document.querySelectorAll('.open-payment');
 const paymentModal = document.getElementById('payment-modal');
 const closeModalBtn = document.querySelector('.close-modal');
@@ -12,29 +14,32 @@ const confirmSuccessBtn = document.getElementById('confirm-success');
 const retryBtn = document.getElementById('retry-payment');
 const processingMsg = document.getElementById('processing-msg');
 
-const API_BASE = "https://fabrica-backend-production.up.railway.app"; // غيّر هذا إذا رابطك مختلف
+// رابط السيرفر (Railway)
+const API_BASE = "https://fabrica-backend-production.up.railway.app";
 
 let selectedMethod = null;
 let currentCourseId = null;
 let currentPaymentId = null;
 let pollInterval = null;
+
+// فتح نافذة الدفع عند الضغط على زر الاشتراك
 document.querySelectorAll('.open-course').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelector('#paymentModal').style.display = 'flex';
   });
 });
-// فتح المودال
+
+// فتح نافذة الدفع
 openButtons.forEach(btn => {
   btn.addEventListener('click', e => {
     currentCourseId = e.target.closest('.course-card').dataset.course;
     paymentModal.classList.remove('hidden');
     clearPaymentForm();
-    // focus first field
-    setTimeout(()=> phoneInput.focus(), 120);
+    setTimeout(() => phoneInput.focus(), 120);
   });
 });
 
-// إغلاق
+// إغلاق النافذة
 closeModalBtn.addEventListener('click', () => paymentModal.classList.add('hidden'));
 
 // اختيار وسيلة الدفع
@@ -47,6 +52,7 @@ methodLabels.forEach(label => {
   });
 });
 
+// التحقق من صحة الإدخال
 function checkFormValidity() {
   const phoneOk = /^\d{10,11}$/.test(phoneInput.value.trim());
   const receiptOk = receiptInput.files.length > 0;
@@ -56,6 +62,7 @@ function checkFormValidity() {
 phoneInput.addEventListener('input', checkFormValidity);
 receiptInput.addEventListener('change', checkFormValidity);
 
+// تحويل صورة الإيصال إلى base64
 function readFileAsBase64(file) {
   return new Promise((resolve, reject) => {
     const fr = new FileReader();
@@ -65,20 +72,15 @@ function readFileAsBase64(file) {
   });
 }
 
-async function showTempMessage(type, text){
-  if(type==='success') showSuccess(text);
-  else showFail(text);
-}
-
 // إرسال الطلب
 submitBtn.addEventListener('click', async (e) => {
   e.preventDefault();
   bannerSuccess.classList.add('hidden');
   bannerFail.classList.add('hidden');
 
-  if(!selectedMethod){ showFail("اختر وسيلة الدفع"); return; }
-  if(!/^\d{10,11}$/.test(phoneInput.value.trim())){ showFail("ادخل رقم هاتف صحيح"); return; }
-  if(receiptInput.files.length===0){ showFail("ارفق إيصال الدفع"); return; }
+  if (!selectedMethod) return showFail("اختر وسيلة الدفع");
+  if (!/^\d{10,11}$/.test(phoneInput.value.trim())) return showFail("ادخل رقم هاتف صحيح");
+  if (receiptInput.files.length === 0) return showFail("ارفق إيصال الدفع");
 
   processingMsg.classList.remove('hidden');
   submitBtn.disabled = true;
@@ -99,10 +101,11 @@ submitBtn.addEventListener('click', async (e) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
+
     const data = await res.json();
     processingMsg.classList.add('hidden');
 
-    if(!res.ok){
+    if (!res.ok) {
       showFail(data.message || "فشل في إرسال الطلب");
       submitBtn.disabled = false;
       return;
@@ -111,6 +114,7 @@ submitBtn.addEventListener('click', async (e) => {
     currentPaymentId = data.id;
     showPending("✅ تم إرسال الطلب. جاري التحقق من الإدارة...");
     startPollingStatus(currentPaymentId);
+
   } catch (err) {
     console.error(err);
     showFail("خطأ أثناء رفع الإيصال أو الاتصال بالسيرفر.");
@@ -119,16 +123,17 @@ submitBtn.addEventListener('click', async (e) => {
   }
 });
 
-// poll حالة الدفع
-async function startPollingStatus(paymentId){
-  if(pollInterval) clearInterval(pollInterval);
+// التحقق من حالة الدفع بشكل دوري
+async function startPollingStatus(paymentId) {
+  if (pollInterval) clearInterval(pollInterval);
 
   const check = async () => {
     try {
       const res = await fetch(`${API_BASE}/payment/${paymentId}`);
-      if(!res.ok) return;
+      if (!res.ok) return;
       const json = await res.json();
-      if(json.payment && json.payment.status === "confirmed" && json.payment.token){
+
+      if (json.payment && json.payment.status === "confirmed" && json.payment.token) {
         localStorage.setItem(`fabrica_token_${json.payment.course}`, json.payment.token);
         showSuccess("✅ تم تأكيد الدفع. سيفتح الكورس بعد 5 ثوانٍ.");
         clearInterval(pollInterval);
@@ -137,6 +142,7 @@ async function startPollingStatus(paymentId){
           paymentModal.classList.add('hidden');
         }, 5000);
       }
+
     } catch (e) {
       console.error("poll error", e);
     }
@@ -146,17 +152,18 @@ async function startPollingStatus(paymentId){
   pollInterval = setInterval(check, 5000);
 }
 
-// تحقق عند التحميل من التوكنات
+// التحقق من التوكين عند تحميل الصفحة
 window.addEventListener('load', () => {
   document.querySelectorAll('.course-card').forEach(async card => {
     const courseId = card.dataset.course;
     const token = localStorage.getItem(`fabrica_token_${courseId}`);
-    if(token){
+
+    if (token) {
       try {
         const res = await fetch(`${API_BASE}/verify-token`, {
           headers: { "Authorization": `Bearer ${token}` }
         });
-        if(res.ok) openCourse(courseId);
+        if (res.ok) openCourse(courseId);
         else localStorage.removeItem(`fabrica_token_${courseId}`);
       } catch (e) {
         console.error(e);
@@ -165,27 +172,33 @@ window.addEventListener('load', () => {
   });
 });
 
-function openCourse(courseId){
+// فتح الكورس بعد الدفع
+function openCourse(courseId) {
   document.getElementById(`courseContent-${courseId}`).classList.remove('hidden');
 }
 
-function showSuccess(msg="تم"){
+// عرض الرسائل
+function showSuccess(msg = "تم") {
   bannerFail.classList.add('hidden');
   bannerSuccess.classList.remove('hidden');
   bannerSuccess.querySelector('p').textContent = msg;
 }
-function showPending(msg){
+
+function showPending(msg) {
   bannerFail.classList.add('hidden');
   bannerSuccess.classList.remove('hidden');
   bannerSuccess.querySelector('p').textContent = msg;
 }
-function showFail(msg){
+
+function showFail(msg) {
   bannerSuccess.classList.add('hidden');
   bannerFail.classList.remove('hidden');
   bannerFail.querySelector('p').textContent = msg;
 }
-function clearPaymentForm(){
-  methodLabels.forEach(l=>l.classList.remove('selected'));
+
+// مسح النموذج
+function clearPaymentForm() {
+  methodLabels.forEach(l => l.classList.remove('selected'));
   selectedMethod = null;
   phoneInput.value = "";
   receiptInput.value = "";
@@ -195,6 +208,7 @@ function clearPaymentForm(){
   submitBtn.disabled = true;
 }
 
+// أزرار التأكيد والمحاولة مرة أخرى
 confirmSuccessBtn?.addEventListener('click', () => {
   openCourse(currentCourseId);
   paymentModal.classList.add('hidden');
