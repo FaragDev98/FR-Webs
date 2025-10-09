@@ -14,7 +14,82 @@ const confirmSuccessBtn = document.getElementById('confirm-success');
 const retryBtn = document.getElementById('retry-payment');
 const processingMsg = document.getElementById('processing-msg');
 
+// رابط السيرفر (Railway)
+const API_BASE = "https://html-backend-production.up.railway.app";
 
+let selectedMethod = null;
+let currentCourseId = null;
+let currentPaymentId = null;
+let pollInterval = null;
+
+// رابط السيرفر (Railway)
+const API_BASE = "https://html-backend-production.up.railway.app";
+
+const openButtons = document.querySelectorAll(".open-payment");
+const paymentModal = document.getElementById("payment-modal");
+const closeModalBtn = document.querySelector(".close-modal");
+const submitPaymentBtn = document.getElementById("submit-payment");
+const methodInputs = document.querySelectorAll('input[name="method"]');
+const phoneInput = document.getElementById("phone-number");
+const receiptInput = document.getElementById("receipt");
+
+let selectedMethod = null;
+let currentCourseId = null;
+
+// فتح المودال عند الضغط على "افتح الكورس"
+openButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const courseCard = e.target.closest(".course-card");
+    currentCourseId = courseCard.dataset.course;
+    paymentModal.classList.remove("hidden");
+    paymentModal.setAttribute("aria-hidden", "false");
+  });
+});
+
+// إغلاق المودال
+closeModalBtn.addEventListener("click", () => {
+  paymentModal.classList.add("hidden");
+  paymentModal.setAttribute("aria-hidden", "true");
+});
+
+// اختيار وسيلة الدفع
+methodInputs.forEach((input) => {
+  input.addEventListener("change", (e) => {
+    selectedMethod = e.target.value;
+    submitPaymentBtn.disabled = false;
+  });
+});
+
+// إرسال بيانات الدفع
+submitPaymentBtn.addEventListener("click", async () => {
+  if (!selectedMethod || !phoneInput.value || !receiptInput.files.length) {
+    alert("⚠️ يرجى إدخال جميع البيانات قبل الإرسال.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("method", selectedMethod);
+  formData.append("phone", phoneInput.value);
+  formData.append("course", currentCourseId);
+  formData.append("receipt", receiptInput.files[0]);
+
+  try {
+    const response = await fetch(`${API_BASE}/payments`, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("✅ تم إرسال بيانات الدفع بنجاح، سيتم التحقق قريبًا.");
+      paymentModal.classList.add("hidden");
+    } else {
+      alert("❌ حدث خطأ أثناء الإرسال: " + data.message);
+    }
+  } catch (err) {
+    alert("⚠️ تعذر الاتصال بالسيرفر. تأكد من تشغيله.");
+  }
+});
 // فتح نافذة الدفع عند الضغط على زر الاشتراك
 document.querySelectorAll('.open-course').forEach(btn => {
   btn.addEventListener('click', () => {
