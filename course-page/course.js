@@ -13,9 +13,8 @@ const bannerFail = document.getElementById('banner-fail');
 const confirmSuccessBtn = document.getElementById('confirm-success');
 const retryBtn = document.getElementById('retry-payment');
 const processingMsg = document.getElementById('processing-msg');
-
 // رابط السيرفر (Railway)
-const API_BASE = "https://fabrica-backend-production.up.railway.app";
+const API_BASE = "https://html-backend-production.up.railway.app";
 
 let selectedMethod = null;
 let currentCourseId = null;
