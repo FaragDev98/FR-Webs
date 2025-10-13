@@ -1,4 +1,4 @@
-const API_BASE = "https://html-backend-production.up.railway.app";
+const API_BASE = "html-backend-production.up.railway.app";
 document.addEventListener("DOMContentLoaded", () => {
   // تعريف العناصر
   const openButtons = document.querySelectorAll(".open-payment");
