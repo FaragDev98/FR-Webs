@@ -563,7 +563,39 @@
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     window.deferredPrompt = e;
+   <!-- زر تثبيت التطبيق -->
+<a href="download/app-release.apk" download id="installAppBtn">
+  📲 تثبيت التطبيق الآن
+</a>
 
+<style>
+#installAppBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg,#6a11cb,#2575fc);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 9999;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px rgba(37,117,252,0.5); }
+  50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(37,117,252,0.8); }
+  100% { transform: scale(1); box-shadow: 0 0 10px rgba(37,117,252,0.5); }
+}
+
+  <a href="download/app-release.apk" download id="installAppBtn">
+    📲 تثبيت التطبيق الآن
+  </a>
     
 <!-- الجرس المتحرك تحت الشريط -->
 <div style="text-align: center; margin-top: 30px;">
