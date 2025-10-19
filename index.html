@@ -559,47 +559,41 @@
     </a>
   </div>
 </div>
-<!-- 🔽 زر تثبيت التطبيق -->
-<style>
-#install-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(90deg,#6a11cb,#2575fc);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  cursor: pointer;
-  z-index: 9999;
-  display: none;
-  transition: 0.3s ease;
-}
-#install-btn:hover {
-  transform: scale(1.05);
-}
-</style>
-
 <script>
-let deferredPrompt;
-const installBtn = document.getElementById('install-btn');
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    window.deferredPrompt = e;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'block';
-});
+    // إنشاء الزر
+    const btn = document.createElement('button');
+    btn.textContent = '📲 تثبيت التطبيق';
+    btn.style.position = 'fixed';
+    btn.style.bottom = '20px';
+    btn.style.left = '50%';
+    btn.style.transform = 'translateX(-50%)';
+    btn.style.background = '#6a0dad';
+    btn.style.color = '#fff';
+    btn.style.padding = '10px 20px';
+    btn.style.border = 'none';
+    btn.style.borderRadius = '10px';
+    btn.style.cursor = 'pointer';
+    btn.style.fontSize = '16px';
+    btn.style.zIndex = '9999';
+    btn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+    document.body.appendChild(btn);
 
-installBtn?.addEventListener('click', async () => {
-  installBtn.style.display = 'none';
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    deferredPrompt = null;
-  }
-});
+    // عند الضغط على الزر
+    btn.addEventListener('click', async () => {
+      const promptEvent = window.deferredPrompt;
+      if (!promptEvent) return;
+      promptEvent.prompt(); // إظهار نافذة التثبيت
+      const choice = await promptEvent.userChoice;
+      if (choice.outcome === 'accepted') {
+        btn.remove(); // إخفاء الزر بعد التثبيت
+      }
+      window.deferredPrompt = null;
+    });
+  });
 </script>
 <!-- الجرس المتحرك تحت الشريط -->
 <div style="text-align: center; margin-top: 30px;">
