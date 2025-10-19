@@ -559,28 +559,9 @@
     </a>
   </div>
 </div>
-<!-- زر تثبيت التطبيق -->
-<button id="install-btn" style="display:none;">📲 تثبيت التطبيق</button>
-
-<script>
-let deferredPrompt;
-const installBtn = document.getElementById('install-btn');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'block';
-});
-
-installBtn.addEventListener('click', async () => {
-  installBtn.style.display = 'none';
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    const result = await deferredPrompt.userChoice;
-    deferredPrompt = null;
-  }
-});
-<script>install-btn {
+<!-- 🔽 زر تثبيت التطبيق -->
+<style>
+#install-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -593,7 +574,32 @@ installBtn.addEventListener('click', async () => {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   cursor: pointer;
   z-index: 9999;
+  display: none;
+  transition: 0.3s ease;
 }
+#install-btn:hover {
+  transform: scale(1.05);
+}
+</style>
+
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.style.display = 'block';
+});
+
+installBtn?.addEventListener('click', async () => {
+  installBtn.style.display = 'none';
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+  }
+});
 </script>
 <!-- الجرس المتحرك تحت الشريط -->
 <div style="text-align: center; margin-top: 30px;">
