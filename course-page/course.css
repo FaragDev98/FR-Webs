@@ -10,35 +10,49 @@ body.course-page {
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
 }
-.page-header h1 { font-size: 32px; margin: 0; }
+.page-header h1 { font-size: 32px; margin: 0; color: #9bf4ff; }
 .page-header p { color: #ccc; margin: 5px 0 0; }
 
 .course-list {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 15px;
 }
+
 .course-card {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  width: 90%;
+  max-width: 750px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s ease;
 }
-.course-card h2 { margin: 0; }
-.course-card p { margin: 8px 0; }
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
+.course-card video {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
 
 .open-payment {
   background: linear-gradient(90deg, #7c3aed, #4f46e5);
   border: none;
   color: #fff;
-  padding: 10px 16px;
+  padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 700;
+  transition: 0.3s;
 }
-.open-payment:hover { opacity: 0.9; }
+.open-payment:hover { opacity: 0.9; transform: scale(1.05); }
 
 /* نافذة الدفع */
 .payment-modal {
@@ -51,21 +65,22 @@ body.course-page {
   backdrop-filter: blur(5px);
   z-index: 1000;
 }
-
-.payment-modal:not(.hidden) {
-  display: flex;
-}
+.payment-modal:not(.hidden) { display: flex; }
 
 .payment-box {
   background: #fff;
-  color: #222;
+  color: #111;
   padding: 25px;
   border-radius: 20px;
-  max-width: 400px;
+  max-width: 420px;
   width: 90%;
   text-align: right;
   position: relative;
-  animation: fadeIn 0.3s ease;
+  animation: slideUp 0.4s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .close-modal {
@@ -79,19 +94,28 @@ body.course-page {
   cursor: pointer;
 }
 
+/* طرق الدفع */
 .payment-methods label {
-  display: block;
-  margin: 8px 0;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background: #f8f8ff;
-  border-radius: 8px;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
+.payment-methods label:hover {
+  background: #ece6ff;
+  transform: scale(1.02);
+}
+.pay-icon { width: 30px; height: 30px; object-fit: contain; }
 
 .payment-fields input {
   width: 100%;
-  margin: 6px 0;
-  padding: 8px;
+  margin: 8px 0;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
@@ -104,15 +128,17 @@ body.course-page {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
+.submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 .processing { text-align: center; color: #444; }
 
-.banner { display: none; text-align: center; margin-top: 10px; padding: 10px; border-radius: 10px; }
+.banner { text-align: center; margin-top: 10px; padding: 10px; border-radius: 10px; }
 .banner-success { background: #e6ffef; color: #0b6b3a; }
 .banner-fail { background: #ffecec; color: #9b1c1c; }
 
 @keyframes fadeIn {
-  from { transform: translateY(15px); opacity: 0; }
+  from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
