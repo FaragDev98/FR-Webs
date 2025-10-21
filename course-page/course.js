@@ -65,16 +65,17 @@ submitBtn.addEventListener("click", async () => {
         body: JSON.stringify(paymentData)
       });
 
-      const data = await res.json();
       processingMsg.classList.add("hidden");
 
-      if (res.ok) successBanner.style.display = "block";
-      else failBanner.style.display = "block";
-
+      if (res.ok) {
+        successBanner.classList.remove("hidden");
+      } else {
+        failBanner.classList.remove("hidden");
+      }
     } catch (err) {
       console.error("❌ Error:", err);
       processingMsg.classList.add("hidden");
-      failBanner.style.display = "block";
+      failBanner.classList.remove("hidden");
     }
   };
 
@@ -90,10 +91,10 @@ document.getElementById("confirm-success").addEventListener("click", () => {
 function resetForm() {
   phoneInput.value = "";
   receiptInput.value = "";
-  document.querySelectorAll('input[name="method"]').forEach(r => r.checked = false);
+  document.querySelectorAll('input[name="method"]').forEach(r => (r.checked = false));
   selectedMethod = null;
   submitBtn.disabled = true;
-  successBanner.style.display = "none";
-  failBanner.style.display = "none";
+  successBanner.classList.add("hidden");
+  failBanner.classList.add("hidden");
   processingMsg.classList.add("hidden");
 }
