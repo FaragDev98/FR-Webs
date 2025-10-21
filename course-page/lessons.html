@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎓 دروس HTML & CSS & JavaScript</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      background: url("images/5416.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 25px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+    header p {
+      color: #ddd;
+      margin-top: 8px;
+    }
+
+    .lesson-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .lesson {
+      background: rgba(0,0,0,0.6);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+    .lesson:hover {
+      transform: scale(1.02);
+    }
+
+    .lesson video {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .lesson h2 {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .lesson p {
+      font-size: 18px;
+      color: #e4e4e4;
+      line-height: 1.7;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #6366f1, #8b5cf6);
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+      margin-top: 50px;
+    }
+
+    /* حركات أثناء السحب */
+    .lesson {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .lesson.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 22px; }
+      .lesson h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>📘 كورس HTML & CSS & JavaScript</h1>
+    <p>ابدأ رحلتك في تطوير الويب خطوة بخطوة</p>
+  </header>
+
+  <main class="lesson-container">
+
+    <!-- درس HTML -->
+    <section class="lesson">
+      <video controls poster="images/html.jpg">
+        <source src="videos/html-intro.mp4" type="video/mp4">
+      </video>
+      <h2>📙 مقدمة في HTML</h2>
+      <p>تعرف على أساسيات لغة HTML وكيف تبني الهيكل الأساسي لأي موقع ويب خطوة بخطوة.</p>
+      <a href="#" class="download-btn">📥 تحميل الملخص</a>
+    </section>
+
+    <!-- درس CSS -->
+    <section class="lesson">
+      <video controls poster="images/css.jpg">
+        <source src="videos/css-design.mp4" type="video/mp4">
+      </video>
+      <h2>🎨 تصميم المواقع باستخدام CSS</h2>
+      <p>تعلم كيفية تزيين صفحاتك بالألوان والخطوط والهوامش وإنشاء واجهات جميلة وجذابة.</p>
+      <a href="#" class="download-btn">📥 تحميل الملخص</a>
+    </section>
+
+    <!-- درس JavaScript -->
+    <section class="lesson">
+      <video controls poster="images/js.jpg">
+        <source src="videos/javascript.mp4" type="video/mp4">
+      </video>
+      <h2>⚡ التفاعل باستخدام JavaScript</h2>
+      <p>ابدأ بفهم كيفية جعل صفحاتك تفاعلية باستخدام JavaScript، التحكم بالأزرار والنصوص والمحتوى الحي.</p>
+      <a href="#" class="download-btn">📥 تحميل الملخص</a>
+    </section>
+
+  </main>
+
+  <footer>© 2025 Fabrica Courses — بإبداع 💜 من فراج عبدالله</footer>
+
+  <script>
+    // تأثير ظهور الدروس تدريجيًا أثناء السحب
+    const lessons = document.querySelectorAll('.lesson');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.9;
+      lessons.forEach(l => {
+        const top = l.getBoundingClientRect().top;
+        if (top < trigger) l.classList.add('show');
+      });
+    });
+  </script>
+</body>
+</html>
