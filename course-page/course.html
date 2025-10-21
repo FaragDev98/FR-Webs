@@ -1,64 +1,77 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>📚 كورسات البرمجة</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 💰كورسات FR.Webs</title>
   <link rel="stylesheet" href="course.css" />
 </head>
 
 <body class="course-page">
   <header class="page-header">
-    <h1>📚 كورسات البرمجة</h1>
-    <p>اختر كورسك وابدأ رحلتك</p>
+    <h1>⌨️ كورسات FRWEBS الاحترافية</h1>
+    <p>ابدأ رحلتك في تعلم البرمجة والعمل الحر معنا</p>
   </header>
 
-  <main class="courses">
-    <div class="course-list">
+  <main class="course-list">
+    <!-- الكورس 1 -->
+    <article class="course-card" data-course="freelance">
+      <video controls poster="images/freelance-thumb.jpg">
+        <source src="videos/freelance-ad.mp4" type="video/mp4">
+        متصفحك لا يدعم الفيديو.
+      </video>
+      <h2>💼 كورس العمل الحر والمهارات الرقمية</h2>
+      <p>تعلم كيف تبدأ كمستقل ناجح وتبني دخلك من الإنترنت في مجالات البرمجة، التصميم والتسويق.</p>
+      <button class="open-payment">اشترك الآن</button>
+    </article>
 
-      <!-- Python -->
-      <article class="course-card" data-course="Python" data-price="199">
-        <h2>📙 كورس Python</h2>
-        <p class="price">السعر: <strong>199 ج</strong></p>
-        <p>تعلم لغة المستقبل — من الأساس حتى المشروع العملي</p>
-        <button class="open-payment">🔓 اشترك الآن</button>
-      </article>
+    <!-- الكورس 2 -->
+    <article class="course-card" data-course="html-css-js">
+      <video controls poster="images/htmlcss-thumb.jpg">
+        <source src="videos/html-css-js.mp4" type="video/mp4">
+        متصفحك لا يدعم الفيديو.
+      </video>
+      <h2>💻 كورس HTML & CSS & JavaScript</h2>
+      <p>ابدأ من الصفر واصنع مواقع ويب تفاعلية خطوة بخطوة حتى الاحتراف.</p>
+      <button class="open-payment">اشترك الآن</button>
+    </article>
 
-      <!-- JavaScript -->
-      <article class="course-card" data-course="JavaScript" data-price="249">
-        <h2>📗 كورس JavaScript</h2>
-        <p class="price">السعر: <strong>249 ج</strong></p>
-        <p>تعلم البرمجة التفاعلية وDOM وES6</p>
-        <button class="open-payment">🔓 اشترك الآن</button>
-      </article>
-
-      <!-- HTML & CSS -->
-      <article class="course-card" data-course="HTML & CSS" data-price="149">
-        <h2>📘 كورس HTML & CSS</h2>
-        <p class="price">السعر: <strong>149 ج</strong></p>
-        <p>ابدأ رحلتك في تصميم المواقع</p>
-        <button class="open-payment">🔓 اشترك الآن</button>
-      </article>
-    </div>
+    <!-- الكورس 3 -->
+    <article class="course-card" data-course="frontend-server">
+      <video controls poster="images/frontend-thumb.jpg">
+        <source src="videos/frontend-server.mp4" type="video/mp4">
+        متصفحك لا يدعم الفيديو.
+      </video>
+      <h2>🌐 كورس الفرونت إند والسيرفر</h2>
+      <p>تعلم كيف تربط واجهات المواقع بالخوادم لبناء مشاريع كاملة ومتقدمة.</p>
+      <button class="open-payment">اشترك الآن</button>
+    </article>
   </main>
 
   <!-- نافذة الدفع -->
-  <div id="payment-modal" class="payment-modal hidden" aria-hidden="true">
-    <div class="payment-box" role="dialog" aria-modal="true">
-      <button class="close-modal" title="إغلاق">✖</button>
-
+  <div id="payment-modal" class="payment-modal hidden">
+    <div class="payment-box">
+      <button class="close-modal">✖</button>
       <h3>💳 اشترك في الكورس</h3>
-      <p>اختر وسيلة الدفع وأرسل إيصال التحويل للتحقق السريع</p>
+      <p>اختر وسيلة الدفع وأرسل إيصال التحويل للتحقق</p>
 
       <div class="payment-methods">
-        <label><input type="radio" name="method" value="vodafone"> فودافون كاش <strong>01066047545</strong></label>
-        <label><input type="radio" name="method" value="orange"> أورنج كاش <strong>01285895096</strong></label>
-        <label><input type="radio" name="method" value="we"> وي كاش <strong>01558516081</strong></label>
-        <label><input type="radio" name="method" value="paypal"> PayPal <strong>Farajbdallh891@gmail.com</strong></label>
+        <label><input type="radio" name="method" value="vodafone">
+          <img src="course-page/icons/vodafone.png" class="pay-icon"> فودافون كاش <strong>01066047545</strong>
+        </label>
+        <label><input type="radio" name="method" value="orange">
+          <img src="course-page/icons/orange.png" class="pay-icon"> أورنج كاش <strong>01285895096</strong>
+        </label>
+        <label><input type="radio" name="method" value="we">
+          <img src="course-page/icons/we.png" class="pay-icon"> وي كاش <strong>01558516081</strong>
+        </label>
+        <label><input type="radio" name="method" value="paypal">
+          <img src="course-page/icons/paypal.png" class="pay-icon"> PayPal <strong>Farajbdallh891@gmail.com</strong>
+        </label>
       </div>
 
       <div class="payment-fields">
-        <input id="phone-number" type="tel" placeholder="رقم الهاتف المرسل منه">
+        <input id="phone-number" type="tel" placeholder="رقم الهاتف">
         <input id="receipt" type="file" accept="image/*">
       </div>
 
@@ -77,7 +90,7 @@
     </div>
   </div>
 
+  <footer>© 2025 Fabrica Courses — جميع الحقوق محفوظة</footer>
   <script src="course.js"></script>
-  
 </body>
 </html>
