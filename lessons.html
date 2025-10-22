@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>📘 صفحة الدرس — خريطة الطريق</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent1:#7c3aed;
+    --accent2:#4f46e5;
+    --glass: rgba(255,255,255,0.06);
+    --glass-2: rgba(255,255,255,0.08);
+    --white-weak: rgba(255,255,255,0.9);
+  }
+  html,body{height:100%;margin:0;padding:0;}
+  body{
+    font-family:"Cairo",sans-serif;
+    background: url("images/5416.jpeg") center/cover fixed;
+    color:#fff;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-y:auto;
+    scroll-behavior:smooth;
+  }
+
+  /* Header + progress */
+  header.appbar{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(10,7,30,0.6), rgba(10,7,30,0.35));
+    padding:14px 18px;
+    display:flex;align-items:center;justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,0.04);
+  }
+  .title{
+    display:flex;flex-direction:column;gap:4px;text-align:right;
+  }
+  .title h1{margin:0;font-size:18px;}
+  .title p{margin:0;color:rgba(255,255,255,0.75);font-size:13px;}
+
+  .progress-wrap{width:320px;max-width:48vw;}
+  .progress-label{font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:6px;text-align:left}
+  .progress-bar{
+    height:10px;border-radius:999px;background:rgba(255,255,255,0.12);overflow:hidden;
+    box-shadow:inset 0 -2px 6px rgba(0,0,0,0.6);
+  }
+  .progress-bar > i{
+    display:block;height:100%;width:0%;
+    background:linear-gradient(90deg,var(--accent1),var(--accent2));
+    transition:width .4s ease;
+  }
+
+  /* Container that gives the vertical "road" feel */
+  main.map-wrap{
+    max-width:1000px;margin:18px auto;padding:30px 18px 120px;
+    position:relative;
+  }
+
+  /* The visual road (center) */
+  .road{
+    position:absolute;left:50%;transform:translateX(50%); /* we'll align nodes left of it visually (RTL view) */
+    top:0;bottom:0;width:6px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    box-shadow:0 0 40px rgba(79,70,229,0.12), 0 0 20px rgba(124,58,237,0.06);
+    border-radius:4px;
+    z-index:1;
+  }
+
+  /* Node (each step) layout */
+  .node {
+    position:relative;
+    width:100%;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin:70px 0;
+    z-index:5;
+    transition:transform .45s cubic-bezier(.2,.9,.2,1), opacity .45s;
+    opacity:0; transform: translateY(30px);
+  }
+  .node.show{opacity:1;transform:none}
+
+  /* alternate sides for visual path */
+  .node:nth-child(odd) .card { margin-right: calc(50% + 40px); text-align:right; }
+  .node:nth-child(even) .card { margin-left: calc(50% + 40px); text-align:right; }
+
+  /* circular marker on the road */
+  .marker {
+    position:absolute;
+    left:50%; transform:translateX(-50%);
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(180deg,var(--accent1),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:700;font-size:18px;
+    box-shadow:0 10px 30px rgba(79,70,229,0.25);
+    z-index:6;
+  }
+  /* place marker aligned vertically with node */
+  .node .marker { position:absolute; top:0; transform:translate(-50%,-50%); }
+
+  /* card that contains lesson content */
+  .card{
+    width:48%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position:relative; z-index:8;
+  }
+
+  .card h3{margin:0 0 8px 0;font-size:20px}
+  .card p{margin:0 0 12px 0;color:rgba(255,255,255,0.85)}
+  .media{
+    border-radius:12px;overflow:hidden;margin-bottom:12px;background:var(--glass-2);
+  }
+  .media video, .media img { width:100%; display:block; height:auto; max-height:360px; object-fit:cover; }
+
+  .card .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .btn{
+    background:linear-gradient(90deg,var(--accent1),var(--accent2));
+    color:#fff;padding:9px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700;
+    box-shadow:0 8px 18px rgba(79,70,229,0.18);
+  }
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff}
+  .small { font-size:13px;padding:6px 8px;border-radius:8px }
+
+  .attachments{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .attachments img{width:48%;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.45)}
+
+  /* status pill on top-right of card */
+  .status{
+    position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.45);padding:6px 10px;border-radius:999px;font-weight:700;
+    border:1px solid rgba(255,255,255,0.04)
+  }
+
+  /* responsive tweaks */
+  @media(max-width:900px){
+    .card{width:86%;}
+    .node:nth-child(odd) .card, .node:nth-child(even) .card { margin:0 auto; }
+    .road{left:8%;transform:none}
+    .marker{left:8%}
+  }
+
+  /* floating nav bottom (optional icons) */
+  .bottom-nav{
+    position:fixed;left:50%;transform:translateX(-50%);bottom:16px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    padding:10px 14px;border-radius:999px;backdrop-filter:blur(6px);z-index:60;border:1px solid rgba(255,255,255,0.04);
+    display:flex;gap:10px;align-items:center;
+  }
+  .bottom-nav button{background:transparent;border:none;color:#fff;padding:8px;font-weight:700;cursor:pointer}
+
+  /* little helper for progress count inside marker */
+  .marker .num{font-size:14px;opacity:0.95}
+  .marker .dot{font-size:11px;margin-right:6px;opacity:0.9}
+
+</style>
+</head>
+<body>
+
+<header class="appbar">
+  <div class="title">
+    <h1>📘 كورس: HTML & CSS & JavaScript</h1>
+    <p>مسار الدروس — اسحب لتحت لمشاهدة الطريق والدروس</p>
+  </div>
+
+  <div class="progress-wrap" aria-hidden="false">
+    <div class="progress-label">التقدم: <span id="progTxt">0 / 6</span></div>
+    <div class="progress-bar" aria-hidden="true"><i id="bar"></i></div>
+  </div>
+</header>
+
+<main class="map-wrap">
+
+  <!-- visual road in center -->
+  <div class="road" aria-hidden="true"></div>
+
+  <!-- NODE 1: Video -->
+  <div class="node" data-step="1" id="node-1">
+    <div class="marker" aria-hidden="true"><span class="num">1</span></div>
+    <div class="card">
+      <div class="status" id="status-1">فيديو</div>
+      <div class="media">
+        <video controls preload="metadata" poster="images/html.jpg" data-step="1" id="video-1">
+          <source src="videos/html-intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h3>📙 درس 1 — مقدمة HTML</h3>
+      <p>أساسيات هيكل الصفحة: عناصر HTML، الوسوم الأساسية، وكيف تبدأ ملف HTML صحيح.</p>
+      <div class="row">
+        <button class="btn" data-action="mark" data-item="1">تمت مشاهدة الدرس</button>
+        <a class="btn ghost small" href="files/html-cheatsheet.pdf" download>📄 الملخص (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NODE 2: Video -->
+  <div class="node" data-step="2" id="node-2">
+    <div class="marker"><span class="num">2</span></div>
+    <div class="card">
+      <div class="status" id="status-2">فيديو</div>
+      <div class="media">
+        <video controls preload="metadata" poster="images/css.jpg" data-step="2" id="video-2">
+          <source src="videos/css-design.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h3>🎨 درس 2 — تصميم بـ CSS</h3>
+      <p>الألوان، الخطوط، الصناديق والـ Layout. سنبني أول واجهة بسيطة مع Flexbox وGrid.</p>
+      <div class="row">
+        <button class="btn" data-action="mark" data-item="2">تمت مشاهدة الدرس</button>
+        <a class="btn ghost small" href="files/css-cheatsheet.pdf" download>📄 الملخص (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NODE 3: Video -->
+  <div class="node" data-step="3" id="node-3">
+    <div class="marker"><span class="num">3</span></div>
+    <div class="card">
+      <div class="status" id="status-3">فيديو</div>
+      <div class="media">
+        <video controls preload="metadata" poster="images/js.jpg" data-step="3" id="video-3">
+          <source src="videos/javascript.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h3>⚡ درس 3 — تفاعل بـ JavaScript</h3>
+      <p>تعلم الأحداث، التلاعب بالـ DOM، وكتابة سكربتات بسيطة للتفاعل مع المستخدم.</p>
+      <div class="row">
+        <button class="btn" data-action="mark" data-item="3">تمت مشاهدة الدرس</button>
+        <a class="btn ghost small" href="files/js-cheatsheet.pdf" download>📄 الملخص (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NODE 4: Text -->
+  <div class="node" data-step="4" id="node-4">
+    <div class="marker"><span class="num">4</span></div>
+    <div class="card">
+      <div class="status" id="status-4">مقال</div>
+      <h3>✍️ درس 4 — مرجع النصوص والاقتباسات</h3>
+      <p>ملاحظة: هنا نص تعليمي يمكنك إضافة الأمثلة والرموز. استخدمه لشرح المفاهيم الصغيرة أو لإعطاء أسئلة قصيرة.</p>
+      <div class="attachments">
+        <img src="images/sample1.jpeg" alt="مثال 1">
+        <img src="images/sample2.jpeg" alt="مثال 2">
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn" data-action="mark" data-item="4">تمت قراءة المقال</button>
+        <button class="btn ghost small" onclick="window.scrollTo({top:0,behavior:'smooth'})">🔝 العودة للأعلى</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NODE 5: Text -->
+  <div class="node" data-step="5" id="node-5">
+    <div class="marker"><span class="num">5</span></div>
+    <div class="card">
+      <div class="status" id="status-5">مقال</div>
+      <h3>📝 درس 5 — أمثلة وملاحظات عملية</h3>
+      <p>تعليمات تنفيذية وأمثلة سريعة يمكنك إضافتها هنا كـ ملاحظات أو نصائح عملية قبل الاختبار.</p>
+      <div class="row" style="margin-top:10px">
+        <button class="btn" data-action="mark" data-item="5">تمت قراءة</button>
+        <a class="btn ghost small" href="files/examples.zip" download>📦 تحميل الأمثلة</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NODE 6: Practical Test -->
+  <div class="node" data-step="6" id="node-6">
+    <div class="marker"><span class="num">6</span></div>
+    <div class="card">
+      <div class="status" id="status-6">اختبار عملي</div>
+      <h3>✅ الاختبار العملي</h3>
+      <p>طبق ما تعلمت: أنشئ صفحة بسيطة تحتوي على عنوان، صورة، وفورم اتصال. بعدها اضغط "أرسلت حلّي".</p>
+      <div style="margin-top:10px">
+        <textarea id="practical-answer" placeholder="اكتب رابط مشروعك أو وصف الحل هنا..." rows="4" style="width:100%;border-radius:10px;padding:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);color:#fff"></textarea>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn" data-action="submit-test" data-item="6">أرسلت حلّي</button>
+        <button class="btn ghost small" onclick="document.getElementById('practical-answer').value=''">✖ مسح</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- floating nav -->
+<div class="bottom-nav" aria-hidden="true">
+  <button onclick="scrollToStep(1)">◀ درس 1</button>
+  <button onclick="scrollToStep(3)">درس 3 ▶</button>
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">🏠 أعلى</button>
+</div>
+
+<script>
+  // ====== Initialization & state ======
+  const TOTAL = 6;
+  const completed = new Set( JSON.parse(localStorage.getItem('fabrica_completed') || '[]') );
+  const bar = document.getElementById('bar');
+  const progTxt = document.getElementById('progTxt');
+
+  function updateProgress(){
+    const c = completed.size;
+    const pct = Math.round((c / TOTAL) * 100);
+    bar.style.width = pct + '%';
+    progTxt.textContent = `${c} / ${TOTAL}`;
+    // update status pills
+    for(let i=1;i<=TOTAL;i++){
+      const st = document.getElementById(`status-${i}`);
+      if(!st) continue;
+      if(completed.has(String(i))){
+        st.textContent = 'مكتمل';
+        st.style.background = 'linear-gradient(90deg,#10b981,#059669)';
+        st.style.color = '#fff';
+      } else {
+        // keep existing
+      }
+    }
+  }
+  updateProgress();
+
+  // Save state
+  function saveState(){ localStorage.setItem('fabrica_completed', JSON.stringify(Array.from(completed))); }
+
+  // ====== Scroll-animation: show nodes when in viewport ======
+  const nodes = document.querySelectorAll('.node');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+      }
+    });
+  },{threshold:0.18});
+  nodes.forEach(n=>io.observe(n));
+
+  // ====== Mark buttons (video watched / read) ======
+  document.querySelectorAll('[data-action="mark"]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.dataset.item;
+      completed.add(String(id));
+      updateProgress();
+      saveState();
+      btn.textContent = '✅ تم';
+      btn.disabled = true;
+    });
+  });
+
+  // ====== Video auto-mark when watched >80% ======
+  document.querySelectorAll('video[data-step]').forEach(v=>{
+    v.addEventListener('timeupdate', ()=>{
+      if(v.duration && v.currentTime / v.duration >= 0.8){
+        const id = v.dataset.step;
+        if(!completed.has(String(id))){
+          completed.add(String(id));
+          updateProgress(); saveState();
+          // find corresponding mark button and disable/update
+          const btn = document.querySelector(`[data-action="mark"][data-item="${id}"]`);
+          if(btn){btn.textContent='✅ تم'; btn.disabled = true;}
+        }
+      }
+    });
+  });
+
+  // ====== Practical test submit ======
+  document.querySelector('[data-action="submit-test"]').addEventListener('click', ()=>{
+    const id = 6;
+    const answer = document.getElementById('practical-answer').value.trim();
+    if(!answer){
+      alert('✳ من فضلك اكتب رابط المشروع أو وصف الحل في الصندوق.');
+      return;
+    }
+    // For now we only mark as completed locally (you can replace with backend upload)
+    completed.add(String(id));
+    updateProgress(); saveState();
+    alert('🎉 تم استلام الحل (محليًا). يمكنك لاحقًا توصيله للمدقق.');
+    document.querySelector('[data-action="submit-test"]').textContent = '✅ تم الإرسال';
+    document.querySelector('[data-action="submit-test"]').disabled = true;
+  });
+
+  // ====== scroll to step helper ======
+  function scrollToStep(n){
+    const el = document.getElementById('node-'+n);
+    if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+
+  // expose scrollToStep globally
+  window.scrollToStep = scrollToStep;
+
+  // ====== enable tapping markers to jump ======
+  document.querySelectorAll('.marker').forEach((m,i)=>{
+    m.addEventListener('click', ()=> scrollToStep(i+1));
+    m.style.cursor = 'pointer';
+  });
+
+  // on first load, if stored completed, reflect UI
+  Array.from(completed).forEach(id=>{
+    const btn = document.querySelector(`[data-action="mark"][data-item="${id}"]`);
+    if(btn){ btn.textContent='✅ تم'; btn.disabled = true; }
+    if(id==6){
+      const tbtn = document.querySelector('[data-action="submit-test"]');
+      if(tbtn){ tbtn.textContent='✅ تم الإرسال'; tbtn.disabled = true; }
+    }
+  });
+
+  // allow keyboard navigation (up/down)
+  window.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowDown'){ window.scrollBy({top: window.innerHeight*0.6, behavior:'smooth'}); }
+    if(e.key === 'ArrowUp'){ window.scrollBy({top: -window.innerHeight*0.6, behavior:'smooth'}); }
+  });
+
+</script>
+</body>
+  </html>
