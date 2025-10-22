@@ -3,76 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎓 دروس HTML & CSS & JavaScript</title>
+  <title>📘 دروس الكورس</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <header>
-    <h1>💻 كورس واجهات المستخدم (HTML & CSS & JS)</h1>
-    <p>تعلم تصميم وتفاعل الويب خطوة بخطوة بأسلوب 3D وتجربة ممتعة</p>
+
+  <header class="header">
+    <div class="header-content">
+      <img src="icons/ai-icon.png" alt="AI" class="logo">
+      <h1>📙 دروس كورس Python</h1>
+      <a href="../index.html" class="back-btn">🏠 رجوع</a>
+    </div>
   </header>
 
-  <main class="lesson-container">
-    <!-- 🟢 الدرس 1 -->
-    <section class="lesson">
-      <video controls poster="images/html.jpg">
-        <source src="videos/html-intro.mp4" type="video/mp4">
+  <main class="lessons-container">
+
+    <!-- الدرس 1 -->
+    <section class="lesson-card" data-lesson="1">
+      <div class="lesson-number">1</div>
+      <video controls class="lesson-video">
+        <source src="videos/lesson1.mp4" type="video/mp4">
+        المتصفح لا يدعم الفيديو.
       </video>
-      <h2>📙 مقدمة في HTML</h2>
-      <p>في هذا الدرس ستتعرف على مفهوم هيكل صفحات الويب وكيفية استخدام الوسوم (Tags) لكتابة المحتوى.</p>
-      <a href="#" class="download-btn">📥 تحميل ملخص HTML</a>
+      <div class="lesson-text">
+        <h2>📖 مقدمة في لغة Python</h2>
+        <p>في هذا الدرس سنبدأ رحلتنا مع لغة Python، سنتعرف على استخدامها، وأين تُستخدم، ولماذا تُعد من أهم لغات البرمجة الحديثة.</p>
+      </div>
     </section>
 
-    <!-- 🟢 الدرس 2 -->
-    <section class="lesson">
-      <video controls poster="images/css.jpg">
-        <source src="videos/css-design.mp4" type="video/mp4">
+    <!-- الدرس 2 -->
+    <section class="lesson-card" data-lesson="2">
+      <div class="lesson-number">2</div>
+      <video controls class="lesson-video">
+        <source src="videos/lesson2.mp4" type="video/mp4">
       </video>
-      <h2>🎨 تنسيق الصفحات باستخدام CSS</h2>
-      <p>تعلم كيف تجعل صفحاتك أنيقة ومتجاوبة مع الشاشات المختلفة باستخدام الألوان، الهوامش، والخطوط.</p>
-      <a href="#" class="download-btn">📥 تحميل ملخص CSS</a>
+      <div class="lesson-text">
+        <h2>🔢 المتغيرات وأنواع البيانات</h2>
+        <p>في هذا الدرس سنتعرف على المتغيرات وكيفية تخزين البيانات، مع أمثلة عملية لتطبيق المفاهيم البرمجية.</p>
+      </div>
     </section>
 
-    <!-- 🟢 الدرس 3 -->
-    <section class="lesson">
-      <video controls poster="images/js.jpg">
-        <source src="videos/javascript.mp4" type="video/mp4">
+    <!-- الدرس 3 -->
+    <section class="lesson-card" data-lesson="3">
+      <div class="lesson-number">3</div>
+      <video controls class="lesson-video">
+        <source src="videos/lesson3.mp4" type="video/mp4">
       </video>
-      <h2>⚡ التفاعل مع المستخدم بـ JavaScript</h2>
-      <p>ابدأ بفهم كيفية جعل الصفحات حية — مثل التحكم بالأزرار، النصوص، والحركات التفاعلية.</p>
-      <a href="#" class="download-btn">📥 تحميل ملخص JS</a>
+      <div class="lesson-text">
+        <h2>⚙️ الحلقات والشروط</h2>
+        <p>سنتعلم التحكم في تدفق البرنامج باستخدام الحلقات (Loops) والشروط (if-else) لتطوير منطق برمجي ذكي.</p>
+      </div>
     </section>
 
-    <!-- 🟣 درس نصي -->
-    <section class="lesson text-only">
-      <h2>🧠 مفاهيم واجهات المستخدم (UI)</h2>
-      <p>واجهة المستخدم هي كل ما يراه ويتفاعل معه المستخدم.  
-      تعلم كيف تصمم تجربة بصرية تجعل المستخدم يشعر بالراحة أثناء تصفح موقعك.</p>
+    <!-- الدرس 4 -->
+    <section class="lesson-card text-only" data-lesson="4">
+      <div class="lesson-number">4</div>
+      <div class="lesson-text">
+        <h2>📄 ملخص النظري</h2>
+        <p>هنا مراجعة سريعة لكل ما تعلمته في الدروس السابقة، مع شرح نصي منظم ومفصل.</p>
+      </div>
     </section>
 
-    <!-- 🟣 درس نصي ثاني -->
-    <section class="lesson text-only">
-      <h2>🎯 تجربة المستخدم (UX)</h2>
-      <p>هي طريقة تفكير تساعدك على جعل منتجك مفيد وسهل الاستخدام.  
-      تعلم كيف تحلل سلوك المستخدم وتصمم وفقًا له.</p>
+    <!-- الدرس 5 -->
+    <section class="lesson-card text-only" data-lesson="5">
+      <div class="lesson-number">5</div>
+      <div class="lesson-text">
+        <h2>🧠 اختبار عملي</h2>
+        <p>قم بكتابة كود بسيط يقوم بطباعة الجملة: <code>Hello Python!</code>  
+        ثم جرّب تعديلها لتعرض اسمك بدل الكلمة Python.</p>
+      </div>
     </section>
 
-    <!-- 🔵 اختبار عملي -->
-    <section class="lesson practice">
-      <h2>🧩 الاختبار العملي</h2>
-      <p>قم بإنشاء صفحة ويب تحتوي على:</p>
-      <ul>
-        <li>عنوان رئيسي باستخدام HTML</li>
-        <li>تنسيق الخلفية والنصوص بـ CSS</li>
-        <li>زر تفاعلي بـ JavaScript</li>
-      </ul>
-      <p>بعد الانتهاء، احفظ عملك وأرسله للمدرب لتقييمه.</p>
-    </section>
   </main>
-
-  <footer>© 2025 Fabrica Courses — بإبداع 💜 من فراج عبدالله</footer>
 
   <script src="script.js"></script>
 </body>
