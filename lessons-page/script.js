@@ -1,19 +1,20 @@
-// تأثير الظهور عند السحب
-const lessons = document.querySelectorAll('.lesson');
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.9;
-  lessons.forEach(l => {
-    const top = l.getBoundingClientRect().top;
-    if (top < trigger) l.classList.add('show');
+// إيقاف تشغيل الفيديوهات عند تشغيل آخر
+document.querySelectorAll('.lesson-video').forEach(video => {
+  video.addEventListener('play', () => {
+    document.querySelectorAll('.lesson-video').forEach(v => {
+      if (v !== video) v.pause();
+    });
   });
 });
 
-// عند تشغيل فيديو يتوقف الباقي تلقائيًا
-const videos = document.querySelectorAll('video');
-videos.forEach(v => {
-  v.addEventListener('play', () => {
-    videos.forEach(other => {
-      if (other !== v) other.pause();
-    });
+// تأثير عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lesson-card').forEach((card, i) => {
+    card.style.opacity = 0;
+    setTimeout(() => {
+      card.style.transition = "opacity 1s ease, transform 1s ease";
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
+    }, i * 200);
   });
 });
