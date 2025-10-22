@@ -3,103 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📚 دروس HTML & CSS & JavaScript</title>
+  <title>🎓 دروس HTML & CSS & JavaScript</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <div class="logo">⚡ FR</div>
-    <nav>
-      <a href="#html">HTML</a>
-      <a href="#css">CSS</a>
-      <a href="#js">JavaScript</a>
-      <a href="#project">المشروع</a>
-    </nav>
+    <h1>💻 كورس واجهات المستخدم (HTML & CSS & JS)</h1>
+    <p>تعلم تصميم وتفاعل الويب خطوة بخطوة بأسلوب 3D وتجربة ممتعة</p>
   </header>
 
   <main class="lesson-container">
-
-    <!-- 🟥 درس HTML -->
-    <section id="html" class="lesson card">
-      <div class="card-inner">
-        <div class="card-front">
-          <video controls poster="images/html.jpg" class="lesson-video">
-            <source src="videos/html-intro.mp4" type="video/mp4">
-          </video>
-          <h2>📘 مقدمة في HTML</h2>
-        </div>
-        <div class="card-back">
-          <p>
-            HTML هي أساس بناء أي صفحة ويب.  
-            في هذا الدرس سنتعلم كيفية إنشاء الهيكل الأساسي، إضافة النصوص، الصور، والروابط.  
-            بنهاية الدرس ستكون قادرًا على بناء صفحة كاملة بنفسك.
-          </p>
-          <a href="#" class="download-btn">📥 تحميل الملخص</a>
-        </div>
-      </div>
+    <!-- 🟢 الدرس 1 -->
+    <section class="lesson">
+      <video controls poster="images/html.jpg">
+        <source src="videos/html-intro.mp4" type="video/mp4">
+      </video>
+      <h2>📙 مقدمة في HTML</h2>
+      <p>في هذا الدرس ستتعرف على مفهوم هيكل صفحات الويب وكيفية استخدام الوسوم (Tags) لكتابة المحتوى.</p>
+      <a href="#" class="download-btn">📥 تحميل ملخص HTML</a>
     </section>
 
-    <!-- 🟦 درس CSS -->
-    <section id="css" class="lesson card">
-      <div class="card-inner">
-        <div class="card-front">
-          <video controls poster="images/css.jpg" class="lesson-video">
-            <source src="videos/css-design.mp4" type="video/mp4">
-          </video>
-          <h2>🎨 تنسيق المواقع باستخدام CSS</h2>
-        </div>
-        <div class="card-back">
-          <p>
-            CSS تضيف الجمال للصفحات.  
-            سنتعلم الألوان، الخطوط، المسافات، الظلال، وتأثيرات 3D مذهلة.  
-            الدرس طويل ومليء بالأمثلة العملية لتصميم واجهات احترافية.
-          </p>
-          <a href="#" class="download-btn">📥 تحميل الملخص</a>
-        </div>
-      </div>
+    <!-- 🟢 الدرس 2 -->
+    <section class="lesson">
+      <video controls poster="images/css.jpg">
+        <source src="videos/css-design.mp4" type="video/mp4">
+      </video>
+      <h2>🎨 تنسيق الصفحات باستخدام CSS</h2>
+      <p>تعلم كيف تجعل صفحاتك أنيقة ومتجاوبة مع الشاشات المختلفة باستخدام الألوان، الهوامش، والخطوط.</p>
+      <a href="#" class="download-btn">📥 تحميل ملخص CSS</a>
     </section>
 
-    <!-- 🟩 درس JavaScript -->
-    <section id="js" class="lesson card">
-      <div class="card-inner">
-        <div class="card-front">
-          <video controls poster="images/js.jpg" class="lesson-video">
-            <source src="videos/javascript.mp4" type="video/mp4">
-          </video>
-          <h2>⚡ التفاعل باستخدام JavaScript</h2>
-        </div>
-        <div class="card-back">
-          <p>
-            في هذا الدرس سنتعلم كيف نجعل المواقع تفاعلية.  
-            سنضيف الأزرار الذكية، الرسائل، والمؤثرات، مع تطبيقات عملية.  
-            الدرس متدرج ليأخذك من الصفر إلى الاحتراف.
-          </p>
-          <a href="#" class="download-btn">📥 تحميل الملخص</a>
-        </div>
-      </div>
+    <!-- 🟢 الدرس 3 -->
+    <section class="lesson">
+      <video controls poster="images/js.jpg">
+        <source src="videos/javascript.mp4" type="video/mp4">
+      </video>
+      <h2>⚡ التفاعل مع المستخدم بـ JavaScript</h2>
+      <p>ابدأ بفهم كيفية جعل الصفحات حية — مثل التحكم بالأزرار، النصوص، والحركات التفاعلية.</p>
+      <a href="#" class="download-btn">📥 تحميل ملخص JS</a>
     </section>
 
-    <!-- 🧠 اختبار عملي -->
-    <section id="project" class="lesson card test">
-      <div class="card-inner">
-        <div class="card-front">
-          <h2>🧠 اختبار عملي</h2>
-        </div>
-        <div class="card-back">
-          <p>
-            قم بإنشاء صفحة ويب كاملة تحتوي على:
-            <br>✅ قائمة رئيسية  
-            <br>✅ صورة خلفية  
-            <br>✅ نصوص وأزرار تفاعلية  
-            <br>✅ تأثير عند تمرير الفأرة
-            <br><br>ارفع المشروع وأرسله للتقييم ✨
-          </p>
-        </div>
-      </div>
+    <!-- 🟣 درس نصي -->
+    <section class="lesson text-only">
+      <h2>🧠 مفاهيم واجهات المستخدم (UI)</h2>
+      <p>واجهة المستخدم هي كل ما يراه ويتفاعل معه المستخدم.  
+      تعلم كيف تصمم تجربة بصرية تجعل المستخدم يشعر بالراحة أثناء تصفح موقعك.</p>
     </section>
 
+    <!-- 🟣 درس نصي ثاني -->
+    <section class="lesson text-only">
+      <h2>🎯 تجربة المستخدم (UX)</h2>
+      <p>هي طريقة تفكير تساعدك على جعل منتجك مفيد وسهل الاستخدام.  
+      تعلم كيف تحلل سلوك المستخدم وتصمم وفقًا له.</p>
+    </section>
+
+    <!-- 🔵 اختبار عملي -->
+    <section class="lesson practice">
+      <h2>🧩 الاختبار العملي</h2>
+      <p>قم بإنشاء صفحة ويب تحتوي على:</p>
+      <ul>
+        <li>عنوان رئيسي باستخدام HTML</li>
+        <li>تنسيق الخلفية والنصوص بـ CSS</li>
+        <li>زر تفاعلي بـ JavaScript</li>
+      </ul>
+      <p>بعد الانتهاء، احفظ عملك وأرسله للمدرب لتقييمه.</p>
+    </section>
   </main>
 
   <footer>© 2025 Fabrica Courses — بإبداع 💜 من فراج عبدالله</footer>
