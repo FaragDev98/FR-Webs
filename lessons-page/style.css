@@ -1,110 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
 body {
   margin: 0;
   font-family: "Cairo", sans-serif;
-  background: linear-gradient(135deg, #3b1a72, #7c3aed, #4f46e5);
+  background: radial-gradient(circle at center, #0f172a, #1e1b4b);
   color: #fff;
-  min-height: 100vh;
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-.header {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 15px 10px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+.main-header {
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
 }
 
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: auto;
+.main-header h1 {
+  font-size: 30px;
+  color: #a78bfa;
+  text-shadow: 0 0 10px #8b5cf6;
 }
 
-.header .logo {
-  width: 45px;
-  height: 45px;
+.main-header p {
+  color: #ddd;
+  font-size: 18px;
 }
 
-.back-btn {
-  background: linear-gradient(90deg, #7c3aed, #4f46e5);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.back-btn:hover {
-  transform: scale(1.05);
-}
-
-.lessons-container {
+.lesson-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 30px 10px;
+  gap: 50px;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
-.lesson-card {
-  background: rgba(255,255,255,0.1);
+.lesson {
+  background: rgba(255,255,255,0.05);
   border-radius: 18px;
   padding: 20px;
-  max-width: 800px;
-  width: 100%;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
   transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-}
-.lesson-card:hover {
-  transform: rotateY(10deg) rotateX(3deg) scale(1.02);
+  transition: all 0.5s ease;
 }
 
-.lesson-number {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  background: linear-gradient(180deg, #7c3aed, #4f46e5);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+.lesson:hover {
+  transform: translateY(-8px) rotateX(3deg);
+  box-shadow: 0 10px 35px rgba(139, 92, 246, 0.4);
 }
 
-.lesson-video {
+.lesson video {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 15px;
   margin-bottom: 15px;
 }
 
-.lesson-text h2 {
-  margin: 0 0 10px;
+.lesson h2 {
+  font-size: 22px;
+  color: #c4b5fd;
 }
 
-.lesson-text p {
-  color: #e0e0ff;
+.lesson p {
+  color: #e5e7eb;
   line-height: 1.8;
+  font-size: 17px;
 }
 
-.text-only {
-  background: rgba(255,255,255,0.08);
+.download-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.6);
 }
 
-@media (max-width: 600px) {
-  .lesson-card {
-    padding: 15px;
-  }
-  .lesson-text h2 {
-    font-size: 18px;
-  }
+.quiz-btn {
+  background: linear-gradient(45deg, #22c55e, #16a34a);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.quiz-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(34,197,94,0.4);
+}
+
+footer {
+  text-align: center;
+  background: rgba(0,0,0,0.7);
+  padding: 25px;
+  font-size: 14px;
+  margin-top: 50px;
+  color: #ccc;
+}
+
+/* ظهور تدريجي */
+.lesson {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.lesson.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* تجاوب */
+@media (max-width: 768px) {
+  .lesson h2 { font-size: 20px; }
+  .lesson p { font-size: 16px; }
 }
