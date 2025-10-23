@@ -3,275 +3,379 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>📘 صفحة الدرس — خريطة الطريق</title>
+<title>📘 FRWEBS — كورس كامل: HTML · CSS · JavaScript</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --accent1:#7c3aed;
-    --accent2:#4f46e5;
-    --glass: rgba(255,255,255,0.06);
-    --glass-2: rgba(255,255,255,0.08);
-    --white-weak: rgba(255,255,255,0.9);
+    --purple-1:#7c3aed;
+    --purple-2:#4f46e5;
+    --accent:#ff6b81;
+    --bg:#ffffff;
+    --card-bg: linear-gradient(180deg, rgba(124,58,237,0.06), rgba(79,70,229,0.04));
+    --glass: rgba(255,255,255,0.85);
+    --muted: #6b7280;
   }
-  html,body{height:100%;margin:0;padding:0;}
-  body{
-    font-family:"Cairo",sans-serif;
-    background: url("images/5416.jpeg") center/cover fixed;
-    color:#fff;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    overflow-y:auto;
-    scroll-behavior:smooth;
-  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;padding:0;font-family:"Cairo",sans-serif;background:var(--bg);color:#111;scroll-behavior:smooth}
+  body{ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
 
-  /* Header + progress */
+  /* ===== Header ===== */
   header.appbar{
-    position:sticky;top:0;z-index:40;
-    backdrop-filter: blur(6px);
-    background: linear-gradient(180deg, rgba(10,7,30,0.6), rgba(10,7,30,0.35));
-    padding:14px 18px;
+    position:sticky;top:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
-    border-bottom:1px solid rgba(255,255,255,0.04);
+    padding:18px 20px;
+    background: linear-gradient(90deg,var(--purple-2),var(--purple-1));
+    color:white;
+    box-shadow: 0 6px 24px rgba(79,70,229,0.12);
   }
-  .title{
-    display:flex;flex-direction:column;gap:4px;text-align:right;
+  .brand {
+    display:flex;align-items:center;gap:14px;
   }
-  .title h1{margin:0;font-size:18px;}
-  .title p{margin:0;color:rgba(255,255,255,0.75);font-size:13px;}
+  .logo {
+    width:48px;height:48px;border-radius:10px;
+    background:linear-gradient(135deg,var(--purple-1),var(--purple-2));
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px;
+    box-shadow:0 6px 18px rgba(79,70,229,0.2);
+  }
+  .title{line-height:1}
+  .title h1{margin:0;font-size:18px;letter-spacing:0.2px}
+  .title p{margin:0;font-size:12px;opacity:0.95}
 
-  .progress-wrap{width:320px;max-width:48vw;}
-  .progress-label{font-size:12px;color:rgba(255,255,255,0.85);margin-bottom:6px;text-align:left}
-  .progress-bar{
-    height:10px;border-radius:999px;background:rgba(255,255,255,0.12);overflow:hidden;
-    box-shadow:inset 0 -2px 6px rgba(0,0,0,0.6);
-  }
-  .progress-bar > i{
-    display:block;height:100%;width:0%;
-    background:linear-gradient(90deg,var(--accent1),var(--accent2));
-    transition:width .4s ease;
+  .header-actions{display:flex;gap:10px;align-items:center}
+  .chip {
+    background: rgba(255,255,255,0.12); color:#fff; padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px;
+    border:1px solid rgba(255,255,255,0.06);
   }
 
-  /* Container that gives the vertical "road" feel */
+  /* progress */
+  .progress-wrap{width:360px;max-width:44vw}
+  .progress-label{font-size:12px;color:rgba(255,255,255,0.9);margin-bottom:6px;text-align:left}
+  .progress-bar{height:12px;border-radius:999px;background:rgba(255,255,255,0.16);overflow:hidden}
+  .progress-bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple-1),var(--purple-2));transition:width .45s}
+
+  /* Intro */
+  .intro {
+    max-width:1100px;margin:22px auto 10px;padding:22px;border-radius:12px;
+    background: linear-gradient(180deg, #fff, #fbfbff);
+    border: 1px solid rgba(15,23,42,0.04);
+    box-shadow: 0 10px 30px rgba(15,23,42,0.04);
+    color:#0b1220;
+  }
+  .intro h2{margin:0 0 8px 0;color:var(--purple-2)}
+  .intro p{margin:0;color:var(--muted);line-height:1.7}
+
+  /* main map */
   main.map-wrap{
-    max-width:1000px;margin:18px auto;padding:30px 18px 120px;
-    position:relative;
+    max-width:1100px;margin:28px auto;padding:10px 20px 120px;position:relative;
+    perspective:1200px; /* for 3D tilt children */
   }
 
-  /* The visual road (center) */
+  /* road (thin center line) */
   .road{
-    position:absolute;left:50%;transform:translateX(50%); /* we'll align nodes left of it visually (RTL view) */
-    top:0;bottom:0;width:6px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    box-shadow:0 0 40px rgba(79,70,229,0.12), 0 0 20px rgba(124,58,237,0.06);
-    border-radius:4px;
-    z-index:1;
+    position:absolute;left:50%;top:30px;bottom:0;width:6px;margin-left:-3px;
+    background:linear-gradient(180deg, rgba(124,58,237,0.12), rgba(79,70,229,0.06));
+    border-radius:4px;z-index:1;box-shadow:0 8px 30px rgba(79,70,229,0.06)
   }
 
-  /* Node (each step) layout */
-  .node {
-    position:relative;
-    width:100%;
-    display:flex;
-    gap:18px;
-    align-items:center;
-    margin:70px 0;
-    z-index:5;
-    transition:transform .45s cubic-bezier(.2,.9,.2,1), opacity .45s;
-    opacity:0; transform: translateY(30px);
+  /* node */
+  .node{
+    display:flex;align-items:center;gap:20px;position:relative;margin:54px 0;z-index:2;
+    transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.9,.2,1),opacity .45s;
+    opacity:0; transform: translateY(30px) rotateX(2deg);
   }
   .node.show{opacity:1;transform:none}
 
-  /* alternate sides for visual path */
-  .node:nth-child(odd) .card { margin-right: calc(50% + 40px); text-align:right; }
-  .node:nth-child(even) .card { margin-left: calc(50% + 40px); text-align:right; }
+  /* alternate sides */
+  .node:nth-child(odd) .card{ margin-right: calc(50% + 36px); text-align:right; }
+  .node:nth-child(even) .card{ margin-left: calc(50% + 36px); text-align:right; }
 
-  /* circular marker on the road */
-  .marker {
-    position:absolute;
-    left:50%; transform:translateX(-50%);
-    width:56px;height:56px;border-radius:50%;
-    background:linear-gradient(180deg,var(--accent1),var(--accent2));
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-weight:700;font-size:18px;
-    box-shadow:0 10px 30px rgba(79,70,229,0.25);
-    z-index:6;
+  /* marker */
+  .marker{
+    position:absolute; left:50%; top:0; transform:translate(-50%,-50%); width:64px;height:64px;border-radius:14px;
+    background:linear-gradient(180deg,var(--purple-1),var(--purple-2)); display:flex;align-items:center;justify-content:center;
+    color:white;font-weight:800;font-size:18px; box-shadow:0 14px 30px rgba(79,70,229,0.18);
+    transition:transform .25s, box-shadow .25s;
   }
-  /* place marker aligned vertically with node */
-  .node .marker { position:absolute; top:0; transform:translate(-50%,-50%); }
+  .marker:hover{ transform:translate(-50%,-50%) scale(1.06) rotate(-4deg); box-shadow:0 18px 36px rgba(79,70,229,0.25) }
 
-  /* card that contains lesson content */
+  /* card visual (3D) */
   .card{
-    width:48%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    position:relative; z-index:8;
+    width:48%; background: white; color:#0b1220; border-radius:14px; padding:18px; position:relative;
+    box-shadow: 0 12px 40px rgba(8,9,15,0.06); border:1px solid rgba(15,23,42,0.04);
+    transform-origin:center center; transition:transform .25s, box-shadow .25s;
+    will-change:transform;
   }
+  .card:hover{ transform: translateY(-8px) rotateX(2deg) translateZ(18px); box-shadow:0 22px 60px rgba(8,9,15,0.09) }
 
-  .card h3{margin:0 0 8px 0;font-size:20px}
-  .card p{margin:0 0 12px 0;color:rgba(255,255,255,0.85)}
-  .media{
-    border-radius:12px;overflow:hidden;margin-bottom:12px;background:var(--glass-2);
-  }
-  .media video, .media img { width:100%; display:block; height:auto; max-height:360px; object-fit:cover; }
+  .card h3{margin:0 0 10px 0;font-size:20px;color:var(--purple-2)}
+  .card p{margin:0 0 12px 0;color:#2b3440;line-height:1.7}
+  .media{border-radius:10px;overflow:hidden;background:#f6f7fb;border:1px solid rgba(15,23,42,0.02);margin-bottom:12px}
+  .media video, .media img{width:100%;height:auto;display:block;max-height:420px;object-fit:cover;background:#000}
 
-  .card .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .status{ position:absolute; top:12px; left:12px; background: linear-gradient(90deg,#f8fafc,#eef2ff); color:var(--purple-2);
+    padding:6px 10px;border-radius:999px;font-weight:800;border:1px solid rgba(79,70,229,0.06);font-size:13px }
+
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
   .btn{
-    background:linear-gradient(90deg,var(--accent1),var(--accent2));
-    color:#fff;padding:9px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700;
-    box-shadow:0 8px 18px rgba(79,70,229,0.18);
+    background:linear-gradient(90deg,var(--purple-1),var(--purple-2)); color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:800;
+    box-shadow: 0 10px 28px rgba(124,58,237,0.12);
   }
-  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff}
-  .small { font-size:13px;padding:6px 8px;border-radius:8px }
+  .btn.ghost{ background:transparent;border:1px solid rgba(15,23,42,0.06); color:var(--purple-2); font-weight:700 }
+  .btn.small{ padding:8px 10px;font-size:14px }
 
-  .attachments{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-  .attachments img{width:48%;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.45)}
+  .attachments{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .attachments img{width:48%;border-radius:8px;box-shadow:0 8px 20px rgba(8,9,15,0.06)}
 
-  /* status pill on top-right of card */
-  .status{
-    position:absolute;top:12px;left:12px;background:rgba(0,0,0,0.45);padding:6px 10px;border-radius:999px;font-weight:700;
-    border:1px solid rgba(255,255,255,0.04)
+  pre.code{
+    background:#0f1724;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.5;
   }
 
-  /* responsive tweaks */
-  @media(max-width:900px){
-    .card{width:86%;}
-    .node:nth-child(odd) .card, .node:nth-child(even) .card { margin:0 auto; }
-    .road{left:8%;transform:none}
+  /* footer note */
+  footer.note{max-width:1100px;margin:30px auto 80px;color:var(--muted);font-size:14px;text-align:center}
+
+  /* responsive */
+  @media(max-width:980px){
+    .node:nth-child(odd) .card, .node:nth-child(even) .card { margin:0 auto; width:92% }
+    .road{left:8%;transform:none;height:calc(100% - 40px)}
     .marker{left:8%}
+    .progress-wrap{display:none}
+    header.appbar{padding:12px}
+  }
+  @media(max-width:600px){
+    .brand .logo{width:40px;height:40px;font-size:16px}
+    .card h3{font-size:18px}
   }
 
-  /* floating nav bottom (optional icons) */
-  .bottom-nav{
-    position:fixed;left:50%;transform:translateX(-50%);bottom:16px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    padding:10px 14px;border-radius:999px;backdrop-filter:blur(6px);z-index:60;border:1px solid rgba(255,255,255,0.04);
-    display:flex;gap:10px;align-items:center;
+  /* subtle parallax layers (decorative) */
+  .decor-top{
+    position:fixed;right:-120px;top:-120px;z-index:0;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(124,58,237,0.10), rgba(79,70,229,0.03));
+    filter: blur(30px);pointer-events:none;
   }
-  .bottom-nav button{background:transparent;border:none;color:#fff;padding:8px;font-weight:700;cursor:pointer}
+  .decor-bottom{
+    position:fixed;left:-120px;bottom:-120px;z-index:0;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 70% 70%, rgba(79,70,229,0.10), rgba(124,58,237,0.02));
+    filter: blur(30px);pointer-events:none;
+  }
 
-  /* little helper for progress count inside marker */
-  .marker .num{font-size:14px;opacity:0.95}
-  .marker .dot{font-size:11px;margin-right:6px;opacity:0.9}
-
+  /* remove default video controls outline on focus for nicer look */
+  video:focus{outline:none;box-shadow:0 8px 30px rgba(79,70,229,0.06)}
 </style>
 </head>
 <body>
 
+<div class="decor-top"></div>
+<div class="decor-bottom"></div>
+
 <header class="appbar">
-  <div class="title">
-    <h1>📘 كورس: HTML & CSS & JavaScript</h1>
-    <p>مسار الدروس — اسحب لتحت لمشاهدة الطريق والدروس</p>
+  <div class="brand">
+    <div class="logo">FR</div>
+    <div class="title">
+      <h1>FRWEBS — دورة شاملة: HTML · CSS · JavaScript</h1>
+      <p>مسار تفاعلي مع تأثيرات 3D وUX حديث — متوافق موبايل / كمبيوتر</p>
+    </div>
   </div>
 
-  <div class="progress-wrap" aria-hidden="false">
-    <div class="progress-label">التقدم: <span id="progTxt">0 / 6</span></div>
-    <div class="progress-bar" aria-hidden="true"><i id="bar"></i></div>
+  <div class="header-actions">
+    <div class="progress-wrap">
+      <div class="progress-label">التقدم: <span id="progTxt">0 / 6</span></div>
+      <div class="progress-bar"><i id="bar"></i></div>
+    </div>
+    <div class="chip">FRWEBS</div>
   </div>
 </header>
 
+<section class="intro">
+  <h2>مرحبًا — ماذا ستتعلم في هذه الدورة؟</h2>
+  <p>
+    هذه الدورة تشرح من الصفر HTML لبناء الهيكل، CSS لتصميم الواجهات، وJavaScript لإضافة التفاعل. كل درس يحتوي فيديو + شرح نصي طويل + ملف تحميل
+    (قالب مشروع). في النهاية ستبني مشروع موقع شخصي متكامل بنفسك. اسحب للأسفل لعرض الدروس — كل درس يظهر بتأثير العمق 3D عند التمرير.
+  </p>
+</section>
+
 <main class="map-wrap">
 
-  <!-- visual road in center -->
   <div class="road" aria-hidden="true"></div>
 
-  <!-- NODE 1: Video -->
+  <!-- NODE 1: HTML -->
   <div class="node" data-step="1" id="node-1">
     <div class="marker" aria-hidden="true"><span class="num">1</span></div>
-    <div class="card">
-      <div class="status" id="status-1">فيديو</div>
+    <div class="card" data-tilt data-tilt-depth="18">
+      <div class="status" id="status-1">فيديو · HTML</div>
+
       <div class="media">
+        <!-- ضع رابط الفيديو الخاص بك أو ملف MP4 -->
         <video controls preload="metadata" poster="images/html.jpg" data-step="1" id="video-1">
           <source src="videos/html-intro.mp4" type="video/mp4">
         </video>
       </div>
-      <h3>📙 درس 1 — مقدمة HTML</h3>
-      <p>أساسيات هيكل الصفحة: عناصر HTML، الوسوم الأساسية، وكيف تبدأ ملف HTML صحيح.</p>
+
+      <h3>📙 درس 1 — HTML: بناء هيكل الموقع (مفصل)</h3>
+
+      <p>
+        <strong>مقدمة:</strong> HTML (HyperText Markup Language) هي العمود الفقري لأي صفحة ويب. في هذا الدرس نغطي: هيكل الصفحة، الوسوم الأساسية، السمات (attributes)،
+        كيفية إدراج صور وروابط، والعمل مع النماذج والقوائم والجداول.
+      </p>
+
+      <h4>أساسيات عملية</h4>
+      <p>
+        ابدأ دائمًا بملف <code>index.html</code>. تذكَّر أهمية وسوم الـ <code>head</code> مثل <code>&lt;meta charset="utf-8"&gt;</code> ووسم عرض الشاشة ليتجاوب الموقع.
+        استخدم وسوم دلالية (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>) لتحسين الوصول وSEO.
+      </p>
+
+      <h4>مثال عملي سريع</h4>
+      <pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ar"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+    &lt;title&gt;صفحتي الشخصية&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;اسمي&lt;/h1&gt;&lt;/header&gt;
+    &lt;main&gt;&lt;p&gt;نبذة عني...&lt;/p&gt;&lt;/main&gt;
+    &lt;footer&gt;&lt;p&gt;حقوق النشر&lt;/p&gt;&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </pre>
+
+      <p>
+        <strong>تحميل:</strong> يمكنك تحميل قالب HTML جاهز من الرابط أدناه وتعديله مباشرة.
+      </p>
+
       <div class="row">
-        <button class="btn" data-action="mark" data-item="1">تمت مشاهدة الدرس</button>
-        <a class="btn ghost small" href="files/html-cheatsheet.pdf" download>📄 الملخص (PDF)</a>
+        <button class="btn" data-action="mark" data-item="1">✅ أنهيت HTML</button>
+        <a class="btn ghost small" href="files/html-project.zip" download>📄 حمل قالب HTML</a>
       </div>
     </div>
   </div>
 
-  <!-- NODE 2: Video -->
+  <!-- NODE 2: CSS -->
   <div class="node" data-step="2" id="node-2">
     <div class="marker"><span class="num">2</span></div>
-    <div class="card">
-      <div class="status" id="status-2">فيديو</div>
+    <div class="card" data-tilt data-tilt-depth="20">
+      <div class="status" id="status-2">فيديو · CSS</div>
+
       <div class="media">
         <video controls preload="metadata" poster="images/css.jpg" data-step="2" id="video-2">
           <source src="videos/css-design.mp4" type="video/mp4">
         </video>
       </div>
-      <h3>🎨 درس 2 — تصميم بـ CSS</h3>
-      <p>الألوان، الخطوط، الصناديق والـ Layout. سنبني أول واجهة بسيطة مع Flexbox وGrid.</p>
+
+      <h3>🎨 درس 2 — CSS: تصميم وتزيين الصفحات (مفصل)</h3>
+
+      <p>
+        CSS تتحكم بالمظهر: الألوان، الخطوط، الفراغات، وتخطيط الصفحة. سنتعلم Box Model، Selectors، Flexbox، Grid، واستراتيجيات تنظيم الأكواد (BEM أو CSS Modules).
+      </p>
+
+      <h4>مثال Flexbox</h4>
+      <pre class="code">
+.container { display:flex; gap:16px; flex-wrap:wrap; }
+.item { flex:1 1 220px; padding:12px; border-radius:8px; background:#fff9; }
+      </pre>
+
+      <p>
+        <strong>نصائح عملية:</strong> اختر لوحة ألوان محددة، استعمل خطوط ويب محسّنة، وقلل من أحجام الصور لتحسين الأداء.
+      </p>
+
       <div class="row">
-        <button class="btn" data-action="mark" data-item="2">تمت مشاهدة الدرس</button>
-        <a class="btn ghost small" href="files/css-cheatsheet.pdf" download>📄 الملخص (PDF)</a>
+        <button class="btn" data-action="mark" data-item="2">✅ أنهيت CSS</button>
+        <a class="btn ghost small" href="files/css-project.zip" download>📄 حمل مشروع CSS</a>
       </div>
     </div>
   </div>
 
-  <!-- NODE 3: Video -->
+  <!-- NODE 3: JavaScript -->
   <div class="node" data-step="3" id="node-3">
     <div class="marker"><span class="num">3</span></div>
-    <div class="card">
-      <div class="status" id="status-3">فيديو</div>
+    <div class="card" data-tilt data-tilt-depth="22">
+      <div class="status" id="status-3">فيديو · JavaScript</div>
+
       <div class="media">
         <video controls preload="metadata" poster="images/js.jpg" data-step="3" id="video-3">
           <source src="videos/javascript.mp4" type="video/mp4">
         </video>
       </div>
-      <h3>⚡ درس 3 — تفاعل بـ JavaScript</h3>
-      <p>تعلم الأحداث، التلاعب بالـ DOM، وكتابة سكربتات بسيطة للتفاعل مع المستخدم.</p>
+
+      <h3>⚡ درس 3 — JavaScript: التفاعل وديناميكية الصفحات (مفصل)</h3>
+
+      <p>
+        JavaScript تضيف التفاعل: التعامل مع DOM، الأحداث، التحكم بالنماذج، والتحقق منها. سنبني وظائف صغيرة: تغيير نصوص، فتح نافذة مودال، والتحكم بالتخزين المحلي (localStorage).
+      </p>
+
+      <h4>مثال عملي</h4>
+      <pre class="code">
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', ()=>{
+  document.querySelector('.card p').textContent = 'تم التحديث!';
+});
+      </pre>
+
       <div class="row">
-        <button class="btn" data-action="mark" data-item="3">تمت مشاهدة الدرس</button>
-        <a class="btn ghost small" href="files/js-cheatsheet.pdf" download>📄 الملخص (PDF)</a>
+        <button class="btn" data-action="mark" data-item="3">✅ أنهيت JavaScript</button>
+        <a class="btn ghost small" href="files/js-examples.zip" download>📄 حمل أمثلة JS</a>
       </div>
     </div>
   </div>
 
-  <!-- NODE 4: Text -->
+  <!-- NODE 4: بناء موقعك -->
   <div class="node" data-step="4" id="node-4">
     <div class="marker"><span class="num">4</span></div>
-    <div class="card">
-      <div class="status" id="status-4">مقال</div>
-      <h3>✍️ درس 4 — مرجع النصوص والاقتباسات</h3>
-      <p>ملاحظة: هنا نص تعليمي يمكنك إضافة الأمثلة والرموز. استخدمه لشرح المفاهيم الصغيرة أو لإعطاء أسئلة قصيرة.</p>
+    <div class="card" data-tilt data-tilt-depth="16">
+      <div class="status" id="status-4">مقال تفصيلي</div>
+
+      <h3>✍️ درس 4 — كيف تبني موقعك الشخصي (Portfolio)</h3>
+      <p>
+        دمجنا HTML/CSS/JS لصناعة موقع شخصي: صفحة رئيسية، معرض أعمال، وصف المهارات، ونموذج اتصال. استخدم قالب الـ ZIP للتعديل السريع.
+      </p>
+
+      <p>خطوات موجزة:</p>
+      <ol style="color:#334155">
+        <li>أضف ملف index.html وبنية واضحة.</li>
+        <li>اربط ملف style.css واستخدم Grid لعرض المشاريع.</li>
+        <li>أضف تفاعل بسيط عبر JS لفتح تفاصيل المشروع في مودال.</li>
+      </ol>
+
       <div class="attachments">
         <img src="images/sample1.jpeg" alt="مثال 1">
         <img src="images/sample2.jpeg" alt="مثال 2">
       </div>
+
       <div class="row" style="margin-top:10px">
-        <button class="btn" data-action="mark" data-item="4">تمت قراءة المقال</button>
-        <button class="btn ghost small" onclick="window.scrollTo({top:0,behavior:'smooth'})">🔝 العودة للأعلى</button>
+        <button class="btn" data-action="mark" data-item="4">✅ قرأت الدرس</button>
+        <a class="btn ghost small" href="files/portfolio-template.zip" download>📦 حمل قالب البورتفوليو</a>
       </div>
     </div>
   </div>
 
-  <!-- NODE 5: Text -->
+  <!-- NODE 5: تحسين الأداء & SEO -->
   <div class="node" data-step="5" id="node-5">
     <div class="marker"><span class="num">5</span></div>
-    <div class="card">
-      <div class="status" id="status-5">مقال</div>
-      <h3>📝 درس 5 — أمثلة وملاحظات عملية</h3>
-      <p>تعليمات تنفيذية وأمثلة سريعة يمكنك إضافتها هنا كـ ملاحظات أو نصائح عملية قبل الاختبار.</p>
+    <div class="card" data-tilt data-tilt-depth="14">
+      <div class="status" id="status-5">نصائح عملية</div>
+
+      <h3>📝 درس 5 — تحسين الأداء وSEO</h3>
+      <p>
+        تقنيات سريعة: ضغط الصور، lazy-loading، استخدام تنسيقات حديثة، كتابة metadata صحيحة، واستخدام <code>alt</code> للصور لتحسين الوصول ومحركات البحث.
+      </p>
+
       <div class="row" style="margin-top:10px">
-        <button class="btn" data-action="mark" data-item="5">تمت قراءة</button>
-        <a class="btn ghost small" href="files/examples.zip" download>📦 تحميل الأمثلة</a>
+        <button class="btn" data-action="mark" data-item="5">✅ قرأت النصائح</button>
+        <a class="btn ghost small" href="files/perf-tools.zip" download>🧰 أدوات التحسين</a>
       </div>
     </div>
   </div>
 
-  <!-- NODE 6: Practical Test -->
+  <!-- NODE 6: الاختبار العملي -->
   <div class="node" data-step="6" id="node-6">
     <div class="marker"><span class="num">6</span></div>
-    <div class="card">
+    <div class="card" data-tilt data-tilt-depth="10">
       <div class="status" id="status-6">اختبار عملي</div>
-      <h3>✅ الاختبار العملي</h3>
-      <p>طبق ما تعلمت: أنشئ صفحة بسيطة تحتوي على عنوان، صورة، وفورم اتصال. بعدها اضغط "أرسلت حلّي".</p>
-      <div style="margin-top:10px">
-        <textarea id="practical-answer" placeholder="اكتب رابط مشروعك أو وصف الحل هنا..." rows="4" style="width:100%;border-radius:10px;padding:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);color:#fff"></textarea>
-      </div>
+
+      <h3>✅ الاختبار العملي النهائي</h3>
+      <p>صمم مشروع صغير: صفحة شخصية تحتوي على عنوان، صورة، نبذة، معرض مشروع واحد، وزر تفاعلي يقوم بتغيير اللون.</p>
+
+      <textarea id="practical-answer" placeholder="انسخ رابط مشروعك أو اكتب وصف الحل هنا..." rows="5" style="width:100%;border-radius:10px;padding:12px;border:1px solid rgba(15,23,42,0.04)"></textarea>
+
       <div class="row" style="margin-top:12px">
         <button class="btn" data-action="submit-test" data-item="6">أرسلت حلّي</button>
         <button class="btn ghost small" onclick="document.getElementById('practical-answer').value=''">✖ مسح</button>
@@ -281,129 +385,167 @@
 
 </main>
 
-<!-- floating nav -->
-<div class="bottom-nav" aria-hidden="true">
-  <button onclick="scrollToStep(1)">◀ درس 1</button>
-  <button onclick="scrollToStep(3)">درس 3 ▶</button>
-  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">🏠 أعلى</button>
-</div>
+<footer class="note">© 2025 FRWEBS — صنع بحب من فراج عبدالله · ضع ملفات الفيديو والـ ZIP في المسارات المشار إليها أو عدّلها حسب الحاجة</footer>
 
 <script>
-  // ====== Initialization & state ======
-  const TOTAL = 6;
-  const completed = new Set( JSON.parse(localStorage.getItem('fabrica_completed') || '[]') );
-  const bar = document.getElementById('bar');
-  const progTxt = document.getElementById('progTxt');
+/* ======================
+   Core behavior & UX JS
+   ====================== */
 
-  function updateProgress(){
-    const c = completed.size;
-    const pct = Math.round((c / TOTAL) * 100);
-    bar.style.width = pct + '%';
-    progTxt.textContent = `${c} / ${TOTAL}`;
-    // update status pills
-    for(let i=1;i<=TOTAL;i++){
-      const st = document.getElementById(`status-${i}`);
-      if(!st) continue;
-      if(completed.has(String(i))){
-        st.textContent = 'مكتمل';
-        st.style.background = 'linear-gradient(90deg,#10b981,#059669)';
-        st.style.color = '#fff';
-      } else {
-        // keep existing
-      }
+/* Helper */
+const TOTAL = 6;
+const bar = document.getElementById('bar');
+const progTxt = document.getElementById('progTxt');
+const stored = JSON.parse(localStorage.getItem('frwebs_completed') || '[]');
+const completed = new Set(stored);
+
+/* update progress UI */
+function updateProgress(){
+  const c = completed.size;
+  const pct = Math.round((c / TOTAL) * 100);
+  if(bar) bar.style.width = pct + '%';
+  if(progTxt) progTxt.textContent = `${c} / ${TOTAL}`;
+  for(let i=1;i<=TOTAL;i++){
+    const st = document.getElementById(`status-${i}`);
+    if(!st) continue;
+    if(completed.has(String(i))){
+      st.textContent = 'مكتمل';
+      st.style.background = 'linear-gradient(90deg,#10b981,#059669)';
+      st.style.color = '#fff';
     }
   }
-  updateProgress();
+}
+updateProgress();
+function saveState(){ localStorage.setItem('frwebs_completed', JSON.stringify(Array.from(completed))); }
 
-  // Save state
-  function saveState(){ localStorage.setItem('fabrica_completed', JSON.stringify(Array.from(completed))); }
+/* IntersectionObserver for show animation */
+const nodes = document.querySelectorAll('.node');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:0.18});
+nodes.forEach(n=>io.observe(n));
 
-  // ====== Scroll-animation: show nodes when in viewport ======
-  const nodes = document.querySelectorAll('.node');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add('show');
-      }
-    });
-  },{threshold:0.18});
-  nodes.forEach(n=>io.observe(n));
+/* Mark buttons */
+document.querySelectorAll('[data-action="mark"]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const id = btn.dataset.item;
+    completed.add(String(id));
+    saveState(); updateProgress();
+    btn.textContent = '✅ تم';
+    btn.disabled = true;
+  });
+});
 
-  // ====== Mark buttons (video watched / read) ======
-  document.querySelectorAll('[data-action="mark"]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const id = btn.dataset.item;
-      completed.add(String(id));
-      updateProgress();
-      saveState();
-      btn.textContent = '✅ تم';
-      btn.disabled = true;
+/* Video behavior: pause others when one plays, auto-mark at 80% */
+const videos = Array.from(document.querySelectorAll('video[data-step]'));
+videos.forEach(v=>{
+  v.addEventListener('play', ()=>{
+    // pause other videos
+    videos.forEach(other=>{
+      if(other !== v && !other.paused) other.pause();
     });
   });
-
-  // ====== Video auto-mark when watched >80% ======
-  document.querySelectorAll('video[data-step]').forEach(v=>{
-    v.addEventListener('timeupdate', ()=>{
-      if(v.duration && v.currentTime / v.duration >= 0.8){
-        const id = v.dataset.step;
-        if(!completed.has(String(id))){
-          completed.add(String(id));
-          updateProgress(); saveState();
-          // find corresponding mark button and disable/update
-          const btn = document.querySelector(`[data-action="mark"][data-item="${id}"]`);
-          if(btn){btn.textContent='✅ تم'; btn.disabled = true;}
-        }
+  v.addEventListener('timeupdate', ()=>{
+    if(v.duration && (v.currentTime / v.duration) >= 0.8){
+      const id = v.dataset.step;
+      if(!completed.has(String(id))){
+        completed.add(String(id));
+        saveState(); updateProgress();
+        const btn = document.querySelector(`[data-action="mark"][data-item="${id}"]`);
+        if(btn){ btn.textContent='✅ تم'; btn.disabled = true; }
       }
-    });
+    }
   });
+});
 
-  // ====== Practical test submit ======
-  document.querySelector('[data-action="submit-test"]').addEventListener('click', ()=>{
+/* Practical submit */
+const submitBtn = document.querySelector('[data-action="submit-test"]');
+if(submitBtn){
+  submitBtn.addEventListener('click', ()=>{
     const id = 6;
     const answer = document.getElementById('practical-answer').value.trim();
     if(!answer){
       alert('✳ من فضلك اكتب رابط المشروع أو وصف الحل في الصندوق.');
       return;
     }
-    // For now we only mark as completed locally (you can replace with backend upload)
-    completed.add(String(id));
-    updateProgress(); saveState();
-    alert('🎉 تم استلام الحل (محليًا). يمكنك لاحقًا توصيله للمدقق.');
-    document.querySelector('[data-action="submit-test"]').textContent = '✅ تم الإرسال';
-    document.querySelector('[data-action="submit-test"]').disabled = true;
+    // save locally
+    const subs = JSON.parse(localStorage.getItem('frwebs_submissions') || '[]');
+    subs.push({time: Date.now(), answer});
+    localStorage.setItem('frwebs_submissions', JSON.stringify(subs));
+    completed.add(String(id)); saveState(); updateProgress();
+    alert('🎉 تم استلام الحل محليًا. يمكنك استلامه من لوحة تحكمك لاحقًا.');
+    submitBtn.textContent = '✅ تم الإرسال'; submitBtn.disabled = true;
   });
+}
 
-  // ====== scroll to step helper ======
-  function scrollToStep(n){
-    const el = document.getElementById('node-'+n);
+/* scroll to step helper when clicking markers */
+document.querySelectorAll('.marker').forEach((m,i)=>{
+  m.addEventListener('click', ()=> {
+    const el = document.getElementById('node-'+(i+1));
     if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+    // small pulse
+    m.animate([{transform:'translate(-50%,-50%) scale(1.06)'},{transform:'translate(-50%,-50%) scale(1)'}],{duration:260});
+  });
+});
+
+/* restore completed buttons state */
+Array.from(completed).forEach(id=>{
+  const btn = document.querySelector(`[data-action="mark"][data-item="${id}"]`);
+  if(btn){ btn.textContent='✅ تم'; btn.disabled = true; }
+  if(id==6){
+    const tbtn = document.querySelector('[data-action="submit-test"]');
+    if(tbtn){ tbtn.textContent='✅ تم الإرسال'; tbtn.disabled = true; }
   }
+});
 
-  // expose scrollToStep globally
-  window.scrollToStep = scrollToStep;
+/* keyboard nav */
+window.addEventListener('keydown', (e)=>{
+  if(e.key === 'ArrowDown') window.scrollBy({top: window.innerHeight*0.6, behavior:'smooth'});
+  if(e.key === 'ArrowUp') window.scrollBy({top: -window.innerHeight*0.6, behavior:'smooth'});
+});
 
-  // ====== enable tapping markers to jump ======
-  document.querySelectorAll('.marker').forEach((m,i)=>{
-    m.addEventListener('click', ()=> scrollToStep(i+1));
-    m.style.cursor = 'pointer';
-  });
+/* ======================
+   3D tilt effect (mouse) for cards
+   ====================== */
+function applyTilt(card, depth=18){
+  const rect = card.getBoundingClientRect();
+  function onMove(e){
+    const cx = rect.left + rect.width/2;
+    const cy = rect.top + rect.height/2;
+    const dx = (e.clientX - cx) / rect.width;
+    const dy = (e.clientY - cy) / rect.height;
+    const rx = dy * depth;
+    const ry = dx * -depth;
+    card.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(12px)`;
+  }
+  function onLeave(){ card.style.transform = ''; }
+  card.addEventListener('mousemove', onMove);
+  card.addEventListener('mouseleave', onLeave);
+}
 
-  // on first load, if stored completed, reflect UI
-  Array.from(completed).forEach(id=>{
-    const btn = document.querySelector(`[data-action="mark"][data-item="${id}"]`);
-    if(btn){ btn.textContent='✅ تم'; btn.disabled = true; }
-    if(id==6){
-      const tbtn = document.querySelector('[data-action="submit-test"]');
-      if(tbtn){ tbtn.textContent='✅ تم الإرسال'; tbtn.disabled = true; }
-    }
-  });
+/* attach tilt to elements with data-tilt */
+document.querySelectorAll('[data-tilt]').forEach(el=>{
+  const depth = Number(el.getAttribute('data-tilt-depth')) || 18;
+  applyTilt(el, depth);
+});
 
-  // allow keyboard navigation (up/down)
-  window.addEventListener('keydown', (e)=>{
-    if(e.key === 'ArrowDown'){ window.scrollBy({top: window.innerHeight*0.6, behavior:'smooth'}); }
-    if(e.key === 'ArrowUp'){ window.scrollBy({top: -window.innerHeight*0.6, behavior:'smooth'}); }
-  });
+/* subtle parallax decor movement on scroll */
+window.addEventListener('scroll', ()=>{
+  const t = window.scrollY;
+  const top = document.querySelector('.decor-top');
+  const bottom = document.querySelector('.decor-bottom');
+  if(top) top.style.transform = `translateY(${t * 0.05}px)`;
+  if(bottom) bottom.style.transform = `translateY(-${t * 0.03}px)`;
+});
+
+/* prevent multiple videos playing via play event (extra safety) */
+document.addEventListener('play', function(e){
+  if(e.target.tagName !== 'VIDEO') return;
+  videos.forEach(v=>{ if(v !== e.target) v.pause(); });
+}, true);
 
 </script>
 </body>
-</html>
+        </html>
