@@ -13,7 +13,7 @@ const processingMsg = document.getElementById("processing-msg");
 let selectedCourse = null;
 let selectedMethod = null;
 
-// فتح نافذة الدفع
+// 🟣 فتح نافذة الدفع
 openButtons.forEach(btn => {
   btn.addEventListener("click", e => {
     selectedCourse = e.target.closest(".course-card").dataset.course;
@@ -21,13 +21,13 @@ openButtons.forEach(btn => {
   });
 });
 
-// غلق النافذة
+// 🔵 غلق النافذة
 closeModal.addEventListener("click", () => {
   modal.classList.add("hidden");
   resetForm();
 });
 
-// اختيار وسيلة الدفع
+// 🟢 اختيار وسيلة الدفع
 document.querySelectorAll('input[name="method"]').forEach(r => {
   r.addEventListener("change", e => {
     selectedMethod = e.target.value;
@@ -35,13 +35,13 @@ document.querySelectorAll('input[name="method"]').forEach(r => {
   });
 });
 
-// إرسال الدفع
+// 🟠 إرسال الدفع
 submitBtn.addEventListener("click", async () => {
   const phone = phoneInput.value.trim();
   const file = receiptInput.files[0];
 
   if (!selectedMethod || !phone || !file) {
-    alert("⚠ يرجى إدخال كل البيانات");
+    alert("⚠️ يرجى إدخال كل البيانات المطلوبة");
     return;
   }
 
@@ -68,8 +68,16 @@ submitBtn.addEventListener("click", async () => {
       processingMsg.classList.add("hidden");
 
       if (res.ok) {
+        // ✅ تم الدفع بنجاح
         successBanner.classList.remove("hidden");
+
+        // ⏳ بعد 3 ثواني يفتح صفحة الدروس
+        setTimeout(() => {
+          window.location.href = "lessons-page/index.html";
+        }, 3000);
+
       } else {
+        // ❌ فشل في الدفع
         failBanner.classList.remove("hidden");
       }
     } catch (err) {
@@ -82,12 +90,17 @@ submitBtn.addEventListener("click", async () => {
   reader.readAsDataURL(file);
 });
 
+// 🔁 إعادة المحاولة
 document.getElementById("retry-payment").addEventListener("click", resetForm);
+
+// ✅ تأكيد النجاح (زرار)
 document.getElementById("confirm-success").addEventListener("click", () => {
   modal.classList.add("hidden");
   resetForm();
+  window.location.href = "lessons-page/index.html";
 });
 
+// 🧹 إعادة تعيين النموذج
 function resetForm() {
   phoneInput.value = "";
   receiptInput.value = "";
