@@ -3,78 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📘 دروس الكورس</title>
+  <title>📘 دروس HTML & CSS & JavaScript</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <header class="header">
-    <div class="header-content">
-      <img src="icons/ai-icon.png" alt="AI" class="logo">
-      <h1>📙 دروس كورس Python</h1>
-      <a href="../index.html" class="back-btn">🏠 رجوع</a>
-    </div>
+<body>
+  <header class="main-header">
+    <h1>🎓 كورس HTML & CSS & JavaScript</h1>
+    <p>رحلة متكاملة لتعلم تصميم وتطوير الويب باحتراف</p>
   </header>
 
-  <main class="lessons-container">
+  <main class="lesson-container">
 
-    <!-- الدرس 1 -->
-    <section class="lesson-card" data-lesson="1">
-      <div class="lesson-number">1</div>
-      <video controls class="lesson-video">
-        <source src="videos/lesson1.mp4" type="video/mp4">
-        المتصفح لا يدعم الفيديو.
+    <!-- الدرس الأول -->
+    <section class="lesson">
+      <video controls poster="images/html.jpg">
+        <source src="videos/html-intro.mp4" type="video/mp4">
       </video>
-      <div class="lesson-text">
-        <h2>📖 مقدمة في لغة Python</h2>
-        <p>في هذا الدرس سنبدأ رحلتنا مع لغة Python، سنتعرف على استخدامها، وأين تُستخدم، ولماذا تُعد من أهم لغات البرمجة الحديثة.</p>
-      </div>
+      <h2>📗 مقدمة HTML</h2>
+      <p>
+        لغة HTML هي أساس أي موقع ويب. من خلالها تبني الهيكل العام للصفحة باستخدام الوسوم.
+        في هذا الدرس سنتعرف على الوسوم الأساسية مثل &lt;html&gt;, &lt;head&gt;, &lt;body&gt;،
+        وكيفية إنشاء النصوص، الصور، والروابط.
+      </p>
+      <a href="#" class="download-btn">📥 تحميل الملخص</a>
     </section>
 
-    <!-- الدرس 2 -->
-    <section class="lesson-card" data-lesson="2">
-      <div class="lesson-number">2</div>
-      <video controls class="lesson-video">
-        <source src="videos/lesson2.mp4" type="video/mp4">
+    <!-- الدرس الثاني -->
+    <section class="lesson">
+      <video controls poster="images/css.jpg">
+        <source src="videos/css-design.mp4" type="video/mp4">
       </video>
-      <div class="lesson-text">
-        <h2>🔢 المتغيرات وأنواع البيانات</h2>
-        <p>في هذا الدرس سنتعرف على المتغيرات وكيفية تخزين البيانات، مع أمثلة عملية لتطبيق المفاهيم البرمجية.</p>
-      </div>
+      <h2>🎨 تصميم المواقع باستخدام CSS</h2>
+      <p>
+        CSS تضيف الجمال إلى مواقعك. سنتعلم استخدام الألوان، الخطوط، الخلفيات، 
+        والتخطيطات الشبكية لتنسيق الصفحة وجعلها متجاوبة مع جميع الأجهزة. 
+        كما سنرى كيفية إنشاء تأثيرات حركية لطيفة باستخدام transition وanimation.
+      </p>
+      <a href="#" class="download-btn">📥 تحميل الملخص</a>
     </section>
 
-    <!-- الدرس 3 -->
-    <section class="lesson-card" data-lesson="3">
-      <div class="lesson-number">3</div>
-      <video controls class="lesson-video">
-        <source src="videos/lesson3.mp4" type="video/mp4">
+    <!-- الدرس الثالث -->
+    <section class="lesson">
+      <video controls poster="images/js.jpg">
+        <source src="videos/javascript.mp4" type="video/mp4">
       </video>
-      <div class="lesson-text">
-        <h2>⚙️ الحلقات والشروط</h2>
-        <p>سنتعلم التحكم في تدفق البرنامج باستخدام الحلقات (Loops) والشروط (if-else) لتطوير منطق برمجي ذكي.</p>
-      </div>
+      <h2>⚡ التفاعل باستخدام JavaScript</h2>
+      <p>
+        JavaScript تجعل الموقع ينبض بالحياة! 
+        سنتعرف على طريقة التعامل مع العناصر في الصفحة عبر DOM،
+        وتنفيذ الأوامر بناءً على تفاعل المستخدم (كالنقر والتمرير).
+      </p>
+      <a href="#" class="download-btn">📥 تحميل الأكواد</a>
     </section>
 
-    <!-- الدرس 4 -->
-    <section class="lesson-card text-only" data-lesson="4">
-      <div class="lesson-number">4</div>
-      <div class="lesson-text">
-        <h2>📄 ملخص النظري</h2>
-        <p>هنا مراجعة سريعة لكل ما تعلمته في الدروس السابقة، مع شرح نصي منظم ومفصل.</p>
-      </div>
+    <!-- الدرس الرابع نصي -->
+    <section class="lesson text-lesson">
+      <h2>🧠 مفهوم DOM في JavaScript</h2>
+      <p>
+        الـ DOM هو اختصار لـ Document Object Model وهو الواجهة التي تُمكّن JavaScript من التفاعل مع HTML.
+        بفضله تستطيع تغيير النصوص، الألوان، الصور وحتى إنشاء عناصر جديدة ديناميكيًا في الصفحة.
+      </p>
+      <a href="#" class="download-btn">📄 قراءة الدرس كامل</a>
     </section>
 
-    <!-- الدرس 5 -->
-    <section class="lesson-card text-only" data-lesson="5">
-      <div class="lesson-number">5</div>
-      <div class="lesson-text">
-        <h2>🧠 اختبار عملي</h2>
-        <p>قم بكتابة كود بسيط يقوم بطباعة الجملة: <code>Hello Python!</code>  
-        ثم جرّب تعديلها لتعرض اسمك بدل الكلمة Python.</p>
-      </div>
+    <!-- الدرس الخامس نصي -->
+    <section class="lesson text-lesson">
+      <h2>💡 تنسيق الصفحات باستخدام Flexbox و Grid</h2>
+      <p>
+        تعلم كيفية توزيع العناصر في الصفحة بشكل احترافي باستخدام تقنيات Flexbox وGrid.
+        هذه الأدوات تسهل تصميم صفحات متجاوبة ومنظمة تعمل على الهاتف والكمبيوتر بسهولة.
+      </p>
+      <a href="#" class="download-btn">📄 تحميل الشرح</a>
+    </section>
+
+    <!-- اختبار عملي -->
+    <section class="lesson quiz">
+      <h2>🧩 اختبار عملي على HTML & CSS & JS</h2>
+      <p>اختبر نفسك بعد مشاهدة الدروس السابقة! اضغط على الزر لبدء التحدي.</p>
+      <button class="quiz-btn">ابدأ الاختبار</button>
     </section>
 
   </main>
+
+  <footer>© 2025 FRWEBS — تصميم وتطوير 💜 فراج عبدالله</footer>
 
   <script src="script.js"></script>
 </body>
