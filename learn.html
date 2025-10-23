@@ -75,7 +75,7 @@
     <p>اختر كورسك وابدأ رحلتك</p>
  
   <!--🔓 زر فتح صفحةالكورسات -->
-<a href="course-page/course.html" class="learn-btn">📚 ابدأ التعلم</a>
+<a href="course-page/lessons.html" class="learn-btn">📚 ابدأ التعلم</a>
 
 <style>
   .learn-btn {
@@ -97,22 +97,6 @@
 </style>
   </header>
 
-  <main class="courses-container">
-    <!-- كورس Python -->
-    <div class="course-box">
-      <div class="course-image"><img src="images/python.jpg" alt="Python"></div>
-      <div class="course-content">
-        <h2>📙 كورس Python</h2>
-        <p>تعلم لغة المستقبل</p>
-        <button class="pay-btn" data-course="python">🔓 فتح الكورس</button>
-      </div>
-      <div id="courseContent-python" class="hidden">
-        <h3>مقدمة اكورس</h3>
-        <p>محتوى كورس Python يظهر هنا بعد التحقق ✅.</p>
-        <video controls><source src="videos/python.mp4" type="video/mp4"></video>
-      </div>
-    </div>
-
     <!-- كورس JavaScript -->
     <div class="course-box">
       <div class="course-image"><img src="images/js-cover.jpg" alt="JavaScript"></div>
@@ -128,86 +112,21 @@
   <a href="course-page/lessons.html" class="learn-btn">📚 ابدأ التعلم</a>
     </div>
 
-    <!-- كورس HTML & CSS -->
+  
+  <!-- كورس JavaScript -->
     <div class="course-box">
-      <div class="course-image"><img src="images/css.png" alt="HTML & CSS"></div>
+      <div class="course-image"><img src="images/js-cover.jpg" alt="JavaScript"></div>
       <div class="course-content">
-        <h2>📘 كورس HTML & CSS</h2>
-        <p>ابدأ رحلتك في تصميم المواقع</p>
-        <button class="pay-btn" data-course="html-css">🔓 فتح الكورس</button>
+        <h2>📗 كورس JavaScript</h2>
+        <p>تعلم البرمجة التفاعلية</p>
       </div>
-      <div id="courseContent-html-css" class="hidden">
+      <div id="courseContent-javascript" class="hidden">
         <h3>مقدمة الكورس</h3>
-        <p>محتوى كورس HTML & CSS يظهر هنا بعد التحقق ✅.</p>
-        <video controls><source src="videos/html-css.mp4" type="video/mp4"></video>
+        <p>محتوى كورس JavaScript يظهر هنا بعد التحقق ✅.</p>
+        <video controls><source src="videos/javascript.mp4" type="video/mp4"></video>
       </div>
+  <a href="course-page/lessons-page" class="learn-btn">📚 ابدأ التعلم</a>
     </div>
-
-    <!-- كورس PHP -->
-    <div class="course-box">
-      <div class="course-image"><img src="images/article4.jpg" alt="PHP"></div>
-      <div class="course-content">
-        <h2>📕 كورس PHP</h2>
-        <p>تعلم تطوير الويب بخطوات بسيطة</p>
-      </div>
-      <div id="courseContent-php" class="hidden">
-        <h3>مقدمة الكورس</h3>
-        <p>محتوى كورس PHP يظهر هنا بعد التحقق ✅.</p>
-        <video controls><source src="videos/php.mp4" type="video/mp4"></video>
-      </div>
-<a href="course-page/lessons.html" class="learn-btn">📚 ابدأ التعلم</a>
-    </div>
-
-    <!-- كورس ++C -->
-    <div class="course-box">
-      <div class="course-image"><img src="images/cpp.jpg" alt="C++"></div>
-      <div class="course-content">
-        <h2>📒 كورس ++C</h2>
-        <p>تعلم البرمجة الشيئية وأساسيات الألعاب</p>
-      </div>
-      <div id="courseContent-cpp" class="hidden">
-        <h3>مقدمة الكورس</h3>
-        <p>محتوى كورس ++C يظهر هنا بعد التحقق ✅.</p>
-        <video controls><source src="videos/cpp.mp4" type="video/mp4"></video>
-      </div>
-    </div>
-  </main>
-
-        
-  <script>
-    const modal = document.getElementById("paymentModal");
-    const closeBtn = document.querySelector(".close");
-    const paymentForm = document.getElementById("paymentForm");
-    let currentCourse = null;
-
-    // فتح المودال عند الضغط على زر الدفع
-    document.querySelectorAll(".pay-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        currentCourse = btn.dataset.course;
-        modal.style.display = "block";
-      });
-    });
-
-    // غلق المودال
-    closeBtn.onclick = () => { modal.style.display = "none"; };
-
-    // عند إرسال نموذج الدفع
-    paymentForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const method = document.querySelector('input[name="method"]:checked').value;
-      const phone = document.getElementById("phone").value;
-      const transId = document.getElementById("transId").value;
-
-      alert(`✅ تم إرسال بيانات الدفع:\nالطريقة: ${method}\nالهاتف: ${phone}\nرقم العملية: ${transId}`);
-
-      modal.style.display = "none";
-      if (currentCourse) {
-        document.getElementById("courseContent-" + currentCourse).classList.remove("hidden");
-      }
-    });
-
-    // غلق المودال عند الضغط خارج المحتوى
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
-  </script>
+ 
 </body>
 </html>
