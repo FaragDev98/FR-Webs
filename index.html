@@ -294,42 +294,7 @@
     animation: moveSide 3s ease-in-out infinite, glowRed 3s ease-in-out infinite alternate;
   }
 
-  /* حركة تذبذب يمين ويسار */
-  @keyframes moveSide {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
-  }
-
-  /* توهج أحمر */
-  @keyframes glowRed {
-    0% {
-      box-shadow: 0 0 5px٨#e63946, 0 0 40px #f77f7f;
-      color: #ffe5e5;
-    }
-  }
-
-  /* الأيقونة ترقص دائماً بحجم أكبر */
-  .logo-space {
-    width: 120px; /* أكبر حجم */
-    height: 120px;
-    background: url('icons/ai-icon.png') no-repeat center center;
-    background-size: contain;
-    position: relative;
-    animation: dance 2s infinite ease-in-out;
-  }
-
-  /* حركة ترنح الأيقونة */
-  @keyframes dance {
-    0% { transform: rotate(0deg) translateY(0); }
-    25% { transform: rotate(10deg) translateY(-5px); }
-    50% { transform: rotate(0deg) translateY(0); }
-    75% { transform: rotate(-10deg) translateY(-5px); }
-    100% { transform: rotate(0deg) translateY(0); }
-  }
-</style>
-
-
-<div class="navbar-3d">
+ <div class="navbar-3d">
   <div class="navbar-content">
 
     <!-- تواصل -->
@@ -497,71 +462,39 @@
   box-shadow: 0 0 25px currentColor;
 }
 
-/* ✅ تجاوب الشريط مع الشاشات المختلفة */
+/* ✅ التجاوب الكامل */
 @media (max-width: 1024px) {
   .navbar-content {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
   }
-
-  .light {
-    width: 55px;
-    height: 55px;
-  }
-
-  .icon, .fas {
-    font-size: 26px;
-  }
-
-  .button {
-    font-size: 14px;
-    padding: 5px 12px;
-  }
+  .light { width: 55px; height: 55px; }
+  .icon, .fas { font-size: 26px; }
+  .button { font-size: 14px; padding: 5px 12px; }
 }
 
 @media (max-width: 768px) {
   .navbar-content {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 18px;
   }
-
-  .light {
-    width: 50px;
-    height: 50px;
-  }
-
-  .icon, .fas {
-    font-size: 22px;
-  }
-
-  .button {
-    font-size: 13px;
-    padding: 5px 10px;
-  }
+  .light { width: 50px; height: 50px; }
+  .icon, .fas { font-size: 22px; }
+  .button { font-size: 13px; padding: 5px 10px; }
 }
 
 @media (max-width: 480px) {
   .navbar-content {
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    gap: 14px;
   }
-
-  .light {
-    width: 45px;
-    height: 45px;
-  }
-
-  .icon, .fas {
-    font-size: 20px;
-  }
-
-  .button {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
- }
+  .light { width: 45px; height: 45px; }
+  .icon, .fas { font-size: 20px; }
+  .button { font-size: 12px; padding: 4px 8px; }
+}
 </style>
 
 <script>
@@ -573,6 +506,8 @@
     alert("🔔 تم تشغيل التنبيه!");
   });
 </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
