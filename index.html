@@ -331,72 +331,90 @@
 
 <div class="navbar-3d">
   <div class="navbar-content">
-<!-- 🔹 قسم الروابط الكامل بعد التنظيم -->
-<div class="light-container">
-  <a href="/contact.html" class="light-link">
-    <div class="light contact">
-      <img src="icons/ai-icon.png" alt="تواصل" class="icon">
+
+    <!-- تواصل -->
+    <div class="light-container">
+      <a href="contact.html" class="light-link">
+        <div class="light contact">
+          <img src="icons/i-icon.png" alt="تواصل" class="icon">
+        </div>
+        <span class="button contact-btn">تواصل</span>
+      </a>
     </div>
-    <span class="button contact-btn">تواصل</span>
-  </a>
+
+    <!-- الدروس -->
+    <div class="light-container">
+      <a href="lessons-page/index.html" class="light-link">
+        <div class="light blog">
+          <img src="icons/ai-icon.png" alt="ابدأ الدرس" class="icon">
+        </div>
+        <span class="button blog-btn">ابدأ الدرس</span>
+      </a>
+    </div>
+
+    <!-- الخدمات -->
+    <div class="light-container">
+      <a href="services.html" class="light-link">
+        <div class="light services">
+          <img src="icons/ai-icon.png" alt="خدمات" class="icon">
+        </div>
+        <span class="button services-btn">خدمات</span>
+      </a>
+    </div>
+
+    <!-- الدورات -->
+    <div class="light-container">
+      <a href="course-page/index.html" class="light-link">
+        <div class="light blog">
+          <img src="icons/ai-icon.png" alt="دورات تعلم" class="icon">
+        </div>
+        <span class="button blog-btn">دورات تعلم</span>
+      </a>
+    </div>
+
+    <!-- المقالات -->
+    <div class="light-container">
+      <a href="article.html" class="light-link">
+        <div class="light blog">
+          <img src="icons/ai-icon.png" alt="مقالات" class="icon">
+        </div>
+        <span class="button blog-btn">مقالات</span>
+      </a>
+    </div>
+
+    <!-- زر الجرس -->
+    <div class="light-container">
+      <div class="light bell" id="bell-btn">
+        <i class="fas fa-bell"></i>
+      </div>
+      <span class="button home-btn">تنبيه</span>
+    </div>
+
+  </div>
 </div>
 
-<div class="light-container">
-  <a href="/lessons-page/index.html" class="light-link">
-    <div class="light blog">
-      <img src="icons/ai-icon.png" alt="ابدأ الدرس" class="icon">
-    </div>
-    <span class="button blog-btn">ابدأ الدرس</span>
-  </a>
-</div>
+<!-- 🎵 الأصوات -->
+<audio id="bell-sound" src="sounds/passing.mp3"></audio>
 
-<div class="light-container">
-  <a href="/services.html" class="light-link">
-    <div class="light services">
-      <img src="icons/ai-icon.png" alt="خدمات" class="icon">
-    </div>
-    <span class="button services-btn">خدمات</span>
-  </a>
-</div>
-
-<div class="light-container">
-  <a href="/course-page/index.html" class="light-link">
-    <div class="light blog">
-      <img src="icons/ai-icon.png" alt="دورات تعلم" class="icon">
-    </div>
-    <span class="button blog-btn">دورات تعلم</span>
-  </a>
-</div>
-
-<div class="light-container">
-  <a href="/article.html" class="light-link">
-    <div class="light blog">
-      <img src="icons/ai-icon.png" alt="المقالات" class="icon">
-    </div>
-    <span class="button blog-btn">المقالات</span>
-  </a>
-</div>
 <style>
- 
- .navbar-3d {
+.navbar-3d {
   perspective: 1000px;
   width: 90%;
   margin: 20px auto;
   border-radius: 20px;
   overflow: hidden;
-  animation: colorShift 6s infinite alternate;
 }
 
 .navbar-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
   padding: 20px;
   border-radius: 20px;
   background: linear-gradient(45deg, #000000, #8B0000, #6a0dad);
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  transform-style: preserve-3d;
   animation: colorShift 6s infinite alternate;
 }
 
@@ -422,18 +440,18 @@
   justify-content: center;
   align-items: center;
   font-size: 28px;
-  animation: dance 0.8s infinite alternate, signalLight 1s infinite alternate;
+  border: 2px solid #fff;
+  color: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
   text-shadow: 0 0 12px #fff;
   background: none;
-  border: 2px solid #fff;
-  overflow: hidden;
 }
 
-.icon {
+.icon, .fas {
   width: 40px;
   height: 40px;
-  object-fit: contain;
+  color: white;
+  font-size: 24px;
 }
 
 /* الأزرار تحت الأيقونات */
@@ -448,34 +466,18 @@
   animation: glow 1.5s infinite alternate;
 }
 
-/* ألوان مختلفة لكل زر */
-.home-btn { background-color: #ff3b3b; animation-delay: 0s; }
-.learn-btn { background-color: #3b82ff; animation-delay: 0.2s; }
-.services-btn { background-color: #3bff7a; animation-delay: 0.4s; }
-.blog-btn { background-color: #ffeb3b; color: #000; animation-delay: 0.6s; }
-.contact-btn { background-color: #ff3bff; animation-delay: 0.8s; }
+/* ألوان مخصصة */
+.contact-btn { background-color: #ff3bff; }
+.blog-btn { background-color: #ffeb3b; color: #000; }
+.services-btn { background-color: #3bff7a; }
+.home-btn { background-color: #ff3b3b; }
+.learn-btn { background-color: #3b82ff; }
 
-/* حركة الأزرار للتوهج */
+/* أنيميشن الأزرار */
 @keyframes glow {
   0% { opacity: 0.6; box-shadow: 0 0 5px currentColor; }
   50% { opacity: 1; box-shadow: 0 0 15px currentColor; }
   100% { opacity: 0.6; box-shadow: 0 0 5px currentColor; }
-}
-
-@keyframes signalLight {
-  0% { filter: brightness(1); box-shadow: 0 0 15px currentColor; }
-  50% { filter: brightness(0.5); box-shadow: 0 0 5px currentColor; }
-  100% { filter: brightness(1); box-shadow: 0 0 15px currentColor; }
-}
-
-@keyframes dance {
-  0%   { transform: translateY(0) rotate(0deg); }
-  15%  { transform: translateY(-4px) rotate(4deg); }
-  30%  { transform: translateY(4px) rotate(-4deg); }
-  45%  { transform: translateY(-4px) rotate(4deg); }
-  60%  { transform: translateY(4px) rotate(-4deg); }
-  75%  { transform: translateY(-2px) rotate(2deg); }
-  100% { transform: translateY(0) rotate(0deg); }
 }
 
 @keyframes dropIn {
@@ -491,23 +493,22 @@
 }
 
 .light:hover {
-  transform: scale(1.3) rotateY(15deg);
+  transform: scale(1.2) rotateY(10deg);
   box-shadow: 0 0 25px currentColor;
 }
 </style>
 
-<!-- </body> -->
-<audio id="train-bell" src="sounds/fast-train-passing.mp3"></audio>
-<audio id="train-passing" src="sounds/train-passing.mp3"></audio>
-<script src="footer.js"></script>
+<script>
+  // تشغيل صوت عند الضغط على الجرس 🔔
+  document.getElementById('bell-btn').addEventListener('click', () => {
+    const bellSound = document.getElementById('bell-sound');
+    bellSound.currentTime = 0;
+    bellSound.play();
+    alert("🔔 تم تشغيل التنبيه!");
+  });
+</script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<audio id="train-bell" src="sounds/passing.mp3"></audio>
-<audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
-<!-- الأصوات -->
-<audio id="train-bell" src="sounds/passing.mp3"></audio>
-<audio id="train-passing" src="sounds/fast-train-passing.mp3"></audio>
-<audio id="train-bell" src="sounds/passing.mp3"></audio>
-<div class="marquee-container">
 
   
   
