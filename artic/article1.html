@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مقال: مقدمة إلى HTML - FaragDev98</title>
+  <link rel="icon" href="icons/ai-icon.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      /* خلفية أفتح وألوان هادئة */
+      background: linear-gradient(to bottom right, #e7d8e0, #b8a0d0, #84a9d6);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      line-height: 1.9;
+    }
+
+    header {
+      /* رأس أزرق صلب */
+      background: #1976d2;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-direction: row;
+    }
+
+    .logo-area img {
+      width: 36px;
+      height: 36px;
+      order: 1;
+    }
+
+    .logo-area h1 {
+      margin: 0;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      order: 2;
+    }
+
+    nav {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
+
+    nav a {
+      padding: 8px 18px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    nav a:nth-child(1) { background-color: #1976d2; }   /* أزرق */
+    nav a:nth-child(2) { background-color: #ab7e2f; }   /* برتقالي أفتح */
+    nav a:nth-child(3) { background-color: #3f7d33; }   /* أخضر أفتح */
+    nav a:nth-child(4) { background-color: #5390d9; }   /* أزرق فاتح */
+
+    nav a:hover {
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.3); /* أفتح */
+      padding: 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+      color: #000; /* نص أسود للوضوح مع الخلفية الفاتحة */
+    }
+
+    .article-img {
+      width: 100%;
+      height: 250px;
+      background-color: #ccc;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      background-image: url("images/html-book-cover.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    h2 {
+      color: #1976d2; /* عنوان أزرق */
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-right: 20px;
+      color: #333;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #1565c0; /* أزرق لين */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9rem;
+      margin: 60px 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-area">
+      <img src="icons/ai-icon.png" alt="شعار FaragDev98" />
+      <h1>Farag Dev 98</h1>
+    </div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">الخدمات</a>
+      <a href="article.html">المقالات</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <img
+    src="images/html-book-cover.png"
+    alt="HTML Banner"
+    style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;"
+  />
+
+  <main>
+    <h2>مقدمة ملهمة 👨‍💻</h2>
+    <p>
+      هل تساءلت يومًا كيف يتم بناء صفحات الإنترنت؟ كيف تظهر النصوص، الصور، والأزرار أمامك بهذا التناسق؟ الجواب يبدأ من هنا، من لغة HTML.
+      هذه المقالة تمهّد لك الطريق لتصبح مطور ويب ناجح، بدايةً من الأساس الذي لا يمكن الاستغناء عنه.
+    </p>
+
+    <h2>ما هي HTML؟</h2>
+    <p>
+      HTML هي اختصار لـ <strong>HyperText Markup Language</strong>، وتعني "لغة ترميز النص التشعبي"، وهي اللغة الأساسية التي تُستخدم لبناء وتصميم هيكل صفحات الويب.
+      تُعد HTML نقطة البداية لكل موقع، فهي التي تُخبر المتصفح كيف يرتب المحتوى، من العناوين إلى الفقرات، ومن الصور إلى الروابط.
+    </p>
+
+    <h2>من هو تيم برنرز لي؟</h2>
+    <p>
+      تيم برنرز لي هو العقل المُبدع خلف الإنترنت. في عام 1989، اخترع نظام الويب، وطوّر أول متصفح وأول محرر HTML. كانت رؤيته واضحة: إنشاء شبكة مفتوحة يمكن للجميع استخدامها، ومشاركة المعرفة بحرية.
+    </p>
+
+    <h2>مميزات لغة HTML</h2>
+    <ul>
+      <li>سريعة التعلم، حتى للمبتدئين.</li>
+      <li>مدعومة على جميع المتصفحات دون الحاجة لأي إضافات.</li>
+      <li>تمكّنك من بناء أي موقع من الصفر.</li>
+      <li>تتكامل بسلاسة مع CSS وJavaScript لتقديم تجربة استخدام احترافية.</li>
+    </ul>
+
+    <h2>وسوم أساسية في HTML</h2>
+    <ul>
+      <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> — تستخدم للعناوين الرئيسية.</li>
+      <li><code>&lt;p&gt;...&lt;/p&gt;</code> — تُمثل فقرة نصية.</li>
+      <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code> — لإنشاء روابط.</li>
+      <li><code>&lt;img src="..."&gt;</code> — لإدراج الصور.</li>
+      <li><code>&lt;ul&gt;&lt;li&gt;</code> — لإنشاء قائمة غير مرتبة.</li>
+    </ul>
+
+    <h2>لماذا تبدأ بـ HTML؟</h2>
+    <p>
+      لأنها البنية التحتية لأي صفحة ويب. قبل أن تتعلم كيفية تزيين الصفحة (CSS) أو جعلها ديناميكية (JavaScript)، يجب أن تُتقن بناء الهيكل الأساسي باستخدام HTML.
+      تعلمك HTML سيمكنك من فهم منطق تصميم الصفحات، وهو ما تحتاجه لاحتراف تطوير الويب.
+    </p>
+
+    <h2>ماذا بعد؟</h2>
+    <p>
+      بعد إتقان HTML، يأتي دور CSS لجعل صفحاتك جذابة بصريًا، ثم JavaScript لإضفاء الحيوية والتفاعل. بهذا الثلاثي، تملك مفاتيح بناء مواقع عصرية وقوية.
+    </p>
+  </main>
+
+  <footer id="footer"></footer>
+  <script src="footer.js"></script>
+</body>
+</html>
