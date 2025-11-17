@@ -1,683 +1,108 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
-  <head>
-  <meta charset="UTF-8" />
-  <title>Farag Dev</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
- 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #f3e5f5, #e8f5e9);
-      color: #333;
-      text-align: center;
-      animation: fadeIn 1.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    header {
-      background: #4a148c;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.7rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 15px;
-      direction: rtl;
-    }
-
-    header .logo-space {
-      width: 50px;
-      height: 50px;
-      background: url('icons/ai-icon.png') no-repeat center center;
-      background-size: contain;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-<link rel="stylesheet" href="style.css" />
-    nav.navbar {
-      background: #fff;
-      padding: 12px 0;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      font-size: 1.1rem;
-      direction: rtl;
-      font-weight: 600;
-      user-select: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      margin: 15px auto;
-      max-width: 600px;
-    }
-
-    nav.navbar a {
-      padding: 10px 22px;
-      color: white;
-      text-decoration: none;
-      /* بدل الحواف الدائرية: */
-      border-radius: 0;
-      font-weight: 700;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: inline-block;
-    }
-
-    nav.navbar a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    nav.navbar a.home { background-color: #7b1fa2; }
-    nav.navbar a.services { background-color: #2196f3; }
-    nav.navbar a.blog { background-color: #25d366; }
-    nav.navbar a.contact { background-color: #f44336; }
-
-    .container {
-      max-width: 750px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px 25px;
-      direction: rtl;
-    }
-
-    .cover {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: #4a148c;
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-    }
-
-    p.summary, p.description {
-      font-size: 1.15rem;
-      line-height: 1.9;
-      color: #444;
-      margin-bottom: 25px;
-    }
-
-    .btns {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    a.btn {
-      padding: 14px 25px;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      /* مربعة */
-      border-radius: 0;
-      transition: all 0.3s ease;
-      width: 80%;
-      max-width: 300px;
-      display: inline-block;
-      text-align: center;
-    }
-
-    a.btn:hover { transform: scale(1.05); }
-
-    .btn-purple { background: #7b1fa2; box-shadow: 0 4px 10px rgba(123, 31, 162, 0.3); }
-    .btn-purple:hover { background: #4a0072; }
-
-    .btn-blue { background: #2196f3; }
-    .btn-blue:hover { background: #1565c0; }
-
-    .btn-green { background: #25d366; }
-    .btn-green:hover { background: #1ebe5d; }
-
-    .btn-black { background: #333; }
-    .btn-black:hover { background: #000; }
-
-    .price {
-      font-size: 1.5rem;
-      color: #2e7d32;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .instruction {
-      background: #ede7f6;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 30px;
-      line-height: 1.8;
-      color: #4a148c;
-      font-size: 1rem;
-      text-align: right;
-      direction: rtl;
-    }
-
-    .instruction a {
-      color: #4a148c;
-      text-decoration: underline;
-    }
-
-    .payment-options {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 30px auto;
-      direction: rtl;
-    }
-
-    .pay-btn {
-      background: #2196f3;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      width: 80%;
-      max-width: 300px;
-      transition: background 0.3s ease;
-    }
-
-    .pay-btn:hover {
-      background: #1565c0;
-    }
-
-    .certificate {
-      width: 100%;
-      max-height: 400px;
-      border-radius: 10px;
-      margin-top: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .footer {
-      font-size: 0.9rem;
-      color: #777;
-      margin: 35px 0 10px;
-      direction: rtl;
-      text-align: center;
-    }
-
-    .footer a {
-      color: #6a1b9a;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farag Dev - HTML Book</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<link rel="stylesheet" href="style.css">
+
+<!-- رأس الصفحة -->
 <header>
-  <button id="username" title="زر الاسم">FR Webs</button>
   <div class="logo-space" title="شعار AI"></div>
+  <button id="username" title="زر الاسم">FR Webs</button>
+  <button id="themeToggle" title="تبديل الوضع">🌙</button>
 </header>
 
-<style>
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background: #1a1a1a;
-    padding: 15px 30px;
-    position: relative;
-    height: 120px;
-    overflow: visible;
-    font-family: 'Cairo', sans-serif;
-    flex-direction: row-reverse; /* تعكس ترتيب العناصر */
-  }
+<!-- شريط التنقل -->
+<nav class="navbar">
+  <a href="index.html" class="home">الرئيسية</a>
+  <a href="lessons-page/index.html" class="services">الدروس</a>
+  <a href="article.html" class="blog">المقالات</a>
+  <a href="contact.html" class="contact">تواصل</a>
+</nav>
 
-  /* الزر الاحمر المتحرك */
-  #username {
-    position: relative;
-    background-color: #e63946; /* أحمر */
-    border: none;
-    padding: 12px 30px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 8px #e63946;
-    animation: moveSide 3s ease-in-out infinite, glowRed 3s ease-in-out infinite alternate;
-  }
+<!-- محتوى الكتاب -->
+<div class="container">
+  <img src="images/book-cover.png" alt="غلاف الكتاب" class="cover">
+  <h1>📘 تعلم HTML من البداية</h1>
+  <p class="summary">
+    تعلم HTML خطوة بخطوة من خلال هذا الكتاب العملي، مع أمثلة حقيقية لتطبيق ما تتعلمه مباشرة.
+  </p>
+  <p class="price">السعر: 100 جنيه</p>
 
- 
- <div class="navbar-3d">
-  <div class="navbar-content">
+  <div class="btns">
+    <a href="https://wa.me/201066047545" class="btn btn-green">شراء عبر واتساب</a>
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
+    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+  </div>
 
-    <!-- 🔗 زر التواصل -->
-    <div class="light-container">
-      <a href="contact/index.html" class="light-link">
-        <div class="light contact">
-          <img src="icons/i-icon.png" alt="تواصل" class="icon">
-        </div>
-        <span class="button contact-btn">تواصل</span>
-      </a>
-    </div>
-
-    <!-- 🔗 زر الدروس -->
-    <div class="light-container">
-      <a href="lessons/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="ابدأ الدرس" class="icon">
-        </div>
-        <span class="button blog-btn">ابدأ الدرس</span>
-      </a>
-    </div>
-
-    <!-- 🔗 زر المقالات -->
-    <div class="light-container">
-      <a href="articles/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="مقالات" class="icon">
-        </div>
-        <span class="button blog-btn">مقالات</span>
-      </a>
-    </div>
-
+  <div class="instruction">
+    بعد الدفع، أرسل إيصال التحويل على واتساب لتستلم نسخة PDF فورًا.<br>
+    طرق الدفع: فودافون كاش، أورنج كاش، وي كاش، باي بال.
   </div>
 </div>
-   <div class="navbar-3d">
-  <div class="navbar-content">
 
-    <!-- تواصل -->
-    <div class="light-container">
-      <a href="contac/index.html" class="light-link">
-        <div class="light contact">
-          <img src="icons/i-icon.png" alt="تواصل" class="icon">
-        </div>
-        <span class="button contact-btn">تواصل</span>
-      </a>
-    </div>
+<!-- مختبر البرمجة -->
+<div class="lab-box">
+  <img src="images/aiicon.png" alt="صورة المختبر">
+  <h3>🔬 المختبر البرمجي</h3>
+  <p>
+    جرّب أكثر من 10 لغات برمجة مباشرة من المتصفح، بدون تثبيت أو إعدادات.
+  </p>
+  <a href="code-lab.html" class="btn-black">جرب المختبر الآن</a>
+</div>
 
+<!-- الجرس -->
+<div class="bell-container">
+  <img src="icons/ai-icon.png" alt="جرس" class="bell-icon">
+  <button onclick="ringBell()" class="bell-btn">🛎 اضغط على الجرس</button>
+</div>
 
-    <!-- الخدمات -->
-    <div class="light-container">
-      <a href="services.html" class="light-link">
-        <div class="light services">
-          <img src="icons/ai-icon.png" alt="خدمات" class="icon">
-        </div>
-        <span class="button services-btn">خدمات</span>
-      </a>
-    </div>
+<!-- الأصوات -->
+<audio id="bell-sound" src="sounds/passing.mp3"></audio>
 
-    <!-- الدورات -->
-    <div class="light-container">
-      <a href="course-page/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="دورات تعلم" class="icon">
-        </div>
-        <span class="button blog-btn">دورات تعلم</span>
-      </a>
-    </div>
-
-    <!-- المقالات -->
-    <div class="light-container">
-      <a href="artic/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="مقالات" class="icon">
-        </div>
-        <span class="button blog-btn">مقالات</span>
-      </a>
-    </div>
-
-  
-
-
-<style>
-
-.navbar-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  padding: 20px;
-  border-radius: 20px;
-  background: linear-gradient(45deg, #000000, #8B0000, #6a0dad);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  animation: colorShift 6s infinite alternate;
-}
-
-.light-container {
-  text-align: center;
-  animation: dropIn 1s ease-out forwards;
-}
-
-.light-link {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-size: 26px;
-}
-
-.light {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 28px;
-  border: 2px solid #fff;
-  color: #fff;
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-shadow: 0 0 12px #fff;
-  background: none;
-}
-
-.icon, .fas {
-  width: 40px;
-  height: 40px;
-  color: white;
-  font-size: 24px;
-}
-
-/* الأزرار تحت الأيقونات */
-.button {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  animation: glow 1.5s infinite alternate;
-}
-
-/* ألوان مخصصة */
-.contact-btn { background-color: #ff3bff; }
-.blog-btn { background-color: #ffeb3b; color: #000; }
-.services-btn { background-color: #3bff7a; }
-.home-btn { background-color: #ff3b3b; }
-.learn-btn { background-color: #3b82ff; }
-
-/* أنيميشن الأزرار */
-@keyframes glow {
-  0% { opacity: 0.6; box-shadow: 0 0 5px currentColor; }
-  50% { opacity: 1; box-shadow: 0 0 15px currentColor; }
-  100% { opacity: 0.6; box-shadow: 0 0 5px currentColor; }
-}
-
-@keyframes dropIn {
-  0% { transform: translateY(-100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes colorShift {
-  0% { background: linear-gradient(45deg, #000000, #6a0dad); }
-  33% { background: linear-gradient(45deg, #8B0000, #6a0dad); }
-  66% { background: linear-gradient(45deg, #000000, #8B0000); }
-  100% { background: linear-gradient(45deg, #6a0dad, #000000); }
-}
-
-.light:hover {
-  transform: scale(1.2) rotateY(10deg);
-  box-shadow: 0 0 25px currentColor;
-}
-
-/* ✅ التجاوب الكامل */
-@media (max-width: 1024px) {
-  .navbar-content {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-  }
-  .light { width: 55px; height: 55px; }
-  .icon, .fas { font-size: 26px; }
-  .button { font-size: 14px; padding: 5px 12px; }
-}
-
-@media (max-width: 768px) {
-  .navbar-content {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-  }
-  .light { width: 50px; height: 50px; }
-  .icon, .fas { font-size: 22px; }
-  .button { font-size: 13px; padding: 5px 10px; }
-}
-
-@media (max-width: 480px) {
-  .navbar-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-  .light { width: 45px; height: 45px; }
-  .icon, .fas { font-size: 20px; }
-  .button { font-size: 12px; padding: 4px 8px; }
-}
-</style>
-
-    <!-- 🔗 زر التواصل -->
-    <div class="light-container">
-      <a href="contact/index.html" class="light-link">
-        <div class="light contact">
-          <img src="icons/i-icon.png" alt="تواصل" class="icon">
-        </div>
-        <span class="button contact-btn">تواصل</span>
-      </a>
-    </div>
-
-    <!-- 🔗 زر الدروس -->
-    <div class="light-container">
-      <a href="lessons/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="ابدأ الدرس" class="icon">
-        </div>
-        <span class="button blog-btn">ابدأ الدرس</span>
-      </a>
-    </div>
-
-
-
+<!-- شريط الأزرار المتحرك -->
+<div class="marquee-container">
+  <div class="marquee-content">
+    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">اشترك في القناة</a>
+    <a href="https://wa.me/201066047545" class="btn-skill green dancing">اطلب الخدمة الآن</a>
+    <a href="code-lab.html" class="btn-skill black dancing">جرب المختبر</a>
   </div>
 </div>
-   <div class="navbar-3d">
-  <div class="navbar-content">
 
-    <!-- تواصل -->
-    <div class="light-container">
-      <a href="contact.html" class="light-link">
-        <div class="light contact">
-          <img src="icons/i-icon.png" alt="تواصل" class="icon">
-        </div>
-        <span class="button contact-btn">تواصل</span>
-      </a>
-    </div>
-
-    <!-- الدروس -->
-    <div class="light-container">
-      <a href="lessons-page/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="ابدأ الدرس" class="icon">
-        </div>
-        <span class="button blog-btn">ابدأ الدرس</span>
-      </a>
-    </div>
-
-    <!-- الخدمات -->
-    <div class="light-container">
-      <a href="services.html" class="light-link">
-        <div class="light services">
-          <img src="icons/ai-icon.png" alt="خدمات" class="icon">
-        </div>
-        <span class="button services-btn">خدمات</span>
-      </a>
-    </div>
-
-    <!-- الدورات -->
-    <div class="light-container">
-      <a href="course-page/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="دورات تعلم" class="icon">
-        </div>
-        <span class="button blog-btn">دورات تعلم</span>
-      </a>
-    </div>
-
-    <!-- المقالات -->
-    <div class="light-container">
-      <a href="artic/index.html" class="light-link">
-        <div class="light blog">
-          <img src="icons/ai-icon.png" alt="مقالات" class="icon">
-        </div>
-        <span class="button blog-btn">مقالات</span>
-      </a>
-    </div>
-
-  </div>
-</div>
+<!-- زر كتم الصوت -->
+<button id="muteBtn" class="mute-btn" title="كتم الصوت"><i id="muteIcon" class="fa-solid fa-volume-high"></i></button>
 
 <script>
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-     <a href="course-page/lessons-page" class="learn-btn">📚 ابدأ التعلم</a>
-            <a href="course-page/lessons.html" class="learn-btn">📚 ابدأ التعلم</a>
-
-  <!-- الفيديو -->
-  <div style="background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee); padding: 10px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.5); margin-bottom: 20px;">
-    <video style="width: 100%; height: 420px; border-radius: 15px; display: block;" controls>
-      <source src="videos/programming-benefits.mp4" type="video/mp4">
-      متصفحك لا يدعم عرض الفيديو.
-    </video>
-  </div>
-
-  <!-- النص -->
-  <h3 style="font-size: 2.3rem; font-weight: 900; margin-bottom: 15px; color: #222; text-shadow: 0 2px 5px rgba(255,255,255,0.5);">
-    لماذا تعلم البرمجة هو مفتاح المستقبلا❓️
-  </h3>
-  <p style="font-size: 1.2rem; line-height: 1.9; color: #444;">
-    البرمجة ليست مجرد مهارة تقنية، بل هي أداة تمنحك القدرة على تحويل أفكارك إلى مشاريع واقعية تخدم الملايين. 
-    من خلال البرمجة تستطيع تصميم مواقع وتطبيقات، أتمتة المهام، تطوير حلول مبتكرة للمشاكل، 
-    ودخول سوق العمل العالمي بثقة عالية. إتقان البرمجة يعني أن تمتلك لغة المستقبل
-    وتصبح قادرًا على المنافسة، الإبداع، وتحقيق دخل مستمر في عصر يعتمد على التكنولوجيا في كل شيء.
-  </p>
-</div>
-  
-     
- 
-
-  <a href="https://github.com/FaragDev98" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/github.png" alt="GitHub" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.youtube.com/@Fabrica-courses" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/youtube.png" alt="YouTube" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.facebook.com/share/15SjvL75fF/" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/facebook.png" alt="Facebook" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/linkedin.png" alt="LinkedIn" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.instagram.com/frjbdllh25" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/instagram.png" alt="Instagram" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
- <a href="https://wa.me/201066047545" target="_blank" rel="noopener" class="whatsapp-link">
-    <img src="icons/i-icon.png" alt="WhatsApp" class="whatsapp-icon">
- </a>
-</div>
-
-<style>
-  /* تكبير الأيقونات عند المرور */
-  div > a:hover {
-    transform: scale(1.3) translateZ(20px);
+  // الجرس
+  function ringBell() {
+    const bell = document.getElementById('bell-sound');
+    bell.currentTime = 0;
+    bell.play();
+    alert("🔔 تم تشغيل التنبيه!");
   }
-.whatsapp-link {
-    transition: transform 0.3s;
-}
 
-.whatsapp-icon {
-    width: 36px;
-    height: 36px;
-    filter: invert(100%);
- }
-  /* حركة طفيفة ثلاثية الأبعاد للمربع */
-  @keyframes float3D {
-    0%, 100% {
-      transform: rotateX(2deg) rotateY(-2deg);
-    }
-    50% {
-      transform: rotateX(-2deg) rotateY(2deg);
-    }
-  }
-</style> 
- <div class="marquee-container">
-  <div class="marquee-content">
-    <!-- القطار المتحرك داخل الشريط -->
+  // كتم الصوت
+  const muteBtn = document.getElementById('muteBtn');
+  const muteIcon = document.getElementById('muteIcon');
+  muteBtn.addEventListener('click', () => {
+    const audios = document.querySelectorAll('audio');
+    const isMuted = muteIcon.classList.contains('fa-volume-xmark');
+    audios.forEach(audio => audio.muted = !isMuted);
+    muteIcon.classList.toggle('fa-volume-high');
+    muteIcon.classList.toggle('fa-volume-xmark');
+  });
 
-    <!-- باقي الأزرار -->
-    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة🚂
-    </a>
-    <a href="https://wa.me/201066047545" class="btn-skill pink dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اطلب الخدمة الآن🚃
-    </a>
-    <a href="https://wa.me/201066047545" class="btn-skill purple dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في الكورس🚃
-    </a>
-    <a href="code-lab.html" class="btn-skill dark-red dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> جرب المختبر الآن🚃
-    </a>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء من Gumroad🚃
-    </a>
-    <a href="https://payhip.com/b/2cJWp" class="btn-skill blue dancing">
-      <img src="icons/code.png" class="icon-img" alt=""> شراء من Payhip🚃
-    </a>
-    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء عبر واتساب🚃
-    </a>
-    <a href="download/تعلم إنجليزي.apk" class="btn-skill violet dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> نزّل التطبيق🚃
-    </a>
-    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black dancing">
-      <i class="fab fa-paypal icon-img"></i> PayPal
-    </button>
-    <button onclick="copyText('01066047545')" class="btn-skill red dancing">
-      <img src="icons/vodafone.png" alt="" class="icon-img"/> Vodafone Cash🚃
-    </button>
-    <button onclick="copyText('01285895096')" class="btn-skill orange dancing">
-      <img src="icons/orange.png" alt="" class="icon-img"/> Orange Cash🚃
-    </button>
-    <button onclick="copyText('01558516081')" class="btn-skill dark-purple dancing">
-      <img src="icons/we.png" alt="" class="icon-img"/> WE Cash🚃
-    </button>
- <a href="index.html" class="btn-skill black dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚈
-    </a>
-
- </div>
- </div>
-  <script src="security.js"></script>
+  // تبديل الوضع الليلي/الفاتح
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  });
+</script>
 
 </body>
-
-        </html>
+</html>
