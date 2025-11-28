@@ -3,104 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farag Dev - HTML Book</title>
+  <title>Farag Dev - الصفحة الرئيسية</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- رأس الصفحة -->
-<header>
-  <div class="logo-space" title="شعار AI"></div>
-  <button id="username" title="زر الاسم">FR Webs</button>
-  <button id="themeToggle" title="تبديل الوضع">🌙</button>
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+  <div class="logo"></div>
+
+  <h1 class="site-title">FR Webs</h1>
+
+  <button id="themeToggle" class="theme-btn">🌙</button>
 </header>
 
-<!-- شريط التنقل -->
-<nav class="navbar">
-  <a href="dev-english/index.html" class="home">تعلم الجمل الانجليزيه </a>
-  <a href="lessons-page/index.html" class="services">الدروس</a>
-  <a href="article.html" class="blog">المقالات</a>
-  <a href="contact.html" class="contact">تواصل</a>
+
+<!-- ================= NAV BAR (TOP) ================= -->
+<nav class="top-nav">
+  <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
+  <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i> الدروس</a>
+  <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+  <a href="contact/index.html"><i class="fa-solid fa-phone"></i> تواصل</a>
 </nav>
 
-<!-- محتوى الكتاب -->
-<div class="container">
-  <img src="images/book-cover.png" alt="غلاف الكتاب" class="cover">
-  <h1>📘 تعلم HTML من البداية</h1>
+
+<!-- ================= MAIN CONTENT ================= -->
+<section class="main-box">
+  <img src="images/book-cover.png" class="cover">
+
+  <h2>📘 تعلم HTML من البداية</h2>
+
   <p class="summary">
-    تعلم HTML خطوة بخطوة من خلال هذا الكتاب العملي، مع أمثلة حقيقية لتطبيق ما تتعلمه مباشرة.
+    كتاب شامل لتعلم HTML خطوة بخطوة مع أمثلة عملية وتطبيقات مباشرة.
   </p>
+
   <p class="price">السعر: 100 جنيه</p>
 
   <div class="btns">
-    <a href="https://wa.me/201066047545" class="btn btn-green">شراء عبر واتساب</a>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn btn-purple">شراء من Gumroad</a>
-    <a href="https://payhip.com/b/2cJWp" class="btn btn-blue">شراء من Payhip</a>
+    <a href="https://wa.me/201066047545" class="btn green">شراء عبر واتساب</a>
+    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn purple">Gumroad</a>
+    <a href="https://payhip.com/b/2cJWp" class="btn blue">Payhip</a>
   </div>
 
-  <div class="instruction">
-    بعد الدفع، أرسل إيصال التحويل على واتساب لتستلم نسخة PDF فورًا.<br>
-    طرق الدفع: فودافون كاش، أورنج كاش، وي كاش، باي بال.
-  </div>
-</div>
-
-<!-- مختبر البرمجة -->
-<div class="lab-box">
-  <img src="images/aiicon.png" alt="صورة المختبر">
-  <h3>🔬 المختبر البرمجي</h3>
-  <p>
-    جرّب أكثر من 10 لغات برمجة مباشرة من المتصفح، بدون تثبيت أو إعدادات.
+  <p class="instruction">
+    بعد الدفع، أرسل الإيصال على واتساب لتحصل على نسخة PDF فورًا.
   </p>
-  <a href="lessons.html" class="btn-black">جرب المختبر الآن</a>
-</div>
+</section>
 
-<!-- الجرس -->
-<div class="bell-container">
-  <img src="icons/ai-icon.png" alt="جرس" class="bell-icon">
+
+<!-- ============== LAB BOX ============== -->
+<section class="lab">
+  <img src="images/aiicon.png">
+  <h3>🔬 المختبر البرمجي</h3>
+
+  <p>جرّب أكثر من 10 لغات برمجة بدون تثبيت.</p>
+
+  <a href="lessons.html" class="lab-btn">جرب المختبر الآن</a>
+</section>
+
+
+<!-- ================= BELL ================= -->
+<div class="bell-area">
+  <img src="icons/ai-icon.png" class="bell-icon">
   <button onclick="ringBell()" class="bell-btn">🛎 اضغط على الجرس</button>
 </div>
 
-<!-- الأصوات -->
 <audio id="bell-sound" src="sounds/passing.mp3"></audio>
 
-<!-- شريط الأزرار المتحرك -->
-<div class="marquee-container">
-  <div class="marquee-content">
-    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">اشترك في القناة</a>
-    <a href="https://wa.me/201066047545" class="btn-skill green dancing">اطلب الخدمة الآن</a>
-    <a href="code-lab.html" class="btn-skill black dancing">جرب المختبر</a>
-  </div>
-</div>
 
-<!-- زر كتم الصوت -->
-<button id="muteBtn" class="mute-btn" title="كتم الصوت"><i id="muteIcon" class="fa-solid fa-volume-high"></i></button>
+<!-- ============== BOTTOM NAV (CANVA STYLE) ============== -->
+<nav class="bottom-nav">
+  <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+  <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+  <a href="code-lab.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+  <a href="contact/index.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+</nav>
+
+
+<!-- ================= SCRIPTS ================= -->
+<script src="footer.js"></script>
 
 <script>
-  // الجرس
+  // صوت الجرس
   function ringBell() {
-    const bell = document.getElementById('bell-sound');
+    const bell = document.getElementById("bell-sound");
     bell.currentTime = 0;
     bell.play();
-    alert("🔔 تم تشغيل التنبيه!");
   }
 
-  // كتم الصوت
-  const muteBtn = document.getElementById('muteBtn');
-  const muteIcon = document.getElementById('muteIcon');
-  muteBtn.addEventListener('click', () => {
-    const audios = document.querySelectorAll('audio');
-    const isMuted = muteIcon.classList.contains('fa-volume-xmark');
-    audios.forEach(audio => audio.muted = !isMuted);
-    muteIcon.classList.toggle('fa-volume-high');
-    muteIcon.classList.toggle('fa-volume-xmark');
-  });
-
-  // تبديل الوضع الليلي/الفاتح
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  // الوضع الليلي
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    themeToggle.textContent =
+      document.body.classList.contains("dark") ? "☀️" : "🌙";
   });
 </script>
 
