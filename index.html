@@ -1,102 +1,198 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FR Webs - المنصة التعليمية</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FR Webs Academy — تعليم البرمجة والجرافيك والمنتاج</title>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- SEO minimal -->
+  <meta name="description" content="FR Webs Academy — دروس برمجة، تصميم جرافيك، ومونتاج فيديو بطريقة بسيطة ومباشرة للمبتدئين." />
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="main-header">
-  <div class="logo"></div>
-  <h1 class="site-title">FR Webs Academy</h1>
-  <button id="themeToggle" class="theme-btn">🌙</button>
-</header>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <span class="brand-title">FR Webs Academy</span>
+      </a>
 
-<!-- ===== TOP NAV ===== -->
-<nav class="top-nav">
-  <a href="#"><i class="fa-solid fa-code"></i> برمجة</a>
-  <a href="#"><i class="fa-solid fa-pen-nib"></i> جرافيك</a>
-  <a href="#"><i class="fa-solid fa-video"></i> منتاج</a>
-  <a href="contact/index.html"><i class="fa-solid fa-phone"></i> تواصل</a>
-</nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">☰</button>
+      </div>
+    </div>
 
-<!-- ===== HERO SECTION ===== -->
-<section class="hero">
-  <h2>ابدأ رحلتك في تعلم<br> البرمجة – الجرافيك – المنتاج</h2>
-  <p>كل الدروس والأدوات والمهارات في منصة واحدة بشكل بسيط وسهل لأي مبتدئ.</p>
+    <!-- NAV (desktop) -->
+    <nav class="nav desktop-only" aria-label="القائمة الرئيسية">
+      <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
+      <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i> الدروس</a>
+      <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+      <a href="contac/index.html"><i class="fa-solid fa-phone"></i> تواصل</a>
+      <a href="course-page/course.html" class="cta"><i class="fa-solid fa-graduation-cap"></i> اشترك في الكورس</a>
+    </nav>
 
-  <a href="lessons-page/index.html" class="start-btn">ابدأ الآن</a>
-</section>
+    <!-- NAV (mobile slide) -->
+    <nav id="mobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
+      <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
+      <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i> الدروس</a>
+      <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+      <a href="contac/index.html"><i class="fa-solid fa-phone"></i> تواصل</a>
+      <a href="course-page/course.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+    </nav>
+  </header>
 
-<!-- ===== FEATURES ===== -->
-<section class="features">
-  <div class="feature">
-    <i class="fa-solid fa-code"></i>
-    <h3>تعلم البرمجة</h3>
-    <p>تعليم HTML – CSS – JavaScript بطريقة مبسطة مع أمثلة عملية.</p>
-  </div>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>ابدأ رحلتك في تعلم البرمجة — الجرافيك — المنتاج</h1>
+          <p>دروس عملية، مشاريع جاهزة، وأدوات بسيطة لأي مبتدئ. تعلّم بسرعة وابدأ العمل الحر.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="lessons-page/index.html">ابدأ الآن</a>
+            <a class="btn outline" href="contac/index.html">تواصل معنا</a>
+          </div>
+        </div>
 
-  <div class="feature">
-    <i class="fa-solid fa-palette"></i>
-    <h3>تصميم الجرافيك</h3>
-    <p>تعلم تصميم الشعارات، البوسترات، والسوشيال ميديا بسهولة.</p>
-  </div>
+        <div class="hero-cards">
+          <article class="card">
+            <i class="fa-solid fa-code card-icon"></i>
+            <h4>تعلم البرمجة</h4>
+            <p>HTML • CSS • JavaScript مع أمثلة ومهام تطبيقية.</p>
+          </article>
 
-  <div class="feature">
-    <i class="fa-solid fa-film"></i>
-    <h3>منتاج الفيديو</h3>
-    <p>شرح Premiere وCapCut بأسلوب سريع ومباشر لبدء العمل الحر.</p>
-  </div>
-</section>
+          <article class="card">
+            <i class="fa-solid fa-palette card-icon"></i>
+            <h4>تصميم الجرافيك</h4>
+            <p>شعارات، منشورات سوشيال، وتصميم واجهات بسيطة.</p>
+          </article>
 
-<!-- ===== LAB BOX ===== -->
-<section class="lab-box">
-  <img src="images/aiicon.png">
-  <h3>🔬 مختبر التجربة</h3>
-  <p>جرّب كتابة كود مباشرة بدون تثبيت أي برنامج.</p>
-  <a href="code-lab.html" class="lab-btn">الدخول للمختبر</a>
-</section>
+          <article class="card">
+            <i class="fa-solid fa-film card-icon"></i>
+            <h4>مونتاج الفيديو</h4>
+            <p>CapCut وPremiere أساسيات المونتاج والرفع للعملاء.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- ===== BELL ===== -->
-<div class="bell-area">
-  <img src="icons/ai-icon.png" class="bell-icon">
-  <button onclick="ringBell()" class="bell-btn">🛎 اضغط على الجرس</button>
-</div>
+    <!-- SECTIONS -->
+    <section class="why">
+      <div class="container">
+        <h2>لماذا FR Webs Academy؟</h2>
+        <p class="lead">محتوى مختصر، تطبيقي، ومصمم ليدخلك سوق العمل بسرعة.</p>
 
-<audio id="bell-sound" src="sounds/passing.mp3"></audio>
+        <div class="grid-3">
+          <div class="feature">
+            <i class="fa-solid fa-rocket"></i>
+            <h3>انطلاقة سريعة</h3>
+            <p>دورات مركزة وطرق تعليم عملية.</p>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-hands-helping"></i>
+            <h3>دعم مباشر</h3>
+            <p>تواصل عبر واتساب ومساعدة في المشاريع.</p>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <h3>أسعار مناسبة</h3>
+            <p>خطط تناسب المبتدئين والراغبين في العمل الحر.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- ===== BOTTOM NAV ===== -->
-<nav class="bottom-nav">
-  <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
-  <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
-  <a href="code-lab.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
-  <a href="contact/index.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
-</nav>
+    <!-- LAB -->
+    <section class="lab container">
+      <div class="lab-left">
+        <img src="images/aiicon.png" alt="مختبر" />
+      </div>
+      <div class="lab-right">
+        <h3>🔬 مختبر التجربة</h3>
+        <p>جرب الأكواد مباشرة من المتصفح — لا تثبيت ولا إعداد.</p>
+        <a class="btn" href="code-lab.html">افتح المختبر</a>
+      </div>
+    </section>
 
-<script src="footer.js"></script>
+    <!-- LATEST ARTICLES -->
+    <section class="container articles-section">
+      <h2>أحدث المقالات والدروس</h2>
+      <div class="grid-3 cards-row">
+        <a class="post" href="artic/index.html">
+          <img src="images/thumb-1.jpg" alt="مقال" />
+          <div class="post-body">
+            <h4>مقال تجريبي 1</h4>
+            <p>ملخص قصير للمقال أو الدرس.</p>
+          </div>
+        </a>
 
-<script>
-  // جرس
-  function ringBell() {
-    const bell = document.getElementById("bell-sound");
-    bell.currentTime = 0;
-    bell.play();
-  }
+        <a class="post" href="artic/index.html">
+          <img src="images/thumb-2.jpg" alt="مقال" />
+          <div class="post-body">
+            <h4>مقال تجريبي 2</h4>
+            <p>ملخص قصير للمقال أو الدرس.</p>
+          </div>
+        </a>
 
-  // الوضع الليلي
-  const themeToggle = document.getElementById("themeToggle");
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    themeToggle.textContent =
-      document.body.classList.contains("dark") ? "☀️" : "🌙";
-  });
-</script>
+        <a class="post" href="lessons-page/index.html">
+          <img src="images/thumb-3.jpg" alt="درس" />
+          <div class="post-body">
+            <h4>درس عملي</h4>
+            <p>دورة قصيرة لتطبيق سريع.</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
+  </main>
+
+  <!-- BOTTOM NAV (mobile) -->
+  <nav class="bottom-nav mobile-only" aria-label="تنقل أسفل الصفحة">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+    <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+    <a href="code-lab.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+    <a href="contac/index.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+  </nav>
+
+  <!-- Footer (via footer.js) -->
+  <script src="footer.js"></script>
+
+  <!-- Small script: menu + theme -->
+  <script>
+    // mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    menuToggle?.addEventListener('click', () => {
+      mobileNav?.classList.toggle('mobile-hidden');
+    });
+
+    // theme toggle (persists in localStorage)
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('fr_theme');
+    if (currentTheme === 'dark') document.body.classList.add('dark');
+
+    themeToggle?.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('fr_theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+
+    // small animation on scroll (simple)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('in-view');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card, .feature, .post').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
