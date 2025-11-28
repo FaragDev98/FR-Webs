@@ -3,72 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farag Dev - الصفحة الرئيسية</title>
+  <title>FR Webs - المنصة التعليمية</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Icons -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ===== HEADER ===== -->
 <header class="main-header">
   <div class="logo"></div>
-
-  <h1 class="site-title">FR Webs</h1>
-
+  <h1 class="site-title">FR Webs Academy</h1>
   <button id="themeToggle" class="theme-btn">🌙</button>
 </header>
 
-
-<!-- ================= NAV BAR (TOP) ================= -->
+<!-- ===== TOP NAV ===== -->
 <nav class="top-nav">
-  <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
-  <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i> الدروس</a>
-  <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+  <a href="#"><i class="fa-solid fa-code"></i> برمجة</a>
+  <a href="#"><i class="fa-solid fa-pen-nib"></i> جرافيك</a>
+  <a href="#"><i class="fa-solid fa-video"></i> منتاج</a>
   <a href="contact/index.html"><i class="fa-solid fa-phone"></i> تواصل</a>
 </nav>
 
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <h2>ابدأ رحلتك في تعلم<br> البرمجة – الجرافيك – المنتاج</h2>
+  <p>كل الدروس والأدوات والمهارات في منصة واحدة بشكل بسيط وسهل لأي مبتدئ.</p>
 
-<!-- ================= MAIN CONTENT ================= -->
-<section class="main-box">
-  <img src="images/book-cover.png" class="cover">
+  <a href="lessons-page/index.html" class="start-btn">ابدأ الآن</a>
+</section>
 
-  <h2>📘 تعلم HTML من البداية</h2>
-
-  <p class="summary">
-    كتاب شامل لتعلم HTML خطوة بخطوة مع أمثلة عملية وتطبيقات مباشرة.
-  </p>
-
-  <p class="price">السعر: 100 جنيه</p>
-
-  <div class="btns">
-    <a href="https://wa.me/201066047545" class="btn green">شراء عبر واتساب</a>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn purple">Gumroad</a>
-    <a href="https://payhip.com/b/2cJWp" class="btn blue">Payhip</a>
+<!-- ===== FEATURES ===== -->
+<section class="features">
+  <div class="feature">
+    <i class="fa-solid fa-code"></i>
+    <h3>تعلم البرمجة</h3>
+    <p>تعليم HTML – CSS – JavaScript بطريقة مبسطة مع أمثلة عملية.</p>
   </div>
 
-  <p class="instruction">
-    بعد الدفع، أرسل الإيصال على واتساب لتحصل على نسخة PDF فورًا.
-  </p>
+  <div class="feature">
+    <i class="fa-solid fa-palette"></i>
+    <h3>تصميم الجرافيك</h3>
+    <p>تعلم تصميم الشعارات، البوسترات، والسوشيال ميديا بسهولة.</p>
+  </div>
+
+  <div class="feature">
+    <i class="fa-solid fa-film"></i>
+    <h3>منتاج الفيديو</h3>
+    <p>شرح Premiere وCapCut بأسلوب سريع ومباشر لبدء العمل الحر.</p>
+  </div>
 </section>
 
-
-<!-- ============== LAB BOX ============== -->
-<section class="lab">
+<!-- ===== LAB BOX ===== -->
+<section class="lab-box">
   <img src="images/aiicon.png">
-  <h3>🔬 المختبر البرمجي</h3>
-
-  <p>جرّب أكثر من 10 لغات برمجة بدون تثبيت.</p>
-
-  <a href="lessons.html" class="lab-btn">جرب المختبر الآن</a>
+  <h3>🔬 مختبر التجربة</h3>
+  <p>جرّب كتابة كود مباشرة بدون تثبيت أي برنامج.</p>
+  <a href="code-lab.html" class="lab-btn">الدخول للمختبر</a>
 </section>
 
-
-<!-- ================= BELL ================= -->
+<!-- ===== BELL ===== -->
 <div class="bell-area">
   <img src="icons/ai-icon.png" class="bell-icon">
   <button onclick="ringBell()" class="bell-btn">🛎 اضغط على الجرس</button>
@@ -76,8 +71,7 @@
 
 <audio id="bell-sound" src="sounds/passing.mp3"></audio>
 
-
-<!-- ============== BOTTOM NAV (CANVA STYLE) ============== -->
+<!-- ===== BOTTOM NAV ===== -->
 <nav class="bottom-nav">
   <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
   <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
@@ -85,12 +79,10 @@
   <a href="contact/index.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
 </nav>
 
-
-<!-- ================= SCRIPTS ================= -->
 <script src="footer.js"></script>
 
 <script>
-  // صوت الجرس
+  // جرس
   function ringBell() {
     const bell = document.getElementById("bell-sound");
     bell.currentTime = 0;
