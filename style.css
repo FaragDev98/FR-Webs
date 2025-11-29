@@ -42,12 +42,18 @@ body.dark .header{ background: rgba(6,8,15,0.45); border-bottom-color: rgba(255,
 }
 .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit }
 
-/* شعار الموقع */
-.logo{
-  width:48px; height:48px;
-  background:linear-gradient(180deg,var(--purple),var(--blue));
-  border-radius:10px;
-  box-shadow: 0 6px 18px rgba(45,12,75,0.12);
+.logo {
+  width: 28px;   /* الحجم الجديد */
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;    /* يخلي الصورة نفس حجم اللوجو بالظبط */
+  height: 100%;
+  object-fit: contain;
 }
 .brand-title{ font-weight:800; font-size:1.05rem; letter-spacing:0.2px; }
 
