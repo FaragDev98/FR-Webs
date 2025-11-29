@@ -29,34 +29,60 @@ body.dark{
 
 /* ================== 4) الهيدر (HEADER) ================== */
 .header{
-  position:sticky; top:0; z-index:60;
+  position: sticky;
+  top: 0;
+  z-index: 60;
   backdrop-filter: blur(6px);
-  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));
-  border-bottom:1px solid rgba(15,23,42,0.04);
+  background: linear-gradient(90deg, #2563eb, #f97316); /* أزرق → برتقالي */
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-body.dark .header{ background: rgba(6,8,15,0.45); border-bottom-color: rgba(255,255,255,0.04) }
+
+body.dark .header{
+  background: linear-gradient(90deg, #1e3a8a, #ea580c); /* الوضع الليلي */
+  border-bottom-color: rgba(255,255,255,0.1);
+}
 
 .header-inner{
-  max-width:1200px; margin:0 auto; padding:14px 20px;
-  display:flex; align-items:center; gap:12px; justify-content:space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
 }
-.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit }
 
-.logo {
-  width: 28px;   /* الحجم الجديد */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;   /* يخلي الإسم أبيض فوق الخلفية */
+}
+
+/* اللوجو + الأيقونة */
+.logo{
+  width: 28px;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.logo img {
-  width: 100%;    /* يخلي الصورة نفس حجم اللوجو بالظبط */
+.logo img{
+  width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: brightness(1.15); /* يخلي الأيقونة واضحة أكتر */
 }
-.brand-title{ font-weight:800; font-size:1.05rem; letter-spacing:0.2px; }
 
+/* اسم الموقع */
+.brand-title{
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+  color: #fff; /* تأكيد اللون */
+}
 /* أزرار الهيدر */
 .btn-icon{
   background:transparent; border:0;
