@@ -1,4 +1,3 @@
-const API_BASE = "https://html-backend-production.up.railway.app";
 
 const modal = document.getElementById("payment-modal");
 const closeModal = document.querySelector(".close-modal");
@@ -11,7 +10,7 @@ const failBanner = document.getElementById("banner-fail");
 const processingMsg = document.getElementById("processing-msg");
 
 let selectedCourse = null;
-let selectedMethod = null;
+
 
 // 🟣 فتح نافذة الدفع
 openButtons.forEach(btn => {
@@ -111,3 +110,4 @@ function resetForm() {
   failBanner.classList.add("hidden");
   processingMsg.classList.add("hidden");
 }
+const API_BASE = "https://html-backend-production.up.railway.app";
