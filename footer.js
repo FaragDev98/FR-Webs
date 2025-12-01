@@ -39,7 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
   closeSidebar?.addEventListener("click", () => {
     sidebar.classList.remove("open");
   });
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("menuToggle");
+  const localNav = document.getElementById("localMobileNav");
 
+  if (menuBtn && localNav) {
+    menuBtn.addEventListener("click", function () {
+      localNav.classList.toggle("mobile-hidden");
+    });
+  }
+});
 
   /* ======================= 3) MOBILE NAV ======================= */
   const mobileNav = document.getElementById("mobileNav");
