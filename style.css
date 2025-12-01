@@ -274,6 +274,59 @@ body.dark .feature{
   background: linear-gradient(180deg,#081022,#071427)
 }
 body.dark .post img{ opacity:0.95 }
+/* Sidebar Settings Menu */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: 0.35s ease;
+  z-index: 9999;
+}
 
+body.dark .sidebar {
+  background: #111827;
+  color: #fff;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sidebar-content a {
+  display: block;
+  margin: 12px 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-content a i {
+  margin-left: 6px;
+}
+
+/* Footer */
+.global-footer{
+  text-align:center;
+  padding:15px;
+  color:#fff;
+  background:#7b1fa2;
+  margin-top:20px;
+}
 /* ================== 15) أدوات مساعدة ================== */
 .text-center{ text-align:center }
