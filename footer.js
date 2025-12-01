@@ -28,7 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileNav?.classList.toggle("mobile-hidden");
   });
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  // toggle for localMobileNav
+  const menuToggle = document.getElementById("menuToggle");
+  const localMobileNav = document.getElementById("localMobileNav");
+
+  menuToggle?.addEventListener("click", () => {
+    localMobileNav.classList.toggle("mobile-hidden");
+  });
+
+});
   /* ======================= 4) THEME Toggle ======================= */
   const themeToggle = document.getElementById("themeToggle");
   const currentTheme = localStorage.getItem("fr_theme");
@@ -52,17 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll(".card, .feature, .post").forEach(el => observer.observe(el));
-
-});
-document.addEventListener("DOMContentLoaded", () => {
-
-  // toggle for localMobileNav
-  const menuToggle = document.getElementById("menuToggle");
-  const localMobileNav = document.getElementById("localMobileNav");
-
-  menuToggle?.addEventListener("click", () => {
-    localMobileNav.classList.toggle("mobile-hidden");
-  });
-
-});
+ 
