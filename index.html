@@ -50,7 +50,7 @@
           <p>دروس عملية، مشاريع جاهزة، وأدوات بسيطة لأي مبتدئ. تعلّم بسرعة وابدأ العمل الحر.</p>
          
           <div class="hero-cta">
-            <a class="btn primary" href="lessons-page/index.html">ابدأ الآن</a>
+            <a class="btn primary" href="course-page/course.html">ابدأ الآن</a>
           </div>
         </div>
 
@@ -62,16 +62,19 @@
           </article>
 
           <article class="card">
-            <i class="fa-solid fa-palette card-icon"></i>
-            <h4>تصميم الجرافيك</h4>
-            <p>شعارات، منشورات سوشيال، وتصميم واجهات بسيطة.</p>
-          </article>
-
-          <article class="card">
             <i class="fa-solid fa-film card-icon"></i>
             <h4>مونتاج الفيديو</h4>
             <p>CapCut وPremiere أساسيات المونتاج والرفع للعملاء.</p>
           </article>
+       
+        
+          <article class="card">
+            <i class="fa-solid fa-palette card-icon"></i>
+            <h4>تصميم الجرافيك</h4>
+            <p>شعارات، منشورات سوشيال، وتصميم واجهات بسيطة.</p>
+          </article>
+        
+        
         </div>
       </div>
     </section>
@@ -129,34 +132,7 @@
   <!-- Footer (via footer.js) -->
   <script src="footer.js"></script>
 
-  <!-- Small script: menu + theme -->
-  <script>
-    // mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    menuToggle?.addEventListener('click', () => {
-      mobileNav?.classList.toggle('mobile-hidden');
-    });
+ 
 
-    // theme toggle (persists in localStorage)
-    const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('fr_theme');
-    if (currentTheme === 'dark') document.body.classList.add('dark');
-
-    themeToggle?.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('fr_theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    });
-
-    // small animation on scroll (simple)
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('in-view');
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.card, .feature, .post').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
