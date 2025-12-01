@@ -1,14 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ======================= 1) FOOTER ثابت ======================= */
-  const footer = document.createElement("footer");
-  footer.className = "global-footer";
-  footer.innerHTML = `
-    <p>جميع الحقوق محفوظة © 2025 FR Webs</p>
-  `;
-  document.body.appendChild(footer);
-
-
   /* ======================= 2) MENU (Sidebar) ======================= */
   const sidebar = document.createElement("div");
   sidebar.id = "sidebarMenu";
@@ -30,25 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.body.appendChild(sidebar);
 
-  const menuBtn = document.getElementById("menuToggle");
-  const closeSidebar = document.getElementById("closeSidebar");
-
-  menuBtn?.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-  });
-  closeSidebar?.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-  });
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("menuToggle");
-  const localNav = document.getElementById("localMobileNav");
-
-  if (menuBtn && localNav) {
-    menuBtn.addEventListener("click", function () {
-      localNav.classList.toggle("mobile-hidden");
-    });
-  }
-});
 
   /* ======================= 3) MOBILE NAV ======================= */
   const mobileNav = document.getElementById("mobileNav");
@@ -81,5 +53,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { threshold: 0.15 });
 
   document.querySelectorAll(".card, .feature, .post").forEach(el => observer.observe(el));
+
+});
+document.addEventListener("DOMContentLoaded", () => {
+
+  // toggle for localMobileNav
+  const menuToggle = document.getElementById("menuToggle");
+  const localMobileNav = document.getElementById("localMobileNav");
+
+  menuToggle?.addEventListener("click", () => {
+    localMobileNav.classList.toggle("mobile-hidden");
+  });
 
 });
