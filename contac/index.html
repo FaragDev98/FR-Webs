@@ -1,506 +1,261 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تواصل معنا</title>
 <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> تواصل معنا </title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+  }
 
-/* حركة تغيير الألوان */
-@keyframes bgChange {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-    }
-    header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      background-color: #6a1b9a;
-      color: white;
-      padding: 20px 40px;
-    }
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #6a1b9a;
+    color: white;
+    padding: 20px 40px;
+  }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #f8bbd0;
+    padding: 12px;
+  }
 
-    .logo img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid white;
-    }
+  .nav-bar a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+  }
 
-    .logo span {
-      font-size: 28px;
-      font-weight: bold;
-    }
+  .contact-content {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.1);
+    font-size: 18px;
+  }
 
-    .nav-bar {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      background-color: #f8bbd0;
-      padding: 12px;
-    }
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
 
-    .nav-bar a {
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 8px;
-      color: white;
-    }
+  .buttons-container a {
+    flex: 1 1 22%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
 
-    .nav-bar a:nth-child(1) { background-color: #4caf50; }
-    .nav-bar a:nth-child(2) { background-color: #2196f3; }
-    .nav-bar a:nth-child(3) { background-color: #ff5722; }
-    .nav-bar a:nth-child(4) { background-color: #9c27b0; }
+  .whatsapp    { background-color: #4caf50; }
+  .website     { background-color: #673ab7; }
+  .youtube     { background-color: #d32f2f; }
+  .facebook    { background-color: #3b5998; }
+  .instagram   { background-color: #e1306c; }
 
-    .contact-content {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-      font-size: 18px;
-    }
+  textarea {
+    width: 100%;
+    height: 140px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
 
-    .contact-content h2 {
-      text-align: center;
-      color: #6a1b9a;
-      margin-bottom: 10px;
-    }
+  .send-button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+  }
 
-    .contact-content p {
-      text-align: center;
-      color: #333;
-      margin-bottom: 30px;
-      font-size: 17px;
-    }
+  .about-me {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff8e1;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    font-size: 17px;
+    color: #4e342e;
+  }
 
-    .buttons-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
+  .about-me img {
+    display: block;
+    margin: 25px auto 0;
+    width: 320px;
+    border-radius: 12px;
+  }
 
-    .buttons-container a {
-      flex: 1 1 22%;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px;
-      border-radius: 10px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+  /* مربع الأيقونات */
+  .social-3d-box {
+    max-width: 320px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #9333ea, #f97316);
+    border-radius: 24px;
+    padding: 25px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    justify-items: center;
+    animation: float3D 5s ease-in-out infinite;
+    box-shadow:
+      0 4px 8px rgba(255,121,0,0.5),
+      0 8px 20px rgba(147,51,234,0.7);
+  }
 
-    .whatsapp    { background-color: #4caf50; }
-    .website     { background-color: #673ab7; }
-    .youtube     { background-color: #d32f2f; }
-    .facebook    { background-color: #3b5998; }
-    .instagram   { background-color: #e1306c; }
+  .social-3d-box a img {
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+  .social-3d-box a:hover img {
+    transform: scale(1.3);
+  }
 
-    textarea {
-      width: 100%;
-      height: 140px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      resize: vertical;
-      font-size: 16px;
-    }
+  @keyframes float3D {
+    0%,100% { transform: rotateX(2deg) rotateY(-2deg); }
+    50% { transform: rotateX(-2deg) rotateY(2deg); }
+  }
 
-    .send-button {
-      background-color: #6a1b9a;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      width: fit-content;
-      align-self: center;
-    }
+  /* الشريط المتحرك */
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0;
+    direction: rtl;
+  }
 
-    .about-me {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff8e1;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: right;
-      font-size: 17px;
-      color: #4e342e;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
+  .marquee-content {
+    display: inline-flex;
+    gap: 10px;
+    animation: marquee 25s linear infinite;
+  }
 
-    .about-me h3 {
-      margin-bottom: 10px;
-      color: #d84315;
-      font-size: 22px;
-    }
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
 
-    .about-me p {
-      line-height: 1.8;
-    }
+  .btn-skill {
+    white-space: nowrap;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
 
-    .about-me img {
-      display: block;
-      margin: 25px auto 0;
-      width: 320px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid #ccc;
-    }
-
-    footer {
-      text-align: center;
-      background: #f3e5f5;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+  .red { background:#dc2626; }
+  .pink { background:#f43f5e; }
+  .purple { background:#8e44ad; }
+  .dark-red { background:#e60000; }
+  .green { background:#25D366; }
+  .violet { background:#9333ea; }
+  .blue { background:#0070ba; }
+  .orange { background:#ff6600; }
+  .black { background:#111; }
+  .lemon { background:#d4d700; }
+  .dark-purple { background:#5e0094; }
+</style>
 </head>
 <body>
 
+<!-- صفحة التواصل -->
+<div class="contact-content">
+  <h2>📞 تواصل معنا</h2>
+  <p>اختر وسيلة التواصل المناسبة لك أو أرسل رسالة عبر النموذج.</p>
 
- <audio id="train-passing" src="sounds/train-passing.mp3"></audio>
-<script src="footer.js"></script> 
-    <audio id="train-passing" src="sounds/train-passing.mp3"></audio>
-
-  
-  <!-- محتوى التواصل -->
-  <div class="contact-content">
-    <h2>📞 تواصل معنا</h2>
-    <p>يمكنك التواصل معنا مباشرة عبر وسائل التواصل التالية أو إرسال رسالة من النموذج أدناه.</p>
-
-    <!-- الأزرار -->
-    <div class="buttons-container">
-      <a class="whatsapp" href="https://wa.me/201066047545" target="_blank">
-        <i class="fab fa-whatsapp fa-lg"></i> واتساب
-      </a>
-      <a class="website" href="https://fabrica-courses.netlify.app/" target="_blank">
-        <i class="fas fa-globe fa-lg"></i> موقعي
-      </a>
-      <a class="youtube" href="https://www.youtube.com/@Fabrica-courses" target="_blank">
-        <i class="fab fa-youtube fa-lg"></i> يوتيوب
-      </a>
-      <a class="facebook" href="https://www.facebook.com/share/1BBUfn2qdA/" target="_blank">
-        <i class="fab fa-facebook fa-lg"></i> فيسبوك
-      </a>
-      <a class="instagram" href="https://www.instagram.com" target="_blank">
-        <i class="fab fa-instagram fa-lg"></i> إنستغرام
-      </a>
-    </div>
-
-    <!-- نموذج الرسالة -->
-    <form action="mailto:Farajbdallh891@gmail.com" method="POST" enctype="text/plain">
-      <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
-      <button class="send-button" type="submit">📤 إرسال الرسالة</button>
-    </form>
+  <div class="buttons-container">
+    <a class="whatsapp" href="https://wa.me/201066047545" target="_blank">واتساب</a>
+    <a class="website" href="https://fabrica-courses.netlify.app" target="_blank">موقعي</a>
+    <a class="youtube" href="https://www.youtube.com/@Fabrica-courses" target="_blank">يوتيوب</a>
+    <a class="facebook" href="https://www.facebook.com/share/1BBUfn2qdA" target="_blank">فيسبوك</a>
+    <a class="instagram" href="https://www.instagram.com" target="_blank">إنستغرام</a>
   </div>
 
-  <!-- نبذة عني -->
-  <div class="about-me">
-    <h3>👤 من هو فراج عبدالله؟</h3>
-    <p>
-      عند تواصلك معنا، ستكون على تواصل مباشر مع <strong>فراج عبدالله</strong> شخصيًا،<br>
-      مطور ومصمم هذا الموقع والذي يتابع الرسائل ويهتم بكل تفاصيلها بنفسه.<br>
-      يتميز بالردود السريعة، والاحترافية، والمتابعة الدقيقة لأي مشروع أو طلب.<br>
-      لا يوجد وسيط أو روبوت — كل شيء يتم بإشراف مباشر.
-    </p>
-    <!-- صورة شخصية -->
-    <img src="images/main-hero.png" alt="صورة فراج عبدالله">
-  </div>
-  <!-- مربع أيقونات تواصل اجتماعي 3D -->
-<div style="
-  max-width: 320px;
-  margin: 50px auto;
-  background: linear-gradient(135deg, #9333ea, #f97316);
-  border-radius: 24px;
-  box-shadow:
-    0 4px 8px rgba(255, 121, 0, 0.5),
-    0 8px 20px rgba(147, 51, 234, 0.7);
-  padding: 25px 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 18px;
-  justify-items: center;
-  align-items: center;
-  perspective: 600px;
-  transform-style: preserve-3d;
-  animation: float3D 5s ease-in-out infinite;
-">
-
-  <a href="https://github.com/FaragDev98" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/github.png" alt="GitHub" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.youtube.com/@Fabrica-courses" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/youtube.png" alt="YouTube" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.facebook.com/share/15SjvL75fF/" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/facebook.png" alt="Facebook" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.linkedin.com/in/factory-course-43a655358" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/linkedin.png" alt="LinkedIn" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-  <a href="https://www.instagram.com/frjbdllh25" target="_blank" rel="noopener" style="transition: transform 0.3s;">
-    <img src="icons/instagram.png" alt="Instagram" style="width: 36px; height: 36px; filter: invert(100%);">
-  </a>
-
+  <form action="mailto:Farajbdallh891@gmail.com" method="POST">
+    <textarea name="message" placeholder="📝 اكتب رسالتك هنا..."></textarea>
+    <button class="send-button">📤 إرسال الرسالة</button>
+  </form>
 </div>
 
-<style>
-  /* تكبير الأيقونات عند المرور */
-  div > a:hover {
-    transform: scale(1.3) translateZ(20px);
-  }
+<!-- نبذة -->
+<div class="about-me">
+  <h3>👤 من هو فراج عبدالله؟</h3>
+  <p>
+    عند تواصلك معنا ستكون على تواصل مباشر مع <strong>فراج عبدالله</strong> — مطور الموقع نفسه.
+    أتابع الرسائل بنفسي لضمان أعلى جودة واهتمام في كل خدمة أو طلب.
+  </p>
+  <img src="images/main-hero.png" alt="صورة فراج عبدالله">
+</div>
 
-  /* حركة طفيفة ثلاثية الأبعاد للمربع */
-  @keyframes float3D {
-    0%, 100% {
-      transform: rotateX(2deg) rotateY(-2deg);
-    }
-    50% {
-      transform: rotateX(-2deg) rotateY(2deg);
-    }
-  }
-</style> 
- <div class="marquee-container">
+<!-- مربع أيقونات 3D -->
+<div class="social-3d-box">
+  <a href="https://github.com/FaragDev98"><img src="icons/github.png"></a>
+  <a href="https://www.youtube.com/@Fabrica-courses"><img src="icons/youtube.png"></a>
+  <a href="https://www.facebook.com"><img src="icons/facebook.png"></a>
+  <a href="https://www.linkedin.com/in/factory-course-43a655358"><img src="icons/linkedin.png"></a>
+  <a href="https://www.instagram.com/frjbdllh25"><img src="icons/instagram.png"></a>
+</div>
+
+<!-- الشريط المتحرك -->
+<div class="marquee-container">
   <div class="marquee-content">
-    <!-- القطار المتحرك داخل الشريط -->
-
-    <!-- باقي الأزرار -->
-    <a href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1" target="_blank" class="btn-skill red dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في القناة
-    </a>
-    <a href="https://wa.me/201066047545" class="btn-skill pink dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اطلب الخدمة الآن
-    </a>
-    <a href="https://wa.me/201066047545" class="btn-skill purple dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> اشترك في الكورس
-    </a>
-    <a href="code-lab.html" class="btn-skill dark-red dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> جرب المختبر الآن
-    </a>
-    <a href="https://faragdev98.gumroad.com/l/htmlbook" class="btn-skill lemon dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء من Gumroad
-    </a>
-    <a href="https://payhip.com/b/2cJWp" class="btn-skill blue dancing">
-      <img src="icons/code.png" class="icon-img" alt=""> شراء من Payhip
-    </a>
-    <a href="https://wa.me/201066047545?text=مرحبًا، أريد شراء كتاب HTML" class="btn-skill green dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> شراء عبر واتساب
-    </a>
-    <a href="download/تعلم إنجليزي.apk" class="btn-skill violet dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img"/> نزّل التطبيق
-    </a>
-    <button onclick="copyText('Farajbdallh891@gmail.com')" class="btn-skill black dancing">
-      <i class="fab fa-paypal icon-img"></i> PayPal
-    </button>
-    <button onclick="copyText('01066047545')" class="btn-skill red dancing">
-      <img src="icons/vodafone.png" alt="" class="icon-img"/> Vodafone Cash
-    </button>
-    <button onclick="copyText('01285895096')" class="btn-skill orange dancing">
-      <img src="icons/orange.png" alt="" class="icon-img"/> Orange Cash
-    </button>
-    <button onclick="copyText('01558516081')" class="btn-skill dark-purple dancing">
-      <img src="icons/we.png" alt="" class="icon-img"/> WE Cash
-    </button>
- <a href="index.html" class="btn-skill black dancing">
-      <img src="icons/ai-icon.png" alt="" class="icon-img" /> FaragDev 🚀
-    </a>
-
- </div>
+    <a class="btn-skill red" href="https://www.youtube.com/@Farag-Dev-98?sub_confirmation=1">اشترك في القناة</a>
+    <a class="btn-skill pink" href="https://wa.me/201066047545">اطلب الخدمة</a>
+    <a class="btn-skill purple" href="https://wa.me/201066047545">اشترك في الكورس</a>
+    <a class="btn-skill dark-red" href="code-lab.html">جرب المختبر</a>
+    <a class="btn-skill lemon" href="https://faragdev98.gumroad.com/l/htmlbook">شراء من Gumroad</a>
+    <a class="btn-skill blue" href="https://payhip.com/b/2cJWp">شراء من Payhip</a>
+    <a class="btn-skill green" href="https://wa.me/201066047545?text=أريد شراء كتاب HTML">شراء عبر واتساب</a>
+    <a class="btn-skill violet" href="download/تعلم إنجليزي.apk">نزّل التطبيق</a>
+    <button class="btn-skill black" onclick="copyText('Farajbdallh891@gmail.com')">PayPal</button>
+    <button class="btn-skill red" onclick="copyText('01066047545')">Vodafone Cash</button>
+    <button class="btn-skill orange" onclick="copyText('01285895096')">Orange Cash</button>
+    <button class="btn-skill dark-purple" onclick="copyText('01558516081')">WE Cash</button>
+    <a class="btn-skill black" href="index.html">FaragDev 🚀</a>
+  </div>
 </div>
-
-<style>
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    padding: 20px 0;
-    direction: rtl;
-    position: relative;
-  }
-
-  .marquee-content {
-    display: inline-flex;
-    align-items: center;
-    animation: marquee 35s linear infinite;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  .btn-skill {
-    white-space: nowrap;
-    color: white;
-    padding: 6px 12px;
-    margin: 0 6px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    text-decoration: none;
-    flex-shrink: 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
-    transition: transform 0.3s ease;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-
-  .btn-skill .icon-img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    margin-left: 6px;
-  }
-
-  .btn-skill:hover {
-    transform: scale(1.1);
-  }
-
-  /* حركة رقص */
-  .dancing {
-    animation: bounce 1s infinite ease-in-out;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-
-  /* الألوان */
-  .red         { background-color: #dc2626; }
-  .pink        { background-color: #f43f5e; }
-  .purple      { background-color: #8e44ad; }
-  .dark-red    { background-color: #e60000; }
-  .green       { background-color: #25D366; }
-  .violet      { background-color: #9333ea; }
-  .blue        { background-color: #0070ba; }
-  .orange      { background-color: #ff6600; }
-  .black       { background-color: #111111; }
-  .lemon       { background-color: #d4d700; }
-  .dark-purple { background-color: #5e0094; }
-</style>
 
 <script>
-  function copyText(text) {
-    navigator.clipboard.writeText(text).then(function () {
-      alert("تم نسخ: " + text);
-    });
+  function copyText(text){
+    navigator.clipboard.writeText(text);
+    alert("تم النسخ: " + text);
   }
 </script>
-<style>
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    padding: 10px 0;
-    direction: rtl;
-  }
-
-  .marquee-content {
-    display: inline-flex;
-    animation: marquee 25s linear infinite; /* بطأنا السرعة هنا */
-  }
-
-  .btn-skill {
-    white-space: nowrap;
-    color: white;
-    padding: 10px 16px;
-    margin: 0 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-  }
-
-  .btn-skill:hover {
-    transform: scale(1.1);
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-</style>
-
-     
-
-<style>
-  .marquee-container {
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    padding: 10px 0;
-    direction: rtl;
-  }
-
-  .marquee-content {
-    display: inline-flex;
-    animation: marquee 25s linear infinite; /* بطأنا السرعة هنا */
-  }
-
-  .btn-skill {
-    white-space: nowrap;
-    color: white;
-    padding: 10px 16px;
-    margin: 0 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-  }
-
-  .btn-skill:hover {
-    transform: scale(1.1);
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-
-  <script src="security.js"></script>
-
-
 
 </body>
 </html>
