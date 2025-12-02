@@ -9,6 +9,5 @@ function addComment() {
   commentBox.innerText = commentText;
 
   document.getElementById("commentsList").appendChild(commentBox);
-
   input.value = "";
 }
