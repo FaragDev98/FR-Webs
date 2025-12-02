@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
         <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
         <a href="code-lab.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
-        <a href="contac/index.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+        <a href="contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
       </nav>
     `;
     document.body.insertAdjacentHTML('beforeend', bottomNavHTML);
