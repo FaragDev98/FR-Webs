@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>درس اليوم</title>
+  <link rel="stylesheet" href="lessons.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- ===== قسم الفيديو ===== -->
+  <div class="lesson-box">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+    </div>
+
+    <h2 class="lesson-title">عنوان الدرس هنا</h2>
+    <p class="lesson-desc">
+      وصف بسيط للدرس يتم كتابته هنا… يمكنك إضافة شرح سريع للدرس.
+    </p>
+
+    <!-- ===== تفاعل ===== -->
+    <div class="actions">
+      <button class="like"><i class="fa-regular fa-heart"></i> إعجاب</button>
+      <button class="comment-btn"><i class="fa-regular fa-comment"></i> تعليق</button>
+      <button class="ask-btn"><i class="fa-solid fa-circle-question"></i> سؤال</button>
+      <button class="share"><i class="fa-solid fa-share"></i> مشاركة</button>
+    </div>
+
+    <!-- ===== صندوق التعليقات ===== -->
+    <div class="comments-section">
+      <h3>💬 التعليقات</h3>
+
+      <textarea id="commentInput" placeholder="اكتب تعليقك هنا..."></textarea>
+      <button class="send-comment" onclick="addComment()">إرسال</button>
+
+      <div id="commentsList"></div>
+    </div>
+  </div>
+
+  <!-- ===== قائمة الدروس ===== -->
+  <div class="sidebar">
+    <h3>📚 قائمة الدروس</h3>
+
+    <ul>
+      <li><a href="#">الدرس الأول</a></li>
+      <li><a href="#">الدرس الثاني</a></li>
+      <li><a href="#">الدرس الثالث</a></li>
+      <li><a href="#">الدرس الرابع</a></li>
+      <li><a href="#">الدرس الخامس</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<script src="lessons.js"></script>
+</body>
+</html>
