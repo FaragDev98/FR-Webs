@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FR Webs تعليم البرمجة</title>
+  <title>FR Webs تعليم البرمجه </title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
@@ -12,91 +12,121 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- SEO minimal -->
-  <meta name="description" content="FR Webs — دروس برمجة، تصميم جرافيك، ومونتاج فيديو بطريقة بسيطة ومباشرة للمبتدئين." />
+  <meta name="description" content="FR Webs  — دروس برمجة، تصميم جرافيك، ومونتاج فيديو بطريقة بسيطة ومباشرة للمبتدئين." />
 </head>
 <body>
 
-<!-- الهيدر + قائمة الجوال + البوتوم ناف بييجي تلقائي من footer.js -->
-
-<main>
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <div class="hero-inner">
-      
-      <div class="hero-text">
-        <h1>ابدأ رحلتك في تعلم البرمجة</h1>
-        <p>دروس عملية، مشاريع جاهزة، وأدوات بسيطة لأي مبتدئ. تعلّم بسرعة وابدأ العمل الحر.</p>
-
-        <div class="hero-cta">
-          <a class="btn primary" href="course-page/course.html">ابدأ الآن</a>
-        </div>
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <div class="logo">
+        <img src="icons/ai-icon.png" alt="AI Icon">
       </div>
-
-      <div class="hero-cards">
-        <article class="card">
-          <i class="fa-solid fa-code card-icon"></i>
-          <h4>تعلم البرمجة</h4>
-          <p>HTML • CSS • JavaScript مع أمثلة ومهام تطبيقية.</p>
-        </article>
-
-        <article class="card">
-          <i class="fa-solid fa-film card-icon"></i>
-          <h4>مونتاج الفيديو</h4>
-          <p>CapCut وPremiere — أساسيات المونتاج والرفع للعملاء.</p>
-        </article>
-
-        <article class="card">
-          <i class="fa-solid fa-palette card-icon"></i>
-          <h4>تصميم الجرافيك</h4>
-          <p>شعارات — منشورات — واجهات بسيطة.</p>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========== WHY SECTION ========== -->
-  <section class="why">
-    <div class="container">
-      <h2>لماذا FR Webs Academy؟</h2>
-      <p class="lead">محتوى مختصر، تطبيقي، ومصمم ليدخلك سوق العمل بسرعة.</p>
-
-      <div class="grid-3">
-        <div class="feature">
-          <i class="fa-solid fa-rocket"></i>
-          <h3>انطلاقة سريعة</h3>
-          <p>دورات مركزة وطرق تعليم عملية.</p>
-        </div>
-
-        <div class="feature">
-          <i class="fa-solid fa-hands-helping"></i>
-          <h3>دعم مباشر</h3>
-          <p>تواصل عبر واتساب ومساعدة في المشاريع.</p>
-        </div>
-
-        <div class="feature">
-          <i class="fa-solid fa-dollar-sign"></i>
-          <h3>أسعار مناسبة</h3>
-          <p>خطط تناسب المبتدئين والراغبين في العمل الحر.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== POST BOX ========== -->
-  <section class="posts">
-    <a class="post" href="lessons-page/index.html">
-      <img src="images/thumb-3.jpg" alt="درس" />
-      <div class="post-body">
-        <h4>درس عملي</h4>
-        <p>دورة قصيرة لتطبيق سريع.</p>
-      </div>
+      <span class="brand-title">FR Webs</span>
     </a>
-  </section>
-</main>
+ <div class="header-actions">
+         <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗃</button>
+ </div>
+  </div>
+</header>
+ <!-- Mobile Nav + Toggle -->
+<button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
 
+<nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+  <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
+  <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+  <a href="course-page/course.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+</nav>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1></h1>ابدأ رحلتك في تعلم البرمجة </h1>
+          <p>دروس عملية، مشاريع جاهزة، وأدوات بسيطة لأي مبتدئ. تعلّم بسرعة وابدأ العمل الحر.</p>
+         
+          <div class="hero-cta">
+            <a class="btn primary" href="course-page/course.html">ابدأ الآن</a>
+          </div>
+        </div>
+
+        <div class="hero-cards">
+          <article class="card">
+            <i class="fa-solid fa-code card-icon"></i>
+            <h4>تعلم البرمجة</h4>
+            <p>HTML • CSS • JavaScript مع أمثلة ومهام تطبيقية.</p>
+          </article>
+
+          <article class="card">
+            <i class="fa-solid fa-film card-icon"></i>
+            <h4>مونتاج الفيديو</h4>
+            <p>CapCut وPremiere أساسيات المونتاج والرفع للعملاء.</p>
+          </article>
+       
+        
+          <article class="card">
+            <i class="fa-solid fa-palette card-icon"></i>
+            <h4>تصميم الجرافيك</h4>
+            <p>شعارات، منشورات سوشيال، وتصميم واجهات بسيطة.</p>
+          </article>
+        
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTIONS -->
+    <section class="why">
+      <div class="container">
+        <h2>لماذا FR Webs Academy؟</h2>
+        <p class="lead">محتوى مختصر، تطبيقي، ومصمم ليدخلك سوق العمل بسرعة.</p>
+
+        <div class="grid-3">
+          <div class="feature">
+            <i class="fa-solid fa-rocket"></i>
+            <h3>انطلاقة سريعة</h3>
+            <p>دورات مركزة وطرق تعليم عملية.</p>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-hands-helping"></i>
+            <h3>دعم مباشر</h3>
+            <p>تواصل عبر واتساب ومساعدة في المشاريع.</p>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <h3>أسعار مناسبة</h3>
+            <p>خطط تناسب المبتدئين والراغبين في العمل الحر.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     
+
+    
+        <a class="post" href="lessons-page/index.html">
+          <img src="images/thumb-3.jpg" alt="درس" />
+          <div class="post-body">
+            <h4>درس عملي</h4>
+            <p>دورة قصيرة لتطبيق سريع.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV (mobile) -->
+  <nav class="bottom-nav mobile-only" aria-label="تنقل أسفل الصفحة">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+    <a href="lessons-page/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+     <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
+    <a href="code-lab.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+    <a href="contac/index.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+  </nav>
 <!-- Scripts -->
 <script src="footer.js"></script>
-
+</body>
+</html>
 </body>
 </html>
