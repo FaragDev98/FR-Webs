@@ -1,12 +1,14 @@
-
-document.addEventListener("DOMContentLoaded", function () {
-  const footer = document.createElement("footer");
-  footer.style.textAlign = "center";
-  footer.style.padding = "15px 0";
-  footer.style.background = "#7b1fa2";
-  footer.style.color = "white";
-  footer.style.fontSize = "0.95rem";
-  footer.innerHTML = `
-    جميع الحقوق محفوظة © 2025 
-  document.body.appendChild(footer);
-});
+ ============================================================ */
+  if (!document.getElementById('localMobileNav')) {
+    const localNavHTML = `
+      <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
+        <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
+        <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+        <a href="course-page/course.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+      </nav>
+    `;
+    // أدخل القائمة بعد الهيدر مباشرة (أو في بداية الـ body إذا الهيدر لم يتغير)
+    const headerEl = document.querySelector('header.header');
+    if (headerEl) headerEl.insertAdjacentHTML('afterend', localNavHTML);
+    else document.body.insertAdjacentHTML('afterbegin', localNavHTML);
+ }
