@@ -2,17 +2,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ============================================================
-    1) إدراج الهيدر (header) الجديد في أعلى الصفحة
+    1) إدراج الهيدر (header) في أعلى الصفحة إذا مش موجود
+    — الهيدر يحتوي زر واحد #menuToggle فقط (يفتح القائمة المحلية)
   ============================================================ */
   if (!document.querySelector('header.header')) {
     const headerHTML = `
       <header class="header">
         <div class="header-inner">
-
-          <!-- زر الرجوع -->
-          <button id="goBackBtn" class="btn-icon header-back" aria-label="رجوع" title="رجوع">⬅️</button>
-
-          <!-- اللوجو + اسم الموقع -->
           <a class="brand" href="index.html">
             <div class="logo">
               <img src="icons/ai-icon.png" alt="AI Icon">
@@ -20,19 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="brand-title">FR Webs</span>
           </a>
 
-          <!-- روابط مثل البوتوم ناف -->
-          <nav class="header-nav" aria-label="تنقل الهيدر">
-            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> الرئيسية</a>
-            <a href="lessons/lessons.html" class="nav-link"><i class="fa-solid fa-book"></i> الدروس</a>
-            <a href="code/index.html" class="nav-link"><i class="fa-solid fa-flask"></i> المختبر</a>
-            <a href="contac/contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> تواصل</a>
-          </nav>
-
-          <!-- زر المجلد -->
+          <!-- زر المجلد (يفتح القائمة المحلية single click، ويفتح السايدبار dblclick) -->
           <div class="header-actions">
             <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
           </div>
-
         </div>
       </header>
     `;
@@ -40,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ============================================================
-    2) localMobileNav — قائمة الجوال المحلية
+    2) إدراج قائمة الجوال المحلية (localMobileNav) منفصلة عن الهيدر
+       — تضمن أنها خارج عنصر header (نضعها بعد الهيدر مباشرة)
   ============================================================ */
   if (!document.getElementById('localMobileNav')) {
     const localNavHTML = `
@@ -50,13 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
       </nav>
     `;
+    // أدخل القائمة بعد الهيدر مباشرة (أو في بداية الـ body إذا الهيدر لم يتغير)
     const headerEl = document.querySelector('header.header');
     if (headerEl) headerEl.insertAdjacentHTML('afterend', localNavHTML);
     else document.body.insertAdjacentHTML('afterbegin', localNavHTML);
   }
 
   /* ============================================================
-    3) bottom-nav — في أسفل الصفحة
+    3) إدراج البوتوم ناف (bottom-nav) في أسفل الصفحة إذا مش موجود
   ============================================================ */
   if (!document.querySelector('.bottom-nav')) {
     const bottomNavHTML = `
@@ -72,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ============================================================
-    4) Sidebar — قائمة الإعدادات
+    4) Sidebar الإعدادات (مخفي افتراضياً) — تفتح على dblclick أو أي زر تريده
   ============================================================ */
   if (!document.getElementById('sidebarMenu')) {
     const sidebar = document.createElement('div');
@@ -96,79 +85,52 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ============================================================
-    5) توصيل الأزرار
+    5) Event listeners: توصيل الأزرار بالعناصر الصحيحة (بدون أخطاء IDs مكررة)
   ============================================================ */
-  const menuToggle = document.getElementById('menuToggle');
-  const localMobileNav = document.getElementById('localMobileNav');
-  const sidebarMenu = document.getElementById('sidebarMenu');
-  const closeSidebar = document.getElementById('closeSidebar');
-  const themeToggle = document.getElementById('themeToggle');
-  const goBackBtn = document.getElementById('goBackBtn');
+  const menuToggle = document.getElementById('menuToggle');           // الزر الوحيد في الهيدر
+  const localMobileNav = document.getElementById('localMobileNav');   // القائمة المحلية المنفصلة
+  const sidebarMenu = document.getElementById('sidebarMenu');         // السايدبار
+  const closeSidebar = document.getElementById('closeSidebar');       // زر إغلاق السايدبار
+  const themeToggle = document.getElementById('themeToggle');         // زر تبديل الثيم في البوتوم ناف
 
-  /* — زر الرجوع — */
-  if (goBackBtn) {
-    goBackBtn.addEventListener('click', () => window.history.back());
-  }
-
-  /* — فتح/قفل local nav — */
+  // 5.1 — فتح/قفل القائمة المحلية بالضغط مرة واحدة على أيقونة المجلد
   if (menuToggle && localMobileNav) {
     menuToggle.addEventListener('click', () => {
       localMobileNav.classList.toggle('mobile-hidden');
+      // تأكد أن السايدبار مقفول لو كانت مفتوحة
       sidebarMenu?.classList.remove('open');
     });
   }
 
-  /* — فتح السايدبار بالضغط المزدوج — */
+  // 5.2 — فتح/قفل السايدبار بالضغط المزدوج (dblclick) على نفس الزر
   if (menuToggle && sidebarMenu) {
     menuToggle.addEventListener('dblclick', () => {
       sidebarMenu.classList.toggle('open');
-      if (sidebarMenu.classList.contains('open'))
-        localMobileNav?.classList.add('mobile-hidden');
+      // إخفاء local nav لو السايدبار فتح
+      if (sidebarMenu.classList.contains('open')) localMobileNav?.classList.add('mobile-hidden');
     });
   }
 
-  /* — زر إغلاق السايدبار — */
+  // 5.3 — زر إغلاق السايدبار
   if (closeSidebar && sidebarMenu) {
     closeSidebar.addEventListener('click', () => sidebarMenu.classList.remove('open'));
   }
 
-  /* — زر الثيم — */
+  // 5.4 — زر تبديل الثيم (مع تخزين في localStorage)
   const savedTheme = localStorage.getItem('fr_theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
-  }
+  if (savedTheme === 'dark') document.body.classList.add('dark');
 
   if (themeToggle) {
-    themeToggle.textContent = 
-      document.body.classList.contains('dark') ? '☀️' : '🌙';
-
+    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark');
-      localStorage.setItem('fr_theme',
-        document.body.classList.contains('dark') ? 'dark' : 'light'
-      );
-      themeToggle.textContent = 
-        document.body.classList.contains('dark') ? '☀️' : '🌙';
+      localStorage.setItem('fr_theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
     });
   }
 
-  /* — إغلاق القوائم عند الضغط على روابط الهيدر — */
-  document.querySelectorAll('.header-nav a.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      localMobileNav?.classList.add('mobile-hidden');
-      sidebarMenu?.classList.remove('open');
-    });
-  });
-
-  /* — نفس الشيء لروابط قائمة الجوال — */
-  document.querySelectorAll('#localMobileNav a').forEach(a => {
-    a.addEventListener('click', () => {
-      localMobileNav?.classList.add('mobile-hidden');
-    });
-  });
-
   /* ============================================================
-    6) مراقبة الأنيميشن
+    6) Simple scroll animation observer — يراقب العناصر التي تحمل كلاس .animate
   ============================================================ */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
