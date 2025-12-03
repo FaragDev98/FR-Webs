@@ -9,10 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerHTML = `
       <header class="header">
         <div class="header-inner">
-
-          <!-- زر الرجوع -->
-          <button id="goBackBtn" class="btn-icon mobile-only" aria-label="رجوع">⬅️</button>
-
           <a class="brand" href="index.html">
             <div class="logo">
               <img src="icons/ai-icon.png" alt="AI Icon">
@@ -20,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="brand-title">FR Webs</span>
           </a>
 
-          <!-- زر المجلد -->
+          <!-- زر المجلد (يفتح القائمة المحلية single click، ويفتح السايدبار dblclick) -->
           <div class="header-actions">
             <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
           </div>
@@ -42,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
       </nav>
     `;
+    // أدخل القائمة بعد الهيدر مباشرة (أو في بداية الـ body إذا الهيدر لم يتغير)
     const headerEl = document.querySelector('header.header');
     if (headerEl) headerEl.insertAdjacentHTML('afterend', localNavHTML);
     else document.body.insertAdjacentHTML('afterbegin', localNavHTML);
@@ -64,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ============================================================
-    4) Sidebar الإعدادات
+    4) Sidebar الإعدادات (مخفي افتراضياً) — تفتح على dblclick أو أي زر تريده
   ============================================================ */
   if (!document.getElementById('sidebarMenu')) {
     const sidebar = document.createElement('div');
@@ -88,32 +85,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ============================================================
-    5) Event listeners
+    5) Event listeners: توصيل الأزرار بالعناصر الصحيحة (بدون أخطاء IDs مكررة)
   ============================================================ */
-  const menuToggle = document.getElementById('menuToggle');
-  const localMobileNav = document.getElementById('localMobileNav');
-  const sidebarMenu = document.getElementById('sidebarMenu');
-  const closeSidebar = document.getElementById('closeSidebar');
-  const themeToggle = document.getElementById('themeToggle');
+  const menuToggle = document.getElementById('menuToggle');           // الزر الوحيد في الهيدر
+  const localMobileNav = document.getElementById('localMobileNav');   // القائمة المحلية المنفصلة
+  const sidebarMenu = document.getElementById('sidebarMenu');         // السايدبار
+  const closeSidebar = document.getElementById('closeSidebar');       // زر إغلاق السايدبار
+  const themeToggle = document.getElementById('themeToggle');         // زر تبديل الثيم في البوتوم ناف
 
+  // 5.1 — فتح/قفل القائمة المحلية بالضغط مرة واحدة على أيقونة المجلد
   if (menuToggle && localMobileNav) {
     menuToggle.addEventListener('click', () => {
       localMobileNav.classList.toggle('mobile-hidden');
+      // تأكد أن السايدبار مقفول لو كانت مفتوحة
       sidebarMenu?.classList.remove('open');
     });
   }
 
+  // 5.2 — فتح/قفل السايدبار بالضغط المزدوج (dblclick) على نفس الزر
   if (menuToggle && sidebarMenu) {
     menuToggle.addEventListener('dblclick', () => {
       sidebarMenu.classList.toggle('open');
+      // إخفاء local nav لو السايدبار فتح
       if (sidebarMenu.classList.contains('open')) localMobileNav?.classList.add('mobile-hidden');
     });
   }
 
+  // 5.3 — زر إغلاق السايدبار
   if (closeSidebar && sidebarMenu) {
     closeSidebar.addEventListener('click', () => sidebarMenu.classList.remove('open'));
   }
 
+  // 5.4 — زر تبديل الثيم (مع تخزين في localStorage)
   const savedTheme = localStorage.getItem('fr_theme');
   if (savedTheme === 'dark') document.body.classList.add('dark');
 
@@ -127,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ============================================================
-    6) scroll animation observer
+    6) Simple scroll animation observer — يراقب العناصر التي تحمل كلاس .animate
   ============================================================ */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -136,19 +139,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.animate').forEach(el => observer.observe(el));
-
-  /* ============================================================
-    7) زر الرجوع — يعمل على كل الصفحات
-  ============================================================ */
-  const goBackBtn = document.getElementById('goBackBtn');
-  if (goBackBtn) {
-    goBackBtn.addEventListener('click', () => {
-      if (history.length > 1) {
-        history.back();
-      } else {
-        window.location.href = "index.html";
-      }
-    });
-  }
 
 });
