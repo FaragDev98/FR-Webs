@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.getElementById('localMobileNav')) {
     const localNavHTML = `
       <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
-        <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
-        <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
+        <a href="ish/index.html"><i class="fa-solid fa-language"></i> اعدادات</a>
+        <a href="dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي🔊</a>
         <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
       </nav>
     `;
