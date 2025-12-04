@@ -164,3 +164,177 @@ footer {
   text-align: center;
   color: #ccc;
 }
+/* ===========================
+   HEADER STYLE
+=========================== */
+
+header.header {
+  width: 100%;
+  background: var(--card-bg, #fff);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.header-inner {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* زر الرجوع */
+.header-back {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* اللوجو + النص */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.brand .logo img {
+  width: 35px;
+  height: 35px;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text, #111);
+}
+
+/* روابط الهيدر */
+.header-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.header-nav .nav-link {
+  text-decoration: none;
+  color: var(--text, #222);
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-nav .nav-link i {
+  font-size: 16px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* الموبيل فقط */
+.mobile-only {
+  display: none;
+}
+
+/* إخفاء الروابط على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+  .mobile-only {
+    display: inline-flex;
+  }
+}
+
+/* زر المجلد */
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* قائمة الجوال */
+.mobile-nav {
+  width: 100%;
+  background: var(--card-bg, #fff);
+  padding: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--text, #111);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-hidden {
+  display: none !important;
+}
+
+/* السايدبار */
+.sidebar {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--card-bg, #fff);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  z-index: 99999;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  padding: 15px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  gap: 12px;
+}
+
+.sidebar-content a {
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--text, #222);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* الثيم الداكن */
+body.dark header.header {
+  background: #222;
+}
+
+body.dark .brand-title,
+body.dark .header-nav .nav-link,
+body.dark .mobile-nav a,
+body.dark .sidebar-content a {
+  color: #fff;
+}
