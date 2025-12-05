@@ -1,14 +1,4 @@
 
-}/* ================== 1) الألوان والمتغيرات العامة ================== */
-:root{
-  --purple:#6d28d9;
-  --blue:#2563eb;
-  --accent: linear-gradient(90deg,var(--purple),var(--blue));
-  --muted:#6b7280;
-  --card-shadow: 0 8px 24px rgba(16,24,40,0.06);
-  --glass: rgba(255,255,255,0.7);
-}
-
 /* ================== 2) إعادة الضبط + إعدادات الصفحة ================== */
 *{box-sizing:border-box}
 html,body{height:100%}
