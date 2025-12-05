@@ -31,32 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
     });
   }
-   <!-- زر المجلد (يفتح القائمة المحلية single click، ويفتح السايدبار dblclick) -->
-          <div class="header-actions">
-            <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
-          </div>
-        </div>
-      </header>
-    document.body.insertAdjacentHTML('afterbegin', headerHTML);
-  }
 
-  /* ============================================================
-    2) إدراج قائمة الجوال المحلية (localMobileNav) منفصلة عن الهيدر
-       — تضمن أنها خارج عنصر header (نضعها بعد الهيدر مباشرة)
-  ============================================================ */
-  if (!document.getElementById('localMobileNav')) {
-    const localNavHTML = `
-      <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
-        <a href="ish/index.html"><i class="fa-solid fa-language"></i> تعلم </a>
-        <a href="dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
-        <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
-      </nav>
-    `;
-    // أدخل القائمة بعد الهيدر مباشرة (أو في بداية الـ body إذا الهيدر لم يتغير)
-    const headerEl = document.querySelector('header.header');
-    if (headerEl) headerEl.insertAdjacentHTML('afterend', localNavHTML);
-    else document.body.insertAdjacentHTML('afterbegin', localNavHTML);
-  }
   // ===== Scroll animation observer =====
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { 
