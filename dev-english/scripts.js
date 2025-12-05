@@ -5,11 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeSidebar = document.getElementById('closeSidebar');
   const themeToggle = document.getElementById('themeToggle');
 
-  // ===== قائمة الجوال toggle =====
-  menuToggle?.addEventListener('click', () => {
-    localMobileNav?.classList.toggle('mobile-hidden');
-    sidebarMenu?.classList.remove('open');
-  });
+
+    document.body.insertAdjacentHTML('afterbegin', headerHTML);
+  }
+
+  /* ============================================================
+    2) إدراج قائمة الجوال المحلية (localMobileNav) منفصلة عن الهيدر
+       — تضمن أنها خارج عنصر header (نضعها بعد الهيدر مباشرة)
+  ============================================================ */
+  if (!document.getElementById('localMobileNav')) {
+    const localNavHTML = `
 
   // ===== السايدبار dblclick =====
   menuToggle?.addEventListener('dblclick', () => {
