@@ -312,7 +312,51 @@ body.dark .sidebar {
 .sidebar-content a:hover {
   color: var(--blue);
 }
+/* الخطوط */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
 
+/* البطاقات */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* الجمل الإنجليزية */
+.eng {
+  font-family: "Arial", sans-serif;
+  direction: ltr;
+  background: #f0f8ff;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/* الجمل العربية */
+.ara {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* أزرار النطق */
+.speak-btn {
+  margin: 5px 2px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #6a5acd;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.speak-btn:hover {
+  background-color: #483d8b;
+}
 /* ================== 12) Footer ================== */
 .global-footer {
   text-align: center;
