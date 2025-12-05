@@ -1,3 +1,44 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const localMobileNav = document.getElementById('localMobileNav');
+  const sidebarMenu = document.getElementById('sidebarMenu');
+  const closeSidebar = document.getElementById('closeSidebar');
+  const themeToggle = document.getElementById('themeToggle');
+
+  // قائمة الجوال toggle
+  menuToggle?.addEventListener('click', () => {
+    localMobileNav?.classList.toggle('mobile-hidden');
+    sidebarMenu?.classList.remove('open');
+  });
+
+  // السايدبار dblclick
+  menuToggle?.addEventListener('dblclick', () => {
+    sidebarMenu?.classList.toggle('open');
+    if(sidebarMenu?.classList.contains('open')) localMobileNav?.classList.add('mobile-hidden');
+  });
+
+  // إغلاق السايدبار
+  closeSidebar?.addEventListener('click', () => sidebarMenu?.classList.remove('open'));
+
+  // تبديل الوضع الليلي
+  const savedTheme = localStorage.getItem('fr_theme');
+  if(savedTheme === 'dark') document.body.classList.add('dark');
+  if(themeToggle){
+    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('fr_theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  }
+
+  // Scroll animation observer
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+});
 // Web Speech API speaking utility
 (function () {
   const speakButtons = document.querySelectorAll('.speak-btn');
