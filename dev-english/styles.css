@@ -54,27 +54,23 @@
   border: 1px solid #e8e8e8;
 }
 
-.eng {
-  font-weight: bold;
-  color: #222;
-  font-size: 15px;
-}
+/* =========================
+   ✔ إصلاح الجمل الإنجليزية
+=========================== */
 
-
-.eng {
-  /* ✅ إصلاح اتجاه الجمل الإنجليزية */
 .eng {
   direction: ltr;
   text-align: left;
   unicode-bidi: plaintext;
   font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-/* ✅ منع ال-RTL من تخريب ترتيب الإنجليزي */
 .phrase-row .eng {
   unicode-bidi: plaintext;
 }
-}
+
 .ara {
   color: #444;
   font-size: 15px;
@@ -110,18 +106,6 @@
   margin-bottom: 12px;
 }
 
-.speak-btn.large {
-  margin: 4px;
-  padding: 10px 15px;
-  font-size: 14px;
-  background: #4c2cff;
-  border-radius: 10px;
-}
-
-.speak-btn.large:hover {
-  background: #3318c7;
-}
-
 /* 🔊 زر النطق */
 .speak-btn {
   cursor: pointer;
@@ -137,6 +121,19 @@
 .speak-btn:hover {
   background: #4f36d1;
   transform: scale(1.08);
+}
+
+/* زر كبير */
+.speak-btn.large {
+  margin: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background: #4c2cff;
+  border-radius: 10px;
+}
+
+.speak-btn.large:hover {
+  background: #3318c7;
 }
 
 /* 📱 موبايل */
