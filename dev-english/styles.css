@@ -6,6 +6,9 @@
   --muted: #6b7280;
   --card-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
   --glass: rgba(255, 255, 255, 0.7);
+  --eng-color: #2563eb;
+  --ara-color: #6d28d9;
+  --speak-color: #6a5acd;
 }
 
 /* ================== 2) إعادة الضبط + إعدادات الصفحة ================== */
@@ -161,9 +164,9 @@ body.dark .header {
 }
 
 .hero h1 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  line-height: 1.05;
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  line-height: 1.1;
   font-weight: 800;
   color: var(--purple);
 }
@@ -173,8 +176,9 @@ body.dark .hero h1 {
 }
 
 .hero p {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   color: var(--muted);
+  font-size: 1.1rem;
 }
 
 /* ================== 7) الأزرار العامة ================== */
@@ -206,14 +210,14 @@ body.dark .hero h1 {
 /* ================== 8) الكروت والدروس ================== */
 .card {
   background: #fff;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 22px;
+  border-radius: 14px;
   box-shadow: var(--card-shadow);
   margin: 20px 0;
   transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .card.in-view {
@@ -222,44 +226,50 @@ body.dark .hero h1 {
 }
 
 .card-icon {
-  font-size: 26px;
+  font-size: 28px;
   color: var(--purple);
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
   background: linear-gradient(180deg, rgba(109, 40, 217, 0.08), rgba(37, 99, 235, 0.06));
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 /* الجمل الإنجليزية */
 .eng {
   font-family: "Arial", sans-serif;
   direction: ltr;
-  background: #f0f8ff;
-  padding: 6px 12px;
-  border-radius: 8px;
+  background: #e0f0ff;
+  color: var(--eng-color);
+  padding: 8px 14px;
+  border-radius: 10px;
   display: inline-block;
-  margin: 4px 0;
+  margin: 6px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 /* الجمل العربية */
 .ara {
   display: inline-block;
-  margin-right: 10px;
-  font-size: 1rem;
+  margin-right: 12px;
+  font-size: 1.1rem;
+  color: var(--ara-color);
+  font-weight: 600;
 }
 
 /* أزرار النطق */
 .speak-btn {
-  margin: 5px 2px 0 0;
-  padding: 5px 12px;
+  margin: 6px 2px 0 0;
+  padding: 6px 14px;
   border: none;
-  background-color: #6a5acd;
+  background-color: var(--speak-color);
   color: #fff;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .speak-btn:hover {
@@ -269,8 +279,8 @@ body.dark .hero h1 {
 /* ================== 9) قسم المميزات ================== */
 .feature {
   background: linear-gradient(180deg, #fff, #fbfbff);
-  padding: 18px;
-  border-radius: 14px;
+  padding: 20px;
+  border-radius: 16px;
   text-align: center;
   box-shadow: var(--card-shadow);
   opacity: 0;
@@ -284,9 +294,9 @@ body.dark .hero h1 {
 }
 
 .feature i {
-  font-size: 28px;
+  font-size: 30px;
   color: var(--blue);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* ================== 10) الوضع الليلي للكروت والمميزات ================== */
@@ -349,10 +359,12 @@ body.dark .sidebar {
 /* ================== 12) Footer ================== */
 .global-footer {
   text-align: center;
-  padding: 18px;
+  padding: 22px;
   color: #fff;
   background: linear-gradient(90deg, #6d28d9, #2563eb);
   margin-top: 30px;
-  font-size: 0.95rem;
-  border-radius: 10px 10px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
 }
