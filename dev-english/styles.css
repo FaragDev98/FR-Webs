@@ -41,13 +41,7 @@
   margin-top: 20px;
   padding-top: 15px;
 }
-/* ✅ إصلاح اتجاه الجمل الإنجليزية */
-.eng {
-  direction: ltr;
-  text-align: left;
-  unicode-bidi: plaintext;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
+
 
 /* ✅ منع ال-RTL من تخريب ترتيب الإنجليزي */
 .phrase-row .eng {
@@ -69,6 +63,13 @@
   font-weight: bold;
   color: #222;
   font-size: 15px;
+}
+/* ✅ إصلاح اتجاه الجمل الإنجليزية */
+.eng {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .ara {
