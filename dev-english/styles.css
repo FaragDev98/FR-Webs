@@ -41,7 +41,18 @@
   margin-top: 20px;
   padding-top: 15px;
 }
+/* ✅ إصلاح اتجاه الجمل الإنجليزية */
+.eng {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
 
+/* ✅ منع ال-RTL من تخريب ترتيب الإنجليزي */
+.phrase-row .eng {
+  unicode-bidi: plaintext;
+}
 .phrase-row {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
@@ -54,35 +65,16 @@
   border: 1px solid #e8e8e8;
 }
 
-/* =========================
-   ✔ إصلاح اتجاه الإنجليزية
-=========================== */
-
 .eng {
-  direction: ltr;
-  text-align: left;
-  unicode-bidi: plaintext;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  color: #222;
   font-size: 15px;
-  font-weight: 600;
 }
-
-.phrase-row .eng {
-  unicode-bidi: plaintext;
-}
-
-/* ==========================
-   ✔ العربية
-=========================== */
 
 .ara {
   color: #444;
   font-size: 15px;
 }
-
-/* ==========================
-   ✔ أزرار النطق
-=========================== */
 
 .btns button {
   background: #6b4bff;
@@ -114,6 +106,18 @@
   margin-bottom: 12px;
 }
 
+.speak-btn.large {
+  margin: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background: #4c2cff;
+  border-radius: 10px;
+}
+
+.speak-btn.large:hover {
+  background: #3318c7;
+}
+
 /* 🔊 زر النطق */
 .speak-btn {
   cursor: pointer;
@@ -129,19 +133,6 @@
 .speak-btn:hover {
   background: #4f36d1;
   transform: scale(1.08);
-}
-
-/* زر كبير */
-.speak-btn.large {
-  margin: 4px;
-  padding: 10px 15px;
-  font-size: 14px;
-  background: #4c2cff;
-  border-radius: 10px;
-}
-
-.speak-btn.large:hover {
-  background: #3318c7;
 }
 
 /* 📱 موبايل */
