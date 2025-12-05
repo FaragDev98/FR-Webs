@@ -1,150 +1,4 @@
-/* ================================
-   🔵 تصميم كروت الجمل الإنجليزية
-=================================== */
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  border: 1px solid #e5e5e5;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.card-title {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 700;
-  color: #3a3a3a;
-}
-
-.card-desc {
-  margin: 8px 0 18px;
-  font-size: 16px;
-  color: #666;
-}
-
-.phrases {
-  border-top: 1px solid #eee;
-  margin-top: 20px;
-  padding-top: 15px;
-}
-
-
-/* ✅ منع ال-RTL من تخريب ترتيب الإنجليزي */
-.phrase-row .eng {
-  unicode-bidi: plaintext;
-}
-.phrase-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  align-items: center;
-  background: #f9f9f9;
-  padding: 10px 14px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  gap: 10px;
-  border: 1px solid #e8e8e8;
-}
-
-.eng {
-  font-weight: bold;
-  color: #222;
-  font-size: 15px;
-}
-/* ✅ إصلاح اتجاه الجمل الإنجليزية */
-.eng {
-  direction: ltr;
-  text-align: left;
-  unicode-bidi: plaintext;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
-.ara {
-  color: #444;
-  font-size: 15px;
-}
-
-.btns button {
-  background: #6b4bff;
-  border: none;
-  outline: none;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 13px;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btns button:hover {
-  background: #5135d4;
-  transform: scale(1.05);
-}
-
-.card-footer {
-  margin-top: 25px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
-  text-align: center;
-}
-
-.card-footer p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 12px;
-}
-
-.speak-btn.large {
-  margin: 4px;
-  padding: 10px 15px;
-  font-size: 14px;
-  background: #4c2cff;
-  border-radius: 10px;
-}
-
-.speak-btn.large:hover {
-  background: #3318c7;
-}
-
-/* 🔊 زر النطق */
-.speak-btn {
-  cursor: pointer;
-  background: #6b4bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 13px;
-  transition: 0.2s;
-}
-
-.speak-btn:hover {
-  background: #4f36d1;
-  transform: scale(1.08);
-}
-
-/* 📱 موبايل */
-@media(max-width: 600px) {
-  .phrase-row {
-    grid-template-columns: 1fr 1fr;
-  }
-  .btns {
-    grid-column: span 2;
-    text-align: left;
-  }
 }/* ================== 1) الألوان والمتغيرات العامة ================== */
 :root{
   --purple:#6d28d9;
@@ -467,6 +321,139 @@ body.dark .sidebar {
   margin-left: 6px;
 }
 
+/* ================================
+   🔵 تصميم كروت الجمل الإنجليزية
+=================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e5e5e5;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3a3a3a;
+}
+
+.card-desc {
+  margin: 8px 0 18px;
+  font-size: 16px;
+  color: #666;
+}
+
+.phrases {
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+
+.phrase-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+  border: 1px solid #e8e8e8;
+}
+
+.eng {
+  font-weight: bold;
+  color: #222;
+  font-size: 15px;
+}
+
+.ara {
+  color: #444;
+  font-size: 15px;
+}
+
+.btns button {
+  background: #6b4bff;
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btns button:hover {
+  background: #5135d4;
+  transform: scale(1.05);
+}
+
+.card-footer {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.card-footer p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.speak-btn.large {
+  margin: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background: #4c2cff;
+  border-radius: 10px;
+}
+
+.speak-btn.large:hover {
+  background: #3318c7;
+}
+
+/* 🔊 زر النطق */
+.speak-btn {
+  cursor: pointer;
+  background: #6b4bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.speak-btn:hover {
+  background: #4f36d1;
+  transform: scale(1.08);
+}
+
+/* 📱 موبايل */
+@media(max-width: 600px) {
+  .phrase-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+   }
 /* Footer */
 .global-footer{
   text-align:center;
