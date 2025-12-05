@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </header>
-    `;
     document.body.insertAdjacentHTML('afterbegin', headerHTML);
   }
 
