@@ -2,11 +2,107 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تعلم جمل البرمجة — Fabrica Course</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FR Webs — تعليم الإنجليزي والعمل الحر</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta name="description" content="FR Webs — تعلم الإنجليزي والعمل الحر بطريقة بسيطة وعملية." />
 </head>
 <body>
+
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="/index.html">
+        <div class="logo">
+          <img src="icons/ai-icon.png" alt="Logo">
+        </div>
+        <span class="brand-title">FR Webs</span>
+      </a>
+      <div class="header-actions">
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- قائمة الجوال -->
+  <nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+    <a href="index.html"><i class="fa-solid fa-house"></i> تعلم</a>
+    <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
+    <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero animate">
+      <div class="hero-inner">
+        <div>
+          <h1>كورس شامل لتعلم الإنجليزي والعمل الحر</h1>
+          <p>تعلم المهارات الأساسية للعمل الحر: الإنجليزي، تصميم الجرافيك، مونتاج الفيديو، والبرمجة خطوة خطوة.</p>
+        </div>
+        <div class="hero-cards">
+          <div class="card animate">
+            <i class="fa-solid fa-briefcase card-icon"></i>
+            <h4>الوحدة 1: العمل الحر</h4>
+            <p>تعرف على مفهوم العمل الحر وأهم المهارات المطلوبة مثل التصميم، الفيديو، والبرمجة، وكيفية التسجيل على منصات مثل خمسات.</p>
+          </div>
+          <div class="card animate">
+            <i class="fa-solid fa-paintbrush card-icon"></i>
+            <h4>الوحدة 2: التصميم والفيديو</h4>
+            <p>تعلم أساسيات تصميم الجرافيك، اختيار الألوان والخطوط، وتصميم الفيديوهات والمونتاج بطريقة احترافية.</p>
+          </div>
+          <div class="card animate">
+            <i class="fa-solid fa-language card-icon"></i>
+            <h4>الوحدة 3: تعلم الإنجليزي</h4>
+            <p>أساسيات اللغة الإنجليزية للمبتدئين مع تطبيق عملي يساعدك على العمل الحر.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- فيديوهات الدروس -->
+    <section class="lessons-section container animate">
+      <h2 class="text-center">فيديوهات الدروس</h2>
+      <p class="lead text-center">تعلم الإنجليزي والعمل الحر خطوة خطوة من خلال فيديوهات عملية على YouTube.</p>
+
+      <div class="cards-row">
+        <!-- درس 1 -->
+        <div class="post animate">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_1" title="درس 1: العمل الحر" frameborder="0" allowfullscreen></iframe>
+          <div class="post-body">
+            <h4>درس 1: العمل الحر</h4>
+            <p>تعرف على مفهوم العمل الحر وأهمية تعلم المهارات اللازمة للبدء على منصات مثل خمسات، وكيفية اختيار المجال المناسب.</p>
+          </div>
+        </div>
+
+        <!-- درس 2 -->
+        <div class="post animate">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_2" title="درس 2: التصميم والفيديو" frameborder="0" allowfullscreen></iframe>
+          <div class="post-body">
+            <h4>درس 2: التصميم والفيديو</h4>
+            <p>تعلم أساسيات تصميم الجرافيك واختيار الألوان والخطوط، وتصميم الفيديوهات بطريقة احترافية.</p>
+          </div>
+        </div>
+
+        <!-- درس 3 -->
+        <div class="post animate">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_3" title="درس 3: تعلم الإنجليزي" frameborder="0" allowfullscreen></iframe>
+          <div class="post-body">
+            <h4>درس 3: تعلم الإنجليزي</h4>
+            <p>أساسيات اللغة الإنجليزية بطريقة عملية تساعدك على العمل الحر والتواصل مع العملاء.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+ 
   <header class="site-header">
     <div class="container">
       <h1>تعلم الجمل الإنجليزية المستخدمة في البرمجة</h1>
@@ -624,12 +720,33 @@
         </div>
       </article>
     </section>
-
-    <footer class="site-footer">
-      <p>© Fabrica Course — كل الحقوق محفوظة.</p>
-    </footer>
+ 🦺
   </main>
+    <!-- البوتوم ناف -->
+  <nav class="bottom-nav mobile-only">
+    <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+    <a href="lessons/lessons.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+    <button id="themeToggle" class="btn-icon">🌙</button>
+    <a href="code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+    <a href="contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+  </nav>
+
+  <!-- السايدبار -->
+  <div id="sidebarMenu" class="sidebar">
+    <div class="sidebar-header">
+      <h3>الإعدادات</h3>
+      <button id="closeSidebar">✖</button>
+    </div>
+    <div class="sidebar-content">
+      <a href="#"><i class="fa-solid fa-gear"></i> الإعدادات العامة</a>
+      <a href="#"><i class="fa-solid fa-circle-half-stroke"></i> المظهر</a>
+      <a href="#"><i class="fa-solid fa-font"></i> حجم الخط</a>
+      <a href="#"><i class="fa-solid fa-globe"></i> اللغة</a>
+      <a href="#"><i class="fa-solid fa-user"></i> حسابك</a>
+      <a href="#"><i class="fa-solid fa-info-circle"></i> معلومات</a>
+    </div>
+  </div>
 
   <script src="scripts.js"></script>
 </body>
-  </html>
+</html>
