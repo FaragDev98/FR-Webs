@@ -102,3 +102,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const header = document.querySelector(".header");
+  const sidebar = document.querySelector(".sidebar");
+
+  let clickTimeout;
+
+  menuToggle.addEventListener("click", () => {
+    // اضغط سريع: إظهار/إخفاء الهيدر
+    if (!clickTimeout) {
+      clickTimeout = setTimeout(() => {
+        header.classList.toggle("show");
+        clickTimeout = null;
+      }, 250); // انتظار لمعرفة هل سيكون dblclick
+    }
+  });
+
+  menuToggle.addEventListener("dblclick", () => {
+    clearTimeout(clickTimeout);
+    clickTimeout = null;
+    // فتح السايدبار عند dblclick
+    sidebar.classList.toggle("open");
+  });
+});
