@@ -60,6 +60,21 @@
   font-size: 15px;
 }
 
+
+.eng {
+  /* ✅ إصلاح اتجاه الجمل الإنجليزية */
+.eng {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ✅ منع ال-RTL من تخريب ترتيب الإنجليزي */
+.phrase-row .eng {
+  unicode-bidi: plaintext;
+}
+}
 .ara {
   color: #444;
   font-size: 15px;
