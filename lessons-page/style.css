@@ -1,3 +1,335 @@
+/* ================== 1) الألوان والمتغيرات العامة ================== */
+:root{
+  --purple:#6d28d9;
+  --blue:#2563eb;
+  --accent: linear-gradient(90deg,var(--purple),var(--blue));
+  --muted:#6b7280;
+  --card-shadow: 0 8px 24px rgba(16,24,40,0.06);
+  --glass: rgba(255,255,255,0.7);
+}
+
+/* ================== 2) إعادة الضبط + إعدادات الصفحة ================== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Cairo', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fbfbff 0%, #f6f8ff 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background .35s,color .35s;
+}
+
+/* ================== 3) الوضع الليلي ================== */
+body.dark{
+  background: linear-gradient(180deg,#0f1724 0%, #071124 100%);
+  color:#e6eef8;
+}
+
+/* ================== 4) الهيدر (HEADER) ================== */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, #2563eb, #f97316); /* أزرق → برتقالي */
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+body.dark .header{
+  background: linear-gradient(90deg, #1e3a8a, #ea580c); /* الوضع الليلي */
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.header-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;   /* يخلي الإسم أبيض فوق الخلفية */
+}
+
+/* اللوجو + الأيقونة */
+.logo{
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.15); /* يخلي الأيقونة واضحة أكتر */
+}
+
+/* اسم الموقع */
+.brand-title{
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+  color: #fff; /* تأكيد اللون */
+}
+/* أزرار الهيدر */
+.btn-icon{
+  background:transparent; border:0;
+  font-size:18px; cursor:pointer;
+  padding:8px; border-radius:10px;
+}
+.btn-icon:hover{ transform:translateY(-1px) }
+
+/* ================== 5) القائمة العلوية (NAV) ================== */
+.nav{
+  display:flex; gap:10px;
+  justify-content:center;
+  padding:10px 20px;
+  max-width:1200px; margin:0 auto 8px;
+}
+.nav a{
+  text-decoration:none; color:inherit;
+  padding:8px 12px; border-radius:10px;
+  font-weight:600;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.nav a.cta{
+  background:var(--accent); color:#fff;
+  padding:10px 16px;
+  box-shadow: 0 10px 30px rgba(109,40,217,0.12);
+}
+.nav a:hover{ transform:translateY(-4px); transition:all .25s; }
+
+/* الوسائط */
+.desktop-only{ display:flex }
+.mobile-only{ display:none }
+.mobile-hidden{ display:none }
+
+/* ================== 6) منطقة الهيرو (HERO SECTION) ================== */
+.hero{ padding:42px 18px 28px; }
+
+.hero-inner{
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns: 1fr 380px;
+  gap:28px; align-items:center;
+}
+@media (max-width:900px){
+  .hero-inner{ grid-template-columns:1fr }
+  .desktop-only{ display:none }
+  .mobile-only{ display:inline-flex }
+  .mobile-hidden{ display:none }
+}
+
+.hero h1{
+  font-size:2rem; margin:0 0 12px;
+  line-height:1.05; font-weight:800;
+  color:var(--purple)
+}
+body.dark .hero h1{ color:#9db4ff }
+.hero p{ margin:0 0 18px; color:var(--muted) }
+
+/* أزرار الهيرو */
+.hero-cta .btn{ margin-right:8px }
+
+/* ================== 7) الأزرار العامة ================== */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:700;
+}
+.btn.primary{
+  background:var(--blue); color:#fff;
+  box-shadow: 0 8px 28px rgba(37,99,235,0.12);
+}
+.btn.outline{
+  background:transparent;
+  border:1px solid rgba(15,23,42,0.06);
+  color:inherit;
+}
+
+/* ================== 8) كروت الهيرو ================== */
+.hero-cards{
+  display:flex; flex-direction:column; gap:12px;
+}
+.card{
+  background:#fff; padding:18px;
+  border-radius:14px;
+  box-shadow:var(--card-shadow);
+  display:flex; gap:12px; align-items:center;
+  transition:transform .25s, box-shadow .25s;
+  opacity:0; transform:translateY(18px);
+}
+.card.in-view{ opacity:1; transform:none }
+
+/* أيقونة الكارت */
+.card-icon{
+  font-size:26px; color:var(--purple);
+  width:48px; height:48px;
+  display:grid; place-items:center;
+  background:linear-gradient(180deg, rgba(109,40,217,0.08), rgba(37,99,235,0.06));
+  border-radius:10px;
+}
+
+/* ================== 9) قسم المميزات (WHY CHOOSE US) ================== */
+.container{ max-width:1200px; margin:0 auto; padding:30px 18px }
+.why h2{ text-align:center; margin-bottom:6px }
+.lead{ text-align:center; color:var(--muted); margin-bottom:20px }
+
+.grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+@media (max-width:900px){ .grid-3{ grid-template-columns:1fr } }
+
+.feature{
+  background:linear-gradient(180deg,#fff,#fbfbff);
+  padding:18px; border-radius:14px; text-align:center;
+  box-shadow:var(--card-shadow);
+  opacity:0; transform:translateY(20px);
+  transition:all .45s;
+}
+.feature.in-view{ opacity:1; transform:none }
+.feature i{ font-size:28px; color:var(--blue); margin-bottom:8px }
+
+/* ================== 10) قسم التجارب (LAB) ================== */
+.lab{
+  display:flex; gap:18px; align-items:center;
+  padding:20px; border-radius:14px;
+  background: linear-gradient(90deg, rgba(109,40,217,0.06), rgba(37,99,235,0.04));
+  margin:18px auto;
+  box-shadow:var(--card-shadow)
+}
+.lab img{ max-width:140px; display:block }
+@media (max-width:900px){ .lab{ flex-direction:column; text-align:center } }
+
+/* ================== 11) قسم المقالات (ARTICLES) ================== */
+.articles-section h2{ margin-bottom:12px; text-align:center }
+
+.cards-row{
+  display:grid; grid-template-columns: repeat(3,1fr);
+  gap:16px
+}
+@media (max-width:1000px){ .cards-row{ grid-template-columns: repeat(2,1fr) } }
+@media (max-width:650px){ .cards-row{ grid-template-columns:1fr } }
+
+.post{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  box-shadow:var(--card-shadow);
+  display:flex; flex-direction:column;
+  transition:transform .25s
+}
+.post img{
+  width:100%; height:140px;
+  object-fit:cover;
+}
+.post-body{ padding:12px }
+.post h4{ margin:0 0 8px }
+.post p{ margin:0; color:var(--muted) }
+
+/* ================== 12) شريط التنقل السفلي (BOTTOM NAV – MOBILE) ================== */
+.bottom-nav{
+  position:fixed; bottom:12px; left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:18px;
+  background:linear-gradient(90deg,var(--purple),var(--blue));
+  padding:10px 18px;
+  border-radius:40px;
+  box-shadow: 0 10px 30px rgba(37,99,235,0.12);
+  z-index:80
+}
+.bottom-nav a{
+  color:#fff; text-decoration:none;
+  display:flex; flex-direction:column;
+  align-items:center;
+  font-weight:700; font-size:12px
+}
+.mobile-only{ display:none }
+@media (max-width:900px){
+  .mobile-only{ display:flex }
+  .desktop-only{ display:none }
+}
+
+/* ================== 13) تنسيقات إضافية صغيرة ================== */
+h2,h3,h4{ font-weight:700 }
+a{ color:inherit }
+
+/* ================== 14) تعديل عناصر الوضع الليلي ================== */
+body.dark .card,
+body.dark .post,
+body.dark .feature{
+  background: linear-gradient(180deg,#081022,#071427)
+}
+body.dark .post img{ opacity:0.95 }
+/* Sidebar Settings Menu */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: 0.35s ease;
+  z-index: 9999;
+}
+
+body.dark .sidebar {
+  background: #111827;
+  color: #fff;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sidebar-content a {
+  display: block;
+  margin: 12px 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-content a i {
+  margin-left: 6px;
+}
+
+/* Footer */
+.global-footer{
+  text-align:center;
+  padding:15px;
+  color:#fff;
+  background:#7b1fa2;
+  margin-top:20px;
+}
+/* ================== 15) أدوات مساعدة ================== */
+.text-center{ text-align:center }
 body {
   margin: 0;
   font-family: "Cairo", sans-serif;
