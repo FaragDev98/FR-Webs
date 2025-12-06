@@ -46,31 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
     else document.body.insertAdjacentHTML('afterbegin', localNavHTML);
   }
   // ===== التعامل مع النقر single/double click =====
-  let clickTimeout;
+  
 
-  menuToggle.addEventListener("click", () => {
-    if (!clickTimeout) {
-      clickTimeout = setTimeout(() => {
-        // Toggle ظهور الهيدر
-        header.classList.toggle("show");
-        // Toggle قائمة الجوال إذا موجودة
-        if(localMobileNav) localMobileNav.classList.toggle('mobile-hidden');
-        clickTimeout = null;
-      }, 250); // تأخير لمعرفة إذا كان dblclick
-    }
-  });
-
-  menuToggle.addEventListener("dblclick", () => {
-    clearTimeout(clickTimeout);
-    clickTimeout = null;
-    // فتح/إغلاق السايدبار
-    if(sidebarMenu) {
-      sidebarMenu.classList.toggle('open');
-      if(sidebarMenu.classList.contains('open') && localMobileNav) {
-        localMobileNav.classList.add('mobile-hidden');
-      }
-    }
-  });
+ 
 
   // ===== إغلاق السايدبار =====
   if(closeSidebar) closeSidebar.addEventListener('click', () => sidebarMenu?.classList.remove('open'));
