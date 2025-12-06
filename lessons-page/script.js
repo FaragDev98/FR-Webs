@@ -33,11 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================================================ */
   if (!document.getElementById('localMobileNav')) {
     const localNavHTML = `
-      <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
-        <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الإنجليزي</a>
-        <a href="artic/index.html"><i class="fa-solid fa-newspaper"></i> المقالات</a>
-        <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
-      </nav>
+      <nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+  <a href="/ish/index.html"><i class="fa-solid fa-language"></i> تعلم</a>
+  <a href="/dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+  <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+</nav>
     `;
     // أدخل القائمة بعد الهيدر مباشرة (أو في بداية الـ body إذا الهيدر لم يتغير)
     const headerEl = document.querySelector('header.header');
@@ -50,13 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ============================================================ */
   if (!document.querySelector('.bottom-nav')) {
     const bottomNavHTML = `
-      <nav class="bottom-nav mobile-only" aria-label="تنقل أسفل الصفحة">
-        <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
-        <a href="lessons/lessons.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
-        <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
-        <a href="code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
-        <a href="contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
-      </nav>
+      <nav class="bottom-nav mobile-only">
+  <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+  <a href="/lessons/lessons.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+  <button id="themeToggle" class="btn-icon">🌙</button>
+  <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+  <a href="/contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+</nav>
     `;
     document.body.insertAdjacentHTML('beforeend', bottomNavHTML);
   }
@@ -69,19 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.id = 'sidebarMenu';
     sidebar.className = 'sidebar';
     sidebar.innerHTML = `
-      <div class="sidebar-header">
-        <h3>الإعدادات</h3>
-        <button id="closeSidebar" aria-label="إغلاق">✖</button>
-      </div>
-      <div class="sidebar-content">
-        <a href="#"><i class="fa-solid fa-gear"></i> الإعدادات العامة</a>
-        <a href="#"><i class="fa-solid fa-circle-half-stroke"></i> المظهر</a>
-        <a href="#"><i class="fa-solid fa-font"></i> حجم الخط</a>
-        <a href="#"><i class="fa-solid fa-globe"></i> اللغة</a>
-        <a href="#"><i class="fa-solid fa-user"></i> حسابك</a>
-        <a href="#"><i class="fa-solid fa-info-circle"></i> معلومات</a>
-      </div>
-    `;
+      
+     
     document.body.appendChild(sidebar);
   }
 
