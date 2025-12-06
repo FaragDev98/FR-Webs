@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FR Webs — تعليم الإنجليزي والعمل الحر</title>
+  <title>FR Webs مع تعليم الإنجليزي </title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -15,34 +15,29 @@
 </head>
 <body>
 
- 
+  <!-- الهيدر -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="/index.html">
+        <div class="logo">
+          <img src="icons/ai-icon.png" alt="Logo">
+        </div>
+        <span class="brand-title">FR Webs</span>
+      </a>
+   <!-- زر المجلد (يفتح القائمة المحلية single click، ويفتح السايدبار dblclick) -->
+          <div class="header-actions">
+            <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+          </div>
+        </div>
+      </header>
+  
+      <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
+        <a href="ish/index.html"><i class="fa-solid fa-language"></i> تعلم </a>
+        <a href="dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+        <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+      </nav>
   <!-- HERO SECTION -->
   <main>
-    <section class="hero animate">
-      <div class="hero-inner">
-        <div>
-          <h1>كورس شامل لتعلم الإنجليزي والعمل الحر</h1>
-          <p>تعلم المهارات الأساسية للعمل الحر: الإنجليزي، تصميم الجرافيك، مونتاج الفيديو، والبرمجة خطوة خطوة.</p>
-        </div>
-        <div class="hero-cards">
-          <div class="card animate">
-            <i class="fa-solid fa-briefcase card-icon"></i>
-            <h4>الوحدة 1: العمل الحر</h4>
-            <p>تعرف على مفهوم العمل الحر وأهم المهارات المطلوبة مثل التصميم، الفيديو، والبرمجة، وكيفية التسجيل على منصات مثل خمسات.</p>
-          </div>
-          <div class="card animate">
-            <i class="fa-solid fa-paintbrush card-icon"></i>
-            <h4>الوحدة 2: التصميم والفيديو</h4>
-            <p>تعلم أساسيات تصميم الجرافيك، اختيار الألوان والخطوط، وتصميم الفيديوهات والمونتاج بطريقة احترافية.</p>
-          </div>
-          <div class="card animate">
-            <i class="fa-solid fa-language card-icon"></i>
-            <h4>الوحدة 3: تعلم الإنجليزي</h4>
-            <p>أساسيات اللغة الإنجليزية للمبتدئين مع تطبيق عملي يساعدك على العمل الحر.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- فيديوهات الدروس -->
     <section class="lessons-section container animate">
@@ -59,23 +54,7 @@
           </div>
         </div>
 
-        <!-- درس 2 -->
-        <div class="post animate">
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_2" title="درس 2: التصميم والفيديو" frameborder="0" allowfullscreen></iframe>
-          <div class="post-body">
-            <h4>درس 2: التصميم والفيديو</h4>
-            <p>تعلم أساسيات تصميم الجرافيك واختيار الألوان والخطوط، وتصميم الفيديوهات بطريقة احترافية.</p>
-          </div>
-        </div>
-
-        <!-- درس 3 -->
-        <div class="post animate">
-          <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_3" title="درس 3: تعلم الإنجليزي" frameborder="0" allowfullscreen></iframe>
-          <div class="post-body">
-            <h4>درس 3: تعلم الإنجليزي</h4>
-            <p>أساسيات اللغة الإنجليزية بطريقة عملية تساعدك على العمل الحر والتواصل مع العملاء.</p>
-          </div>
-        </div>
+        
       </div>
     </section>
   </main> 
