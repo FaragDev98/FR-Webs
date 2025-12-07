@@ -5,13 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>📘 دروس HTML & CSS & JavaScript</title>
   <link rel="stylesheet" href="style.css">
- <script src="footer.js"></script>
+  <script src="footer.js"></script>
 </head>
 
 <body>
-  <header class="main-header">
-    <h1>🎓 كورس HTML & CSS & JavaScript</h1>
-    <p>رحلة متكاملة لتعلم تصميم وتطوير الويب باحتراف</p>
+  <!-- Header مُعدّل ليتوافق مع lessons-page/script.js (مع الاحتفاظ بنفس النص) -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="icons/ai-icon.png" alt="AI Icon">
+        </div>
+        <span class="brand-title">FR Webs</span>
+      </a>
+
+      <div class="header-main">
+        <h1>🎓 كورس HTML & CSS & JavaScript</h1>
+        <p>رحلة متكاملة لتعلم تصميم وتطوير الويب باحتراف</p>
+      </div>
+
+      <div class="header-actions">
+        <!-- الزر الوحيد الذي يتوقعه footer.js -->
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+      </div>
+    </div>
   </header>
 
   <main class="lesson-container">
@@ -90,6 +107,6 @@
   <footer>© 2025 FRWEBS — تصميم وتطوير 💜 فراج عبدالله</footer>
 
   <script src="script.js"></script>
- <script src="footer.js"></script>
+  <script src="footer.js"></script>
 </body>
 </html>
