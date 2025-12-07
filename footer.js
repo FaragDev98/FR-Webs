@@ -141,3 +141,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
 });
+// ====== contact.js ======
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // أخذ القيم
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+
+    if (name && email && subject && message) {
+      // هنا يمكن استدعاء API خارجي أو EmailJS لإرسال الرسالة
+      // حالياً نعرض رسالة نجاح وهمية
+      formMessage.style.color = "#00ff99";
+      formMessage.textContent = "تم إرسال رسالتك بنجاح، شكرًا لتواصلك معنا!";
+      form.reset();
+    } else {
+      formMessage.style.color = "#ff6b6b";
+      formMessage.textContent = "يرجى ملء جميع الحقول قبل الإرسال.";
+    }
+  });
+});
