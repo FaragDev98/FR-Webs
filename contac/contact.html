@@ -53,20 +53,29 @@
   <h2 class="text-center">نموذج الاتصال</h2>
   <p class="lead text-center">املأ البيانات أدناه وسنرد عليك في أقرب وقت ممكن.</p>
 
-  <form class="contact-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
-    <label for="name">الاسم:</label>
-    <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+  <form id="contactForm" class="contact-form">
+    <div class="form-group">
+      <label for="name">الاسم:</label>
+      <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+    </div>
 
-    <label for="email">البريد الإلكتروني:</label>
-    <input type="email" id="email" name="email" placeholder="اكتب بريدك الإلكتروني" required>
+    <div class="form-group">
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" placeholder="اكتب بريدك الإلكتروني" required>
+    </div>
 
-    <label for="subject">الموضوع:</label>
-    <input type="text" id="subject" name="subject" placeholder="موضوع الرسالة" required>
+    <div class="form-group">
+      <label for="subject">الموضوع:</label>
+      <input type="text" id="subject" name="subject" placeholder="موضوع الرسالة" required>
+    </div>
 
-    <label for="message">الرسالة:</label>
-    <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+    <div class="form-group">
+      <label for="message">الرسالة:</label>
+      <textarea id="message" name="message" rows="6" placeholder="اكتب رسالتك هنا" required></textarea>
+    </div>
 
     <button type="submit" class="btn-submit">إرسال</button>
+    <p id="formMessage" class="form-message"></p>
   </form>
 
   <div class="contact-info">
@@ -77,7 +86,6 @@
     <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
   </div>
 </section>
-
 <!-- البوتوم ناف -->
 <nav class="bottom-nav mobile-only">
   <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
