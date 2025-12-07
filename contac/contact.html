@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FR Webs — تواصل معنا</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta name="description" content="FR Webs — تواصل معنا للاستفسار عن الدروس والكورسات أو طلب الدعم." />
+</head>
+<body>
+<!-- HEADER TEMPLATE -->
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html">
+      <div class="logo">
+        <img src="icons/ai-icon.png" alt="Logo">
+      </div>
+      <span class="brand-title">FR Webs</span>
+    </a>
+
+    <!-- زر القائمة -->
+    <div class="header-actions">
+      <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+    </div>
+  </div>
+</header>
+
+<!-- قائمة الجوال -->
+<nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+  <a href="/ish/index.html"><i class="fa-solid fa-language"></i> تعلم</a>
+  <a href="/dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+  <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>تواصل معنا</h1>
+      <p>إذا كان لديك أي استفسار عن الدروس، الكورسات، أو الدعم الفني، يمكنك التواصل معنا من خلال النموذج أدناه أو عبر وسائل التواصل الأخرى.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= نموذج التواصل ======= -->
+<section class="contact-section container">
+  <h2 class="text-center">نموذج الاتصال</h2>
+  <p class="lead text-center">املأ البيانات أدناه وسنرد عليك في أقرب وقت ممكن.</p>
+
+  <form class="contact-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+    <label for="name">الاسم:</label>
+    <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+
+    <label for="email">البريد الإلكتروني:</label>
+    <input type="email" id="email" name="email" placeholder="اكتب بريدك الإلكتروني" required>
+
+    <label for="subject">الموضوع:</label>
+    <input type="text" id="subject" name="subject" placeholder="موضوع الرسالة" required>
+
+    <label for="message">الرسالة:</label>
+    <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+
+    <button type="submit" class="btn-submit">إرسال</button>
+  </form>
+
+  <div class="contact-info">
+    <h3>أو تواصل معنا عبر:</h3>
+    <p><i class="fa-solid fa-phone"></i> الهاتف: 01091838789</p>
+    <p><i class="fa-brands fa-whatsapp"></i> واتساب: <a href="https://wa.me/201091838789" target="_blank">اضغط هنا</a></p>
+    <p><i class="fa-brands fa-facebook"></i> فيسبوك: <a href="https://www.facebook.com/FRWebs" target="_blank">صفحتنا</a></p>
+    <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  </div>
+</section>
+
+<!-- البوتوم ناف -->
+<nav class="bottom-nav mobile-only">
+  <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+  <a href="/lessons/lessons.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+  <button id="themeToggle" class="btn-icon">🌙</button>
+  <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+  <a href="/contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+</nav>
+
+
+
+<script src="/footer.js"></script>
+</body>
+    </html>
