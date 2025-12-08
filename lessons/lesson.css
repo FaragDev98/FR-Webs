@@ -1,0 +1,74 @@
+/* ===== صندوق الدرس ===== */
+.lesson-box {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== الفيديو ===== */
+.video-container {
+  width: 100%;
+  height: 260px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== عنوان الدرس ===== */
+.lesson-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4b4a8a;
+  margin-bottom: 10px;
+}
+
+/* ===== وصف الدرس ===== */
+.lesson-desc {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* ===== أزرار التفاعل ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.actions button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #ecebff;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #d8d5ff;
+}
+
+/* ===== تحسين للموبايل ===== */
+@media (max-width: 768px) {
+  .lesson-box {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .video-container {
+    height: 200px;
+  }
+}
