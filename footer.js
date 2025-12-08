@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const localNavHTML = `
       <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
         <a href="ish/index.html"><i class="fa-solid fa-language"></i> تعلم </a>
-        <a href="dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+        <a href="FR.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
         <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
       </nav>
     `;
@@ -60,30 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML('beforeend', bottomNavHTML);
   }
 
-  /* ============================================================
-    4) Sidebar الإعدادات (مخفي افتراضياً) — تفتح على dblclick أو أي زر تريده
-  ============================================================ */
-  if (!document.getElementById('sidebarMenu')) {
-    const sidebar = document.createElement('div');
-    sidebar.id = 'sidebarMenu';
-    sidebar.className = 'sidebar';
-    sidebar.innerHTML = `
-      <div class="sidebar-header">
-        <h3>الإعدادات</h3>
-        <button id="closeSidebar" aria-label="إغلاق">✖</button>
-      </div>
-      <div class="sidebar-content">
-        <a href="#"><i class="fa-solid fa-gear"></i> الإعدادات العامة</a>
-        <a href="#"><i class="fa-solid fa-circle-half-stroke"></i> المظهر</a>
-        <a href="#"><i class="fa-solid fa-font"></i> حجم الخط</a>
-        <a href="#"><i class="fa-solid fa-globe"></i> اللغة</a>
-        <a href="#"><i class="fa-solid fa-user"></i> حسابك</a>
-        <a href="#"><i class="fa-solid fa-info-circle"></i> معلومات</a>
-      </div>
-    `;
-    document.body.appendChild(sidebar);
-  }
-
+ 
   /* ============================================================
     5) Event listeners: توصيل الأزرار بالعناصر الصحيحة (بدون أخطاء IDs مكررة)
   ============================================================ */
