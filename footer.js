@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const localNavHTML = `
       <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
         <a href="ish/index.html"><i class="fa-solid fa-language"></i> تعلم </a>
-        <a href="FR.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+        <a href="dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
         <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
       </nav>
     `;
