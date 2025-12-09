@@ -9,7 +9,29 @@
 </head>
 <body>
 
-  <header>
+<!-- HEADER TEMPLATE -->
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html">
+      <div class="logo">
+        <img src="icons/aiicon.png" alt="Logo">
+      </div>
+      <span class="brand-title">FR Webs</span>
+    </a>
+
+    <!-- زر القائمة -->
+    <div class="header-actions">
+      <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+    </div>
+  </div>
+</header>
+
+<!-- قائمة الجوال -->
+<nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+  <a href="/ish/index.html"><i class="fa-solid fa-language"></i> تعلم</a>
+  <a href="/dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+  <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+</nav>
     <h1>مختبر الأكواد - FR.WEBS</h1>
     <select id="languageSelect">
       <option value="html">HTML</option>
@@ -39,7 +61,15 @@
   <h2 class="result-title">النتيجة</h2>
   <iframe id="resultFrame"></iframe>
 
-  <script src="script.js"></script>
+</nav><!-- البوتوم ناف -->
+<nav class="bottom-nav mobile-only">
+  <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+  <a href="/lessons/FR.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+  <button id="themeToggle" class="btn-icon">🌙</button>
+  <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+  <a href="/contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+</nav>
 <script src="/footer.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
