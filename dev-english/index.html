@@ -2,18 +2,40 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FR Webs مع تعليم الإنجليزي </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FR Webs الانجليزي</title>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Icons -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <meta name="description" content="FR Webs — تعلم الإنجليزي والعمل الحر بطريقة بسيطة وعملية." />
+ <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+
+<header class="header">
+  <div class="header-inner">
+    <!-- أيقونة الموقع -->
+    <div class="logo">
+      <img src="icons/aiicon.png" alt="Logo">
+    </div>
+
+    <!-- اسم الموقع -->
+    <a class="brand" href="/index.html">
+      <span class="brand-title"> تعلم الانجليزي مع FR Webs </span>
+    </a>
+
+    <!-- زر القائمة -->
+    <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+  </div>
+</header>
+
+<!-- قائمة الجوال -->
+<nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+  <a href="/ish/index.html"><i class="fa-solid fa-language"></i> تعلم</a>
+  <a href="/dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+  <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+</nav>
 
   <!-- فيديوهات الدروس -->
 <section class="lessons-section container animate">
