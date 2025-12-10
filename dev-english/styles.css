@@ -1,3 +1,98 @@
+/* ======== رأس الصفحة ======== */
+.header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner .brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-inner .logo img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-actions .btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ======== الجمل والمحتوى ======== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3, h4 {
+  color: #2575fc;
+  margin-bottom: 10px;
+}
+
+p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ======== قائمة الجوال ======== */
+.mobile-nav {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.mobile-nav a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
 /* ====== الكروت الأساسية ====== */
 .card {
   background: #fff;
