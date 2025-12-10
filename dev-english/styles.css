@@ -1,457 +1,94 @@
-/* ================== 1) الألوان والمتغيرات العامة ================== */
-:root {
-  --purple: #6d28d9;
-  --blue: #2563eb;
-  --accent: linear-gradient(90deg, var(--purple), var(--blue));
-  --muted: #6b7280;
-  --card-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
-  --glass: rgba(255, 255, 255, 0.7);
-  --eng-color: #2563eb;
-  --ara-color: #6d28d9;
-  --speak-color: #6a5acd;
+/* ======== رأس الصفحة ======== */
+.header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* ================== 2) إعادة الضبط + إعدادات الصفحة ================== */
-* {
-  box-sizing: border-box;
+.header-inner .brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-inner .logo img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-actions .btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ======== الجمل والمحتوى ======== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-  font-family: 'Cairo', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(180deg, #fbfbff 0%, #f6f8ff 100%);
-  color: #111827;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: background 0.35s, color 0.35s;
-}
-
-/* ================== 3) الوضع الليلي ================== */
-body.dark {
-  background: linear-gradient(180deg, #0f1724 0%, #071124 100%);
-  color: #e6eef8;
-}
-
-/* ================== 4) الهيدر (HEADER) ================== */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 60;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(90deg, #2563eb, #f97316);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  transition: background 0.3s, border-color 0.3s;
-}
-
-body.dark .header {
-  background: linear-gradient(90deg, #1e3a8a, #ea580c);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #fff;
-}
-
-.logo {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(1.15);
-}
-
-.brand-title {
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.2px;
-  color: #fff;
-}
-
-.btn-icon {
-  background: transparent;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 10px;
-  transition: transform 0.25s;
-}
-
-.btn-icon:hover {
-  transform: translateY(-2px);
-}
-
-/* ================== 5) القائمة العلوية (NAV) ================== */
-.nav {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  padding: 10px 20px;
-  max-width: 1200px;
-  margin: 0 auto 8px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: inherit;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.25s;
-}
-
-.nav a.cta {
-  background: var(--accent);
-  color: #fff;
-  padding: 10px 16px;
-  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.12);
-}
-
-.nav a:hover {
-  transform: translateY(-3px);
-}
-
-/* ================== 6) منطقة الهيرو (HERO SECTION) ================== */
-.hero {
-  padding: 42px 18px 28px;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 28px;
-  align-items: center;
-}
-
-@media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-  .desktop-only {
-    display: none;
-  }
-  .mobile-only {
-    display: inline-flex;
-  }
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 14px;
-  line-height: 1.1;
-  font-weight: 800;
-  color: var(--purple);
-}
-
-body.dark .hero h1 {
-  color: #9db4ff;
-}
-
-.hero p {
-  margin-bottom: 20px;
-  color: var(--muted);
-  font-size: 1.1rem;
-}
-
-/* ================== 7) الأزرار العامة ================== */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-weight: 700;
-  transition: all 0.25s;
-}
-
-.btn.primary {
-  background: var(--blue);
-  color: #fff;
-  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.12);
-}
-
-.btn.primary:hover {
-  transform: translateY(-2px);
-}
-
-.btn.outline {
-  background: transparent;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  color: inherit;
-}
-
-/* ================== 8) الكروت والدروس ================== */
-.card {
-  background: #fff;
-  padding: 22px;
-  border-radius: 14px;
-  box-shadow: var(--card-shadow);
-  margin: 20px 0;
-  transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.card.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card-icon {
-  font-size: 28px;
-  color: var(--purple);
-  width: 50px;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(180deg, rgba(109, 40, 217, 0.08), rgba(37, 99, 235, 0.06));
-  border-radius: 12px;
-}
-
-/* الجمل الإنجليزية */
-.eng {
-  font-family: "Arial", sans-serif;
-  direction: ltr;
-  background: #e0f0ff;
-  color: var(--eng-color);
-  padding: 8px 14px;
-  border-radius: 10px;
-  display: inline-block;
-  margin: 6px 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-/* الجمل العربية */
-.ara {
-  display: inline-block;
-  margin-right: 12px;
-  font-size: 1.1rem;
-  color: var(--ara-color);
-  font-weight: 600;
-}
-
-/* أزرار النطق */
-.speak-btn {
-  margin: 6px 2px 0 0;
-  padding: 6px 14px;
-  border: none;
-  background-color: var(--speak-color);
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.speak-btn:hover {
-  background-color: #483d8b;
-}
-
-/* ================== 9) قسم المميزات ================== */
-.feature {
-  background: linear-gradient(180deg, #fff, #fbfbff);
-  padding: 20px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: var(--card-shadow);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.45s;
-}
-
-.feature.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.feature i {
-  font-size: 30px;
-  color: var(--blue);
+h2, h3, h4 {
+  color: #2575fc;
   margin-bottom: 10px;
 }
 
-/* ================== 10) الوضع الليلي للكروت والمميزات ================== */
-body.dark .card,
-body.dark .feature,
-body.dark .post {
-  background: linear-gradient(180deg, #081022, #071427);
+p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-body.dark .post img {
-  opacity: 0.95;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* ================== 11) Sidebar ================== */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
+/* ======== قائمة الجوال ======== */
+.mobile-nav {
   background: #fff;
-  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: 0.35s ease;
-  z-index: 9999;
-}
-
-body.dark .sidebar {
-  background: #111827;
-  color: #fff;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.sidebar-header h3 {
-  font-size: 1.2rem;
-}
-
-.sidebar-content a {
-  display: block;
-  margin: 12px 0;
-  font-size: 1rem;
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.25s;
-}
-
-.sidebar-content a:hover {
-  color: var(--blue);
-}
-/* ================== 12) شريط التنقل السفلي (BOTTOM NAV – MOBILE) ================== */
-.bottom-nav{
-  position:fixed; bottom:12px; left:50%;
-  transform:translateX(-50%);
-  display:flex; gap:18px;
-  background:linear-gradient(90deg,var(--purple),var(--blue));
-  padding:10px 18px;
-  border-radius:40px;
-  box-shadow: 0 10px 30px rgba(37,99,235,0.12);
-  z-index:80
-}
-.bottom-nav a{
-  color:#fff; text-decoration:none;
-  display:flex; flex-direction:column;
-  align-items:center;
-  font-weight:700; font-size:12px
-}
-.mobile-only{ display:none }
-@media (max-width:900px){
-  .mobile-only{ display:flex }
-  .desktop-only{ display:none }
-}
-
-/* ================== 13) تنسيقات إضافية صغيرة ================== */
-h2,h3,h4{ font-weight:700 }
-a{ color:inherit }
-
-/* ================== 14) تعديل عناصر الوضع الليلي ================== */
-body.dark .card,
-body.dark .post,
-body.dark .feature{
-  background: linear-gradient(180deg,#081022,#071427)
-}
-body.dark .post img{ opacity:0.95 }
-/* Sidebar Settings Menu */
-.sidebar {
+  border-top: 1px solid #ddd;
   position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
-  padding: 20px;
-  transition: 0.35s ease;
-  z-index: 9999;
-}
-
-body.dark .sidebar {
-  background: #111827;
-  color: #fff;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar-header {
+  bottom: 0;
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 10px 0;
 }
 
-.sidebar-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.sidebar-content a {
-  display: block;
-  margin: 12px 0;
-  font-size: 1rem;
+.mobile-nav a {
+  color: #2575fc;
   text-decoration: none;
-  color: inherit;
-}
-
-.sidebar-content a i {
-  margin-left: 6px;
-}
-
-/* Footer */
-.global-footer{
-  text-align:center;
-  padding:15px;
-  color:#fff;
-  background:#7b1fa2;
-  margin-top:20px;
-}
-/* ================== 12) Footer ================== */
-.global-footer {
+  font-weight: bold;
   text-align: center;
-  padding: 22px;
-  color: #fff;
-  background: linear-gradient(90deg, #6d28d9, #2563eb);
-  margin-top: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 14px 14px 0 0;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
 }
