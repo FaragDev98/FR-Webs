@@ -90,8 +90,14 @@
 @media (max-width: 600px) {
   .phrase-row {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: 8px;
+    padding: 12px;
     text-align: center;
+  }
+
+  .eng, .ara {
+    text-align: center;
+    font-size: 15px;
   }
 
   .btns {
