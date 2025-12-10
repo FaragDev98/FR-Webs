@@ -1,5 +1,5 @@
+// تشغيل الكود
 document.getElementById("runBtn").addEventListener("click", runCode);
-document.getElementById("languageSelect").addEventListener("change", changeLanguage);
 
 function runCode() {
   let html = document.getElementById("htmlCode").value;
@@ -21,15 +21,21 @@ function runCode() {
   `;
 }
 
-// تغيير نمط الكتابة حسب اختيار المستخدم
+// تغيير لون الإطار حسب اللغة
+document.getElementById("languageSelect").addEventListener("change", changeLanguage);
+
 function changeLanguage() {
   const lang = document.getElementById("languageSelect").value;
-
-  document.querySelectorAll("textarea").forEach((box, index) => {
-    box.style.border = "2px solid transparent";
-  });
-
+  document.querySelectorAll("textarea").forEach(box => box.style.border = "2px solid transparent");
   if (lang === "html") document.getElementById("htmlCode").style.border = "2px solid red";
   if (lang === "css") document.getElementById("cssCode").style.border = "2px solid red";
   if (lang === "js") document.getElementById("jsCode").style.border = "2px solid red";
 }
+
+// زر القائمة للجوال
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("localMobileNav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("mobile-hidden");
+});
