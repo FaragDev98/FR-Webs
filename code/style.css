@@ -82,3 +82,42 @@ iframe {
   background: #007bff;
   margin-top: 10px;
 }
+/* الرأس */
+.header {
+  background: linear-gradient(90deg, #6d28d9, #2563eb);
+  padding: 10px 20px;
+}
+
+/* الحاوية الداخلية */
+.header-inner {
+  display: flex;
+  justify-content: space-between; /* توزع العناصر بالتساوي */
+  align-items: center; /* محاذاة عمودية في المنتصف */
+}
+
+/* شعار الموقع */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين الصورة والنص */
+  text-decoration: none;
+  color: white;
+}
+
+/* حجم الشعار */
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* اسم الموقع */
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* زر القائمة (القائمة الجانبية للجوال) */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
