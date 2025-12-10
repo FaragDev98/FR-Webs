@@ -14,30 +14,30 @@
   <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-  <!-- Header مُعدّل ليتوافق مع lessons-page/script.js (مع الاحتفاظ بنفس النص) -->
-  <header class="header">
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <div class="logo">
-          <img src="icons/ai-icon.png" alt="AI Icon">
-        </div>
-        <span class="brand-title">FR Webs</span>
-      </a>
-      <div class="header-actions">
-        <!-- الزر الوحيد الذي يتوقعه footer.js -->
-        <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
-   <nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
-       <a href="/ish/index.html"><i class="fa-solid fa-language"></i> تعلم</a>
-       <a href="/dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
-       <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
-</nav> 
+ - HEADER TEMPLATE -->
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="/index.html">
+      <div class="logo">
+        <img src="icons/aiicon.png" alt="Logo">
       </div>
-    </div>
-  </header>
+      <span class="brand-title">FR Webs</span>
+    </a>
 
-  <main class="lesson-container">
+    <!-- زر القائمة -->
+    <div class="header-actions">
+      <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+    </div>
+  </div>
+</header>
+
+<!-- قائمة الجوال -->
+<nav id="localMobileNav" class="nav mobile-nav mobile-hidden">
+  <a href="/ish/index.html"><i class="fa-solid fa-language"></i> تعلم</a>
+  <a href="/dev-english/index.html"><i class="fa-solid fa-newspaper"></i> الانجليزي</a>
+  <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+</nav>
 
     <!-- الدرس الأول -->
     <section class="lesson">
