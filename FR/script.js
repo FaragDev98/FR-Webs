@@ -1,5 +1,3 @@
-console.log("FR Webs Services Page Loaded Successfully");
-
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ============================================================
