@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("FR Webs Services Page Loaded");
+
+  const menuToggle = document.getElementById("menuToggle");
+  if(menuToggle){
+    menuToggle.addEventListener("click",()=>{
+      alert("القائمة ستضاف هنا لاحقًا");
+    });
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
 
   /* ============================================================
     1) إدراج الهيدر (header) في أعلى الصفحة إذا مش موجود
