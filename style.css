@@ -1,3 +1,28 @@
+/* ===== Mobile Nav ===== */
+.mobile-nav{
+  background:#ffffff;
+  border-bottom:1px solid #eee;
+  display:flex;
+  flex-direction:column;
+  padding:10px 20px;
+}
+
+.mobile-nav a{
+  padding:12px 0;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+  border-bottom:1px solid #f1f1f1;
+}
+
+.mobile-nav a:last-child{
+  border-bottom:none;
+}
+
+.mobile-hidden{
+  display:none;
+}
+
 /* ================== 1) الألوان والمتغيرات العامة ================== */
 :root{
   --purple:#6d28d9;
