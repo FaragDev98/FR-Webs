@@ -140,3 +140,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
 });
+console.log("FR Webs Services Page Loaded Successfully");
