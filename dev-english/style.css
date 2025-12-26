@@ -1,0 +1,138 @@
+/* ===== محتوى الصفحة الرئيسية ===== */
+main.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* ===== شبكة البطاقات ===== */
+section.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* ===== كل بطاقة ===== */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #4b6cb7;
+}
+
+.card-desc {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* ===== الجمل ===== */
+.phrases {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.phrase-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f7fa;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.phrase-row:hover {
+  background: #e0ebff;
+}
+
+.eng, .ara {
+  flex: 1 1 40%;
+  font-size: 1rem;
+  margin: 0.2rem 0;
+}
+
+.eng {
+  font-weight: 600;
+  color: #333;
+}
+
+.ara {
+  font-weight: 500;
+  color: #555;
+}
+
+/* ===== أزرار النطق ===== */
+.btns {
+  flex: 1 1 20%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.speak-btn {
+  padding: 0.4rem 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.speak-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #182848, #4b6cb7);
+}
+
+.speak-btn.large {
+  width: 100%;
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+}
+
+/* ===== Footer البطاقة ===== */
+.card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.card-footer p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .phrase-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .btns {
+    justify-content: flex-start;
+  }
+}
