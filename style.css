@@ -526,24 +526,7 @@ body.dark-mode .learn-container {
   100% {opacity: 1; transform: translateY(0);}
   }
 فراج
-/* ===== صفحة الخدمات ===== */
-.services-section{
-  max-width:1200px;
-  margin:40px auto;
-  padding:20px;
-  text-align:center;
-}
 
-.page-title{
-  font-size:2.2rem;
-  color:#6d28d9;
-  margin-bottom:10px;
-}
-
-.page-desc{
-  color:#6b7280;
-  margin-bottom:30px;
-}
 
 .services-grid{
   display:grid;
@@ -595,7 +578,3 @@ body.dark-mode .learn-container {
   font-weight:700;
 }
 
-/* mobile nav helpers */
-.mobile-hidden{
-  display:none;
-}
