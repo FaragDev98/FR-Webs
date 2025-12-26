@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.getElementById('localMobileNav')) {
     const localNavHTML = `
       <nav id="localMobileNav" class="nav mobile-nav mobile-hidden" aria-label="قائمة الجوال">
-      <a href="FR/index.html"><i class="fa-solid fa-newspaper"></i> خدمات </a>
-        <a href="dev-english/index.html"><i class="fa-solid fa-language"></i> الانجليزيه  </a>
-        <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
+      <a href="/FR/index.html"><i class="fa-solid fa-newspaper"></i> خدمات </a>
+        <a href="/dev-english/index.html"><i class="fa-solid fa-language"></i> الانجليزيه  </a>
+        <a href="/lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i> الكورسات</a>
       </nav>
     `;
     // أدخل القائمة بعد الهيدر مباشرة (أو في بداية الـ body إذا الهيدر لم يتغير)
@@ -50,11 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.querySelector('.bottom-nav')) {
     const bottomNavHTML = `
       <nav class="bottom-nav mobile-only" aria-label="تنقل أسفل الصفحة">
-        <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
-        <a href="ish/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
+        <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+        <a href="/ish/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
         <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
         <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
-        <a href="contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+        <a href="/contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
       </nav>
     `;
     document.body.insertAdjacentHTML('beforeend', bottomNavHTML);
