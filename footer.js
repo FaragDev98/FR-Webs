@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
         <a href="ish/index.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
         <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
-        <a href="code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+        <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
         <a href="contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
       </nav>
     `;
