@@ -1,234 +1,97 @@
-/* ================== 1) المتغيرات العامة ================== */
-:root{
-  --purple:#6d28d9;
-  --blue:#2563eb;
-  --accent:linear-gradient(90deg,var(--purple),var(--blue));
-  --muted:#6b7280;
-  --card-shadow:0 8px 24px rgba(16,24,40,0.06);
+root {
+  --purple: #6d28d9;
+  --blue: #2563eb;
+  --orange: #f97316;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --card-bg: #ffffff;
+  --muted: #64748b;
 }
 
-/* ================== 2) Reset ================== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Cairo',system-ui,-apple-system,Segoe UI,Roboto;
+body {
+  margin: 0; padding: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-body{
-  background:linear-gradient(180deg,#fbfbff,#f6f8ff);
-  color:#111827;
-  min-height:100vh;
+body.dark {
+  --bg-light: #0f172a;
+  --text-dark: #f1f5f9;
+  --card-bg: #1e293b;
 }
 
-/* ================== 3) الوضع الليلي ================== */
-body.dark{
-  background:linear-gradient(180deg,#0f1724,#071124);
-  color:#e6eef8;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-/* ================== 4) HEADER ================== */
-.header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:linear-gradient(90deg,#2563eb,#f97316);
-  backdrop-filter:blur(6px);
+/* Header */
+.header {
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  padding: 15px 0;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.header-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 20px;
+}
+.brand { display: flex; align-items: center; text-decoration: none; color: white; gap: 10px; }
+.logo img { width: 35px; }
+.brand-title { font-size: 1.4rem; font-weight: bold; }
+
+/* Units Styling */
+.unit-wrapper { margin-top: 60px; }
+.unit-header { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
+.unit-badge {
+  background: var(--purple); color: white;
+  padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;
 }
 
-.header-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+/* Cards */
+.card {
+  background: var(--card-bg);
+  padding: 25px; border-radius: 15px;
+  display: flex; gap: 20px; align-items: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
 }
-
-.brand{
-  text-decoration:none;
-  color:#fff;
-  font-weight:800;
-  font-size:1.1rem;
+.card:hover { transform: scale(1.02); }
+.card-icon {
+  font-size: 2rem; color: var(--blue);
+  background: rgba(37, 99, 235, 0.1);
+  width: 70px; height: 70px; display: grid; place-items: center;
+  border-radius: 12px;
 }
+.card-content h3 { margin: 0 0 5px 0; font-size: 1.2rem; }
 
-.btn-icon{
-  background:transparent;
-  border:0;
-  color:#fff;
-  font-size:20px;
-  cursor:pointer;
+/* Grid Features */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
-
-/* ================== 5) القائمة ================== */
-.nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  gap:12px;
-  padding:10px 20px;
+.feature {
+  background: var(--card-bg);
+  padding: 30px; border-radius: 20px; text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
+.feature i { font-size: 3rem; color: var(--orange); margin-bottom: 20px; }
 
-.nav a{
-  text-decoration:none;
-  color:#111;
-  font-weight:700;
-  padding:8px 14px;
-  border-radius:10px;
-  transition:.3s;
-}
+/* Animations */
+.animate { opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
+.animate.in-view { opacity: 1; transform: translateY(0); }
 
-.nav a:hover{
-  background:#f1f1ff;
-}
+/* Mobile Navigation */
+.nav.mobile-hidden { display: none; }
+.nav { display: flex; justify-content: center; gap: 20px; background: #fff; padding: 15px; border-bottom: 1px solid #eee; }
+.nav a { text-decoration: none; color: var(--purple); font-weight: bold; }
 
-.mobile-hidden{display:none;}
-.mobile-only{display:none;}
-
-@media(max-width:900px){
-  .desktop-only{display:none;}
-  .mobile-only{display:inline-flex;}
-}
-
-/* ================== 6) Mobile Menu ================== */
-.mobile-nav{
-  position:fixed;
-  top:64px;
-  right:0;
-  left:0;
-  background:#fff;
-  display:flex;
-  flex-direction:column;
-  z-index:999;
-  border-bottom:1px solid #eee;
-}
-
-.mobile-nav a{
-  padding:14px 20px;
-  font-weight:700;
-  text-decoration:none;
-  color:var(--purple);
-  border-bottom:1px solid #f1f1f1;
-}
-
-/* ================== 7) HERO ================== */
-.hero{
-  padding:50px 20px;
-}
-
-.hero-inner{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 380px;
-  gap:30px;
-}
-
-@media(max-width:900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
-}
-
-.hero h1{
-  font-size:2rem;
-  margin-bottom:10px;
-  color:var(--purple);
-}
-
-.hero p{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-/* ================== 8) Buttons ================== */
-.btn{
-  display:inline-block;
-  padding:10px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:700;
-}
-
-.btn.primary{
-  background:var(--blue);
-  color:#fff;
-}
-
-/* ================== 9) Cards ================== */
-.card{
-  background:#fff;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:var(--card-shadow);
-  display:flex;
-  gap:12px;
-  align-items:center;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-}
-
-/* ================== 10) Services ================== */
-.services-section{
-  max-width:1200px;
-  margin:40px auto;
-  padding:20px;
-  text-align:center;
-}
-
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-
-.service-card{
-  background:#fff;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:var(--card-shadow);
-  transition:.3s;
-}
-
-.service-card:hover{
-  transform:translateY(-6px);
-}
-
-.service-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.service-card h2{
-  margin:15px 0 5px;
-  color:var(--purple);
-}
-
-.service-card p{
-  padding:0 15px 20px;
-  color:#444;
-}
-
-/* ================== 11) CTA ================== */
-.cta{
-  text-align:center;
-  margin:50px auto;
-}
-
-.cta .btn{
-  background:var(--purple);
-  color:#fff;
-}
-
-/* ================== 12) Footer ================== */
-.global-footer{
-  background:#7b1fa2;
-  color:#fff;
-  text-align:center;
-  padding:15px;
-  margin-top:40px;
+@media (max-width: 768px) {
+  .card { flex-direction: column; text-align: center; }
 }
