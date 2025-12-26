@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="header-inner">
           <a class="brand" href="index.html">
             <div class="logo">
-              <img src="icons/ai-icon.png" alt="AI Icon">
+              <img src="/icons/ai-icon.png" alt="AI Icon">
             </div>
             <span class="brand-title">FR Webs</span>
           </a>
