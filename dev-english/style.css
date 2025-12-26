@@ -1,6 +1,19 @@
-/* --- إعدادات الحاوية والشبكة --- */
+/* CSS لصفحة تعلم الإنجليزية البرمجية
+   متوافق مع كروت (HTML, CSS, JS, Python, PHP)
+*/
+
+:root {
+  --primary-color: #2563eb;    /* اللون الأزرق الأساسي */
+  --secondary-color: #f97316;  /* اللون البرتقالي للأزرار الكبيرة */
+  --bg-color: #f8fafc;         /* خلفية الصفحة */
+  --card-bg: #ffffff;          /* خلفية الكارت */
+  --text-main: #1e293b;        /* لون النص الأساسي */
+  --text-muted: #64748b;       /* لون النصوص الفرعية */
+  --border-color: #e2e8f0;     /* لون الحدود */
+}
+
+/* تنسيق الحاوية والشبكة */
 .container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -10,19 +23,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 25px;
-  margin-top: 30px;
 }
 
-/* --- تنسيق الكارت (Card) --- */
+/* تنسيق الكارت */
 .card {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e2e8f0;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease-in-out;
 }
 
 .card:hover {
@@ -30,39 +42,37 @@
 }
 
 .card-title {
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
-  color: white;
+  background: var(--primary-color);
+  color: #ffffff;
   margin: 0;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 .card-desc {
-  padding: 15px;
-  font-size: 0.95rem;
-  color: #64748b;
+  padding: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
   text-align: center;
-  background: #f8fafc;
+  background: #fdfdfd;
+  border-bottom: 1px solid var(--border-color);
   margin: 0;
-  border-bottom: 1px solid #e2e8f0;
 }
 
-/* --- تنسيق قائمة الجمل (Phrases List) --- */
+/* تنسيق الكلمات والجمل */
 .phrases {
   padding: 10px;
-  max-height: 500px;
-  overflow-y: auto; /* يسمح بالتمرير إذا زادت الجمل */
+  flex-grow: 1;
 }
 
 .phrase-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 10px;
+  padding: 10px;
   border-bottom: 1px solid #f1f5f9;
-  gap: 15px;
+  gap: 10px;
 }
 
 .phrase-row:last-child {
@@ -70,84 +80,92 @@
 }
 
 .eng {
-  font-weight: 700;
-  color: #2563eb;
-  font-size: 1.1rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: var(--primary-color);
   text-align: left;
   flex: 1;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 .ara {
-  color: #475569;
-  font-size: 1rem;
-  flex: 1;
+  color: var(--text-main);
   text-align: right;
+  flex: 1;
+  font-size: 0.95rem;
 }
 
-/* --- تنسيق أزرار النطق --- */
+/* تنسيق الأزرار */
 .btns {
   display: flex;
-  gap: 8px;
+  gap: 5px;
 }
 
 .speak-btn {
   background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 5px 8px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: bold;
-  transition: all 0.2s ease;
-  color: #1e293b;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  transition: all 0.2s;
+  color: var(--text-main);
 }
 
 .speak-btn:hover {
-  background: #2563eb;
-  color: white;
-  border-color: #2563eb;
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
 }
 
-/* الزر الكبير في أسفل الكارت */
-.speak-btn.large {
-  width: 100%;
-  justify-content: center;
-  padding: 14px;
-  background-color: #f97316; /* لون برتقالي مميز */
-  color: white;
-  border: none;
-  font-size: 1rem;
-}
-
-.speak-btn.large:hover {
-  background-color: #ea580c;
-}
-
+/* فوتر الكارت والأزرار الكبيرة */
 .card-footer {
   padding: 15px;
   background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--border-color);
 }
 
-/* --- تحسينات التجاوب للموبايل --- */
-@media (max-width: 600px) {
+.card-footer p {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.speak-btn.large {
+  width: 100%;
+  padding: 12px;
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+
+.speak-btn.large:hover {
+  background: #ea580c;
+  transform: scale(1.02);
+}
+
+/* تحسينات الموبايل */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
   .phrase-row {
     flex-direction: column;
-    align-items: stretch;
     text-align: center;
+    padding: 15px 5px;
   }
   
   .eng, .ara {
     text-align: center;
     margin-bottom: 5px;
   }
-
+  
   .btns {
     justify-content: center;
-    margin-top: 10px;
   }
 }
