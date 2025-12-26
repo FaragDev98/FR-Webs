@@ -1,28 +1,3 @@
-/* ===== Mobile Nav ===== */
-.mobile-nav{
-  background:#ffffff;
-  border-bottom:1px solid #eee;
-  display:flex;
-  flex-direction:column;
-  padding:10px 20px;
-}
-
-.mobile-nav a{
-  padding:12px 0;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-  border-bottom:1px solid #f1f1f1;
-}
-
-.mobile-nav a:last-child{
-  border-bottom:none;
-}
-
-.mobile-hidden{
-  display:none;
-}
-
 /* ================== 1) الألوان والمتغيرات العامة ================== */
 :root{
   --purple:#6d28d9;
@@ -526,3 +501,73 @@ body.dark-mode .learn-container {
   100% {opacity: 1; transform: translateY(0);}
   }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+  color: #333;
+}
+
+.header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.services {
+  padding: 30px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  color: #6a11cb;
+  margin-bottom: 10px;
+}
+
+.cta {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.btn {
+  display: inline-block;
+  background: #6a11cb;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  }
