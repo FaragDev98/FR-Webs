@@ -1,138 +1,153 @@
-/* ===== محتوى الصفحة الرئيسية ===== */
-main.container {
+/* --- إعدادات الحاوية والشبكة --- */
+.container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  padding: 20px;
 }
 
-/* ===== شبكة البطاقات ===== */
-section.grid {
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
-/* ===== كل بطاقة ===== */
+/* --- تنسيق الكارت (Card) --- */
 .card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .card-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #4b6cb7;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .card-desc {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #555;
+  padding: 15px;
+  font-size: 0.95rem;
+  color: #64748b;
+  text-align: center;
+  background: #f8fafc;
+  margin: 0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-/* ===== الجمل ===== */
+/* --- تنسيق قائمة الجمل (Phrases List) --- */
 .phrases {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
+  padding: 10px;
+  max-height: 500px;
+  overflow-y: auto; /* يسمح بالتمرير إذا زادت الجمل */
 }
 
 .phrase-row {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: #f5f7fa;
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
-  transition: background 0.3s ease;
+  padding: 15px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  gap: 15px;
 }
 
-.phrase-row:hover {
-  background: #e0ebff;
-}
-
-.eng, .ara {
-  flex: 1 1 40%;
-  font-size: 1rem;
-  margin: 0.2rem 0;
+.phrase-row:last-child {
+  border-bottom: none;
 }
 
 .eng {
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 1.1rem;
+  text-align: left;
+  flex: 1;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .ara {
-  font-weight: 500;
-  color: #555;
+  color: #475569;
+  font-size: 1rem;
+  flex: 1;
+  text-align: right;
 }
 
-/* ===== أزرار النطق ===== */
+/* --- تنسيق أزرار النطق --- */
 .btns {
-  flex: 1 1 20%;
   display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
+  gap: 8px;
 }
 
 .speak-btn {
-  padding: 0.4rem 0.7rem;
-  border: none;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
+  padding: 8px 12px;
   cursor: pointer;
-  background: linear-gradient(90deg, #4b6cb7, #182848);
-  color: #fff;
   font-size: 0.85rem;
-  font-weight: 600;
-  transition: transform 0.2s ease, background 0.3s ease;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .speak-btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(90deg, #182848, #4b6cb7);
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
 }
 
+/* الزر الكبير في أسفل الكارت */
 .speak-btn.large {
   width: 100%;
-  margin-top: 0.7rem;
-  font-size: 0.95rem;
+  justify-content: center;
+  padding: 14px;
+  background-color: #f97316; /* لون برتقالي مميز */
+  color: white;
+  border: none;
+  font-size: 1rem;
 }
 
-/* ===== Footer البطاقة ===== */
+.speak-btn.large:hover {
+  background-color: #ea580c;
+}
+
 .card-footer {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+  padding: 15px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
 }
 
-.card-footer p {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* --- تحسينات التجاوب للموبايل --- */
+@media (max-width: 600px) {
   .phrase-row {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .eng, .ara {
+    text-align: center;
+    margin-bottom: 5px;
   }
 
   .btns {
-    justify-content: flex-start;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
