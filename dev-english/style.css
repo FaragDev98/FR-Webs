@@ -1,74 +1,153 @@
-/* ===============================
-   FORCE phrases to appear
-   (no colors – no backgrounds)
-================================ */
-
-/* تأكيد إن الكروت والمحتوى يظهر */
-.card,
-.phrases,
-.phrase-row{
-  display: block;
-  height: auto;
-  min-height: auto;
-  overflow: visible;
+/* ====== Reset Styles ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* الجُمل */
-.phrases{
-  width: 100%;
-}
-
-/* صف الجملة */
-.phrase-row{
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-/* EN */
-.phrase-row .eng{
-  direction: ltr;
-  text-align: left;
-  font-size: 1rem;
-}
-
-/* AR */
-.phrase-row .ara{
+body {
+  background: #f0f4ff;
+  color: #333;
+  line-height: 1.6;
   direction: rtl;
-  text-align: right;
-  font-size: 1rem;
 }
 
-/* الأزرار */
-.phrase-row .btns{
+/* ====== Container ====== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+/* ====== Grid Layout ====== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* ====== Card Styling ====== */
+.card {
+  background: linear-gradient(135deg, #ffd6e0, #ffecf0);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   display: flex;
-  gap: 6px;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* زر النطق – بدون ستايل */
-.speak-btn{
-  padding: 4px 8px;
-  font-size: .85rem;
+.card:nth-child(2) { background: linear-gradient(135deg, #d6f0ff, #e0f7ff); }
+.card:nth-child(3) { background: linear-gradient(135deg, #d6ffe0, #e0fff2); }
+.card:nth-child(4) { background: linear-gradient(135deg, #fff5d6, #fffbe0); }
+.card:nth-child(5) { background: linear-gradient(135deg, #f0d6ff, #f5e0ff); }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* ===============================
-   Mobile fix (VERY IMPORTANT)
-================================ */
-@media (max-width: 768px){
+/* ====== Card Title ====== */
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
 
-  .phrase-row{
-    grid-template-columns: 1fr;
-    text-align: center;
+/* ====== Card Description ====== */
+.card-desc {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ====== Phrases Rows ====== */
+.phrases {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.phrase-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #ffe0f0, #ffd6e0);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.phrase-row:hover {
+  transform: scale(1.02);
+}
+
+.eng, .ara {
+  flex: 1;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ====== Speak Buttons ====== */
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.speak-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6b81;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.speak-btn:hover {
+  background: #ff3b5c;
+  transform: scale(1.05);
+}
+
+/* أزرار كبيرة */
+.speak-btn.large {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  background: #4f8cff;
+}
+
+.speak-btn.large:hover {
+  background: #2f6fd4;
+  transform: scale(1.03);
+}
+
+/* ====== Card Footer ====== */
+.card-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card-footer p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .phrase-row {
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .phrase-row .eng,
-  .phrase-row .ara{
+  .eng, .ara {
     text-align: center;
-  }
-
-  .phrase-row .btns{
-    justify-content: center;
   }
 }
