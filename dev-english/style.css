@@ -54,19 +54,4 @@
   box-shadow: 0 6px 18px rgba(106,92,255,.6);
 }
 
-/* موبايل */
-@media (max-width: 768px){
-  .phrase-row{
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
 
-  .phrase-row .ara{
-    text-align: center;
-  }
-
-  .phrase-row .btns{
-    justify-content: center;
-  }
-}
