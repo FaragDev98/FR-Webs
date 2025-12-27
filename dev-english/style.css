@@ -1,52 +1,66 @@
+/* ====== phrases layout only ====== */
+
+.phrases{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* صف الجملة */
 .phrase-row{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
   align-items: center;
-  gap: 16px;
-  padding: 8px 0;
+  gap: 12px;
 }
 
 /* الإنجليزي */
 .phrase-row .eng{
-  flex: 1;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
+  text-align: left;
+  direction: ltr;
 }
 
 /* العربي */
 .phrase-row .ara{
-  flex: 1;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 600;
-  direction: rtl;
   text-align: right;
+  direction: rtl;
 }
 
-/* حاوية الأزرار */
+/* الأزرار */
 .phrase-row .btns{
   display: flex;
-  gap: 8px;
-  flex-shrink: 0;
+  gap: 6px;
 }
 
-/* الزرار (بدون ستايل) */
-.phrase-row .speak-btn{
-  font-size: .9rem;
-  padding: 6px 10px;
+/* زر النطق (بدون ستايل شكلي) */
+.speak-btn{
+  padding: 4px 8px;
+  font-size: .85rem;
+  cursor: pointer;
 }
 
-/* موبايل */
+/* زر كبير في الفوتر */
+.speak-btn.large{
+  margin-top: 8px;
+}
+
+/* ====== موبايل ====== */
 @media (max-width: 768px){
   .phrase-row{
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
+  .phrase-row .eng,
   .phrase-row .ara{
-    text-align: left;
+    text-align: center;
   }
 
   .phrase-row .btns{
-    margin-top: 6px;
+    justify-content: center;
   }
 }
