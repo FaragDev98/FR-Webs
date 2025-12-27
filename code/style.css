@@ -87,9 +87,6 @@ button:hover {
   font-size: 0.8rem;
 }
 
-.mobile-only {
-  display: none;
-}
 
 @media(max-width: 768px){
   .mobile-only {
