@@ -5,40 +5,7 @@ body {
   color: #111;
 }
 
-/* الرأس */
-.header {
-  background: linear-gradient(90deg, #6d28d9, #2563eb);
-  padding: 10px 20px;
-}
 
-.header-inner {
-  display: flex;
-  justify-content: space-between; /* توزيع الأيقونة والاسم والمجلد */
-  align-items: center;
-}
-
-/* شعار الموقع */
-.brand {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* أيقونة الموقع */
-.logo img {
-  width: 40px;
-  height: 40px;
-}
-
-/* زر القائمة */
-.btn-icon {
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: white;
-}
 
 /* قسم الأكواد */
 .editors {
@@ -110,15 +77,6 @@ button:hover {
   background: #0056b3;
 }
 
-/* البوتوم ناف */
-.bottom-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  background: #f3f3f3;
-  border-top: 1px solid #ccc;
-}
 
 .bottom-nav a, .bottom-nav button {
   text-decoration: none;
