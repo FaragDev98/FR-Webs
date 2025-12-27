@@ -3,55 +3,50 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-  background: linear-gradient(135deg, #1e1f2b, #26273a);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  padding: 8px 0;
 }
 
-/* النص الإنجليزي */
+/* الإنجليزي */
 .phrase-row .eng{
-  flex: 1;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-/* النص العربي */
-.phrase-row .ara{
   flex: 1;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #cfd3ff;
-  text-align: right;
-  direction: rtl;
 }
 
-/* حاوية الزراير */
+/* العربي */
+.phrase-row .ara{
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 600;
+  direction: rtl;
+  text-align: right;
+}
+
+/* حاوية الأزرار */
 .phrase-row .btns{
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-/* الزرار */
+/* الزرار (بدون ستايل) */
 .phrase-row .speak-btn{
-  background: linear-gradient(135deg, #6a5cff, #8b7bff);
-  border: none;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 10px;
   font-size: .9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all .3s ease;
-  box-shadow: 0 4px 12px rgba(106,92,255,.4);
+  padding: 6px 10px;
 }
 
-/* هوفر */
-.phrase-row .speak-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(106,92,255,.6);
+/* موبايل */
+@media (max-width: 768px){
+  .phrase-row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .phrase-row .ara{
+    text-align: left;
+  }
+
+  .phrase-row .btns{
+    margin-top: 6px;
+  }
 }
-
-
