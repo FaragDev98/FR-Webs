@@ -1,153 +1,206 @@
-/* ====== Reset Styles ====== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ===============================
+   FIX phrases visibility
+================================ */
+
+/* تأكيد ظهور الكروت */
+.card{
+  display: block !important;
+  height: auto !important;
+  overflow: visible !important;
+  margin-bottom: 30px;
 }
 
-body {
-  background: #f0f4ff;
-  color: #333;
-  line-height: 1.6;
-  direction: rtl;
-}
-
-/* ====== Container ====== */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 50px auto;
-}
-
-/* ====== Grid Layout ====== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-/* ====== Card Styling ====== */
-.card {
-  background: linear-gradient(135deg, #ffd6e0, #ffecf0);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:nth-child(2) { background: linear-gradient(135deg, #d6f0ff, #e0f7ff); }
-.card:nth-child(3) { background: linear-gradient(135deg, #d6ffe0, #e0fff2); }
-.card:nth-child(4) { background: linear-gradient(135deg, #fff5d6, #fffbe0); }
-.card:nth-child(5) { background: linear-gradient(135deg, #f0d6ff, #f5e0ff); }
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
-}
-
-/* ====== Card Title ====== */
-.card-title {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #2c3e50;
-  text-align: center;
-}
-
-/* ====== Card Description ====== */
-.card-desc {
-  font-size: 1rem;
-  color: #444;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* ====== Phrases Rows ====== */
-.phrases {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.phrase-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(90deg, #ffe0f0, #ffd6e0);
-  padding: 10px 15px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
-}
-
-.phrase-row:hover {
-  transform: scale(1.02);
-}
-
-.eng, .ara {
-  flex: 1;
-  font-weight: 500;
-  text-align: center;
-}
-
-/* ====== Speak Buttons ====== */
-.btns {
-  display: flex;
-  gap: 10px;
-}
-
-.speak-btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 8px;
-  background: #ff6b81;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.speak-btn:hover {
-  background: #ff3b5c;
-  transform: scale(1.05);
-}
-
-/* أزرار كبيرة */
-.speak-btn.large {
+/* الجُمل */
+.phrases{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px;
   width: 100%;
+}
+
+/* صف الجملة */
+.phrase-row{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
   padding: 10px;
+  border-radius: 10px;
+  background: #f6f8ff;
+}
+
+/* EN */
+.eng{
+  direction: ltr;
+  text-align: left;
+  font-weight: 600;
+  color: #222;
+}
+
+/* AR */
+.ara{
+  direction: rtl;
+  text-align: right;
+  font-weight: 600;
+  color: #444;
+}
+
+/* الأزرار */
+.btns{
+  display: flex !important;
+  gap: 6px;
+}
+
+/* زر النطق */
+.speak-btn{
+  background: linear-gradient(135deg,#6a5cff,#9b6cff);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .85rem;
+}
+
+/* أزرار الوصف */
+.speak-btn.large{
+  width: 100%;
   margin-top: 10px;
-  font-size: 1rem;
-  background: #4f8cff;
+  background: linear-gradient(135deg,#ff6b6b,#ff8e53);
+  font-size: .95rem;
 }
 
-.speak-btn.large:hover {
-  background: #2f6fd4;
-  transform: scale(1.03);
-}
-
-/* ====== Card Footer ====== */
-.card-footer {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.card-footer p {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
-  .phrase-row {
-    flex-direction: column;
-    gap: 8px;
+/* ===============================
+   Mobile fix
+================================ */
+@media (max-width: 768px){
+  .phrase-row{
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .eng, .ara {
+  .eng,
+  .ara{
     text-align: center;
+  }
+
+  .btns{
+    justify-content: center;
+  }
+}
+
+/* Reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body{
+  background:#f0f4ff;
+  color:#333;
+  line-height:1.6;
+}
+
+/* Layout */
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:40px auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:25px;
+}
+
+/* Card */
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  display:flex;
+  flex-direction:column;
+}
+
+/* Titles */
+.card-title{
+  text-align:center;
+  font-size:1.7rem;
+  margin-bottom:8px;
+}
+
+.card-desc{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+/* Phrases */
+.phrases{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.phrase-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.eng{
+  flex:1;
+  direction:ltr;
+}
+
+.ara{
+  flex:1;
+  direction:rtl;
+  text-align:right;
+}
+
+.btns{
+  display:flex;
+  gap:6px;
+}
+
+/* Buttons */
+.speak-btn{
+  background:#ff6b81;
+  color:#fff;
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.speak-btn.large{
+  width:100%;
+  margin-top:8px;
+  background:#4f8cff;
+}
+
+/* Footer */
+.card-footer{
+  margin-top:15px;
+  text-align:center;
+}
+
+/* Mobile */
+@media (max-width:768px){
+  .phrase-row{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .ara{
+    text-align:center;
+  }
+
+  .btns{
+    justify-content:center;
   }
 }
