@@ -1,4 +1,47 @@
+/* إظهار الجمل */
+.phrases {
+  display: block !important;
+}
 
+.phrase-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+/* النصوص */
+.phrase-row .eng {
+  font-weight: bold;
+  color: #222;
+}
+
+.phrase-row .ara {
+  color: #555;
+}
+
+/* الأزرار */
+.phrase-row .btns {
+  display: flex;
+  gap: 5px;
+}
+
+.speak-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #6a5acd;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.speak-btn:hover {
+  background: #5848c2;
+}
 /* Layout */
 .container{
   width:90%;
