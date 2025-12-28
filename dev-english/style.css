@@ -1,15 +1,6 @@
 /* ===== Reset بسيط ===== */
 * {
   box-sizing: border-box;
-}
-
-/* ===== الصفحة ===== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6fb;
-  color: #222;
-}
 
 /* ===== الكونتينر ===== */
 .container {
