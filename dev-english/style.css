@@ -1,1 +1,98 @@
+/* صف الجملة */
+.phrase-row{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
 
+/* الإنجليزي */
+.phrase-row .eng{
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* العربي */
+.phrase-row .ara{
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 600;
+  direction: rtl;
+  text-align: right;
+}
+
+/* حاوية الأزرار */
+.phrase-row .btns{
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* الزرار (بدون ستايل) */
+.phrase-row .speak-btn{
+  font-size: .9rem;
+  padding: 6px 10px;
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .phrase-row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .phrase-row .ara{
+    text-align: left;
+  }
+
+  .phrase-row .btns{
+    margin-top: 6px;
+  }
+}
+
+
+/* إظهار الجمل */
+.phrases {
+  display: block !important;
+}
+
+.phrase-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+/* النصوص */
+.phrase-row .eng {
+  font-weight: bold;
+  color: #222;
+}
+
+.phrase-row .ara {
+  color: #555;
+}
+
+/* الأزرار */
+.phrase-row .btns {
+  display: flex;
+  gap: 5px;
+}
+
+.speak-btn {
+  padding: 6px 10px;
+  border: none;
+  background: #6a5acd;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.speak-btn:hover {
+  background: #5848c2;
+}
