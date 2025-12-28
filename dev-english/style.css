@@ -1,8 +1,4 @@
-/* ===== Reset بسيط ===== */
-* {
-  box-sizing: border-box;
 
-/* ===== الكونتينر ===== */
 .container {
   width: 100%;
   max-width: 1200px;
