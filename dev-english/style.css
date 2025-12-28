@@ -1,16 +1,3 @@
-/* Reset */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-body{
-  background:#f0f4ff;
-  color:#333;
-  line-height:1.6;
-}
 
 /* Layout */
 .container{
