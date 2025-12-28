@@ -1,77 +1,54 @@
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  overflow: visible !important;
-}
-
-/* ===== الجريد ===== */
+/* ===== إصلاح ظهور الكروت ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
-  overflow: visible !important;
 }
 
-/* ===== الكارد ===== */
 .card {
-  background: #fff;
-  border-radius: 14px;
+  background: linear-gradient(135deg, #6a5acd, #8a2be2);
+  color: #fff;
+  border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  overflow: visible !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
 
-/* ===== العناوين ===== */
+/* عناوين */
 .card-title {
-  margin: 0 0 10px;
-  color: #6a5acd;
+  color: #fff;
+  margin-bottom: 8px;
 }
 
 .card-desc {
-  margin-bottom: 15px;
-  color: #555;
+  color: #eee;
 }
 
-/* ===== الجمل ===== */
-.phrases {
-  display: block !important;
-  overflow: visible !important;
-}
-
+/* مربعات الجمل */
 .phrase-row {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 10px;
-  align-items: center;
-  background: #f9f9ff;
+  background: rgba(255,255,255,0.15);
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
 }
 
-/* ===== النص ===== */
-.phrase-row .eng {
+/* النص */
+.eng {
   font-weight: bold;
-  color: #222;
-}
-
-.phrase-row .ara {
-  color: #555;
-}
-
-/* ===== الأزرار ===== */
-.btns {
-  display: flex;
-  gap: 6px;
-}
-
-.speak-btn {
-  border: none;
-  background: #6a5acd;
   color: #fff;
+}
+
+.ara {
+  color: #f1f1f1;
+}
+
+/* الأزرار */
+.speak-btn {
+  background: #fff;
+  color: #6a5acd;
+  border: none;
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
@@ -79,24 +56,13 @@
 }
 
 .speak-btn:hover {
-  background: #5848c2;
+  background: #eee;
 }
 
-/* ===== الفوتر داخل الكارد ===== */
-.card-footer {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #666;
-}
-
-/* ===== الموبايل ===== */
+/* موبايل */
 @media (max-width: 600px) {
   .phrase-row {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-
-  .btns {
-    justify-content: center;
   }
 }
