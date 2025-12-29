@@ -299,6 +299,62 @@ body.dark .post{
   text-decoration:none;
 }
 
+/* ======================================
+   قسم التعلم والتطبيق
+====================================== */
+.learn-section {
+  background: linear-gradient(135deg, #6d28d9, #2563eb); /* خلفية جذابة */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 16px;
+  margin: 30px auto;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.learn-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.learn-section p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+.learn-section .highlight {
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: rgba(255,255,255,0.15);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* تخصيص للمهام العملية */
+.learn-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.learn-section ul li {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: default;
+}
+
+.learn-section ul li:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.2);
+}
 /* ==================================================
    11) Footer
 ================================================== */
