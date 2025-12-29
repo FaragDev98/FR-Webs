@@ -26,22 +26,32 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML('afterbegin', headerHTML);
   }
 
-  /* ============================================================
-    2) إدراج قائمة المجلد (folder menu) أسفل الهيدر
-  ============================================================ */
-  if (!document.getElementById('folderMenu')) {
-    const folderMenuHTML = `
-      <nav id="folderMenu" class="folder-menu">
-        <a href="/FR/index.html">خدمات</a>
-        <a href="/dev-english/index.html">الانجليزيه</a>
-        <a href="/ish/index.html">الكورسات</a>
-      </nav>
-    `;
- 
-    const headerEl = document.querySelector('header.header');
-    if (headerEl) headerEl.insertAdjacentHTML('afterend', folderMenuHTML);
-    else document.body.insertAdjacentHTML('afterbegin', folderMenuHTML);
-  }
+/* ============================================================
+   2) إدراج قائمة المجلد (folder menu) أسفل الهيدر
+   ============================================================ */
+if (!document.getElementById('folderMenu')) {
+  const folderMenuHTML = `
+    <nav id="folderMenu" class="folder-menu">
+
+      <a href="/FR/index.html">
+        <i class="fa-solid fa-briefcase"></i>
+        خدمات
+      </a>
+
+      <a href="/dev-english/index.html">
+        <i class="fa-solid fa-language"></i>
+        الإنجليزية
+      </a>
+
+      <a href="/ish/index.html">
+        <i class="fa-solid fa-graduation-cap"></i>
+        كورسات
+      </a>
+
+    </nav>
+  `;
+  document.body.insertAdjacentHTML('afterbegin', folderMenuHTML);
+}
 
   /* ============================================================
     3) إدراج البوتوم ناف (bottom-nav)
