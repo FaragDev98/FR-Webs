@@ -9,7 +9,7 @@
   --card-shadow:0 6px 18px rgba(16,24,40,.08);
 
   --folder-bg:rgba(255,255,255,.95);
-  --folder-bg-dark:rgba(26,26,26,.96);
+  --folder-bg-dark:#1a1a1a;
 }
 
 /* ==================================================
@@ -30,11 +30,11 @@ body{
   background:linear-gradient(180deg,#fbfbff,#f6f8ff);
   color:#111827;
   overflow-x:hidden;
-  transition:background .3s,color .3s;
+  transition:.3s;
 }
 
 /* ==================================================
-   3) الوضع الليلي (بدون قلب أبيض)
+   3) الوضع الليلي
 ================================================== */
 body.dark{
   background:linear-gradient(180deg,#121212,#0b0b0b);
@@ -162,12 +162,6 @@ body.dark .folder-menu{
   gap:28px;
 }
 
-@media(max-width:900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
-}
-
 .hero h1{
   font-size:2rem;
   color:var(--blue);
@@ -196,7 +190,7 @@ body.dark .folder-menu{
    9) Cards
 ================================================== */
 .card{
-  background:#ffffff;
+  background:#fff;
   border-radius:14px;
   padding:18px;
   box-shadow:var(--card-shadow);
@@ -208,7 +202,7 @@ body.dark .card{
 }
 
 /* ==================================================
-   10) قسم من نحن (على الخلفية الرئيسية)
+   10) من نحن + الخدمات
 ================================================== */
 .about-hero{
   margin:40px auto;
@@ -216,7 +210,7 @@ body.dark .card{
 }
 
 .about-hero h2{
-  font-size:2.1rem;
+  font-size:2rem;
   font-weight:800;
   margin-bottom:10px;
   color:var(--blue);
@@ -232,12 +226,6 @@ body.dark .card{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
-}
-
-@media(max-width:900px){
-  .hero-cards{
-    grid-template-columns:1fr;
-  }
 }
 
 .hero-cards .card{
@@ -270,10 +258,66 @@ body.dark .hero-cards p{
 ================================================== */
 .global-footer{
   background:#111827;
-  color:#ffffff;
+  color:#fff;
   text-align:center;
   padding:15px;
   margin-top:30px;
+}
+
+/* ==================================================
+   12) Responsive (موبايل / تابلت)
+================================================== */
+
+/* موبايل */
+@media(max-width:600px){
+
+  .hero{
+    padding:30px 14px;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:1.5rem;
+  }
+
+  .hero p{
+    font-size:.95rem;
+  }
+
+  .about-hero h2{
+    font-size:1.6rem;
+  }
+
+  .hero-cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero-cards h4{
+    font-size:1.05rem;
+  }
+
+  .hero-cards p{
+    font-size:.9rem;
+  }
+
+  .card-icon{
+    font-size:30px;
+  }
+}
+
+/* تابلت */
+@media(min-width:601px) and (max-width:992px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero-cards{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 /* ==================================================
@@ -281,4 +325,4 @@ body.dark .hero-cards p{
 ================================================== */
 .text-center{
   text-align:center;
-}
+   }
