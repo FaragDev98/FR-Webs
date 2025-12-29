@@ -102,49 +102,72 @@ body.dark a{
 }
 
 
-/* ================== Folder Menu Buttons ================== */
+/* ==================================================
+   5) Folder Menu (Overlay – لا يحرك الصفحة)
+================================================== */
 .folder-menu{
-  position:sticky;
-  top:72px;
-  z-index:900;
+  position:fixed;
+  top:68px;                 /* تحت الهيدر */
+  right:50%;
+  transform:translateX(50%) scale(.9);
+  z-index:999;
+
   display:flex;
-  justify-content:center;
-  gap:12px;
-  max-height:0;
-  padding:0;
-  overflow:hidden;
-  background:rgba(243,232,217,0.95); /* لون بني فاتح */
-  backdrop-filter:blur(8px);
-  transition:all .35s ease;
+  gap:14px;
+  padding:14px 18px;
+
+  background:var(--folder-bg);
+  backdrop-filter:blur(14px);
+  border-radius:24px;
+  box-shadow:0 16px 35px rgba(0,0,0,.18);
+
+  opacity:0;
+  pointer-events:none;
+  transition:.35s ease;
 }
 
 .folder-menu.open{
-  max-height:90px;
-  padding:12px;
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(50%) scale(1);
 }
 
+/* ===== الأزرار ===== */
 .folder-menu a{
   display:flex;
   align-items:center;
   gap:8px;
-  padding:8px 16px;
-  border-radius:14px;
-  font-weight:700;
+  padding:10px 18px;
+  border-radius:16px;
+  font-weight:800;
+  font-size:14px;
   text-decoration:none;
-  background:#f3e8d9; /* اللون الأساسي للأزرار */
-  color:#3b2f23; /* لون النص */
-  transition:all .3s ease;
+  color:#fff;
+  transition:.3s;
+}
+
+/* ألوان مختلفة */
+.folder-menu a:nth-child(1){
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+}
+
+.folder-menu a:nth-child(2){
+  background:linear-gradient(135deg,#7c3aed,#5b21b6);
+}
+
+.folder-menu a:nth-child(3){
+  background:linear-gradient(135deg,#f97316,#ea580c);
 }
 
 .folder-menu a:hover{
   transform:translateY(-2px);
-  background:linear-gradient(90deg,#6d28d9,#2563eb); /* تأثير جذاب عند المرور */
-  color:#fff;
 }
 
+/* أيقونات */
 .folder-menu i{
   font-size:18px;
 }
+
 
 /* الوضع الليلي */
 body.dark .folder-menu{
