@@ -1,68 +1,117 @@
-/* ===== إصلاح ظهور الكروت ===== */
+/* =========================
+   إعدادات عامة للمحتوى
+========================= */
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 20px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
+/* =========================
+   الكروت (المربعات)
+========================= */
 .card {
-  background: linear-gradient(135deg, #6a5acd, #8a2be2);
-  color: #fff;
-  border-radius: 16px;
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  border-radius: 18px;
   padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.35);
+  color: #3a003a;
 }
 
-/* عناوين */
 .card-title {
-  color: #fff;
+  font-size: 24px;
   margin-bottom: 8px;
+  color: #7a004f;
 }
 
 .card-desc {
-  color: #eee;
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #4a0030;
 }
 
-/* مربعات الجمل */
+/* =========================
+   الجمل
+========================= */
+.phrases {
+  display: block;
+}
+
 .phrase-row {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
   padding: 10px;
-  border-radius: 10px;
   margin-bottom: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr auto;
-  gap: 8px;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #ff8fcf;
 }
 
-/* النص */
 .eng {
   font-weight: bold;
-  color: #fff;
+  color: #7a004f;
 }
 
 .ara {
-  color: #f1f1f1;
+  color: #5a0038;
 }
 
-/* الأزرار */
+/* =========================
+   الأزرار
+========================= */
+.btns {
+  display: flex;
+  gap: 6px;
+}
+
 .speak-btn {
-  background: #fff;
-  color: #6a5acd;
+  background: #ff1493;
+  color: #fff;
   border: none;
   padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 8px;
   font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .speak-btn:hover {
-  background: #eee;
+  background: #e60073;
 }
 
-/* موبايل */
+.speak-btn.large {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* =========================
+   فوتر الكارد
+========================= */
+.card-footer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #4a0030;
+}
+
+/* =========================
+   الموبايل
+========================= */
 @media (max-width: 600px) {
   .phrase-row {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .btns {
+    justify-content: center;
   }
 }
