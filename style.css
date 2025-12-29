@@ -118,14 +118,33 @@ body.dark a{
   color:#111827;
 }
 
-/* الوضع الليلي للمجلد */
-body.dark .folder-menu{
-  background:#0f172a;
+
+/* ================== 8) HERO ================== */
+.hero{ padding:42px 18px }
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:28px;
 }
-body.dark .folder-menu a{
-  background:#1e293b;
-  color:#ffffff;
+
+@media(max-width:900px){
+  .hero-inner{ grid-template-columns:1fr }
 }
+
+.hero h1{
+  font-size:2rem;
+  margin-bottom:12px;
+  color:var(--purple);
+}
+
+body.dark .hero h1{ color:#c7d2fe }
+
+.hero p{ color:var(--muted) }
+body.dark .hero p{ color:#d1d5db }
+
 
 /* ================== 7) Layout ================== */
 main, section{
