@@ -321,7 +321,7 @@ body.dark .post{
 /* وصف القسم */
 .about-hero .lead {
   font-size: 1.3rem;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 /* حاوية الكروت */
@@ -335,8 +335,8 @@ body.dark .post{
 /* كل بطاقة */
 .hero-cards .card {
   background: rgba(255,255,255,0.1);
-  border-radius: 16px;
-  padding: 30px 20px;
+  border-radius: 18px;
+  padding: 20px 20px;
   width: 280px;
   display: flex;
   flex-direction: column;
@@ -366,8 +366,8 @@ body.dark .post{
 
 /* نص الكرت */
 .hero-cards p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 2rem;
+  line-height: 2.6;
   text-align: center;
 }
 
@@ -389,24 +389,6 @@ body.dark .post{
     color: #fff;
   }
 
-  .hero-cards .card {
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  }
-
-  .hero-cards .card:hover {
-    background: rgba(255,255,255,0.1);
-  }
-
-  .hero-cards .card-icon {
-    color: #ffeb3b;
-  }
-
-  .hero-cards h4,
-  .hero-cards p {
-    color: #fff;
-  }
-}
 
 /* -----------------------------
    Responsive
