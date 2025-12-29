@@ -298,8 +298,67 @@ body.dark .post{
   font-size:12px;
   text-decoration:none;
 }
-/* ==============================
-  
+
+  /* ==============================
+   قسم من نحن + hero cards
+============================== */
+.about-hero {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #6d28d9, #2563eb);
+  color: #fff;
+  border-radius: 16px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.about-hero h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.about-hero .lead {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+}
+
+.hero-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.hero-cards .card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 280px;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.hero-cards .card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.2);
+}
+
+.hero-cards .card-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-cards h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-cards p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
 /* -----------------------------
    Responsive
