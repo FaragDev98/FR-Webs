@@ -88,28 +88,45 @@ body.dark a{
   padding:6px;
 }
 
-/* ================== 6) NAV ================== */
-.nav{
+/* ================== 6) قائمة المجلد (تطلع وتدخل) ================== */
+.folder-menu{
   display:flex;
-  gap:10px;
   justify-content:center;
-  padding:10px 20px;
-  max-width:1200px;
-  margin:auto;
+  gap:12px;
+  max-height:0;
+  overflow:hidden;
+  padding:0;
+  background:rgba(255,255,255,.85);
+  backdrop-filter: blur(8px);
+  transition: all .35s ease;
+  position:sticky;
+  top:72px;
+  z-index:900;
 }
 
-.nav a{
+.folder-menu.open{
+  max-height:80px;
+  padding:12px;
+}
+
+.folder-menu a{
+  padding:8px 16px;
+  border-radius:12px;
+  font-weight:700;
   text-decoration:none;
-  padding:8px 14px;
-  border-radius:10px;
-  font-weight:600;
-  color:inherit;
+  background:#f1f5f9;
+  color:#111827;
 }
 
-.nav a.cta{
-  background:var(--accent);
-  color:#fff;
+/* الوضع الليلي للمجلد */
+body.dark .folder-menu{
+  background:#0f172a;
 }
+body.dark .folder-menu a{
+  background:#1e293b;
+  color:#ffffff;
+}
+
 /* ================== 7) Layout ================== */
 main, section{
   display:block;
