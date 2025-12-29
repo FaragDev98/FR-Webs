@@ -5,7 +5,6 @@
   --accent: linear-gradient(90deg,var(--purple),var(--blue));
   --muted:#6b7280;
   --card-shadow: 0 8px 24px rgba(16,24,40,0.06);
-  --glass: rgba(255,255,255,0.7);
 }
 
 /* ================== 2) Reset + إعدادات الصفحة ================== */
@@ -18,19 +17,29 @@ body{
   background: linear-gradient(180deg,#fbfbff 0%, #f6f8ff 100%);
   color:#111827;
   overflow-x:hidden;
+  transition: background .3s, color .3s;
 }
 
-/* ================== 3) الوضع الليلي ================== */
+/* ================== 3) الوضع الليلي (عام لكل الصفحات) ================== */
 body.dark{
-  background: linear-gradient(180deg,#0f1724 0%, #071124 100%);
-  color:#e6eef8;
+  background: linear-gradient(180deg,#121212 0%, #0b0b0b 100%);
+  color:#ffffff;
+}
+
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark a{
+  color:#ffffff;
 }
 
 /* ================== 4) HEADER ================== */
 .header{
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
   backdrop-filter: blur(6px);
   background: linear-gradient(90deg, #2563eb, #f97316);
   border-bottom:1px solid rgba(255,255,255,.15);
@@ -69,7 +78,17 @@ body.dark{
   font-size:1.05rem;
 }
 
-/* ================== 5) NAV ================== */
+/* ================== 5) أزرار الهيدر (بدون مربع أبيض) ================== */
+.btn-icon{
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  padding:6px;
+}
+
+/* ================== 6) NAV ================== */
 .nav{
   display:flex;
   gap:10px;
@@ -92,13 +111,8 @@ body.dark{
   color:#fff;
 }
 
-/* ================== 6) Layout عام ================== */
-main{
-  display:block;
-  min-height:60vh;
-}
-
-section{
+/* ================== 7) Layout ================== */
+main, section{
   display:block;
 }
 
@@ -108,7 +122,7 @@ section{
   padding:30px 18px;
 }
 
-/* ================== 7) HERO ================== */
+/* ================== 8) HERO ================== */
 .hero{ padding:42px 18px }
 
 .hero-inner{
@@ -129,9 +143,14 @@ section{
   color:var(--purple);
 }
 
-.hero p{ color:var(--muted) }
+body.dark .hero h1{
+  color:#c7d2fe;
+}
 
-/* ================== 8) Buttons ================== */
+.hero p{ color:var(--muted) }
+body.dark .hero p{ color:#d1d5db }
+
+/* ================== 9) Buttons ================== */
 .btn{
   display:inline-block;
   padding:10px 16px;
@@ -147,15 +166,19 @@ section{
 
 .btn.outline{
   border:1px solid #ddd;
+  color:inherit;
 }
 
-/* ================== 9) CARDS (عام – بدون إخفاء) ================== */
+/* ================== 10) Cards ================== */
 .card{
-  background:#fff;
+  background:#ffffff;
   padding:18px;
   border-radius:14px;
   box-shadow:var(--card-shadow);
-  display:block;
+}
+
+body.dark .card{
+  background:#1a1a1a;
 }
 
 .card-icon{
@@ -163,7 +186,7 @@ section{
   color:var(--purple);
 }
 
-/* ================== 10) Features ================== */
+/* ================== 11) Features ================== */
 .grid-3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -175,14 +198,18 @@ section{
 }
 
 .feature{
-  background:#fff;
+  background:#ffffff;
   padding:18px;
   border-radius:14px;
   box-shadow:var(--card-shadow);
   text-align:center;
 }
 
-/* ================== 11) Articles ================== */
+body.dark .feature{
+  background:#1a1a1a;
+}
+
+/* ================== 12) Articles ================== */
 .cards-row{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -194,10 +221,14 @@ section{
 }
 
 .post{
-  background:#fff;
+  background:#ffffff;
   border-radius:12px;
   box-shadow:var(--card-shadow);
   overflow:hidden;
+}
+
+body.dark .post{
+  background:#1a1a1a;
 }
 
 .post img{
@@ -206,7 +237,7 @@ section{
   object-fit:cover;
 }
 
-/* ================== 12) Bottom Nav ================== */
+/* ================== 13) Bottom Nav ================== */
 .bottom-nav{
   position:fixed;
   bottom:12px;
@@ -217,7 +248,7 @@ section{
   background:linear-gradient(90deg,var(--purple),var(--blue));
   padding:10px 18px;
   border-radius:40px;
-  z-index:200;
+  z-index:500;
 }
 
 .bottom-nav a{
@@ -226,23 +257,28 @@ section{
   font-size:12px;
 }
 
-/* ================== 13) Sidebar ================== */
+/* ================== 14) Sidebar (يفتح بالمجلد) ================== */
 .sidebar{
   position:fixed;
   top:0;
   left:-260px;
   width:260px;
   height:100%;
-  background:#fff;
+  background:#ffffff;
   box-shadow:3px 0 15px rgba(0,0,0,.1);
   padding:20px;
   transition:.3s;
-  z-index:999;
+  z-index:1200;
 }
 
 .sidebar.open{ left:0 }
 
-/* ================== 14) Footer ================== */
+body.dark .sidebar{
+  background:#111111;
+  color:#fff;
+}
+
+/* ================== 15) Footer ================== */
 .global-footer{
   background:#7b1fa2;
   color:#fff;
@@ -251,5 +287,5 @@ section{
   margin-top:30px;
 }
 
-/* ================== 15) Helpers ================== */
+/* ================== 16) Helpers ================== */
 .text-center{ text-align:center }
