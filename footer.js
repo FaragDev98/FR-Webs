@@ -16,43 +16,88 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="brand-title">FR Webs</span>
           </a>
 
-          <!-- زر المجلد -->
+       /* ============================================================
+   FOOTER.JS - HEADER + FOLDER MENU
+============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =======================
+     1) إدراج الهيدر
+  ======================= */
+  if (!document.querySelector(".header")) {
+    const headerHTML = `
+      <header class="header">
+        <div class="header-inner">
+
+          <a href="/" class="brand">
+            <div class="logo">
+              <img src="/logo.png" alt="FR Webs">
+            </div>
+            <span class="brand-title">FR Webs</span>
+          </a>
+
           <div class="header-actions">
-            <button id="menuToggle" class="btn-icon mobile-only" aria-label="قائمة">🗂</button>
+            <!-- زر المجلد -->
+            <button id="menuToggle" class="btn-icon" aria-label="القائمة">
+              🗂
+            </button>
           </div>
+
         </div>
       </header>
     `;
-    document.body.insertAdjacentHTML('afterbegin', headerHTML);
+    document.body.insertAdjacentHTML("afterbegin", headerHTML);
   }
 
-/* ============================================================
-   2) إدراج قائمة المجلد (folder menu) أسفل الهيدر
-   ============================================================ */
-if (!document.getElementById('folderMenu')) {
-  const folderMenuHTML = `
-    <nav id="folderMenu" class="folder-menu">
+  /* =======================
+     2) إدراج Folder Menu
+  ======================= */
+  if (!document.getElementById("folderMenu")) {
+    const folderMenuHTML = `
+      <nav id="folderMenu" class="folder-menu">
 
-      <a href="/FR/index.html">
-        <i class="fa-solid fa-briefcase"></i>
-        خدمات
-      </a>
+        <a href="/FR/index.html">
+          <i class="fa-solid fa-briefcase"></i>
+          خدمات
+        </a>
 
-      <a href="/dev-english/index.html">
-        <i class="fa-solid fa-language"></i>
-        الإنجليزية
-      </a>
+        <a href="/dev-english/index.html">
+          <i class="fa-solid fa-language"></i>
+          الإنجليزية
+        </a>
 
-      <a href="/ish/index.html">
-        <i class="fa-solid fa-graduation-cap"></i>
-        كورسات
-      </a>
+        <a href="/ish/index.html">
+          <i class="fa-solid fa-graduation-cap"></i>
+          كورسات
+        </a>
 
-    </nav>
-  `;
-  document.body.insertAdjacentHTML('afterbegin', folderMenuHTML);
-}
+      </nav>
+    `;
+    document.body.insertAdjacentHTML("afterbegin", folderMenuHTML);
+  }
 
+  /* =======================
+     3) فتح / قفل المجلد
+  ======================= */
+  const toggleBtn = document.getElementById("menuToggle");
+  const folderMenu = document.getElementById("folderMenu");
+
+  if (toggleBtn && folderMenu) {
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      folderMenu.classList.toggle("open");
+    });
+
+    // غلق القائمة عند الضغط خارجها
+    document.addEventListener("click", (e) => {
+      if (!folderMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        folderMenu.classList.remove("open");
+      }
+    });
+  }
+
+});
   /* ============================================================
     3) إدراج البوتوم ناف (bottom-nav)
   ============================================================ */
