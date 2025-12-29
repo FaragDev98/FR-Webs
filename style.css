@@ -7,8 +7,9 @@
   --accent:linear-gradient(90deg,var(--purple),var(--blue));
   --muted:#6b7280;
   --card-shadow:0 8px 24px rgba(16,24,40,.06);
-  --folder-btn:#f3e8d9;      /* لون بني فاتح */
-  --folder-btn-dark:#ffffff; /* أبيض في الوضع الليلي */
+
+  --folder-bg:rgba(255,255,255,.95);
+  --folder-bg-dark:rgba(15,23,42,.96);
 }
 
 /* ==================================================
@@ -101,61 +102,74 @@ body.dark a{
 }
 
 /* ==================================================
-   5) Folder Menu (الأزرار اللي بتطلع من المجلد)
+   5) Folder Menu (Overlay – لا يحرك الصفحة)
 ================================================== */
 .folder-menu{
-  position:sticky;
-  top:72px;
-  z-index:900;
+  position:fixed;
+  top:68px;                 /* تحت الهيدر */
+  right:50%;
+  transform:translateX(50%) scale(.9);
+  z-index:999;
+
   display:flex;
-  justify-content:center;
-  gap:12px;
-  max-height:0;
-  padding:0;
-  overflow:hidden;
-  background:rgba(255,255,255,.9);
-  backdrop-filter:blur(8px);
-  transition:all .35s ease;
+  gap:14px;
+  padding:14px 18px;
+
+  background:var(--folder-bg);
+  backdrop-filter:blur(14px);
+  border-radius:24px;
+  box-shadow:0 16px 35px rgba(0,0,0,.18);
+
+  opacity:0;
+  pointer-events:none;
+  transition:.35s ease;
 }
 
 .folder-menu.open{
-  max-height:90px;
-  padding:12px;
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(50%) scale(1);
 }
 
-/* الأزرار */
+/* ===== الأزرار ===== */
 .folder-menu a{
   display:flex;
   align-items:center;
   gap:8px;
-  padding:8px 16px;
-  border-radius:14px;
-  font-weight:700;
+  padding:10px 18px;
+  border-radius:16px;
+  font-weight:800;
+  font-size:14px;
   text-decoration:none;
-  background:var(--folder-btn);
-  color:#3b2f23;
+  color:#fff;
   transition:.3s;
+}
+
+/* ألوان مختلفة */
+.folder-menu a:nth-child(1){
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+}
+
+.folder-menu a:nth-child(2){
+  background:linear-gradient(135deg,#7c3aed,#5b21b6);
+}
+
+.folder-menu a:nth-child(3){
+  background:linear-gradient(135deg,#f97316,#ea580c);
 }
 
 .folder-menu a:hover{
   transform:translateY(-2px);
-  background:var(--accent);
-  color:#fff;
 }
 
-/* الأيقونات */
+/* أيقونات */
 .folder-menu i{
   font-size:18px;
 }
 
-/* الوضع الليلي للأزرار */
+/* الوضع الليلي */
 body.dark .folder-menu{
-  background:#0f172a;
-}
-
-body.dark .folder-menu a{
-  background:var(--folder-btn-dark);
-  color:#000;
+  background:var(--folder-bg-dark);
 }
 
 /* ==================================================
@@ -183,9 +197,7 @@ body.dark .folder-menu a{
 }
 
 @media(max-width:900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
+  .hero-inner{grid-template-columns:1fr}
 }
 
 .hero h1{
@@ -250,9 +262,7 @@ body.dark .post{
 
 @media(max-width:900px){
   .grid-3,
-  .cards-row{
-    grid-template-columns:1fr;
-  }
+  .cards-row{grid-template-columns:1fr}
 }
 
 /* ==================================================
