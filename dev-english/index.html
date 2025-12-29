@@ -634,7 +634,38 @@
       </article>
      </section>
   </main>
+<script>
+  // 👇 نطق النصوص باستخدام Web Speech API
+  const synth = window.speechSynthesis;
 
+  // تحديد لغة الصوت حسب الزر
+  const speakButtons = document.querySelectorAll('.speak-btn');
+
+  speakButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // وقف أي نطق جاري
+      if(synth.speaking) synth.cancel();
+
+      // أخذ النص من الـ data-text
+      const text = btn.getAttribute('data-text');
+
+      // إنشاء كائن Utterance للنطق
+      const utterance = new SpeechSynthesisUtterance(text);
+
+      // تحديد اللغة بناءً على الزر
+      const lang = btn.getAttribute('data-lang');
+      if(lang === 'en') utterance.lang = 'en-US';
+      else if(lang === 'ar') utterance.lang = 'ar-SA';
+
+      // سرعة النطق
+      utterance.rate = 1; 
+      utterance.pitch = 1;
+
+      // تشغيل الصوت
+      synth.speak(utterance);
+    });
+  });
+</script>
   <script src="../footer.js"></script>
     
    
