@@ -330,3 +330,32 @@ body.dark .sidebar {
 }
 /* ================== 15) أدوات مساعدة ================== */
 .text-center{ text-align:center }
+/* ====== FIX إجباري لظهور المحتوى ====== */
+
+main {
+  display: block !important;
+  min-height: 100vh !important;
+  padding-top: 80px !important;
+}
+
+section.grid {
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.container {
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
+  background: #f3f4f8;
+}
+
+.card {
+  display: block !important;
+}
+
+/* لو فيه overflow مخفي */
+body, html {
+  overflow-y: auto !important;
+}
