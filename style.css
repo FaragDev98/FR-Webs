@@ -78,7 +78,7 @@ body.dark a{
   font-size:1.05rem;
 }
 
-/* ================== 5) أزرار الهيدر ================== */
+/* ================== 5) أزرار الهيدر (بدون مربع أبيض) ================== */
 .btn-icon{
   background:transparent;
   border:0;
@@ -110,7 +110,6 @@ body.dark a{
   background:var(--accent);
   color:#fff;
 }
-
 /* ================== 7) Layout ================== */
 main, section{
   display:block;
