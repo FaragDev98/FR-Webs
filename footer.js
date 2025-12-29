@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="/ish/index.html">الكورسات</a>
       </nav>
     `;
+ 
+   <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i>
     const headerEl = document.querySelector('header.header');
     if (headerEl) headerEl.insertAdjacentHTML('afterend', folderMenuHTML);
     else document.body.insertAdjacentHTML('afterbegin', folderMenuHTML);
@@ -55,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="/contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
       </nav>
     `;
-   <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i>
     
     document.body.insertAdjacentHTML('beforeend', bottomNavHTML);
   }
