@@ -18,9 +18,10 @@ body{
   color:#111827;
   overflow-x:hidden;
   transition: background .3s, color .3s;
+  padding-top:72px; /* مهم عشان الهيدر ما يغطيش المحتوى */
 }
 
-/* ================== 3) الوضع الليلي (عام لكل الصفحات) ================== */
+/* ================== 3) الوضع الليلي (عام) ================== */
 body.dark{
   background: linear-gradient(180deg,#121212 0%, #0b0b0b 100%);
   color:#ffffff;
@@ -78,43 +79,57 @@ body.dark a{
   font-size:1.05rem;
 }
 
-/* ================== 5) أزرار الهيدر (بدون مربع أبيض) ================== */
+/* ================== 5) زر المجلد (بدون مربع أبيض) ================== */
 .btn-icon{
   background:transparent;
-  border:0;
+  border:none;
   color:#fff;
-  font-size:20px;
+  font-size:22px;
   cursor:pointer;
   padding:6px;
 }
 
-/* ================== 6) NAV ================== */
-.nav{
+/* ================== 6) قائمة المجلد (تطلع وتدخل) ================== */
+.folder-menu{
   display:flex;
-  gap:10px;
   justify-content:center;
-  padding:10px 20px;
-  max-width:1200px;
-  margin:auto;
+  gap:12px;
+  max-height:0;
+  overflow:hidden;
+  padding:0;
+  background:rgba(255,255,255,.85);
+  backdrop-filter: blur(8px);
+  transition: all .35s ease;
+  position:sticky;
+  top:72px;
+  z-index:900;
 }
 
-.nav a{
+.folder-menu.open{
+  max-height:80px;
+  padding:12px;
+}
+
+.folder-menu a{
+  padding:8px 16px;
+  border-radius:12px;
+  font-weight:700;
   text-decoration:none;
-  padding:8px 14px;
-  border-radius:10px;
-  font-weight:600;
-  color:inherit;
+  background:#f1f5f9;
+  color:#111827;
 }
 
-.nav a.cta{
-  background:var(--accent);
-  color:#fff;
+/* الوضع الليلي للمجلد */
+body.dark .folder-menu{
+  background:#0f172a;
+}
+body.dark .folder-menu a{
+  background:#1e293b;
+  color:#ffffff;
 }
 
 /* ================== 7) Layout ================== */
-main, section{
-  display:block;
-}
+main, section{ display:block }
 
 .container{
   max-width:1200px;
@@ -143,9 +158,7 @@ main, section{
   color:var(--purple);
 }
 
-body.dark .hero h1{
-  color:#c7d2fe;
-}
+body.dark .hero h1{ color:#c7d2fe }
 
 .hero p{ color:var(--muted) }
 body.dark .hero p{ color:#d1d5db }
@@ -177,9 +190,7 @@ body.dark .hero p{ color:#d1d5db }
   box-shadow:var(--card-shadow);
 }
 
-body.dark .card{
-  background:#1a1a1a;
-}
+body.dark .card{ background:#1a1a1a }
 
 .card-icon{
   font-size:26px;
@@ -205,9 +216,7 @@ body.dark .card{
   text-align:center;
 }
 
-body.dark .feature{
-  background:#1a1a1a;
-}
+body.dark .feature{ background:#1a1a1a }
 
 /* ================== 12) Articles ================== */
 .cards-row{
@@ -227,9 +236,7 @@ body.dark .feature{
   overflow:hidden;
 }
 
-body.dark .post{
-  background:#1a1a1a;
-}
+body.dark .post{ background:#1a1a1a }
 
 .post img{
   width:100%;
@@ -257,7 +264,7 @@ body.dark .post{
   font-size:12px;
 }
 
-/* ================== 14) Sidebar (يفتح بالمجلد) ================== */
+/* ================== 14) Sidebar ================== */
 .sidebar{
   position:fixed;
   top:0;
@@ -275,13 +282,13 @@ body.dark .post{
 
 body.dark .sidebar{
   background:#111111;
-  color:#fff;
+  color:#ffffff;
 }
 
 /* ================== 15) Footer ================== */
 .global-footer{
   background:#7b1fa2;
-  color:#fff;
+  color:#ffffff;
   text-align:center;
   padding:15px;
   margin-top:30px;
