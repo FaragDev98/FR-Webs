@@ -78,15 +78,6 @@ body.dark a{
   font-size:1.05rem;
 }
 
-/* ================== 5) أزرار الهيدر (بدون مربع أبيض) ================== */
-.btn-icon{
-  background:transparent;
-  border:0;
-  color:#fff;
-  font-size:20px;
-  cursor:pointer;
-  padding:6px;
-}
 
 /* ================== 6) قائمة المجلد (تطلع وتدخل) ================== */
 .folder-menu{
