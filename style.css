@@ -94,7 +94,16 @@ body.dark a{
   top:72px;
   z-index:900;
 }
+.folder-menu a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+}
 
+.folder-menu i{
+  font-size:18px;
+}
 .folder-menu.open{
   max-height:80px;
   padding:12px;
