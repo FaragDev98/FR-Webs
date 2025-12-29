@@ -101,75 +101,64 @@ body.dark a{
   cursor:pointer;
 }
 
-/* ==================================================
-   5) Folder Menu (Overlay – لا يحرك الصفحة)
-================================================== */
+
+/* ================== Folder Menu Buttons ================== */
 .folder-menu{
-  position:fixed;
-  top:68px;                 /* تحت الهيدر */
-  right:50%;
-  transform:translateX(50%) scale(.9);
-  z-index:999;
-
+  position:sticky;
+  top:72px;
+  z-index:900;
   display:flex;
-  gap:14px;
-  padding:14px 18px;
-
-  background:var(--folder-bg);
-  backdrop-filter:blur(14px);
-  border-radius:24px;
-  box-shadow:0 16px 35px rgba(0,0,0,.18);
-
-  opacity:0;
-  pointer-events:none;
-  transition:.35s ease;
+  justify-content:center;
+  gap:12px;
+  max-height:0;
+  padding:0;
+  overflow:hidden;
+  background:rgba(243,232,217,0.95); /* لون بني فاتح */
+  backdrop-filter:blur(8px);
+  transition:all .35s ease;
 }
 
 .folder-menu.open{
-  opacity:1;
-  pointer-events:auto;
-  transform:translateX(50%) scale(1);
+  max-height:90px;
+  padding:12px;
 }
 
-/* ===== الأزرار ===== */
 .folder-menu a{
   display:flex;
   align-items:center;
   gap:8px;
-  padding:10px 18px;
-  border-radius:16px;
-  font-weight:800;
-  font-size:14px;
+  padding:8px 16px;
+  border-radius:14px;
+  font-weight:700;
   text-decoration:none;
-  color:#fff;
-  transition:.3s;
-}
-
-/* ألوان مختلفة */
-.folder-menu a:nth-child(1){
-  background:linear-gradient(135deg,#2563eb,#1e40af);
-}
-
-.folder-menu a:nth-child(2){
-  background:linear-gradient(135deg,#7c3aed,#5b21b6);
-}
-
-.folder-menu a:nth-child(3){
-  background:linear-gradient(135deg,#f97316,#ea580c);
+  background:#f3e8d9; /* اللون الأساسي للأزرار */
+  color:#3b2f23; /* لون النص */
+  transition:all .3s ease;
 }
 
 .folder-menu a:hover{
   transform:translateY(-2px);
+  background:linear-gradient(90deg,#6d28d9,#2563eb); /* تأثير جذاب عند المرور */
+  color:#fff;
 }
 
-/* أيقونات */
 .folder-menu i{
   font-size:18px;
 }
 
 /* الوضع الليلي */
 body.dark .folder-menu{
-  background:var(--folder-bg-dark);
+  background:#1a1a1a;
+}
+
+body.dark .folder-menu a{
+  background:#ffffff;
+  color:#111827;
+}
+
+body.dark .folder-menu a:hover{
+  background:linear-gradient(90deg,#6d28d9,#2563eb);
+  color:#fff;
 }
 
 /* ==================================================
