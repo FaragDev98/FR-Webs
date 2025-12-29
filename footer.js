@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </nav>
     `;
  
-   <a href="lessons-page/index.html"><i class="fa-solid fa-graduation-cap"></i>
     const headerEl = document.querySelector('header.header');
     if (headerEl) headerEl.insertAdjacentHTML('afterend', folderMenuHTML);
     else document.body.insertAdjacentHTML('afterbegin', folderMenuHTML);
