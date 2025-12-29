@@ -2,49 +2,54 @@
    1) المتغيرات العامة
 ================================================== */
 :root{
-  --purple:#6d28d9;
   --blue:#2563eb;
-  --accent:linear-gradient(90deg,var(--purple),var(--blue));
+  --orange:#f97316;
+  --accent:linear-gradient(90deg,var(--blue),var(--orange));
   --muted:#6b7280;
   --card-shadow:0 6px 18px rgba(16,24,40,.08);
 
-  --folder-bg:rgba(255,255,255,.95);
-  --folder-bg-dark:rgba(15,23,42,.96);
+  --bg-main:linear-gradient(180deg,#fbfbff,#f6f8ff);
+  --bg-dark:linear-gradient(180deg,#121212,#0b0b0b);
+
+  --card-bg:#ffffff;
+  --card-bg-dark:#1a1a1a;
 }
 
 /* ==================================================
    2) Reset + إعدادات عامة
 ================================================== */
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 html,body{
   width:100%;
-  margin:0;
 }
 
 body{
   font-family:'Cairo',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-  background:linear-gradient(180deg,#fbfbff,#f6f8ff);
+  background:var(--bg-main);
   color:#111827;
   overflow-x:hidden;
-  transition:.3s;
+  transition:background .3s,color .3s;
 }
 
 /* ==================================================
-   3) الوضع الليلي
+   3) الوضع الليلي (بدون قلب أبيض)
 ================================================== */
 body.dark{
-  background:linear-gradient(180deg,#121212,#0b0b0b);
-  color:#ffffff;
+  background:var(--bg-dark);
+  color:#e5e7eb;
 }
 
 body.dark p,
 body.dark h1,
 body.dark h2,
 body.dark h3,
-body.dark h4,
-body.dark a{
-  color:#ffffff;
+body.dark h4{
+  color:#e5e7eb;
 }
 
 /* ==================================================
@@ -55,7 +60,7 @@ body.dark a{
   top:0;
   z-index:1000;
   backdrop-filter:blur(6px);
-  background:linear-gradient(90deg,#2563eb,#f97316);
+  background:var(--accent);
   border-bottom:1px solid rgba(255,255,255,.15);
 }
 
@@ -101,7 +106,7 @@ body.dark a{
   display:flex;
   gap:14px;
   padding:14px 18px;
-  background:var(--folder-bg);
+  background:#ffffff;
   border-radius:24px;
   box-shadow:0 16px 35px rgba(0,0,0,.18);
   opacity:0;
@@ -128,16 +133,11 @@ body.dark a{
 }
 
 .folder-menu a:nth-child(1){background:#2563eb}
-.folder-menu a:nth-child(2){background:#7c3aed}
-.folder-menu a:nth-child(3){background:#f97316}
+.folder-menu a:nth-child(2){background:#f97316}
+.folder-menu a:nth-child(3){background:#0ea5e9}
 
 body.dark .folder-menu{
   background:#1a1a1a;
-}
-
-body.dark .folder-menu a{
-  background:#fff;
-  color:#111827;
 }
 
 /* ==================================================
@@ -170,7 +170,7 @@ body.dark .folder-menu a{
 
 .hero h1{
   font-size:2rem;
-  color:var(--purple);
+  color:var(--blue);
 }
 
 .hero p{
@@ -193,10 +193,10 @@ body.dark .folder-menu a{
 }
 
 /* ==================================================
-   9) Cards – التصميم القديم المحسن
+   9) Cards
 ================================================== */
 .card{
-  background:#fff;
+  background:var(--card-bg);
   border-radius:14px;
   padding:18px;
   box-shadow:var(--card-shadow);
@@ -204,29 +204,27 @@ body.dark .folder-menu a{
 }
 
 body.dark .card{
-  background:#1a1a1a;
+  background:var(--card-bg-dark);
 }
 
 /* ==================================================
-   10) قسم من نحن + الخدمات (محسّن + كروت أقصر)
+   10) قسم من نحن (على الخلفية الرئيسية)
 ================================================== */
 .about-hero{
   margin:40px auto;
-  padding:40px 20px;
-  border-radius:18px;
-  background:linear-gradient(135deg,#6d28d9,#2563eb);
-  color:#fff;
+  padding:20px;
 }
 
 .about-hero h2{
-  font-size:2.1rem;
+  font-size:2rem;
   font-weight:800;
   margin-bottom:10px;
+  color:var(--blue);
 }
 
 .about-hero .lead{
-  font-size:1.1rem;
-  opacity:.9;
+  font-size:1.05rem;
+  color:var(--muted);
   margin-bottom:30px;
 }
 
@@ -240,53 +238,42 @@ body.dark .card{
   .hero-cards{grid-template-columns:1fr}
 }
 
-/* الكروت أقصر */
+/* كروت قصيرة ونظيفة */
 .hero-cards .card{
-  padding:18px 16px;
-  border-radius:14px;
-  background:rgba(255,255,255,.12);
-  box-shadow:0 8px 20px rgba(0,0,0,.18);
-}
-
-.hero-cards .card-img{
-  width:100%;
-  height:140px;          /* أقصر */
-  object-fit:cover;
-  border-radius:12px;
-  margin-bottom:10px;
+  padding:16px;
 }
 
 .hero-cards .card-icon{
-  font-size:36px;
+  font-size:34px;
   margin:10px 0;
-  color:#fff;
+  color:var(--blue);
 }
 
 .hero-cards h4{
-  font-size:1.2rem;
+  font-size:1.15rem;
   margin-bottom:6px;
 }
 
 .hero-cards p{
   font-size:.95rem;
   line-height:1.5;
-  opacity:.95;
+  color:var(--muted);
 }
 
 /* الوضع الليلي */
-body.dark .about-hero{
-  background:linear-gradient(135deg,#1e1e2f,#312e81);
+body.dark .about-hero h2{
+  color:#93c5fd;
 }
 
-body.dark .hero-cards .card{
-  background:rgba(255,255,255,.06);
+body.dark .hero-cards p{
+  color:#cbd5f5;
 }
 
 /* ==================================================
    11) Footer
 ================================================== */
 .global-footer{
-  background:#7b1fa2;
+  background:#111827;
   color:#fff;
   text-align:center;
   padding:15px;
