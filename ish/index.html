@@ -181,43 +181,10 @@ function closePayment(){
   document.getElementById('paymentModal').style.display = 'none';
 }
 </script>
-<script>
-let coursePrice = 0;
 
-function openPayment(price){
-  if(price === 0){
-    unlockCourse();
-    return;
-  }
-  coursePrice = price;
-  document.getElementById('paymentModal').style.display = 'flex';
-}
 
-function closePayment(){
-  document.getElementById('paymentModal').style.display = 'none';
-}
 
-function confirmPayment(){
-  const status = document.getElementById('payStatus');
-  status.innerHTML = 'جاري التحقق...';
-
-  setTimeout(()=>{
-    status.style.color = 'green';
-    status.innerHTML = 'تم الدفع بنجاح';
-    closePayment();
-    unlockCourse();
-  },1500);
-}
-
-function unlockCourse(){
-  document.getElementById('courseContent').classList.remove('locked');
-}
-
-function toggleText(id){
-  document.getElementById(id).classList.toggle('show');
-}
-</script>
-
+  
 <script src="../footer.js"></script>
 </body>
 </html>
