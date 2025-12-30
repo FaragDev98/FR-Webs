@@ -38,18 +38,11 @@
   font-size: 22px;
   color: #111;
 }
-
-/* ===============================
-   مربع نتيجة الكود (أبيض)
-================================ */
-.editors iframe {
-  width: 100%;
-  height: 12px;
-  border: 2px solid #e5e7eb;
-  background: #ffffff;   /* ✔ أبيض */
-  margin-top: 100px;
-  border-radius: 10px;
-}
+  /* تصغير مربعات الكود */
+  .editor {
+    min-width: 100%;
+    padding: 12px;
+  }
 
 /* ===============================
    أزرار التشغيل
@@ -116,11 +109,6 @@ html, body {
     gap: 12px;
   }
 
-  /* تصغير مربعات الكود */
-  .editor {
-    min-width: 100%;
-    padding: 12px;
-  }
 
   .editor textarea {
     height: 180px; /* أصغر للموبايل */
