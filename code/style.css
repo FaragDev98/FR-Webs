@@ -1,4 +1,115 @@
 /* ===============================
+   قسم الأكواد فقط
+================================ */
+.editors {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* مربعات المحرر */
+.editor {
+  flex: 1;
+  min-width: 300px;
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+/* textarea */
+.editor textarea {
+  width: 100%;
+  height: 250px;
+  background: #1c1c1c;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+/* عنوان النتيجة */
+.result-title {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #111;
+}
+
+/* ===============================
+   مربع نتيجة الكود (أبيض)
+================================ */
+.editors iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;   /* ✔ أبيض */
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* ===============================
+   أزرار التشغيل
+================================ */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.controls select,
+.controls button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* زر */
+.controls button {
+  background: #2563eb;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+}
+
+.controls button:hover {
+  background: #1e40af;
+}
+
+/* ===============================
+   عناصر التنقل (بدون تأثير عام)
+================================ */
+.bottom-nav a,
+.bottom-nav button {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   موبايل
+================================ */
+@media(max-width: 768px){
+  .mobile-only {
+    display: flex;
+  }
+
+  .editors iframe {
+    height: 300px;
+  }
+}
+
+
+/* ===============================
    إصلاح التجاوب للموبايل
 ================================ */
 
