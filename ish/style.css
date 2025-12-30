@@ -1,203 +1,125 @@
-/* =================================================
-   FR Webs – Courses Page (Content Only)
-   خاص بمحتوى الصفحة فقط
-================================================= */
+/* ================= GENERAL ================= */
+body{
+  background:#f8fafc;
+}
+.text-center{text-align:center}
 
-/* ===============================
-   1) STORIES BAR (كورسات)
-================================ */
+/* ================= COURSES BAR ================= */
 .courses-stories-bar{
   display:flex;
   gap:16px;
-  padding:20px 16px 30px;
+  padding:20px;
   overflow-x:auto;
-  scroll-snap-type:x mandatory;
 }
 
-.courses-stories-bar::-webkit-scrollbar{
-  height:6px;
-}
-.courses-stories-bar::-webkit-scrollbar-thumb{
-  background:rgba(0,0,0,.25);
-  border-radius:10px;
-}
-
-/* ===============================
-   2) STORY CARD
-================================ */
 .story-card{
   flex:0 0 240px;
-  height:390px;
+  height:380px;
   border-radius:18px;
   overflow:hidden;
-  background:#000;
   position:relative;
-  scroll-snap-align:start;
-  box-shadow:0 15px 35px rgba(0,0,0,.25);
+  background:#000;
 }
 
-/* الفيديو */
 .story-video iframe{
   width:100%;
   height:100%;
   border:0;
 }
 
-/* معلومات الكورس */
 .story-info{
   position:absolute;
   bottom:0;
-  inset-inline:0;
+  width:100%;
   padding:14px;
-  background:linear-gradient(transparent, rgba(0,0,0,.85));
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
   color:#fff;
-  text-align:center;
-}
-
-.story-info h4{
-  margin:0 0 6px;
-  font-size:1rem;
-}
-
-.story-info .price{
-  display:block;
-  margin-bottom:8px;
-  font-weight:700;
-  font-size:.95rem;
 }
 
 .story-info button{
   width:100%;
   padding:10px;
+  border-radius:10px;
   border:0;
-  border-radius:10px;
-  background:#fff;
-  color:#000;
   font-weight:700;
-  cursor:pointer;
-  transition:.25s;
 }
 
-.story-info button:hover{
-  background:#e5e7eb;
-}
-
-/* ===============================
-   3) HERO (مقدمة الصفحة)
-================================ */
-.hero{
-  padding:32px 18px 24px;
-}
-
-.hero-inner{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 380px;
-  gap:28px;
-  align-items:center;
-}
-
-.hero h1{
-  margin:0 0 10px;
-  font-size:2rem;
-  font-weight:800;
-  line-height:1.1;
-}
-
-.hero p{
-  margin:0;
-  color:#6b7280;
-}
-
-/* ===============================
-   4) HERO CARDS
-================================ */
-.hero-cards{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.hero-cards .card{
-  background:#fff;
-  padding:16px;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(16,24,40,.08);
-  display:flex;
-  gap:12px;
-  align-items:center;
-}
-
-.card-icon{
-  width:46px;
-  height:46px;
-  display:grid;
-  place-items:center;
-  font-size:24px;
-  border-radius:10px;
-  background:linear-gradient(180deg,#ede9fe,#e0e7ff);
-}
-
-/* ===============================
-   5) ARTICLES / POSTS
-================================ */
-.cards-row{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+/* ================= LESSONS ================= */
+.cards-column.locked{
+  filter:blur(6px);
+  pointer-events:none;
 }
 
 .post{
   background:#fff;
-  border-radius:12px;
+  border-radius:14px;
+  margin-bottom:20px;
   overflow:hidden;
-  text-decoration:none;
-  color:inherit;
-  box-shadow:0 6px 18px rgba(16,24,40,.08);
-  display:flex;
-  flex-direction:column;
 }
 
-.post img{
+.video-container iframe{
   width:100%;
-  height:140px;
-  object-fit:cover;
+  height:320px;
 }
 
 .post-body{
-  padding:12px;
+  padding:14px;
 }
 
-.post h4{
-  margin:0 0 6px;
+.lesson-content{
+  display:none;
+  margin-top:10px;
+  color:#374151;
+}
+.lesson-content.show{
+  display:block;
 }
 
-.post p{
-  margin:0;
-  color:#6b7280;
+/* ================= MODAL ================= */
+.payment-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  align-items:center;
+  justify-content:center;
 }
 
-/* ===============================
-   6) RESPONSIVE
-================================ */
-@media (max-width:900px){
-
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
-
-  .story-card{
-    flex:0 0 220px;
-    height:360px;
-  }
-
-  .cards-row{
-    grid-template-columns:1fr;
-  }
+.payment-box{
+  background:#fff;
+  padding:20px;
+  width:90%;
+  max-width:380px;
+  border-radius:16px;
+  text-align:center;
 }
 
-/* ===============================
-   7) Helpers (للمحتوى فقط)
-================================ */
-.text-center{ text-align:center }
+.methods{
+  display:flex;
+  justify-content:space-between;
+  margin:15px 0;
+}
+
+.pay-btn{
+  background:#22c55e;
+  color:#fff;
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:0;
+  font-weight:700;
+}
+
+.cancel-btn{
+  margin-top:8px;
+  width:100%;
+  padding:8px;
+  border-radius:10px;
+  border:0;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .story-card{flex:0 0 210px}
+  .video-container iframe{height:220px}
+}
