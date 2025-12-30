@@ -1,190 +1,152 @@
-/* ===== STORIES BAR ===== */
-.courses-stories-bar {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 20px 0 30px;
-  scroll-snap-type: x mandatory;
+/* =================================================
+   FR Webs – Courses Page (Content Only)
+   خاص بمحتوى الصفحة فقط
+================================================= */
+
+/* ===============================
+   1) STORIES BAR (كورسات)
+================================ */
+.courses-stories-bar{
+  display:flex;
+  gap:16px;
+  padding:20px 16px 30px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
 }
 
-.courses-stories-bar::-webkit-scrollbar {
-  height: 6px;
+.courses-stories-bar::-webkit-scrollbar{
+  height:6px;
 }
-.courses-stories-bar::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.25);
-  border-radius: 10px;
-}
-
-/* ===== STORY CARD ===== */
-.story-card {
-  flex: 0 0 230px;
-  height: 380px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #000;
-  position: relative;
-  scroll-snap-align: start;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-/* ===== VIDEO ===== */
-.story-video iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ===== INFO ===== */
-.story-info {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  color: #fff;
-  text-align: center;
-}
-
-.story-info h4 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-
-.story-info .price {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-.story-info button {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background: #ffffff;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ===== DESKTOP ===== */
-@media (min-width: 992px) {
-  .story-card {
-    flex: 0 0 260px;
-    height: 420px;
-  }
-}
-/* الوسائط */
-.desktop-only{ display:flex }
-.mobile-only{ display:none }
-.mobile-hidden{ display:none }
-
-/* ================== 6) منطقة الهيرو (HERO SECTION) ================== */
-.hero{ padding:42px 18px 28px; }
-
-.hero-inner{
-  max-width:1200px; margin:0 auto;
-  display:grid; grid-template-columns: 1fr 380px;
-  gap:28px; align-items:center;
-}
-@media (max-width:900px){
-  .hero-inner{ grid-template-columns:1fr }
-  .desktop-only{ display:none }
-  .mobile-only{ display:inline-flex }
-  .mobile-hidden{ display:none }
-}
-
-.hero h1{
-  font-size:2rem; margin:0 0 12px;
-  line-height:1.05; font-weight:800;
-  color:var(--purple)
-}
-body.dark .hero h1{ color:#9db4ff }
-.hero p{ margin:0 0 18px; color:var(--muted) }
-
-/* أزرار الهيرو */
-.hero-cta .btn{ margin-right:8px }
-
-/* ================== 7) الأزرار العامة ================== */
-.btn{
-  display:inline-block;
-  text-decoration:none;
-  padding:10px 16px;
-  border-radius:12px;
-  font-weight:700;
-}
-.btn.primary{
-  background:var(--blue); color:#fff;
-  box-shadow: 0 8px 28px rgba(37,99,235,0.12);
-}
-.btn.outline{
-  background:transparent;
-  border:1px solid rgba(15,23,42,0.06);
-  color:inherit;
-}
-
-/* ================== 8) كروت الهيرو ================== */
-.hero-cards{
-  display:flex; flex-direction:column; gap:12px;
-}
-.card{
-  background:#fff; padding:18px;
-  border-radius:14px;
-  box-shadow:var(--card-shadow);
-  display:flex; gap:12px; align-items:center;
-  transition:transform .25s, box-shadow .25s;
-  opacity:0; transform:translateY(18px);
-}
-.card.in-view{ opacity:1; transform:none }
-
-/* أيقونة الكارت */
-.card-icon{
-  font-size:26px; color:var(--purple);
-  width:48px; height:48px;
-  display:grid; place-items:center;
-  background:linear-gradient(180deg, rgba(109,40,217,0.08), rgba(37,99,235,0.06));
+.courses-stories-bar::-webkit-scrollbar-thumb{
+  background:rgba(0,0,0,.25);
   border-radius:10px;
 }
 
-/* ================== 9) قسم المميزات (WHY CHOOSE US) ================== */
-.container{ max-width:1200px; margin:0 auto; padding:30px 18px }
-.why h2{ text-align:center; margin-bottom:6px }
-.lead{ text-align:center; color:var(--muted); margin-bottom:20px }
-
-.grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
-@media (max-width:900px){ .grid-3{ grid-template-columns:1fr } }
-
-.feature{
-  background:linear-gradient(180deg,#fff,#fbfbff);
-  padding:18px; border-radius:14px; text-align:center;
-  box-shadow:var(--card-shadow);
-  opacity:0; transform:translateY(20px);
-  transition:all .45s;
+/* ===============================
+   2) STORY CARD
+================================ */
+.story-card{
+  flex:0 0 240px;
+  height:390px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+  position:relative;
+  scroll-snap-align:start;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
-.feature.in-view{ opacity:1; transform:none }
-.feature i{ font-size:28px; color:var(--blue); margin-bottom:8px }
 
-/* ================== 10) قسم التجارب (LAB) ================== */
-.lab{
-  display:flex; gap:18px; align-items:center;
-  padding:20px; border-radius:14px;
-  background: linear-gradient(90deg, rgba(109,40,217,0.06), rgba(37,99,235,0.04));
-  margin:18px auto;
-  box-shadow:var(--card-shadow)
+/* الفيديو */
+.story-video iframe{
+  width:100%;
+  height:100%;
+  border:0;
 }
-.lab img{ max-width:140px; display:block }
-@media (max-width:900px){ .lab{ flex-direction:column; text-align:center } }
 
-/* ================== 11) قسم المقالات (ARTICLES) ================== */
-.articles-section h2{ margin-bottom:12px; text-align:center }
+/* معلومات الكورس */
+.story-info{
+  position:absolute;
+  bottom:0;
+  inset-inline:0;
+  padding:14px;
+  background:linear-gradient(transparent, rgba(0,0,0,.85));
+  color:#fff;
+  text-align:center;
+}
 
+.story-info h4{
+  margin:0 0 6px;
+  font-size:1rem;
+}
+
+.story-info .price{
+  display:block;
+  margin-bottom:8px;
+  font-weight:700;
+  font-size:.95rem;
+}
+
+.story-info button{
+  width:100%;
+  padding:10px;
+  border:0;
+  border-radius:10px;
+  background:#fff;
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.story-info button:hover{
+  background:#e5e7eb;
+}
+
+/* ===============================
+   3) HERO (مقدمة الصفحة)
+================================ */
+.hero{
+  padding:32px 18px 24px;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:28px;
+  align-items:center;
+}
+
+.hero h1{
+  margin:0 0 10px;
+  font-size:2rem;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.hero p{
+  margin:0;
+  color:#6b7280;
+}
+
+/* ===============================
+   4) HERO CARDS
+================================ */
+.hero-cards{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.hero-cards .card{
+  background:#fff;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(16,24,40,.08);
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.card-icon{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#ede9fe,#e0e7ff);
+}
+
+/* ===============================
+   5) ARTICLES / POSTS
+================================ */
 .cards-row{
-  display:grid; grid-template-columns: repeat(3,1fr);
-  gap:16px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
-@media (max-width:1000px){ .cards-row{ grid-template-columns: repeat(2,1fr) } }
-@media (max-width:650px){ .cards-row{ grid-template-columns:1fr } }
 
 .post{
   background:#fff;
@@ -192,86 +154,50 @@ body.dark .hero h1{ color:#9db4ff }
   overflow:hidden;
   text-decoration:none;
   color:inherit;
-  box-shadow:var(--card-shadow);
-  display:flex; flex-direction:column;
-  transition:transform .25s
+  box-shadow:0 6px 18px rgba(16,24,40,.08);
+  display:flex;
+  flex-direction:column;
 }
+
 .post img{
-  width:100%; height:140px;
+  width:100%;
+  height:140px;
   object-fit:cover;
 }
-.post-body{ padding:12px }
-.post h4{ margin:0 0 8px }
-.post p{ margin:0; color:var(--muted) }
 
-
-.bottom-nav a{
-  color:#fff; text-decoration:none;
-  display:flex; flex-direction:column;
-  align-items:center;
-  font-weight:700; font-size:12px
+.post-body{
+  padding:12px;
 }
-.mobile-only{ display:none }
+
+.post h4{
+  margin:0 0 6px;
+}
+
+.post p{
+  margin:0;
+  color:#6b7280;
+}
+
+/* ===============================
+   6) RESPONSIVE
+================================ */
 @media (max-width:900px){
-  .mobile-only{ display:flex }
-  .desktop-only{ display:none }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .story-card{
+    flex:0 0 220px;
+    height:360px;
+  }
+
+  .cards-row{
+    grid-template-columns:1fr;
+  }
 }
 
-
-body.dark .post img{ opacity:0.95 }
-/* Sidebar Settings Menu */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: 3px 0 15px rgba(0,0,0,0.1);
-  padding: 20px;
-  transition: 0.35s ease;
-  z-index: 9999;
-}
-
-body.dark .sidebar {
-  background: #111827;
-  color: #fff;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.sidebar-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.sidebar-content a {
-  display: block;
-  margin: 12px 0;
-  font-size: 1rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.sidebar-content a i {
-  margin-left: 6px;
-}
-
-/* Footer */
-.global-footer{
-  text-align:center;
-  padding:15px;
-  color:#fff;
-  background:#7b1fa2;
-  margin-top:20px;
-}
-/* ================== 15) أدوات مساعدة ================== */
+/* ===============================
+   7) Helpers (للمحتوى فقط)
+================================ */
 .text-center{ text-align:center }
