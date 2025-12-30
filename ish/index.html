@@ -103,12 +103,13 @@
 
   </div>
 </section>
-
 <!-- ================= PAYMENT MODAL ================= -->
 <div class="payment-modal" id="paymentModal">
   <div class="payment-box">
     <h3>💳 إتمام الدفع</h3>
-    <p class="pay-text">اختر وسيلة الدفع المناسبة لك، وأرسل إثبات الدفع لتفعيل الكورس فوراً:</p>
+    <p class="pay-text">
+      اختر وسيلة الدفع المناسبة لك وأرسل إثبات الدفع لتفعيل الكورس فوراً. يمكن استخدام أي طريقة دفع، وسيتم التحقق من الدفع فور استلام بياناتك.
+    </p>
 
     <div class="methods">
       <label class="pay-item">
@@ -130,8 +131,8 @@
     </div>
 
     <p class="pay-note">يمكنك أيضًا إضافة أي ملاحظات مع التحويل.</p>
-    <input type="text" placeholder="أدخل رقم التحويل أو البريد" class="pay-input">
-    <input type="file" class="pay-input">
+    <input type="text" id="payNumber" placeholder="أدخل رقم التحويل أو البريد" class="pay-input">
+    <input type="file" id="payProof" class="pay-input">
 
     <button class="pay-btn" onclick="confirmPayment()">تأكيد الدفع</button>
     <button class="cancel-btn" onclick="closePayment()">إلغاء</button>
@@ -140,6 +141,46 @@
   </div>
 </div>
 
+<script>
+function confirmPayment(){
+  const numberField = document.getElementById('payNumber');
+  const fileField = document.getElementById('payProof');
+  const status = document.getElementById('payStatus');
+
+  // تحقق من الحقول
+  if(numberField.value.trim() === "" || fileField.files.length === 0){
+    status.style.color = 'red';
+    status.innerHTML = '⚠️ الرجاء ملء جميع الحقول وإرفاق إثبات الدفع';
+    shakeElement(status);
+    if(numberField.value.trim() === "") numberField.classList.add('input-error');
+    if(fileField.files.length === 0) fileField.classList.add('input-error');
+    return;
+  }
+
+  // إزالة أي خطأ سابق
+  numberField.classList.remove('input-error');
+  fileField.classList.remove('input-error');
+
+  // إرسال البيانات عبر WhatsApp
+  const message = `تم إرسال بيانات الدفع:\nرقم التحويل / البريد: ${numberField.value}\nالتحقق جاري من FR`;
+  const waLink = `https://wa.me/201066047545?text=${encodeURIComponent(message)}`;
+  window.open(waLink, '_blank');
+
+  status.style.color = 'green';
+  status.innerHTML = '✅ تم إرسال البيانات بنجاح، جاري التحقق من FR';
+}
+
+// وظيفة اهتزاز النص
+function shakeElement(el){
+  el.classList.add('shake');
+  setTimeout(()=> el.classList.remove('shake'), 600);
+}
+
+// إغلاق نافذة الدفع
+function closePayment(){
+  document.getElementById('paymentModal').style.display = 'none';
+}
+</script>
 <script>
 let coursePrice = 0;
 
