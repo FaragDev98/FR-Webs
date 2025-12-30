@@ -107,19 +107,33 @@
 <!-- ================= PAYMENT MODAL ================= -->
 <div class="payment-modal" id="paymentModal">
   <div class="payment-box">
-    <h3>إتمام الدفع</h3>
+    <h3>💳 إتمام الدفع</h3>
+    <p class="pay-text">اختر وسيلة الدفع المناسبة لك، وأرسل إثبات الدفع لتفعيل الكورس فوراً:</p>
 
     <div class="methods">
-      <label><input type="radio" name="m"><span>Vodafone</span></label>
-      <label><input type="radio" name="m"><span>WE</span></label>
-      <label><input type="radio" name="m"><span>Orange</span></label>
-      <label><input type="radio" name="m"><span>PayPal</span></label>
+      <label class="pay-item">
+        <img src="icons/vodafone.png" alt="Vodafone">
+        <span>فودافون كاش: <strong>01066047545</strong></span>
+      </label>
+      <label class="pay-item">
+        <img src="icons/orange.png" alt="Orange">
+        <span>أورنج كاش: <strong>01285895096</strong></span>
+      </label>
+      <label class="pay-item">
+        <img src="icons/we.png" alt="WE">
+        <span>وي كاش: <strong>01558516081</strong></span>
+      </label>
+      <label class="pay-item">
+        <img src="icons/paypal.png" alt="PayPal">
+        <span>باي بال</span>
+      </label>
     </div>
 
-    <input type="text" placeholder="رقم التحويل">
-    <input type="file">
+    <p class="pay-note">يمكنك أيضًا إضافة أي ملاحظات مع التحويل.</p>
+    <input type="text" placeholder="أدخل رقم التحويل أو البريد" class="pay-input">
+    <input type="file" class="pay-input">
 
-    <button class="pay-btn" onclick="confirmPayment()">تأكيد</button>
+    <button class="pay-btn" onclick="confirmPayment()">تأكيد الدفع</button>
     <button class="cancel-btn" onclick="closePayment()">إلغاء</button>
 
     <p id="payStatus"></p>
