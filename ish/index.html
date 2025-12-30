@@ -132,32 +132,31 @@
 
 
 <script>
-  // وظيفة القراءة الصوتية
-  function speakLesson(elementId) {
-    const text = document.getElementById(elementId).innerText;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ar-SA'; // لغة عربية
-    utterance.rate = 0.9;    // سرعة هادئة للشرح
-    window.speechSynthesis.cancel(); // إلغاء أي صوت شغال حالياً
-    window.speechSynthesis.speak(utterance);
+  let currentUtterance = null;
+
+function speakLesson(elementId) {
+  const text = document.getElementById(elementId).innerText;
+
+  // إذا كان هناك قراءة حالية، نوقفها
+  if (currentUtterance) {
+    window.speechSynthesis.cancel();
+    currentUtterance = null;
+    return;
   }
 
-  // وظيفة إظهار/إخفاء النص
-  function toggleText(elementId) {
-    const content = document.getElementById(elementId);
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  }
+  // إنشاء قراءة جديدة
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ar-SA';
+  utterance.rate = 0.9;
 
-  // ميزة الـ Dark Mode السريعة (إذا لم تكن مفعلة في footer.js)
-  const themeBtn = document.getElementById('themeToggle');
-  themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    themeBtn.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-  });
+  // عند انتهاء القراءة، نعيد currentUtterance لقيمة null
+  utterance.onend = () => {
+    currentUtterance = null;
+  };
+
+  currentUtterance = utterance;
+  window.speechSynthesis.speak(utterance);
+}
 </script>
 </section>
 
