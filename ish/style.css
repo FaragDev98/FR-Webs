@@ -188,42 +188,7 @@ body{
   background:#f1f5f9;
 }
 
-/* ================= DARK MODE SUPPORT ================= */
-body.dark .payment-box,
-body.dark-theme .payment-box{
-  background:#0f172a;
-  color:#e5e7eb;
-}
 
-body.dark .pay-text,
-body.dark .pay-note,
-body.dark .pay-item span{
-  color:#cbd5f5;
-}
-
-body.dark .pay-item{
-  background:#1e293b;
-  border:1px solid rgba(255,255,255,0.1);
-}
-
-body.dark .pay-item:hover{
-  background:#334155;
-}
-
-body.dark .pay-btn{
-  background:linear-gradient(90deg,#6366f1,#818cf8);
-  color:#fff;
-}
-
-body.dark .cancel-btn{
-  background:#1e293b;
-  color:#fff;
-  border:none;
-}
-.pay-input.input-error{
-  border:2px solid red;
-  animation: shake 0.6s;
-}
 
 @keyframes shake{
   0%,100%{ transform: translateX(0); }
