@@ -2,22 +2,22 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-   <title> FR Webs كورسات  </title>
+  <title>FR Webs | الكورسات</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- CSS العام (الهيدر + الفوتر من الجذر) -->
+  <!-- CSS العام -->
   <link rel="stylesheet" href="../style.css">
-
-  <!-- CSS خاص بصفحة الخدمات -->
+  <!-- CSS الصفحة -->
   <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
-  
-  <div class="courses-stories-bar">
+
+<!-- ================= COURSES BAR ================= -->
+<div class="courses-stories-bar">
 
   <div class="story-card">
     <div class="story-video">
@@ -25,8 +25,8 @@
     </div>
     <div class="story-info">
       <h4>كورس البداية الاحترافي</h4>
-      <span class="price">مجاني  </span>
-      <button onclick="openPayment('560')">فتح الكورس</button>
+      <span class="price">مجاني</span>
+      <button onclick="openPayment(0)">فتح الكورس</button>
     </div>
   </div>
 
@@ -35,9 +35,9 @@
       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" allowfullscreen></iframe>
     </div>
     <div class="story-info">
-      <h4>كورس تصميم الفديو </h4>
+      <h4>كورس تصميم الفيديو</h4>
       <span class="price">270 جنيه</span>
-      <button onclick="openPayment('270')">فتح الكورس</button>
+      <button onclick="openPayment(270)">فتح الكورس</button>
     </div>
   </div>
 
@@ -46,9 +46,9 @@
       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" allowfullscreen></iframe>
     </div>
     <div class="story-info">
-      <h4>كورس تصميم موقع الكتروني </h4>
+      <h4>كورس تصميم موقع إلكتروني</h4>
       <span class="price">290 جنيه</span>
-      <button onclick="openPayment('290')">فتح الكورس</button>
+      <button onclick="openPayment(290)">فتح الكورس</button>
     </div>
   </div>
 
@@ -59,121 +59,110 @@
     <div class="story-info">
       <h4>كورس البرمجة</h4>
       <span class="price">699 جنيه</span>
-      <button onclick="openPayment('699')">فتح الكورس</button>
+      <button onclick="openPayment(699)">فتح الكورس</button>
     </div>
   </div>
 
 </div>
-<section class="lessons-section container" style="padding-top: 100px;">
+
+<!-- ================= LESSONS ================= -->
+<section class="lessons-section container">
   <h2 class="text-center">منهج كورس البداية الاحترافي</h2>
-  <p class="lead text-center">كل ما تحتاجه للانطلاق في عالم العمل الحر من الصفر.</p>
+  <p class="lead text-center">كل ما تحتاجه للانطلاق من الصفر.</p>
 
-  <div class="cards-column">
-    
-    <div class="post animate" id="lesson1">
+  <!-- مغلق افتراضيًا -->
+  <div class="cards-column locked" id="courseContent">
+
+    <!-- LESSON 1 -->
+    <div class="post">
       <div class="video-container">
-        <iframe width="100%" height="350" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" allowfullscreen></iframe>
       </div>
       <div class="post-body">
-        <h4>الدرس 1: مفتاح الدخل الحقيقي (العمل الحر)</h4>
-        <button class="audio-btn" onclick="speakLesson('text1')"><i class="fa-solid fa-volume-high"></i> اسمع الشرح بصوت ذكي</button>
-        <button class="show-text-btn" onclick="toggleText('text1')">عرض نص الدرس</button>
-        
-        <div id="text1" class="lesson-content">
-          العمل الحر باختصار هو إنك تشتغل بنفسك من موبايلك أو جهازك من أي مكان، سواء من البيت أو القهوة. الفرق بينه وبين الشركة إنك في الشركة ليك مدير ومواعيد ثابتة، لكن في العمل الحر أنت المدير. بيعتمد العمل الحر على 3 حاجات: المهارة (سلاحك)، الإنترنت (الجسر)، والالتزام (السر). لو مالتزمتش بمواعيدك، العملاء مش هيثقوا فيك.
-        </div>
-
-        <div class="actions">
-          <a href="downloads/lesson1_summary.pdf" class="download-link"><i class="fa-solid fa-file-pdf"></i> تحميل ملخص الدرس (PDF)</a>
+        <h4>الدرس 1: العمل الحر</h4>
+        <button onclick="toggleText('t1')" class="show-text-btn">عرض النص</button>
+        <div id="t1" class="lesson-content">
+          العمل الحر هو إنك تكون مدير نفسك وتعتمد على مهارتك...
         </div>
       </div>
     </div>
 
-    <div class="post animate" id="lesson2">
+    <!-- LESSON 2 -->
+    <div class="post">
       <div class="video-container">
-        <iframe width="100%" height="350" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" allowfullscreen></iframe>
       </div>
       <div class="post-body">
-        <h4>الدرس 2: اصنع منتجك وافتح دكانك (تصميم ومونتاج)</h4>
-        <button class="audio-btn" onclick="speakLesson('text2')"><i class="fa-solid fa-volume-high"></i> اسمع الشرح بصوت ذكي</button>
-        <button class="show-text-btn" onclick="toggleText('text2')">عرض نص الدرس</button>
-        
-        <div id="text2" class="lesson-content">
-          في الدرس ده هنتعلم نستخدم موقع كانفا عشان نصمم لوجو احترافي ونعمل فيديوهات إعلانية بسيطة. الأدوات دي سهلة جداً للمبتدئين. كمان هنتعلم إزاي نفتح حساب على موقع خمسات ونكتب نبذة تعريفية ذكية تجذب العميل، وإزاي ترفع أول خدمة ليك بـ 5 دولار وتجيب أول تقييم عشان تبدأ رحلة الربح.
-        </div>
-
-        <div class="actions">
-          <a href="downloads/lesson2_design_assets.zip" class="download-link"><i class="fa-solid fa-file-zipper"></i> تحميل ملفات التدريب (صور وأيقونات)</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="post animate" id="lesson3">
-      <div class="video-container">
-        <iframe width="100%" height="350" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="post-body">
-        <h4>الدرس 3: لغة المستقبل (أساسيات البرمجة)</h4>
-        <button class="audio-btn" onclick="speakLesson('text3')"><i class="fa-solid fa-volume-high"></i> اسمع الشرح بصوت ذكي</button>
-        <button class="show-text-btn" onclick="toggleText('text3')">عرض نص الدرس</button>
-        
-        <div id="text3" class="lesson-content">
-          البرمجة هي الطريقة اللي بنكلم بيها الكمبيوتر. المبرمج هو اللي بياخد فكرة العميل ويحولها لموقع أو تطبيق. اتعرفنا على الفرق بين الـ Front-end (واجهة الموقع) والـ Back-end (عقل الموقع). البرمجة فيها فلوس تقيلة وطلب جبار، وأول خطوة فيها هي تعلم لغات HTML و CSS عشان تبني أول صفحة ويب ليك.
-        </div>
-
-        <div class="actions">
-          <a href="downloads/lesson3_code_starter.zip" class="download-link"><i class="fa-solid fa-code"></i> تحميل كود البداية (HTML Template)</a>
+        <h4>الدرس 2: التصميم والمونتاج</h4>
+        <button onclick="toggleText('t2')" class="show-text-btn">عرض النص</button>
+        <div id="t2" class="lesson-content">
+          استخدام كانفا – فتح حساب خمسات – أول ربح...
         </div>
       </div>
     </div>
 
   </div>
-
-
-
-<script>
-  let currentUtterance = null;
-
-function speakLesson(elementId) {
-  const text = document.getElementById(elementId).innerText;
-
-  // إذا كان هناك قراءة حالية، نوقفها
-  if (currentUtterance) {
-    window.speechSynthesis.cancel();
-    currentUtterance = null;
-    return;
-  }
-
-  // إنشاء قراءة جديدة
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'ar-SA';
-  utterance.rate = 0.9;
-
-  // عند انتهاء القراءة، نعيد currentUtterance لقيمة null
-  utterance.onend = () => {
-    currentUtterance = null;
-  };
-
-  currentUtterance = utterance;
-  window.speechSynthesis.speak(utterance);
-}
-</script>
 </section>
 
+<!-- ================= PAYMENT MODAL ================= -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-box">
+    <h3>إتمام الدفع</h3>
 
+    <div class="methods">
+      <label><input type="radio" name="m"><span>Vodafone</span></label>
+      <label><input type="radio" name="m"><span>WE</span></label>
+      <label><input type="radio" name="m"><span>Orange</span></label>
+      <label><input type="radio" name="m"><span>PayPal</span></label>
+    </div>
 
+    <input type="text" placeholder="رقم التحويل">
+    <input type="file">
 
+    <button class="pay-btn" onclick="confirmPayment()">تأكيد</button>
+    <button class="cancel-btn" onclick="closePayment()">إلغاء</button>
 
+    <p id="payStatus"></p>
+  </div>
+</div>
 
+<script>
+let coursePrice = 0;
 
+function openPayment(price){
+  if(price === 0){
+    unlockCourse();
+    return;
+  }
+  coursePrice = price;
+  document.getElementById('paymentModal').style.display = 'flex';
+}
 
+function closePayment(){
+  document.getElementById('paymentModal').style.display = 'none';
+}
 
+function confirmPayment(){
+  const status = document.getElementById('payStatus');
+  status.innerHTML = 'جاري التحقق...';
 
-  
+  setTimeout(()=>{
+    status.style.color = 'green';
+    status.innerHTML = 'تم الدفع بنجاح';
+    closePayment();
+    unlockCourse();
+  },1500);
+}
 
-  
+function unlockCourse(){
+  document.getElementById('courseContent').classList.remove('locked');
+}
+
+function toggleText(id){
+  document.getElementById(id).classList.toggle('show');
+}
+</script>
+
 <script src="../footer.js"></script>
-<script src="footer.js"></script>
-
 </body>
 </html>
