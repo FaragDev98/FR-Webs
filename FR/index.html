@@ -2,95 +2,131 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-
   <title>خدمات FR Webs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- CSS العام (الهيدر + الفوتر من الجذر) -->
+  <!-- CSS العام -->
   <link rel="stylesheet" href="../style.css">
-
-  <!-- CSS خاص بصفحة الخدمات -->
+  <!-- CSS الصفحة -->
   <link rel="stylesheet" href="styles.css">
-
 </head>
+
 <body>
 
-<!-- ===== عنوان الصفحة ===== -->
 <section class="services-section">
-
   <h1 class="page-title">خدمات FR Webs</h1>
   <p class="page-desc">
-    خدمات تعليمية وتنفيذية تساعدك تبدأ وتنجح على الإنترنت
+    خدمات تعليمية وتنفيذية احترافية لمساعدتك على الانطلاق وبناء مصدر دخل حقيقي
   </p>
 
-  <!-- ===== الخدمات ===== -->
   <div class="services-grid">
 
     <div class="service-card">
       <img src="images/programming.jpg" alt="تعليم البرمجة">
       <h2>تعليم البرمجة</h2>
-      <p>
-        تعلم HTML وCSS وJavaScript من الصفر
-        مع تطبيق عملي ومشاريع حقيقية.
-      </p>
-      <a href="https://wa.me/201066047545" class="service-btn">
-        <i class="fa-solid fa-code"></i>
-        اشترك الآن
-      </a>
+      <p>تعلم HTML و CSS و JavaScript من الصفر مع تطبيق عملي ومتابعة.</p>
+      <button class="service-btn" onclick="openPayment('تعليم البرمجة',500)">
+        <i class="fa-solid fa-code"></i> اطلب الخدمة
+      </button>
     </div>
 
     <div class="service-card">
       <img src="images/books.jpg" alt="كتب تعليمية">
       <h2>كتب تعليمية</h2>
-      <p>
-        كتب PDF منظمة وسهلة للمبتدئين
-        مع شرح وملخصات وتطبيقات.
-      </p>
-      <a href="https://wa.me/201066047545" class="service-btn">
-        <i class="fa-solid fa-book"></i>
-        شراء الكتاب
-      </a>
+      <p>كتب PDF مرتبة وسهلة للمبتدئين مع أمثلة عملية.</p>
+      <button class="service-btn" onclick="openPayment('كتاب تعليمي',150)">
+        <i class="fa-solid fa-book"></i> شراء الكتاب
+      </button>
     </div>
 
     <div class="service-card">
       <img src="images/freelance.jpg" alt="العمل الحر">
-      <h2>العمل الحر</h2>
-      <p>
-        تعلم إنشاء حسابات على مواقع العمل الحر
-        وبناء مصدر دخل ثابت.
-      </p>
-      <a href="https://wa.me/201066047545" class="service-btn">
-        <i class="fa-solid fa-briefcase"></i>
-        ابدأ الآن
-      </a>
+      <h2>تأهيل العمل الحر</h2>
+      <p>إعداد حسابات احترافية وبداية حقيقية في العمل الحر.</p>
+      <button class="service-btn" onclick="openPayment('العمل الحر',300)">
+        <i class="fa-solid fa-briefcase"></i> ابدأ الآن
+      </button>
     </div>
 
     <div class="service-card">
       <img src="images/projects.jpg" alt="تنفيذ مشاريع">
       <h2>تنفيذ مشاريع</h2>
-      <p>
-        تنفيذ مواقع ويب احترافية
-        وصفحات هبوط ومشاريع كاملة.
-      </p>
-      <a href="https://wa.me/201066047545" class="service-btn">
-        <i class="fa-solid fa-laptop-code"></i>
-        اطلب مشروع
-      </a>
+      <p>تنفيذ مواقع وصفحات هبوط باحترافية كاملة.</p>
+      <button class="service-btn" onclick="openPayment('تنفيذ مشروع',1000)">
+        <i class="fa-solid fa-laptop-code"></i> اطلب مشروع
+      </button>
     </div>
 
   </div>
 </section>
 
+<!-- ===== PAYMENT MODAL ===== -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-box">
+    <h3>💳 إتمام الدفع</h3>
+    <p class="pay-text" id="serviceTitle"></p>
+
+    <div class="methods">
+      <div class="pay-item"><img src="../icons/vodafone.png">فودافون كاش<br><strong>01066047545</strong></div>
+      <div class="pay-item"><img src="../icons/orange.png">أورنج كاش<br><strong>01285895096</strong></div>
+      <div class="pay-item"><img src="../icons/we.png">وي كاش<br><strong>01558516081</strong></div>
+      <div class="pay-item"><img src="../icons/paypal.png">PayPal</div>
+    </div>
+
+    <input type="text" id="payNumber" class="pay-input" placeholder="رقم التحويل أو بريد PayPal">
+    <input type="file" id="payProof" class="pay-input">
+
+    <button class="pay-btn" onclick="confirmPayment()">إرسال إثبات الدفع</button>
+    <button class="cancel-btn" onclick="closePayment()">إلغاء</button>
+
+    <p id="payStatus"></p>
+  </div>
+</div>
+
+<script>
+let currentService='', currentPrice=0;
+
+function openPayment(service, price){
+  currentService=service;
+  currentPrice=price;
+  document.getElementById('serviceTitle').innerHTML=
+    `الخدمة: <strong>${service}</strong><br>السعر: <strong>${price} جنيه</strong>`;
+  document.getElementById('paymentModal').style.display='flex';
+}
+
+function closePayment(){
+  document.getElementById('paymentModal').style.display='none';
+}
+
+function confirmPayment(){
+  const num=document.getElementById('payNumber');
+  const file=document.getElementById('payProof');
+  const status=document.getElementById('payStatus');
+
+  if(num.value.trim()==='' || file.files.length===0){
+    status.style.color='red';
+    status.innerHTML='⚠️ من فضلك املأ البيانات وارفق إثبات الدفع';
+    num.classList.add('input-error');
+    file.classList.add('input-error');
+    return;
+  }
+
+  const msg=`طلب خدمة FR Webs
+الخدمة: ${currentService}
+السعر: ${currentPrice} جنيه
+رقم التحويل: ${num.value}
+جاري التحقق`;
+
+  window.open(`https://wa.me/201066047545?text=${encodeURIComponent(msg)}`,'_blank');
+
+  status.style.color='green';
+  status.innerHTML='✅ تم إرسال البيانات، جاري التحقق من FR';
+}
+</script>
+
 <script src="../footer.js"></script>
-
-
-
-
-
-
-  
 </body>
 </html>
