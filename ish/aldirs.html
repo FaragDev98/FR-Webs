@@ -14,7 +14,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<style>
+    .lesson-content { display: none; margin-top: 10px; line-height: 1.6; }
+    .show-text-btn { margin: 5px 5px 5px 0; padding: 8px 12px; cursor: pointer; background-color: #6c63ff; color: #fff; border: none; border-radius: 5px; }
+    .video-container iframe { width: 100%; height: 350px; border: none; }
+    .post { margin-bottom: 40px; }
+</style>
 <!-- ================= LESSONS ================= -->
 <section class="lessons-section container">
   <h2 class="text-center">منهج كورس البداية الاحترافي</h2>
@@ -150,10 +155,13 @@
   window.speechSynthesis.onvoiceschanged = () => {
     window.speechSynthesis.getVoices();
   };
-          </script>
+  </script>
 
 
   <script src="../footer.js"></script>
 
+
+
+  
 </body>
 </html>
