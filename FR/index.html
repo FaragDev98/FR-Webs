@@ -49,14 +49,21 @@
    
 
 <div class="service-card">
-  <video 
-    src="../Vadio/Farag.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    class="service-video">
-  </video>
+
+  <div class="video-wrap">
+    <video 
+      src="../Vadio/Farag.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      class="service-video">
+    </video>
+
+    <button class="sound-btn" onclick="toggleSound(this)">
+      🔇
+    </button>
+  </div>
 
   <h2>تنفيذ مشاريع</h2>
   <p>
@@ -69,7 +76,19 @@
     <i class="fa-solid fa-laptop-code"></i> اطلب مشروع
   </button>
 </div>
+<script>
+function toggleSound(btn){
+  const video = btn.previousElementSibling;
 
+  if(video.muted){
+    video.muted = false;
+    btn.textContent = "🔊";
+  }else{
+    video.muted = true;
+    btn.textContent = "🔇";
+  }
+}
+</script>
   </div>
 </section>
 
