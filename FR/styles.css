@@ -39,27 +39,11 @@
   transform:translateY(-6px);
 }
 
-.video-wrap{
-  position:relative;
-}
-
-.sound-btn{
-  position:absolute;
-  bottom:12px;
-  right:12px;
-  background:rgba(0,0,0,.6);
-  color:#fff;
-  border:none;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  font-size:18px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.sound-btn:hover{
-  background:rgba(0,0,0,.8);
+/* ===== VIDEO بدل الصورة ===== */
+.service-card video{
+  width:100%;
+  height:260px; /* 👈 ارتفاع أكبر زي غلاف كتاب */
+  object-fit:cover;
 }
 
 /* ===== TEXT ===== */
