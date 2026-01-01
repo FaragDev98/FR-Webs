@@ -71,28 +71,7 @@
     <i class="fa-solid fa-laptop-code"></i> اطلب مشروع
   </button>
 </div>
-    <script>
-const videos = document.querySelectorAll('.service-video');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const video = entry.target;
-
-    if(entry.isIntersecting){
-      video.muted = false;
-      video.play().catch(()=>{});
-    }else{
-      video.muted = true;
-      video.pause();
-    }
-  });
-},{
-  threshold: 0.6 // لازم 60% من الفيديو يكون ظاهر
-});
-
-videos.forEach(video => observer.observe(video));
-    </script>
-    
+ 
   </div>
 </section>
 
@@ -159,7 +138,27 @@ function confirmPayment(){
   status.innerHTML='✅ تم إرسال البيانات، جاري التحقق من FR';
 }
 </script>
+<script>
+const videos = document.querySelectorAll('.service-video');
 
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const video = entry.target;
+
+    if(entry.isIntersecting){
+      video.muted = false;
+      video.play().catch(()=>{});
+    }else{
+      video.muted = true;
+      video.pause();
+    }
+  });
+},{
+  threshold: 0.6 // لازم 60% من الفيديو يكون ظاهر
+});
+
+videos.forEach(video => observer.observe(video));
+</script>
 <script src="../footer.js"></script>
 </body>
 </html>
