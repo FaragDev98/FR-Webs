@@ -1,194 +1,428 @@
 /* ==================================================
    1) المتغيرات العامة
-   هنا بنحدد ألوان الموقع وظلال البطاقات
 ================================================== */
 :root{
-  --blue:#2563eb; /* اللون الأساسي */
-  --accent:linear-gradient(90deg,var(--blue),#1e40af); /* تدرج أزرق */
-  --muted:#6b7280; /* لون النص الثانوي */
-  --card-shadow:0 15px 35px rgba(0,0,0,.25); /* ظل البطاقات */
-  --card-radius:20px; /* تقوس زوايا البطاقات */
+  --purple:#6d28d9;
+  --blue:#2563eb;
+  --accent:linear-gradient(90deg,var(--purple),var(--blue));
+  --muted:#6b7280;
+  --card-shadow:0 8px 24px rgba(16,24,40,.06);
+
+  --folder-bg:rgba(255,255,255,.95);
+  --folder-bg-dark:rgba(15,23,42,.96);
 }
 
 /* ==================================================
    2) Reset + إعدادات عامة
-   إزالة الهوامش وضبط الخطوط والخلفية
 ================================================== */
-*{box-sizing:border-box;margin:0;padding:0;}
-html, body{width:100%;font-family:'Cairo',system-ui,-apple-system,"Segoe UI",Roboto,Arial;overflow-x:hidden;transition:0.3s;}
+*{box-sizing:border-box}
+
+html,body{
+  width:100%;
+  margin:0;
+}
+
 body{
+  font-family:'Cairo',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
   background:linear-gradient(180deg,#fbfbff,#f6f8ff);
   color:#111827;
+  overflow-x:hidden;
+  transition:.3s;
 }
 
 /* ==================================================
    3) الوضع الليلي
-   تغيير الخلفية والنصوص للوضع الليلي
 ================================================== */
 body.dark{
-  background:linear-gradient(180deg,#0f172a,#1e293b);
+  background:linear-gradient(180deg,#121212,#0b0b0b);
   color:#ffffff;
 }
-body.dark h1,h2,h3,h4,p,a{
+
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark a{
   color:#ffffff;
 }
 
 /* ==================================================
-   4) HERO
-   القسم الرئيسي اللي بيظهر أول حاجة للمستخدم
+   4) HEADER
+================================================== */
+.header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(6px);
+  background:linear-gradient(90deg,#2563eb,#f97316);
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#fff;
+}
+
+.logo{
+  width:28px;
+  height:28px;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.brand-title{
+  font-weight:800;
+  font-size:1.05rem;
+}
+
+/* زر المجلد */
+.btn-icon{
+  background:none;
+  border:0;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+}
+
+
+/* ==================================================
+   5) Folder Menu (Overlay – لا يحرك الصفحة)
+================================================== */
+.folder-menu{
+  position:fixed;
+  top:68px;                 /* تحت الهيدر */
+  right:50%;
+  transform:translateX(50%) scale(.9);
+  z-index:999;
+
+  display:flex;
+  gap:14px;
+  padding:14px 18px;
+
+  background:var(--folder-bg);
+  backdrop-filter:blur(14px);
+  border-radius:24px;
+  box-shadow:0 16px 35px rgba(0,0,0,.18);
+
+  opacity:0;
+  pointer-events:none;
+  transition:.35s ease;
+}
+
+.folder-menu.open{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(50%) scale(1);
+}
+
+/* ===== الأزرار ===== */
+.folder-menu a{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  border-radius:16px;
+  font-weight:800;
+  font-size:14px;
+  text-decoration:none;
+  color:#fff;
+  transition:.3s;
+}
+
+/* ألوان مختلفة */
+.folder-menu a:nth-child(1){
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+}
+
+.folder-menu a:nth-child(2){
+  background:linear-gradient(135deg,#7c3aed,#5b21b6);
+}
+
+.folder-menu a:nth-child(3){
+  background:linear-gradient(135deg,#f97316,#ea580c);
+}
+
+.folder-menu a:hover{
+  transform:translateY(-2px);
+}
+
+/* أيقونات */
+.folder-menu i{
+  font-size:18px;
+}
+
+
+/* الوضع الليلي */
+body.dark .folder-menu{
+  background:#1a1a1a;
+}
+
+body.dark .folder-menu a{
+  background:#ffffff;
+  color:#111827;
+}
+
+body.dark .folder-menu a:hover{
+  background:linear-gradient(90deg,#6d28d9,#2563eb);
+  color:#fff;
+}
+
+/* ==================================================
+   6) Layout
+================================================== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px 18px;
+}
+
+/* ==================================================
+   7) HERO
 ================================================== */
 .hero{
   padding:42px 18px;
-  text-align:center;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:28px;
+}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
 }
 
 .hero h1{
-  font-size:2.5rem;
-  font-weight:900;
-  color:var(--blue);
-  margin-bottom:20px;
+  font-size:2rem;
+  color:var(--purple);
 }
 
-body.dark .hero h1{color:#93c5fd;}
+body.dark .hero h1{
+  color:#c7d2fe;
+}
 
 .hero p{
-  font-size:1.3rem;
-  font-weight:700;
   color:var(--muted);
-  margin-bottom:30px;
 }
 
-body.dark .hero p{color:#d1d5db;}
-
-/* ==================================================
-   5) فيديو يوتيوب
-   تصميم صندوق الفيديو مع زوايا مستديرة وظل
-================================================== */
-.video-container{
-  width:100%;
-  max-width:100%;
-  margin:20px auto;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 4px 20px rgba(0,0,0,0.1);
+body.dark .hero p{
+  color:#d1d5db;
 }
 
 /* ==================================================
-   6) قسم من نحن + hero cards
-   العنوان والنص التعريفي والبطاقات
+   8) Buttons
 ================================================== */
-.about-hero{
-  padding:50px 18px;
-  background:linear-gradient(180deg,#f3f4f6,#e5e7eb);
-  transition:0.3s;
-}
-
-body.dark .about-hero{background:linear-gradient(180deg,#0f172a,#1e293b);}
-
-.about-hero h2{
-  font-size:2.7rem;
-  font-weight:900;
-  margin-bottom:15px;
-  text-shadow:2px 2px 10px rgba(0,0,0,0.15);
-  color:#2563eb;
-}
-
-body.dark .about-hero h2{color:#93c5fd;}
-
-.about-hero .lead{
-  font-size:1.4rem;
+.btn{
+  padding:10px 16px;
+  border-radius:12px;
   font-weight:700;
-  margin-bottom:50px;
-  color:#374151;
+  text-decoration:none;
 }
 
-body.dark .about-hero .lead{color:#d1d5db;}
-
-/* ==============================
-   hero-cards
-   تصميم البطاقات مع تأثير hover
-============================== */
-.hero-cards{
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-}
-
-/* الكرت الواحد */
-.hero-cards .card{
-  width:280px;
-  padding:30px 20px;
-  border-radius:var(--card-radius);
-  background:linear-gradient(135deg,#2563eb,#1e40af); /* إزالة البنفسجي */
+.btn.primary{
+  background:var(--blue);
   color:#fff;
-  box-shadow:var(--card-shadow);
-  transition:transform 0.3s,box-shadow 0.3s,background 0.3s;
-  overflow:hidden;
-  text-align:center;
 }
 
-/* عند التحويم على البطاقة */
-.hero-cards .card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 20px 45px rgba(0,0,0,0.35);
-  background:linear-gradient(135deg,#1e40af,#60a5fa);
-}
-
-/* صورة البطاقة */
-.hero-cards .card-img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:14px;
-  margin-bottom:15px;
-}
-
-/* أيقونة البطاقة */
-.hero-cards .card-icon{
-  font-size:50px;
-  margin:20px 0;
-}
-
-/* عنوان البطاقة */
-.hero-cards h4{
-  font-size:1.7rem;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-/* نص البطاقة */
-.hero-cards p{
-  font-size:1.1rem;
-  font-weight:700;
-  line-height:1.6;
-}
-
-body.dark .hero-cards .card{
-  background:linear-gradient(135deg,#1e3a8a,#2563eb);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .hero-cards{
-    flex-direction:column;
-    align-items:center;
-  }
-  .hero-cards .card{
-    width:90%;
-    padding:25px;
-  }
-  .hero-cards .card-img{
-    height:200px;
-  }
+.btn.outline{
+  border:1px solid #ddd;
 }
 
 /* ==================================================
-   7) Footer
-   تذييل الصفحة
+   9) Cards & Features
+================================================== */
+.card,
+.feature,
+.post{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:var(--card-shadow);
+}
+
+body.dark .card,
+body.dark .feature,
+body.dark .post{
+  background:#1a1a1a;
+}
+
+.grid-3,
+.cards-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+@media(max-width:900px){
+  .grid-3,
+  .cards-row{grid-template-columns:1fr}
+}
+
+/* ==================================================
+   10) Bottom Nav
+================================================== */
+.bottom-nav{
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:18px;
+  background:linear-gradient(90deg,var(--purple),var(--blue));
+  padding:10px 18px;
+  border-radius:40px;
+  z-index:500;
+}
+
+.bottom-nav a{
+  color:#fff;
+  font-size:12px;
+  text-decoration:none;
+}
+
+  /* ==============================
+   /* ==============================
+   قسم من نحن + hero cards (محسّن)
+============================== */
+.about-hero {
+  padding: 60px 18px;
+  background: linear-gradient(180deg, #f3f4f6, #e5e7eb);
+  transition: 0.3s;
+}
+
+.about-hero h2 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+  color: #4f46e5;
+}
+
+.about-hero .lead {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  color: #374151;
+}
+
+.hero-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.hero-cards .card {
+  background: linear-gradient(135deg, #6d28d9, #2563eb);
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cards .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+}
+
+.hero-cards .card-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero-cards h4 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.hero-cards p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  .hero-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-cards .card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .hero-cards .card-img {
+    height: 200px;
+  }
+}
+
+/* -----------------------------
+   الوضع الليلي
+------------------------------ */
+body.dark .about-hero {
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+}
+
+body.dark .about-hero h2,
+body.dark .about-hero .lead,
+body.dark .hero-cards .card h4,
+body.dark .hero-cards .card p {
+  color: #ffffff;
+}
+
+body.dark .hero-cards .card {
+  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  .hero-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-cards .card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .hero-cards .card-img {
+    height: 200px;
+  }
+}
+/* ==================================================
+   11) Footer
 ================================================== */
 .global-footer{
-  background:#2563eb;
+  background:#7b1fa2;
   color:#fff;
   text-align:center;
   padding:15px;
@@ -196,7 +430,6 @@ body.dark .hero-cards .card{
 }
 
 /* ==================================================
-   8) Helpers
-   فئات مساعدة سريعة
+   Helpers
 ================================================== */
-.text-center{text-align:center;}
+.text-center{text-align:center}
