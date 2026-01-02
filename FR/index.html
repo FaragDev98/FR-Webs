@@ -12,6 +12,29 @@
   <link rel="stylesheet" href="../style.css">
   <!-- CSS الصفحة -->
   <link rel="stylesheet" href="styles.css">
+<script>
+  const videos = document.querySelectorAll('.service-video');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const video = entry.target;
+
+    if(entry.isIntersecting){
+      video.muted = false;
+      video.play().catch(()=>{});
+    }else{
+      video.muted = true;
+      video.pause();
+    }
+  });
+},{
+  threshold: 0.6 // لازم 60% من الفيديو يكون ظاهر
+});
+
+videos.forEach(video => observer.observe(video));
+</script>
+
+
 </head>
 
 <body>
@@ -77,27 +100,7 @@
   </div>
 
 </section>
-<section>
-  const videos = document.querySelectorAll('.service-video');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const video = entry.target;
-
-    if(entry.isIntersecting){
-      video.muted = false;
-      video.play().catch(()=>{});
-    }else{
-      video.muted = true;
-      video.pause();
-    }
-  });
-},{
-  threshold: 0.6 // لازم 60% من الفيديو يكون ظاهر
-});
-
-videos.forEach(video => observer.observe(video));
-</section>
 <!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
   <div class="payment-box">
