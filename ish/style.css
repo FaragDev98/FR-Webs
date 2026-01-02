@@ -26,7 +26,7 @@ body{
 /* حاوية الفيديو */
 .story-video{
   width:100%;
-  height:65%;          /* الفيديو ياخد 65% من الكارت */
+  height:90%;          /* الفيديو ياخد 65% من الكارت */
   position:relative;
 }
 
