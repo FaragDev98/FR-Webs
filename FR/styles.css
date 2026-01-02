@@ -41,7 +41,7 @@
 /* ===== VIDEO بدل الصورة ===== */
 .service-card video{
   width:100%;
-  height:340px; /* 👈 ارتفاع أكبر زي غلاف كتاب */
+  height:390px; /* 👈 ارتفاع أكبر زي غلاف كتاب */
   object-fit:cover;
 }
 
