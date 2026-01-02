@@ -36,6 +36,8 @@
 }
 
 .service-card:hover{
+  transform:translateY(-6px);
+}
 /* ===== VIDEO بدل الصورة ===== */
 .service-card video{
   width:100%;
