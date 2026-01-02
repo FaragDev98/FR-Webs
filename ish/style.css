@@ -13,26 +13,30 @@ body{
   padding:20px;          /* حواف داخلية للشريط */
   overflow-x:auto;       /* سحب يمين وشمال للعرض على الموبايل */
 }
-/* ================= كل كارت كورس ================= */
+/* كارت الكورس */
 .story-card{
-  flex:0 0 240px;        /* عرض ثابت لكل كارت */
-  height:380px;          /* ارتفاع الكارت */
-  border-radius:18px;    /* حواف مدورة */
-  overflow:hidden;       /* منع تجاوز المحتوى */
-  position:relative;     /* لتطبيق overlay على الفيديو */
-  background:#000;       /* خلفية سوداء افتراضية */
-  padding:10px;          /* مسافة داخلية حول الفيديو */
-  box-sizing:border-box;
+  flex:0 0 240px;
+  height:380px;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  background:#000;
 }
 
-/* الفيديو داخل الكارت - بحجم أصغر مع الحفاظ على تناسبه */
+/* حاوية الفيديو */
+.story-video{
+  width:100%;
+  height:65%;          /* الفيديو ياخد 65% من الكارت */
+  position:relative;
+}
+
+/* الفيديو نفسه */
 .story-video iframe{
-  width:100%;            /* بعرض كامل المساحة الداخلية */
-  height:calc(100% - 60px); /* خصم مساحة info أسفل الفيديو */
-  border-radius:12px;    /* حواف مدورة للفيديو */
+  width:100%;
+  height:100%;
   border:0;
-  display:block;
-  margin:auto;           /* يجعل الفيديو في المنتصف */
+  border-radius:0;     /* زي ستوري فيسبوك */
+  object-fit:cover;   /* 🔥 أهم سطر */
 }
 /* معلومات الكورس (الاسم، السعر، زر) */
 .story-info{
