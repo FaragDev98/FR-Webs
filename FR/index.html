@@ -72,33 +72,31 @@
     <i class="fa-solid fa-laptop-code"></i> اطلب مشروع
   </button>
 </div>
- <script>
-  const videos = document.querySelectorAll('.service-video');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const video = entry.target;
-
-    if(entry.isIntersecting){
-      video.muted = false;
-      video.play().catch(()=>{});
-    }else{
-      video.muted = true;
-      video.pause();
-    }
-  });
-},{
-  threshold: 0.6 // لازم 60% من الفيديو يكون ظاهر
-});
-
-videos.forEach(video => observer.observe(video));
-</script>
-
 
 </div>
 
 </section>
+<script>
+  const videos = document.querySelectorAll('.service-video');
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        video.muted = false;
+        video.play().catch(() => {});
+      } else {
+        video.muted = true;
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  videos.forEach(video => observer.observe(video));
+</script>
 <!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
   <div class="payment-box">
