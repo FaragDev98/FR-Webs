@@ -117,6 +117,13 @@
   function toggleVoice(textId) {
     const text = document.getElementById(textId).innerText;
 
+    
+    // إذا كان الصوت شغال أوقفه فورًا
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+      return;
+    }
  // إيقاف أي صوت نطق فور الخروج من الدرس أو الصفحة
 window.addEventListener("beforeunload", () => {
   if (window.speechSynthesis.speaking) {
