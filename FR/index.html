@@ -75,8 +75,9 @@
   </button>
 </div>
   </div>
-<script>
-const videos = document.querySelectorAll('.service-video');
+
+</section>
+  const videos = document.querySelectorAll('.service-video');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -96,9 +97,6 @@ const observer = new IntersectionObserver(entries => {
 
 videos.forEach(video => observer.observe(video));
 </script>
-
-</section>
-  
 
 <!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
