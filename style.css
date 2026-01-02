@@ -1,116 +1,177 @@
-/* ===============================
-   المتغيرات الأساسية (ألوان)
-================================ */
-:root {
-  --main-purple: #6d28d9;
-  --main-blue: #2563eb;
-  --card-radius: 20px;
-  --card-shadow: 0 15px 35px rgba(0,0,0,0.25);
+/* ==================================================
+   1) المتغيرات العامة
+================================================== */
+:root{
+  --purple:#6d28d9;
+  --blue:#2563eb;
+  --accent:linear-gradient(90deg,var(--purple),var(--blue));
+  --muted:#6b7280;
+  --card-shadow:0 15px 35px rgba(0,0,0,.25);
+  --card-radius:20px;
 }
 
-/* ===============================
-   قسم من نحن
-================================ */
-.about-hero {
-  padding: 60px 18px;
-  background: linear-gradient(180deg, #f3f4f6, #e5e7eb);
-  text-align: center;
-  transition: 0.3s;
+/* ==================================================
+   2) إعدادات عامة + Reset
+================================================== */
+*{box-sizing:border-box;margin:0;padding:0;}
+html, body{width:100%;font-family:'Cairo',system-ui,-apple-system,"Segoe UI",Roboto,Arial;overflow-x:hidden;transition:0.3s;}
+body{background:linear-gradient(180deg,#fbfbff,#f6f8ff);color:#111827;}
+
+/* ==================================================
+   3) الوضع الليلي
+================================================== */
+body.dark{
+  background:linear-gradient(180deg,#0f172a,#1e293b);
+  color:#ffffff;
 }
 
-/* عنوان القسم */
-.about-hero h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--main-purple);
-  margin-bottom: 15px;
+/* نصوص الوضع الليلي */
+body.dark h1,h2,h3,h4,p,a{
+  color:#ffffff;
 }
 
-/* الوصف */
-.about-hero .lead {
-  font-size: 1.2rem;
-  color: #374151;
-  margin-bottom: 45px;
+/* ==================================================
+   4) HERO
+================================================== */
+.hero{
+  padding:42px 18px;
+  text-align:center;
 }
 
-/* ===============================
-   حاوية الكروت
-================================ */
-.hero-cards {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+.hero h1{
+  font-size:2.5rem;
+  font-weight:900;
+  color:var(--purple);
+  margin-bottom:20px;
 }
 
-/* ===============================
-   الكرت الواحد
-================================ */
-.hero-cards .card {
-  width: 280px;
-  padding: 30px 20px;
-  border-radius: var(--card-radius);
-  background: linear-gradient(135deg, var(--main-purple), var(--main-blue));
-  color: #fff;
-  box-shadow: var(--card-shadow);
-  transition: 0.3s;
+body.dark .hero h1{color:#c7d2fe;}
+
+.hero p{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--muted);
+  margin-bottom:30px;
 }
 
-/* تأثير التحويم */
-.hero-cards .card:hover {
-  transform: translateY(-10px) scale(1.03);
+body.dark .hero p{color:#d1d5db;}
+
+/* ==================================================
+   5) فيديو يوتيوب
+================================================== */
+.video-container{
+  width:100%;
+  max-width:100%;
+  margin:20px auto;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ==================================================
+   6) قسم من نحن + hero cards
+================================================== */
+.about-hero{
+  padding:50px 18px;
+  background:linear-gradient(180deg,#f3f4f6,#e5e7eb);
+  transition:0.3s;
+}
+
+body.dark .about-hero{background:linear-gradient(180deg,#0f172a,#1e293b);}
+
+.about-hero h2{
+  font-size:2.7rem;
+  font-weight:900;
+  margin-bottom:15px;
+  text-shadow:2px 2px 10px rgba(0,0,0,0.15);
+  color:#4f46e5;
+}
+
+body.dark .about-hero h2{color:#ffffff;}
+
+.about-hero .lead{
+  font-size:1.4rem;
+  font-weight:700;
+  margin-bottom:50px;
+  color:#374151;
+}
+
+body.dark .about-hero .lead{color:#d1d5db;}
+
+/* ==============================
+   hero-cards
+============================== */
+.hero-cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:center;
+}
+
+/* الكرت الواحد */
+.hero-cards .card{
+  width:280px;
+  padding:30px 20px;
+  border-radius:var(--card-radius);
+  background:linear-gradient(135deg,var(--purple),var(--blue));
+  color:#fff;
+  box-shadow:var(--card-shadow);
+  transition:transform 0.3s,box-shadow 0.3s,background 0.3s;
+  overflow:hidden;
+  text-align:center;
+}
+
+/* عند التحويم */
+.hero-cards .card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 45px rgba(0,0,0,0.35);
+  background:linear-gradient(135deg,#7c3aed,#3b82f6);
 }
 
 /* صورة الكرت */
-.hero-cards .card-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 15px;
+.hero-cards .card-img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:15px;
 }
 
-/* الأيقونة */
-.hero-cards .card-icon {
-  font-size: 45px;
-  margin: 15px 0;
+/* أيقونة الكرت */
+.hero-cards .card-icon{
+  font-size:50px;
+  margin:20px 0;
 }
 
 /* عنوان الكرت */
-.hero-cards h4 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.hero-cards h4{
+  font-size:1.7rem;
+  font-weight:900;
+  margin-bottom:10px;
 }
 
 /* نص الكرت */
-.hero-cards p {
-  font-size: 1rem;
-  line-height: 1.6;
+.hero-cards p{
+  font-size:1.1rem;
+  font-weight:700;
+  line-height:1.6;
 }
 
-/* ===============================
-   Responsive (الموبايل)
-================================ */
-@media (max-width: 768px) {
-  .hero-cards .card {
-    width: 90%;
+body.dark .hero-cards .card{
+  background:linear-gradient(135deg,#1e3a8a,#6d28d9);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-cards{
+    flex-direction:column;
+    align-items:center;
   }
-}
-
-/* ===============================
-   الوضع الليلي
-================================ */
-body.dark .about-hero {
-  background: linear-gradient(180deg, #0f172a, #1e293b);
-}
-
-body.dark .about-hero h2,
-body.dark .about-hero .lead,
-body.dark .hero-cards p,
-body.dark .hero-cards h4 {
-  color: #ffffff;
-}
-
-body.dark .hero-cards .card {
-  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+  .hero-cards .card{
+    width:90%;
+    padding:25px;
+  }
+  .hero-cards .card-img{
+    height:200px;
+  }
 }
