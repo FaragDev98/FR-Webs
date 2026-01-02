@@ -1,19 +1,21 @@
 /* ==================================================
-   1) المتغيرات العامة
+   المتغيرات العامة (ألوان – ظلال – خلفيات)
+   تُستخدم في كل الموقع لتوحيد الألوان والتصميم
 ================================================== */
 :root{
-  --purple:#6d28d9;
-  --blue:#2563eb;
-  --accent:linear-gradient(90deg,var(--purple),var(--blue));
-  --muted:#6b7280;
-  --card-shadow:0 8px 24px rgba(16,24,40,.06);
+  --purple:#6d28d9; /* اللون البنفسجي الأساسي */
+  --blue:#2563eb;   /* اللون الأزرق الأساسي */
+  --accent:linear-gradient(90deg,var(--purple),var(--blue)); /* تدرج لوني */
+  --muted:#6b7280;  /* لون النصوص الثانوية */
+  --card-shadow:0 8px 24px rgba(16,24,40,.06); /* ظل الكروت */
 
-  --folder-bg:rgba(255,255,255,.95);
-  --folder-bg-dark:rgba(15,23,42,.96);
+  --folder-bg:rgba(255,255,255,.95);      /* خلفية قائمة المجلد */
+  --folder-bg-dark:rgba(15,23,42,.96);    /* خلفية المجلد في الوضع الليلي */
 }
 
 /* ==================================================
-   2) Reset + إعدادات عامة
+   Reset + إعدادات عامة
+   إعادة ضبط القيم الافتراضية للمتصفح
 ================================================== */
 *{box-sizing:border-box}
 
@@ -22,6 +24,10 @@ html,body{
   margin:0;
 }
 
+/* ==================================================
+   إعدادات الجسم الرئيسية (Body)
+   الخط – الخلفية – الألوان – الحركة
+================================================== */
 body{
   font-family:'Cairo',system-ui,-apple-system,"Segoe UI",Roboto,Arial;
   background:linear-gradient(180deg,#fbfbff,#f6f8ff);
@@ -31,7 +37,8 @@ body{
 }
 
 /* ==================================================
-   3) الوضع الليلي
+   الوضع الليلي (Dark Mode)
+   تغيير الخلفيات والنصوص عند التفعيل
 ================================================== */
 body.dark{
   background:linear-gradient(180deg,#121212,#0b0b0b);
@@ -48,7 +55,8 @@ body.dark a{
 }
 
 /* ==================================================
-   4) HEADER
+   الهيدر (Header)
+   الشريط العلوي الثابت للموقع
 ================================================== */
 .header{
   position:sticky;
@@ -59,6 +67,7 @@ body.dark a{
   border-bottom:1px solid rgba(255,255,255,.15);
 }
 
+/* محتوى الهيدر الداخلي */
 .header-inner{
   max-width:1200px;
   margin:auto;
@@ -68,6 +77,7 @@ body.dark a{
   justify-content:space-between;
 }
 
+/* اللوجو واسم الموقع */
 .brand{
   display:flex;
   align-items:center;
@@ -92,7 +102,7 @@ body.dark a{
   font-size:1.05rem;
 }
 
-/* زر المجلد */
+/* زر الأيقونة (زر فتح المجلد) */
 .btn-icon{
   background:none;
   border:0;
@@ -101,13 +111,13 @@ body.dark a{
   cursor:pointer;
 }
 
-
 /* ==================================================
-   5) Folder Menu (Overlay – لا يحرك الصفحة)
+   قائمة المجلد (Folder Menu Overlay)
+   قائمة منبثقة لا تحرك الصفحة
 ================================================== */
 .folder-menu{
   position:fixed;
-  top:68px;                 /* تحت الهيدر */
+  top:68px;
   right:50%;
   transform:translateX(50%) scale(.9);
   z-index:999;
@@ -126,13 +136,14 @@ body.dark a{
   transition:.35s ease;
 }
 
+/* حالة الفتح */
 .folder-menu.open{
   opacity:1;
   pointer-events:auto;
   transform:translateX(50%) scale(1);
 }
 
-/* ===== الأزرار ===== */
+/* أزرار القائمة */
 .folder-menu a{
   display:flex;
   align-items:center;
@@ -146,7 +157,7 @@ body.dark a{
   transition:.3s;
 }
 
-/* ألوان مختلفة */
+/* ألوان مختلفة لكل زر */
 .folder-menu a:nth-child(1){
   background:linear-gradient(135deg,#2563eb,#1e40af);
 }
@@ -159,17 +170,17 @@ body.dark a{
   background:linear-gradient(135deg,#f97316,#ea580c);
 }
 
+/* تأثير التحويم */
 .folder-menu a:hover{
   transform:translateY(-2px);
 }
 
-/* أيقونات */
+/* أيقونات القائمة */
 .folder-menu i{
   font-size:18px;
 }
 
-
-/* الوضع الليلي */
+/* قائمة المجلد في الوضع الليلي */
 body.dark .folder-menu{
   background:#1a1a1a;
 }
@@ -185,7 +196,8 @@ body.dark .folder-menu a:hover{
 }
 
 /* ==================================================
-   6) Layout
+   الحاوية العامة (Layout Container)
+   تحديد عرض المحتوى في الصفحة
 ================================================== */
 .container{
   max-width:1200px;
@@ -194,7 +206,7 @@ body.dark .folder-menu a:hover{
 }
 
 /* ==================================================
-   7) HERO
+   قسم البداية (Hero Section)
 ================================================== */
 .hero{
   padding:42px 18px;
@@ -208,6 +220,7 @@ body.dark .folder-menu a:hover{
   gap:28px;
 }
 
+/* استجابة الموبايل */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
 }
@@ -230,7 +243,7 @@ body.dark .hero p{
 }
 
 /* ==================================================
-   8) Buttons
+   الأزرار (Buttons)
 ================================================== */
 .btn{
   padding:10px 16px;
@@ -249,7 +262,7 @@ body.dark .hero p{
 }
 
 /* ==================================================
-   9) Cards & Features
+   الكروت والمميزات
 ================================================== */
 .card,
 .feature,
@@ -265,6 +278,7 @@ body.dark .post{
   background:#1a1a1a;
 }
 
+/* تخطيط الشبكات */
 .grid-3,
 .cards-row{
   display:grid;
@@ -272,13 +286,14 @@ body.dark .post{
   gap:18px;
 }
 
+/* موبايل */
 @media(max-width:900px){
   .grid-3,
   .cards-row{grid-template-columns:1fr}
 }
 
 /* ==================================================
-   10) Bottom Nav
+   شريط التنقل السفلي (Bottom Navigation)
 ================================================== */
 .bottom-nav{
   position:fixed;
@@ -299,10 +314,9 @@ body.dark .post{
   text-decoration:none;
 }
 
-  /* ==============================
-   /* ==============================
-   قسم من نحن + hero cards (محسّن)
-============================== */
+/* ==================================================
+   قسم من نحن + كروت تعريفية
+================================================== */
 .about-hero {
   padding: 60px 18px;
   background: linear-gradient(180deg, #f3f4f6, #e5e7eb);
@@ -323,6 +337,7 @@ body.dark .post{
   color: #374151;
 }
 
+/* كروت المميزات */
 .hero-cards {
   display: flex;
   flex-wrap: wrap;
@@ -338,88 +353,10 @@ body.dark .post{
   width: 280px;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-  position: relative;
-  overflow: hidden;
 }
 
-.hero-cards .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-  background: linear-gradient(135deg, #7c3aed, #3b82f6);
-}
-
-.hero-cards .card-icon {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.hero-cards h4 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
-
-.hero-cards p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* -----------------------------
-   Responsive
------------------------------- */
-@media (max-width: 768px) {
-  .hero-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-cards .card {
-    width: 90%;
-    padding: 25px;
-  }
-
-  .hero-cards .card-img {
-    height: 200px;
-  }
-}
-
-/* -----------------------------
-   الوضع الليلي
------------------------------- */
-body.dark .about-hero {
-  background: linear-gradient(180deg, #0f172a, #1e293b);
-}
-
-body.dark .about-hero h2,
-body.dark .about-hero .lead,
-body.dark .hero-cards .card h4,
-body.dark .hero-cards .card p {
-  color: #ffffff;
-}
-
-body.dark .hero-cards .card {
-  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
-}
-
-/* -----------------------------
-   Responsive
------------------------------- */
-@media (max-width: 768px) {
-  .hero-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-cards .card {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .hero-cards .card-img {
-    height: 200px;
-  }
-}
 /* ==================================================
-   11) Footer
+   الفوتر (Footer)
 ================================================== */
 .global-footer{
   background:#7b1fa2;
@@ -430,6 +367,6 @@ body.dark .hero-cards .card {
 }
 
 /* ==================================================
-   Helpers
+   أدوات مساعدة (Helpers)
 ================================================== */
 .text-center{text-align:center}
