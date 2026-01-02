@@ -79,12 +79,38 @@
     entries.forEach(entry => {
       const video = entry.target;
 
+      // متغيرات نربطها بالفيديو نفسه
+      if (!video._playedOnce) video._playedOnce = false;
+      if (!video._timeout) video._timeout = null;
+
       if (entry.isIntersecting) {
-        video.muted = false;
-        video.play().catch(() => {});
+
+        // ▶️ تشغيل أول مرة
+        if (!video._playedOnce) {
+          video.muted = false;
+          video.currentTime = 0;
+          video.play().catch(() => {});
+          video._playedOnce = true;
+
+          // ⏱️ بعد 10 ثواني يشغل تاني لو لسه ظاهر
+          video._timeout = setTimeout(() => {
+            if (entry.isIntersecting) {
+              video.currentTime = 0;
+              video.play().catch(() => {});
+            }
+          }, 10000);
+        }
+
       } else {
-        video.muted = true;
+        // ⛔ لما يخرج من الكارت
         video.pause();
+        video.muted = true;
+        video._playedOnce = false;
+
+        if (video._timeout) {
+          clearTimeout(video._timeout);
+          video._timeout = null;
+        }
       }
     });
   }, {
