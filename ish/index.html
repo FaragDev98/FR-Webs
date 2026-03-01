@@ -25,7 +25,7 @@
     <div class="story-info">
       <h4>كورس البداية الاحترافي</h4>
       <span class="price">مجاني</span>
-      <button onclick="openPayment(0)">فتح الكورس</button>
+      <button onclick="window.location.href="ish/aldirs.html">فتح الكورس</button>
     </div>
   </div>
 
@@ -51,69 +51,29 @@
     </div>
   </div>
 
+    <div class="story-video">
+      <iframe src="https://www.youtube.com/embed/hgcFQtRlcYc" allowfullscreen></iframe>
+    </div>
+    <div class="story-info">
+      <h4>كورس تصميم كتاب PDF</h4>
+      <span class="price">589 جنيه</span>
+      <button onclick="openPayment(589)">فتح الكورس</button>
+    </div>
+</div>
+  
   <div class="story-card">
     <div class="story-video">
       <iframe src="https://www.youtube.com/embed/A0eWorQ_Bww" allowfullscreen></iframe>
     </div>
     <div class="story-info">
       <h4>كورس البرمجة</h4>
-      <span class="price">699 جنيه</span>
-      <button onclick="openPayment(699)">فتح الكورس</button>
+      <span class="price">670 جنيه</span>
+      <button onclick="openPayment(670)">فتح الكورس</button>
     </div>
   </div>
 </div>
 
 
-<!-- ================= LESSONS ================= -->
-<section class="lessons-section container">
-  <h2 class="text-center">منهج كورس البداية الاحترافي</h2>
-  <p class="lead text-center">كل ما تحتاجه للانطلاق من الصفر.</p>
-
-  <div class="cards-column locked" id="courseContent">
-
-    <!-- LESSON 1 -->
-    <div class="post">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" allowfullscreen></iframe>
-      </div>
-      <div class="post-body">
-        <h4>الدرس 1: العمل الحر</h4>
-        <button onclick="toggleText('t1')" class="show-text-btn">عرض النص</button>
-        <div id="t1" class="lesson-content">
-          العمل الحر هو إنك تكون مدير نفسك وتعتمد على مهارتك...
-        </div>
-      </div>
-    </div>
-
-    <!-- LESSON 2 -->
-    <div class="post">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" allowfullscreen></iframe>
-      </div>
-      <div class="post-body">
-        <h4>الدرس 2: التصميم والمونتاج</h4>
-        <button onclick="toggleText('t2')" class="show-text-btn">عرض النص</button>
-        <div id="t2" class="lesson-content">
-          استخدام كانفا – فتح حساب خمسات – أول ربح...
-        </div>
-      </div>
-    </div>
-
-    <!-- LESSON 2 -->
-    <div class="post">
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" allowfullscreen></iframe>
-      </div>
-      <div class="post-body">
-        <h4>الدرس 2: التصميم والمونتاج</h4>
-        <button onclick="toggleText('t2')" class="show-text-btn">عرض النص</button>
-        <div id="t2" class="lesson-content">
-          استخدام كانفا – فتح حساب خمسات – أول ربح...
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ================= PAYMENT MODAL ================= -->
 <div class="payment-modal" id="paymentModal">
@@ -123,7 +83,7 @@
       اختر وسيلة الدفع المناسبة لك وأرسل إثبات الدفع لتفعيل الكورس فوراً. يمكن استخدام أي طريقة دفع، وسيتم التحقق من الدفع فور استلام بياناتك.
     </p>
 
-    <div class="methods">
+     class="methods">
       <label class="pay-item">
         <img src="../icons/vodafone.png" alt="Vodafone">
         <span>فودافون كاش: <strong>01066047545</strong></span>
