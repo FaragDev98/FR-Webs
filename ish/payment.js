@@ -4,10 +4,7 @@ function openPayment(price){
   if(price === 0){
     unlockCourse();
     return;
-  }
-  coursePrice = price;
-  document.getElementById('paymentModal').style.display = 'flex';
-}
+
 
 function closePayment(){
   document.getElementById('paymentModal').style.display = 'none';
