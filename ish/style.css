@@ -56,9 +56,7 @@ body{
   font-weight:700;
 }
 
-
  /* ================= PAYMENT MODAL ================= */
-
 .payment-modal{
   position:fixed;
   inset:0;
@@ -82,38 +80,34 @@ body{
 .payment-box{
   background:#ffffff;
   width:100%;
-  max-width:380px;
-  max-height:90vh;
-  overflow-y:auto;
+  max-width:360px;      /* أصغر حجم عشان مش يملأ الشاشة */
   padding:22px;
-  border-radius:22px;
-  box-shadow:0 20px 50px rgba(0,0,0,.18);
-  transform:translateY(40px);
-  transition:.35s ease;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  transform:translateY(30px);
+  transition:.3s ease;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
 }
 
-.payment-modal.active .payment-box{
-  transform:translateY(0);
-}
-
-/* ================= METHODS ================= */
-
+/* ================= METHODS GRID ================= */
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin:20px 0;
+  gap:12px;
+  margin-bottom:20px;
 }
 
 .pay-item{
   background:#fff;
-  border-radius:18px;
-  padding:16px 10px;
+  border-radius:16px;
+  padding:14px 10px;
   text-align:center;
   cursor:pointer;
   border:2px solid #eee;
-  transition:.3s ease;
-  box-shadow:0 6px 14px rgba(0,0,0,.05);
+  transition:.25s;
+  box-shadow:0 5px 12px rgba(0,0,0,.05);
 }
 
 .pay-item img{
@@ -122,7 +116,7 @@ body{
   object-fit:contain;
   margin:0 auto 8px;
   display:block;
-  transition:.3s;
+  transition:.25s;
 }
 
 .pay-item h4{
@@ -136,7 +130,7 @@ body{
 }
 
 .pay-item:hover{
-  transform:translateY(-4px);
+  transform:translateY(-3px);
 }
 
 .pay-item.selected{
@@ -145,7 +139,6 @@ body{
 }
 
 /* ================= INPUTS ================= */
-
 .pay-input{
   width:100%;
   padding:14px;
@@ -155,6 +148,7 @@ body{
   font-size:14px;
   transition:.2s;
   outline:none;
+  display:block;
 }
 
 .pay-input:focus{
@@ -163,7 +157,6 @@ body{
 }
 
 /* ================= BUTTONS ================= */
-
 .pay-btn{
   width:100%;
   padding:14px;
@@ -175,7 +168,6 @@ body{
   font-size:15px;
   cursor:pointer;
   transition:.3s ease;
-  margin-top:5px;
 }
 
 .pay-btn:hover{
@@ -184,22 +176,44 @@ body{
 
 .cancel-btn{
   width:100%;
-  margin-top:8px;
   padding:12px;
   border:none;
   border-radius:14px;
   background:#f3f4f6;
   font-weight:600;
   cursor:pointer;
+  margin-top:6px;
 }
 
 /* ================= MOBILE ================= */
-
 @media(max-width:480px){
 
   .payment-box{
-    max-width:100%;
-    border-radius:18px;
+    max-width:95%;
+    padding:18px;
   }
 
+  .methods{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .pay-item{
+    padding:12px 8px;
+  }
+
+  .pay-item img{
+    width:45px;
+    height:45px;
+  }
+
+  .pay-input{
+    padding:12px;
+    font-size:14px;
+  }
+
+  .pay-btn{
+    padding:12px;
+    font-size:14px;
+  }
 }
