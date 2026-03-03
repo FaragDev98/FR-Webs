@@ -159,28 +159,7 @@ body{
   transform:scale(1.15);
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:480px){
-
-  .payment-box{
-    padding:22px;
-  }
-
-  .methods{
-    gap:16px;
-  }
-
-  .pay-item{
-    padding:18px 10px;
-  }
-
-  .pay-item img{
-    width:55px;
-    height:55px;
-  }
-
-}
 /* ================= RESPONSIVE ================= */
 @media(max-width:480px){
   .payment-box{
