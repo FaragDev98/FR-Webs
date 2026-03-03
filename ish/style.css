@@ -148,7 +148,25 @@ body{
 .pay-btn:hover{
   background:#6d28d9;
 }
+/* أيقونة طريقة الدفع فقط */
+.pay-item img{
+  width:60px;          /* حجم الأيقونة */
+  height:60px;
+  object-fit:contain;  /* يحافظ على أبعاد الشعار */
+  display:block;
+  margin:0 auto 12px;  /* توسيط + مسافة تحت */
+  transition:all .3s ease;
+}
 
+/* تكبر شوية عند المرور */
+.pay-item:hover img{
+  transform:scale(1.1);
+}
+
+/* تكبر أكتر لما تتحدد */
+.pay-item.selected img{
+  transform:scale(1.15);
+}
 /* ================= RESPONSIVE ================= */
 @media(max-width:480px){
   .payment-box{
