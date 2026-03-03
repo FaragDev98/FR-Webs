@@ -75,6 +75,137 @@
 
 </div>
 
+<!-- ===== PREMIUM PAYMENT MODAL ===== -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-box">
+
+    <div class="modal-header">
+      <h3>إتمام الدفع</h3>
+      <span class="close-x" onclick="closePayment()">✖</span>
+    </div>
+
+    <p class="pay-text" id="serviceTitle"></p>
+
+    <h4>اختر طريقة الدفع</h4>
+
+    <div class="methods">
+      <div class="pay-item" data-method="فودافون كاش">
+        فودافون كاش<br><strong>01066047545</strong>
+      </div>
+
+      <div class="pay-item" data-method="أورنج كاش">
+        أورنج كاش<br><strong>01285895096</strong>
+      </div>
+
+      <div class="pay-item" data-method="وي كاش">
+        وي كاش<br><strong>01558516081</strong>
+      </div>
+
+      <div class="pay-item" data-method="PayPal">
+        PayPal
+      </div>
+    </div>
+
+    <input type="text" id="payNumber" class="pay-input"
+           placeholder="رقم التحويل أو بريد PayPal">
+
+    <input type="file" id="payProof" class="pay-input">
+
+    <button class="pay-btn" id="confirmBtn">
+      تأكيد وإرسال
+    </button>
+
+    <p id="payStatus"></p>
+
+  </div>
+  </div>
+  <script>
+
+let currentService = '';
+let currentPrice = 0;
+let selectedMethod = '';
+
+const modal = document.getElementById('paymentModal');
+const serviceTitle = document.getElementById('serviceTitle');
+const status = document.getElementById('payStatus');
+const confirmBtn = document.getElementById('confirmBtn');
+
+// فتح الدفع تلقائي
+document.querySelectorAll('.buy-btn').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    currentService = this.dataset.service;
+    currentPrice = this.dataset.price;
+
+    serviceTitle.innerHTML =
+      `الخدمة: <strong>${currentService}</strong><br>
+       السعر: <strong>${currentPrice} جنيه</strong>`;
+
+    modal.classList.add('active');
+  });
+});
+
+// اختيار طريقة الدفع
+document.querySelectorAll('.pay-item').forEach(item=>{
+  item.addEventListener('click', function(){
+    document.querySelectorAll('.pay-item')
+      .forEach(i=>i.classList.remove('selected'));
+
+    this.classList.add('selected');
+    selectedMethod = this.dataset.method;
+  });
+});
+
+// تأكيد الدفع
+confirmBtn.addEventListener('click', function(){
+
+  const number = document.getElementById('payNumber').value.trim();
+  const file = document.getElementById('payProof').files.length;
+
+  if(!selectedMethod || !number || !file){
+    status.style.color='red';
+    status.innerHTML='من فضلك اختر طريقة الدفع واملأ البيانات وارفق الإثبات';
+    return;
+  }
+
+  confirmBtn.innerHTML = "جاري الإرسال...";
+  confirmBtn.disabled = true;
+
+  setTimeout(()=>{
+
+    const msg = `طلب جديد من Fabrica Course
+الخدمة: ${currentService}
+السعر: ${currentPrice} جنيه
+طريقة الدفع: ${selectedMethod}
+رقم التحويل: ${number}`;
+
+    window.open(
+      `https://wa.me/201066047545?text=${encodeURIComponent(msg)}`,
+      '_blank'
+    );
+
+    status.style.color='green';
+    status.innerHTML='تم إرسال الطلب بنجاح ✔️';
+
+    confirmBtn.innerHTML="تأكيد وإرسال";
+    confirmBtn.disabled=false;
+
+  },1500);
+
+});
+
+// قفل عند الضغط خارج الصندوق
+modal.addEventListener('click', function(e){
+  if(e.target === modal){
+    closePayment();
+  }
+});
+
+function closePayment(){
+  modal.classList.remove('active');
+  status.innerHTML='';
+}
+
+  </script>
 <script src="../footer.js"></script>
 
 
