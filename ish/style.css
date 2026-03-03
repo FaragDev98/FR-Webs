@@ -99,49 +99,85 @@ body{
   font-weight:bold;
 }
 
+/* ===== METHODS GRID ===== */
 .methods{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  margin:20px 0;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin:25px 0;
 }
 
+/* ===== PAYMENT CARD ===== */
 .pay-item{
-  background:#fff;
-  border-radius:18px;
-  padding:18px;
+  background:#ffffff;
+  border-radius:20px;
+  padding:22px 15px;
   text-align:center;
   cursor:pointer;
-  border:2px solid #eee;
+  border:2px solid #e5e7eb;
   transition:all .25s ease;
-  box-shadow:0 4px 10px rgba(0,0,0,.05);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
 
+/* ===== ICON ===== */
 .pay-item img{
-  width:55px;
-  height:55px;
+  width:60px;
+  height:60px;
   object-fit:contain;
-  margin-bottom:10px;
+  display:block;
+  margin:0 auto 12px;
+  transition:transform .25s ease;
 }
 
+/* ===== TITLE ===== */
 .pay-item h4{
-  margin:5px 0;
-  font-size:16px;
+  margin:6px 0;
+  font-size:17px;
+  font-weight:700;
 }
 
+/* ===== NUMBER ===== */
 .pay-item strong{
-  font-size:15px;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
+/* ===== HOVER EFFECT ===== */
 .pay-item:hover{
-  transform:translateY(-5px);
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transform:translateY(-6px);
+  box-shadow:0 12px 25px rgba(0,0,0,.12);
 }
 
+.pay-item:hover img{
+  transform:scale(1.08);
+}
+
+/* ===== SELECTED STATE ===== */
 .pay-item.selected{
   border:2px solid #22c55e;
   background:#f0fdf4;
-  transform:scale(1.03);
+  box-shadow:0 10px 25px rgba(34,197,94,.25);
+}
+
+.pay-item.selected img{
+  transform:scale(1.12);
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:480px){
+  .methods{
+    gap:14px;
+  }
+
+  .pay-item{
+    padding:18px 10px;
+  }
+
+  .pay-item img{
+    width:55px;
+    height:55px;
+  }
 }
 /* ================= RESPONSIVE ================= */
 @media(max-width:480px){
