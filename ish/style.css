@@ -102,70 +102,46 @@ body{
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin:15px 0;
+  gap:15px;
+  margin:20px 0;
 }
 
 .pay-item{
-  border:1px solid #e5e7eb;
-  padding:12px;
-  border-radius:14px;
+  background:#fff;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
   cursor:pointer;
-  transition:.2s;
-  font-weight:600;
+  border:2px solid #eee;
+  transition:all .25s ease;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
+}
+
+.pay-item img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+
+.pay-item h4{
+  margin:5px 0;
+  font-size:16px;
+}
+
+.pay-item strong{
+  font-size:15px;
 }
 
 .pay-item:hover{
-  transform:scale(1.05);
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 .pay-item.selected{
-  background:#a78bfa;
-  color:#fff;
-  border:none;
-}
-
-.pay-input{
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:14px;
-  border:1px solid #ccc;
-}
-
-.pay-btn{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:14px;
-  background:#7c3aed;
-  color:#fff;
-  font-weight:800;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.pay-btn:hover{
-  background:#6d28d9;
-}
-/* أيقونة طريقة الدفع فقط */
-.pay-item img{
-  width:60px;          /* حجم الأيقونة */
-  height:60px;
-  object-fit:contain;  /* يحافظ على أبعاد الشعار */
-  display:block;
-  margin:0 auto 12px;  /* توسيط + مسافة تحت */
-  transition:all .3s ease;
-}
-
-/* تكبر شوية عند المرور */
-.pay-item:hover img{
-  transform:scale(1.1);
-}
-
-/* تكبر أكتر لما تتحدد */
-.pay-item.selected img{
-  transform:scale(1.15);
+  border:2px solid #22c55e;
+  background:#f0fdf4;
+  transform:scale(1.03);
 }
 /* ================= RESPONSIVE ================= */
 @media(max-width:480px){
