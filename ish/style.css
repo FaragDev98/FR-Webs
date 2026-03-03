@@ -56,7 +56,8 @@ body{
   font-weight:700;
 }
 
-./* ================= PAYMENT MODAL ================= */
+
+  /* ================= PAYMENT MODAL ================= */
 
 .payment-modal{
   position:fixed;
@@ -159,23 +160,25 @@ body{
   transform:scale(1.15);
 }
 
+/* ================= MOBILE ================= */
 
-/* ================= RESPONSIVE ================= */
 @media(max-width:480px){
+
   .payment-box{
-    padding:20px;
+    padding:22px;
+  }
+
+  .methods{
+    gap:16px;
+  }
+
+  .pay-item{
+    padding:18px 10px;
   }
 
   .pay-item img{
-    width:34px;
-    height:34px;
+    width:55px;
+    height:55px;
   }
 
-  .pay-item span{
-    font-size:0.9rem;
-  }
-
-  .pay-btn{
-    font-size:0.95rem;
-  }
 }
