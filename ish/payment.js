@@ -1,7 +1,7 @@
 let currentService = '';
 let currentPrice = 0;
 let selectedMethod = '';
-let paymentConfirmed = false; // ⚡ المتغير اللي يتحكم إذا المستخدم دفع
+let paymentConfirmed = false;
 
 const modal = document.getElementById('paymentModal');
 const serviceTitle = document.getElementById('serviceTitle');
@@ -22,25 +22,27 @@ document.querySelectorAll('.buy-btn').forEach(btn=>{
     currentService = this.dataset.service;
     currentPrice = this.dataset.price;
 
+    // البريد يظهر جزئي
+    const email = paymentNumbers["PayPal"];
+    const shortEmail = email.replace(/(.{5}).+(@.+)/,"$1…$2");
+
     serviceTitle.innerHTML =
       `الخدمة: <strong>${currentService}</strong><br>
-       السعر: <strong>${currentPrice} جنيه</strong>`;
+       السعر: <strong>${currentPrice} جنيه</strong><br>
+       البريد: <strong>${shortEmail}</strong>`;
 
     modal.classList.add('active');
-    paymentConfirmed = false; // إعادة الضبط عند فتح الصندوق
+    paymentConfirmed = false;
   });
 });
 
 // اختيار طريقة الدفع
 document.querySelectorAll('.pay-item').forEach(item=>{
   item.addEventListener('click', function(){
-    document.querySelectorAll('.pay-item')
-      .forEach(i=>i.classList.remove('selected'));
-
+    document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
     this.classList.add('selected');
     selectedMethod = this.dataset.method;
 
-    // ملء رقم الدفع تلقائي حسب الطريقة
     if(paymentNumbers[selectedMethod]){
       document.getElementById('payNumber').value = paymentNumbers[selectedMethod];
     }
@@ -51,11 +53,30 @@ document.querySelectorAll('.pay-item').forEach(item=>{
 confirmBtn.addEventListener('click', function(){
 
   const number = document.getElementById('payNumber').value.trim();
-  const file = document.getElementById('payProof').files.length;
+  const fileInput = document.getElementById('payProof');
+  const file = fileInput.files[0];
 
   if(!selectedMethod || !number || !file){
     status.style.color='red';
-    status.innerHTML='من فضلك اختر طريقة الدفع واملأ البيانات وارفق الإثبات';
+    status.innerHTML='من فضلك اختر طريقة الدفع واملأ البيانات وارفق إثبات الشاشة';
+    return;
+  }
+
+  // تحقق من نوع الملف: يجب أن يكون صورة PNG أو JPEG (لقطة شاشة)
+  if(!file.type.match('image/png') && !file.type.match('image/jpeg')){
+    status.style.color='red';
+    status.innerHTML='❌ يجب أن تكون الصورة لقطة شاشة PNG أو JPEG';
+    return;
+  }
+
+  // تحقق من الوقت: الصورة يجب أن تكون حديثة < 10 دقائق
+  const now = new Date();
+  const modified = new Date(file.lastModified);
+  const diffMinutes = (now - modified) / 60000; // فرق بالدقائق
+
+  if(diffMinutes > 10){
+    status.style.color='red';
+    status.innerHTML='❌ الصورة يجب أن تكون مأخوذة خلال آخر 10 دقائق';
     return;
   }
 
@@ -72,25 +93,22 @@ confirmBtn.addEventListener('click', function(){
   );
 
   status.style.color='green';
-  status.innerHTML='تم إرسال الطلب ✔️ يمكنك الآن فتح الكورس';
-
-  paymentConfirmed = true; // ✅ الدفع تم تأكيده
+  status.innerHTML='✅ تم إرسال الطلب بنجاح، يمكنك الآن فتح الكورس';
+  paymentConfirmed = true;
 });
 
-// زر فتح الكورس (مثال)
-// كل زر كورس عندك خلي له class="open-course" و data-link="الرابط"
+// زر فتح الكورس
 document.querySelectorAll('.open-course').forEach(btn=>{
   btn.addEventListener('click', function(){
     if(paymentConfirmed){
       window.location.href = this.dataset.link;
     } else {
       alert("❌ يجب إتمام الدفع أولًا!");
-      modal.classList.add('active'); // يفتح صندوق الدفع تلقائي
+      modal.classList.add('active');
     }
   });
 });
 
-// قفل عند الضغط خارج الصندوق
 function closePayment(){
   modal.classList.remove('active');
   status.innerHTML='';
