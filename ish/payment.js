@@ -69,16 +69,6 @@ confirmBtn.addEventListener('click', function(){
     return;
   }
 
-  // تحقق من الوقت: الصورة يجب أن تكون حديثة < 10 دقائق
-  const now = new Date();
-  const modified = new Date(file.lastModified);
-  const diffMinutes = (now - modified) / 60000; // فرق بالدقائق
-
-  if(diffMinutes > 10){
-    status.style.color='red';
-    status.innerHTML='❌ الصورة يجب أن تكون مأخوذة خلال آخر 10 دقائق';
-    return;
-  }
 
   // إرسال الطلب عبر واتساب
   const msg = `طلب جديد
