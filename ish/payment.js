@@ -1,13 +1,22 @@
 let currentService = '';
 let currentPrice = 0;
 let selectedMethod = '';
+let paymentConfirmed = false; // ⚡ المتغير اللي يتحكم إذا المستخدم دفع
 
 const modal = document.getElementById('paymentModal');
 const serviceTitle = document.getElementById('serviceTitle');
 const status = document.getElementById('payStatus');
 const confirmBtn = document.getElementById('confirmBtn');
 
-// فتح الدفع
+// أرقام الدفع
+const paymentNumbers = {
+  "فودافون كاش":"01066047545",
+  "أورنج كاش":"01285895096",
+  "وي كاش":"01558516081",
+  "PayPal":"Farajbdallh891@gmail.com"
+};
+
+// فتح صندوق الدفع عند الضغط على زر الاشتراك
 document.querySelectorAll('.buy-btn').forEach(btn=>{
   btn.addEventListener('click', function(){
     currentService = this.dataset.service;
@@ -18,6 +27,7 @@ document.querySelectorAll('.buy-btn').forEach(btn=>{
        السعر: <strong>${currentPrice} جنيه</strong>`;
 
     modal.classList.add('active');
+    paymentConfirmed = false; // إعادة الضبط عند فتح الصندوق
   });
 });
 
@@ -29,6 +39,11 @@ document.querySelectorAll('.pay-item').forEach(item=>{
 
     this.classList.add('selected');
     selectedMethod = this.dataset.method;
+
+    // ملء رقم الدفع تلقائي حسب الطريقة
+    if(paymentNumbers[selectedMethod]){
+      document.getElementById('payNumber').value = paymentNumbers[selectedMethod];
+    }
   });
 });
 
@@ -44,6 +59,7 @@ confirmBtn.addEventListener('click', function(){
     return;
   }
 
+  // إرسال الطلب عبر واتساب
   const msg = `طلب جديد
 الخدمة: ${currentService}
 السعر: ${currentPrice} جنيه
@@ -56,10 +72,25 @@ confirmBtn.addEventListener('click', function(){
   );
 
   status.style.color='green';
-  status.innerHTML='تم إرسال الطلب ✔️';
+  status.innerHTML='تم إرسال الطلب ✔️ يمكنك الآن فتح الكورس';
+
+  paymentConfirmed = true; // ✅ الدفع تم تأكيده
 });
 
-// قفل
+// زر فتح الكورس (مثال)
+// كل زر كورس عندك خلي له class="open-course" و data-link="الرابط"
+document.querySelectorAll('.open-course').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    if(paymentConfirmed){
+      window.location.href = this.dataset.link;
+    } else {
+      alert("❌ يجب إتمام الدفع أولًا!");
+      modal.classList.add('active'); // يفتح صندوق الدفع تلقائي
+    }
+  });
+});
+
+// قفل عند الضغط خارج الصندوق
 function closePayment(){
   modal.classList.remove('active');
   status.innerHTML='';
