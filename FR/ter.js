@@ -2,29 +2,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const videos = document.querySelectorAll('.service-video');
 
-  // 👆 أمر لتشغيل الصوت بعد أول ضغطة للمستخدم
+  // أول ضغطة من المستخدم لتفعيل الصوت لكل الفيديوهات
+  let soundEnabled = false;
   document.addEventListener('click', () => {
-    videos.forEach(video => {
-      video.muted = false; // يشغل الصوت
-    });
-  }, { once: true }); // مرة واحدة فقط
+    soundEnabled = true;
+  }, { once: true });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
 
-      // أول مرة يظهر
+      // لما يدخل الكارت و الفيديو ما اشتغلش قبل كده
       if (entry.isIntersecting && !video.dataset.played) {
         video.currentTime = 0;
-        video.muted = true; // يبدأ بصمت
-        video.play().catch(() => {});
 
+        // ابدأ الفيديو بصمت لو الصوت مش مفعل لسه
+        video.muted = !soundEnabled;
+
+        video.play().catch(() => {});
         video.dataset.played = "true";
 
         // لما يخلص يقف وميرجعش
         video.onended = () => {
           video.pause();
         };
+
+        // لو المستخدم ضغط بعد ما الفيديو بدأ، شغل الصوت
+        if (!soundEnabled) {
+          const enableSound = () => {
+            video.muted = false;
+            document.removeEventListener('click', enableSound);
+          };
+          document.addEventListener('click', enableSound);
+        }
       }
 
       // لما يخرج من الشاشة
@@ -42,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-  
 let currentService='', currentPrice=0;
 
 function openPayment(service, price){
