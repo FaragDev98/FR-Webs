@@ -73,45 +73,34 @@
 
 </section>
 <script>
-  const videos = document.querySelectorAll('.service-video');
+const videos = document.querySelectorAll('.service-video');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const video = entry.target;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const video = entry.target;
 
-      // متغيرات نربطها بالفيديو نفسه
-      if (!video._playedOnce) video._playedOnce = false;
-      if (!video._timeout) video._timeout = null;
+    // لو أول مرة
+    if (entry.isIntersecting && !video._playedOnce) {
+      video.muted = false;
+      video.currentTime = 0;
+      video.play().catch(() => {});
+      video._playedOnce = true;
+    }
 
-      if (entry.isIntersecting) {
+    // لما يخرج من الشاشة
+    if (!entry.isIntersecting) {
+      video.pause();
+    }
 
-        // ▶️ تشغيل أول مرة
-        if (!video._playedOnce) {
-          video.muted = false;
-          video.currentTime = 0;
-          video.play().catch(() => {});
-          video._playedOnce = true;
-
-          );
-        }
-
-      } else {
-        // ⛔ لما يخرج من الكارت
-        video.pause();
-        video.muted = true;
-        video._playedOnce = false;
-
-        if (video._timeout) {
-          clearTimeout(video._timeout);
-          video._timeout = null;
-        }
-      }
-    });
-  }, {
-    threshold: 0.6
   });
+}, {
+  threshold: 0.6
+});
 
-  videos.forEach(video => observer.observe(video));
+videos.forEach(video => {
+  video._playedOnce = false; // نحدد إنه لسه ما اشتغلش
+  observer.observe(video);
+});
 </script>
 <!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
