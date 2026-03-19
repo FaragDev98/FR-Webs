@@ -6,13 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       const video = entry.target;
 
-      // أول ما يظهر
+      // أول مرة يظهر
       if (entry.isIntersecting && !video.dataset.played) {
-        video.play();
+        video.currentTime = 0;
+        video.muted = true;
+
+        video.play().catch(() => {});
+
         video.dataset.played = "true";
+
+        // لما يخلص يقف وميرجعش
+        video.onended = () => {
+          video.pause();
+        };
       }
 
-      // لما يخرج
+      // لما يخرج من الشاشة
       if (!entry.isIntersecting) {
         video.pause();
       }
@@ -26,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(video);
   });
 
+});
   
 let currentService='', currentPrice=0;
 
