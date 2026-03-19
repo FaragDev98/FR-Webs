@@ -2,39 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const videos = document.querySelectorAll('.service-video');
 
-  // أول ضغطة من المستخدم لتفعيل الصوت لكل الفيديوهات
-  let soundEnabled = false;
+  // 👆 أمر لتشغيل الصوت بعد أول ضغطة للمستخدم
   document.addEventListener('click', () => {
-    soundEnabled = true;
-  }, { once: true });
+    videos.forEach(video => {
+      video.muted = false; // يشغل الصوت
+    });
+  }, { once: true }); // مرة واحدة فقط
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
 
-      // لما يدخل الكارت و الفيديو ما اشتغلش قبل كده
+      // أول مرة يظهر
       if (entry.isIntersecting && !video.dataset.played) {
         video.currentTime = 0;
-
-        // ابدأ الفيديو بصمت لو الصوت مش مفعل لسه
-        video.muted = !soundEnabled;
-
+        video.muted = true; // يبدأ بصمت
         video.play().catch(() => {});
+
         video.dataset.played = "true";
 
         // لما يخلص يقف وميرجعش
         video.onended = () => {
           video.pause();
         };
-
-        // لو المستخدم ضغط بعد ما الفيديو بدأ، شغل الصوت
-        if (!soundEnabled) {
-          const enableSound = () => {
-            video.muted = false;
-            document.removeEventListener('click', enableSound);
-          };
-          document.addEventListener('click', enableSound);
-        }
       }
 
       // لما يخرج من الشاشة
