@@ -1,4 +1,3 @@
-<script>
 const videos = document.querySelectorAll('.service-video');
 
 const observer = new IntersectionObserver(entries => {
@@ -31,9 +30,8 @@ videos.forEach(video => {
   video._playedOnce = false;
   observer.observe(video);
 });
-</script>
+
   
-  <script>
 let currentService='', currentPrice=0;
 
 function openPayment(service, price){
@@ -72,4 +70,3 @@ function confirmPayment(){
   status.style.color='green';
   status.innerHTML='✅ تم إرسال البيانات، جاري التحقق من FR';
 }
-</script>
