@@ -92,13 +92,7 @@
           video.play().catch(() => {});
           video._playedOnce = true;
 
-          // ⏱️ بعد 10 ثواني يشغل تاني لو لسه ظاهر
-          video._timeout = setTimeout(() => {
-            if (entry.isIntersecting) {
-              video.currentTime = 0;
-              video.play().catch(() => {});
-            }
-          }, 10000);
+          );
         }
 
       } else {
