@@ -162,65 +162,6 @@
 
 </section>
 
-<script>
-  function toggleText(id) {
-    const el = document.getElementById(id);
-    el.style.display = el.style.display === "block" ? "none" : "block";
-  }
-
-  let speech;
-  let isSpeaking = false;
-
-  function toggleVoice(textId) {
-    const text = document.getElementById(textId).innerText;
-
-    
-    // إذا كان الصوت شغال أوقفه فورًا
-    if (isSpeaking) {
-      window.speechSynthesis.cancel();
-      isSpeaking = false;
-      return;
-    }
- // إيقاف أي صوت نطق فور الخروج من الدرس أو الصفحة
-window.addEventListener("beforeunload", () => {
-  if (window.speechSynthesis.speaking) {
-    window.speechSynthesis.cancel();
-    isSpeaking = false;
-  }
-});
-
-    // إنشاء SpeechSynthesisUtterance جديد
-    speech = new SpeechSynthesisUtterance(text);
-
-    // إعدادات الصوت
-    speech.lang = "ar-EG"; // عربي
-    speech.rate = 1.2;     // سرعة أعلى شويه
-    speech.pitch = 1;      // طبقة الصوت
-    speech.volume = 1;     // الصوت كامل
-
-    // اختيار صوت راجل عربي متوفر
-    const voices = window.speechSynthesis.getVoices();
-    for (let i = 0; i < voices.length; i++) {
-      if (voices[i].lang.includes("ar") && voices[i].name.toLowerCase().includes("male")) {
-        speech.voice = voices[i];
-        break;
-      }
-    }
-
-    speech.onend = () => {
-      isSpeaking = false;
-    };
-
-    // تشغيل الصوت فورًا
-    window.speechSynthesis.speak(speech);
-    isSpeaking = true;
-  }
-
-  // لجعل الأصوات جاهزة فور تحميل الصفحة
-  window.speechSynthesis.onvoiceschanged = () => {
-    window.speechSynthesis.getVoices();
-  };
-          </script>
 <!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
   <div class="payment-box">
