@@ -1,35 +1,30 @@
-const videos = document.querySelectorAll('.service-video');
+document.addEventListener("DOMContentLoaded", () => {
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const video = entry.target;
+  const videos = document.querySelectorAll('.service-video');
 
-    // لو أول مرة يظهر في الشاشة
-    if (entry.isIntersecting && !video._playedOnce) {
-      video.currentTime = 0;
-      video.play().catch(() => {});
-      video._playedOnce = true;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
 
-      // نوقفه بعد ما يخلص (عشان ميتكرر)
-      video.onended = () => {
+      // أول ما يظهر
+      if (entry.isIntersecting && !video.dataset.played) {
+        video.play();
+        video.dataset.played = "true";
+      }
+
+      // لما يخرج
+      if (!entry.isIntersecting) {
         video.pause();
-      };
-    }
+      }
 
-    // لما يخرج من الشاشة
-    if (!entry.isIntersecting) {
-      video.pause();
-    }
-
+    });
+  }, {
+    threshold: 0.6
   });
-}, {
-  threshold: 0.6
-});
 
-videos.forEach(video => {
-  video._playedOnce = false;
-  observer.observe(video);
-});
+  videos.forEach(video => {
+    observer.observe(video);
+  });
 
   
 let currentService='', currentPrice=0;
