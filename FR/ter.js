@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const videos = document.querySelectorAll('.service-video');
 
+  // 👆 أمر لتشغيل الصوت بعد أول ضغطة للمستخدم
+  document.addEventListener('click', () => {
+    videos.forEach(video => {
+      video.muted = false; // يشغل الصوت
+    });
+  }, { once: true }); // مرة واحدة فقط
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
@@ -9,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // أول مرة يظهر
       if (entry.isIntersecting && !video.dataset.played) {
         video.currentTime = 0;
-        video.muted = true;
-
+        video.muted = true; // يبدأ بصمت
         video.play().catch(() => {});
 
         video.dataset.played = "true";
