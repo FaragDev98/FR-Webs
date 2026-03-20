@@ -218,7 +218,6 @@ body{
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .post:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 25px rgba(0,0,0,0.12);
@@ -227,7 +226,7 @@ body{
 /* الفيديو */
 .video-container {
   width: 100%;
-  height: 350px; /* كبرنا من 250px → 350px */
+  height: 400px; /* زودنا ارتفاع الفيديو */
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -239,11 +238,19 @@ body{
   border: 0;
   object-fit: cover;
 }
-/* محتوى الدرس */
-.post-body {
-  padding: 20px;
+
+/* تجاوب مع الأجهزة المختلفة */
+@media (max-width: 768px) {
+  .video-container {
+    height: 280px; /* ارتفاع متوسط على التابلت */
+  }
 }
 
+@media (max-width: 480px) {
+  .video-container {
+    height: 200px; /* ارتفاع أصغر على الموبايل */
+  }
+}
 .post-body h4 {
   font-size: 1.25rem;
   font-weight: 700;
