@@ -42,6 +42,7 @@ body {
 }
 
 .post:hover {
+.post:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 25px rgba(0,0,0,0.12);
 }
@@ -60,6 +61,19 @@ body {
   height: 100%;
   border: 0;
   object-fit: cover;
+}
+
+/* تجاوب مع الأجهزة المختلفة */
+@media (max-width: 768px) {
+  .video-container {
+    height: 300px; /* ارتفاع مناسب للتابلت */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    height: 220px; /* ارتفاع مناسب للموبايل */
+  }
 }
 
 /* محتوى الدرس */
