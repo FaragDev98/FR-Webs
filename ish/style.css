@@ -221,12 +221,15 @@ body{
 .post:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+.post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.12);
 }
 
 /* الفيديو */
 .video-container {
   width: 100%;
-  height: 400px; /* زودنا ارتفاع الفيديو */
+  height: 380px; /* ارتفاع ثابت للفتحة داخل الكارت */
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -242,20 +245,14 @@ body{
 /* تجاوب مع الأجهزة المختلفة */
 @media (max-width: 768px) {
   .video-container {
-    height: 280px; /* ارتفاع متوسط على التابلت */
+    height: 300px; /* ارتفاع مناسب للتابلت */
   }
 }
 
 @media (max-width: 480px) {
   .video-container {
-    height: 200px; /* ارتفاع أصغر على الموبايل */
+    height: 220px; /* ارتفاع مناسب للموبايل */
   }
-}
-.post-body h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 12px;
 }
 
 /* أزرار العرض والاستماع */
