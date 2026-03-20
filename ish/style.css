@@ -218,9 +218,7 @@ body{
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.post:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+
 .post:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 25px rgba(0,0,0,0.12);
@@ -253,6 +251,18 @@ body{
   .video-container {
     height: 220px; /* ارتفاع مناسب للموبايل */
   }
+}
+}
+/* محتوى الدرس */
+.post-body {
+  padding: 20px;
+}
+
+.post-body h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
 }
 
 /* أزرار العرض والاستماع */
