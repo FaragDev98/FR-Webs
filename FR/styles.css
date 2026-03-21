@@ -1,49 +1,45 @@
-/* ================= SECTION ================= */
 .services-section{
-  max-width:1100px;
-  margin:40px auto;
-  padding:15px;
+  max-width:900px; /* 👈 صغرنا العرض */
+  margin:30px auto;
+  padding:10px;
   text-align:center;
 }
 
+/* العنوان */
 .page-title{
-  font-size:2rem;
+  font-size:1.8rem; /* 👈 أصغر */
   color:#6d28d9;
   font-weight:800;
 }
 
 .page-desc{
   color:#6b7280;
-  margin-bottom:30px;
-  font-size:1rem;
+  margin-bottom:20px;
+  font-size:0.9rem;
 }
 
-/* ================= GRID ================= */
+/* ===== GRID ===== */
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+  grid-template-columns:1fr; /* 👈 كارت واحد في الموبايل */
+  gap:15px;
 }
 
-/* ================= CARD ================= */
+/* ===== CARD ===== */
 .service-card{
   background:#fff;
-  border-radius:18px;
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+  box-shadow:0 8px 15px rgba(0,0,0,0.08);
   display:flex;
   flex-direction:column;
   transition:.3s;
 }
 
-.service-card:hover{
-  transform:translateY(-5px);
-}
-
-/* ================= IMAGE ================= */
+/* ===== صورة الكتاب ===== */
 .book-image{
   width:100%;
-  height:180px; /* 👈 صغرناها بدل 220 */
+  height:160px; /* 👈 أهم حاجة صغرناها */
   overflow:hidden;
 }
 
@@ -51,44 +47,36 @@
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
 }
 
-/* ================= TEXT ================= */
+/* ===== النص ===== */
 .service-card h2{
-  margin:15px;
-  font-size:1.2rem;
-  font-weight:700;
+  font-size:1rem;
+  margin:10px;
   color:#6d28d9;
 }
 
 .service-card p{
-  padding:0 15px;
-  font-size:0.9rem;
-  line-height:1.6;
+  padding:0 10px;
+  font-size:0.85rem;
+  line-height:1.5;
   color:#374151;
 }
 
-/* ================= BUTTON ================= */
+/* ===== الزر ===== */
 .service-btn{
-  margin:15px;
-  padding:12px;
+  margin:10px;
+  padding:10px;
   border:none;
-  border-radius:25px;
+  border-radius:20px;
   background:linear-gradient(90deg,#6d28d9,#2563eb);
   color:#fff;
   font-weight:700;
-  font-size:0.9rem;
+  font-size:0.85rem;
   cursor:pointer;
-  transition:.3s;
 }
 
-.service-btn:hover{
-  opacity:.9;
-  transform:scale(1.03);
-}
-
-/* ================= PAYMENT ================= */
+/* ===== PAYMENT ===== */
 .payment-modal{
   display:none;
   position:fixed;
@@ -96,43 +84,40 @@
   background:rgba(0,0,0,.6);
   justify-content:center;
   align-items:center;
-  z-index:999;
 }
 
 .payment-box{
   background:#fff;
-  padding:20px;
+  padding:15px;
   width:90%;
-  max-width:360px;
-  border-radius:16px;
-  text-align:center;
+  max-width:320px;
+  border-radius:15px;
 }
 
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin:15px 0;
+  gap:8px;
+  margin:10px 0;
 }
 
 .pay-item{
   border:1px solid #e5e7eb;
-  padding:10px;
+  padding:8px;
   border-radius:10px;
-  font-size:.85rem;
-  font-weight:600;
+  font-size:.8rem;
 }
 
 .pay-item img{
-  width:30px;
-  margin:0 auto 5px;
+  width:28px;
+  margin:auto;
 }
 
 .pay-input{
   width:100%;
-  padding:10px;
-  margin-bottom:10px;
-  border-radius:10px;
+  padding:8px;
+  margin-bottom:8px;
+  border-radius:8px;
   border:1px solid #ccc;
 }
 
@@ -143,34 +128,12 @@
   color:#fff;
   border:none;
   border-radius:10px;
-  font-weight:700;
 }
 
 .cancel-btn{
-  margin-top:8px;
+  margin-top:6px;
   width:100%;
-  padding:10px;
+  padding:8px;
   border:none;
   border-radius:10px;
-}
-
-/* ================= DARK MODE ================= */
-body.dark .service-card,
-body.dark .payment-box{
-  background:#0f172a;
-  color:#e5e7eb;
-}
-
-body.dark .service-card h2{
-  color:#a78bfa;
-}
-
-body.dark .service-card p{
-  color:#cbd5f5;
-}
-
-body.dark .pay-input{
-  background:#1e293b;
-  color:#fff;
-  border:1px solid #334155;
 }
