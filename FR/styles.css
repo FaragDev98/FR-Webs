@@ -46,11 +46,6 @@
   transition:.3s;
 }
 
-.service-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 25px rgba(0,0,0,0.12);
-}
-
 /* ===== صورة الكتاب ===== */
 .book-image{
   width:100%;
