@@ -4,26 +4,31 @@
   margin:30px auto;
   padding:10px;
   text-align:center;
+  transition: background 0.3s, color 0.3s;
+  background-color: #f9f9f9;
+  color: #1f2937;
 }
 
 /* العنوان */
 .page-title{
-  font-size:1.8rem; /* أصغر */
+  font-size:2rem; /* تكبير خط العنوان */
   color:#6d28d9;
   font-weight:800;
+  margin-bottom:10px;
 }
 
 .page-desc{
-  color:#6b7280;
-  margin-bottom:20px;
-  font-size:0.9rem;
+  color:#4b5563;
+  margin-bottom:25px;
+  font-size:1rem; /* تكبير النص */
+  line-height:1.7;
 }
 
 /* ===== GRID ===== */
 .services-grid{
   display:grid;
   grid-template-columns:1fr; /* كارت واحد في الموبايل */
-  gap:15px;
+  gap:20px;
 }
 
 /* ===== CARD ===== */
@@ -31,16 +36,21 @@
   background:#fff;
   border-radius:16px;
   overflow:hidden;
-  box-shadow:0 8px 15px rgba(0,0,0,0.08);
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
   display:flex;
   flex-direction:column;
-  transition:.3s;
+  transition:.3s all;
+}
+
+.service-card:hover{
+  transform: translateY(-5px);
+  box-shadow:0 15px 25px rgba(0,0,0,0.15);
 }
 
 /* ===== صورة الكتاب ===== */
 .book-image{
   width:100%;
-  height:160px; /* حجم أصغر */
+  height:250px; /* ارتفاع أكبر */
   overflow:hidden;
   border-radius:12px;
 }
@@ -54,9 +64,9 @@
 /* ===== فيديوهات وصور الخدمة ===== */
 .video-wrap {
   width:100%;
-  max-width:300px; /* أصغر حجم */
-  height:250px;     /* نفس ارتفاع صورة الكتاب */
-  margin:0 auto;
+  max-width:350px; /* حجم مناسب */
+  height:250px;     /* ارتفاع مثل منشور فيسبوك */
+  margin:15px auto;
   overflow:hidden;
   border-radius:12px;
 }
@@ -69,34 +79,35 @@
 
 /* ===== النص ===== */
 .service-card h2{
-  font-size:1rem;
-  margin:10px;
+  font-size:1.2rem; /* تكبير الخط */
+  margin:12px;
   color:#6d28d9;
 }
 
 .service-card p{
-  padding:0 10px;
-  font-size:0.85rem;
-  line-height:1.5;
+  padding:0 12px;
+  font-size:1rem; /* تكبير الخط */
+  line-height:1.6;
   color:#374151;
 }
 
 /* ===== الزر ===== */
 .service-btn{
-  margin:10px;
-  padding:10px;
+  margin:12px;
+  padding:12px;
   border:none;
-  border-radius:20px;
+  border-radius:25px;
   background:linear-gradient(90deg,#6d28d9,#2563eb);
   color:#fff;
   font-weight:700;
-  font-size:0.85rem;
+  font-size:1rem; /* تكبير الخط */
   cursor:pointer;
-  transition:0.3s;
+  transition:0.3s all;
 }
 
 .service-btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* ===== PAYMENT ===== */
@@ -111,52 +122,107 @@
 
 .payment-box{
   background:#fff;
-  padding:15px;
+  padding:20px;
   width:90%;
-  max-width:320px;
+  max-width:350px;
   border-radius:15px;
 }
 
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin:10px 0;
+  gap:10px;
+  margin:15px 0;
 }
 
 .pay-item{
   border:1px solid #e5e7eb;
-  padding:8px;
-  border-radius:10px;
-  font-size:.8rem;
+  padding:10px;
+  border-radius:12px;
+  font-size:0.9rem;
+  text-align:center;
 }
 
 .pay-item img{
-  width:28px;
+  width:32px;
   margin:auto;
 }
 
 .pay-input{
   width:100%;
-  padding:8px;
-  margin-bottom:8px;
-  border-radius:8px;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:10px;
   border:1px solid #ccc;
 }
 
 .pay-btn{
   width:100%;
-  padding:10px;
+  padding:12px;
   background:#22c55e;
   color:#fff;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
+  font-size:1rem;
 }
 
 .cancel-btn{
-  margin-top:6px;
+  margin-top:8px;
   width:100%;
-  padding:8px;
+  padding:10px;
   border:none;
-  border-radius:10px;
+  border-radius:12px;
+  font-size:0.95rem;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark){
+  .services-section{
+    background:#1f2937;
+    color:#e5e7eb;
+  }
+
+  .service-card{
+    background:#374151;
+    box-shadow:0 10px 20px rgba(0,0,0,0.5);
+  }
+
+  .service-card h2{
+    color:#a78bfa;
+  }
+
+  .service-card p{
+    color:#d1d5db;
+  }
+
+  .service-btn{
+    color:#fff;
+    background:linear-gradient(90deg,#7c3aed,#3b82f6);
+  }
+
+  .payment-box{
+    background:#374151;
+    color:#e5e7eb;
+  }
+
+  .pay-item{
+    border:1px solid #6b7280;
+    color:#e5e7eb;
+  }
+
+  .pay-input{
+    background:#1f2937;
+    color:#e5e7eb;
+    border:1px solid #6b7280;
+  }
+
+  .pay-btn{
+    background:#22c55e;
+    color:#fff;
+  }
+
+  .cancel-btn{
+    background:#6b7280;
+    color:#fff;
+  }
 }
