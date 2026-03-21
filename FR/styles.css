@@ -55,7 +55,7 @@
 .video-wrap {
   width:100%;
   max-width:300px; /* أصغر حجم */
-  height:160px;     /* نفس ارتفاع صورة الكتاب */
+  height:250px;     /* نفس ارتفاع صورة الكتاب */
   margin:0 auto;
   overflow:hidden;
   border-radius:12px;
