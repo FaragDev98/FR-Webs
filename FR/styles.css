@@ -1,55 +1,49 @@
+/* ================= SECTION ================= */
 .services-section{
-  max-width:1200px;
-  margin:60px auto;
-  padding:20px;
+  max-width:1100px;
+  margin:40px auto;
+  padding:15px;
   text-align:center;
 }
 
 .page-title{
-  font-size:2.8rem;
+  font-size:2rem;
   color:#6d28d9;
-  font-weight:900;
+  font-weight:800;
 }
 
 .page-desc{
   color:#6b7280;
-  margin-bottom:40px;
-  font-size:1.1rem;
+  margin-bottom:30px;
+  font-size:1rem;
 }
 
-/* ===== GRID ===== */
+/* ================= GRID ================= */
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
 }
 
-/* ===== CARD ===== */
+/* ================= CARD ================= */
 .service-card{
   background:#fff;
-  border-radius:20px;
+  border-radius:18px;
   overflow:hidden;
-  box-shadow:0 15px 35px rgba(0,0,0,.1);
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
   display:flex;
   flex-direction:column;
-  transition:.3s ease;
-}
-
-/* ===== كارت الكتاب ===== */
-.service-card{
-  background:#fff;
-  border-radius:20px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.08);
-  padding-bottom:20px;
-  overflow:hidden;
-  margin-bottom:30px;
   transition:.3s;
 }
 
-/* ===== صورة الكتاب ===== */
+.service-card:hover{
+  transform:translateY(-5px);
+}
+
+/* ================= IMAGE ================= */
 .book-image{
   width:100%;
-  height:220px;
+  height:180px; /* 👈 صغرناها بدل 220 */
   overflow:hidden;
 }
 
@@ -60,64 +54,31 @@
   display:block;
 }
 
-/* ===== النص ===== */
+/* ================= TEXT ================= */
 .service-card h2{
-  font-size:20px;
-  padding:15px;
-}
-
-.service-card p{
-  padding:0 15px;
-  color:#555;
-  line-height:1.7;
-  font-size:14px;
-}
-
-/* ===== الزر ===== */
-.service-btn{
-  display:block;
   margin:15px;
-  padding:12px;
-  border:none;
-  border-radius:12px;
-  background:linear-gradient(90deg,#7c3aed,#9333ea);
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.service-btn:hover{
-  opacity:.9;
-}
-
-/* ===== TEXT ===== */
-.service-card h2{
-  margin:18px 16px 10px;
-  font-size:1.4rem;
-  font-weight:200;
+  font-size:1.2rem;
+  font-weight:700;
   color:#6d28d9;
 }
 
 .service-card p{
-  padding:0 16px;
-  flex:1;
-  font-size:1rem;
-  line-height:1.7;
-  font-weight:800;
+  padding:0 15px;
+  font-size:0.9rem;
+  line-height:1.6;
   color:#374151;
 }
 
-/* ===== BUTTON ===== */
+/* ================= BUTTON ================= */
 .service-btn{
-  margin:18px;
-  padding:14px;
+  margin:15px;
+  padding:12px;
   border:none;
-  border-radius:35px;
+  border-radius:25px;
   background:linear-gradient(90deg,#6d28d9,#2563eb);
   color:#fff;
-  font-weight:800;
-  font-size:1rem;
+  font-weight:700;
+  font-size:0.9rem;
   cursor:pointer;
   transition:.3s;
 }
@@ -127,7 +88,7 @@
   transform:scale(1.03);
 }
 
-/* ===== PAYMENT ===== */
+/* ================= PAYMENT ================= */
 .payment-modal{
   display:none;
   position:fixed;
@@ -140,10 +101,10 @@
 
 .payment-box{
   background:#fff;
-  padding:22px;
+  padding:20px;
   width:90%;
-  max-width:380px;
-  border-radius:18px;
+  max-width:360px;
+  border-radius:16px;
   text-align:center;
 }
 
@@ -157,33 +118,32 @@
 .pay-item{
   border:1px solid #e5e7eb;
   padding:10px;
-  border-radius:12px;
-  font-size:.9rem;
+  border-radius:10px;
+  font-size:.85rem;
   font-weight:600;
 }
 
 .pay-item img{
-  width:34px;
-  display:block;
+  width:30px;
   margin:0 auto 5px;
 }
 
 .pay-input{
   width:100%;
-  padding:12px;
+  padding:10px;
   margin-bottom:10px;
-  border-radius:12px;
+  border-radius:10px;
   border:1px solid #ccc;
 }
 
 .pay-btn{
   width:100%;
-  padding:12px;
+  padding:10px;
   background:#22c55e;
   color:#fff;
   border:none;
-  border-radius:12px;
-  font-weight:800;
+  border-radius:10px;
+  font-weight:700;
 }
 
 .cancel-btn{
@@ -191,12 +151,10 @@
   width:100%;
   padding:10px;
   border:none;
-  border-radius:12px;
+  border-radius:10px;
 }
 
-.input-error{border:2px solid red}
-
-/* ===== DARK MODE ===== */
+/* ================= DARK MODE ================= */
 body.dark .service-card,
 body.dark .payment-box{
   background:#0f172a;
