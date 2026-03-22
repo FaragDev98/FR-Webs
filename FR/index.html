@@ -99,45 +99,110 @@ FR Webs هتوصلك من الصفر لحد ما تعمل موقع كامل وت
 </div>
 </section>
 
-<!-- PAYMENT -->
+
+<!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
   <div class="payment-box">
-    <h3>💳 إتمام الدفع</h3>
-    <p class="pay-text" id="serviceTitle"></p>
 
-    <div class="methods">
-      <div class="pay-item">فودافون كاش<br><strong>01066047545</strong></div>
-      <div class="pay-item">أورنج كاش<br><strong>01285895096</strong></div>
-      <div class="pay-item">وي كاش<br><strong>01558516081</strong></div>
-      <div class="pay-item">PayPal</div>
+    <div class="modal-header">
+      <h3>إتمام الدفع</h3>
+      <span class="close-x" onclick="closePayment()">✖</span>
     </div>
 
-    <input type="text" id="payNumber" class="pay-input" placeholder="رقم التحويل">
+    <p class="pay-text" id="serviceTitle"></p>
+
+    <h4>اختر طريقة الدفع</h4>
+    <div class="methods">
+      <div class="pay-item" data-method="فودافون كاش">
+        <img src="../icons/vodafone.png" alt="">
+        <h4>فودافون كاش</h4>
+        <strong>01066047545</strong>
+      </div>
+
+      <div class="pay-item" data-method="أورنج كاش">
+        <img src="../icons/orange.png" alt="">
+        <h4>أورنج كاش</h4>
+        <strong>01285895096</strong>
+      </div>
+
+      <div class="pay-item" data-method="وي كاش">
+        <img src="../icons/we.png" alt="">
+        <h4>وي كاش</h4>
+        <strong>01558516081</strong>
+      </div>
+
+      <div class="pay-item" data-method="PayPal">
+        <img src="../icons/paypal.png" alt="">
+        <h4>PayPal</h4>
+      </div>
+    </div>
+
+    <input type="text" id="payNumber" class="pay-input"
+           placeholder="رقم التحويل أو بريد PayPal">
+
     <input type="file" id="payProof" class="pay-input">
 
-    <button class="pay-btn" onclick="confirmPayment()">إرسال إثبات الدفع</button>
-    <button class="cancel-btn" onclick="closePayment()">إلغاء</button>
-
+    <button class="pay-btn" id="confirmBtn">تأكيد وإرسال</button>
     <p id="payStatus"></p>
+
   </div>
 </div>
+<!-- ===== PAYMENT MODAL ===== -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-box">
 
+    <div class="modal-header">
+      <h3>إتمام الدفع</h3>
+      <span class="close-x" onclick="closePayment()">✖</span>
+    </div>
+
+    <p class="pay-text" id="serviceTitle"></p>
+
+    <h4>اختر طريقة الدفع</h4>
+    <div class="methods">
+      <div class="pay-item" data-method="فودافون كاش">
+        <img src="../icons/vodafone.png" alt="">
+        <h4>فودافون كاش</h4>
+        <strong>01066047545</strong>
+      </div>
+
+      <div class="pay-item" data-method="أورنج كاش">
+        <img src="../icons/orange.png" alt="">
+        <h4>أورنج كاش</h4>
+        <strong>01285895096</strong>
+      </div>
+
+      <div class="pay-item" data-method="وي كاش">
+        <img src="../icons/we.png" alt="">
+        <h4>وي كاش</h4>
+        <strong>01558516081</strong>
+      </div>
+
+      <div class="pay-item" data-method="PayPal">
+        <img src="../icons/paypal.png" alt="">
+        <h4>PayPal</h4>
+      </div>
+    </div>
+
+    <input type="text" id="payNumber" class="pay-input"
+           placeholder="رقم التحويل أو بريد PayPal">
+
+    <input type="file" id="payProof" class="pay-input">
+
+    <button class="pay-btn" id="confirmBtn">تأكيد وإرسال</button>
+    <p id="payStatus"></p>
+
+  </div>
+</div>
+  
+</section>
+ 
+  
+  
+  
   
   <script src="ter.js"></script>
- 
-</body>
-  
- 
-  
-  
-  
-  
-  
-
-
-
-  
   
   <script src="../footer.js"></script> 
-  
+</body>  
 </html>
