@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>خدمات FR Webs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>خدمات FR Webs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS العام -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- CSS الصفحة -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+ 
 
 <section class="services-section">
 
 <h1 class="page-title">ابدأ مشروعك من الإنترنت 💸</h1>
 
 <p class="page-desc">
-ابدأ من الصفر واشتغل Freelance وحقق أول دخل من الإنترنت 💻🔥  
-مع FR Webs هتتعلم + تطبق + تكسب 💰
+لو نفسك تكسب من الإنترنت 💻  
+FR Webs هتوصلك من الصفر لحد ما تعمل موقع كامل وتبدأ تاخد أول فلوس 💰
 </p>
 
 <div class="services-grid">
@@ -26,56 +30,69 @@
 <!-- كورس -->
 <div class="service-card">
   <div class="video-wrap">
-    <video src="../Vadio/Far.mp4" playsinline class="service-video"></video>
+    <video src="../Vadio/Far.mp4" muted playsinline class="service-video"></video>
   </div>
 
-  <h2>🔥 كورس FR Webs</h2>
-  <p>تعلم تصميم مواقع + تبدأ شغل Freelance وتجيب أول عميل</p>
+  <h2> كورس FR Webs</h2>
+  <p>
+    هتتعلم تعمل موقع كامل بنفسك  
+    + تبدأ Freelance وتجيب أول عميل  
+    يعني مهارة + فلوس 💸
+  </p>
 
-  <button class="service-btn buy-btn" data-service="كورس FR Webs" data-price="200">
-    ابدأ الآن
+  <button class="service-btn" onclick="openPayment('كورس FR Webs',200)">
+    <i class="fa-solid fa-laptop-code"></i> ابدأ الآن
   </button>
 </div>
 
-<!-- كتاب -->
+<!-- كتاب HTML -->
 <div class="service-card">
   <div class="video-wrap">
-    <img src="images/fabrica.png" class="service-video">
+    <img src="images/fabrica.png"class="service-video">
   </div>
 
   <h2>📘 كتاب HTML</h2>
-  <p>تعلم أساسيات HTML بشكل سريع واحترافي</p>
+  <p>
+    أهم أساسيات HTML بدون حشو  
+    تبدأ بسرعة وتفهم الصح
+  </p>
 
-  <button class="service-btn buy-btn" data-service="كتاب HTML" data-price="100">
-    اشتري الآن
+  <button class="service-btn" onclick="openPayment('كتاب HTML',100)">
+    <i class="fa-solid fa-book"></i> اشتري الآن
   </button>
 </div>
 
-<!-- كتاب 2 -->
+<!-- كتاب البداية -->
 <div class="service-card">
   <div class="video-wrap">
     <img src="images/books.jpg" class="service-video">
   </div>
 
   <h2>📗 كتاب البداية</h2>
-  <p>ابدأ Freelance من الصفر خطوة بخطوة</p>
+  <p>
+    ازاي تبدأ Freelance من الصفر  
+    وتجيب أول عميل بسهولة
+  </p>
 
-  <button class="service-btn buy-btn" data-service="كتاب البداية" data-price="200">
-    ابدأ الآن
+  <button class="service-btn" onclick="openPayment('كتاب البداية',200)">
+    <i class="fa-solid fa-book"></i> ابدأ دلوقتي
   </button>
 </div>
 
-<!-- موقع -->
+<!-- تنفيذ موقع -->
 <div class="service-card">
   <div class="video-wrap">
-    <video src="../Vadio/Fara.mp4" playsinline class="service-video"></video>
+    <video src="../Vadio/Fara.mp4" muted playsinline class="service-video"></video>
   </div>
 
   <h2>💻 موقع جاهز</h2>
-  <p>نصمم لك موقع احترافي جاهز للبيع والعمل</p>
+  <p>
+    عايز موقع احترافي؟  
+    نعملهولك جاهز تبدأ بيه فورًا
+  </p>
 
-  <button class="service-btn buy-btn" data-service="تنفيذ مشروع" data-price="1000">
-    اطلب الآن
+  <button class="service-btn" onclick="openPayment('تنفيذ مشروع',1000)">
+    <i class="fa-solid fa-laptop-code"></i> اطلب الآن
   </button>
 </div>
 
@@ -83,44 +100,109 @@
 </section>
 
 
-<!-- PAYMENT MODAL -->
+<!-- ===== PAYMENT MODAL ===== -->
 <div class="payment-modal" id="paymentModal">
-<div class="payment-box">
+  <div class="payment-box">
 
-<h3>إتمام الدفع</h3>
+    <div class="modal-header">
+      <h3>إتمام الدفع</h3>
+      <span class="close-x" onclick="closePayment()">✖</span>
+    </div>
 
-<p id="serviceTitle"></p>
+    <p class="pay-text" id="serviceTitle"></p>
 
-<p class="guide">
-📌 الخطوات:  
-1- اختار طريقة الدفع  
-2- انسخ الرقم  
-3- ابعت الفلوس  
-4- خد Screenshot  
-5- ارفع الصورة واكتب رقمك  
-</p>
+    <h4>اختر طريقة الدفع</h4>
+    <div class="methods">
+      <div class="pay-item" data-method="فودافون كاش">
+        <img src="../icons/vodafone.png" alt="">
+        <h4>فودافون كاش</h4>
+        <strong>01066047545</strong>
+      </div>
 
-<div class="methods">
-  <div class="pay-item" data-method="فودافون كاش">فودافون</div>
-  <div class="pay-item" data-method="أورنج كاش">أورنج</div>
-  <div class="pay-item" data-method="وي كاش">WE</div>
-  <div class="pay-item" data-method="PayPal">PayPal</div>
+      <div class="pay-item" data-method="أورنج كاش">
+        <img src="../icons/orange.png" alt="">
+        <h4>أورنج كاش</h4>
+        <strong>01285895096</strong>
+      </div>
+
+      <div class="pay-item" data-method="وي كاش">
+        <img src="../icons/we.png" alt="">
+        <h4>وي كاش</h4>
+        <strong>01558516081</strong>
+      </div>
+
+      <div class="pay-item" data-method="PayPal">
+        <img src="../icons/paypal.png" alt="">
+        <h4>PayPal</h4>
+      </div>
+    </div>
+
+    <input type="text" id="payNumber" class="pay-input"
+           placeholder="رقم التحويل أو بريد PayPal">
+
+    <input type="file" id="payProof" class="pay-input">
+
+    <button class="pay-btn" id="confirmBtn">تأكيد وإرسال</button>
+    <p id="payStatus"></p>
+
+  </div>
 </div>
+<!-- ===== PAYMENT MODAL ===== -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-box">
 
-<input type="text" id="payNumber" placeholder="رقم التحويل">
-<input type="text" id="userNumber" placeholder="رقمك اللي حولت منه">
-<input type="file" id="payProof" accept="image/*">
+    <div class="modal-header">
+      <h3>إتمام الدفع</h3>
+      <span class="close-x" onclick="closePayment()">✖</span>
+    </div>
 
-<button id="copyBtn">📋 نسخ الرقم</button>
-<button id="confirmBtn">تأكيد الدفع</button>
+    <p class="pay-text" id="serviceTitle"></p>
 
-<p id="payStatus"></p>
+    <h4>اختر طريقة الدفع</h4>
+    <div class="methods">
+      <div class="pay-item" data-method="فودافون كاش">
+        <img src="../icons/vodafone.png" alt="">
+        <h4>فودافون كاش</h4>
+        <strong>01066047545</strong>
+      </div>
 
+      <div class="pay-item" data-method="أورنج كاش">
+        <img src="../icons/orange.png" alt="">
+        <h4>أورنج كاش</h4>
+        <strong>01285895096</strong>
+      </div>
+
+      <div class="pay-item" data-method="وي كاش">
+        <img src="../icons/we.png" alt="">
+        <h4>وي كاش</h4>
+        <strong>01558516081</strong>
+      </div>
+
+      <div class="pay-item" data-method="PayPal">
+        <img src="../icons/paypal.png" alt="">
+        <h4>PayPal</h4>
+      </div>
+    </div>
+
+    <input type="text" id="payNumber" class="pay-input"
+           placeholder="رقم التحويل أو بريد PayPal">
+
+    <input type="file" id="payProof" class="pay-input">
+
+    <button class="pay-btn" id="confirmBtn">تأكيد وإرسال</button>
+    <p id="payStatus"></p>
+
+  </div>
 </div>
-</div>
-
-<script src="ter.js"></script>
-<script src="../footer.js"></script>
-
-</body>
+  
+</section>
+ 
+  
+  
+  
+  
+  <script src="ter.js"></script>
+  
+  <script src="../footer.js"></script> 
+</body>  
 </html>
