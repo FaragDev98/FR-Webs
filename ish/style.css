@@ -16,7 +16,7 @@ body{
 /* كارت الكورس */
 .story-card{
   flex:0 0 240px;
-  height:380px;
+  height:350px;
   border-radius:18px;
   overflow:hidden;
   position:relative;
@@ -227,7 +227,7 @@ body{
 /* الفيديو */
 .video-container {
   width: 100%;
-  height: 380px; /* ارتفاع ثابت للفتحة داخل الكارت */
+  height: 400px; /* ارتفاع ثابت للفتحة داخل الكارت */
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
