@@ -1,165 +1,114 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ================= VIDEO AUTO PLAY =================
-  const videos = document.querySelectorAll('.service-video');
+let copyTime = 0;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target;
+// ================= VIDEO =================
+const videos = document.querySelectorAll('.service-video');
 
-      if (entry.isIntersecting && !video.dataset.played) {
-        video.currentTime = 0;
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const video = entry.target;
 
-        // يبدأ بدون صوت (عشان المتصفح يسمح)
-        video.muted = true;
+    if(video.tagName !== "VIDEO") return;
 
-        video.play().catch(() => {});
+    if(entry.isIntersecting && !video.dataset.played){
+      video.currentTime = 0;
+      video.muted = true;
+      video.play();
+      video.dataset.played = "true";
+    }
 
-        video.dataset.played = "true";
-
-        video.onended = () => {
-          video.pause();
-        };
-      }
-
-      if (!entry.isIntersecting) {
-        video.pause();
-      }
-    });
-  }, { threshold: 0.4 });
-
-  videos.forEach(video => {
-    if (video.tagName === "VIDEO") {
-      observer.observe(video);
-
-      // تشغيل الصوت عند الضغط
-      video.addEventListener("click", () => {
-        video.muted = false;
-        video.play();
-      });
+    if(!entry.isIntersecting){
+      video.pause();
     }
   });
+},{threshold:0.6});
 
+videos.forEach(v=>{
+  if(v.tagName==="VIDEO"){
+    observer.observe(v);
 
-  // ================= PAYMENT SYSTEM =================
-  let currentService = '';
-  let currentPrice = 0;
-  let selectedMethod = '';
-  let paymentConfirmed = false;
-
-  const modal = document.getElementById('paymentModal');
-  const serviceTitle = document.getElementById('serviceTitle');
-  const status = document.getElementById('payStatus');
-  const confirmBtn = document.getElementById('confirmBtn');
-
-  const paymentNumbers = {
-    "فودافون كاش": "01066047545",
-    "أورنج كاش": "01285895096",
-    "وي كاش": "01558516081",
-    "PayPal": "Farajbdallh"
-  };
-
-
-  // ================= فتح المودال =================
-  document.querySelectorAll('.buy-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-
-      currentService = this.dataset.service;
-      currentPrice = this.dataset.price;
-
-      if(serviceTitle){
-        serviceTitle.innerHTML =
-          `الخدمة: <strong>${currentService}</strong><br>
-           السعر: <strong>${currentPrice} جنيه</strong>`;
-      }
-
-      if(modal){
-        modal.classList.add('active');
-      }
-
-      paymentConfirmed = false;
-    });
-  });
-
-
-  // ================= اختيار طريقة الدفع =================
-  document.querySelectorAll('.pay-item').forEach(item => {
-    item.addEventListener('click', function () {
-
-      document.querySelectorAll('.pay-item').forEach(i => i.classList.remove('selected'));
-      this.classList.add('selected');
-
-      selectedMethod = this.dataset.method;
-
-      if (paymentNumbers[selectedMethod]) {
-        document.getElementById('payNumber').value = paymentNumbers[selectedMethod];
-      }
-    });
-  });
-
-
-  // ================= تأكيد الدفع =================
-  if(confirmBtn){
-    confirmBtn.addEventListener('click', function () {
-
-      const number = document.getElementById('payNumber').value.trim();
-      const fileInput = document.getElementById('payProof');
-      const file = fileInput.files[0];
-
-      if (!selectedMethod || !number || !file) {
-        status.style.color = 'red';
-        status.innerHTML = '❌ من فضلك كمل البيانات';
-        return;
-      }
-
-      if (!file.type.match('image/png') && !file.type.match('image/jpeg')) {
-        status.style.color = 'red';
-        status.innerHTML = '❌ الصورة لازم PNG أو JPG';
-        return;
-      }
-
-      const msg = `طلب جديد
-الخدمة: ${currentService}
-السعر: ${currentPrice} جنيه
-طريقة الدفع: ${selectedMethod}
-رقم التحويل: ${number}`;
-
-      window.open(
-        `https://wa.me/201066047545?text=${encodeURIComponent(msg)}`,
-        '_blank'
-      );
-
-      status.style.color = 'green';
-      status.innerHTML = '✅ تم الإرسال';
-
-      paymentConfirmed = true;
+    v.addEventListener("click",()=>{
+      v.muted = false;
+      v.play();
     });
   }
-
-
-  // ================= فتح الكورس =================
-  document.querySelectorAll('.open-course').forEach(btn => {
-    btn.addEventListener('click', function () {
-
-      if (paymentConfirmed) {
-        window.location.href = this.dataset.link;
-      } else {
-        alert("❌ لازم تدفع الأول!");
-        if(modal){
-          modal.classList.add('active');
-        }
-      }
-
-    });
-  });
-
 });
 
 
-// ================= قفل المودال =================
-function closePayment() {
-  const modal = document.getElementById('paymentModal');
-  if(modal){
-    modal.classList.remove('active');
-  }
-}
+// ================= PAYMENT =================
+let selectedMethod='';
+let currentService='';
+let currentPrice='';
+
+const modal=document.getElementById('paymentModal');
+const status=document.getElementById('payStatus');
+
+const numbers={
+ "فودافون كاش":"01066047545",
+ "أورنج كاش":"01285895096",
+ "وي كاش":"01558516081",
+ "PayPal":"Farajbdallh"
+};
+
+// فتح
+document.querySelectorAll('.buy-btn').forEach(btn=>{
+ btn.onclick=()=>{
+  currentService=btn.dataset.service;
+  currentPrice=btn.dataset.price;
+  document.getElementById('serviceTitle').innerHTML=
+  `${currentService} - ${currentPrice} جنيه`;
+  modal.classList.add('active');
+ };
+});
+
+// اختيار
+document.querySelectorAll('.pay-item').forEach(item=>{
+ item.onclick=()=>{
+  document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
+  item.classList.add('selected');
+  selectedMethod=item.dataset.method;
+  document.getElementById('payNumber').value=numbers[selectedMethod];
+ };
+});
+
+// نسخ
+document.getElementById('copyBtn').onclick=()=>{
+ const val=document.getElementById('payNumber').value;
+ navigator.clipboard.writeText(val);
+ copyTime=Date.now();
+ alert("تم النسخ ✅");
+};
+
+// تأكيد
+document.getElementById('confirmBtn').onclick=()=>{
+
+ const userNumber=document.getElementById('userNumber').value.trim();
+ const file=document.getElementById('payProof').files[0];
+
+ if(!selectedMethod || !userNumber || !file){
+  status.innerHTML="❌ كمل البيانات";
+  return;
+ }
+
+ // تحقق screenshot
+ if(file.size > 2 * 1024 * 1024){
+  status.innerHTML="❌ الصورة لازم Screenshot";
+  return;
+ }
+
+ // تحقق الوقت
+ if(Date.now() - copyTime > 5*60*1000){
+  status.innerHTML="❌ فات 5 دقايق";
+  return;
+ }
+
+ status.innerHTML="⏳ جاري التحقق...";
+
+ setTimeout(()=>{
+   window.open(`https://wa.me/201066047545?text=تم الدفع ${currentService}`,'_blank');
+ },2500);
+
+};
+
+});
