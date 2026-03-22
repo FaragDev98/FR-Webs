@@ -257,3 +257,20 @@ body.dark-mode .cancel-btn{
   border:none;
   border-radius:10px;
 }
+.pay-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.pay-item i{
+  font-size:18px;
+}
+
+.pay-item.selected{
+  border:2px solid #22c55e;
+  background:#ecfdf5;
+                              }
