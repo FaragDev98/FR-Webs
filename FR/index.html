@@ -82,7 +82,6 @@
 </div>
 </section>
 
-
 <!-- PAYMENT MODAL -->
 <div class="payment-modal" id="paymentModal">
 <div class="payment-box">
@@ -91,34 +90,63 @@
 
 <p id="serviceTitle"></p>
 
-<p class="guide">
-📌 الخطوات:  
-1- اختار طريقة الدفع  
-2- انسخ الرقم  
-3- ابعت الفلوس  
-4- خد Screenshot  
-5- ارفع الصورة واكتب رقمك  
-</p>
-
+<!-- ===== طرق الدفع ===== -->
 <div class="methods">
-  <div class="pay-item" data-method="فودافون كاش">فودافون</div>
-  <div class="pay-item" data-method="أورنج كاش">أورنج</div>
-  <div class="pay-item" data-method="وي كاش">WE</div>
-  <div class="pay-item" data-method="PayPal">PayPal</div>
+
+  <div class="pay-item" data-method="فودافون كاش">
+    <i class="fa-solid fa-mobile-screen"></i>
+    <span>فودافون كاش</span>
+  </div>
+
+  <div class="pay-item" data-method="أورنج كاش">
+    <i class="fa-solid fa-sim-card"></i>
+    <span>أورنج كاش</span>
+  </div>
+
+  <div class="pay-item" data-method="وي كاش">
+    <i class="fa-solid fa-wifi"></i>
+    <span>WE Pay</span>
+  </div>
+
+  <div class="pay-item" data-method="PayPal">
+    <i class="fa-brands fa-paypal"></i>
+    <span>PayPal</span>
+  </div>
+
 </div>
 
+
+<!-- ===== تحويل عادي ===== -->
+<div id="normalPayment">
+<p class="guide">
+📌 انسخ الرقم وحوّل الفلوس وخد Screenshot
+</p>
 <input type="text" id="payNumber" placeholder="رقم التحويل">
 <input type="text" id="userNumber" placeholder="رقمك اللي حولت منه">
 <input type="file" id="payProof" accept="image/*">
 
 <button id="copyBtn">📋 نسخ الرقم</button>
+
+</div>
+
+
+<!-- ===== PayPal ===== -->
+<div id="paypalPayment" style="display:none;">
+
+<p class="guide">💳 ادخل بيانات البطاقة للدفع</p>
+
+<input type="text" placeholder="Card Number">
+<input type="text" placeholder="MM/YY">
+<input type="text" placeholder="CVV">
+<input type="text" placeholder="Name on Card">
+
+</div>
 <button id="confirmBtn">تأكيد الدفع</button>
-
 <p id="payStatus"></p>
-
 </div>
 </div>
 
+  
 <script src="ter.js"></script>
 <script src="../footer.js"></script>
 
