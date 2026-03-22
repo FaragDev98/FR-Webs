@@ -141,7 +141,3 @@ document.querySelectorAll('.open-course').forEach(btn=>{
   });
 });
 
-function closePayment(){
-  modal.classList.remove('active');
-  status.innerHTML='';
-}
