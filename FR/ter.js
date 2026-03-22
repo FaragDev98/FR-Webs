@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 let copyTime = 0;
+let selectedMethod='';
+let currentService='';
+let currentPrice='';
 
-// ================= VIDEO =================
+// ================= VIDEO SMART =================
 const videos = document.querySelectorAll('.service-video');
 
 const observer = new IntersectionObserver(entries=>{
@@ -11,14 +14,15 @@ const observer = new IntersectionObserver(entries=>{
 
     if(video.tagName !== "VIDEO") return;
 
-    if(entry.isIntersecting && !video.dataset.played){
-      video.currentTime = 0;
-      video.muted = true;
-      video.play();
-      video.dataset.played = "true";
-    }
-
-    if(!entry.isIntersecting){
+    if(entry.isIntersecting){
+      // تشغيل مرة واحدة فقط
+      if(!video.dataset.played){
+        video.currentTime = 0;
+        video.muted = true;
+        video.play().catch(()=>{});
+        video.dataset.played = "true";
+      }
+    }else{
       video.pause();
     }
   });
@@ -28,21 +32,22 @@ videos.forEach(v=>{
   if(v.tagName==="VIDEO"){
     observer.observe(v);
 
+    // 🔥 تشغيل بالصوت عند الضغط
     v.addEventListener("click",()=>{
       v.muted = false;
-      v.play();
+      v.play().catch(()=>{});
     });
   }
 });
 
 
 // ================= PAYMENT =================
-let selectedMethod='';
-let currentService='';
-let currentPrice='';
-
 const modal=document.getElementById('paymentModal');
 const status=document.getElementById('payStatus');
+const serviceTitle=document.getElementById('serviceTitle');
+
+const normalBox=document.getElementById('normalPayment');
+const paypalBox=document.getElementById('paypalPayment');
 
 const numbers={
  "فودافون كاش":"01066047545",
@@ -51,64 +56,130 @@ const numbers={
  "PayPal":"Farajbdallh"
 };
 
-// فتح
+// ================= فتح المودال =================
 document.querySelectorAll('.buy-btn').forEach(btn=>{
- btn.onclick=()=>{
+ btn.addEventListener("click",()=>{
   currentService=btn.dataset.service;
   currentPrice=btn.dataset.price;
-  document.getElementById('serviceTitle').innerHTML=
-  `${currentService} - ${currentPrice} جنيه`;
+
+  serviceTitle.innerHTML =
+  `${currentService} <br> السعر: ${currentPrice} جنيه`;
+
   modal.classList.add('active');
- };
+  status.innerHTML='';
+ });
 });
 
-// اختيار
+
+// ================= اختيار الدفع =================
 document.querySelectorAll('.pay-item').forEach(item=>{
- item.onclick=()=>{
+ item.addEventListener("click",()=>{
+
   document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
   item.classList.add('selected');
+
   selectedMethod=item.dataset.method;
-  document.getElementById('payNumber').value=numbers[selectedMethod];
- };
+
+  // 🔥 تغيير الواجهة
+  if(selectedMethod === "PayPal"){
+    normalBox.style.display="none";
+    paypalBox.style.display="block";
+  }else{
+    normalBox.style.display="block";
+    paypalBox.style.display="none";
+
+    document.getElementById('payNumber').value = numbers[selectedMethod];
+  }
+
+ });
 });
 
-// نسخ
-document.getElementById('copyBtn').onclick=()=>{
- const val=document.getElementById('payNumber').value;
- navigator.clipboard.writeText(val);
- copyTime=Date.now();
- alert("تم النسخ ✅");
-};
 
-// تأكيد
-document.getElementById('confirmBtn').onclick=()=>{
+// ================= نسخ الرقم =================
+const copyBtn = document.getElementById('copyBtn');
+
+if(copyBtn){
+ copyBtn.addEventListener("click",()=>{
+  const val=document.getElementById('payNumber').value;
+
+  if(!val){
+    alert("اختار طريقة الدفع الأول");
+    return;
+  }
+
+  navigator.clipboard.writeText(val);
+
+  copyTime=Date.now();
+
+  copyBtn.innerText="✅ تم النسخ";
+  setTimeout(()=>{
+    copyBtn.innerText="📋 نسخ الرقم";
+  },2000);
+ });
+}
+
+
+// ================= تأكيد الدفع =================
+document.getElementById('confirmBtn').addEventListener("click",()=>{
+
+ // 🔥 لو PayPal
+ if(selectedMethod === "PayPal"){
+   status.innerHTML="⏳ جاري تحويلك للدفع...";
+   
+   setTimeout(()=>{
+     window.open("https://www.paypal.com",'_blank');
+   },1500);
+
+   return;
+ }
 
  const userNumber=document.getElementById('userNumber').value.trim();
  const file=document.getElementById('payProof').files[0];
 
  if(!selectedMethod || !userNumber || !file){
-  status.innerHTML="❌ كمل البيانات";
+  status.style.color="red";
+  status.innerHTML="❌ كمل البيانات كلها";
   return;
  }
 
- // تحقق screenshot
+ // 🔥 تحقق نوع الصورة (سكرين شوت)
+ if(!file.type.includes("image")){
+  status.innerHTML="❌ لازم صورة Screenshot";
+  return;
+ }
+
+ // 🔥 تحقق الحجم (سكرين شوت غالبًا صغير)
  if(file.size > 2 * 1024 * 1024){
-  status.innerHTML="❌ الصورة لازم Screenshot";
+  status.innerHTML="❌ الصورة كبيرة مش Screenshot";
   return;
  }
 
- // تحقق الوقت
+ // 🔥 تحقق الوقت
  if(Date.now() - copyTime > 5*60*1000){
-  status.innerHTML="❌ فات 5 دقايق";
+  status.innerHTML="❌ لازم تدفع خلال 5 دقايق";
   return;
  }
 
+ status.style.color="orange";
  status.innerHTML="⏳ جاري التحقق...";
 
  setTimeout(()=>{
-   window.open(`https://wa.me/201066047545?text=تم الدفع ${currentService}`,'_blank');
- },2500);
 
-};
+   status.style.color="green";
+   status.innerHTML="✅ تم التأكد وفتح واتساب";
+
+   const msg = `طلب جديد
+الخدمة: ${currentService}
+السعر: ${currentPrice}
+طريقة الدفع: ${selectedMethod}`;
+
+   window.open(
+     `https://wa.me/201066047545?text=${encodeURIComponent(msg)}`,
+     '_blank'
+   );
+
+ },2000);
+
+});
 
 });
