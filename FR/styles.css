@@ -1,225 +1,33 @@
-/* ===== SECTION ===== */
-.services-section{
-  max-width:900px;
-  margin:30px auto;
-  padding:10px;
-  text-align:center;
-  transition: color 0.3s;
-  color: #1f2937; /* اللون الأساسي للنصوص */
-}
-
-/* العنوان */
-.page-title{
-  font-size:2.2rem; /* تكبير أكثر */
-  color:#6d28d9;
-  font-weight:800;
-  margin-bottom:15px;
-}
-
-.page-desc{
-  color:#4b5563;
-  margin-bottom:25px;
-  font-size:1.05rem; /* تكبير النص */
-  line-height:1.8;
-}
-
-/* ===== GRID ===== */
-.services-grid{
-  display:grid;
-  grid-template-columns:1fr; 
-  gap:25px;
-}
-
-/* ===== CARD ===== */
-.service-card{
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 12px 25px rgba(0,0,0,0.1);
+.payment-modal.active{
   display:flex;
-  flex-direction:column;
-  transition:.3s all;
 }
 
-.service-card:hover{
-  transform: translateY(-5px);
-  box-shadow:0 18px 30px rgba(0,0,0,0.15);
+.pay-item.selected{
+  border:2px solid #22c55e;
+  background:#ecfdf5;
 }
 
-/* ===== صورة الكتاب ===== */
-.book-image{
+.guide{
+  font-size:14px;
+  margin:10px 0;
+  color:#555;
+}
+
+#copyBtn{
   width:100%;
-  height:250px; /* ارتفاع أكبر */
-  overflow:hidden;
-  border-radius:14px;
-}
-
-.book-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* ===== فيديوهات وصور الخدمة ===== */
-.video-wrap {
-  width:100%;
-  max-width:380px; 
-  height:400px; /* ارتفاع أكبر من قبل */
-  margin:20px auto;
-  overflow:hidden;
-  border-radius:14px;
-}
-
-.service-video {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* ===== النص ===== */
-.service-card h2{
-  font-size:1.3rem; /* تكبير العنوان */
-  margin:14px;
-  color:#6d28d9;
-}
-
-.service-card p{
-  padding:0 14px;
-  font-size:1.05rem; /* تكبير النص */
-  line-height:1.7;
-  color:#374151;
-}
-
-/* ===== الزر ===== */
-.service-btn{
-  margin:14px;
-  padding:14px;
+  padding:12px;
+  margin-bottom:10px;
   border:none;
-  border-radius:28px;
-  background:linear-gradient(90deg,#6d28d9,#2563eb);
+  background:#2563eb;
   color:#fff;
-  font-weight:700;
-  font-size:1.05rem; 
-  cursor:pointer;
-  transition:0.3s all;
+  border-radius:10px;
 }
 
-.service-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 6px 18px rgba(0,0,0,0.25);
-}
-
-/* ===== PAYMENT ===== */
-.payment-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  justify-content:center;
-  align-items:center;
-}
-
-.payment-box{
-  background:#fff;
-  padding:22px;
-  width:90%;
-  max-width:380px;
-  border-radius:18px;
-}
-
-.methods{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin:18px 0;
-}
-
-.pay-item{
-  border:1px solid #e5e7eb;
-  padding:12px;
-  border-radius:14px;
-  font-size:0.95rem;
-  text-align:center;
-}
-
-.pay-item img{
-  width:36px;
-  margin:auto;
-}
-
-.pay-input{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border-radius:12px;
-  border:1px solid #ccc;
-  font-size:1rem;
-}
-
-.pay-btn{
+#confirmBtn{
   width:100%;
   padding:14px;
   background:#22c55e;
   color:#fff;
   border:none;
-  border-radius:14px;
-  font-size:1.05rem;
+  border-radius:10px;
 }
-
-.cancel-btn{
-  margin-top:10px;
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:14px;
-  font-size:1rem;
-}
-
-/* ===== DARK MODE (تشتغل فقط بالزر، تضاف class .dark-mode على <body>) ===== */
-body.dark-mode .services-section{
-  color:#e5e7eb;
-}
-
-body.dark-mode .service-card{
-  background:#374151;
-  box-shadow:0 12px 25px rgba(0,0,0,0.5);
-}
-
-body.dark-mode .service-card h2{
-  color:#a78bfa;
-}
-
-body.dark-mode .service-card p{
-  color:#d1d5db;
-}
-
-body.dark-mode .service-btn{
-  background:linear-gradient(90deg,#7c3aed,#3b82f6);
-  color:#fff;
-}
-
-body.dark-mode .payment-box{
-  background:#374151;
-  color:#e5e7eb;
-}
-
-body.dark-mode .pay-item{
-  border:1px solid #6b7280;
-  color:#e5e7eb;
-}
-
-body.dark-mode .pay-input{
-  background:#1f2937;
-  color:#e5e7eb;
-  border:1px solid #6b7280;
-}
-
-body.dark-mode .pay-btn{
-  background:#22c55e;
-  color:#fff;
-}
-
-body.dark-mode .cancel-btn{
-  background:#6b7280;
-  color:#fff;
-  }
