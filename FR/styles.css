@@ -55,7 +55,7 @@
 /* ===================== الفيديو والصورة ===================== */
 .video-wrap{
   width:100%;
-  height:230px;
+  height:300px;
   overflow:hidden;
   border-radius:14px;
   margin:15px auto;
@@ -125,7 +125,7 @@
   background:#fff;
   padding:20px;
   width:90%;
-  max-width:380px;
+  max-width:350px;
   border-radius:18px;
 }
 
