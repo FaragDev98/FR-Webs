@@ -146,6 +146,14 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
   return;
  }
 
+
+  
+ // تحقق الوقت
+ if(Date.now() - copyTime > 5*60*1000){
+  status.innerHTML="❌ فات 5 دقايق";
+  return;
+ }
+
  // 🔥 منع إدخال رقم غير أرقامك
 if(!Object.values(numbers).includes(payNumber)){
   status.innerHTML="❌ الرقم غير صحيح";
