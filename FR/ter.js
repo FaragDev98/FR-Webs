@@ -44,7 +44,34 @@ videos.forEach(v=>{
     observer.observe(v);
   }
 });
+// ================= تصفير البيانات =================
+function resetPaymentForm(){
 
+  // مسح رقم المستخدم
+  document.getElementById('userNumber').value = '';
+
+  // مسح رقم الدفع
+  document.getElementById('payNumber').value = '';
+
+  // مسح الصورة
+  document.getElementById('payProof').value = '';
+
+  // إلغاء طريقة الدفع
+  selectedMethod = null;
+
+  // إزالة التحديد
+  document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
+
+  // إيقاف التايمر
+  clearInterval(timerInterval);
+
+  // تصفير الوقت
+  copyTime = 0;
+
+  // مسح الرسالة
+  status.innerHTML = '';
+
+}
 
 // ================= عناصر الدفع =================
 
