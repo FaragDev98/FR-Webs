@@ -164,11 +164,6 @@ if(!Object.values(numbers).includes(payNumber)){
   return;
  }
 
- // تحقق الوقت
- if(Date.now() - copyTime > 5*60*1000){
-  status.innerHTML="❌ فات 5 دقايق";
-  return;
- }
 
  // جاري التحقق
  status.style.color="orange";
