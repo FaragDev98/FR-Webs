@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerHTML = `
       <header class="header">
         <div class="header-inner">
-          <a class="brand" href="../index.html">
+          <a class="brand" href="AB/index.html">
             <div class="logo">
               <img src="/icons/ai-icon.png" alt="AI Icon">
             </div>
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.querySelector(".bottom-nav")) {
     const bottomNavHTML = `
       <nav class="bottom-nav mobile-only" aria-label="تنقل أسفل الصفحة">
-        <a href="/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+        <a href="AB/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
         <a href="wab/aldirs.html"><i class="fa-solid fa-book"></i><span>الدروس</span></a>
         <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
         <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
