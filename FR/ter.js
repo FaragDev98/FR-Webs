@@ -36,23 +36,7 @@ videos.forEach(v=>{
 });
 
 
-// ================= الدفع =================
-
-// عناصر الصفحة
-const modal=document.getElementById('paymentModal'); // نافذة الدفع
-const status=document.getElementById('payStatus'); // رسالة الحالة
-const serviceTitle=document.getElementById('serviceTitle'); // عنوان الخدمة
-
-const normalBox=document.getElementById('normalPayment'); // الدفع العادي
-const paypalBox=document.getElementById('paypalPayment'); // PayPal
-
-// أرقام الدفع
-const numbers={
- "فودافون كاش":"01066047545",
- "أورنج كاش":"01285895096",
- "وي كاش":"01558516081",
- "PayPal":"Farajbdallh"
-};
+// ================= الدفع ================//
 
 // متغيرات التحكم
 let selectedMethod = null; // طريقة الدفع المختارة
