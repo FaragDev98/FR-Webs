@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerHTML = `
       <header class="header">
         <div class="header-inner">
-          <a class="brand" href="index.html">
+          <a class="brand" href="../index.html">
             <div class="logo">
               <img src="/icons/ai-icon.png" alt="AI Icon">
             </div>
