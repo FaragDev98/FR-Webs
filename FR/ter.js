@@ -1,28 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-let copyTime = 0; // وقت نسخ رقم الدفع
-let selectedMethod=''; // طريقة الدفع المختارة
-let currentService=''; // اسم الخدمة
-let currentPrice=''; // سعر الخدمة
+// ================= متغيرات عامة =================
+
+// لتخزين بيانات الدفع
+let selectedMethod = null; // طريقة الدفع المختارة
+let currentService = ""; // اسم الخدمة
+let currentPrice = ""; // السعر
+
+// للتحكم في النسخ والوقت
+let copyTime = 0; // وقت نسخ الرقم
+let timerInterval = null; // التايمر
+let timeLeft = 0; // الوقت المتبقي
 
 
 // ================= الفيديو الذكي =================
+
+// جلب كل الفيديوهات
 const videos = document.querySelectorAll('.service-video');
 
+// إنشاء مراقب عند ظهور الفيديو في الشاشة
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     const video = entry.target;
 
-    // نتأكد إنه فيديو مش صورة
+    // نتأكد إنه فيديو
     if(video.tagName !== "VIDEO") return;
 
     if(entry.isIntersecting){
-      // تشغيل الفيديو لما يدخل الشاشة
+      // تشغيل الفيديو عند الظهور
       video.currentTime = 0;
-      video.muted = false; // 🔥 تشغيل بالصوت
+      video.muted = false;
       video.play().catch(()=>{});
     }else{
-      // إيقاف لما يخرج
+      // إيقاف الفيديو عند الخروج
       video.pause();
     }
   });
@@ -36,19 +46,26 @@ videos.forEach(v=>{
 });
 
 
-// ================= الدفع ================//
+// ================= عناصر الدفع =================
 
-// متغيرات التحكم
-let selectedMethod = null; // طريقة الدفع المختارة
-let currentService = ""; // اسم الخدمة
-let currentPrice = ""; // السعر
+const modal=document.getElementById('paymentModal'); // نافذة الدفع
+const status=document.getElementById('payStatus'); // رسالة الحالة
+const serviceTitle=document.getElementById('serviceTitle'); // عنوان الخدمة
 
-let copyTime = 0; // وقت النسخ
-let timerInterval = null; // التايمر
-let timeLeft = 0; // الوقت المتبقي
+const normalBox=document.getElementById('normalPayment'); // الدفع العادي
+const paypalBox=document.getElementById('paypalPayment'); // PayPal
+
+// أرقام الدفع
+const numbers={
+ "فودافون كاش":"01066047545",
+ "أورنج كاش":"01285895096",
+ "وي كاش":"01558516081",
+ "PayPal":"Farajbdallh"
+};
 
 
 // ================= فتح نافذة الدفع =================
+
 document.querySelectorAll('.buy-btn').forEach(btn=>{
  btn.addEventListener("click",()=>{
   
@@ -56,7 +73,7 @@ document.querySelectorAll('.buy-btn').forEach(btn=>{
   currentService=btn.dataset.service;
   currentPrice=btn.dataset.price;
 
-  // عرض البيانات
+  // عرضهم للمستخدم
   serviceTitle.innerHTML =
   `${currentService} <br> السعر: ${currentPrice} جنيه`;
 
@@ -71,17 +88,19 @@ document.querySelectorAll('.buy-btn').forEach(btn=>{
 });
 
 
-// ================= قفل نافذة الدفع =================
+// ================= قفل النافذة =================
+
 window.closePayment = function(){
   modal.classList.remove('active');
 };
 
 
 // ================= اختيار طريقة الدفع =================
+
 document.querySelectorAll('.pay-item').forEach(item=>{
  item.addEventListener("click",()=>{
 
-  // إزالة التحديد من الكل
+  // إزالة التحديد من كل العناصر
   document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
   
   // تحديد العنصر الحالي
@@ -101,15 +120,16 @@ document.querySelectorAll('.pay-item').forEach(item=>{
     document.getElementById('payNumber').value = numbers[selectedMethod];
   }
 
-  // رسالة إرشادية
+  // رسالة توضيح
   status.style.color="blue";
-  status.innerHTML="📌 اضغط على (نسخ الرقم) ثم ابعت الفلوس وارفع Screenshot";
+  status.innerHTML="📌 اضغط (نسخ الرقم) ثم ابعت الفلوس وارفع Screenshot خلال 5 دقايق";
 
  });
 });
 
 
 // ================= نسخ رقم الدفع =================
+
 const copyBtn = document.getElementById('copyBtn');
 
 if(copyBtn){
@@ -117,7 +137,7 @@ if(copyBtn){
   
   const val=document.getElementById('payNumber').value;
 
-  // لو مفيش رقم
+  // لو لم يتم اختيار طريقة دفع
   if(!val){
     alert("اختار طريقة الدفع الأول");
     return;
@@ -128,13 +148,14 @@ if(copyBtn){
 
   // بدء الوقت
   copyTime = Date.now();
-  timeLeft = 300; // 5 دقايق
+  timeLeft = 300; // 5 دقائق
 
   status.style.color="blue";
   status.innerHTML="✅ تم نسخ الرقم<br>⏳ معاك 5 دقايق تبعت الفلوس وترفع Screenshot";
 
   // تشغيل التايمر
   clearInterval(timerInterval);
+
   timerInterval = setInterval(()=>{
     
     timeLeft--;
@@ -142,12 +163,13 @@ if(copyBtn){
     if(timeLeft > 0){
       status.innerHTML=`⏳ باقي ${timeLeft} ثانية لإتمام الدفع`;
     }else{
+      // انتهاء الوقت
       clearInterval(timerInterval);
 
       status.style.color="red";
       status.innerHTML="❌ الوقت خلص! لازم تضغط (نسخ الرقم) تاني";
 
-      copyTime = 0; // إلغاء النسخة
+      copyTime = 0; // إلغاء النسخ القديم
     }
 
   },1000);
@@ -157,6 +179,7 @@ if(copyBtn){
 
 
 // ================= تأكيد الدفع =================
+
 document.getElementById('confirmBtn').addEventListener("click",()=>{
 
  // ===== لو PayPal =====
@@ -175,44 +198,44 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
  const file=document.getElementById('payProof').files[0];
 
 
-// ================= تحقق البيانات =================
+// ================= التحقق =================
 
  // لازم يضغط نسخ الأول
  if(!copyTime){
   status.style.color="red";
-  status.innerHTML="❌ لازم تضغط على (نسخ الرقم) الأول";
+  status.innerHTML="❌ لازم تضغط (نسخ الرقم) الأول";
   return;
  }
 
- // تحقق الوقت (5 دقايق)
+ // التحقق من الوقت
  if(Date.now() - copyTime > 5*60*1000){
   status.style.color="red";
   status.innerHTML="❌ الوقت انتهى! انسخ الرقم تاني";
   return;
  }
 
- // تحقق البيانات الأساسية
+ // تحقق البيانات
  if(!selectedMethod || !userNumber || !file){
   status.style.color="red";
   status.innerHTML="❌ لازم:<br>1- تختار طريقة دفع<br>2- تكتب رقمك<br>3- ترفع Screenshot";
   return;
  }
 
- // التأكد إن الرقم صحيح (من أرقامك فقط)
+ // التأكد من الرقم
  if(!Object.values(numbers).includes(payNumber)){
   status.style.color="red";
   status.innerHTML="❌ الرقم غير صحيح";
   return;
  }
 
- // التأكد إن الملف صورة
+ // التأكد إنه صورة
  if(!file.type.includes("image")){
   status.style.color="red";
-  status.innerHTML="❌ لازم ترفع Screenshot صورة";
+  status.innerHTML="❌ لازم ترفع صورة Screenshot";
   return;
  }
 
- // التأكد من الحجم (أقل من 2MB)
+ // التأكد من الحجم
  if(file.size > 2 * 1024 * 1024){
   status.style.color="red";
   status.innerHTML="❌ الصورة كبيرة أو غير مناسبة";
@@ -220,7 +243,7 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
  }
 
 
-// ================= جاري التحقق =================
+// ================= نجاح =================
 
  status.style.color="orange";
  status.innerHTML="⏳ جاري التحقق...";
@@ -242,5 +265,7 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
    );
 
  },2000);
+
+});
 
 });
