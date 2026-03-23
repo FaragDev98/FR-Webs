@@ -85,44 +85,51 @@
 <!-- PAYMENT MODAL -->
 <div class="payment-modal" id="paymentModal">
 <div class="payment-box">
+
 <div class="modal-header">
-      <h3>إتمام الدفع</h3>
-      <span class="close-x" onclick="closePayment()">✖</span>
+  <h3>إتمام الدفع</h3>
+  <span class="close-x" onclick="closePayment()">✖</span>
 </div>
 
-    <h4>اختر طريقة الدفع</h4>
-    <div class="methods">
-      <div class="pay-item" data-method="فودافون كاش">
-        <img src="../icons/vodafone.png" alt="">
-        <h4>فودافون كاش</h4>
-        <strong>01066047545</strong>
-      </div>
+<p id="serviceTitle"></p>
 
-      <div class="pay-item" data-method="أورنج كاش">
-        <img src="../icons/orange.png" alt="">
-        <h4>أورنج كاش</h4>
-        <strong>01285895096</strong>
-      </div>
+<h4>اختر طريقة الدفع</h4>
 
-      <div class="pay-item" data-method="وي كاش">
-        <img src="../icons/we.png" alt="">
-        <h4>وي كاش</h4>
-        <strong>01558516081</strong>
-      </div>
+<div class="methods">
 
-      <div class="pay-item" data-method="PayPal">
-        <img src="../icons/paypal.png" alt="">
-        <h4>PayPal</h4>
-      </div>
-    </div>
+  <div class="pay-item" data-method="فودافون كاش">
+    <img src="../icons/vodafone.png">
+    <h4>فودافون كاش</h4>
+    <strong>01066047545</strong>
+  </div>
 
+  <div class="pay-item" data-method="أورنج كاش">
+    <img src="../icons/orange.png">
+    <h4>أورنج كاش</h4>
+    <strong>01285895096</strong>
+  </div>
+
+  <div class="pay-item" data-method="وي كاش">
+    <img src="../icons/we.png">
+    <h4>وي كاش</h4>
+    <strong>01558516081</strong>
+  </div>
+
+  <div class="pay-item" data-method="PayPal">
+    <img src="../icons/paypal.png">
+    <h4>PayPal</h4>
+  </div>
+
+</div>
 
 
 <!-- ===== تحويل عادي ===== -->
 <div id="normalPayment">
+
 <p class="guide">
-📌 انسخ الرقم وحوّل الفلوس وخد Screenshot
+📌 انسخ الرقم → ابعت الفلوس → خد Screenshot → ارفعه هنا
 </p>
+
 <input type="text" id="payNumber" placeholder="رقم التحويل">
 <input type="text" id="userNumber" placeholder="رقمك اللي حولت منه">
 <input type="file" id="payProof" accept="image/*">
@@ -135,7 +142,7 @@
 <!-- ===== PayPal ===== -->
 <div id="paypalPayment" style="display:none;">
 
-<p class="guide">💳 ادخل بيانات البطاقة للدفع</p>
+<p class="guide">💳 ادخل بيانات البطاقة</p>
 
 <input type="text" placeholder="Card Number">
 <input type="text" placeholder="MM/YY">
@@ -143,8 +150,11 @@
 <input type="text" placeholder="Name on Card">
 
 </div>
+
 <button id="confirmBtn">تأكيد الدفع</button>
+
 <p id="payStatus"></p>
+
 </div>
 </div>
 
