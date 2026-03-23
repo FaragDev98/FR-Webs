@@ -125,8 +125,11 @@
   background:#fff;
   padding:20px;
   width:90%;
-  max-width:350px;
+  max-width:380px;
   border-radius:18px;
+
+  max-height:75vh; /* 👈 تقليل ارتفاع نافذة الدفع */
+  overflow-y:auto; /* 👈 إضافة سكرول لو المحتوى كبير */
 }
 
 
