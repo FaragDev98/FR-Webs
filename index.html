@@ -3,21 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FR Webs — تسجيل الدخول</title>
+  <title>FR Webs — تسجيل الدخول / إنشاء حساب</title>
   <link rel="stylesheet" href="sty.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <div class="login-page">
-  <div class="login-card">
-    <h2>تسجيل الدخول</h2>
+  <div class="login-card" id="card">
+
+    <!-- عنوان الصفحة -->
+    <h2 id="card-title">تسجيل الدخول</h2>
 
     <!-- حقول تسجيل الدخول -->
     <form id="loginForm">
-      <input type="text" id="username" placeholder="اسم المستخدم أو البريد الإلكتروني" required>
-      <input type="password" id="password" placeholder="كلمة المرور" required>
+      <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
       <button type="submit">دخول</button>
+    </form>
+
+    <!-- حقول إنشاء حساب -->
+    <form id="signupForm" class="hidden">
+      <input type="text" id="firstName" placeholder="الاسم الأول" required>
+      <input type="text" id="lastName" placeholder="اسم العائلة" required>
+      <input type="email" id="signupEmail" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="signupPassword" placeholder="كلمة المرور (6 أحرف على الأقل)" required>
+      <input type="date" id="birthDate" required>
+      <select id="gender" required>
+        <option value="">اختر جنسك</option>
+        <option value="male">ذكر</option>
+        <option value="female">أنثى</option>
+        <option value="other">آخر / عدم الإفصاح</option>
+      </select>
+      <input type="text" id="phone" placeholder="رقم الهاتف (واتساب)" required>
+      <button type="submit">إنشاء الحساب</button>
     </form>
 
     <p class="or">أو</p>
@@ -28,10 +47,14 @@
       <button class="facebook-login"><i class="fab fa-facebook-f"></i> تسجيل الدخول عبر فيسبوك</button>
     </div>
 
-    <p class="signup">ليس لديك حساب؟ <span id="createAccount">إنشاء حساب جديد</span></p>
+    <p class="signup">
+      <span id="toggleForm">ليس لديك حساب؟ إنشاء حساب جديد</span>
+    </p>
   </div>
 </div>
 
-<script src="foo.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="auth.js"></script>
 </body>
 </html>
