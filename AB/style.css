@@ -36,15 +36,6 @@ body{
   transition:.3s;
 }
 
-/* sty.css */
-
-/* الوضع العادي */
-body {
-  background: #fff;
-  color: #111;
-  font-weight: normal;
-  transition: all 0.3s ease;
-}
 
 /* النصوص داخل المربعات */
 .login-card, .features-grid div, .why-list div, .price, .about, nav a {
