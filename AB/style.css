@@ -36,24 +36,39 @@ body{
   transition:.3s;
 }
 
-/* ==================================================
-   الوضع الليلي (Dark Mode)
-   تغيير الخلفيات والنصوص عند التفعيل
-================================================== */
-body.dark{
-  background:linear-gradient(180deg,#121212,#0b0b0b);
-  color:#ffffff;
+/* sty.css */
+
+/* الوضع العادي */
+body {
+  background: #fff;
+  color: #111;
+  font-weight: normal;
+  transition: all 0.3s ease;
 }
 
-body.dark p,
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark a{
-  color:#ffffff;
+/* النصوص داخل المربعات */
+.login-card, .features-grid div, .why-list div, .price, .about, nav a {
+  background: #fff;
+  color: #111;
+  transition: all 0.3s ease;
 }
 
+/* الوضع الليلي */
+body.dark {
+  background: #111827;
+  color: #fff;
+}
+
+body.dark .login-card,
+body.dark .features-grid div,
+body.dark .why-list div,
+body.dark .price,
+body.dark .about,
+body.dark nav a {
+  background: #1f2937;
+  color: #fff;
+  font-weight: bold;
+}
 /* ==================================================
    الهيدر (Header)
    الشريط العلوي الثابت للموقع
