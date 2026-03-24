@@ -84,18 +84,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // تبديل الوضع الليلي
+// تبديل الوضع الليلي لجميع الصفحات
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+
+  // استرجاع الوضع المحفوظ من localStorage
   const savedTheme = localStorage.getItem("fr_theme");
   if (savedTheme === "dark") document.body.classList.add("dark");
 
   if (themeToggle) {
+    // تحديث أيقونة التبديل عند التحميل
     themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+
     themeToggle.addEventListener("click", () => {
       document.body.classList.toggle("dark");
-      localStorage.setItem("fr_theme", document.body.classList.contains("dark") ? "dark" : "light");
+      // حفظ الوضع الجديد
+      localStorage.setItem(
+        "fr_theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+      );
+      // تحديث أيقونة التبديل
       themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
     });
   }
+});
 
   /* =======================
      5) مراقب عناصر الأنيميشن
