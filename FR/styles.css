@@ -44,7 +44,12 @@
   flex-direction:column;
   transition:.3s;
 }
-
+/* النصوص داخل المربعات */
+.login-card, .features-grid div, .why-list div, .price, .about, nav a {
+  background: #fff;
+  color: #111;
+  transition: all 0.3s ease;
+}
 /* تأثير عند المرور */
 .service-card:hover{
   transform:translateY(-5px);
