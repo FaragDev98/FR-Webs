@@ -1,44 +1,79 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>حسابي | FR Webs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>FR Webs | حسابي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="syle.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="../AB/style.css">
+  <link rel="stylesheet" href="syle.css">
 </head>
 <body>
 
+<section class="services-section">
 <div class="profile-container">
 
-  <!-- بيانات -->
+  <!-- 🔹 الكارت -->
   <div class="profile-card">
     <div class="profile-left">
-      <img src="https://i.imgur.com/6VBx3io.png">
+      <img src="https://i.imgur.com/6VBx3io.png" alt="profile">
     </div>
 
     <div class="profile-right">
-      <h2 id="username"></h2>
-      <p id="email"></p>
+      <h2 id="username">اسم المستخدم</h2>
+      <p id="email">example@gmail.com</p>
 
-      <button id="logoutBtn">تسجيل الخروج</button>
+      <div class="profile-actions">
+        <button id="editBtn"><i class="fa fa-edit"></i> تعديل</button>
+        <button id="logoutBtn"><i class="fa fa-sign-out"></i> خروج</button>
+      </div>
     </div>
   </div>
 
-  <!-- نشر بوست -->
-  <div class="post-box">
-    <textarea id="postText" placeholder="اكتب منشورك..."></textarea>
-    <input type="file" id="postImage">
-    <button id="publishBtn">نشر</button>
+  <!-- 🔹 الخدمات -->
+  <div class="services">
+    <h3>ابدأ شغلك</h3>
+
+    <div class="services-grid">
+      <div class="service-box"><i class="fa fa-code"></i><p>تعلم البرمجة</p></div>
+      <div class="service-box"><i class="fa fa-image"></i><p>عرض أعمالي</p></div>
+      <div class="service-box"><i class="fa fa-book"></i><p>شراء كتاب</p></div>
+      <div class="service-box"><i class="fa fa-graduation-cap"></i><p>شراء كورس</p></div>
+      <div class="service-box"><i class="fa fa-bullhorn"></i><p>اعلن عن شغلك</p></div>
+    </div>
   </div>
 
-  <!-- عرض المنشورات -->
-  <div id="postsContainer"></div>
+  <!-- 🔹 رفع شغل -->
+  <div class="upload-section">
+    <h3>📂 ارفع شغلك</h3>
+
+    <input type="file" id="fileUpload">
+    <input type="text" id="postText" placeholder="اكتب وصف للصورة...">
+    <button id="uploadBtn">نشر</button>
+
+    <div id="gallery"></div>
+  </div>
 
 </div>
 
+
+
+
+
+</section>
+
+<script src="../AB/footer.js"></script>
 <script src="profile.js"></script>
+
+
+
+
+
+
+  
 </body>
-</html>
+</html>  
