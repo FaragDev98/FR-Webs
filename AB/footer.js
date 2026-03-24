@@ -84,6 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // تبديل الوضع الليلي
+  const savedTheme = localStorage.getItem("fr_theme");
+  if (savedTheme === "dark") document.body.classList.add("dark");
+
+  if (themeToggle) {
+    themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("fr_theme", document.body.classList.contains("dark") ? "dark" : "light");
+      themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  }
 // تبديل الوضع الليلي لجميع الصفحات
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("themeToggle");
