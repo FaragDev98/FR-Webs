@@ -1,166 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>خدمات FR Webs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="../AB/style.css">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FR Webs — تسجيل الدخول / إنشاء حساب</title>
+  <link rel="stylesheet" href="sty.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
-<section class="services-section">
+<div class="login-page">
+  <div class="login-card" id="card">
 
-<h1 class="page-title">ابدأ مشروعك من الإنترنت 💸</h1>
+    <!-- عنوان الصفحة -->
+    <h2 id="card-title">تسجيل الدخول</h2>
 
-<p class="page-desc">
-ابدأ من الصفر واشتغل Freelance وحقق أول دخل من الإنترنت 💻🔥  
-مع FR Webs هتتعلم + تطبق + تكسب 💰
-</p>
+    <!-- حقول تسجيل الدخول -->
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+      <button type="submit">دخول</button>
+    </form>
 
-<div class="services-grid">
+    <!-- حقول إنشاء حساب -->
+    <form id="signupForm" class="hidden">
+      <input type="text" id="firstName" placeholder="الاسم الأول" required>
+      <input type="text" id="lastName" placeholder="اسم العائلة" required>
+      <input type="email" id="signupEmail" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="signupPassword" placeholder="كلمة المرور (6 أحرف على الأقل)" required>
+      <input type="date" id="birthDate" required>
+      <select id="gender" required>
+        <option value="">اختر جنسك</option>
+        <option value="male">ذكر</option>
+        <option value="female">أنثى</option>
+        <option value="other">آخر / عدم الإفصاح</option>
+      </select>
+      <input type="text" id="phone" placeholder="رقم الهاتف (واتساب)" required>
+      <button type="submit">إنشاء الحساب</button>
+    </form>
 
-<!-- كورس -->
-<div class="service-card">
-  <div class="video-wrap">
-    <video src="../Vadio/Far.mp4" playsinline class="service-video"></video>
+    <pclass="or">أو</p>
+
+    <!-- تسجيل عبر جوجل وفيسبوك -->
+    <div class="social-login">
+      <button class="google-login"><i class="fab fa-google"></i> تسجيل الدخول عبر جوجل</button>
+    <a href="..AB/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+    </div>
+
+    <p class="signup">
+      <span id="toggleForm">ليس لديك حساب؟ إنشاء حساب جديد</span>
+    </p>
   </div>
-
-  <h2>🔥 كورس FR Webs</h2>
-  <p>تعلم تصميم مواقع + تبدأ شغل Freelance وتجيب أول عميل</p>
-
-  <button class="service-btn buy-btn" data-service="كورس FR Webs" data-price="200">
-    ابدأ الآن
-  </button>
 </div>
 
-<!-- كتاب -->
-<div class="service-card">
-  <div class="video-wrap">
-    <img src="images/fabrica.png" class="service-video">
-  </div>
-
-  <h2>📘 كتاب HTML</h2>
-  <p>تعلم أساسيات HTML بشكل سريع واحترافي</p>
-
-  <button class="service-btn buy-btn" data-service="كتاب HTML" data-price="100">
-    اشتري الآن
-  </button>
-</div>
-
-<!-- كتاب 2 -->
-<div class="service-card">
-  <div class="video-wrap">
-    <img src="images/books.jpg" class="service-video">
-  </div>
-
-  <h2>📗 كتاب البداية</h2>
-  <p>ابدأ Freelance من الصفر خطوة بخطوة</p>
-
-  <button class="service-btn buy-btn" data-service="كتاب البداية" data-price="200">
-    ابدأ الآن
-  </button>
-</div>
-
-<!-- موقع -->
-<div class="service-card">
-  <div class="video-wrap">
-    <video src="../Vadio/Fara.mp4" playsinline class="service-video"></video>
-  </div>
-
-  <h2>💻 موقع جاهز</h2>
-  <p>نصمم لك موقع احترافي جاهز للبيع والعمل</p>
-
-  <button class="service-btn buy-btn" data-service="تنفيذ مشروع" data-price="1000">
-    اطلب الآن
-  </button>
-</div>
-
-</div>
-</section>
-
-<!-- PAYMENT MODAL -->
-<div class="payment-modal" id="paymentModal">
-<div class="payment-box">
-
-<div class="modal-header">
-  <h3>إتمام الدفع</h3>
-  <span class="close-x" onclick="closePayment()">✖</span>
-</div>
-
-<p id="serviceTitle"></p>
-
-<h4>اختر طريقة الدفع</h4>
-
-<div class="methods">
-
-  <div class="pay-item" data-method="فودافون كاش">
-    <img src="../icons/vodafone.png">
-    <h4>فودافون كاش</h4>
-    <strong>01066047545</strong>
-  </div>
-
-  <div class="pay-item" data-method="أورنج كاش">
-    <img src="../icons/orange.png">
-    <h4>أورنج كاش</h4>
-    <strong>01285895096</strong>
-  </div>
-
-  <div class="pay-item" data-method="وي كاش">
-    <img src="../icons/we.png">
-    <h4>وي كاش</h4>
-    <strong>01558516081</strong>
-  </div>
-
-  <div class="pay-item" data-method="PayPal">
-    <img src="../icons/paypal.png">
-    <h4>PayPal</h4>
-  </div>
-
-</div>
-
-
-<!-- ===== تحويل عادي ===== -->
-<div id="normalPayment">
-
-<p class="guide">
-📌 انسخ الرقم → ابعت الفلوس → خد Screenshot → ارفعه هنا
-</p>
-
-<input type="text" id="payNumber" placeholder="رقم التحويل">
-<input type="text" id="userNumber" placeholder="رقمك اللي حولت منه">
-<input type="file" id="payProof" accept="image/*">
-
-<button id="copyBtn">📋 نسخ الرقم</button>
-
-</div>
-
-
-<!-- ===== PayPal ===== -->
-<div id="paypalPayment" style="display:none;">
-
-<p class="guide">💳 ادخل بيانات البطاقة</p>
-
-<input type="text" placeholder="Card Number">
-<input type="text" placeholder="MM/YY">
-<input type="text" placeholder="CVV">
-<input type="text" placeholder="Name on Card">
-
-</div>
-
-<button id="confirmBtn">تأكيد الدفع</button>
-
-<p id="payStatus"></p>
-
-</div>
-</div>
-
-  
-<script src="ter.js"></script>
-<script src="../AB/footer.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="foo.js"></script>
 </body>
 </html>
