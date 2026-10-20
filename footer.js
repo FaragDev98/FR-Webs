@@ -115,7 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "fr_theme",
         document.body.classList.contains("dark") ? "dark" : "light"
       );
-   
+    // تحديث أيقونة التبديل
+      themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
   }
 });
 
