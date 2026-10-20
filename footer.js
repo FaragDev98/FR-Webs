@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="/FR/index.html">
           <i class="fa-solid fa-briefcase"></i> خدمات
         </a>
-        <a href="/dev-english/index.html">
+        <a href="dev-english/index.html">
           <i class="fa-solid fa-language"></i> الإنجليزية
         </a>
-        <a href="/ish/index.html">
+        <a href="ish/index.html">
           <i class="fa-solid fa-graduation-cap"></i> كورسات
         </a>
       </nav>
@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.querySelector(".bottom-nav")) {
     const bottomNavHTML = `
       <nav class="bottom-nav mobile-only" aria-label="تنقل أسفل الصفحة">
-        <a href="../AB/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
-        <a href="/wab/aldirs.html"><i class="fa-solid fa-user"></i><span>حسابي</span></a>
+        <a href="AB/index.html"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+        <a href="wab/aldirs.html"><i class="fa-solid fa-user"></i><span>حسابي</span></a>
         <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">🌙</button>
-        <a href="/code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
-        <a href="/contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
+        <a href="code/index.html"><i class="fa-solid fa-flask"></i><span>المختبر</span></a>
+        <a href="contac/contact.html"><i class="fa-solid fa-phone"></i><span>تواصل</span></a>
       </nav>
     `;
     document.body.insertAdjacentHTML("beforeend", bottomNavHTML);
